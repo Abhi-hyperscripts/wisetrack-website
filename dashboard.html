@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Libre+Caslon+Text:wght@400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script src="assets/tailwind-config.js"></script>
+<link href="assets/styles.css" rel="stylesheet"/>
+<script src="assets/site.js" defer></script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface-dim/80 backdrop-blur-2xl border-b border-outline-variant/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-6 h-20">
+<a href="index.html" class="font-headline-md text-headline-md text-primary tracking-tighter">WiseTrack</a>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center glass-panel rounded-full">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-secondary to-primary-container p-[1px]">
+<div class="w-full h-full rounded-full bg-surface-dim flex items-center justify-center overflow-hidden">
+<img alt="Executive Profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a high-level corporate executive with a neutral expression. The lighting is dramatic and moody, with high contrast between deep shadows and soft metallic silver highlights on the skin. The setting is a minimalist, dark tech-infused office space with blurred obsidian glass elements in the background, maintaining a luxury executive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3qeQhONVF4YaESejLRHT5jRjDSQHRygKeEkt0A_7WNXhSV4yohPqGB6bNULauBgUEl56cRbMpU2zIwj-ykRigsiA8jWqOYheI_taL32kmJ_rbVtC3VtPgjv9cz9SqNJWR4K9oxEEd5NYaeDf9fCHE2uleAAp2CAhflGXNhQ5-0BdvIEw_OV41e7-wBnFVhZmo0eT8PsdS3yu2v9boDoIgIJ_IgVV5UdmZ7T-mkXUffw6MBwCcBPbQLLCX4fUU9XrmbiBCMoEf7BI"/>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-24 pb-32 px-6 flex flex-col gap-6 max-w-md mx-auto">
+<!-- Header & Greetings -->
+<header class="py-4">
+<p class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant mb-2">Live Demo · Ragenaizer</p>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Business OS Overview</h1>
+</header>
+<!-- Primary KPI Carousel (Simulated Mobile Stack) -->
+<section class="flex flex-col gap-4">
+<!-- Metric Card 1 -->
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden silver-glow">
+<div class="milled-texture absolute inset-0"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant">Global Revenue</span>
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h2 class="font-headline-md text-headline-md text-primary">$4.2M</h2>
+<span class="text-xs text-secondary">+12.4%</span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-3/4"></div>
+</div>
+</div>
+<!-- Metric Card 2 -->
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden">
+<div class="milled-texture absolute inset-0"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant">Active Operations</span>
+<span class="material-symbols-outlined text-primary">hub</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h2 class="font-headline-md text-headline-md text-primary">128</h2>
+<span class="text-xs text-primary-container">Optimal</span>
+</div>
+<div class="mt-4 flex gap-1">
+<div class="h-8 w-full bg-primary/20 rounded-sm"></div>
+<div class="h-8 w-full bg-primary/40 rounded-sm"></div>
+<div class="h-8 w-full bg-primary/30 rounded-sm"></div>
+<div class="h-8 w-full bg-primary/60 rounded-sm"></div>
+<div class="h-8 w-full bg-primary/50 rounded-sm"></div>
+</div>
+</div>
+</section>
+<!-- Main Chart Widget -->
+<section class="glass-panel p-6 rounded-xl relative overflow-hidden">
+<div class="milled-texture absolute inset-0"></div>
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-label-sm text-label-sm tracking-widest uppercase text-primary">Performance Telemetry</h3>
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</div>
+<div class="aspect-[4/3] w-full flex items-end justify-between gap-2 relative">
+<!-- HUD Chart Simulation -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="border-t border-outline-variant/30 w-full h-0"></div>
+<div class="border-t border-outline-variant/30 w-full h-0"></div>
+<div class="border-t border-outline-variant/30 w-full h-0"></div>
+</div>
+<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[85%] rounded-t-sm"></div>
+<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[70%] rounded-t-sm"></div>
+<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[95%] rounded-t-sm"></div>
+<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[55%] rounded-t-sm"></div>
+<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[40%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-4">
+<span class="font-label-sm text-[10px] text-on-surface-variant">MON</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">TUE</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">WED</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">THU</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">FRI</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">SAT</span>
+</div>
+</section>
+<!-- Operation Status List -->
+<section class="flex flex-col gap-4">
+<h3 class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant ml-1">Operational Nodes</h3>
+<div class="flex items-center gap-4 p-4 glass-panel rounded-lg">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">cloud_done</span>
+</div>
+<div class="flex-1">
+<p class="font-label-sm text-on-surface uppercase text-[10px]">Node: LX-400</p>
+<p class="font-body-md text-sm text-on-surface-variant">Frankfurt Data Core</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-secondary">ACTIVE</p>
+<p class="text-[10px] text-on-surface-variant">24ms</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 glass-panel rounded-lg">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div class="flex-1">
+<p class="font-label-sm text-on-surface uppercase text-[10px]">Node: SY-912</p>
+<p class="font-body-md text-sm text-on-surface-variant">Tokyo Vault Access</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-secondary">ACTIVE</p>
+<p class="text-[10px] text-on-surface-variant">18ms</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 glass-panel rounded-lg border-l-2 border-error/50">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div class="flex-1">
+<p class="font-label-sm text-on-surface uppercase text-[10px]">Node: NY-105</p>
+<p class="font-body-md text-sm text-on-surface-variant">Manhattan Sync</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-error">LATENCY</p>
+<p class="text-[10px] text-on-surface-variant">420ms</p>
+</div>
+</div>
+</section>
+<!-- Featured Visualization -->
+<section class="glass-panel rounded-xl overflow-hidden mt-4">
+<div class="h-48 relative">
+<img alt="Global Data Network" class="w-full h-full object-cover grayscale brightness-50" data-alt="A cinematic, low-angle shot of a glowing blue and silver digital globe representing a global data network. The image is rendered in a high-performance tech aesthetic with sharp, precise lines and a dark obsidian background. Intricate fiber-optic paths glow with a subtle silver light, connecting major metropolitan hubs across the continents. The overall mood is sophisticated, authoritative, and technologically advanced, fitting for an executive dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr9IE-YOTUbwwlYZezlCdMZDQssZPoqb6fa7zrGl8owyiVP2ZM4r9pZTj9MTCR7snq2CCKhQu6rNIWWo_bQr1Ki9HnwS9GvZQdyVrsZJwCpN1e0XPDbpbViihb9iI2-m47Tye9SEEjtupPpFlACaS0eVLVbmFfQjQamtJeuu-wfRMkWYbvroavQDQ7NIvzGD7kHJVe1nx01cdEeupX75QlfX_9Af0fld3FIy5ZOHcmOTvy-Nu-6crAsPseOWG1GI8AcTS9pHniokk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<h4 class="font-headline-md text-primary text-xl">Global Footprint</h4>
+<p class="text-xs text-on-surface-variant">Real-time signal map</p>
+</div>
+</div>
+<div class="p-6">
+<button class="w-full bg-gradient-to-r from-secondary to-primary-container text-on-primary py-4 rounded font-label-sm uppercase tracking-widest silver-glow">
+                    Expand Telemetry
+                </button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Priority) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-dim/90 backdrop-blur-3xl border-t border-outline-variant/10 md:hidden">
+<div class="flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter">Dash</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter">Nodes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">settings_suggest</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter">Config</span>
+</a>
+</div>
+</nav>
+<!-- Floating Action Button Context -->
+<div class="fixed bottom-24 right-6 md:hidden">
+<button class="w-14 h-14 rounded-full bg-primary text-on-primary shadow-[0_0_20px_rgba(192,192,195,0.3)] flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+<!-- Footer Information -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/5 px-6 py-12 mb-20">
+<div class="max-w-md mx-auto">
+<a href="index.html" class="font-headline-md text-headline-md text-primary mb-6">WiseTrack</a>
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div class="flex flex-col gap-3">
+<p class="font-label-sm text-on-surface uppercase text-[10px] tracking-widest mb-2">Protocol</p>
+<a class="text-sm text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Security Architecture</a>
+<a class="text-sm text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Global Operations</a>
+</div>
+<div class="flex flex-col gap-3">
+<p class="font-label-sm text-on-surface uppercase text-[10px] tracking-widest mb-2">Legal</p>
+<a class="text-sm text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Privacy Protocol</a>
+<a class="text-sm text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Terms of Access</a>
+</div>
+</div>
+<p class="text-[10px] text-on-surface-variant leading-relaxed opacity-60">
+                © 2024 WiseTrack Technologies. Hard software, built selectively.
+            </p>
+</div>
+</footer>
+</body></html>

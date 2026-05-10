@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/tailwind-config.js"></script>
+<link href="assets/styles.css" rel="stylesheet"/>
+<script src="assets/site.js" defer></script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Shell Implementation) -->
+<header class="fixed top-0 w-full z-50 bg-surface-dim/80 backdrop-blur-2xl border-b border-outline-variant/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-edge-margin h-24">
+<a href="index.html" class="font-headline-md text-headline-md text-primary tracking-tighter">WiseTrack Technologies</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-500" href="solutions.html">Solutions</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-500" href="portfolio.html">Portfolio</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-500" href="methodology.html">Methodology</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-500" href="insights.html">Insights</a>
+<a href="contact.html" class="ml-stack-md px-stack-md py-stack-sm bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest transition-all duration-300 hover:opacity-90">
+                    Get a Quote
+                </a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</div>
+</div>
+</header>
+<main class="relative min-h-screen flex items-center justify-center pt-24 px-6 overflow-hidden">
+<!-- Background Ambient Lighting -->
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-primary/5 blur-[100px] rounded-full"></div>
+<div class="relative z-10 w-full max-w-md">
+<!-- Brand Mark -->
+<div class="flex flex-col items-center mb-stack-lg">
+<div class="w-16 h-16 bg-gradient-to-br from-primary to-surface-variant p-[1px] mb-stack-md">
+<div class="w-full h-full bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary text-center">Client Portal</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2 tracking-[0.2em] uppercase">Sign in to your project workspace</p>
+</div>
+<!-- Login Module -->
+<div class="glass-panel silver-glow p-8 md:p-12 relative overflow-hidden">
+<div class="milled-surface absolute inset-0"></div>
+<form class="space-y-stack-md relative z-10">
+<div class="space-y-stack-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" for="executive-id">Email or Client ID</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 py-4 focus:ring-0 focus:border-primary transition-all duration-500 font-body-md" id="executive-id" placeholder="you@company.com" type="text"/>
+<span class="absolute right-0 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/30 group-focus-within:text-primary transition-colors">fingerprint</span>
+</div>
+</div>
+<div class="space-y-stack-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" for="passcode">Password</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 py-4 focus:ring-0 focus:border-primary transition-all duration-500 font-body-md" id="passcode" placeholder="••••••••••••" type="password"/>
+<span class="absolute right-0 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/30 group-focus-within:text-primary transition-colors">key</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-stack-sm">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 bg-surface-container-lowest border-outline-variant rounded-none text-primary focus:ring-offset-background focus:ring-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">Stay signed in</span>
+</label>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Forgot password</a>
+</div>
+<button class="w-full mt-stack-md py-6 bg-gradient-to-r from-primary to-secondary text-on-primary font-label-sm text-label-sm uppercase tracking-[0.2em] transition-all duration-500 hover:brightness-110 active:scale-[0.98] relative overflow-hidden group">
+<span class="relative z-10">Sign In</span>
+<div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
+</button>
+</form>
+<div class="mt-stack-lg pt-stack-md border-t border-outline-variant/10 flex items-center justify-center gap-4">
+<span class="material-symbols-outlined text-primary/40 text-sm">lock_open</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/40 uppercase tracking-widest">256-bit AES Encryption</span>
+</div>
+</div>
+<!-- Supporting Visual -->
+<div class="mt-stack-lg hidden md:block">
+<div class="h-[2px] w-full bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div>
+<div class="mt-6 flex justify-between px-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant/30 uppercase tracking-[0.3em]">Network Status</span>
+<span class="font-body-md text-xs text-primary/60">Secure Node: London-04</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant/30 uppercase tracking-[0.3em]">Latency</span>
+<span class="font-body-md text-xs text-primary/60">12ms - Verified</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Implementation -->
+<footer class="relative w-full bg-surface-container-lowest border-t border-outline-variant/5">
+<div class="flex flex-col gap-stack-lg max-w-container-max mx-auto px-edge-margin py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stack-lg">
+<div class="lg:col-span-2">
+<div class="font-headline-lg text-headline-lg text-primary mb-stack-md">WiseTrack</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                        Software company with two brands. HyperScripts builds custom software for clients. Ragenaizer is our own product, a single tool to run a business on.
+                    </p>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-2">Architecture</span>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Strategic Advisory</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Global Operations</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Security Architecture</a>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-2">Protocol</span>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Privacy Protocol</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="careers.html">Careers</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Legal Notice</a>
+</div>
+</div>
+<div class="pt-stack-md border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-sm text-on-surface-variant/60">
+                    © 2024 WiseTrack Technologies. Hard software, built selectively.
+                </p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors cursor-pointer">monitoring</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors cursor-pointer">public</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors cursor-pointer">shield_locked</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Imagery Integration for Narrative Context -->
+<div class="fixed inset-0 z-[-1] opacity-20">
+<img class="w-full h-full object-cover grayscale" data-alt="A high-end, minimalist executive office at night, overlooking a futuristic city skyline with glowing silver lights. The room features dark obsidian furniture and polished steel accents, creating a mood of absolute professional calm and technological sophistication. Cinematic lighting emphasizes the textures of brushed metal and glass, consistent with a stealth-tech aesthetic for high-level decision makers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr3_6SOOTHkfkAzk_2DjlbFx981vHwzgi4WA_gF1gxg-bk2mNP-b7eB7SIuctrZr2th7sYCCx6h9Odui-cf5QlqTlrXeJKzsgSwL7b93t2Ar-KwfuK3h3SUvwLydsjfmn-eEkw_FbtjO9P0_s15SrRsqN1uNQ-7vUU9z5L7d-5G4m9Sb8UIqim8O2tkHy7do-Jt2McSdDGuh2kGwTJ2XAaZ8WYGVdAbCi4Sv23uwH6p5YBxUrI87Dim4rGGqhBMK5kzyGnIyG3o_E"/>
+</div>
+</body></html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/tailwind-config.js"></script>
+<link href="assets/styles.css" rel="stylesheet"/>
+<script src="assets/site.js" defer></script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface-dim/80 backdrop-blur-2xl border-b border-outline-variant/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-6 h-20">
+<a href="index.html" class="font-headline-md text-headline-md text-primary tracking-tighter">WiseTrack Technologies</a>
+<div class="flex md:hidden">
+<span class="material-symbols-outlined text-primary scale-125">menu</span>
+</div>
+<div class="hidden md:flex gap-10">
+<a class="text-on-surface-variant font-label-sm tracking-widest uppercase hover:text-primary transition-colors duration-500" href="solutions.html">Solutions</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-sm tracking-widest uppercase" href="portfolio.html">Portfolio</a>
+<a class="text-on-surface-variant font-label-sm tracking-widest uppercase hover:text-primary transition-colors duration-500" href="methodology.html">Methodology</a>
+<a class="text-on-surface-variant font-label-sm tracking-widest uppercase hover:text-primary transition-colors duration-500" href="insights.html">Insights</a>
+</div>
+</div>
+</nav>
+<!-- Hero Content Canvas -->
+<main class="pt-32 pb-section-gap px-6 max-w-container-max mx-auto">
+<header class="mb-stack-lg">
+<div class="flex items-center gap-4 mb-stack-sm">
+<div class="h-px w-8 bg-primary"></div>
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-primary">Case Studies</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-stack-md leading-tight">Some of the harder things <br/><span class="italic font-normal text-on-surface-variant">we've shipped.</span></h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl leading-relaxed">Some are direct client work. Three were built through our long-running partnership with PValue Analytics, who handle the client relationships and bring us in for the engineering. One is a Ragenaizer rollout. The honest version of "case studies".</p>
+</header>
+<!-- Vertical Project Gallery -->
+<div class="space-y-12">
+<!-- Project 01 -->
+<article class="group relative">
+<div class="overflow-hidden rounded-lg aspect-[4/5] relative">
+<img alt="Strategic Operations" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, low-angle shot of a brutalist architecture meeting room with obsidian glass tables and brushed steel chairs. The lighting is moody and directional, casting long shadows across a dark grey textured floor. The aesthetic is ultra-modern, professional, and reflects a high-end executive tech environment with a monochrome silver and charcoal color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2I0QnS1ozynIUO443ZrOymtSVUvxhsT2YPGQjrsYzDLXxSFWROZTpdev_SPiwAyj3D5V04q9dscT1rlX5Y1EyyatUuM4p2ufrFclLgohJDNB6jwGVrR4-ei3o2f6zvB7WrGjCPlMTrwzzSqp8mucxkXxec9j0659DHuTc0V-WphXRAVR5bCZSdJ39NvTGGaNmF7nw4SkuV7dlCD_EiblkSMNXqnWL-dueOn5tehxv0kJqslfdsqevlLhgx4M8DeR70h8b73tgqT4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<!-- Glass Info Card Overlay -->
+<div class="absolute bottom-6 left-6 right-6 p-6 glass-card rounded-xl border border-outline-variant/20">
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase block mb-2">01 — Through PValue Analytics · QSR</span>
+<h2 class="font-headline-lg text-headline-md text-on-surface mb-4">Multi-Country Dashboard for Restaurant Brands International</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Built through our partnership with PValue Analytics for the parent of Burger King and Popeyes. Live sales, store-level numbers, country comparisons — pulled from systems that were never built to talk to each other.</p>
+<div class="flex items-center gap-2 text-primary font-label-sm uppercase tracking-widest">
+<span>Read the Story</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</div>
+</div>
+<div class="absolute inset-0 milled-texture pointer-events-none"></div>
+</div>
+</div>
+</article>
+<!-- Project 02 -->
+<article class="group relative">
+<div class="overflow-hidden rounded-lg aspect-[4/5] relative">
+<img alt="Security Architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up of a high-tech server room with glowing blue and white LEDs reflecting off polished obsidian surfaces. The atmosphere is quiet, dark, and sophisticated, emphasizing security and advanced computational power. Silver hairline borders and metallic accents are visible on the hardware, following the stealth-tech aesthetic of WiseTrack Technologies." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ks-Ilo_KFHkaSvox7y5Ned6tphgMi4DAAMpy3_sxrYFO-qbKNGlRHjrh8JgbhFf4s65RBAJEGHZXK_hmPe7X_5b0V-2w6pDOeDYqoKATh7WR8RU9Dfi6MsNz5_Wr7v766d3Uu-Mew1J-9oa9__x9XrMyGX4HSTP28vdDHnu-GiNBMDRZUT5-cVR4FJ_X50gFkGGrbaom2KivSVct33TU1wUA6nduSVd2A1dUyCg7owjTtu4v7zuFYUZi_x9_hPnznL-7iKR7ftg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6 right-6 p-6 glass-card rounded-xl border border-outline-variant/20">
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase block mb-2">02 — Through PValue Analytics · Mobile</span>
+<h2 class="font-headline-lg text-headline-md text-on-surface mb-4">Tech Operations Dashboard for Vivo Mobile</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Delivered via PValue Analytics. A single screen the Vivo tech team relies on every day. Internal system health, deployment status, performance numbers, all in one view.</p>
+<div class="flex items-center gap-2 text-primary font-label-sm uppercase tracking-widest">
+<span>Read the Story</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</div>
+</div>
+<div class="absolute inset-0 milled-texture pointer-events-none"></div>
+</div>
+</div>
+</article>
+<!-- Project 03 — Election Platform -->
+<article class="group relative">
+<div class="overflow-hidden rounded-lg aspect-[4/5] relative">
+<img alt="Election Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOdOVaIvJTKcO6iw3X9hVY1gSHsU7pQkz1GGKqytYaNMaiYaNRIGhmfWQeyIZkqNVlEVkrLvYsVLkIV2Ee4JJw2y-Lxy0w0HMwiUhjs0UG2FsYGGJ2SyU4pakDncUlhjnOYkTszH5W2vyajQh28xR9sGg_e5Vkhmlhj4LOCgTNKxX6lBxuA3cL8Pe0AxZrTRKlCsqQ6Q8aPiuUJ5OOHM3_CC69_V8buH0X4ijse9UJ743ed3gQZMKyqedVVRkRHnmGdYwieanP0uA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6 right-6 p-6 glass-card rounded-xl border border-outline-variant/20">
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase block mb-2">03 — Through PValue Analytics · Elections / Media</span>
+<h2 class="font-headline-lg text-headline-md text-on-surface mb-4">Election Vote Counting Platform</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A live counting platform built through PValue Analytics. Aggregates results in real time and distributes them to Hindustan Times, ABP News, Times Internet, and Google. The kind of system where "mostly works" is not an option.</p>
+<div class="flex items-center gap-2 text-primary font-label-sm uppercase tracking-widest">
+<span>Read the Story</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</div>
+</div>
+<div class="absolute inset-0 milled-texture pointer-events-none"></div>
+</div>
+</div>
+</article>
+<!-- Project 04 — Maldives Resort Management -->
+<article class="group relative">
+<div class="overflow-hidden rounded-lg aspect-[4/5] relative">
+<img alt="Resort management platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2I0QnS1ozynIUO443ZrOymtSVUvxhsT2YPGQjrsYzDLXxSFWROZTpdev_SPiwAyj3D5V04q9dscT1rlX5Y1EyyatUuM4p2ufrFclLgohJDNB6jwGVrR4-ei3o2f6zvB7WrGjCPlMTrwzzSqp8mucxkXxec9j0659DHuTc0V-WphXRAVR5bCZSdJ39NvTGGaNmF7nw4SkuV7dlCD_EiblkSMNXqnWL-dueOn5tehxv0kJqslfdsqevlLhgx4M8DeR70h8b73tgqT4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6 right-6 p-6 glass-card rounded-xl border border-outline-variant/20">
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase block mb-2">04 — Direct Client · Hospitality</span>
+<h2 class="font-headline-lg text-headline-md text-on-surface mb-4">Resort Management Platform — Maldives</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A direct-client project. One application that runs and maintains a group of resorts across the Maldives. Bookings, operations, staff, and the unglamorous bits of keeping a property running on a small island.</p>
+<div class="flex items-center gap-2 text-primary font-label-sm uppercase tracking-widest">
+<span>Read the Story</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</div>
+</div>
+<div class="absolute inset-0 milled-texture pointer-events-none"></div>
+</div>
+</div>
+</article>
+<!-- Project 05 — Ragenaizer -->
+<article class="group relative">
+<div class="overflow-hidden rounded-lg aspect-[4/5] relative">
+<img alt="Ragenaizer rollout" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB78uuS65YRVxnoQQ6u5zQIfhQqaWU_PmLOrEc0y0QwDK21Kg4ilwj0gCTiC0SdIzhtcnGT8Do8kpt7b0EyEWyToGGN9BtPM6Zd0G7q5ymyrjvpJVG0w5DcF6zm9TsAFid0VusMG6yUC6ap3Hg-MyPDfLVFx6QeQdMxrVBbhCMGJ8zZeUFbB_fEebqxVYW6IXEbACF8yINoIZdRyzy7ieHsGSwFzGlr2odRW5J6WIxJqajA6Wq695BuKVqaaDSGG-huSGDWaIgvvmg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6 right-6 p-6 glass-card rounded-xl border border-outline-variant/20">
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase block mb-2">05 — Ragenaizer · Business OS</span>
+<h2 class="font-headline-lg text-headline-md text-on-surface mb-4">200-Person Firm, One App</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">They were paying for seven different apps every month. Sales here, projects there, reports somewhere else. We moved them to Ragenaizer. Now everything is in one place.</p>
+<div class="flex items-center gap-2 text-primary font-label-sm uppercase tracking-widest">
+<span>Read the Story</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</div>
+</div>
+<div class="absolute inset-0 milled-texture pointer-events-none"></div>
+</div>
+</div>
+</article>
+</div>
+<!-- Contact CTA Section -->
+<section class="mt-section-gap py-16 px-8 rounded-xl bg-surface-container border border-outline-variant/10 text-center">
+<h3 class="font-display-lg text-headline-lg text-on-surface mb-stack-md">Got something in mind?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg max-w-lg mx-auto">Tell us what you want to build. We'll point you to the right team and come back with a price.</p>
+<a href="contact.html" class="bg-primary text-on-primary px-8 py-4 font-label-sm tracking-widest uppercase rounded-lg hover:shadow-[0_0_20px_rgba(220,220,223,0.3)] transition-all duration-300">
+        Get a Quote
+      </a>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="relative w-full bg-surface-container-lowest border-t border-outline-variant/5">
+<div class="flex flex-col gap-stack-lg max-w-container-max mx-auto px-6 py-20">
+<div class="font-headline-lg text-headline-lg text-primary mb-stack-md">WiseTrack</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant">Services</span>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">Web Development</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">Mobile &amp; PWA</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">Custom Dashboards</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant">Group Brands</span>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">HyperScripts</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">Ragenaizer</a>
+</div>
+<div class="flex flex-col gap-4 col-span-2 md:col-span-1">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant">Company</span>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="careers.html">Careers</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="contact.html">Contact</a>
+</div>
+</div>
+<div class="pt-10 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between gap-6">
+<p class="font-body-md text-on-surface-variant text-sm max-w-md">
+          © 2024 WiseTrack Technologies. Hard software, built selectively.
+        </p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant">share</span>
+<span class="material-symbols-outlined text-on-surface-variant">mail</span>
+<span class="material-symbols-outlined text-on-surface-variant">shield</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
