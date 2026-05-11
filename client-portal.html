@@ -1,138 +1,108 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Client portal — WiseTrack Technologies</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script src="assets/tailwind-config.js"></script>
-<link href="assets/styles.css" rel="stylesheet"/>
+<link href="assets/styles.css" rel="stylesheet" />
+<script>document.documentElement.classList.add("js")</script>
 <script src="assets/site.js" defer></script>
 </head>
-<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
-<!-- Top Navigation (Shell Implementation) -->
-<header class="fixed top-0 w-full z-50 bg-surface-dim/80 backdrop-blur-2xl border-b border-outline-variant/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]">
-<div class="flex justify-between items-center max-w-container-max mx-auto px-edge-margin h-24">
-<a href="index.html" class="font-headline-md text-headline-md text-primary tracking-tighter">WiseTrack Technologies</a>
-<div class="hidden md:flex gap-gutter items-center">
-<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-500" href="solutions.html">Solutions</a>
-<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-500" href="portfolio.html">Portfolio</a>
-<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-500" href="methodology.html">Methodology</a>
-<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-500" href="insights.html">Insights</a>
-<a href="contact.html" class="ml-stack-md px-stack-md py-stack-sm bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest transition-all duration-300 hover:opacity-90">
-                    Get a Quote
-                </a>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+<div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+
+<div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+    <div class="flex items-center gap-3"><span class="dot"></span><span>SECURE · TLS 1.3 · 256-BIT AES</span></div>
+    <div class="flex items-center gap-5"><span class="hidden md:inline">Bangalore · Gurugram</span><span data-clock>--:--:-- IST</span></div>
+  </div>
 </div>
-<div class="md:hidden">
-<span class="material-symbols-outlined text-primary text-3xl">menu</span>
-</div>
-</div>
+
+<header class="fixed top-9 left-0 right-0 z-[60] bg-bg/65 backdrop-blur-2xl border-b border-white/5">
+  <nav class="max-w-page mx-auto px-edge h-[68px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5"><span class="mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l3 8 3-5 3 5 3-8" stroke="url(#wmg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="wmg" x1="0" y1="0" x2="16" y2="16"><stop stop-color="#A78BFA"/><stop offset="0.5" stop-color="#818CF8"/><stop offset="1" stop-color="#67E8F9"/></linearGradient></defs></svg></span><span class="serif text-[22px] tracking-tight">wisetrack<span class="text-violet">.</span></span></a>
+    <div class="hidden md:flex items-center gap-9 text-[14px] text-muted">
+      <a href="solutions.html" class="hover:text-text transition-colors">Solutions</a>
+      <a href="portfolio.html" class="hover:text-text transition-colors">Work</a>
+      <a href="methodology.html" class="hover:text-text transition-colors">Method</a>
+      <a href="insights.html" class="hover:text-text transition-colors">Journal</a>
+      <a href="careers.html" class="hover:text-text transition-colors">Careers</a>
+    </div>
+    <a href="contact.html" class="hidden sm:inline-flex magnetic btn-primary text-sm">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </nav>
 </header>
-<main class="relative min-h-screen flex items-center justify-center pt-24 px-6 overflow-hidden">
-<!-- Background Ambient Lighting -->
-<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full"></div>
-<div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-primary/5 blur-[100px] rounded-full"></div>
-<div class="relative z-10 w-full max-w-md">
-<!-- Brand Mark -->
-<div class="flex flex-col items-center mb-stack-lg">
-<div class="w-16 h-16 bg-gradient-to-br from-primary to-surface-variant p-[1px] mb-stack-md">
-<div class="w-full h-full bg-surface-container-lowest flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shield_person</span>
-</div>
-</div>
-<h1 class="font-headline-lg text-headline-lg text-primary text-center">Client Portal</h1>
-<p class="font-label-sm text-label-sm text-on-surface-variant mt-2 tracking-[0.2em] uppercase">Sign in to your project workspace</p>
-</div>
-<!-- Login Module -->
-<div class="glass-panel silver-glow p-8 md:p-12 relative overflow-hidden">
-<div class="milled-surface absolute inset-0"></div>
-<form class="space-y-stack-md relative z-10">
-<div class="space-y-stack-sm">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" for="executive-id">Email or Client ID</label>
-<div class="relative group">
-<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 py-4 focus:ring-0 focus:border-primary transition-all duration-500 font-body-md" id="executive-id" placeholder="you@company.com" type="text"/>
-<span class="absolute right-0 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/30 group-focus-within:text-primary transition-colors">fingerprint</span>
-</div>
-</div>
-<div class="space-y-stack-sm">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" for="passcode">Password</label>
-<div class="relative group">
-<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 py-4 focus:ring-0 focus:border-primary transition-all duration-500 font-body-md" id="passcode" placeholder="••••••••••••" type="password"/>
-<span class="absolute right-0 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/30 group-focus-within:text-primary transition-colors">key</span>
-</div>
-</div>
-<div class="flex items-center justify-between pt-stack-sm">
-<label class="flex items-center gap-2 cursor-pointer group">
-<input class="w-4 h-4 bg-surface-container-lowest border-outline-variant rounded-none text-primary focus:ring-offset-background focus:ring-primary" type="checkbox"/>
-<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">Stay signed in</span>
-</label>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Forgot password</a>
-</div>
-<button class="w-full mt-stack-md py-6 bg-gradient-to-r from-primary to-secondary text-on-primary font-label-sm text-label-sm uppercase tracking-[0.2em] transition-all duration-500 hover:brightness-110 active:scale-[0.98] relative overflow-hidden group">
-<span class="relative z-10">Sign In</span>
-<div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
-</button>
-</form>
-<div class="mt-stack-lg pt-stack-md border-t border-outline-variant/10 flex items-center justify-center gap-4">
-<span class="material-symbols-outlined text-primary/40 text-sm">lock_open</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant/40 uppercase tracking-widest">256-bit AES Encryption</span>
-</div>
-</div>
-<!-- Supporting Visual -->
-<div class="mt-stack-lg hidden md:block">
-<div class="h-[2px] w-full bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div>
-<div class="mt-6 flex justify-between px-2">
-<div class="flex flex-col">
-<span class="font-label-sm text-[10px] text-on-surface-variant/30 uppercase tracking-[0.3em]">Network Status</span>
-<span class="font-body-md text-xs text-primary/60">Secure Node: London-04</span>
-</div>
-<div class="flex flex-col text-right">
-<span class="font-label-sm text-[10px] text-on-surface-variant/30 uppercase tracking-[0.3em]">Latency</span>
-<span class="font-body-md text-xs text-primary/60">12ms - Verified</span>
-</div>
-</div>
-</div>
-</div>
+
+<main class="relative min-h-[calc(100dvh-108px)] mt-[108px] grid place-items-center px-edge py-16 overflow-hidden">
+
+  <!-- background atmosphere -->
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.45"></div>
+    <div class="aurora animate-drift" style="bottom:-30%; right:-10%; opacity:.35; animation-delay:-7s"></div>
+    <div class="absolute inset-0 bp-grid"></div>
+    <div class="grain"></div>
+  </div>
+
+  <div class="relative w-full max-w-md reveal">
+    <div class="flex flex-col items-center text-center mb-8">
+      <span class="relative inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet via-indigo to-cyan shadow-glow">
+        <span class="absolute inset-[1.5px] rounded-[14px] bg-bg grid place-items-center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 11V8a7 7 0 0114 0v3M5 11h14a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7a2 2 0 012-2z" stroke="url(#lockg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lockg" x1="0" x2="24" y1="0" y2="24"><stop stop-color="#A78BFA"/><stop offset="0.5" stop-color="#818CF8"/><stop offset="1" stop-color="#67E8F9"/></linearGradient></defs></svg>
+        </span>
+      </span>
+      <h1 class="serif text-4xl mt-5">Client portal</h1>
+      <p class="mono text-[11px] tracking-widest text-muted mt-2">SIGN IN TO YOUR PROJECT WORKSPACE</p>
+    </div>
+
+    <div class="relative hud hud-cyan glass rounded-2xl p-7 md:p-10 overflow-hidden">
+      <div class="absolute top-3 left-5 mono text-[9px] tracking-widest text-muted">FILE&nbsp;·&nbsp;auth/login</div>
+      <div class="absolute top-3 right-5 mono text-[9px] tracking-widest text-lime flex items-center gap-1.5"><span class="h-1 w-1 rounded-full bg-lime"></span>SECURE</div>
+      <div class="absolute bottom-3 left-5 mono text-[9px] tracking-widest text-muted">TLS&nbsp;1.3</div>
+      <div class="absolute bottom-3 right-5 mono text-[9px] tracking-widest text-muted">REV&nbsp;2026.05</div>
+      <form class="flex flex-col gap-5 relative mt-4 mb-4">
+        <div>
+          <label class="mono text-[10px] tracking-widest text-muted">EMAIL OR CLIENT ID</label>
+          <input type="text" class="field mt-2" placeholder="you@company.com"/>
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <label class="mono text-[10px] tracking-widest text-muted">PASSWORD</label>
+            <a href="#" class="mono text-[10px] tracking-widest text-violet">FORGOT?</a>
+          </div>
+          <input type="password" class="field mt-2" placeholder="••••••••••••"/>
+        </div>
+        <label class="flex items-center gap-2 text-sm text-text-2 mt-1">
+          <input type="checkbox" class="rounded border-white/15 bg-white/[0.02]"/>
+          <span>Stay signed in on this device</span>
+        </label>
+        <button class="btn-primary magnetic mt-2" type="submit">Sign in <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+        <div class="hairline-soft mt-3"></div>
+        <div class="flex items-center justify-between text-xs text-muted">
+          <span class="mono">SECURE NODE · BLR-02</span>
+          <span class="mono">LATENCY · 14ms</span>
+        </div>
+      </form>
+    </div>
+
+    <p class="mt-6 text-center text-sm text-muted">
+      Not a client yet? <a href="contact.html" class="text-text underline underline-offset-4 decoration-violet">Tell us about your project →</a>
+    </p>
+  </div>
+
 </main>
-<!-- Footer Implementation -->
-<footer class="relative w-full bg-surface-container-lowest border-t border-outline-variant/5">
-<div class="flex flex-col gap-stack-lg max-w-container-max mx-auto px-edge-margin py-section-gap">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stack-lg">
-<div class="lg:col-span-2">
-<div class="font-headline-lg text-headline-lg text-primary mb-stack-md">WiseTrack</div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-                        Software company with two brands. HyperScripts builds custom software for clients. Ragenaizer is our own product, a single tool to run a business on.
-                    </p>
-</div>
-<div class="flex flex-col gap-stack-sm">
-<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-2">Architecture</span>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Strategic Advisory</a>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Global Operations</a>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Security Architecture</a>
-</div>
-<div class="flex flex-col gap-stack-sm">
-<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-2">Protocol</span>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Privacy Protocol</a>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="careers.html">Careers</a>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Legal Notice</a>
-</div>
-</div>
-<div class="pt-stack-md border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-body-md text-sm text-on-surface-variant/60">
-                    © 2024 WiseTrack Technologies. Hard software, built selectively.
-                </p>
-<div class="flex gap-6">
-<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors cursor-pointer">monitoring</span>
-<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors cursor-pointer">public</span>
-<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors cursor-pointer">shield_locked</span>
-</div>
-</div>
-</div>
+
+<footer class="relative border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge py-8 flex flex-col md:flex-row gap-4 justify-between items-center text-muted text-sm">
+    <p class="mono text-[11px] tracking-widest">© 2026 WISETRACK TECHNOLOGIES</p>
+    <div class="flex gap-6"><a href="#" class="hover:text-text">Privacy</a><a href="#" class="hover:text-text">Terms</a><a href="contact.html" class="hover:text-text">Contact</a></div>
+  </div>
 </footer>
-<!-- Imagery Integration for Narrative Context -->
-<div class="fixed inset-0 z-[-1] opacity-20">
-<img class="w-full h-full object-cover grayscale" data-alt="A high-end, minimalist executive office at night, overlooking a futuristic city skyline with glowing silver lights. The room features dark obsidian furniture and polished steel accents, creating a mood of absolute professional calm and technological sophistication. Cinematic lighting emphasizes the textures of brushed metal and glass, consistent with a stealth-tech aesthetic for high-level decision makers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr3_6SOOTHkfkAzk_2DjlbFx981vHwzgi4WA_gF1gxg-bk2mNP-b7eB7SIuctrZr2th7sYCCx6h9Odui-cf5QlqTlrXeJKzsgSwL7b93t2Ar-KwfuK3h3SUvwLydsjfmn-eEkw_FbtjO9P0_s15SrRsqN1uNQ-7vUU9z5L7d-5G4m9Sb8UIqim8O2tkHy7do-Jt2McSdDGuh2kGwTJ2XAaZ8WYGVdAbCi4Sv23uwH6p5YBxUrI87Dim4rGGqhBMK5kzyGnIyG3o_E"/>
-</div>
-</body></html>
+
+</body>
+</html>

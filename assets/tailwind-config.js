@@ -1,88 +1,93 @@
+/* WiseTrack — Aurora Engineering tokens (technical/futuristic).
+   Deep midnight base, electric violet + cyan + indigo + acid lime. */
 tailwind.config = {
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        "tertiary-fixed-dim": "#c8c6c7",
-        "on-tertiary-fixed": "#1c1b1c",
-        "inverse-primary": "#5d5e61",
-        "outline-variant": "#45474a",
-        "surface-dim": "#121317",
-        "surface-tint": "#c6c6c9",
-        "surface-container-lowest": "#0d0e12",
-        "secondary": "#c8c6c7",
-        "on-primary-fixed-variant": "#454749",
-        "on-secondary-container": "#bab8b9",
-        "inverse-surface": "#e3e2e7",
-        "on-primary": "#2f3033",
-        "on-tertiary-fixed-variant": "#474647",
-        "surface-bright": "#38393d",
-        "on-secondary-fixed-variant": "#474647",
-        "surface-container-high": "#292a2e",
-        "error-container": "#93000a",
-        "on-secondary": "#303031",
-        "surface-container-highest": "#343539",
-        "inverse-on-surface": "#2f3034",
-        "background": "#121317",
-        "tertiary-fixed": "#e5e2e3",
-        "primary-fixed-dim": "#c6c6c9",
-        "secondary-container": "#49494a",
-        "tertiary": "#dfdcdd",
-        "surface": "#121317",
-        "surface-container-low": "#1a1b1f",
-        "primary-fixed": "#e2e2e5",
-        "surface-container": "#1e1f23",
-        "primary-container": "#c0c0c3",
-        "on-error": "#690005",
-        "outline": "#8f9194",
-        "on-tertiary-container": "#4f4e4f",
-        "on-tertiary": "#313031",
-        "secondary-fixed-dim": "#c8c6c7",
-        "secondary-fixed": "#e5e2e3",
-        "error": "#ffb4ab",
-        "tertiary-container": "#c3c0c1",
-        "primary": "#dcdcdf",
-        "on-secondary-fixed": "#1b1b1c",
-        "on-error-container": "#ffdad6",
-        "on-primary-container": "#4d4e51",
-        "surface-variant": "#343539",
-        "on-primary-fixed": "#1a1c1e",
-        "on-background": "#e3e2e7",
-        "on-surface-variant": "#c5c6ca",
-        "on-surface": "#e3e2e7"
-      },
-      borderRadius: {
-        "DEFAULT": "0.125rem",
-        "lg": "0.25rem",
-        "xl": "0.5rem",
-        "full": "0.75rem"
-      },
-      spacing: {
-        "stack-md": "1.5rem",
-        "edge-margin": "4rem",
-        "container-max": "1440px",
-        "stack-sm": "0.5rem",
-        "stack-lg": "3rem",
-        "section-gap": "8rem",
-        "gutter": "1.5rem"
+        bg: "#07070C",
+        "bg-2": "#0A0A12",
+        surface: "#0E0F18",
+        "surface-2": "#15161F",
+        "surface-3": "#1B1D29",
+        line: "#23253A",
+        "line-2": "#2F3247",
+        text: "#EDEAF7",
+        "text-2": "#C6C2D8",
+        muted: "#9692B0",
+        dim: "#5E5A77",
+        // Primary accent system
+        violet: "#7C3AED",
+        "violet-2": "#A78BFA",
+        indigo: "#6366F1",
+        sky: "#38BDF8",
+        cyan: "#22D3EE",
+        lime: "#BEF264",
+        mint: "#34D399",
+        steel: "#94A3B8",
+        // legacy aliases (kept so previously-used utility classes still resolve)
+        fuchsia: "#6366F1",
+        pink: "#38BDF8",
+        ember: "#94A3B8"
       },
       fontFamily: {
-        "headline-md": ["Plus Jakarta Sans"],
-        "display-lg": ["Libre Caslon Text"],
-        "body-md": ["Plus Jakarta Sans"],
-        "headline-lg": ["Libre Caslon Text"],
-        "body-lg": ["Plus Jakarta Sans"],
-        "label-sm": ["Plus Jakarta Sans"],
-        "headline-lg-mobile": ["Libre Caslon Text"]
+        display: ['"Fraunces"', "ui-serif", "Georgia", "serif"],
+        sans: ['"Inter Tight"', "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ['"JetBrains Mono"', "ui-monospace", "monospace"]
       },
-      fontSize: {
-        "headline-md": ["28px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
-        "display-lg": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400" }],
-        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
-        "headline-lg": ["40px", { lineHeight: "1.2", fontWeight: "400" }],
-        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
-        "label-sm": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
-        "headline-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "400" }]
+      letterSpacing: {
+        ticker: "0.28em",
+        slug: "0.22em",
+        wider2: "0.18em"
+      },
+      maxWidth: { page: "1440px", prose: "62ch" },
+      spacing: {
+        edge: "clamp(1.25rem, 4vw, 4.5rem)",
+        gutter: "clamp(1rem, 2vw, 1.75rem)"
+      },
+      boxShadow: {
+        glow: "0 0 60px -10px rgba(124,58,237,0.45), 0 0 100px -20px rgba(34,211,238,0.25)",
+        "glow-sm": "0 0 24px -4px rgba(124,58,237,0.4)",
+        card: "0 1px 0 0 rgba(255,255,255,0.04), 0 24px 60px -30px rgba(0,0,0,0.6)",
+        inset: "inset 0 1px 0 0 rgba(255,255,255,0.06)"
+      },
+      backgroundImage: {
+        "grid-dots":
+          "radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)",
+        aurora:
+          "conic-gradient(from 180deg at 50% 50%, #7C3AED 0deg, #6366F1 90deg, #22D3EE 200deg, #38BDF8 300deg, #7C3AED 360deg)"
+      },
+      keyframes: {
+        rise: {
+          "0%": { opacity: 0, transform: "translateY(18px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" }
+        },
+        slide: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }
+        },
+        blink: {
+          "0%,49%": { opacity: 1 },
+          "50%,100%": { opacity: 0.25 }
+        },
+        drift: {
+          "0%,100%": { transform: "translate3d(0,0,0) scale(1)" },
+          "33%": { transform: "translate3d(4%,-6%,0) scale(1.05)" },
+          "66%": { transform: "translate3d(-3%,4%,0) scale(0.97)" }
+        },
+        spin: { to: { transform: "rotate(360deg)" } },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" }
+        }
+      },
+      animation: {
+        rise: "rise 800ms cubic-bezier(0.2,0.7,0.2,1) both",
+        ticker: "slide 48s linear infinite",
+        blink: "blink 1.4s steps(1) infinite",
+        drift: "drift 22s ease-in-out infinite",
+        "spin-slow": "spin 28s linear infinite",
+        shimmer: "shimmer 3.2s linear infinite"
       }
     }
   }

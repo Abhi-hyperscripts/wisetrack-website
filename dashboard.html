@@ -1,213 +1,300 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ragenaizer · Live demo — WiseTrack Technologies</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Libre+Caslon+Text:wght@400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script src="assets/tailwind-config.js"></script>
-<link href="assets/styles.css" rel="stylesheet"/>
+<link href="assets/styles.css" rel="stylesheet" />
+<script>document.documentElement.classList.add("js")</script>
 <script src="assets/site.js" defer></script>
 </head>
-<body class="bg-surface-container-lowest text-on-surface selection:bg-primary selection:text-on-primary">
-<!-- Top Navigation -->
-<nav class="fixed top-0 w-full z-50 bg-surface-dim/80 backdrop-blur-2xl border-b border-outline-variant/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]">
-<div class="flex justify-between items-center max-w-container-max mx-auto px-6 h-20">
-<a href="index.html" class="font-headline-md text-headline-md text-primary tracking-tighter">WiseTrack</a>
-<div class="flex items-center gap-4">
-<button class="w-10 h-10 flex items-center justify-center glass-panel rounded-full">
-<span class="material-symbols-outlined text-primary">notifications</span>
-</button>
-<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-secondary to-primary-container p-[1px]">
-<div class="w-full h-full rounded-full bg-surface-dim flex items-center justify-center overflow-hidden">
-<img alt="Executive Profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a high-level corporate executive with a neutral expression. The lighting is dramatic and moody, with high contrast between deep shadows and soft metallic silver highlights on the skin. The setting is a minimalist, dark tech-infused office space with blurred obsidian glass elements in the background, maintaining a luxury executive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3qeQhONVF4YaESejLRHT5jRjDSQHRygKeEkt0A_7WNXhSV4yohPqGB6bNULauBgUEl56cRbMpU2zIwj-ykRigsiA8jWqOYheI_taL32kmJ_rbVtC3VtPgjv9cz9SqNJWR4K9oxEEd5NYaeDf9fCHE2uleAAp2CAhflGXNhQ5-0BdvIEw_OV41e7-wBnFVhZmo0eT8PsdS3yu2v9boDoIgIJ_IgVV5UdmZ7T-mkXUffw6MBwCcBPbQLLCX4fUU9XrmbiBCMoEf7BI"/>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+<div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+
+<div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+    <div class="flex items-center gap-3"><span class="dot"></span><span>LIVE DEMO · RAGENAIZER · BUSINESS OS</span></div>
+    <div class="flex items-center gap-5"><span class="hidden md:inline">Bangalore · Gurugram</span><span data-clock>--:--:-- IST</span></div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</nav>
-<!-- Main Content Area -->
-<main class="pt-24 pb-32 px-6 flex flex-col gap-6 max-w-md mx-auto">
-<!-- Header & Greetings -->
-<header class="py-4">
-<p class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant mb-2">Live Demo · Ragenaizer</p>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Business OS Overview</h1>
+
+<header class="fixed top-9 left-0 right-0 z-[60] bg-bg/65 backdrop-blur-2xl border-b border-white/5">
+  <nav class="max-w-page mx-auto px-edge h-[68px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5"><span class="mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l3 8 3-5 3 5 3-8" stroke="url(#wmg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="wmg" x1="0" y1="0" x2="16" y2="16"><stop stop-color="#A78BFA"/><stop offset="0.5" stop-color="#818CF8"/><stop offset="1" stop-color="#67E8F9"/></linearGradient></defs></svg></span><span class="serif text-[22px] tracking-tight">wisetrack<span class="text-violet">.</span></span></a>
+    <div class="hidden md:flex items-center gap-9 text-[14px] text-muted">
+      <a href="solutions.html" class="hover:text-text transition-colors">Solutions</a>
+      <a href="portfolio.html" class="hover:text-text transition-colors">Work</a>
+      <a href="methodology.html" class="hover:text-text transition-colors">Method</a>
+      <a href="insights.html" class="hover:text-text transition-colors">Journal</a>
+      <a href="careers.html" class="hover:text-text transition-colors">Careers</a>
+    </div>
+    <a href="contact.html" class="hidden sm:inline-flex magnetic btn-primary text-sm">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </nav>
 </header>
-<!-- Primary KPI Carousel (Simulated Mobile Stack) -->
-<section class="flex flex-col gap-4">
-<!-- Metric Card 1 -->
-<div class="glass-panel p-6 rounded-xl relative overflow-hidden silver-glow">
-<div class="milled-texture absolute inset-0"></div>
-<div class="flex justify-between items-start mb-4">
-<span class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant">Global Revenue</span>
-<span class="material-symbols-outlined text-primary">trending_up</span>
-</div>
-<div class="flex items-baseline gap-2">
-<h2 class="font-headline-md text-headline-md text-primary">$4.2M</h2>
-<span class="text-xs text-secondary">+12.4%</span>
-</div>
-<div class="mt-4 h-1 w-full bg-surface-variant rounded-full overflow-hidden">
-<div class="h-full bg-primary-container w-3/4"></div>
-</div>
-</div>
-<!-- Metric Card 2 -->
-<div class="glass-panel p-6 rounded-xl relative overflow-hidden">
-<div class="milled-texture absolute inset-0"></div>
-<div class="flex justify-between items-start mb-4">
-<span class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant">Active Operations</span>
-<span class="material-symbols-outlined text-primary">hub</span>
-</div>
-<div class="flex items-baseline gap-2">
-<h2 class="font-headline-md text-headline-md text-primary">128</h2>
-<span class="text-xs text-primary-container">Optimal</span>
-</div>
-<div class="mt-4 flex gap-1">
-<div class="h-8 w-full bg-primary/20 rounded-sm"></div>
-<div class="h-8 w-full bg-primary/40 rounded-sm"></div>
-<div class="h-8 w-full bg-primary/30 rounded-sm"></div>
-<div class="h-8 w-full bg-primary/60 rounded-sm"></div>
-<div class="h-8 w-full bg-primary/50 rounded-sm"></div>
-</div>
-</div>
-</section>
-<!-- Main Chart Widget -->
-<section class="glass-panel p-6 rounded-xl relative overflow-hidden">
-<div class="milled-texture absolute inset-0"></div>
-<div class="flex justify-between items-center mb-6">
-<h3 class="font-label-sm text-label-sm tracking-widest uppercase text-primary">Performance Telemetry</h3>
-<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
-</div>
-<div class="aspect-[4/3] w-full flex items-end justify-between gap-2 relative">
-<!-- HUD Chart Simulation -->
-<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
-<div class="border-t border-outline-variant/30 w-full h-0"></div>
-<div class="border-t border-outline-variant/30 w-full h-0"></div>
-<div class="border-t border-outline-variant/30 w-full h-0"></div>
-</div>
-<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[60%] rounded-t-sm"></div>
-<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[85%] rounded-t-sm"></div>
-<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[70%] rounded-t-sm"></div>
-<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[95%] rounded-t-sm"></div>
-<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[55%] rounded-t-sm"></div>
-<div class="w-full bg-gradient-to-t from-primary/40 to-primary-container/80 h-[40%] rounded-t-sm"></div>
-</div>
-<div class="flex justify-between mt-4">
-<span class="font-label-sm text-[10px] text-on-surface-variant">MON</span>
-<span class="font-label-sm text-[10px] text-on-surface-variant">TUE</span>
-<span class="font-label-sm text-[10px] text-on-surface-variant">WED</span>
-<span class="font-label-sm text-[10px] text-on-surface-variant">THU</span>
-<span class="font-label-sm text-[10px] text-on-surface-variant">FRI</span>
-<span class="font-label-sm text-[10px] text-on-surface-variant">SAT</span>
-</div>
-</section>
-<!-- Operation Status List -->
-<section class="flex flex-col gap-4">
-<h3 class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant ml-1">Operational Nodes</h3>
-<div class="flex items-center gap-4 p-4 glass-panel rounded-lg">
-<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-lg border border-outline-variant/20">
-<span class="material-symbols-outlined text-primary">cloud_done</span>
-</div>
-<div class="flex-1">
-<p class="font-label-sm text-on-surface uppercase text-[10px]">Node: LX-400</p>
-<p class="font-body-md text-sm text-on-surface-variant">Frankfurt Data Core</p>
-</div>
-<div class="text-right">
-<p class="text-[10px] font-bold text-secondary">ACTIVE</p>
-<p class="text-[10px] text-on-surface-variant">24ms</p>
-</div>
-</div>
-<div class="flex items-center gap-4 p-4 glass-panel rounded-lg">
-<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-lg border border-outline-variant/20">
-<span class="material-symbols-outlined text-primary">security</span>
-</div>
-<div class="flex-1">
-<p class="font-label-sm text-on-surface uppercase text-[10px]">Node: SY-912</p>
-<p class="font-body-md text-sm text-on-surface-variant">Tokyo Vault Access</p>
-</div>
-<div class="text-right">
-<p class="text-[10px] font-bold text-secondary">ACTIVE</p>
-<p class="text-[10px] text-on-surface-variant">18ms</p>
-</div>
-</div>
-<div class="flex items-center gap-4 p-4 glass-panel rounded-lg border-l-2 border-error/50">
-<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-lg border border-outline-variant/20">
-<span class="material-symbols-outlined text-error">warning</span>
-</div>
-<div class="flex-1">
-<p class="font-label-sm text-on-surface uppercase text-[10px]">Node: NY-105</p>
-<p class="font-body-md text-sm text-on-surface-variant">Manhattan Sync</p>
-</div>
-<div class="text-right">
-<p class="text-[10px] font-bold text-error">LATENCY</p>
-<p class="text-[10px] text-on-surface-variant">420ms</p>
-</div>
-</div>
-</section>
-<!-- Featured Visualization -->
-<section class="glass-panel rounded-xl overflow-hidden mt-4">
-<div class="h-48 relative">
-<img alt="Global Data Network" class="w-full h-full object-cover grayscale brightness-50" data-alt="A cinematic, low-angle shot of a glowing blue and silver digital globe representing a global data network. The image is rendered in a high-performance tech aesthetic with sharp, precise lines and a dark obsidian background. Intricate fiber-optic paths glow with a subtle silver light, connecting major metropolitan hubs across the continents. The overall mood is sophisticated, authoritative, and technologically advanced, fitting for an executive dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr9IE-YOTUbwwlYZezlCdMZDQssZPoqb6fa7zrGl8owyiVP2ZM4r9pZTj9MTCR7snq2CCKhQu6rNIWWo_bQr1Ki9HnwS9GvZQdyVrsZJwCpN1e0XPDbpbViihb9iI2-m47Tye9SEEjtupPpFlACaS0eVLVbmFfQjQamtJeuu-wfRMkWYbvroavQDQ7NIvzGD7kHJVe1nx01cdEeupX75QlfX_9Af0fld3FIy5ZOHcmOTvy-Nu-6crAsPseOWG1GI8AcTS9pHniokk"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent"></div>
-<div class="absolute bottom-4 left-6">
-<h4 class="font-headline-md text-primary text-xl">Global Footprint</h4>
-<p class="text-xs text-on-surface-variant">Real-time signal map</p>
-</div>
-</div>
-<div class="p-6">
-<button class="w-full bg-gradient-to-r from-secondary to-primary-container text-on-primary py-4 rounded font-label-sm uppercase tracking-widest silver-glow">
-                    Expand Telemetry
-                </button>
-</div>
-</section>
+
+<main class="relative pt-[120px] pb-32 px-edge">
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="aurora animate-drift" style="top:-30%; right:-15%; opacity:.4"></div>
+    <div class="absolute inset-0 bp-grid"></div>
+    <div class="grain"></div>
+  </div>
+
+  <div class="max-w-page mx-auto relative">
+    <div class="relative hud hud-cyan p-6 md:p-10 lg:p-12 border border-white/8 rounded-2xl bg-white/[0.015] mb-10">
+      <div class="absolute top-3 left-6 mono text-[10px] tracking-widest text-muted">FILE&nbsp;·&nbsp;wisetrack.in/ragenaizer/demo</div>
+      <div class="absolute top-3 right-6 mono text-[10px] tracking-widest text-lime flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime"></span>LIVE&nbsp;·&nbsp;READ-ONLY</div>
+      <div class="absolute bottom-3 left-6 mono text-[10px] tracking-widest text-muted">RAGENAIZER&nbsp;·&nbsp;.NET&nbsp;8</div>
+      <div class="absolute bottom-3 right-6 mono text-[10px] tracking-widest text-muted">REV&nbsp;2026.05</div>
+    <!-- Page header -->
+    <div class="grid grid-cols-12 gap-gutter items-end mt-6">
+      <div class="col-span-12 md:col-span-8 reveal">
+        <span class="slug">§ Ragenaizer / Live demo · read-only</span>
+        <h1 class="serif text-[clamp(2.2rem,5vw,4.6rem)] leading-[1] tracking-tight mt-3">
+          Business OS <span class="serif-italic text-gradient-cool">overview.</span>
+        </h1>
+      </div>
+      <div class="col-span-12 md:col-span-4 md:text-right reveal" data-delay="100">
+        <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm">
+          <span class="dot"></span><span class="text-text">All systems · live</span>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- KPI row -->
+    <div class="grid grid-cols-12 gap-4 mb-5">
+      <div class="reveal glass rounded-3xl p-6 col-span-12 sm:col-span-6 lg:col-span-3">
+        <div class="mono text-[10px] tracking-widest text-muted">REVENUE · MTD</div>
+        <div class="serif text-4xl mt-3">₹<span data-count="4.2" data-suffix=" Cr" data-dur="1500">0</span></div>
+        <div class="mt-2 text-mint text-xs mono">▲ 12.4% MoM</div>
+      </div>
+      <div class="reveal glass rounded-3xl p-6 col-span-12 sm:col-span-6 lg:col-span-3" data-delay="80">
+        <div class="mono text-[10px] tracking-widest text-muted">ACTIVE PROJECTS</div>
+        <div class="serif text-4xl mt-3"><span data-count="128" data-suffix="" data-dur="1500">0</span></div>
+        <div class="mt-2 text-cyan text-xs mono">14 critical</div>
+      </div>
+      <div class="reveal glass rounded-3xl p-6 col-span-12 sm:col-span-6 lg:col-span-3" data-delay="160">
+        <div class="mono text-[10px] tracking-widest text-muted">DEAL VELOCITY</div>
+        <div class="serif text-4xl mt-3"><span data-count="38" data-suffix="d" data-dur="1500">0</span></div>
+        <div class="mt-2 text-violet text-xs mono">avg close cycle</div>
+      </div>
+      <div class="reveal glass rounded-3xl p-6 col-span-12 sm:col-span-6 lg:col-span-3" data-delay="240">
+        <div class="mono text-[10px] tracking-widest text-muted">TEAM UTILISATION</div>
+        <div class="serif text-4xl mt-3"><span data-count="87" data-suffix="%" data-dur="1500">0</span></div>
+        <div class="mt-2 text-lime text-xs mono">healthy</div>
+      </div>
+    </div>
+
+    <!-- Main grid -->
+    <div class="grid grid-cols-12 gap-4">
+      <!-- Telemetry -->
+      <div class="reveal glass rounded-3xl p-6 col-span-12 lg:col-span-8">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <div class="mono text-[10px] tracking-widest text-muted">PERFORMANCE TELEMETRY</div>
+            <h3 class="serif text-2xl mt-1 leading-tight">Revenue · last 14 days</h3>
+          </div>
+          <div class="flex gap-2">
+            <span class="tag tag-violet">Sales</span>
+            <span class="tag tag-cyan">Ops</span>
+            <span class="tag">Support</span>
+          </div>
+        </div>
+        <svg viewBox="0 0 800 240" class="w-full h-56">
+          <defs>
+            <linearGradient id="grd1" x1="0" x2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#6366F1"/></linearGradient>
+            <linearGradient id="grd1f" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8B5CF6" stop-opacity="0.45"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></linearGradient>
+            <linearGradient id="grd2" x1="0" x2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+          </defs>
+          <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+            <line x1="0" y1="40" x2="800" y2="40"/>
+            <line x1="0" y1="100" x2="800" y2="100"/>
+            <line x1="0" y1="160" x2="800" y2="160"/>
+            <line x1="0" y1="220" x2="800" y2="220"/>
+          </g>
+          <path d="M0 180 L60 165 L120 140 L180 150 L240 100 L300 110 L360 75 L420 90 L480 55 L540 70 L600 40 L660 60 L720 35 L800 20" fill="none" stroke="url(#grd1)" stroke-width="2"/>
+          <path d="M0 180 L60 165 L120 140 L180 150 L240 100 L300 110 L360 75 L420 90 L480 55 L540 70 L600 40 L660 60 L720 35 L800 20 L800 240 L0 240 Z" fill="url(#grd1f)"/>
+          <path d="M0 200 L60 190 L120 175 L180 180 L240 150 L300 155 L360 130 L420 140 L480 110 L540 120 L600 95 L660 100 L720 80 L800 70" fill="none" stroke="url(#grd2)" stroke-width="1.8" stroke-dasharray="4 4"/>
+          <g font-family="JetBrains Mono" font-size="10" fill="#9B98B0">
+            <text x="0" y="35">₹6Cr</text>
+            <text x="0" y="155">₹3Cr</text>
+            <text x="0" y="225">₹0</text>
+            <text x="760" y="237">D-0</text>
+            <text x="0" y="237">D-14</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Project board -->
+      <div class="reveal glass rounded-3xl p-6 col-span-12 lg:col-span-4" data-delay="100">
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <div class="mono text-[10px] tracking-widest text-muted">BOARD</div>
+            <h3 class="serif text-2xl mt-1 leading-tight">This week</h3>
+          </div>
+          <span class="mono text-[10px] text-mint flex items-center gap-1.5"><span class="dot scale-75"></span>LIVE</span>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="rounded-xl p-3 bg-white/[0.03] border border-white/5 flex items-center gap-3">
+            <span class="h-2 w-2 rounded-full bg-violet"></span>
+            <div class="flex-1">
+              <div class="text-sm">Resort module · v2.1</div>
+              <div class="mono text-[10px] text-muted">Maldives · in progress</div>
+            </div>
+            <span class="mono text-[10px] text-muted">62%</span>
+          </div>
+          <div class="rounded-xl p-3 bg-white/[0.03] border border-white/5 flex items-center gap-3">
+            <span class="h-2 w-2 rounded-full bg-cyan"></span>
+            <div class="flex-1">
+              <div class="text-sm">RBI dashboards · region split</div>
+              <div class="mono text-[10px] text-muted">via PValue · review</div>
+            </div>
+            <span class="mono text-[10px] text-muted">88%</span>
+          </div>
+          <div class="rounded-xl p-3 bg-white/[0.03] border border-white/5 flex items-center gap-3">
+            <span class="h-2 w-2 rounded-full bg-sky"></span>
+            <div class="flex-1">
+              <div class="text-sm">Zoho · finance ops migration</div>
+              <div class="mono text-[10px] text-muted">discovery</div>
+            </div>
+            <span class="mono text-[10px] text-muted">22%</span>
+          </div>
+          <div class="rounded-xl p-3 bg-white/[0.03] border border-white/5 flex items-center gap-3">
+            <span class="h-2 w-2 rounded-full bg-mint"></span>
+            <div class="flex-1">
+              <div class="text-sm">Q1 hiring · 3 roles</div>
+              <div class="mono text-[10px] text-muted">interviewing</div>
+            </div>
+            <span class="mono text-[10px] text-muted">12/24</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sales pipeline -->
+      <div class="reveal glass rounded-3xl p-6 col-span-12 lg:col-span-7" data-delay="120">
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <div class="mono text-[10px] tracking-widest text-muted">SALES PIPELINE</div>
+            <h3 class="serif text-2xl mt-1 leading-tight">By stage</h3>
+          </div>
+          <span class="mono text-[10px] text-muted">Updated 4 min ago</span>
+        </div>
+        <div class="grid grid-cols-5 gap-3">
+          <div class="rounded-xl p-3 bg-white/[0.03] border border-white/5">
+            <div class="mono text-[10px] text-muted">QUALIFY</div>
+            <div class="serif text-2xl mt-1">14</div>
+            <div class="text-[10px] mono text-muted mt-1">₹ 2.8 Cr</div>
+            <div class="mt-2 h-1 rounded bg-violet/40"></div>
+          </div>
+          <div class="rounded-xl p-3 bg-white/[0.03] border border-white/5">
+            <div class="mono text-[10px] text-muted">DEMO</div>
+            <div class="serif text-2xl mt-1">9</div>
+            <div class="text-[10px] mono text-muted mt-1">₹ 4.1 Cr</div>
+            <div class="mt-2 h-1 rounded bg-cyan/50"></div>
+          </div>
+          <div class="rounded-xl p-3 bg-white/[0.03] border border-white/5">
+            <div class="mono text-[10px] text-muted">PROPOSE</div>
+            <div class="serif text-2xl mt-1">6</div>
+            <div class="text-[10px] mono text-muted mt-1">₹ 5.3 Cr</div>
+            <div class="mt-2 h-1 rounded bg-indigo/50"></div>
+          </div>
+          <div class="rounded-xl p-3 bg-white/[0.03] border border-white/5">
+            <div class="mono text-[10px] text-muted">NEGOTIATE</div>
+            <div class="serif text-2xl mt-1">3</div>
+            <div class="text-[10px] mono text-muted mt-1">₹ 3.7 Cr</div>
+            <div class="mt-2 h-1 rounded bg-sky/60"></div>
+          </div>
+          <div class="rounded-xl p-3 bg-white/[0.03] border border-white/5">
+            <div class="mono text-[10px] text-muted">CLOSE</div>
+            <div class="serif text-2xl mt-1">2</div>
+            <div class="text-[10px] mono text-muted mt-1">₹ 1.9 Cr</div>
+            <div class="mt-2 h-1 rounded bg-mint/60"></div>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-12 mono text-[11px] text-muted py-1 border-b border-white/5">
+          <div class="col-span-5">Deal</div>
+          <div class="col-span-3">Owner</div>
+          <div class="col-span-2 text-right">Value</div>
+          <div class="col-span-2 text-right">Close</div>
+        </div>
+        <div class="grid grid-cols-12 text-[13px] py-2.5 border-b border-white/5">
+          <div class="col-span-5">Marketplace · ASEAN</div><div class="col-span-3 text-muted">Anand</div><div class="col-span-2 text-right mono">₹ 1.2 Cr</div><div class="col-span-2 text-right mono text-mint">5d</div>
+        </div>
+        <div class="grid grid-cols-12 text-[13px] py-2.5 border-b border-white/5">
+          <div class="col-span-5">Resort group · GCC</div><div class="col-span-3 text-muted">Priya</div><div class="col-span-2 text-right mono">₹ 2.4 Cr</div><div class="col-span-2 text-right mono text-cyan">14d</div>
+        </div>
+        <div class="grid grid-cols-12 text-[13px] py-2.5">
+          <div class="col-span-5">Zoho finance · QSR partner</div><div class="col-span-3 text-muted">Karthik</div><div class="col-span-2 text-right mono">₹ 0.7 Cr</div><div class="col-span-2 text-right mono text-lime">21d</div>
+        </div>
+      </div>
+
+      <!-- Signal -->
+      <div class="reveal glass rounded-3xl p-6 col-span-12 lg:col-span-5" data-delay="180">
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <div class="mono text-[10px] tracking-widest text-muted">SIGNAL HEALTH</div>
+            <h3 class="serif text-2xl mt-1 leading-tight">Operational nodes</h3>
+          </div>
+          <span class="mono text-[10px] text-mint">all green</span>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="rounded-xl p-4 bg-white/[0.03] border border-white/5 flex items-center gap-4">
+            <span class="h-10 w-10 rounded-xl bg-gradient-to-br from-violet to-indigo grid place-items-center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm">Node · BLR-04</div>
+              <div class="mono text-[10px] text-muted">Bangalore · primary</div>
+            </div>
+            <div class="text-right"><div class="mono text-[10px] text-mint">ACTIVE</div><div class="mono text-[10px] text-muted">14ms</div></div>
+          </div>
+          <div class="rounded-xl p-4 bg-white/[0.03] border border-white/5 flex items-center gap-4">
+            <span class="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan to-violet grid place-items-center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5zM5 21v-2a7 7 0 0114 0v2" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm">Node · DEL-12</div>
+              <div class="mono text-[10px] text-muted">Delhi · replica</div>
+            </div>
+            <div class="text-right"><div class="mono text-[10px] text-mint">ACTIVE</div><div class="mono text-[10px] text-muted">22ms</div></div>
+          </div>
+          <div class="rounded-xl p-4 bg-white/[0.03] border border-sky/30 flex items-center gap-4">
+            <span class="h-10 w-10 rounded-xl bg-gradient-to-br from-sky to-indigo grid place-items-center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 9v4m0 4h.01M3 17.93l9-15.86 9 15.86H3z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm">Node · MLE-02</div>
+              <div class="mono text-[10px] text-muted">Maldives · edge</div>
+            </div>
+            <div class="text-right"><div class="mono text-[10px] text-lime">WATCH</div><div class="mono text-[10px] text-muted">182ms</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-4 glass rounded-3xl p-6 md:p-8 reveal">
+      <div>
+        <span class="slug">§ This is a static demo</span>
+        <p class="mt-2 text-text-2 max-w-xl">Want a real walkthrough of Ragenaizer, set up for your own data and workflow?</p>
+      </div>
+      <a href="contact.html" class="btn-primary magnetic">Book a 30-min walkthrough <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
 </main>
-<!-- Bottom Navigation Bar (Mobile Priority) -->
-<nav class="fixed bottom-0 w-full z-50 bg-surface-dim/90 backdrop-blur-3xl border-t border-outline-variant/10 md:hidden">
-<div class="flex justify-around items-center h-20 px-4">
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
-<span class="font-label-sm text-[10px] uppercase tracking-tighter">Dash</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
-<span class="material-symbols-outlined">analytics</span>
-<span class="font-label-sm text-[10px] uppercase tracking-tighter">Stats</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
-<span class="material-symbols-outlined">account_tree</span>
-<span class="font-label-sm text-[10px] uppercase tracking-tighter">Nodes</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
-<span class="material-symbols-outlined">settings_suggest</span>
-<span class="font-label-sm text-[10px] uppercase tracking-tighter">Config</span>
-</a>
-</div>
-</nav>
-<!-- Floating Action Button Context -->
-<div class="fixed bottom-24 right-6 md:hidden">
-<button class="w-14 h-14 rounded-full bg-primary text-on-primary shadow-[0_0_20px_rgba(192,192,195,0.3)] flex items-center justify-center">
-<span class="material-symbols-outlined text-2xl">add</span>
-</button>
-</div>
-<!-- Footer Information -->
-<footer class="bg-surface-container-lowest border-t border-outline-variant/5 px-6 py-12 mb-20">
-<div class="max-w-md mx-auto">
-<a href="index.html" class="font-headline-md text-headline-md text-primary mb-6">WiseTrack</a>
-<div class="grid grid-cols-2 gap-8 mb-12">
-<div class="flex flex-col gap-3">
-<p class="font-label-sm text-on-surface uppercase text-[10px] tracking-widest mb-2">Protocol</p>
-<a class="text-sm text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Security Architecture</a>
-<a class="text-sm text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Global Operations</a>
-</div>
-<div class="flex flex-col gap-3">
-<p class="font-label-sm text-on-surface uppercase text-[10px] tracking-widest mb-2">Legal</p>
-<a class="text-sm text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Privacy Protocol</a>
-<a class="text-sm text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Terms of Access</a>
-</div>
-</div>
-<p class="text-[10px] text-on-surface-variant leading-relaxed opacity-60">
-                © 2024 WiseTrack Technologies. Hard software, built selectively.
-            </p>
-</div>
+
+<footer class="relative border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge py-8 flex flex-col md:flex-row gap-4 justify-between items-center text-muted text-sm">
+    <p class="mono text-[11px] tracking-widest">© 2026 WISETRACK TECHNOLOGIES · RAGENAIZER LIVE DEMO</p>
+    <div class="flex gap-6"><a href="index.html" class="hover:text-text">Home</a><a href="solutions.html" class="hover:text-text">Solutions</a><a href="contact.html" class="hover:text-text">Contact</a></div>
+  </div>
 </footer>
-</body></html>
+
+</body>
+</html>

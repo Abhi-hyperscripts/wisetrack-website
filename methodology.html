@@ -1,193 +1,276 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Method — WiseTrack Technologies</title>
+<meta name="description" content="From idea to launch in four disciplined steps. How we work." />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script src="assets/tailwind-config.js"></script>
-<link href="assets/styles.css" rel="stylesheet"/>
+<link href="assets/styles.css" rel="stylesheet" />
+<script>document.documentElement.classList.add("js")</script>
 <script src="assets/site.js" defer></script>
 </head>
-<body class="bg-background text-on-surface selection:bg-primary/30 selection:text-primary milled-surface">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface-dim/80 backdrop-blur-2xl border-b border-outline-variant/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]">
-<div class="flex justify-between items-center max-w-container-max mx-auto px-6 md:px-edge-margin h-20 md:h-24">
-<a href="index.html" class="font-headline-md text-headline-md text-primary tracking-tighter">WiseTrack Technologies</a>
-<!-- Desktop Nav -->
-<div class="hidden md:flex items-center gap-10">
-<a class="text-on-surface-variant font-label-sm tracking-widest uppercase hover:text-primary transition-colors duration-500" href="solutions.html">Solutions</a>
-<a class="text-on-surface-variant font-label-sm tracking-widest uppercase hover:text-primary transition-colors duration-500" href="portfolio.html">Portfolio</a>
-<a class="text-primary border-b-2 border-primary pb-1 font-label-sm tracking-widest uppercase" href="methodology.html">Methodology</a>
-<a class="text-on-surface-variant font-label-sm tracking-widest uppercase hover:text-primary transition-colors duration-500" href="insights.html">Insights</a>
-<a href="contact.html" class="ml-4 px-6 py-2 bg-primary text-on-primary font-label-sm uppercase tracking-widest silver-glow hover:bg-white transition-all duration-300">Get a Quote</a>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+<div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+
+<div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+    <div class="flex items-center gap-3"><span class="dot"></span><span class="hidden sm:inline">OPEN · accepting new engagements / Q1–Q2 2026</span><span class="sm:hidden">OPEN · Q1–Q2 2026</span></div>
+    <div class="flex items-center gap-5"><span class="hidden md:inline">Bangalore · Gurugram</span><span data-clock>--:--:-- IST</span></div>
+  </div>
 </div>
-<!-- Mobile Menu Toggle -->
-<div class="md:hidden">
-<span class="material-symbols-outlined text-primary text-3xl">menu</span>
-</div>
-</div>
-</nav>
-<!-- Main Canvas -->
-<main class="pt-32 pb-section-gap">
-<!-- Hero Section -->
-<section class="max-w-container-max mx-auto px-6 md:px-edge-margin mb-section-gap">
-<div class="max-w-3xl">
-<p class="font-label-sm text-label-sm text-primary tracking-[0.3em] uppercase mb-stack-sm">How We Work</p>
-<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-stack-md leading-tight">From your idea to launch, in four steps.</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">We use the same disciplined process for every project we agree to take on. It's how we stay on time, on budget, and worth the price tag.</p>
-</div>
+
+<header class="fixed top-9 left-0 right-0 z-[60] bg-bg/65 backdrop-blur-2xl border-b border-white/5">
+  <nav class="max-w-page mx-auto px-edge h-[68px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5"><span class="mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l3 8 3-5 3 5 3-8" stroke="url(#wmg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="wmg" x1="0" y1="0" x2="16" y2="16"><stop stop-color="#A78BFA"/><stop offset="0.5" stop-color="#818CF8"/><stop offset="1" stop-color="#67E8F9"/></linearGradient></defs></svg></span><span class="serif text-[22px] tracking-tight">wisetrack<span class="text-violet">.</span></span></a>
+    <div class="hidden md:block">
+      <div class="nav-links">
+        <a href="solutions.html">Solutions</a>
+        <a href="portfolio.html">Work</a>
+        <a href="methodology.html" class="is-active">Method</a>
+        <a href="insights.html">Journal</a>
+        <a href="careers.html">Careers</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden sm:inline-flex magnetic btn-primary text-sm">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10" data-menu-toggle aria-expanded="false"><span class="block w-4 h-[1.5px] bg-text mb-1"></span><span class="block w-4 h-[1.5px] bg-text"></span></button>
+    </div>
+  </nav>
+  <div data-menu class="md:hidden hidden bg-bg border-t border-white/5 [&.open]:block">
+    <div class="px-edge py-6 flex flex-col gap-4 text-lg">
+      <a href="solutions.html" class="py-2">Solutions</a>
+      <a href="portfolio.html" class="py-2">Work</a>
+      <a href="methodology.html" class="py-2 text-text">Method</a>
+      <a href="insights.html" class="py-2">Journal</a>
+      <a href="careers.html" class="py-2">Careers</a>
+      <a href="contact.html" class="btn-primary w-fit mt-2">Start a project</a>
+    </div>
+  </div>
+</header>
+
+<main class="relative pt-[108px]">
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="aurora animate-drift" style="top:-20%; left:30%; opacity:.4"></div>
+    <div class="absolute inset-0 bp-grid"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
+    <div class="grain"></div>
+  </div>
+  <div class="relative max-w-page mx-auto px-edge pt-16 md:pt-24 pb-12">
+    <div class="relative hud hud-cyan p-6 md:p-10 lg:p-14 border border-white/8 rounded-2xl bg-white/[0.015]">
+      <div class="absolute top-3 left-6 mono text-[10px] tracking-widest text-muted">FILE&nbsp;·&nbsp;wisetrack.in/methodology</div>
+      <div class="absolute top-3 right-6 mono text-[10px] tracking-widest text-cyan flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>SECTION&nbsp;C&nbsp;/&nbsp;METHOD</div>
+      <div class="absolute bottom-3 left-6 mono text-[10px] tracking-widest text-muted">X&nbsp;0.000&nbsp;·&nbsp;Y&nbsp;0.000</div>
+      <div class="absolute bottom-3 right-6 mono text-[10px] tracking-widest text-muted">REV&nbsp;2026.05</div>
+      <div class="grid grid-cols-12 gap-gutter mt-8">
+    <div class="col-span-12 flex items-center gap-3 mb-6 reveal">
+      <span class="slug">§ Method / How we work</span>
+      <span class="h-px flex-1 bg-white/10 max-w-[160px]"></span>
+    </div>
+    <h1 class="col-span-12 lg:col-span-10 serif font-light text-[clamp(2.4rem,6vw,6rem)] leading-[0.98] tracking-[-0.03em] reveal">
+      From your idea to launch, <br/><span class="serif-italic text-gradient">in four steps.</span>
+    </h1>
+    <p class="col-span-12 md:col-span-8 lg:col-span-7 mt-8 text-lg md:text-xl text-text-2/85 leading-relaxed reveal" data-delay="120">
+      We use the same disciplined process for every project we agree to take on. It's how we stay on time, on budget, and worth the price tag.
+    </p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Vertical Process Timeline -->
-<section class="max-w-container-max mx-auto px-6 md:px-edge-margin relative">
-<!-- Central Line for Desktop, Left Line for Mobile -->
-<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-[1px] vertical-line hidden md:block"></div>
-<div class="absolute left-10 top-0 bottom-0 w-[1px] vertical-line md:hidden"></div>
-<div class="space-y-24 md:space-y-48">
-<!-- Step 01 -->
-<div class="relative flex flex-col md:flex-row md:items-center">
-<div class="md:w-1/2 md:pr-24 flex justify-end md:text-right order-2 md:order-1">
-<div class="pl-16 md:pl-0 mt-8 md:mt-0">
-<span class="font-label-sm text-primary tracking-widest uppercase block mb-2">Phase 01</span>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">We listen first</h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-sm ml-auto">A few honest conversations. What do you actually need? Who will use it? What's your budget and timeline? Then we figure out the smallest first version that's worth building.</p>
-</div>
-</div>
-<div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-10 bg-background border border-primary/30 w-8 h-8 rounded-full flex items-center justify-center silver-glow">
-<div class="w-2 h-2 bg-primary rounded-full"></div>
-</div>
-<div class="md:w-1/2 md:pl-24 order-1 md:order-2">
-<div class="glass-card p-8 rounded-none border-l-2 border-primary/20 max-w-sm">
-<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="troubleshoot">troubleshoot</span>
-<div class="h-40 w-full overflow-hidden bg-surface-container-high relative">
-<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity grayscale" data-alt="A highly detailed close-up of a sophisticated digital analytics dashboard displaying intricate data visualizations and complex network graphs. The scene is bathed in a cinematic dark-mode atmosphere with deep blacks and cool silver accents. Soft, diffused lighting highlights the precision-milled edges of the UI elements, evoking a sense of high-performance executive tooling and technological mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA2lSasizQsFw-GB1dGVLg5Vrl2oVEFE0QSlgFb1ONNsIxTVI8Ef9YBvWaDLLEleYwtCJX-QX2DZ4hxU67Z_jKHn5iK-1aiX0ithW1fWDpaBwPjEKsmoNAr0WpHJDA2NPrVtoD8UYZw_vx9Fh1S-tyE9gcvY_4EOBc5WGsnu-XpPs382mnI0ouTIu3xMarDEaxQNReiRQ57rPhKTLQtNFGqB-zjj7wf0qdpuyUrdWHhtutTNyM7sOr2pN5dmucDPRB0v97qY33Hb8"/>
-</div>
-</div>
-</div>
-</div>
-<!-- Step 02 -->
-<div class="relative flex flex-col md:flex-row md:items-center">
-<div class="md:w-1/2 md:pr-24 order-1">
-<div class="glass-card p-8 rounded-none border-r-2 border-primary/20 max-w-sm ml-auto hidden md:block">
-<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="schema">schema</span>
-<div class="h-40 w-full overflow-hidden bg-surface-container-high relative">
-<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity grayscale" data-alt="An expansive, minimalist data center interior featuring rows of sleek obsidian server racks illuminated by subtle, futuristic light-strips. The perspective creates an architectural sense of depth and cinematic scale. The color palette is strictly monochromatic, using shades of charcoal and brushed titanium to emphasize a high-security, executive-grade infrastructure designed for global operations." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnQn2Dk5IaB-iRlkwKsukmJwzHhbR8mDeNHhY90qnDf-_W0yl3Nfj6etMgPoYopzRaUyJ-QYo_qh9mE9pLyDgO6iRZngL822zmJiJuwhbpvPQc1V0voeWFdm1v98a7tA_q0N5TyGDS1BDE5NsTQBNu2krtVkxVU2wwvh8qSbYf1H5v2ZPuQsnZidWIrBYkkyGEMyOxUgn6EX8r5OekF1ka-DuyHe1eexJxsSeHNcs0bnKu86riIGVVsv4s8zVF486nvWp81672F8k"/>
-</div>
-</div>
-</div>
-<div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-10 bg-background border border-primary/30 w-8 h-8 rounded-full flex items-center justify-center silver-glow">
-<div class="w-2 h-2 bg-primary rounded-full"></div>
-</div>
-<div class="md:w-1/2 md:pl-24 order-2">
-<div class="pl-16 md:pl-0 mt-8 md:mt-0">
-<span class="font-label-sm text-primary tracking-widest uppercase block mb-2">Phase 02</span>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">We plan it out</h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Designs, screens, and the way data moves around. You see how it'll look and how it'll work before we write a single line of code. Less surprise later.</p>
-</div>
-<div class="glass-card p-8 rounded-none border-l-2 border-primary/20 max-w-sm mt-8 md:hidden">
-<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="schema">schema</span>
-</div>
-</div>
-</div>
-<!-- Step 03 -->
-<div class="relative flex flex-col md:flex-row md:items-center">
-<div class="md:w-1/2 md:pr-24 flex justify-end md:text-right order-2 md:order-1">
-<div class="pl-16 md:pl-0 mt-8 md:mt-0">
-<span class="font-label-sm text-primary tracking-widest uppercase block mb-2">Phase 03</span>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">We build it</h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-sm ml-auto">Two weeks at a time. At the end of every two weeks, you see real, working software. You tell us what's right and what's not. We adjust as we go.</p>
-</div>
-</div>
-<div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-10 bg-background border border-primary/30 w-8 h-8 rounded-full flex items-center justify-center silver-glow">
-<div class="w-2 h-2 bg-primary rounded-full"></div>
-</div>
-<div class="md:w-1/2 md:pl-24 order-1 md:order-2">
-<div class="glass-card p-8 rounded-none border-l-2 border-primary/20 max-w-sm">
-<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="security">security</span>
-<div class="h-40 w-full overflow-hidden bg-surface-container-high relative">
-<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity grayscale" data-alt="A striking abstract visual of digital security architecture, featuring glowing silver geometric patterns and intricate circuitry overlays against a deep obsidian background. The composition is balanced and architectural, with high-key light highlights creating a sense of crystalline structure. The mood is calm, secure, and technologically advanced, perfectly reflecting the brand's authoritative and stoic personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBiza-3DmqmLM65x4VR6jcFR-Xc4p98TrUKgkzqWxbHKw0g35zXs_HXiyNwU224KIEX4eCObVm_PT5Mwl_goBhy2Ohw55JDWJJwvm2s86s92WsLyXFa4zaehXtkJlwJFbVdBQO-UAitOuQ8kgbCu2Fo2Su0AUHema8LInJIvTEhhF_jKVreKzdb31uZhslsowTwF0RkepWZ-Rs9T6xedemltyeONEJRJl8qJPiDbSEQl4S5hcJ3qsu4YolyKTwpa9l_G9FI6Ycp8E"/>
-</div>
-</div>
-</div>
-</div>
-<!-- Step 04 -->
-<div class="relative flex flex-col md:flex-row md:items-center">
-<div class="md:w-1/2 md:pr-24 order-1">
-<div class="glass-card p-8 rounded-none border-r-2 border-primary/20 max-w-sm ml-auto hidden md:block">
-<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="rocket_launch">rocket_launch</span>
-<div class="h-40 w-full overflow-hidden bg-surface-container-high relative">
-<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity grayscale" data-alt="A cinematic orbital view of Earth at night, showing sparkling city lights connected by faint silver lines of global data transmission. The image is filtered with a sophisticated dark aesthetic, emphasizing the vastness of the network and the precision of the technology. The lighting is low-key, with the cool silver glow of the Earth's curve providing a majestic, high-end visual anchor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9sNNXokueYtmiHT0VAipem9ZamvQGcshpEjqCKq0MKw1NFD72TitK-qNKb6lwFAlNEpKUHpPgM8GjEH9QJmXyNbd4BC-eUr9l-6uAEA9_VxhBGkCLtJm1oFQ4sBUXtQO9UXMQQVOECH6QkbGTRhyDUgnwwcOVF2Jr5LxcKWFqH0w_01PsNpyaBcpsIV7ZTXiA3EHJCdfJju5moawzsVCO-W3jcuZo8bjXmpRrltLZZnobJBN6IGNfEXGa2diEAlRdAegkcIHt_MM"/>
-</div>
-</div>
-</div>
-<div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-10 bg-background border border-primary/30 w-8 h-8 rounded-full flex items-center justify-center silver-glow">
-<div class="w-2 h-2 bg-primary rounded-full"></div>
-</div>
-<div class="md:w-1/2 md:pl-24 order-2">
-<div class="pl-16 md:pl-0 mt-8 md:mt-0">
-<span class="font-label-sm text-primary tracking-widest uppercase block mb-2">Phase 04</span>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">We launch and stay around</h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Going live is the start, not the end. We watch for problems, fix bugs quickly, and add new things as your business grows. We don't disappear after the launch.</p>
-</div>
-<div class="glass-card p-8 rounded-none border-l-2 border-primary/20 max-w-sm mt-8 md:hidden">
-<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="rocket_launch">rocket_launch</span>
-</div>
-</div>
-</div>
-</div>
+
+<!-- TIMELINE -->
+<section class="relative py-12 md:py-20">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="relative grid lg:grid-cols-12 gap-6">
+
+      <!-- Vertical spine line -->
+      <div class="hidden lg:block absolute left-[50%] -translate-x-1/2 top-6 bottom-6 w-px bg-gradient-to-b from-violet via-indigo to-cyan opacity-50"></div>
+
+      <!-- Phase 01 -->
+      <div class="lg:col-span-12 grid lg:grid-cols-12 items-center gap-6 mb-12 lg:mb-24 reveal">
+        <div class="lg:col-span-5 lg:text-right">
+          <span class="slug">Phase 01</span>
+          <h3 class="serif text-3xl md:text-5xl leading-tight mt-3">We <span class="serif-italic text-gradient">listen</span> first.</h3>
+          <p class="mt-4 text-text-2/85 leading-relaxed lg:ml-auto max-w-md">A few honest conversations. What do you actually need? Who will use it? What's your budget and timeline? Then we figure out the smallest first version that's worth building.</p>
+        </div>
+        <div class="lg:col-span-2 grid place-items-center">
+          <span class="relative h-12 w-12 rounded-full bg-gradient-to-br from-violet to-indigo grid place-items-center">
+            <span class="absolute inset-[2px] rounded-full bg-bg grid place-items-center serif text-violet text-lg">01</span>
+          </span>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="glass rounded-2xl p-5 max-w-md">
+            <div class="mono text-[10px] text-muted">DELIVERABLES</div>
+            <ul class="mt-3 flex flex-col gap-2 text-sm text-text-2/85">
+              <li class="flex gap-2"><span class="text-violet">→</span>A clear problem statement</li>
+              <li class="flex gap-2"><span class="text-violet">→</span>Smallest-first version brief</li>
+              <li class="flex gap-2"><span class="text-violet">→</span>Budget + timeline range</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 02 -->
+      <div class="lg:col-span-12 grid lg:grid-cols-12 items-center gap-6 mb-12 lg:mb-24 reveal" data-delay="100">
+        <div class="lg:col-span-5 lg:order-3">
+          <span class="slug">Phase 02</span>
+          <h3 class="serif text-3xl md:text-5xl leading-tight mt-3">We <span class="serif-italic" style="color:#ff8ab0">plan</span> it out.</h3>
+          <p class="mt-4 text-text-2/85 leading-relaxed max-w-md">Designs, screens, and the way data moves around. You see how it'll look and how it'll work before we write a single line of code. Less surprise later.</p>
+        </div>
+        <div class="lg:col-span-2 grid place-items-center lg:order-2">
+          <span class="relative h-12 w-12 rounded-full bg-gradient-to-br from-indigo to-sky grid place-items-center">
+            <span class="absolute inset-[2px] rounded-full bg-bg grid place-items-center serif text-sky text-lg">02</span>
+          </span>
+        </div>
+        <div class="lg:col-span-5 lg:order-1 lg:text-right">
+          <div class="glass rounded-2xl p-5 max-w-md lg:ml-auto">
+            <div class="mono text-[10px] text-muted">DELIVERABLES</div>
+            <ul class="mt-3 flex flex-col gap-2 text-sm text-text-2/85">
+              <li class="flex gap-2 lg:flex-row-reverse"><span class="text-sky">→</span>High-fidelity designs</li>
+              <li class="flex gap-2 lg:flex-row-reverse"><span class="text-sky">→</span>Data + API contracts</li>
+              <li class="flex gap-2 lg:flex-row-reverse"><span class="text-sky">→</span>Tech-stack + hosting plan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 03 -->
+      <div class="lg:col-span-12 grid lg:grid-cols-12 items-center gap-6 mb-12 lg:mb-24 reveal" data-delay="200">
+        <div class="lg:col-span-5 lg:text-right">
+          <span class="slug">Phase 03</span>
+          <h3 class="serif text-3xl md:text-5xl leading-tight mt-3">We <span class="serif-italic text-cyan">build</span> it.</h3>
+          <p class="mt-4 text-text-2/85 leading-relaxed lg:ml-auto max-w-md">Two weeks at a time. At the end of every two weeks you see real, working software. You tell us what's right and what's not. We adjust as we go.</p>
+        </div>
+        <div class="lg:col-span-2 grid place-items-center">
+          <span class="relative h-12 w-12 rounded-full bg-gradient-to-br from-cyan to-violet grid place-items-center">
+            <span class="absolute inset-[2px] rounded-full bg-bg grid place-items-center serif text-cyan text-lg">03</span>
+          </span>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="glass rounded-2xl p-5 max-w-md">
+            <div class="mono text-[10px] text-muted">CADENCE</div>
+            <div class="mt-4 flex items-center gap-1">
+              <span class="h-2 flex-1 rounded bg-cyan/70"></span>
+              <span class="h-2 flex-1 rounded bg-cyan/70"></span>
+              <span class="h-2 flex-1 rounded bg-cyan/70"></span>
+              <span class="h-2 flex-1 rounded bg-cyan/50"></span>
+              <span class="h-2 flex-1 rounded bg-cyan/30"></span>
+              <span class="h-2 flex-1 rounded bg-white/10"></span>
+            </div>
+            <div class="mt-3 mono text-[11px] text-muted flex justify-between"><span>SPRINT 01</span><span>SPRINT 06</span></div>
+            <p class="mt-4 text-sm text-text-2/85">Demo. Feedback. Ship. Repeat.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 04 -->
+      <div class="lg:col-span-12 grid lg:grid-cols-12 items-center gap-6 reveal" data-delay="300">
+        <div class="lg:col-span-5 lg:order-3">
+          <span class="slug">Phase 04</span>
+          <h3 class="serif text-3xl md:text-5xl leading-tight mt-3">We <span class="serif-italic" style="color:#ffc890">launch</span> & stay around.</h3>
+          <p class="mt-4 text-text-2/85 leading-relaxed max-w-md">Going live is the start, not the end. We watch for problems, fix bugs quickly, and add new things as your business grows. We don't disappear after the launch.</p>
+        </div>
+        <div class="lg:col-span-2 grid place-items-center lg:order-2">
+          <span class="relative h-12 w-12 rounded-full bg-gradient-to-br from-sky to-indigo grid place-items-center">
+            <span class="absolute inset-[2px] rounded-full bg-bg grid place-items-center serif text-lime text-lg">04</span>
+          </span>
+        </div>
+        <div class="lg:col-span-5 lg:order-1 lg:text-right">
+          <div class="glass rounded-2xl p-5 max-w-md lg:ml-auto">
+            <div class="mono text-[10px] text-muted">SUPPORT</div>
+            <ul class="mt-3 flex flex-col gap-2 text-sm text-text-2/85">
+              <li class="flex gap-2 lg:flex-row-reverse"><span class="text-lime">→</span>Uptime monitoring</li>
+              <li class="flex gap-2 lg:flex-row-reverse"><span class="text-lime">→</span>Same-day bug triage</li>
+              <li class="flex gap-2 lg:flex-row-reverse"><span class="text-lime">→</span>Quarterly improvement plan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Executive Summary Bento -->
-<section class="max-w-container-max mx-auto px-6 md:px-edge-margin mt-section-gap">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="md:col-span-2 glass-card p-12 relative overflow-hidden group">
-<div class="relative z-10">
-<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-4">Happy clients. Every time.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">One rule, in both teams: only ship work that the client is proud of. Big project, small project, doesn't matter.</p>
-</div>
-<div class="absolute bottom-0 right-0 p-12 opacity-5 transition-opacity group-hover:opacity-20">
-<span class="material-symbols-outlined text-[120px]" data-icon="precision_manufacturing">precision_manufacturing</span>
-</div>
-</div>
-<div class="glass-card p-12 flex flex-col justify-between border-t-2 border-primary/20 bg-primary/5">
-<div class="font-display-lg text-headline-lg text-primary">30K+</div>
-<div>
-<p class="font-label-sm tracking-widest uppercase text-on-surface mb-2">Projects Done</p>
-<p class="font-body-md text-on-surface-variant">From small businesses to large companies. Same care, same way of working.</p>
-</div>
-</div>
-</div>
+
+<!-- Principles -->
+<section class="relative py-24 md:py-32 bg-gradient-to-b from-transparent via-bg-2/30 to-transparent border-y border-white/5">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter mb-14 reveal">
+      <div class="col-span-12 md:col-span-5">
+        <span class="slug">§ Principles</span>
+        <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1] tracking-tight mt-4">Things we believe<span class="serif-italic text-gradient">, hard.</span></h2>
+      </div>
+      <p class="col-span-12 md:col-span-6 md:col-start-7 self-end text-text-2/85 text-lg">Small set of rules. They show up in everything we ship.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="reveal tilt glass rounded-3xl p-7" style="--mx:50%;--my:50%">
+        <span class="serif text-5xl text-gradient">i</span>
+        <h3 class="serif text-2xl mt-3">Say no, often.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">Saying yes to the wrong project hurts everyone. We turn down half of what comes in.</p>
+      </div>
+      <div class="reveal tilt glass rounded-3xl p-7" data-delay="100" style="--mx:50%;--my:50%">
+        <span class="serif text-5xl text-gradient">ii</span>
+        <h3 class="serif text-2xl mt-3">Ship something every two weeks.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">Demos beat documents. We compound trust by shipping, not by talking.</p>
+      </div>
+      <div class="reveal tilt glass rounded-3xl p-7" data-delay="200" style="--mx:50%;--my:50%">
+        <span class="serif text-5xl text-gradient">iii</span>
+        <h3 class="serif text-2xl mt-3">Boring tech, on purpose.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">We pick the stack that'll still be running fine in five years. Novelty is a cost, not a feature.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Pull quote -->
+<section class="relative">
+  <div class="max-w-page mx-auto px-edge py-24 md:py-32">
+    <blockquote class="serif text-[clamp(2rem,5vw,4.6rem)] leading-[1.05] tracking-tight max-w-5xl reveal">
+      "Only ship work that the <span class="serif-italic text-gradient-cool">client is proud of</span>. Big project, small project — doesn't matter."
+    </blockquote>
+    <div class="mt-6 mono text-[11px] tracking-widest text-muted reveal" data-delay="120">— THE ONE INTERNAL RULE</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="relative">
+  <div class="max-w-page mx-auto px-edge pb-24 md:pb-32">
+    <div class="glass rounded-3xl p-10 md:p-16 relative overflow-hidden reveal">
+      <div class="absolute -inset-1 pointer-events-none opacity-60"><div class="aurora animate-drift" style="left:-20%; top:-30%"></div></div>
+      <div class="relative grid grid-cols-12 gap-gutter items-end">
+        <div class="col-span-12 md:col-span-8">
+          <span class="slug">§ Next step</span>
+          <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] tracking-tight mt-4">Ready to start the conversation?</h2>
+        </div>
+        <div class="col-span-12 md:col-span-4 md:text-right"><a href="contact.html" class="btn-primary magnetic w-fit">Tell us about your project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
-<!-- Footer -->
-<footer class="relative w-full bg-surface-container-lowest border-t border-outline-variant/5">
-<div class="flex flex-col gap-stack-lg max-w-container-max mx-auto px-6 md:px-edge-margin py-20 md:py-section-gap">
-<div class="flex flex-col md:flex-row justify-between items-start gap-12">
-<div class="max-w-md">
-<div class="font-headline-lg text-headline-lg text-primary mb-stack-md">WiseTrack Technologies</div>
-<p class="font-body-md text-body-md text-on-surface-variant">A software company with two brands. HyperScripts builds things for clients. Ragenaizer is our own product.</p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-2 gap-x-16 gap-y-8">
-<div class="flex flex-col gap-4">
-<p class="font-label-sm text-primary tracking-widest uppercase mb-2">Services</p>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="solutions.html">Web Development</a>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="solutions.html">Mobile &amp; PWA</a>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="solutions.html">Custom Dashboards</a>
-</div>
-<div class="flex flex-col gap-4">
-<p class="font-label-sm text-primary tracking-widest uppercase mb-2">Group</p>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="solutions.html">HyperScripts</a>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="solutions.html">Ragenaizer</a>
-<a class="text-on-surface-variant hover:text-primary transition-opacity duration-300" href="careers.html">Careers</a>
-</div>
-</div>
-</div>
-<div class="pt-12 border-t border-outline-variant/5">
-<p class="font-label-sm text-label-sm text-on-surface-variant/60 tracking-widest uppercase">
-                    © 2024 WiseTrack Technologies. Hard software, built selectively.
-                </p>
-</div>
-</div>
+
+<footer class="relative border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge pt-20 pb-10">
+    <div class="grid grid-cols-12 gap-gutter">
+      <div class="col-span-12 lg:col-span-5">
+        <a href="index.html" class="flex items-center gap-2.5"><span class="mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l3 8 3-5 3 5 3-8" stroke="url(#wmg2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="wmg2" x1="0" y1="0" x2="16" y2="16"><stop stop-color="#A78BFA"/><stop offset="0.5" stop-color="#818CF8"/><stop offset="1" stop-color="#67E8F9"/></linearGradient></defs></svg></span><span class="serif text-2xl tracking-tight">wisetrack<span class="text-violet">.</span></span></a>
+        <p class="mt-6 max-w-md text-text-2/80 leading-relaxed">Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our flagship product.</p>
+        <div class="mt-6 flex items-center gap-3 text-muted text-sm"><span class="dot"></span><span>Open for new engagements · Q1–Q2 2026</span></div>
+      </div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-7"><div class="mono text-[11px] tracking-widest text-muted mb-5">EXPLORE</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="solutions.html" class="hover:text-text">Solutions</a></li><li><a href="portfolio.html" class="hover:text-text">Work</a></li><li><a href="methodology.html" class="hover:text-text">Method</a></li><li><a href="insights.html" class="hover:text-text">Journal</a></li></ul></div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">BRANDS</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="solutions.html" class="hover:text-text">HyperScripts</a></li><li><a href="dashboard.html" class="hover:text-text">Ragenaizer</a></li><li><a href="careers.html" class="hover:text-text">Careers</a></li><li><a href="client-portal.html" class="hover:text-text">Client portal</a></li></ul></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="mono text-[11px] tracking-widest text-muted mb-5">FIELD NOTES</div><p class="text-text-2/85 mb-3">Occasional writing on engineering, products, and the work.</p><form class="flex items-center gap-2"><input type="email" placeholder="you@company.com" class="field flex-1"/><button class="btn-primary magnetic" type="submit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form></div>
+    </div>
+    <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center"><p class="mono text-[11px] text-muted tracking-widest">© 2026 WISETRACK TECHNOLOGIES · HARD SOFTWARE, BUILT SELECTIVELY</p><div class="flex gap-6 text-sm text-muted"><a href="#" class="hover:text-text">Privacy</a><a href="#" class="hover:text-text">Terms</a><a href="contact.html" class="hover:text-text">Contact</a></div></div>
+  </div>
 </footer>
-</body></html>
+
+</body>
+</html>

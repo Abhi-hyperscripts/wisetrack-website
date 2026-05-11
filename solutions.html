@@ -1,181 +1,317 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Solutions — WiseTrack Technologies</title>
+<meta name="description" content="Three ways we work — custom applications, ready-made platforms, and Ragenaizer Business OS." />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<title>WiseTrack Technologies | Solutions</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script src="assets/tailwind-config.js"></script>
-<link href="assets/styles.css" rel="stylesheet"/>
+<link href="assets/styles.css" rel="stylesheet" />
+<script>document.documentElement.classList.add("js")</script>
 <script src="assets/site.js" defer></script>
 </head>
-<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-primary selection:text-on-primary">
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full z-50 bg-surface-dim/80 backdrop-blur-2xl dark:bg-surface-dim/80 border-b border-outline-variant/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]">
-<nav class="flex justify-between items-center max-w-container-max mx-auto px-6 h-20 md:h-24">
-<a href="index.html" class="font-headline-md text-headline-md text-primary tracking-tighter shrink-0">WiseTrack</a>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
-</button>
-<!-- Desktop Links -->
-<div class="hidden md:flex items-center gap-10">
-<a class="text-primary border-b-2 border-primary pb-1 font-label-sm tracking-widest uppercase transition-colors duration-500" href="solutions.html">Solutions</a>
-<a class="text-on-surface-variant font-label-sm tracking-widest uppercase hover:text-primary transition-colors duration-500" href="portfolio.html">Portfolio</a>
-<a class="text-on-surface-variant font-label-sm tracking-widest uppercase hover:text-primary transition-colors duration-500" href="methodology.html">Methodology</a>
-<a class="text-on-surface-variant font-label-sm tracking-widest uppercase hover:text-primary transition-colors duration-500" href="insights.html">Insights</a>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+<div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+
+<div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+    <div class="flex items-center gap-3"><span class="dot"></span><span class="hidden sm:inline">OPEN · accepting new engagements / Q1–Q2 2026</span><span class="sm:hidden">OPEN · Q1–Q2 2026</span></div>
+    <div class="flex items-center gap-5"><span class="hidden md:inline">Bangalore · Gurugram</span><span data-clock>--:--:-- IST</span></div>
+  </div>
 </div>
-<a href="contact.html" class="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-DEFAULT font-label-sm tracking-widest uppercase hover:bg-white transition-all duration-300">
-                Get a Quote
-            </a>
-</nav>
+
+<header class="fixed top-9 left-0 right-0 z-[60] bg-bg/65 backdrop-blur-2xl border-b border-white/5">
+  <nav class="max-w-page mx-auto px-edge h-[68px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5 group">
+      <span class="relative inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-violet via-indigo to-cyan">
+        <span class="absolute inset-[1px] rounded-[10px] bg-bg flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l3 8 3-5 3 5 3-8" stroke="url(#wmg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="wmg" x1="0" y1="0" x2="16" y2="16"><stop stop-color="#A78BFA"/><stop offset="0.5" stop-color="#818CF8"/><stop offset="1" stop-color="#67E8F9"/></linearGradient></defs></svg></span>
+      </span>
+      <span class="serif text-xl tracking-tight">wisetrack<span class="text-violet">.</span></span>
+    </a>
+    <div class="hidden md:block">
+      <div class="nav-links">
+        <a href="solutions.html" class="is-active">Solutions</a>
+        <a href="portfolio.html">Work</a>
+        <a href="methodology.html">Method</a>
+        <a href="insights.html">Journal</a>
+        <a href="careers.html">Careers</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden sm:inline-flex magnetic btn-primary text-sm">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10" data-menu-toggle aria-expanded="false"><span class="block w-4 h-[1.5px] bg-text mb-1"></span><span class="block w-4 h-[1.5px] bg-text"></span></button>
+    </div>
+  </nav>
+  <div data-menu class="md:hidden hidden bg-bg border-t border-white/5 [&.open]:block">
+    <div class="px-edge py-6 flex flex-col gap-4 text-lg">
+      <a href="solutions.html" class="py-2 text-text">Solutions</a>
+      <a href="portfolio.html" class="py-2">Work</a>
+      <a href="methodology.html" class="py-2">Method</a>
+      <a href="insights.html" class="py-2">Journal</a>
+      <a href="careers.html" class="py-2">Careers</a>
+      <a href="contact.html" class="btn-primary w-fit mt-2">Start a project</a>
+    </div>
+  </div>
 </header>
-<main class="pt-32 pb-24 px-6 max-w-lg mx-auto md:max-w-container-max md:px-edge-margin">
-<!-- Hero Section -->
-<div class="mb-16">
-<span class="font-label-sm text-label-sm tracking-widest uppercase text-primary mb-4 block">What We Do</span>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-6 leading-tight">Three ways we typically work.</h1>
-<p class="text-on-surface-variant font-body-md leading-relaxed opacity-80">
-                Custom application work for problems that need real engineering. Ready-made platforms when you don't need a fresh build. And Ragenaizer, our Business OS, when you want one app to run your whole company. Pick the one that sounds like your situation, or write to us if you're not sure.
-            </p>
-</div>
-<!-- Vertical Solutions Stack -->
-<div class="flex flex-col gap-8">
-<!-- Solution Card 1 -->
-<section class="group relative bg-surface-container-low rounded-xl border border-outline-variant/20 overflow-hidden shadow-2xl">
-<div class="absolute inset-0 milled-texture pointer-events-none"></div>
-<div class="absolute inset-0 silver-bevel pointer-events-none"></div>
-<div class="p-8 relative z-10">
-<div class="flex items-start justify-between mb-8">
-<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest border border-outline-variant/30 rounded-lg">
-<span class="material-symbols-outlined text-primary" style="font-size: 28px;">deployed_code</span>
-</div>
-<span class="text-[10px] font-label-sm tracking-[0.2em] text-outline uppercase">HyperScripts · Custom</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Custom Applications</h3>
-<p class="text-on-surface-variant font-body-md mb-8 opacity-70">
-                        You bring the hard problem, we bring the engineering. Custom web apps, mobile apps, finance systems with deep Zoho integration, multi-source dashboards. Direct work includes a resort management platform in the Maldives. Through PValue Analytics, we've also delivered for Restaurant Brands International, Vivo Mobile, and the election counting platform that streams to Hindustan Times, ABP News, Times Internet, and Google.
-                    </p>
-<div class="h-[1px] w-full bg-gradient-to-r from-outline-variant/40 to-transparent mb-8"></div>
-<ul class="flex flex-col gap-4 mb-8">
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-<span class="text-on-surface font-label-sm tracking-wider uppercase text-[10px]">Web, Mobile, Dashboards, Zoho</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-<span class="text-on-surface font-label-sm tracking-wider uppercase text-[10px]">A Few Projects At A Time</span>
-</li>
-</ul>
-<a href="contact.html" class="w-full py-4 border border-primary/30 text-primary font-label-sm tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-primary/5 transition-all">
-                        Discuss Your Project
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
+
+<main class="relative pt-[108px]">
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.45"></div>
+    <div class="absolute inset-0 bp-grid"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
+    <div class="grain"></div>
+  </div>
+  <div class="relative max-w-page mx-auto px-edge pt-16 md:pt-24 pb-12">
+    <div class="relative hud hud-cyan p-6 md:p-10 lg:p-14 border border-white/8 rounded-2xl bg-white/[0.015]">
+      <div class="absolute top-3 left-6 mono text-[10px] tracking-widest text-muted">FILE&nbsp;·&nbsp;wisetrack.in/solutions</div>
+      <div class="absolute top-3 right-6 mono text-[10px] tracking-widest text-cyan flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>SECTION&nbsp;A&nbsp;/&nbsp;SOLUTIONS</div>
+      <div class="absolute bottom-3 left-6 mono text-[10px] tracking-widest text-muted">X&nbsp;0.000&nbsp;·&nbsp;Y&nbsp;0.000</div>
+      <div class="absolute bottom-3 right-6 mono text-[10px] tracking-widest text-muted">REV&nbsp;2026.05</div>
+      <div class="grid grid-cols-12 gap-gutter mt-8">
+    <div class="col-span-12 flex items-center gap-3 mb-6 reveal">
+      <span class="slug">§ Solutions / Three ways we work</span>
+      <span class="h-px flex-1 bg-white/10 max-w-[160px]"></span>
+    </div>
+    <h1 class="col-span-12 lg:col-span-9 serif font-light text-[clamp(2.4rem,6vw,6rem)] leading-[0.98] tracking-[-0.03em] reveal">
+      Three doors —<br/><span class="serif-italic text-gradient">one of them is for you.</span>
+    </h1>
+    <p class="col-span-12 md:col-span-8 lg:col-span-6 mt-8 text-lg md:text-xl text-text-2/85 leading-relaxed reveal" data-delay="120">
+      Custom application work when you need real engineering. Ready-made platforms when you don't need a fresh build. And Ragenaizer, our Business OS, when you want a single tool to run your whole company. Pick the one that sounds like your situation — or write to us if you're not sure.
+    </p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Solution Card 2 -->
-<section class="group relative bg-surface-container-low rounded-xl border border-outline-variant/20 overflow-hidden shadow-2xl">
-<div class="absolute inset-0 milled-texture pointer-events-none"></div>
-<div class="absolute inset-0 silver-bevel pointer-events-none"></div>
-<div class="p-8 relative z-10">
-<div class="flex items-start justify-between mb-8">
-<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest border border-outline-variant/30 rounded-lg">
-<span class="material-symbols-outlined text-primary" style="font-size: 28px;">storefront</span>
-</div>
-<span class="text-[10px] font-label-sm tracking-[0.2em] text-outline uppercase">HyperScripts · Products</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Ready-Made Platforms</h3>
-<p class="text-on-surface-variant font-body-md mb-8 opacity-70">
-                        Some problems don't need a fresh build. We've already shipped a multivendor marketplace (ASP.NET Core), an e-commerce platform for D2C brands, and an EdTech course platform we whitelabel. License as-is or have us customise.
-                    </p>
-<div class="h-[1px] w-full bg-gradient-to-r from-outline-variant/40 to-transparent mb-8"></div>
-<ul class="flex flex-col gap-4 mb-8">
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-<span class="text-on-surface font-label-sm tracking-wider uppercase text-[10px]">Multivendor + E-com + EdTech</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-<span class="text-on-surface font-label-sm tracking-wider uppercase text-[10px]">Whitelabel for Your Brand</span>
-</li>
-</ul>
-<a href="contact.html" class="w-full py-4 border border-primary/30 text-primary font-label-sm tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-primary/5 transition-all">
-                        See Demos
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
+
+<!-- THREE BIG PANELS -->
+<section class="relative py-16 md:py-20">
+  <div class="max-w-page mx-auto px-edge flex flex-col gap-6">
+
+    <!-- 01 Custom -->
+    <article class="reveal glass rounded-3xl overflow-hidden tilt relative group" style="--mx:50%;--my:50%">
+      <div class="absolute inset-0 opacity-50 pointer-events-none" style="background:radial-gradient(700px circle at var(--mx) var(--my), rgba(139,92,246,0.18), transparent 60%)"></div>
+      <div class="grid lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-7 p-8 md:p-12 lg:p-16 relative">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="serif text-5xl text-gradient">01</span>
+            <span class="tag tag-violet">HyperScripts · Custom</span>
+          </div>
+          <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1] tracking-tight">Custom applications<span class="text-violet">.</span></h2>
+          <p class="mt-5 text-text-2/85 text-lg leading-relaxed max-w-prose">
+            You bring the hard problem, we bring the engineering. Custom web apps, mobile apps, finance systems with deep Zoho integration, multi-source dashboards. Direct work includes a resort management platform in the Maldives. Through PValue Analytics we've also delivered for Restaurant Brands International, Vivo Mobile, and the election counting platform that streams to Hindustan Times, ABP News, Times Internet, and Google.
+          </p>
+          <div class="mt-8 grid grid-cols-2 gap-3 max-w-md">
+            <div class="rounded-xl p-4 bg-white/[0.03] border border-white/5">
+              <div class="mono text-[10px] text-muted">SCOPE</div>
+              <div class="mt-1 text-sm">Web · Mobile · Dashboards · Zoho</div>
+            </div>
+            <div class="rounded-xl p-4 bg-white/[0.03] border border-white/5">
+              <div class="mono text-[10px] text-muted">CADENCE</div>
+              <div class="mt-1 text-sm">A few projects at a time</div>
+            </div>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-2">
+            <span class="tag">C#</span>
+            <span class="tag">ASP.NET Core</span>
+            <span class="tag">React</span>
+            <span class="tag">Postgres</span>
+            <span class="tag">Swift · Kotlin</span>
+            <span class="tag">Zoho deep</span>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="contact.html" class="btn-primary magnetic">Discuss your project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="portfolio.html" class="btn-ghost">See work</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 relative p-6 md:p-8 lg:p-10 border-t lg:border-t-0 lg:border-l border-white/5 bg-white/[0.015]">
+          <div class="mock-screen p-3">
+            <div class="flex items-center justify-between mb-3 px-1">
+              <span class="mono text-[10px] text-muted">resort-ops.maldives</span>
+              <span class="mono text-[10px] text-mint flex items-center gap-1.5"><span class="dot scale-75"></span>LIVE</span>
+            </div>
+            <div class="grid grid-cols-6 gap-2">
+              <div class="col-span-3 rounded-xl p-3 bg-white/[0.03] border border-white/5">
+                <div class="mono text-[10px] text-muted">OCCUPANCY · WK</div>
+                <div class="serif text-2xl mt-1">87<span class="text-violet">%</span></div>
+              </div>
+              <div class="col-span-3 rounded-xl p-3 bg-white/[0.03] border border-white/5">
+                <div class="mono text-[10px] text-muted">CHECK-INS · TODAY</div>
+                <div class="serif text-2xl mt-1">142</div>
+              </div>
+              <div class="col-span-6 rounded-xl p-3 bg-white/[0.03] border border-white/5">
+                <div class="mono text-[10px] text-muted mb-2">SIGNAL · 14d</div>
+                <svg viewBox="0 0 300 60" class="w-full h-12"><defs><linearGradient id="sl" x1="0" x2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><path d="M0 40 Q40 32 80 36 T160 22 T240 18 T300 10" fill="none" stroke="url(#sl)" stroke-width="2"/></svg>
+              </div>
+              <div class="col-span-3 rounded-xl p-3 bg-white/[0.03] border border-white/5">
+                <div class="mono text-[10px] text-muted">VILLAS</div>
+                <div class="serif text-xl mt-1">128 / 144</div>
+              </div>
+              <div class="col-span-3 rounded-xl p-3 bg-white/[0.03] border border-white/5">
+                <div class="mono text-[10px] text-muted">STAFF</div>
+                <div class="serif text-xl mt-1">312</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 Ready-made -->
+    <article class="reveal glass rounded-3xl overflow-hidden tilt relative group" style="--mx:50%;--my:50%">
+      <div class="absolute inset-0 opacity-50 pointer-events-none" style="background:radial-gradient(700px circle at var(--mx) var(--my), rgba(34,211,238,0.18), transparent 60%)"></div>
+      <div class="grid lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-5 relative p-6 md:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-white/5 bg-white/[0.015] order-2 lg:order-1">
+          <div class="grid grid-cols-2 gap-3">
+            <div class="rounded-2xl p-5 bg-gradient-to-br from-cyan/15 to-cyan/0 border border-white/5">
+              <div class="mono text-[10px] text-muted">MARKETPLACE</div>
+              <div class="serif text-xl mt-2 leading-tight">Multivendor</div>
+              <div class="mt-3 mono text-[10px] text-muted">ASP.NET Core</div>
+            </div>
+            <div class="rounded-2xl p-5 bg-gradient-to-br from-violet/15 to-violet/0 border border-white/5">
+              <div class="mono text-[10px] text-muted">E-COMMERCE</div>
+              <div class="serif text-xl mt-2 leading-tight">D2C engine</div>
+              <div class="mt-3 mono text-[10px] text-muted">Inventory · Orders · Pay</div>
+            </div>
+            <div class="col-span-2 rounded-2xl p-5 bg-gradient-to-br from-sky/15 to-sky/0 border border-white/5">
+              <div class="mono text-[10px] text-muted">EDTECH</div>
+              <div class="serif text-xl mt-2 leading-tight">Course platform</div>
+              <div class="mt-3 mono text-[10px] text-muted">Whitelabel · Student LMS</div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 p-8 md:p-12 lg:p-16 relative order-1 lg:order-2">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="serif text-5xl text-gradient">02</span>
+            <span class="tag tag-cyan">HyperScripts · Products</span>
+          </div>
+          <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1] tracking-tight">Ready-made platforms<span class="text-cyan">.</span></h2>
+          <p class="mt-5 text-text-2/85 text-lg leading-relaxed max-w-prose">
+            Some problems don't need a fresh build. We've already shipped a multivendor marketplace (ASP.NET Core), an e-commerce platform for D2C brands, and an EdTech course platform we whitelabel. License as-is or have us customise.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-2">
+            <span class="tag">Whitelabel</span>
+            <span class="tag">SSO</span>
+            <span class="tag">Multi-currency</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">Admin · UX</span>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="contact.html" class="btn-primary magnetic">See demos <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="portfolio.html" class="btn-ghost">Case studies</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 Ragenaizer -->
+    <article class="reveal glass rounded-3xl overflow-hidden tilt relative group" style="--mx:50%;--my:50%">
+      <div class="absolute inset-0 opacity-50 pointer-events-none" style="background:radial-gradient(700px circle at var(--mx) var(--my), rgba(56,189,248,0.18), transparent 60%)"></div>
+      <div class="grid lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-7 p-8 md:p-12 lg:p-16 relative">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="serif text-5xl text-gradient">03</span>
+            <span class="tag" style="color:#ffe6c2;border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.07)">Ragenaizer · Business OS</span>
+          </div>
+          <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1] tracking-tight">Ragenaizer<span class="text-lime">.</span></h2>
+          <p class="mt-5 text-text-2/85 text-lg leading-relaxed max-w-prose">
+            Most companies pay for ten different apps. Project tool here, CRM there, sales sheet somewhere else. Ragenaizer puts all of that in one place. Your team uses one app instead of switching between five.
+          </p>
+          <div class="mt-8 grid grid-cols-2 gap-3 max-w-md">
+            <div class="rounded-xl p-4 bg-white/[0.03] border border-white/5">
+              <div class="mono text-[10px] text-muted">INSIDE</div>
+              <div class="mt-1 text-sm">Projects · Tasks · Sales · Reports</div>
+            </div>
+            <div class="rounded-xl p-4 bg-white/[0.03] border border-white/5">
+              <div class="mono text-[10px] text-muted">SHAPE</div>
+              <div class="mt-1 text-sm">Live numbers, one team</div>
+            </div>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="dashboard.html" class="btn-primary magnetic">See the live demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="contact.html" class="btn-ghost">Talk to us</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 relative p-6 md:p-8 lg:p-10 border-t lg:border-t-0 lg:border-l border-white/5 bg-white/[0.015]">
+          <div class="rounded-2xl p-5 bg-white/[0.03] border border-white/5">
+            <div class="flex items-center justify-between">
+              <span class="mono text-[10px] text-muted">RAGENAIZER · BOARD</span>
+              <span class="mono text-[10px] text-mint">live</span>
+            </div>
+            <div class="mt-4 flex flex-col gap-2">
+              <div class="rounded-lg p-3 bg-white/[0.03] border border-white/5 flex items-center gap-3">
+                <span class="h-2 w-2 rounded-full bg-violet"></span>
+                <div class="flex-1 text-sm">Q1 launch · Resort module</div>
+                <span class="mono text-[10px] text-muted">62%</span>
+              </div>
+              <div class="rounded-lg p-3 bg-white/[0.03] border border-white/5 flex items-center gap-3">
+                <span class="h-2 w-2 rounded-full bg-cyan"></span>
+                <div class="flex-1 text-sm">Pricing model · v2</div>
+                <span class="mono text-[10px] text-muted">28%</span>
+              </div>
+              <div class="rounded-lg p-3 bg-white/[0.03] border border-white/5 flex items-center gap-3">
+                <span class="h-2 w-2 rounded-full bg-sky"></span>
+                <div class="flex-1 text-sm">Sales calls · this week</div>
+                <span class="mono text-[10px] text-muted">11/14</span>
+              </div>
+              <div class="rounded-lg p-3 bg-white/[0.03] border border-white/5 flex items-center gap-3">
+                <span class="h-2 w-2 rounded-full bg-mint"></span>
+                <div class="flex-1 text-sm">Revenue · this month</div>
+                <span class="mono text-[10px] text-text">₹ 4.7 Cr</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
 </section>
-<!-- Solution Card 3 -->
-<section class="group relative bg-surface-container-low rounded-xl border border-outline-variant/20 overflow-hidden shadow-2xl">
-<div class="absolute inset-0 milled-texture pointer-events-none"></div>
-<div class="absolute inset-0 silver-bevel pointer-events-none"></div>
-<div class="p-8 relative z-10">
-<div class="flex items-start justify-between mb-8">
-<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest border border-outline-variant/30 rounded-lg">
-<span class="material-symbols-outlined text-primary" style="font-size: 28px;">grid_view</span>
-</div>
-<span class="text-[10px] font-label-sm tracking-[0.2em] text-outline uppercase">Ragenaizer</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Ragenaizer · Business OS</h3>
-<p class="text-on-surface-variant font-body-md mb-8 opacity-70">
-                        Most companies pay for ten different apps. Project tool here, CRM there, sales sheet somewhere else. Ragenaizer puts all of that in one place. Your team uses one app instead of switching between five.
-                    </p>
-<div class="h-[1px] w-full bg-gradient-to-r from-outline-variant/40 to-transparent mb-8"></div>
-<ul class="flex flex-col gap-4 mb-8">
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-<span class="text-on-surface font-label-sm tracking-wider uppercase text-[10px]">Projects, Tasks, &amp; Your Team</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-<span class="text-on-surface font-label-sm tracking-wider uppercase text-[10px]">Live Reports for Your Numbers</span>
-</li>
-</ul>
-<a href="dashboard.html" class="w-full py-4 border border-primary/30 text-primary font-label-sm tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-primary/5 transition-all">
-                        See a Live Demo
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
+
+<!-- CTA -->
+<section class="relative">
+  <div class="max-w-page mx-auto px-edge py-24 md:py-32">
+    <div class="glass rounded-3xl p-10 md:p-16 relative overflow-hidden reveal">
+      <div class="absolute -inset-1 pointer-events-none opacity-60"><div class="aurora animate-drift" style="left:-20%; top:-30%"></div></div>
+      <div class="relative grid grid-cols-12 gap-gutter items-end">
+        <div class="col-span-12 md:col-span-8">
+          <span class="slug">§ Next step</span>
+          <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] tracking-tight mt-4">
+            Not sure which door fits? <span class="serif-italic text-gradient-cool">Write anyway.</span>
+          </h2>
+        </div>
+        <div class="col-span-12 md:col-span-4 md:text-right">
+          <a href="contact.html" class="btn-primary magnetic w-fit">Tell us about it <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-</div>
-<!-- Featured Visual Element -->
-<div class="mt-16 relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-video border border-outline-variant/20">
-<img class="absolute inset-0 w-full h-full object-cover" data-alt="A macro close-up of a high-end motherboard featuring brushed metal heat sinks and glowing blue fiber optic cables. The scene is lit with cinematic, low-key lighting, creating deep obsidian shadows and sharp silver highlights. The atmosphere is technical and authoritative, embodying a stealth technology aesthetic with minimal noise and maximum architectural precision. Every detail is crisp, evoking a sense of industrial luxury and high-performance computing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpKpwVMtyaWl9HDtJXqVjq9_7aEF1XBgwHDbDnteTg8VAivAt0E481lqHtoCcN15XwItuc920GvjDlM3V1AirMKJCK24jqu7AyKNx3yogd1wOnHo07TjqBcpn76yA2FuaVMLoFNSJQRofVSbjq-XOqZX7X0--GVRZWaSXaThpO1IB1bPvWimn6e-iF1bZJGqv3O3taj5O3P8vU9YAYN1hy88nXrFRDE6-mgxwL1qtbaJWBF1lkatDzb6-x6m5g-8dpmx1yT6JTNOw"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-8">
-<h4 class="font-headline-md text-headline-md text-primary mb-2">Built to last</h4>
-<p class="text-on-surface-variant text-sm font-body-md max-w-xs">We don't take shortcuts. The software still works five years later.</p>
-</div>
-</div>
+
 </main>
-<!-- Footer -->
-<footer class="relative w-full bg-surface-container-lowest border-t border-outline-variant/5">
-<div class="flex flex-col gap-stack-lg max-w-container-max mx-auto px-6 py-20">
-<div class="font-headline-lg text-headline-lg text-primary mb-stack-md">WiseTrack</div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-stack-md">Software company with two brands. HyperScripts builds. Ragenaizer is what we sell.</p>
-<div class="grid grid-cols-2 gap-12">
-<div class="flex flex-col gap-4">
-<span class="font-label-sm text-label-sm tracking-widest uppercase text-outline">Services</span>
-<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">Web Development</a>
-<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">Mobile &amp; PWA</a>
-<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">Custom Dashboards</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-sm text-label-sm tracking-widest uppercase text-outline">Group</span>
-<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">HyperScripts</a>
-<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="solutions.html">Ragenaizer</a>
-<a class="text-on-surface-variant font-body-md hover:text-primary transition-opacity duration-300" href="careers.html">Careers</a>
-</div>
-</div>
-<div class="pt-12 border-t border-outline-variant/10">
-<p class="text-on-surface-variant font-body-md text-sm leading-relaxed opacity-60">
-                    © 2024 WiseTrack Technologies. Hard software, built selectively.
-                </p>
-</div>
-</div>
+
+<footer class="relative border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge pt-20 pb-10">
+    <div class="grid grid-cols-12 gap-gutter">
+      <div class="col-span-12 lg:col-span-5">
+        <a href="index.html" class="flex items-center gap-2.5"><span class="mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l3 8 3-5 3 5 3-8" stroke="url(#wmg2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="wmg2" x1="0" y1="0" x2="16" y2="16"><stop stop-color="#A78BFA"/><stop offset="0.5" stop-color="#818CF8"/><stop offset="1" stop-color="#67E8F9"/></linearGradient></defs></svg></span><span class="serif text-2xl tracking-tight">wisetrack<span class="text-violet">.</span></span></a>
+        <p class="mt-6 max-w-md text-text-2/80 leading-relaxed">Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our flagship product.</p>
+        <div class="mt-6 flex items-center gap-3 text-muted text-sm"><span class="dot"></span><span>Open for new engagements · Q1–Q2 2026</span></div>
+      </div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-7"><div class="mono text-[11px] tracking-widest text-muted mb-5">EXPLORE</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="solutions.html" class="hover:text-text">Solutions</a></li><li><a href="portfolio.html" class="hover:text-text">Work</a></li><li><a href="methodology.html" class="hover:text-text">Method</a></li><li><a href="insights.html" class="hover:text-text">Journal</a></li></ul></div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">BRANDS</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="solutions.html" class="hover:text-text">HyperScripts</a></li><li><a href="dashboard.html" class="hover:text-text">Ragenaizer</a></li><li><a href="careers.html" class="hover:text-text">Careers</a></li><li><a href="client-portal.html" class="hover:text-text">Client portal</a></li></ul></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="mono text-[11px] tracking-widest text-muted mb-5">FIELD NOTES</div><p class="text-text-2/85 mb-3">Occasional writing on engineering, products, and the work.</p><form class="flex items-center gap-2"><input type="email" placeholder="you@company.com" class="field flex-1"/><button class="btn-primary magnetic" type="submit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form></div>
+    </div>
+    <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center"><p class="mono text-[11px] text-muted tracking-widest">© 2026 WISETRACK TECHNOLOGIES · HARD SOFTWARE, BUILT SELECTIVELY</p><div class="flex gap-6 text-sm text-muted"><a href="#" class="hover:text-text">Privacy</a><a href="#" class="hover:text-text">Terms</a><a href="contact.html" class="hover:text-text">Contact</a></div></div>
+  </div>
 </footer>
-</body></html>
+
+</body>
+</html>
