@@ -46,6 +46,22 @@ PHOTOS = [
     ("module-pms",      "1542626991-cbc4e32524cc",    "kanban-planning",1200, 800),
     ("module-accounts", "1554224155-6726b3ff858f",    "ledger-money",   1200, 800),
     ("module-lms",      "1503676260728-1c00da094a0b", "learning",       1200, 800),
+
+    # ---- Capability bento on homepage (4) ----
+    ("cap-web",        "1551434678-e076c223a692", "web-laptop",     1400, 900),  # dev workspace
+    ("cap-finance",    "1611974789855-9c2a0a7236a3", "finance-charts",1400, 900),  # finance / charts
+    ("cap-mobile",     "1572177812156-58036aae439c", "mobile-apps",   1400, 900),  # phone in hand
+    ("cap-dashboards", "1551288049-bebda4e38f71", "dashboards",      1400, 900),  # analytics screen (same as research; reused)
+
+    # ---- Products grid on homepage (3) ----
+    ("prod-marketplace","1556742049-0cfed4f6a45d","marketplace",    1400, 900),  # store
+    ("prod-ecommerce", "1607082348824-0a96f2a4b9da", "ecommerce",     1400, 900),  # packages
+    ("prod-edtech",    "1571260899304-425eee4c7efc", "edtech",        1400, 900),  # books / classroom
+
+    # ---- Page hero / aside accents (3) ----
+    ("page-methodology","1454165804606-c3d57bc86b40","method-plan",  1600, 900),  # fork-in-road / planning
+    ("page-careers",   "1521737604893-d14cc237f11d", "careers-team",  1600, 900),  # team collab
+    ("page-contact",   "1521737711867-e3b97375f902", "contact-comm",  1600, 900),  # communication
 ]
 
 
