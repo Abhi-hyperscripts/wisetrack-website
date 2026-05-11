@@ -13,6 +13,7 @@
 ## Core site
 - [Home](https://wisetrack.in/): Headline, capability bento, live shipping log, brand split, process, stats.
 - [Solutions](https://wisetrack.in/solutions.html): The three doors — custom build, ready-made platforms, Ragenaizer.
+- [AI & Agentic AI](https://wisetrack.in/ai.html): Production-grade agentic AI on Anthropic Claude — real agent loops, 90+ tools across 9 business modules, ClickHouse-backed RAG, three-tier safety gates, token + cost observability, Haiku → Sonnet fallback. Built custom for clients or pre-wired inside Ragenaizer.
 - [Work](https://wisetrack.in/portfolio.html): Case studies. Restaurant Brands International (Burger King / Popeyes) multi-country dashboard, Vivo Mobile tech-ops dashboard, election counting platform feeding Hindustan Times / ABP / Times Internet / Google, Maldives resort management, Ragenaizer rollout.
 - [Method](https://wisetrack.in/methodology.html): Four-phase process — listen, design, build (two-week demos), stay around.
 - [Journal](https://wisetrack.in/insights.html): Articles below.

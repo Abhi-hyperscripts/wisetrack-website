@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="apple-touch-icon" href="assets/logo.png" />
+<title>AI &amp; Agentic AI · WiseTrack</title>
+<meta name="description" content="Production-grade agentic AI — real agent loops, 90+ tools across 9 business modules, ClickHouse-backed RAG, three-tier safety gates, full token + cost observability. Built on Anthropic Claude. Custom for clients or pre-wired inside Ragenaizer." />
+<link rel="canonical" href="https://wisetrack.in/ai.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="WiseTrack" />
+<meta property="og:title" content="AI &amp; Agentic AI · WiseTrack" />
+<meta property="og:description" content="Production-grade agentic AI — real agent loops, 90+ tools across 9 business modules, ClickHouse-backed RAG, three-tier safety gates, full token + cost observability. Built on Anthropic Claude." />
+<meta property="og:image" content="https://wisetrack.in/assets/og-image.jpg" />
+<meta property="og:image:secure_url" content="https://wisetrack.in/assets/og-image.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://wisetrack.in/ai.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI &amp; Agentic AI · WiseTrack" />
+<meta name="twitter:description" content="Production-grade agentic AI — real agent loops, 90+ tools across 9 business modules, ClickHouse-backed RAG, three-tier safety gates, full token + cost observability. Built on Anthropic Claude." />
+<meta name="twitter:image" content="https://wisetrack.in/assets/og-image.jpg" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="assets/tailwind-config.js"></script>
+<link href="assets/styles.css" rel="stylesheet" />
+<script>document.documentElement.classList.add("js")</script>
+<script src="assets/site.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://wisetrack.in/#organization","name":"WiseTrack Technologies","alternateName":"WiseTrack","url":"https://wisetrack.in/","logo":"https://wisetrack.in/assets/logo.png","image":"https://wisetrack.in/assets/og-image.jpg","description":"Custom applications, finance integrations with whatever the client runs, Ragenaizer — a Business OS we license — and production-grade agentic AI.","foundingDate":"2020","email":"support@wisetrack.in","telephone":"+91-120-4848000","address":{"@type":"PostalAddress","streetAddress":"Sector 62","addressLocality":"Noida","addressRegion":"Uttar Pradesh","postalCode":"201309","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","email":"support@wisetrack.in","telephone":"+91-120-4848000","areaServed":"Worldwide","availableLanguage":["English","Hindi"]},"sameAs":["https://hyperscripts.io/","https://ragenaizer.com/"],"subOrganization":[{"@type":"Organization","name":"HyperScripts","url":"https://hyperscripts.io/"},{"@type":"Organization","name":"Ragenaizer","url":"https://ragenaizer.com/"}],"knowsAbout":["Anthropic Claude","Agentic AI","Agent orchestration","Tool-use","Function calling","RAG","Retrieval-augmented generation","ClickHouse","Vector embeddings","Prompt caching","LLM observability","Token accounting","Multi-tenant AI","C#",".NET","ASP.NET Core"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://wisetrack.in/ai.html","name":"AI & Agentic AI — WiseTrack","isPartOf":{"@id":"https://wisetrack.in/#website"},"publisher":{"@id":"https://wisetrack.in/#organization"},"inLanguage":"en"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wisetrack.in/"},{"@type":"ListItem","position":2,"name":"AI & Agentic AI","item":"https://wisetrack.in/ai.html"}]}</script>
+</head>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+<div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+
+<div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+    <div class="flex items-center gap-3"><span class="dot"></span><span class="hidden sm:inline">CAPABILITIES · AI &amp; AGENTIC</span><span class="sm:hidden">CAPABILITIES</span></div>
+    <div class="flex items-center gap-5"><span class="hidden md:inline">Noida, IN</span><span data-clock>--:--:-- IST</span></div>
+  </div>
+</div>
+
+<header class="fixed top-9 left-0 right-0 z-[60] bg-bg/55 backdrop-blur-2xl border-b border-white/5">
+  <nav class="max-w-page mx-auto px-edge h-[80px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5"><span class="brand-wordmark text-[14px] md:text-[17px]">WISETRACK&nbsp;TECHNOLOGIES<span class="text-violet">.</span></span></a>
+    <div class="hidden md:block">
+      <div class="nav-links">
+        <a href="solutions.html">Solutions</a>
+        <div class="nav-dropdown">
+          <a href="solutions.html#builds">Build</a>
+          <div class="nav-dropdown-panel">
+            <div class="mono text-[10px] tracking-widest text-muted px-3 mb-3">CUSTOM&nbsp;BUILDS&nbsp;·&nbsp;10&nbsp;MODULES</div>
+            <div class="panel-grid">
+              <a class="panel-item" href="build-hrms.html"><span class="slug-row">/01 · HRMS</span><span class="name">Custom HRMS</span></a>
+              <a class="panel-item" href="build-crm.html"><span class="slug-row">/02 · CRM</span><span class="name">Custom CRM</span></a>
+              <a class="panel-item" href="build-pms.html"><span class="slug-row">/03 · PMS</span><span class="name">Custom PMS</span></a>
+              <a class="panel-item" href="build-vision.html"><span class="slug-row">/04 · Vision</span><span class="name">Custom video conferencing</span></a>
+              <a class="panel-item" href="build-drive.html"><span class="slug-row">/05 · Drive</span><span class="name">Custom cloud Drive</span></a>
+              <a class="panel-item" href="build-accounts.html"><span class="slug-row">/06 · Accounts</span><span class="name">Custom accounting</span></a>
+              <a class="panel-item" href="build-lms.html"><span class="slug-row">/07 · LMS</span><span class="name">Custom LMS</span></a>
+              <a class="panel-item" href="build-research.html"><span class="slug-row">/08 · Research</span><span class="name">Custom research platform</span></a>
+              <a class="panel-item" href="build-email.html"><span class="slug-row">/09 · Email</span><span class="name">Custom unified inbox</span></a>
+              <a class="panel-item" href="build-chat.html"><span class="slug-row">/10 · Chat</span><span class="name">Custom team chat</span></a>
+            </div>
+            <div class="panel-foot">
+              <span>Already built once. We ship yours.</span>
+              <a href="solutions.html#builds">See all →</a>
+            </div>
+          </div>
+        </div>
+        <a href="ai.html" class="is-active">AI</a>
+        <a href="portfolio.html">Work</a>
+        <a href="methodology.html">Method</a>
+        <a href="insights.html">Journal</a>
+        <a href="careers.html">Careers</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden sm:inline-flex magnetic btn-primary text-sm">Start a project <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10" data-menu-toggle aria-expanded="false"><span class="block w-4 h-[1.5px] bg-text mb-1"></span><span class="block w-4 h-[1.5px] bg-text"></span></button>
+    </div>
+  </nav>
+  <div data-menu class="md:hidden hidden bg-bg border-t border-white/5 [&.open]:block">
+    <div class="px-edge py-6 flex flex-col gap-4 text-lg">
+      <a href="solutions.html" class="py-2 text-text">Solutions</a>
+      <details class="py-2 group">
+        <summary class="flex items-center justify-between text-lg cursor-pointer list-none">
+          <span>Build</span>
+          <svg class="opacity-60 transition-transform group-open:rotate-180" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="mobile-build-list mt-3">
+          <a href="build-hrms.html">Custom HRMS</a>
+          <a href="build-crm.html">Custom CRM</a>
+          <a href="build-pms.html">Custom PMS</a>
+          <a href="build-vision.html">Custom video</a>
+          <a href="build-drive.html">Custom Drive</a>
+          <a href="build-accounts.html">Custom accounting</a>
+          <a href="build-lms.html">Custom LMS</a>
+          <a href="build-research.html">Custom research</a>
+          <a href="build-email.html">Custom inbox</a>
+          <a href="build-chat.html">Custom chat</a>
+        </div>
+      </details>
+      <a href="ai.html" class="py-2 text-text">AI</a>
+      <a href="portfolio.html" class="py-2">Work</a>
+      <a href="methodology.html" class="py-2">Method</a>
+      <a href="insights.html" class="py-2">Journal</a>
+      <a href="careers.html" class="py-2">Careers</a>
+      <a href="contact.html" class="btn-primary w-fit mt-2">Start a project</a>
+    </div>
+  </div>
+</header>
+
+
+<main class="relative pt-[120px]">
+
+<!-- ─────────── HERO ─────────── -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.45"></div>
+    <div class="aurora animate-drift" style="top:20%; right:-20%; opacity:.30; animation-delay:-12s"></div>
+    <div class="absolute inset-0 bp-grid"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
+    <div class="grain"></div>
+  </div>
+
+  <div class="relative max-w-page mx-auto px-edge pt-12 md:pt-16 pb-16">
+    <div class="relative hud hud-violet p-6 md:p-10 lg:p-14 border border-white/8 rounded-2xl bg-white/[0.015]">
+      <div class="hidden md:block absolute top-3 left-6 mono text-[10px] tracking-widest text-muted">FILE&nbsp;·&nbsp;wisetrack.in/ai</div>
+      <div class="hidden md:block absolute top-3 right-6 mono text-[10px] tracking-widest text-violet flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-violet"></span>AI&nbsp;·&nbsp;AGENTIC</div>
+      <div class="hidden md:block absolute bottom-3 left-6 mono text-[10px] tracking-widest text-muted">CLAUDE&nbsp;·&nbsp;ANTHROPIC</div>
+      <div class="hidden md:block absolute bottom-3 right-6 mono text-[10px] tracking-widest text-muted">REV&nbsp;2026.05</div>
+
+      <div class="grid grid-cols-12 gap-gutter mt-8">
+        <div class="col-span-12 lg:col-span-8 reveal">
+          <a href="index.html" class="inline-flex items-center gap-2 mono text-[11px] tracking-widest text-muted hover:text-text transition-colors">
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            BACK&nbsp;TO&nbsp;HOME
+          </a>
+          <span class="slug block mt-6">§ AI&nbsp;/&nbsp;AGENTIC</span>
+          <h1 class="serif text-[clamp(2.2rem,5vw,4.6rem)] leading-[1] tracking-tight mt-4">
+            AI you can actually <span class="serif-italic text-gradient-cool">deploy</span>.
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-text-2/85 leading-relaxed max-w-prose">
+            Real agent loops with tool-use. 90+ tools across 9 business modules. ClickHouse-backed
+            RAG over your data. Three-tier safety gates, full token &amp; cost observability,
+            Haiku → Sonnet fallback on overload. Engineered on Anthropic Claude — not glued
+            together from frameworks.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="contact.html" class="btn-primary magnetic">Tell us what to automate <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="btn-ghost">See it shipped in Ragenaizer <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+
+          <!-- KPI strip -->
+          <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div class="hud hud-tight rounded-xl border border-white/8 bg-white/[0.02] p-4">
+              <div class="serif text-3xl text-gradient-cool leading-none">90<span class="text-violet">+</span></div>
+              <div class="mono text-[10px] text-muted mt-2">TOOLS&nbsp;EXPOSED&nbsp;TO&nbsp;LLM</div>
+            </div>
+            <div class="hud hud-tight rounded-xl border border-white/8 bg-white/[0.02] p-4">
+              <div class="serif text-3xl text-gradient leading-none">9</div>
+              <div class="mono text-[10px] text-muted mt-2">BUSINESS&nbsp;MODULES&nbsp;WIRED</div>
+            </div>
+            <div class="hud hud-tight rounded-xl border border-white/8 bg-white/[0.02] p-4">
+              <div class="serif text-3xl text-gradient-mint leading-none">40</div>
+              <div class="mono text-[10px] text-muted mt-2">TOOL&nbsp;ROUNDS&nbsp;PER&nbsp;RUN</div>
+            </div>
+            <div class="hud hud-tight rounded-xl border border-white/8 bg-white/[0.02] p-4">
+              <div class="serif text-3xl text-gradient leading-none">3</div>
+              <div class="mono text-[10px] text-muted mt-2">SAFETY&nbsp;TIERS&nbsp;ENFORCED</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- side card -->
+        <div class="col-span-12 lg:col-span-4 reveal" data-delay="120">
+          <div class="card p-6 hud hud-lime">
+            <div class="mono text-[10px] tracking-widest text-muted">RUNNING&nbsp;ON</div>
+            <div class="serif text-2xl mt-3 leading-tight">Anthropic Claude</div>
+            <p class="mt-3 text-sm text-text-2/85">No multi-provider hedging, no framework abstractions. Direct integration with Claude Haiku 4.5 + Sonnet 4.5 via custom <span class="mono text-lime">AnthropicClient</span>.</p>
+            <div class="mt-5 space-y-2 mono text-[11.5px]">
+              <div class="flex items-center justify-between"><span class="text-text-2">claude-haiku-4-5</span><span class="text-muted">default · tool loops</span></div>
+              <div class="flex items-center justify-between"><span class="text-text-2">claude-sonnet-4-5</span><span class="text-muted">complex reasoning</span></div>
+              <div class="flex items-center justify-between border-t border-white/5 pt-2 mt-2"><span class="text-text-2">prompt cache</span><span class="text-lime">anthropic-beta · on</span></div>
+              <div class="flex items-center justify-between"><span class="text-text-2">fallback</span><span class="text-muted">haiku → sonnet · 529</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────── What we build ─────────── -->
+<section class="relative py-12 md:py-20">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter mb-10">
+      <div class="col-span-12 md:col-span-5 reveal">
+        <span class="slug">§ What we build</span>
+        <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
+          Four things we ship, <span class="serif-italic text-gradient">end-to-end</span>.
+        </h2>
+      </div>
+      <p class="col-span-12 md:col-span-6 md:col-start-7 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
+        Not demos. Not POCs. AI that takes action against real systems, has audit trails,
+        rate limits, retries, fallbacks, observability — the same engineering bar we hold
+        the rest of the stack to.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+
+      <!-- 01 — Custom agents -->
+      <div class="card p-7 hud hud-violet reveal overflow-hidden" data-delay="0">
+        <div class="h-36 md:h-40 -mx-7 -mt-7 mb-6 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/post-wrong-stack.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-violet/25 via-transparent to-transparent mix-blend-overlay"></div>
+          <div class="absolute top-3 left-4 mono text-[10px] tracking-widest text-violet flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-violet animate-pulse"></span>AGENT.RUN
+          </div>
+          <div class="absolute bottom-3 right-4 mono text-[10px] tracking-widest text-muted">claude · haiku 4.5</div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/01 · CUSTOM&nbsp;AGENTS</span>
+          <span class="mono text-[10px] tracking-widest text-violet">PER&nbsp;WORKFLOW</span>
+        </div>
+        <h3 class="serif text-2xl md:text-3xl mt-4 leading-tight">Agents wired to <span class="serif-italic text-gradient-cool">your systems</span>.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">
+          Multi-turn agent loops (up to 40 tool rounds) that triage tickets, draft replies,
+          reconcile data, approve POs, run nightly close-of-books. Tool-use against your real
+          APIs — declarative <span class="mono text-sm">[CopilotTool]</span> attributes auto-expose
+          controller actions as Claude tools, with JSON Schema generated at startup.
+        </p>
+        <ul class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[13px]">
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-violet"></span>Streaming via SSE</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-violet"></span>60 tools/min rate limit</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-violet"></span>Auto conversation summary</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-violet"></span>Session-scoped audit trail</li>
+        </ul>
+      </div>
+
+      <!-- 02 — RAG -->
+      <div class="card p-7 hud hud-cyan reveal overflow-hidden" data-delay="60">
+        <div class="h-36 md:h-40 -mx-7 -mt-7 mb-6 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/post-postgres-enough.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-cyan/25 via-transparent to-transparent mix-blend-overlay"></div>
+          <div class="absolute top-3 left-4 mono text-[10px] tracking-widest text-cyan flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-cyan animate-pulse"></span>CLICKHOUSE.VECTORS
+          </div>
+          <div class="absolute bottom-3 right-4 mono text-[10px] tracking-widest text-muted">bge-small-en · cosine</div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/02 · RAG&nbsp;·&nbsp;CHAT&nbsp;OVER&nbsp;DATA</span>
+          <span class="mono text-[10px] tracking-widest text-cyan">CLICKHOUSE</span>
+        </div>
+        <h3 class="serif text-2xl md:text-3xl mt-4 leading-tight">Grounded in <span class="serif-italic text-gradient">your data</span>, not the public web.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">
+          ClickHouse-backed vector store with <span class="mono text-sm">bge-small-en</span> embeddings.
+          Cosine similarity retrieval, top-K configurable. Used in production for questionnaire
+          mapping, file question groups, research insights — semantic search across structured
+          and unstructured client data.
+        </p>
+        <ul class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[13px]">
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-cyan"></span>Column-oriented vector store</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-cyan"></span>Citation-first answers</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-cyan"></span>Per-tenant embedding tables</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-cyan"></span>Async ingestion pipelines</li>
+        </ul>
+      </div>
+
+      <!-- 03 — Multi-stage pipelines -->
+      <div class="card p-7 hud hud-lime reveal overflow-hidden" data-delay="120">
+        <div class="h-36 md:h-40 -mx-7 -mt-7 mb-6 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/cap-dashboards.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-lime/25 via-transparent to-transparent mix-blend-overlay"></div>
+          <div class="absolute top-3 left-4 mono text-[10px] tracking-widest text-lime flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-lime animate-pulse"></span>PIPELINE.RUN
+          </div>
+          <div class="absolute bottom-3 right-4 mono text-[10px] tracking-widest text-muted">stage-by-stage · replayable</div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/03 · MULTI-STAGE&nbsp;PIPELINES</span>
+          <span class="mono text-[10px] tracking-widest text-lime">ASYNC&nbsp;BACKGROUND</span>
+        </div>
+        <h3 class="serif text-2xl md:text-3xl mt-4 leading-tight">Pipelines, <span class="serif-italic text-gradient-mint">not prompts</span>.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">
+          Long-running AI work runs as stage-by-stage background jobs through
+          <span class="mono text-sm">AIEngine.JobQueueService</span>. Each stage logs progress,
+          retries on transient errors, leaves a trace you can debug. Production examples:
+          open-end coding (<span class="mono">claim_centric_batch_v2</span>), questionnaire
+          extraction, FGD analysis, secondary research generation.
+        </p>
+        <ul class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[13px]">
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-lime"></span>Job queue + processor</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-lime"></span>Stage-level status polling</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-lime"></span>Replayable runs</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-lime"></span>Anthropic Batch API ready</li>
+        </ul>
+      </div>
+
+      <!-- 04 — AI inside Ragenaizer -->
+      <div class="card p-7 hud hud-sky reveal overflow-hidden" data-delay="180">
+        <div class="h-36 md:h-40 -mx-7 -mt-7 mb-6 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/portfolio-ragenaizer.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-sky/25 via-transparent to-transparent mix-blend-overlay"></div>
+          <div class="absolute top-3 left-4 mono text-[10px] tracking-widest text-mint flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span>SHIPPED · LIVE
+          </div>
+          <div class="absolute bottom-3 right-4 mono text-[10px] tracking-widest text-muted">ragenaizer.com</div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/04 · AI&nbsp;INSIDE&nbsp;RAGENAIZER</span>
+          <span class="mono text-[10px] tracking-widest text-mint">9&nbsp;MODULES&nbsp;LIVE</span>
+        </div>
+        <h3 class="serif text-2xl md:text-3xl mt-4 leading-tight">Already running in <span class="serif-italic text-gradient">production</span>.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">
+          Every Ragenaizer module exposes its actions as agent tools. Talk to your books in
+          Accounts. Run payroll from HRMS. Approve a PO in Procurement. Generate research
+          insights without leaving the chat. Same agent loop, woven into nine modules —
+          not a "ChatGPT for X" bolt-on.
+        </p>
+        <a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-sky text-sm">
+          See Ragenaizer
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────── Agent loop deep-dive ─────────── -->
+<section class="relative bg-gradient-to-b from-transparent via-bg-2/30 to-transparent border-y border-white/5 py-16 md:py-24">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter mb-10">
+      <div class="col-span-12 md:col-span-7 reveal">
+        <span class="slug">§ How the loop runs</span>
+        <h2 class="serif text-[clamp(2rem,4.2vw,3.4rem)] leading-[1] tracking-tight mt-3">
+          A real agent loop, <span class="serif-italic text-gradient-cool">not a wrapper</span>.
+        </h2>
+      </div>
+      <p class="col-span-12 md:col-span-5 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
+        Custom orchestrator (<span class="mono text-sm">CopilotService</span>) directly on the
+        Anthropic Messages API. No LangChain, no Semantic Kernel — tight control, minimal latency,
+        and one place to debug.
+      </p>
+    </div>
+
+    <!-- agent loop diagram -->
+    <div class="reveal hud hud-violet rounded-2xl border border-white/8 bg-bg-2/50 overflow-hidden">
+      <div class="flex items-center justify-between px-4 py-2.5 border-b border-white/5 bg-white/[0.02]">
+        <div class="flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-violet animate-pulse"></span>
+          <span class="mono text-[10px] tracking-widest text-muted">CopilotService.cs&nbsp;·&nbsp;agent loop</span>
+        </div>
+        <div class="mono text-[10px] text-muted">multi-turn · tool-use · streaming</div>
+      </div>
+
+      <div class="p-5 md:p-8">
+        <svg viewBox="0 0 1000 360" class="w-full h-auto">
+          <defs>
+            <linearGradient id="loopL" x1="0" x2="1"><stop offset="0" stop-color="#A78BFA"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+            <marker id="loopArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="rgba(167,139,250,0.85)"/>
+            </marker>
+            <marker id="loopArrL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="rgba(190,242,100,0.8)"/>
+            </marker>
+          </defs>
+
+          <!-- swim-lane labels -->
+          <g font-family="JetBrains Mono" font-size="9" fill="#9692B0">
+            <text x="10" y="36">/user</text>
+            <text x="10" y="130">/agent</text>
+            <text x="10" y="220">/tools</text>
+            <text x="10" y="310">/data</text>
+          </g>
+
+          <!-- lane lines -->
+          <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+            <line x1="80" y1="50" x2="990" y2="50"/>
+            <line x1="80" y1="140" x2="990" y2="140"/>
+            <line x1="80" y1="230" x2="990" y2="230"/>
+            <line x1="80" y1="320" x2="990" y2="320"/>
+          </g>
+
+          <!-- nodes -->
+          <g fill="none" stroke-width="1.4">
+            <rect x="100" y="14" width="140" height="40" rx="6" stroke="url(#loopL)" fill="rgba(167,139,250,0.06)"/>
+            <rect x="290" y="100" width="160" height="60" rx="6" stroke="rgba(167,139,250,0.85)" fill="rgba(167,139,250,0.06)"/>
+            <rect x="500" y="190" width="150" height="60" rx="6" stroke="rgba(34,211,238,0.85)" fill="rgba(34,211,238,0.06)"/>
+            <rect x="700" y="280" width="160" height="60" rx="6" stroke="rgba(190,242,100,0.7)" fill="rgba(190,242,100,0.05)"/>
+            <rect x="700" y="100" width="160" height="60" rx="6" stroke="rgba(99,102,241,0.85)" fill="rgba(99,102,241,0.06)"/>
+            <rect x="100" y="280" width="150" height="60" rx="6" stroke="rgba(255,255,255,0.18)" fill="rgba(255,255,255,0.02)"/>
+          </g>
+
+          <!-- node labels -->
+          <g font-family="JetBrains Mono" font-size="10.5" fill="#EAEAF5">
+            <text x="115" y="38">"reconcile bills"</text>
+            <text x="305" y="124">planner · think</text>
+            <text x="515" y="214">tool_call · approve_bill</text>
+            <text x="715" y="304">db / api side-effect</text>
+            <text x="715" y="124">result · final answer</text>
+            <text x="115" y="304">audit trail · token log</text>
+          </g>
+          <g font-family="JetBrains Mono" font-size="9" fill="#9692B0">
+            <text x="305" y="138">haiku-4.5 · prompt-cached</text>
+            <text x="515" y="228">CopilotToolRouter</text>
+            <text x="715" y="318">tenant-scoped, role-checked</text>
+            <text x="715" y="138">stream → SSE → user</text>
+            <text x="115" y="318">ai_token_usage row</text>
+          </g>
+
+          <!-- edges -->
+          <g fill="none" stroke="rgba(167,139,250,0.55)" stroke-width="1.4">
+            <path d="M170 54 L370 100" marker-end="url(#loopArr)"/>
+            <path d="M450 130 L500 190" marker-end="url(#loopArr)"/>
+            <path d="M650 220 L700 280" marker-end="url(#loopArr)"/>
+            <path d="M780 280 C 780 220, 540 200, 450 160" stroke-dasharray="3 4" marker-end="url(#loopArr)"/>
+            <path d="M370 130 L700 120" marker-end="url(#loopArr)"/>
+          </g>
+          <g fill="none" stroke="rgba(190,242,100,0.6)" stroke-width="1.2" stroke-dasharray="3 4">
+            <path d="M370 160 L 250 290" marker-end="url(#loopArrL)"/>
+            <path d="M580 250 L 250 310" marker-end="url(#loopArrL)"/>
+          </g>
+
+          <!-- loop annotation -->
+          <g font-family="JetBrains Mono" font-size="9" fill="#9692B0">
+            <text x="540" y="172">loop · up to 40 rounds</text>
+          </g>
+        </svg>
+
+        <!-- compact callouts -->
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-[12.5px]">
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-3">
+            <div class="mono text-[10px] tracking-widest text-violet">01 · PLAN</div>
+            <div class="mt-1.5">Claude reads tool schemas + system prompt (cached). Decides next action.</div>
+          </div>
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-3">
+            <div class="mono text-[10px] tracking-widest text-cyan">02 · ROUTE</div>
+            <div class="mt-1.5"><span class="mono">CopilotToolRouter</span> resolves params (name → ID) and dispatches to owning service.</div>
+          </div>
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-3">
+            <div class="mono text-[10px] tracking-widest text-indigo">03 · EXECUTE</div>
+            <div class="mt-1.5">Safety gate enforced. Side-effect runs against real systems. Result returned.</div>
+          </div>
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-3">
+            <div class="mono text-[10px] tracking-widest text-lime">04 · OBSERVE</div>
+            <div class="mt-1.5">Tokens, latency, cache hits, cost — all logged to <span class="mono">ai_token_usage</span>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─────────── Safety + observability ─────────── -->
+<section class="relative py-16 md:py-24">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter mb-10">
+      <div class="col-span-12 md:col-span-6 reveal">
+        <span class="slug">§ Safety + observability</span>
+        <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
+          The boring parts <span class="serif-italic text-gradient">that matter</span>.
+        </h2>
+      </div>
+      <p class="col-span-12 md:col-span-5 md:col-start-8 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
+        Three things shipped agents need that demos don't: <em>can't break prod</em>,
+        <em>can't burn budget</em>, <em>can't go silently wrong</em>. Here's how we handle each.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
+
+      <!-- Safety tiers -->
+      <div class="card p-7 hud hud-violet reveal">
+        <div class="mono text-[10px] tracking-widest text-muted">/SAFETY · TIERS</div>
+        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Three-tier confirmation gates.</h3>
+        <p class="mt-3 text-text-2/85">Tool safety auto-inferred from HTTP method; explicit override available. Confirmation gates are machine-enforced — the LLM cannot bypass them.</p>
+        <div class="mt-5 space-y-2.5">
+          <div class="flex items-center justify-between rounded-lg border border-lime/30 bg-lime/[0.04] px-3 py-2 text-[12.5px]">
+            <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime"></span><span class="mono text-[10px] tracking-widest text-lime">SAFE</span></span>
+            <span class="text-muted text-[11.5px]">GET · read-only · no gate</span>
+          </div>
+          <div class="flex items-center justify-between rounded-lg border border-amber-400/30 bg-amber-400/[0.05] px-3 py-2 text-[12.5px]">
+            <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span><span class="mono text-[10px] tracking-widest text-amber-300">MODERATE</span></span>
+            <span class="text-muted text-[11.5px]">POST/PUT · user confirms</span>
+          </div>
+          <div class="flex items-center justify-between rounded-lg border border-rose-400/40 bg-rose-400/[0.05] px-3 py-2 text-[12.5px]">
+            <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-rose-400"></span><span class="mono text-[10px] tracking-widest text-rose-300">CRITICAL</span></span>
+            <span class="text-muted text-[11.5px]">DELETE / payroll · hard gate</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Observability -->
+      <div class="card p-7 hud hud-cyan reveal" data-delay="80">
+        <div class="mono text-[10px] tracking-widest text-muted">/OBSERVABILITY</div>
+        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Every call costed and logged.</h3>
+        <p class="mt-3 text-text-2/85">The <span class="mono text-sm">ai_token_usage</span> table records every LLM call — async fire-and-forget so it never blocks the main flow.</p>
+        <div class="mt-5 rounded-xl bg-bg-1/60 border border-white/5 p-3 font-mono text-[11px] leading-relaxed">
+          <div class="text-cyan">columns&nbsp;·&nbsp;ai_token_usage</div>
+          <div class="text-text-2/85 mt-2">
+            tenant_id<br/>
+            model · call_type<br/>
+            input_tokens · output_tokens<br/>
+            cache_creation · cache_read<br/>
+            latency_ms · http_status<br/>
+            error_type · cost_inr
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost + caching -->
+      <div class="card p-7 hud hud-lime reveal" data-delay="160">
+        <div class="mono text-[10px] tracking-widest text-muted">/COST · CACHING · FALLBACK</div>
+        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Cheap, cached, never down.</h3>
+        <p class="mt-3 text-text-2/85">Prompt caching cuts cost dramatically on stable system prompts. Model fallback kicks in on overload — agents keep running through Anthropic incidents.</p>
+        <ul class="mt-5 flex flex-col gap-2.5 text-[13px]">
+          <li class="flex items-start gap-2"><span class="text-lime mt-0.5">→</span><span>Prompt caching via <span class="mono">anthropic-beta</span> — per-tenant cache keys.</span></li>
+          <li class="flex items-start gap-2"><span class="text-lime mt-0.5">→</span><span>Default Haiku 4.5 for tool loops · Sonnet 4.5 for hard reasoning.</span></li>
+          <li class="flex items-start gap-2"><span class="text-lime mt-0.5">→</span><span>Auto-fallback Haiku → Sonnet on <span class="mono">529</span> overload.</span></li>
+          <li class="flex items-start gap-2"><span class="text-lime mt-0.5">→</span><span>Batch API support for long-running research (50% discount).</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────── Where AI runs · the modules ─────────── -->
+<section class="relative bg-gradient-to-b from-transparent via-bg-2/30 to-transparent border-y border-white/5 py-16 md:py-24">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter mb-10">
+      <div class="col-span-12 md:col-span-6 reveal">
+        <span class="slug">§ AI · per module</span>
+        <h2 class="serif text-[clamp(2rem,4.2vw,3.4rem)] leading-[1] tracking-tight mt-3">
+          Nine modules. <span class="serif-italic text-gradient-cool">Real tools.</span>
+        </h2>
+      </div>
+      <p class="col-span-12 md:col-span-5 md:col-start-8 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
+        Tool counts below reflect what's actually exposed to the LLM in our production
+        Ragenaizer build. Sample tool names per module — there are more.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+
+      <!-- Accounts -->
+      <div class="card p-6 hud hud-violet reveal overflow-hidden">
+        <div class="h-24 -mx-6 -mt-6 mb-4 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/module-accounts.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-violet/20 via-transparent to-transparent mix-blend-overlay"></div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/ACCOUNTS</span>
+          <span class="mono text-[10px] tracking-widest text-violet">DEEP</span>
+        </div>
+        <h3 class="serif text-xl mt-3 leading-tight">Talk to your books.</h3>
+        <ul class="mt-4 flex flex-col gap-1.5 mono text-[11.5px] text-text-2/85">
+          <li><span class="text-violet">→</span> create_purchase_order · approve · convert_to_bill</li>
+          <li><span class="text-violet">→</span> approve_expense_claim · reimburse</li>
+          <li><span class="text-violet">→</span> run_depreciation · close_fiscal_year</li>
+        </ul>
+      </div>
+
+      <!-- HRMS -->
+      <div class="card p-6 hud hud-cyan reveal overflow-hidden" data-delay="60">
+        <div class="h-24 -mx-6 -mt-6 mb-4 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/module-hrms.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-cyan/20 via-transparent to-transparent mix-blend-overlay"></div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/HRMS</span>
+          <span class="mono text-[10px] tracking-widest text-cyan">DEEP</span>
+        </div>
+        <h3 class="serif text-xl mt-3 leading-tight">Payroll on demand.</h3>
+        <ul class="mt-4 flex flex-col gap-1.5 mono text-[11.5px] text-text-2/85">
+          <li><span class="text-cyan">→</span> run_payroll · approve_leave</li>
+          <li><span class="text-cyan">→</span> regularise_attendance · process_claims</li>
+          <li><span class="text-cyan">→</span> policy_qna · onboard_employee</li>
+        </ul>
+      </div>
+
+      <!-- PMS -->
+      <div class="card p-6 hud hud-lime reveal overflow-hidden" data-delay="120">
+        <div class="h-24 -mx-6 -mt-6 mb-4 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/module-pms.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-lime/20 via-transparent to-transparent mix-blend-overlay"></div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/PMS</span>
+          <span class="mono text-[10px] tracking-widest text-lime">DEEP</span>
+        </div>
+        <h3 class="serif text-xl mt-3 leading-tight">Move projects forward.</h3>
+        <ul class="mt-4 flex flex-col gap-1.5 mono text-[11.5px] text-text-2/85">
+          <li><span class="text-lime">→</span> create_task · assign · move_to_done</li>
+          <li><span class="text-lime">→</span> log_time · status_rollup</li>
+          <li><span class="text-lime">→</span> generate_standup · risk_flag</li>
+        </ul>
+      </div>
+
+      <!-- CRM -->
+      <div class="card p-6 hud hud-sky reveal overflow-hidden" data-delay="0">
+        <div class="h-24 -mx-6 -mt-6 mb-4 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/module-crm.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-sky/20 via-transparent to-transparent mix-blend-overlay"></div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/CRM</span>
+          <span class="mono text-[10px] tracking-widest text-sky">MODERATE</span>
+        </div>
+        <h3 class="serif text-xl mt-3 leading-tight">Pipeline that thinks.</h3>
+        <ul class="mt-4 flex flex-col gap-1.5 mono text-[11.5px] text-text-2/85">
+          <li><span class="text-sky">→</span> create_activity · log_call · get_pipeline_summary</li>
+          <li><span class="text-sky">→</span> lead_discovery · qualify</li>
+          <li><span class="text-sky">→</span> get_crm_dashboard · smart_filter</li>
+        </ul>
+      </div>
+
+      <!-- Research -->
+      <div class="card p-6 hud hud-violet reveal overflow-hidden" data-delay="60">
+        <div class="h-24 -mx-6 -mt-6 mb-4 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/module-research.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-violet/20 via-transparent to-transparent mix-blend-overlay"></div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/RESEARCH</span>
+          <span class="mono text-[10px] tracking-widest text-violet">MULTI-STAGE</span>
+        </div>
+        <h3 class="serif text-xl mt-3 leading-tight">Async insight pipelines.</h3>
+        <ul class="mt-4 flex flex-col gap-1.5 mono text-[11.5px] text-text-2/85">
+          <li><span class="text-violet">→</span> generate_secondary_research</li>
+          <li><span class="text-violet">→</span> generate_research_insights</li>
+          <li><span class="text-violet">→</span> auto_generate_codeframe · FGD pipeline</li>
+        </ul>
+      </div>
+
+      <!-- Procurement -->
+      <div class="card p-6 hud hud-cyan reveal overflow-hidden" data-delay="120">
+        <div class="h-24 -mx-6 -mt-6 mb-4 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/module-accounts.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-cyan/20 via-transparent to-transparent mix-blend-overlay"></div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/PROCUREMENT</span>
+          <span class="mono text-[10px] tracking-widest text-cyan">DEEP</span>
+        </div>
+        <h3 class="serif text-xl mt-3 leading-tight">RFQ → PO → pay.</h3>
+        <ul class="mt-4 flex flex-col gap-1.5 mono text-[11.5px] text-text-2/85">
+          <li><span class="text-cyan">→</span> create_rfq · short-list · negotiate</li>
+          <li><span class="text-cyan">→</span> vendor_compare · approve_po</li>
+          <li><span class="text-cyan">→</span> chain: vendor → bill → approve → pay</li>
+        </ul>
+      </div>
+
+      <!-- LMS -->
+      <div class="card p-6 hud hud-lime reveal overflow-hidden">
+        <div class="h-24 -mx-6 -mt-6 mb-4 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/module-lms.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-lime/20 via-transparent to-transparent mix-blend-overlay"></div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/LMS</span>
+          <span class="mono text-[10px] tracking-widest text-lime">MODERATE</span>
+        </div>
+        <h3 class="serif text-xl mt-3 leading-tight">Courses + quizzes.</h3>
+        <ul class="mt-4 flex flex-col gap-1.5 mono text-[11.5px] text-text-2/85">
+          <li><span class="text-lime">→</span> create_course · create_lesson</li>
+          <li><span class="text-lime">→</span> enroll · publish · cohort_announce</li>
+          <li><span class="text-lime">→</span> generate_quiz · grade_attempt</li>
+        </ul>
+      </div>
+
+      <!-- Vision -->
+      <div class="card p-6 hud hud-sky reveal overflow-hidden" data-delay="60">
+        <div class="h-24 -mx-6 -mt-6 mb-4 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/module-vision.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-sky/20 via-transparent to-transparent mix-blend-overlay"></div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/VISION</span>
+          <span class="mono text-[10px] tracking-widest text-sky">TRANSCRIPTION</span>
+        </div>
+        <h3 class="serif text-xl mt-3 leading-tight">Meetings, captured.</h3>
+        <ul class="mt-4 flex flex-col gap-1.5 mono text-[11.5px] text-text-2/85">
+          <li><span class="text-sky">→</span> start_recording · transcribe_session</li>
+          <li><span class="text-sky">→</span> generate_summary · action_items</li>
+          <li><span class="text-sky">→</span> attach_to_crm · attach_to_pms</li>
+        </ul>
+      </div>
+
+      <!-- Drive -->
+      <div class="card p-6 hud reveal overflow-hidden" data-delay="120">
+        <div class="h-24 -mx-6 -mt-6 mb-4 relative overflow-hidden rounded-t-[14px]">
+          <img src="assets/photos/module-drive.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/55 to-transparent"></div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="mono text-[10px] tracking-widest text-muted">/DRIVE</span>
+          <span class="mono text-[10px] tracking-widest text-muted">LIGHT</span>
+        </div>
+        <h3 class="serif text-xl mt-3 leading-tight">Find things by meaning.</h3>
+        <ul class="mt-4 flex flex-col gap-1.5 mono text-[11.5px] text-text-2/85">
+          <li><span class="text-text-2">→</span> list · share · move · copy</li>
+          <li><span class="text-text-2">→</span> semantic_find · summarise_doc</li>
+          <li><span class="text-text-2">→</span> extract_table · tag_auto</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────── Stack ─────────── -->
+<section class="relative py-16 md:py-24">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter mb-10">
+      <div class="col-span-12 md:col-span-6 reveal">
+        <span class="slug">§ Stack</span>
+        <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
+          What it's <span class="serif-italic text-gradient">built on</span>.
+        </h2>
+      </div>
+      <p class="col-span-12 md:col-span-5 md:col-start-8 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
+        Deliberately small. No framework abstractions, no multi-provider hedging — Anthropic
+        Claude directly over HTTP. The custom orchestrator is ~one file you can read in an
+        afternoon.
+      </p>
+    </div>
+
+    <div class="card p-7 reveal">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="mono text-[10px] tracking-widest text-muted">/STACK · AI</span>
+        <span class="h-px flex-1 bg-white/10"></span>
+        <span class="mono text-[10px] tracking-widest text-muted">REV&nbsp;2026.05</span>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <span class="tag tag-violet">Claude · Haiku 4.5</span>
+        <span class="tag tag-violet">Claude · Sonnet 4.5</span>
+        <span class="tag">Anthropic Messages API</span>
+        <span class="tag">prompt caching · anthropic-beta</span>
+        <span class="tag">model fallback · haiku → sonnet</span>
+        <span class="tag tag-cyan">ClickHouse · vector store</span>
+        <span class="tag">bge-small-en · embeddings</span>
+        <span class="tag">cosine similarity · top-K</span>
+        <span class="tag">.NET · C#</span>
+        <span class="tag">gRPC · bidirectional</span>
+        <span class="tag">SSE · streaming</span>
+        <span class="tag tag-lime">CopilotTool · attribute scan</span>
+        <span class="tag">CopilotToolRouter</span>
+        <span class="tag">Param resolvers · name → id</span>
+        <span class="tag">Composite tools · chains</span>
+        <span class="tag">JobQueueService · pipelines</span>
+        <span class="tag">Per-tenant API keys</span>
+        <span class="tag tag-mint">ai_token_usage · cost log</span>
+        <span class="tag">Anthropic Batch API · 50% off</span>
+        <span class="tag">3-tier safety gates</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────── Build vs. license ─────────── -->
+<section class="relative bg-gradient-to-b from-transparent via-bg-2/30 to-transparent border-y border-white/5 py-16 md:py-24">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter mb-10">
+      <div class="col-span-12 md:col-span-6 reveal">
+        <span class="slug">§ Build vs. license</span>
+        <h2 class="serif text-[clamp(2rem,4.2vw,3.4rem)] leading-[1] tracking-tight mt-3">
+          Two ways to <span class="serif-italic text-gradient-warm">get this</span>.
+        </h2>
+      </div>
+      <p class="col-span-12 md:col-span-5 md:col-start-8 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
+        Custom agents wired to your existing stack — or license Ragenaizer and get the
+        whole agent infrastructure pre-wired into nine modules from day one.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div class="card p-7 hud hud-cyan reveal">
+        <div class="mono text-[10px] tracking-widest text-muted">BUILD&nbsp;CUSTOM&nbsp;AGENTS&nbsp;WHEN</div>
+        <ul class="mt-5 flex flex-col gap-3 text-text-2/90">
+          <li class="flex gap-3"><span class="text-cyan">→</span><span>You have your own systems — ERP, CRM, in-house ops tools — that the agent must drive.</span></li>
+          <li class="flex gap-3"><span class="text-cyan">→</span><span>You need agents fluent in your specific domain language and workflows.</span></li>
+          <li class="flex gap-3"><span class="text-cyan">→</span><span>Data residency, compliance, or self-host requirements rule out a SaaS bot.</span></li>
+          <li class="flex gap-3"><span class="text-cyan">→</span><span>The automation <em>is</em> a moat — what you're building isn't generic.</span></li>
+        </ul>
+      </div>
+      <div class="card p-7 hud hud-lime reveal" data-delay="120">
+        <div class="mono text-[10px] tracking-widest text-muted">LICENSE&nbsp;RAGENAIZER&nbsp;INSTEAD&nbsp;WHEN</div>
+        <ul class="mt-5 flex flex-col gap-3 text-text-2/90">
+          <li class="flex gap-3"><span class="text-lime">→</span><span>You want agents over HRMS / CRM / Accounts / PMS today, not next quarter.</span></li>
+          <li class="flex gap-3"><span class="text-lime">→</span><span>The workflows match the 90+ tools we've already shipped.</span></li>
+          <li class="flex gap-3"><span class="text-lime">→</span><span>You'd rather let us maintain the AI plumbing and just use it.</span></li>
+          <li class="flex gap-3"><span class="text-lime">→</span><span>You can always pair custom builds with Ragenaizer modules later.</span></li>
+        </ul>
+        <a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-lime text-sm">
+          Look at Ragenaizer first
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────── CTA ─────────── -->
+<section class="relative py-16 md:py-24">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="card p-10 md:p-16 relative overflow-hidden reveal">
+      <div class="absolute -inset-1 pointer-events-none opacity-60"><div class="aurora animate-drift" style="left:-10%; top:-30%"></div></div>
+      <div class="relative grid grid-cols-12 gap-gutter items-end">
+        <div class="col-span-12 md:col-span-8">
+          <span class="slug">§ Next step</span>
+          <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] tracking-tight mt-4">
+            What should your agents <span class="serif-italic text-gradient">do for you?</span>
+          </h2>
+          <p class="mt-5 max-w-prose text-text-2/85 text-lg">
+            One conversation. We tell you which slice is worth automating, which slice isn't,
+            and what shape the agent loop should take.
+          </p>
+        </div>
+        <div class="col-span-12 md:col-span-4 md:text-right">
+          <a href="contact.html" class="btn-primary magnetic w-fit">Start a project <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="relative border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge pt-20 pb-10">
+    <div class="grid grid-cols-12 gap-gutter">
+      <div class="col-span-12 mb-10">
+        <div class="wa-strip">
+          <div class="qr"><img src="assets/whatsapp_qr.png" alt="WhatsApp QR code for WiseTrack Technologies" /></div>
+          <div class="copy">
+            <div class="label">WHATSAPP · SALES &amp; SUPPORT</div>
+            <div class="head">Quicker than email — <em>chat with us</em>.</div>
+            <p>Scan the QR or tap the button to start a WhatsApp chat with our sales &amp; support team. We reply within working hours, IST.</p>
+          </div>
+          <a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="cta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Zm4.49-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.12.17 1.78 2.72 4.3 3.81.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-4">
+        <a href="index.html" class="flex items-center gap-2.5"><span class="brand-wordmark text-[17px] md:text-[20px]">WISETRACK&nbsp;TECHNOLOGIES<span class="text-violet">.</span></span></a>
+        <p class="mt-6 max-w-md text-text-2/80 leading-relaxed">Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our flagship product.</p>
+        <div class="mt-6 flex items-center gap-3 text-muted text-sm"><span class="dot"></span><span>Open for new engagements · Q1–Q2 2026</span></div>
+      </div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-6"><div class="mono text-[11px] tracking-widest text-muted mb-5">EXPLORE</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="solutions.html" class="hover:text-text">Solutions</a></li><li><a href="ai.html" class="hover:text-text">AI</a></li><li><a href="portfolio.html" class="hover:text-text">Work</a></li><li><a href="methodology.html" class="hover:text-text">Method</a></li><li><a href="insights.html" class="hover:text-text">Journal</a></li></ul></div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">BRANDS</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="https://hyperscripts.io/" target="_blank" rel="noopener" class="hover:text-text">HyperScripts</a></li><li><a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="hover:text-text">Ragenaizer</a></li><li><a href="careers.html" class="hover:text-text">Careers</a></li><li><a href="client-portal.html" class="hover:text-text">Client portal</a></li></ul></div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">LEGAL</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="terms.html" class="hover:text-text">Terms</a></li><li><a href="privacy.html" class="hover:text-text">Privacy</a></li><li><a href="cookies.html" class="hover:text-text">Cookies</a></li></ul></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">FIELD NOTES</div><p class="text-text-2/85 mb-3">Occasional writing on engineering, products, and the work.</p><form class="flex items-center gap-2"><input type="email" placeholder="you@company.com" class="field flex-1"/><button class="btn-primary magnetic" type="submit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form></div>
+    </div>
+    <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center"><p class="mono text-[11px] text-muted tracking-widest">© 2026 WISETRACK TECHNOLOGIES · HARD SOFTWARE, BUILT SELECTIVELY</p><div class="flex gap-6 text-sm text-muted"><a href="privacy.html" class="hover:text-text">Privacy</a><a href="terms.html" class="hover:text-text">Terms</a><a href="cookies.html" class="hover:text-text">Cookies</a><a href="contact.html" class="hover:text-text">Contact</a></div></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="wa-fab" aria-label="Chat with WiseTrack on WhatsApp">
+  <span class="wa-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Zm4.49-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.12.17 1.78 2.72 4.3 3.81.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+  </span>
+  <span class="wa-label">Chat with us</span>
+</a>
+
+</body>
+</html>

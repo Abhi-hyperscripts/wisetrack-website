@@ -88,6 +88,7 @@
             </div>
           </div>
         </div>
+        <a href="ai.html">AI</a>
         <a href="portfolio.html">Work</a>
         <a href="methodology.html">Method</a>
         <a href="insights.html">Journal</a>
@@ -126,6 +127,7 @@
           <a href="build-chat.html">Custom chat</a>
         </div>
       </details>
+      <a href="ai.html" class="py-2">AI</a>
       <a href="portfolio.html" class="py-2">Work</a>
       <a href="methodology.html" class="py-2">Method</a>
       <a href="insights.html" class="py-2">Journal</a>
@@ -139,11 +141,12 @@
 <aside data-rail class="hidden xl:flex fixed left-4 top-1/2 -translate-y-1/2 z-[55] flex-col gap-3 items-start mono text-[10px] tracking-widest">
   <a href="#hero" class="flex items-center gap-2"><span class="line"></span>00·INDEX</a>
   <a href="#capabilities" class="flex items-center gap-2"><span class="line"></span>01·BUILD</a>
-  <a href="#products" class="flex items-center gap-2"><span class="line"></span>02·LICENSE</a>
-  <a href="#brands" class="flex items-center gap-2"><span class="line"></span>03·BRANDS</a>
-  <a href="#modules" class="flex items-center gap-2"><span class="line"></span>04·MODULES</a>
-  <a href="#method" class="flex items-center gap-2"><span class="line"></span>05·METHOD</a>
-  <a href="#stats" class="flex items-center gap-2"><span class="line"></span>06·TRACK</a>
+  <a href="#ai" class="flex items-center gap-2"><span class="line"></span>02·AI</a>
+  <a href="#products" class="flex items-center gap-2"><span class="line"></span>03·LICENSE</a>
+  <a href="#brands" class="flex items-center gap-2"><span class="line"></span>04·BRANDS</a>
+  <a href="#modules" class="flex items-center gap-2"><span class="line"></span>05·MODULES</a>
+  <a href="#method" class="flex items-center gap-2"><span class="line"></span>06·METHOD</a>
+  <a href="#stats" class="flex items-center gap-2"><span class="line"></span>07·TRACK</a>
 </aside>
 
 <main class="relative pt-[120px]">
@@ -226,9 +229,14 @@
 
           <!-- System architecture — clients → services → data -->
           <div class="relative hud hud-cyan rounded-2xl border border-white/8 bg-bg-2/40 overflow-hidden">
-            <div class="absolute top-2 left-3 mono text-[10px] tracking-widest text-muted">ARCHITECTURE&nbsp;·&nbsp;HOW&nbsp;WE&nbsp;BUILD</div>
-            <div class="absolute top-2 right-3 mono text-[10px] tracking-widest text-lime">● BUILDING</div>
-            <svg viewBox="0 0 400 400" class="w-full h-auto pt-7 pb-7">
+            <div class="flex items-center justify-between gap-3 pt-3.5 pb-1.5 pl-8 pr-8 mono text-[10px] tracking-widest">
+              <span class="text-muted truncate">
+                <span class="sm:hidden">ARCHITECTURE</span>
+                <span class="hidden sm:inline">ARCHITECTURE&nbsp;·&nbsp;HOW&nbsp;WE&nbsp;BUILD</span>
+              </span>
+              <span class="text-lime whitespace-nowrap shrink-0">● BUILDING</span>
+            </div>
+            <svg viewBox="0 0 400 400" class="w-full h-auto pb-7">
               <defs>
                 <linearGradient id="svcA" x1="0" x2="1"><stop offset="0" stop-color="#A78BFA" stop-opacity="0.2"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0.12"/></linearGradient>
                 <marker id="arrV" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -257,15 +265,15 @@
               <g>
                 <rect x="40" y="66" width="100" height="46" rx="4" fill="rgba(167,139,250,0.06)" stroke="rgba(167,139,250,0.55)" stroke-width="1"/>
                 <text x="51" y="86" font-family="JetBrains Mono" font-size="10.5" fill="#ECE3FF">web.blazor</text>
-                <text x="51" y="101" font-family="JetBrains Mono" font-size="9" fill="#9692B0">razor · components</text>
+                <text x="51" y="101" font-family="JetBrains Mono" font-size="8" fill="#9692B0">razor · components</text>
 
                 <rect x="150" y="66" width="100" height="46" rx="4" fill="rgba(34,211,238,0.06)" stroke="rgba(34,211,238,0.55)" stroke-width="1"/>
                 <text x="161" y="86" font-family="JetBrains Mono" font-size="10.5" fill="#E1FAFF">mobile.app</text>
-                <text x="161" y="101" font-family="JetBrains Mono" font-size="9" fill="#9692B0">ios · android</text>
+                <text x="161" y="101" font-family="JetBrains Mono" font-size="8" fill="#9692B0">ios · android</text>
 
                 <rect x="260" y="66" width="100" height="46" rx="4" fill="rgba(190,242,100,0.06)" stroke="rgba(190,242,100,0.55)" stroke-width="1"/>
                 <text x="271" y="86" font-family="JetBrains Mono" font-size="10.5" fill="#F2FFD1">dashboards</text>
-                <text x="271" y="101" font-family="JetBrains Mono" font-size="9" fill="#9692B0">live · multi-src</text>
+                <text x="271" y="101" font-family="JetBrains Mono" font-size="8" fill="#9692B0">live · multi-src</text>
               </g>
 
               <!-- clients → services connectors -->
@@ -279,13 +287,13 @@
               <g>
                 <rect x="70" y="184" width="120" height="64" rx="4" fill="url(#svcA)" stroke="rgba(167,139,250,0.65)" stroke-width="1"/>
                 <text x="82" y="205" font-family="JetBrains Mono" font-size="11" fill="#F1E8FF">hyperscripts.api</text>
-                <text x="82" y="221" font-family="JetBrains Mono" font-size="9" fill="#9692B0">C# · ASP.NET Core</text>
-                <text x="82" y="235" font-family="JetBrains Mono" font-size="9" fill="#9692B0">custom · per-client</text>
+                <text x="82" y="221" font-family="JetBrains Mono" font-size="8" fill="#9692B0">C# · ASP.NET Core</text>
+                <text x="82" y="235" font-family="JetBrains Mono" font-size="8" fill="#9692B0">custom · per-client</text>
 
                 <rect x="210" y="184" width="120" height="64" rx="4" fill="rgba(34,211,238,0.10)" stroke="rgba(34,211,238,0.65)" stroke-width="1"/>
                 <text x="222" y="205" font-family="JetBrains Mono" font-size="11" fill="#E1FAFF">ragenaizer.core</text>
-                <text x="222" y="221" font-family="JetBrains Mono" font-size="9" fill="#9692B0">.NET · multi-tenant</text>
-                <text x="222" y="235" font-family="JetBrains Mono" font-size="9" fill="#9692B0">product · SaaS</text>
+                <text x="222" y="221" font-family="JetBrains Mono" font-size="8" fill="#9692B0">.NET · multi-tenant</text>
+                <text x="222" y="235" font-family="JetBrains Mono" font-size="8" fill="#9692B0">product · SaaS</text>
               </g>
 
               <!-- side integration chip -->
@@ -306,15 +314,15 @@
               <g>
                 <rect x="40" y="293" width="100" height="42" rx="4" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
                 <text x="51" y="311" font-family="JetBrains Mono" font-size="10" fill="#EAEAF5">postgres</text>
-                <text x="51" y="326" font-family="JetBrains Mono" font-size="9" fill="#9692B0">primary · replica</text>
+                <text x="51" y="326" font-family="JetBrains Mono" font-size="8" fill="#9692B0">primary · replica</text>
 
                 <rect x="150" y="293" width="100" height="42" rx="4" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
                 <text x="161" y="311" font-family="JetBrains Mono" font-size="10" fill="#EAEAF5">redis</text>
-                <text x="161" y="326" font-family="JetBrains Mono" font-size="9" fill="#9692B0">cache · queue</text>
+                <text x="161" y="326" font-family="JetBrains Mono" font-size="8" fill="#9692B0">cache · queue</text>
 
                 <rect x="260" y="293" width="100" height="42" rx="4" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
                 <text x="271" y="311" font-family="JetBrains Mono" font-size="10" fill="#EAEAF5">object.s3</text>
-                <text x="271" y="326" font-family="JetBrains Mono" font-size="9" fill="#9692B0">files · assets</text>
+                <text x="271" y="326" font-family="JetBrains Mono" font-size="8" fill="#9692B0">files · assets</text>
               </g>
 
               <!-- Infra bus -->
@@ -466,13 +474,30 @@
                 </div>
               </div>
 
-              <div class="col-span-12 sm:col-span-4 rounded-2xl p-4 bg-white/[0.03] border border-white/5 flex flex-col gap-3">
-                <div class="mono text-[10px] tracking-wider text-muted">SIGNAL HEALTH</div>
-                <div class="flex items-center justify-between"><span class="text-sm">POS ingest</span><span class="mono text-[11px] text-mint">99.98%</span></div>
-                <div class="flex items-center justify-between"><span class="text-sm">Aggregator API</span><span class="mono text-[11px] text-mint">live</span></div>
-                <div class="flex items-center justify-between"><span class="text-sm">Sync lag</span><span class="mono text-[11px] text-text">22ms</span></div>
-                <div class="mt-auto pt-3 border-t border-white/5">
-                  <span class="mono text-[10px] text-muted">WiseTrack ops · live feed</span>
+              <div class="col-span-12 sm:col-span-4 rounded-2xl bg-white/[0.03] border border-white/5 flex flex-col overflow-hidden">
+                <!-- Live store thumbnail -->
+                <div class="relative h-28 sm:h-32 overflow-hidden">
+                  <img src="assets/photos/portfolio-rbi.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-bg-2/95 via-bg-2/40 to-transparent"></div>
+                  <div class="absolute inset-0 ring-1 ring-inset ring-white/5"></div>
+                  <div class="absolute top-2 left-2.5 mono text-[10px] tracking-widest text-lime flex items-center gap-1.5">
+                    <span class="h-1.5 w-1.5 rounded-full bg-lime animate-pulse"></span>STORE&nbsp;CAM
+                  </div>
+                  <div class="absolute top-2 right-2.5 mono text-[10px] tracking-widest text-muted">02:14&nbsp;IST</div>
+                  <div class="absolute bottom-1.5 left-2.5 right-2.5 flex items-end justify-between gap-2">
+                    <span class="serif text-base leading-tight">BK · Dubai&nbsp;Mall</span>
+                    <span class="mono text-[10px] text-mint shrink-0">+18% · 24h</span>
+                  </div>
+                </div>
+                <!-- Metrics -->
+                <div class="flex flex-col gap-3 p-4">
+                  <div class="mono text-[10px] tracking-wider text-muted">SIGNAL HEALTH</div>
+                  <div class="flex items-center justify-between"><span class="text-sm">POS ingest</span><span class="mono text-[11px] text-mint">99.98%</span></div>
+                  <div class="flex items-center justify-between"><span class="text-sm">Aggregator API</span><span class="mono text-[11px] text-mint">live</span></div>
+                  <div class="flex items-center justify-between"><span class="text-sm">Sync lag</span><span class="mono text-[11px] text-text">22ms</span></div>
+                  <div class="mt-auto pt-3 border-t border-white/5">
+                    <span class="mono text-[10px] text-muted">WiseTrack ops · live feed</span>
+                  </div>
                 </div>
               </div>
             </section>
@@ -631,13 +656,13 @@
               <path d="M360 100 L440 110"/>
               <path d="M360 100 C400 100 400 170 440 170"/>
             </g>
-            <g fill="#EBE9F5" font-family="JetBrains Mono" font-size="10">
-              <text x="55" y="55">tenant.acme</text>
-              <text x="55" y="115">tenant.foo</text>
-              <text x="55" y="175">tenant.bar</text>
-              <text x="265" y="105">orchestrator</text>
-              <text x="455" y="55">postgres · primary</text>
-              <text x="455" y="115">redis · queue</text>
+            <g fill="#EBE9F5" font-family="JetBrains Mono" font-size="9">
+              <text x="55" y="55">apps.web</text>
+              <text x="55" y="115">apps.mobile</text>
+              <text x="55" y="175">ai.agents</text>
+              <text x="265" y="105">hyperscripts.api</text>
+              <text x="455" y="55">postgres · pgvector</text>
+              <text x="455" y="115">redis · cache</text>
               <text x="455" y="175">s3 · objects</text>
             </g>
           </svg>
@@ -648,6 +673,65 @@
           <span class="tag">Blazor</span>
           <span class="tag">Postgres</span>
           <span class="tag">Docker · Linux</span>
+        </div>
+
+        <!-- What's inside every build -->
+        <div class="mt-8 pt-6 border-t border-white/5">
+          <div class="flex items-center justify-between mb-4">
+            <span class="mono text-[10px] tracking-widest text-muted">/INSIDE · EVERY BUILD</span>
+            <span class="mono text-[10px] tracking-widest text-cyan">06 · MODULES</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2.5">
+            <div class="flex items-start gap-2.5 rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2.5">
+              <span class="mono text-[10px] text-violet/80 mt-0.5">01</span>
+              <div>
+                <div class="text-sm">Multi-tenant scaffolding</div>
+                <div class="mono text-[10px] text-muted mt-0.5">row-level isolation · per-client config</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5 rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2.5">
+              <span class="mono text-[10px] text-cyan/80 mt-0.5">02</span>
+              <div>
+                <div class="text-sm">Role-based auth</div>
+                <div class="mono text-[10px] text-muted mt-0.5">SSO · audit trail · session control</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5 rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2.5">
+              <span class="mono text-[10px] text-lime/80 mt-0.5">03</span>
+              <div>
+                <div class="text-sm">Background jobs</div>
+                <div class="mono text-[10px] text-muted mt-0.5">scheduled · retries · dead-letter</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5 rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2.5">
+              <span class="mono text-[10px] text-indigo/80 mt-0.5">04</span>
+              <div>
+                <div class="text-sm">Search &amp; filters</div>
+                <div class="mono text-[10px] text-muted mt-0.5">full-text · faceted · paginated</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5 rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2.5">
+              <span class="mono text-[10px] text-sky/80 mt-0.5">05</span>
+              <div>
+                <div class="text-sm">Admin tooling</div>
+                <div class="mono text-[10px] text-muted mt-0.5">feature flags · impersonation · ops</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5 rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2.5">
+              <span class="mono text-[10px] text-mint/80 mt-0.5">06</span>
+              <div>
+                <div class="text-sm">CI/CD &amp; deploys</div>
+                <div class="mono text-[10px] text-muted mt-0.5">zero-downtime · blue/green · rollback</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- timeline strip -->
+          <div class="mt-6 flex items-center justify-between gap-4 mono text-[10px] tracking-widest text-muted">
+            <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime animate-pulse"></span>NOW BUILDING · 2 PROJECTS</span>
+            <span class="hidden sm:inline">·</span>
+            <span>AVG · 12 WEEKS · IDEA → PRODUCTION</span>
+          </div>
         </div>
       </a>
 
@@ -703,36 +787,430 @@
         </div>
       </a>
 
-      <!-- Card 4 — Dashboards -->
-      <a href="solutions.html" class="hud hud-lime tilt reveal col-span-12 lg:col-span-7 group card card-hover overflow-hidden relative p-8 md:p-10" style="--mx:50%;--my:50%">
-        <div class="h-40 md:h-48 -mx-8 md:-mx-10 -mt-8 md:-mt-10 mb-6 relative overflow-hidden rounded-t-3xl"><img src="assets/photos/cap-dashboards.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div></div>
-        <div class="absolute inset-0 opacity-70 pointer-events-none" style="background:radial-gradient(420px circle at var(--mx) var(--my), rgba(56,189,248,0.20), transparent 60%)"></div>
-        <div class="relative flex items-start justify-between">
-          <span class="tag tag-ember">04 · Real-time dashboards</span>
-          <svg class="opacity-60 group-hover:opacity-100 transition-opacity" width="20" height="20" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 class="serif text-3xl md:text-4xl mt-6 leading-tight">Real-time dashboards <span class="serif-italic">that hold up.</span></h3>
-        <p class="mt-4 text-text-2/85 leading-relaxed max-w-lg">
-          Live data, multiple sources, fast queries. Built for ops, finance,
-          and support teams who actually live on the screen all day.
-        </p>
-        <div class="mt-6 grid grid-cols-12 gap-2 h-28">
-          <div class="col-span-3 rounded-xl bg-white/[0.03] border border-white/5 grid place-items-center">
-            <div class="text-center">
-              <div class="serif text-2xl">99.98<span class="text-violet">%</span></div>
-              <div class="mono text-[9px] text-muted mt-1">UPTIME</div>
+      <!-- Card 4 — Dashboards (full-width feature strip) -->
+      <a href="solutions.html" class="hud hud-lime tilt reveal col-span-12 group card card-hover overflow-hidden relative p-8 md:p-10" style="--mx:50%;--my:50%">
+        <div class="absolute inset-0 opacity-70 pointer-events-none" style="background:radial-gradient(620px circle at var(--mx) var(--my), rgba(56,189,248,0.18), transparent 60%)"></div>
+        <div class="relative grid grid-cols-12 gap-6 md:gap-10 items-center">
+
+          <!-- LEFT — copy + KPIs -->
+          <div class="col-span-12 lg:col-span-5">
+            <div class="flex items-start justify-between">
+              <span class="tag tag-ember">04 · Real-time dashboards</span>
+              <svg class="opacity-60 group-hover:opacity-100 transition-opacity" width="20" height="20" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="serif text-3xl md:text-4xl mt-6 leading-tight">Real-time dashboards <span class="serif-italic text-gradient-cool">that hold up.</span></h3>
+            <p class="mt-4 text-text-2/85 leading-relaxed">
+              Live data, multiple sources, fast queries. Built for ops, finance, and support
+              teams who actually live on the screen all day — not screenshot-pretty charts
+              that lock up when the data gets real.
+            </p>
+            <div class="mt-6 grid grid-cols-3 gap-3">
+              <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3">
+                <div class="serif text-2xl md:text-3xl text-gradient-cool leading-none">99.98<span class="text-violet">%</span></div>
+                <div class="mono text-[10px] text-muted mt-2">UPTIME · 12&nbsp;mo</div>
+              </div>
+              <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3">
+                <div class="serif text-2xl md:text-3xl text-gradient leading-none">12<span class="text-cyan">ms</span></div>
+                <div class="mono text-[10px] text-muted mt-2">P95 · QUERY</div>
+              </div>
+              <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3">
+                <div class="serif text-2xl md:text-3xl text-gradient-mint leading-none">5M<span class="text-lime">+</span></div>
+                <div class="mono text-[10px] text-muted mt-2">EVENTS · DAY</div>
+              </div>
             </div>
           </div>
-          <div class="col-span-9 rounded-xl bg-white/[0.03] border border-white/5 relative overflow-hidden">
-            <svg viewBox="0 0 400 100" preserveAspectRatio="none" class="absolute inset-0 w-full h-full">
-              <defs><linearGradient id="hbg" x1="0" x2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
-              <path d="M0 60 Q40 55 60 50 T120 30 T180 45 T240 18 T300 28 T360 12 T400 20" fill="none" stroke="url(#hbg)" stroke-width="1.6"/>
-              <path d="M0 75 Q40 70 60 68 T120 55 T180 60 T240 38 T300 48 T360 32 T400 38" fill="none" stroke="rgba(34,211,238,0.55)" stroke-width="1.4" stroke-dasharray="3 4"/>
-            </svg>
+
+          <!-- RIGHT — live dashboard preview -->
+          <div class="col-span-12 lg:col-span-7">
+            <div class="relative rounded-2xl border border-white/8 bg-bg-2/50 overflow-hidden">
+              <!-- chrome -->
+              <div class="flex items-center justify-between px-4 py-2.5 border-b border-white/5 bg-white/[0.02]">
+                <div class="flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-lime animate-pulse"></span>
+                  <span class="mono text-[10px] tracking-widest text-muted">ops.live&nbsp;·&nbsp;wisetrack/dash</span>
+                </div>
+                <div class="flex items-center gap-3 mono text-[9px] text-muted">
+                  <span class="hidden md:inline">1s · auto-refresh</span>
+                  <span class="text-lime">● STREAMING</span>
+                </div>
+              </div>
+              <!-- body: KPIs row + chart -->
+              <div class="grid grid-cols-12 gap-3 p-4">
+                <!-- chart -->
+                <div class="col-span-12 md:col-span-8 rounded-xl bg-white/[0.02] border border-white/5 p-3 relative overflow-hidden">
+                  <div class="flex items-center justify-between">
+                    <div class="mono text-[10px] tracking-widest text-muted">REQ/SEC&nbsp;·&nbsp;LAST&nbsp;60s</div>
+                    <div class="mono text-[10px] text-lime">▲&nbsp;+8.4%</div>
+                  </div>
+                  <svg viewBox="0 0 400 110" preserveAspectRatio="none" class="w-full h-28 md:h-32 mt-2">
+                    <defs>
+                      <linearGradient id="hbg" x1="0" x2="1">
+                        <stop offset="0" stop-color="#8B5CF6"/>
+                        <stop offset="1" stop-color="#22D3EE"/>
+                      </linearGradient>
+                      <linearGradient id="hfill" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0" stop-color="#22D3EE" stop-opacity="0.28"/>
+                        <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <!-- grid -->
+                    <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+                      <line x1="0" y1="30" x2="400" y2="30"/>
+                      <line x1="0" y1="60" x2="400" y2="60"/>
+                      <line x1="0" y1="90" x2="400" y2="90"/>
+                    </g>
+                    <!-- area -->
+                    <path d="M0 70 Q40 65 60 58 T120 38 T180 50 T240 22 T300 32 T360 14 T400 22 L400 110 L0 110 Z" fill="url(#hfill)"/>
+                    <!-- main line -->
+                    <path d="M0 70 Q40 65 60 58 T120 38 T180 50 T240 22 T300 32 T360 14 T400 22" fill="none" stroke="url(#hbg)" stroke-width="1.8"/>
+                    <!-- comparison line -->
+                    <path d="M0 85 Q40 80 60 76 T120 64 T180 70 T240 46 T300 56 T360 38 T400 46" fill="none" stroke="rgba(190,242,100,0.55)" stroke-width="1.4" stroke-dasharray="3 4"/>
+                    <!-- annotation point -->
+                    <circle cx="300" cy="32" r="3" fill="#BEF264"/>
+                    <circle cx="300" cy="32" r="6" fill="none" stroke="rgba(190,242,100,0.4)" stroke-width="1"/>
+                  </svg>
+                  <div class="flex items-center justify-between mono text-[9px] text-muted mt-1">
+                    <span>00:00</span><span>00:30</span><span>now</span>
+                  </div>
+                </div>
+                <!-- right rail: event tape -->
+                <div class="col-span-12 md:col-span-4 rounded-xl bg-white/[0.02] border border-white/5 p-3">
+                  <div class="mono text-[10px] tracking-widest text-muted">EVENT&nbsp;TAPE</div>
+                  <ul class="mt-3 space-y-2 mono text-[10.5px] text-text-2/85">
+                    <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime"></span>02:14 · order.paid&nbsp;·&nbsp;<span class="text-muted">₹12,480</span></li>
+                    <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>02:14 · cart.update&nbsp;·&nbsp;<span class="text-muted">tenant.acme</span></li>
+                    <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-violet"></span>02:13 · ticket.open&nbsp;·&nbsp;<span class="text-muted">L2</span></li>
+                    <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime"></span>02:13 · sync.ok&nbsp;·&nbsp;<span class="text-muted">books ⇄ api</span></li>
+                    <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>02:12 · order.paid&nbsp;·&nbsp;<span class="text-muted">₹3,240</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ─────────── AI / Agentic ─────────── -->
+<section id="ai" class="relative overflow-hidden">
+  <!-- subtle glow backdrop -->
+  <div class="pointer-events-none absolute inset-0 opacity-60" style="background:radial-gradient(900px 500px at 80% 0%, rgba(139,92,246,0.10), transparent 60%), radial-gradient(700px 400px at 10% 80%, rgba(34,211,238,0.08), transparent 60%);"></div>
+
+  <div class="max-w-page mx-auto px-edge pt-20 pb-24 relative">
+
+    <!-- Header -->
+    <div class="grid grid-cols-12 gap-gutter mb-12">
+      <div class="col-span-12 md:col-span-7 reveal">
+        <span class="slug">§ 03b · AI / AGENTIC</span>
+        <h2 class="serif text-[clamp(2rem,4.5vw,4rem)] leading-[1.02] tracking-tight mt-3">
+          Agents that <span class="serif-italic text-gradient-cool">ship work</span>,<br/>
+          not demos.
+        </h2>
+      </div>
+      <p class="col-span-12 md:col-span-5 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
+        We build agentic systems that <span class="text-text">take action</span> — not chatbots
+        that suggest one. RAG over your data, multi-agent orchestration, custom workflows
+        plumbed into the systems you already run.
+      </p>
+    </div>
+
+    <!-- ── Live agent-run feature panel ── -->
+    <div class="reveal hud hud-violet rounded-2xl border border-white/8 bg-bg-2/50 overflow-hidden mb-5">
+      <!-- chrome -->
+      <div class="flex items-center justify-between px-4 py-2.5 border-b border-white/5 bg-white/[0.02]">
+        <div class="flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-violet animate-pulse"></span>
+          <span class="mono text-[10px] tracking-widest text-muted">agent.run · ops.triage · trace_id=8c1f…</span>
+        </div>
+        <div class="flex items-center gap-3 mono text-[9px] text-muted">
+          <span class="hidden md:inline">claude-haiku-4.5 → sonnet · anthropic</span>
+          <span class="text-violet">● THINKING</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-12 gap-0">
+
+        <!-- LEFT — trace / reasoning -->
+        <div class="col-span-12 lg:col-span-7 p-5 md:p-7 border-b lg:border-b-0 lg:border-r border-white/5">
+          <div class="mono text-[10px] tracking-widest text-muted mb-3">REASONING&nbsp;·&nbsp;TOOL ROUND&nbsp;3&nbsp;/&nbsp;40&nbsp;MAX</div>
+          <div class="rounded-xl bg-bg-1/70 border border-white/5 p-4 font-mono text-[12.5px] leading-relaxed">
+            <div class="text-violet">▎thought<span class="text-muted"> // route this ticket</span></div>
+            <div class="text-text-2 mt-1">Customer reports a failed PO sync. Three signals point at the
+              accounting bridge: error code <span class="text-cyan">SYNC_424</span>, retry-buffer
+              full, last-seen <span class="text-mint">02:11&nbsp;IST</span>. Route to L2 finance.</div>
+
+            <div class="text-cyan mt-4">▎tool_call<span class="text-muted"> // looking it up</span></div>
+            <div class="text-text-2 mt-1"><span class="text-violet">rag.search</span>(
+              <span class="text-mint">"SYNC_424 accounting bridge"</span>,
+              k=<span class="text-mint">5</span>
+            )</div>
+            <div class="text-text-2 mt-1 pl-3 border-l border-white/10">→ 3 runbook hits · 1 prior incident · resolved&nbsp;by&nbsp;<span class="text-cyan">@arjun</span> · 11&nbsp;days&nbsp;ago</div>
+
+            <div class="text-lime mt-4">▎tool_call<span class="text-muted"> // taking action</span></div>
+            <div class="text-text-2 mt-1"><span class="text-violet">ticket.assign</span>(
+              tier=<span class="text-mint">"L2-finance"</span>,
+              priority=<span class="text-mint">"high"</span>,
+              context_pack=<span class="text-mint">attach</span>
+            )</div>
+            <div class="text-mint mt-1">✓ assigned&nbsp;·&nbsp;runbook&nbsp;attached&nbsp;·&nbsp;customer&nbsp;notified</div>
+          </div>
+        </div>
+
+        <!-- RIGHT — graph + tool list -->
+        <div class="col-span-12 lg:col-span-5 p-5 md:p-7 bg-white/[0.01]">
+          <div class="mono text-[10px] tracking-widest text-muted mb-3">CALL&nbsp;GRAPH</div>
+          <!-- Mini orchestration graph -->
+          <svg viewBox="0 0 320 200" class="w-full h-auto">
+            <defs>
+              <linearGradient id="agentL" x1="0" x2="1"><stop offset="0" stop-color="#A78BFA"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+              <marker id="aarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="rgba(167,139,250,0.7)"/>
+              </marker>
+            </defs>
+            <!-- nodes -->
+            <g fill="none" stroke-width="1.4">
+              <rect x="120" y="14" width="80" height="32" rx="6" stroke="url(#agentL)"/>
+              <rect x="14"  y="84" width="84" height="32" rx="6" stroke="rgba(34,211,238,0.7)"/>
+              <rect x="118" y="84" width="84" height="32" rx="6" stroke="rgba(167,139,250,0.85)" fill="rgba(167,139,250,0.06)"/>
+              <rect x="222" y="84" width="84" height="32" rx="6" stroke="rgba(190,242,100,0.7)"/>
+              <rect x="68"  y="158" width="80" height="32" rx="6" stroke="rgba(255,255,255,0.18)"/>
+              <rect x="172" y="158" width="80" height="32" rx="6" stroke="rgba(255,255,255,0.18)"/>
+            </g>
+            <!-- edges -->
+            <g fill="none" stroke="rgba(167,139,250,0.55)" stroke-width="1.2">
+              <path d="M160 46 L56 84" marker-end="url(#aarr)"/>
+              <path d="M160 46 L160 84" marker-end="url(#aarr)"/>
+              <path d="M160 46 L264 84" marker-end="url(#aarr)"/>
+              <path d="M160 116 L108 158" marker-end="url(#aarr)"/>
+              <path d="M160 116 L212 158" marker-end="url(#aarr)"/>
+            </g>
+            <!-- labels -->
+            <g font-family="JetBrains Mono" font-size="9" fill="#EAEAF5">
+              <text x="129" y="34">planner</text>
+              <text x="22"  y="104">rag.search</text>
+              <text x="127" y="104">classifier</text>
+              <text x="228" y="104">memory.get</text>
+              <text x="78"  y="178">ticket.api</text>
+              <text x="180" y="178">notify.api</text>
+            </g>
+            <g font-family="JetBrains Mono" font-size="7.5" fill="#9692B0">
+              <text x="129" y="44">sonnet · plan</text>
+              <text x="22"  y="113">clickhouse</text>
+              <text x="127" y="113">routes</text>
+              <text x="228" y="113">session</text>
+              <text x="78"  y="187">side-effect</text>
+              <text x="180" y="187">side-effect</text>
+            </g>
+          </svg>
+
+          <!-- compact tool latency strip -->
+          <div class="mt-5 space-y-2">
+            <div class="flex items-center justify-between text-[12px]">
+              <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-violet"></span>planner.think</span>
+              <span class="mono text-[10px] text-muted">820&nbsp;ms · 2,140&nbsp;tok</span>
+            </div>
+            <div class="flex items-center justify-between text-[12px]">
+              <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>rag.search · clickhouse</span>
+              <span class="mono text-[10px] text-muted">42&nbsp;ms · k=5</span>
+            </div>
+            <div class="flex items-center justify-between text-[12px]">
+              <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime"></span>ticket.assign</span>
+              <span class="mono text-[10px] text-mint">✓ committed</span>
+            </div>
+            <div class="flex items-center justify-between text-[12px] pt-2 border-t border-white/5">
+              <span class="mono text-[10px] tracking-widest text-muted">TOTAL · LLM + TOOLS</span>
+              <span class="mono text-[10px] text-text">1.34&nbsp;s · $0.018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Four capability cards ── -->
+    <div class="grid grid-cols-12 gap-4 md:gap-5">
+
+      <!-- 01 — Custom agents -->
+      <div class="reveal hud hud-violet col-span-12 md:col-span-6 lg:col-span-6 rounded-2xl border border-white/8 bg-white/[0.02] p-6 md:p-8 relative overflow-hidden">
+        <div class="h-32 md:h-36 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 relative overflow-hidden rounded-t-2xl">
+          <img src="assets/photos/post-wrong-stack.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-2 via-bg-2/60 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-violet/20 via-transparent to-transparent mix-blend-overlay"></div>
+          <div class="absolute top-3 left-4 mono text-[10px] tracking-widest text-violet flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-violet animate-pulse"></span>AGENT.RUN
+          </div>
+          <div class="absolute bottom-3 right-4 mono text-[10px] tracking-widest text-muted">claude · haiku 4.5</div>
+        </div>
+        <div class="flex items-start justify-between">
+          <span class="tag tag-violet">01 · Custom agents</span>
+          <span class="mono text-[10px] tracking-widest text-muted">PER&nbsp;WORKFLOW</span>
+        </div>
+        <h3 class="serif text-2xl md:text-3xl mt-5 leading-tight">Agents wired to <span class="serif-italic text-gradient-cool">your systems</span>.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">
+          Bespoke agents that take action: triage tickets, draft replies, reconcile data, file PRs,
+          book slots, run nightly close-of-books. Tool-use against your real APIs — not a chatbot
+          guessing the answer.
+        </p>
+        <ul class="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 text-[12.5px]">
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-violet"></span>tool-use · function calling</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-violet"></span>retries · dead-letter</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-violet"></span>human-in-the-loop gates</li>
+          <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-violet"></span>audit trail per run</li>
+        </ul>
+      </div>
+
+      <!-- 02 — RAG over your data -->
+      <div class="reveal hud hud-cyan col-span-12 md:col-span-6 lg:col-span-6 rounded-2xl border border-white/8 bg-white/[0.02] p-6 md:p-8 relative overflow-hidden" data-delay="100">
+        <div class="h-32 md:h-36 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 relative overflow-hidden rounded-t-2xl">
+          <img src="assets/photos/post-postgres-enough.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-2 via-bg-2/60 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-cyan/20 via-transparent to-transparent mix-blend-overlay"></div>
+          <div class="absolute top-3 left-4 mono text-[10px] tracking-widest text-cyan flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-cyan animate-pulse"></span>CLICKHOUSE.VECTORS
+          </div>
+          <div class="absolute bottom-3 right-4 mono text-[10px] tracking-widest text-muted">bge-small-en · cosine</div>
+        </div>
+        <div class="flex items-start justify-between">
+          <span class="tag tag-cyan">02 · RAG · chat over data</span>
+          <span class="mono text-[10px] tracking-widest text-muted">CLICKHOUSE</span>
+        </div>
+        <h3 class="serif text-2xl md:text-3xl mt-5 leading-tight">Grounded in <span class="serif-italic text-gradient">your data</span>, not the public web.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">
+          Chat over docs, tickets, SOPs, contracts, invoices, conversations. Ingestion pipelines,
+          vector stores, hybrid retrieval, re-ranking. Answers with citations, not hallucinations.
+        </p>
+        <div class="mt-5 rounded-xl bg-bg-1/60 border border-white/5 p-3 font-mono text-[11.5px] leading-relaxed">
+          <div class="text-cyan">▎query</div>
+          <div class="text-text-2">"What's our refund policy for B2B contracts > ₹10L?"</div>
+          <div class="text-violet mt-2">▎answer<span class="text-muted"> · 3 sources cited</span></div>
+          <div class="text-text-2/90">→ Pro-rated within 30 days, written approval required from
+            CFO &amp; Legal. <span class="text-mint">[contract-tmpl-v4.pdf · §6.2]</span></div>
+        </div>
+      </div>
+
+      <!-- 03 — Multi-agent orchestration (wide) -->
+      <div class="reveal hud hud-lime col-span-12 lg:col-span-7 rounded-2xl border border-white/8 bg-white/[0.02] p-6 md:p-8 relative overflow-hidden">
+        <div class="h-32 md:h-36 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 relative overflow-hidden rounded-t-2xl">
+          <img src="assets/photos/cap-dashboards.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-2 via-bg-2/60 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-lime/20 via-transparent to-transparent mix-blend-overlay"></div>
+          <div class="absolute top-3 left-4 mono text-[10px] tracking-widest text-lime flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-lime animate-pulse"></span>PIPELINE.RUN
+          </div>
+          <div class="absolute bottom-3 right-4 mono text-[10px] tracking-widest text-muted">stage-by-stage · replayable</div>
+        </div>
+        <div class="flex items-start justify-between">
+          <span class="tag tag-ember">03 · Multi-agent orchestration</span>
+          <span class="mono text-[10px] tracking-widest text-muted">PLANNER · WORKER · REVIEWER</span>
+        </div>
+        <h3 class="serif text-2xl md:text-3xl mt-5 leading-tight">Pipelines, <span class="serif-italic text-gradient-mint">not prompts</span>.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed max-w-xl">
+          Specialised agents hand off to each other — planner decomposes, workers execute,
+          reviewer catches mistakes. Stateful, observable, replayable. Each run leaves a trace
+          you can debug like any other system.
+        </p>
+        <!-- mini pipeline -->
+        <div class="mt-6 relative">
+          <div class="flex items-center justify-between gap-2 md:gap-3 overflow-x-auto">
+            <div class="flex-1 min-w-[110px] rounded-xl border border-violet/40 bg-violet/[0.06] p-3 text-center">
+              <div class="mono text-[9px] tracking-widest text-violet">PLANNER</div>
+              <div class="serif text-sm mt-1">decompose</div>
+              <div class="mono text-[9px] text-muted mt-1">claude · opus</div>
+            </div>
+            <div class="text-muted shrink-0">→</div>
+            <div class="flex-1 min-w-[110px] rounded-xl border border-cyan/40 bg-cyan/[0.06] p-3 text-center">
+              <div class="mono text-[9px] tracking-widest text-cyan">RESEARCHER</div>
+              <div class="serif text-sm mt-1">retrieve</div>
+              <div class="mono text-[9px] text-muted mt-1">rag · pgvector</div>
+            </div>
+            <div class="text-muted shrink-0">→</div>
+            <div class="flex-1 min-w-[110px] rounded-xl border border-indigo/40 bg-indigo/[0.06] p-3 text-center">
+              <div class="mono text-[9px] tracking-widest text-indigo">WORKER</div>
+              <div class="serif text-sm mt-1">execute</div>
+              <div class="mono text-[9px] text-muted mt-1">tool · api · sql</div>
+            </div>
+            <div class="text-muted shrink-0">→</div>
+            <div class="flex-1 min-w-[110px] rounded-xl border border-lime/40 bg-lime/[0.06] p-3 text-center">
+              <div class="mono text-[9px] tracking-widest text-lime">REVIEWER</div>
+              <div class="serif text-sm mt-1">verify</div>
+              <div class="mono text-[9px] text-muted mt-1">sonnet · evals</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 — AI inside Ragenaizer -->
+      <div class="reveal hud hud-cyan col-span-12 lg:col-span-5 rounded-2xl border border-white/8 bg-white/[0.02] p-6 md:p-8 relative overflow-hidden" data-delay="100">
+        <div class="h-32 md:h-36 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 relative overflow-hidden rounded-t-2xl">
+          <img src="assets/photos/portfolio-ragenaizer.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-2 via-bg-2/60 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-cyan/20 via-transparent to-transparent mix-blend-overlay"></div>
+          <div class="absolute top-3 left-4 mono text-[10px] tracking-widest text-mint flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span>SHIPPED · LIVE
+          </div>
+          <div class="absolute bottom-3 right-4 mono text-[10px] tracking-widest text-muted">ragenaizer.com</div>
+        </div>
+        <div class="flex items-start justify-between">
+          <span class="tag tag-mint">04 · AI inside Ragenaizer</span>
+          <span class="mono text-[10px] tracking-widest text-muted">90+&nbsp;TOOLS · 9&nbsp;MODULES</span>
+        </div>
+        <h3 class="serif text-2xl md:text-3xl mt-5 leading-tight">Quietly running <span class="serif-italic text-gradient">in every module</span>.</h3>
+        <p class="mt-3 text-text-2/85 leading-relaxed">
+          Talk to your books. Run payroll. Approve a PO. Reconcile expenses. Generate research
+          insights. The same agent loop with tool-use, woven into every module — not a
+          "ChatGPT for X" bolt-on.
+        </p>
+        <div class="mt-5 grid grid-cols-3 gap-2">
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-2.5 text-center">
+            <div class="mono text-[9px] text-muted">ACCOUNTS</div>
+            <div class="text-sm mt-1">approve · post</div>
+          </div>
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-2.5 text-center">
+            <div class="mono text-[9px] text-muted">HRMS</div>
+            <div class="text-sm mt-1">payroll · leave</div>
+          </div>
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-2.5 text-center">
+            <div class="mono text-[9px] text-muted">CRM</div>
+            <div class="text-sm mt-1">pipeline · leads</div>
+          </div>
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-2.5 text-center">
+            <div class="mono text-[9px] text-muted">PMS</div>
+            <div class="text-sm mt-1">tasks · projects</div>
+          </div>
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-2.5 text-center">
+            <div class="mono text-[9px] text-muted">RESEARCH</div>
+            <div class="text-sm mt-1">insights · FGD</div>
+          </div>
+          <div class="rounded-lg border border-white/5 bg-white/[0.02] p-2.5 text-center">
+            <div class="mono text-[9px] text-muted">LMS</div>
+            <div class="text-sm mt-1">course · quiz</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Stack chip strip ── -->
+    <div class="mt-10 reveal" data-delay="120">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="mono text-[10px] tracking-widest text-muted">/STACK · AI</span>
+        <span class="h-px flex-1 bg-white/10"></span>
+        <span class="mono text-[10px] tracking-widest text-muted">REV&nbsp;2026.05</span>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <span class="tag tag-violet">Claude · Haiku 4.5</span>
+        <span class="tag tag-violet">Claude · Sonnet 4.5</span>
+        <span class="tag">prompt caching · anthropic-beta</span>
+        <span class="tag">ClickHouse · vector store</span>
+        <span class="tag">bge-small-en · embeddings</span>
+        <span class="tag">.NET · async pipelines</span>
+        <span class="tag tag-cyan">function-calling · 90+ tools</span>
+        <span class="tag">streaming · SSE + gRPC</span>
+        <span class="tag tag-lime">token + cost observability</span>
+        <span class="tag">haiku → sonnet · fallback</span>
+      </div>
+    </div>
+
   </div>
 </section>
 

@@ -400,6 +400,116 @@
     });
   }
 
+  /* ───────── Tiny toast ───────── */
+  function showToast(message, kind) {
+    let t = document.getElementById("wt-toast");
+    if (!t) {
+      t = document.createElement("div");
+      t.id = "wt-toast";
+      Object.assign(t.style, {
+        position: "fixed",
+        bottom: "94px",
+        right: "24px",
+        zIndex: "85",
+        maxWidth: "320px",
+        padding: "12px 14px",
+        borderRadius: "12px",
+        background: "rgba(8, 9, 18, 0.94)",
+        border: "1px solid rgba(190, 242, 100, 0.45)",
+        color: "#EAEAF5",
+        fontSize: "13.5px",
+        lineHeight: "1.4",
+        boxShadow: "0 16px 40px -10px rgba(0,0,0,0.55)",
+        backdropFilter: "blur(14px)",
+        opacity: "0",
+        transform: "translateY(8px)",
+        transition: "opacity 0.25s ease, transform 0.25s ease",
+        pointerEvents: "none",
+      });
+      document.body.appendChild(t);
+    }
+    t.textContent = message;
+    t.style.borderColor =
+      kind === "error" ? "rgba(244, 114, 182, 0.6)" : "rgba(190, 242, 100, 0.45)";
+    t.style.opacity = "1";
+    t.style.transform = "translateY(0)";
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => {
+      t.style.opacity = "0";
+      t.style.transform = "translateY(8px)";
+    }, 4200);
+  }
+
+  /* ───────── Form handlers ─────────
+     Self-detect form shape and route the submit to a useful place
+     (no backend required). Three shapes:
+       a) Newsletter — exactly one email input → mailto signup.
+       b) Contact brief — multiple fields incl. textarea → compose full
+          brief email to support@wisetrack.in.
+       c) Auth demo — has password input → toast 'demo mode'. */
+  function initFormHandlers() {
+    document.querySelectorAll("form").forEach((form) => {
+      // Skip mobile menu / search forms that don't have inputs we recognise
+      const emailEl = form.querySelector('input[type="email"]');
+      const pwEl = form.querySelector('input[type="password"]');
+      const textareaEl = form.querySelector("textarea");
+      const textInputs = form.querySelectorAll('input[type="text"]');
+      const selectEl = form.querySelector("select");
+      const hasMultipleFields =
+        textareaEl || textInputs.length || selectEl;
+      const isNewsletter = !!emailEl && !pwEl && !hasMultipleFields;
+      const isContactBrief =
+        !!emailEl && !!textareaEl;
+      const isAuth = !!pwEl;
+      if (!isNewsletter && !isContactBrief && !isAuth) return;
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const enc = encodeURIComponent;
+
+        if (isAuth) {
+          showToast(
+            "Demo only — auth isn't wired up yet. Email support@wisetrack.in for portal access.",
+            "error"
+          );
+          return;
+        }
+
+        if (isContactBrief) {
+          const name = form.querySelector('input[type="text"]')?.value.trim() || "";
+          const email = emailEl.value.trim();
+          const company = form.querySelectorAll('input[type="text"]')[1]?.value.trim() || "";
+          const help = selectEl?.value || "";
+          const message = textareaEl.value.trim();
+          if (!email || !message) {
+            showToast("Please add at least your email and a short brief.", "error");
+            return;
+          }
+          const subject = `Project brief from ${name || email}`;
+          const body =
+            `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nHelp with: ${help}\n\n` +
+            `Brief:\n${message}\n\n— sent from wisetrack.in`;
+          window.location.href = `mailto:support@wisetrack.in?subject=${enc(subject)}&body=${enc(body)}`;
+          showToast("Mail draft opening — review and send. We reply within one working day.");
+          return;
+        }
+
+        if (isNewsletter) {
+          const email = emailEl.value.trim();
+          if (!email) {
+            showToast("Add your email to subscribe.", "error");
+            return;
+          }
+          const body = `Please add ${email} to the WiseTrack field-notes list.`;
+          window.location.href =
+            `mailto:support@wisetrack.in?subject=${enc("Newsletter signup")}&body=${enc(body)}`;
+          showToast("Mail draft opening — hit send and you're on the list.");
+          form.reset();
+        }
+      });
+    });
+  }
+
   function init() {
     initCursor();
     initReveal();
@@ -415,6 +525,7 @@
     initSectionRail();
     initMobileNav();
     initFloatStickers();
+    initFormHandlers();
   }
 
   if (document.readyState === "loading") {

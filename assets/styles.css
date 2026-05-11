@@ -587,6 +587,28 @@ html.js .words.in .word {
 }
 @keyframes wordRise { to { transform: translateY(0); opacity: 1; } }
 
+/* When .word lives inside a gradient-text element, each word must
+   re-clip its own copy of the gradient — inline-block descendants
+   break the parent's background-clip:text painting. */
+.text-sweep .word,
+.text-gradient .word,
+.text-gradient-cool .word {
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Italic glyphs overshoot the inline-block box on the right —
+     pad each word and pull margin back so visual rhythm is unchanged. */
+  padding-inline-end: 0.18em;
+  margin-inline-end: -0.06em;
+  /* Tight line-heights (eg. headlines) clip italic descenders/ascenders.
+     Extend the gradient paint area vertically without affecting layout. */
+  padding-block: 0.18em 0.22em;
+  margin-block: -0.18em -0.22em;
+}
+
 .chars .char { display: inline-block; }
 html.js .chars .char { opacity: 0; transform: translateY(40%); }
 html.js .chars.in .char {

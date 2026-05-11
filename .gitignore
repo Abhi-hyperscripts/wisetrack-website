@@ -3,3 +3,14 @@ Thumbs.db
 *.swp
 *.swo
 node_modules/
+
+# Local dev / debug screenshots
+.playwright-mcp/
+/hero-*.jpg
+/arch-*.jpg
+/ai-page-*.jpg
+/ai-section-*.jpg
+/home-ai-cards*.jpg
+/product-peek*.jpg
+/web-platforms-card.jpg
+/final-top.jpg
