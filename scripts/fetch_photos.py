@@ -62,6 +62,20 @@ PHOTOS = [
     ("page-methodology","1454165804606-c3d57bc86b40","method-plan",  1600, 900),  # fork-in-road / planning
     ("page-careers",   "1521737604893-d14cc237f11d", "careers-team",  1600, 900),  # team collab
     ("page-contact",   "1521737711867-e3b97375f902", "contact-comm",  1600, 900),  # communication
+
+    # ---- Proof / engineering-shipped cards (12) — each unique, dark/tech ----
+    ("proof-video",      "1576074322637-de859db0ec23", "video-tech-1",   1400, 900),  # studio / live broadcast
+    ("proof-payroll",    "1554224155-1696413565d3",   "finance-papers",  1400, 900),  # currency / multi-country money
+    ("proof-dashboards", "1611926653458-09294b3142bf","big-dashboards",  1400, 900),  # multi-monitor analytics wall
+    ("proof-elections",  "1495020689067-958852a7765e","newsroom-feed",   1400, 900),  # newsroom live broadcast
+    ("proof-ai",         "1620712943543-bcc4688e7485","neural-grid",     1400, 900),  # neural network glow
+    ("proof-accounting", "1554224154-26032cdc7c8e",  "ledger-coins",    1400, 900),  # coins / spreadsheet
+    ("proof-rag",        "1568912892503-78d2ca6c0d1e","data-servers",    1400, 900),  # server racks
+    ("proof-drive",      "1633613286848-e6f43bbafb8d","cloud-drive",     1400, 900),  # cloud / data center
+    ("proof-research",   "1551288049-1ed18b6f136a",  "data-viz",        1400, 900),  # charts / visualization
+    ("proof-inbox",      "1586281380349-632531db7ed4","mail-letters",    1400, 900),  # mailbox / envelopes
+    ("proof-lms",        "1581094271901-8022df4466f9","online-learning", 1400, 900),  # online classroom
+    ("proof-chat",       "1567427017947-545c5f8d16ad","chat-ui",         1400, 900),  # messaging interface
 ]
 
 
