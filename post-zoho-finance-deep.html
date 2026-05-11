@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="apple-touch-icon" href="assets/logo.png" />
+<title>Zoho, but how a 50-person finance team would want it — WiseTrack Journal</title>
+<meta name="description" content="The patterns that show up over and over when we wire deep finance ops into Zoho — and what we wish more teams knew before they started." />
+<link rel="canonical" href="https://wisetrack.in/post-zoho-finance-deep.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="WiseTrack" />
+<meta property="og:title" content="Zoho, but how a 50-person finance team would want it — WiseTrack Journal" />
+<meta property="og:description" content="The patterns that show up over and over when we wire deep finance ops into Zoho — and what we wish more teams knew before they started." />
+<meta property="og:image" content="https://wisetrack.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://wisetrack.in/post-zoho-finance-deep.html" />
+<meta property="article:published_time" content="2025-06-17" />
+<meta property="article:author" content="Karthik" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Zoho, but how a 50-person finance team would want it — WiseTrack Journal" />
+<meta name="twitter:description" content="The patterns that show up over and over when we wire deep finance ops into Zoho — and what we wish more teams knew before they started." />
+<meta name="twitter:image" content="https://wisetrack.in/assets/og-image.png" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="assets/tailwind-config.js"></script>
+<link href="assets/styles.css" rel="stylesheet" />
+<script>document.documentElement.classList.add("js")</script>
+<script src="assets/site.js" defer></script>
+<style>
+  .prose p { margin-top: 1rem; line-height: 1.75; color: rgba(198, 194, 216, 0.92); }
+  .prose code { font-family: "JetBrains Mono", monospace; font-size: 0.9em; background: rgba(255,255,255,0.05); padding: 0.1em 0.4em; border-radius: 4px; border: 1px solid rgba(255,255,255,0.06); }
+  .prose strong { color: var(--text); font-weight: 600; }
+</style>
+</head>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+<div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+
+<div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+    <div class="flex items-center gap-3"><span class="dot"></span><span class="hidden sm:inline">JOURNAL · 17 Jun 2025 · 7 min read</span><span class="sm:hidden">JOURNAL</span></div>
+    <div class="flex items-center gap-5"><span class="hidden md:inline">Noida, IN</span><span data-clock>--:--:-- IST</span></div>
+  </div>
+</div>
+
+<header class="fixed top-9 left-0 right-0 z-[60] bg-bg/55 backdrop-blur-2xl border-b border-white/5">
+  <nav class="max-w-page mx-auto px-edge h-[80px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5"><span class="brand-wordmark text-[14px] md:text-[17px]">WISETRACK&nbsp;TECHNOLOGIES<span class="text-violet">.</span></span></a>
+    <div class="hidden md:block">
+      <div class="nav-links">
+        <a href="solutions.html">Solutions</a>
+        <a href="portfolio.html">Work</a>
+        <a href="methodology.html">Method</a>
+        <a href="insights.html" class="is-active">Journal</a>
+        <a href="careers.html">Careers</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden sm:inline-flex magnetic btn-primary text-sm">Start a project <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10" data-menu-toggle aria-expanded="false"><span class="block w-4 h-[1.5px] bg-text mb-1"></span><span class="block w-4 h-[1.5px] bg-text"></span></button>
+    </div>
+  </nav>
+  <div data-menu class="md:hidden hidden bg-bg border-t border-white/5 [&.open]:block">
+    <div class="px-edge py-6 flex flex-col gap-4 text-lg">
+      <a href="solutions.html" class="py-2">Solutions</a>
+      <a href="portfolio.html" class="py-2">Work</a>
+      <a href="methodology.html" class="py-2">Method</a>
+      <a href="insights.html" class="py-2 text-text">Journal</a>
+      <a href="careers.html" class="py-2">Careers</a>
+      <a href="contact.html" class="btn-primary w-fit mt-2">Start a project</a>
+    </div>
+  </div>
+</header>
+
+
+<main class="relative pt-[120px]">
+
+<!-- Article hero -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.4"></div>
+    <div class="absolute inset-0 bp-grid"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
+    <div class="grain"></div>
+  </div>
+
+  <div class="relative max-w-page mx-auto px-edge pt-12 md:pt-16 pb-16">
+    <div class="relative hud hud-cyan p-6 md:p-10 lg:p-14 border border-white/8 rounded-2xl bg-white/[0.015]">
+      <div class="absolute top-3 left-6 mono text-[10px] tracking-widest text-muted">FILE&nbsp;·&nbsp;wisetrack.in/post-zoho-finance-deep</div>
+      <div class="absolute top-3 right-6 mono text-[10px] tracking-widest text-cyan flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>JOURNAL&nbsp;/&nbsp;ARTICLE</div>
+      <div class="absolute bottom-3 left-6 mono text-[10px] tracking-widest text-muted">17 Jun 2025</div>
+      <div class="absolute bottom-3 right-6 mono text-[10px] tracking-widest text-muted">7 min read</div>
+
+      <div class="mt-8">
+        <a href="insights.html" class="inline-flex items-center gap-2 mono text-[11px] tracking-widest text-muted hover:text-text transition-colors">
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          BACK&nbsp;TO&nbsp;JOURNAL
+        </a>
+      </div>
+
+      <div class="mt-6 flex items-center gap-3 reveal">
+        <span class="tag tag-cyan">Zoho</span>
+        <span class="mono text-[11px] tracking-widest text-muted">17 Jun 2025&nbsp;·&nbsp;Karthik&nbsp;·&nbsp;7 min read</span>
+      </div>
+
+      <h1 class="serif text-[clamp(2.4rem,5vw,5rem)] leading-[1] tracking-tight mt-5 reveal" data-delay="80">
+        Zoho, but how a 50-person finance team would <span class="serif-italic text-gradient">want</span> it<span class="text-violet">.</span>
+      </h1>
+
+      <p class="mt-6 text-xl text-text-2/85 leading-relaxed max-w-prose reveal" data-delay="160">
+        The patterns that show up over and over when we wire deep finance ops into Zoho — and what we wish more teams knew before they started.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article body -->
+<section class="relative">
+  <div class="max-w-page mx-auto px-edge pb-24 grid grid-cols-12 gap-gutter">
+    <aside class="col-span-12 lg:col-span-3 lg:sticky lg:top-36 lg:self-start reveal">
+      <div class="mono text-[10px] tracking-widest text-muted mb-4">/CONTENTS</div>
+      <ul class="flex flex-col gap-2 text-sm">
+        <li><a class="text-text-2 hover:text-text" href="#why-zoho">01 · Why teams pick Zoho</a></li>
+        <li><a class="text-text-2 hover:text-text" href="#the-three-gaps">02 · The three gaps</a></li>
+        <li><a class="text-text-2 hover:text-text" href="#our-pattern">03 · The pattern we use</a></li>
+        <li><a class="text-text-2 hover:text-text" href="#what-not-to-build">04 · What not to build</a></li>
+      </ul>
+      <div class="hairline-soft my-6"></div>
+      <div class="mono text-[10px] tracking-widest text-muted mb-2">SHARE</div>
+      <div class="flex gap-3 text-sm text-text-2">
+        <a class="hover:text-text" href="https://twitter.com/intent/tweet?text=Zoho,%20but%20how%20a%2050-person%20finance%20team%20would%20want%20it&url=https://wisetrack.in/post-zoho-finance-deep.html" target="_blank" rel="noopener">𝕏</a>
+        <a class="hover:text-text" href="https://www.linkedin.com/sharing/share-offsite/?url=https://wisetrack.in/post-zoho-finance-deep.html" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="hover:text-text" href="mailto:?subject=Zoho,%20but%20how%20a%2050-person%20finance%20team%20would%20want%20it&body=https://wisetrack.in/post-zoho-finance-deep.html">Email</a>
+      </div>
+    </aside>
+
+    <article class="col-span-12 lg:col-span-9 flex flex-col gap-12 max-w-3xl prose reveal" data-delay="100">
+  <section id="why-zoho">
+    <span class="slug">§ 01</span>
+    <h2 class="serif text-3xl md:text-4xl leading-tight tracking-tight mt-2">Why teams pick Zoho — and where it stops.</h2>
+        <p>Zoho One is unreasonably good value for a 30-to-150-person company. You get Books, CRM, Inventory, Sign, People, Desk, and twenty other things, all for less than what most companies pay for a single mid-market SaaS. That alone earns it a place in the stack.</p>
+<p>It stops being enough when your operations diverge from generic. A standard "sales order → invoice → payment" flow works beautifully out of the box. The moment you add anything specific — multi-warehouse stock reservation, partial fulfilment across vendors, custom approval matrices keyed off deal size, a regional tax rule Zoho's tax engine doesn't model — the cracks show.</p>
+<p>We do a lot of work in that crack. Not replacing Zoho. Extending it.</p>
+  </section>
+
+  <section id="the-three-gaps">
+    <span class="slug">§ 02</span>
+    <h2 class="serif text-3xl md:text-4xl leading-tight tracking-tight mt-2">The three gaps we keep filling.</h2>
+        <p><strong>Approval routing.</strong> Zoho's built-in approval flows handle simple chains. Real finance ops have approvals that branch on deal size, customer category, regional manager, and exception status. We build that routing engine outside Zoho, talk to it over the API, and write the result back as an audit trail.</p>
+<p><strong>Cross-module logic.</strong> Books knows about invoices. Inventory knows about stock. CRM knows about deals. When a single business rule needs to span all three ("if this deal closes, reserve stock from the closest warehouse and flag the customer's credit limit"), Zoho can't express it cleanly. We build a thin orchestration service that owns the rule and calls into each module.</p>
+<p><strong>Reporting beyond Books.</strong> Zoho's reports are fine for accountants. They are not fine for a CFO who wants a single live dashboard pulling Books, Inventory, and the bank feed at the same time. We build that dashboard separately, fed by a sync job that reads Zoho's APIs and writes to a reporting Postgres.</p>
+  </section>
+
+  <section id="our-pattern">
+    <span class="slug">§ 03</span>
+    <h2 class="serif text-3xl md:text-4xl leading-tight tracking-tight mt-2">The pattern we use.</h2>
+        <p>Three principles. First: <strong>Zoho is the system of record</strong> for the data it natively owns — Books for ledger entries, CRM for the deal pipeline, Inventory for stock. We never duplicate that data anywhere it could go stale.</p>
+<p>Second: <strong>our service owns the workflow</strong>. The orchestration rules, the approval engine, the audit trail, the dashboard reporting — these live in a small ASP.NET Core service we run on the client's infrastructure. It calls Zoho's APIs to read and write authoritative state, but the business logic does not live inside Zoho's custom-function sandbox.</p>
+<p>Third: <strong>we treat the API as a contract</strong>. Zoho's APIs are reliable but they version and rate-limit. We wrap every endpoint call in a typed client, batch where we can, retry where it's safe, and surface failures clearly. The client never sees us hammering Zoho.</p>
+  </section>
+
+  <section id="what-not-to-build">
+    <span class="slug">§ 04</span>
+    <h2 class="serif text-3xl md:text-4xl leading-tight tracking-tight mt-2">What not to build.</h2>
+        <p>There is a strong temptation, the first time you outgrow Zoho's defaults, to migrate off it entirely. Don't.</p>
+<p>Migrating off Zoho is expensive in the same way migrating off Postgres is expensive — paid for in engineering hours, operational complexity, and onboarding tax. And the alternative is rarely as cheap as the bundle you're leaving. Build around the gaps, not against them.</p>
+<p>We also don't build a duplicate of Zoho's UI for the finance team. They already know Zoho's interface. Adding our custom dashboards alongside is fine. Replacing the parts of Zoho that work well with a custom-built thing is, in our experience, a path to a worse finance team.</p>
+  </section>
+
+    </article>
+  </div>
+</section>
+
+<!-- Author / CTA strip -->
+<section class="relative border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge py-16 grid grid-cols-12 gap-gutter items-center">
+    <div class="col-span-12 md:col-span-7">
+      <span class="slug">§ Continue reading</span>
+      <h3 class="serif text-2xl md:text-3xl leading-tight tracking-tight mt-3">More from the <span class="serif-italic text-gradient">journal</span>.</h3>
+      <p class="mt-3 text-text-2/85">Short pieces on engineering, products, and the work — written when we have something we'd want to read.</p>
+    </div>
+    <div class="col-span-12 md:col-span-5 md:text-right flex flex-col md:items-end gap-3">
+      <a href="insights.html" class="btn-ghost w-fit">All articles <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="contact.html" class="btn-primary magnetic w-fit">Start a project <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="relative border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge pt-20 pb-10">
+    <div class="grid grid-cols-12 gap-gutter">
+      <div class="col-span-12 lg:col-span-4">
+        <a href="index.html" class="flex items-center gap-2.5"><span class="brand-wordmark text-[17px] md:text-[20px]">WISETRACK&nbsp;TECHNOLOGIES<span class="text-violet">.</span></span></a>
+        <p class="mt-6 max-w-md text-text-2/80 leading-relaxed">Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our flagship product.</p>
+        <div class="mt-6 flex items-center gap-3 text-muted text-sm"><span class="dot"></span><span>Open for new engagements · Q1–Q2 2026</span></div>
+      </div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-6"><div class="mono text-[11px] tracking-widest text-muted mb-5">EXPLORE</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="solutions.html" class="hover:text-text">Solutions</a></li><li><a href="portfolio.html" class="hover:text-text">Work</a></li><li><a href="methodology.html" class="hover:text-text">Method</a></li><li><a href="insights.html" class="hover:text-text">Journal</a></li></ul></div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">BRANDS</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="https://hyperscripts.io/" target="_blank" rel="noopener" class="hover:text-text">HyperScripts</a></li><li><a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="hover:text-text">Ragenaizer</a></li><li><a href="careers.html" class="hover:text-text">Careers</a></li><li><a href="client-portal.html" class="hover:text-text">Client portal</a></li></ul></div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">LEGAL</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="terms.html" class="hover:text-text">Terms</a></li><li><a href="privacy.html" class="hover:text-text">Privacy</a></li><li><a href="cookies.html" class="hover:text-text">Cookies</a></li></ul></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">FIELD NOTES</div><p class="text-text-2/85 mb-3">Occasional writing on engineering, products, and the work.</p><form class="flex items-center gap-2"><input type="email" placeholder="you@company.com" class="field flex-1"/><button class="btn-primary magnetic" type="submit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form></div>
+    </div>
+    <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center"><p class="mono text-[11px] text-muted tracking-widest">© 2026 WISETRACK TECHNOLOGIES · HARD SOFTWARE, BUILT SELECTIVELY</p><div class="flex gap-6 text-sm text-muted"><a href="privacy.html" class="hover:text-text">Privacy</a><a href="terms.html" class="hover:text-text">Terms</a><a href="cookies.html" class="hover:text-text">Cookies</a><a href="contact.html" class="hover:text-text">Contact</a></div></div>
+  </div>
+</footer>
+
+
+</body>
+</html>

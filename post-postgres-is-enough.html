@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="apple-touch-icon" href="assets/logo.png" />
+<title>Postgres is enough, until it isn&#x27;t — WiseTrack Journal</title>
+<meta name="description" content="A field guide to the moment you should stop reaching for a new database — and when to." />
+<link rel="canonical" href="https://wisetrack.in/post-postgres-is-enough.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="WiseTrack" />
+<meta property="og:title" content="Postgres is enough, until it isn&#x27;t — WiseTrack Journal" />
+<meta property="og:description" content="A field guide to the moment you should stop reaching for a new database — and when to." />
+<meta property="og:image" content="https://wisetrack.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://wisetrack.in/post-postgres-is-enough.html" />
+<meta property="article:published_time" content="2025-09-22" />
+<meta property="article:author" content="Priya" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Postgres is enough, until it isn&#x27;t — WiseTrack Journal" />
+<meta name="twitter:description" content="A field guide to the moment you should stop reaching for a new database — and when to." />
+<meta name="twitter:image" content="https://wisetrack.in/assets/og-image.png" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="assets/tailwind-config.js"></script>
+<link href="assets/styles.css" rel="stylesheet" />
+<script>document.documentElement.classList.add("js")</script>
+<script src="assets/site.js" defer></script>
+<style>
+  .prose p { margin-top: 1rem; line-height: 1.75; color: rgba(198, 194, 216, 0.92); }
+  .prose code { font-family: "JetBrains Mono", monospace; font-size: 0.9em; background: rgba(255,255,255,0.05); padding: 0.1em 0.4em; border-radius: 4px; border: 1px solid rgba(255,255,255,0.06); }
+  .prose strong { color: var(--text); font-weight: 600; }
+</style>
+</head>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+<div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+
+<div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+    <div class="flex items-center gap-3"><span class="dot"></span><span class="hidden sm:inline">JOURNAL · 22 Sep 2025 · 9 min read</span><span class="sm:hidden">JOURNAL</span></div>
+    <div class="flex items-center gap-5"><span class="hidden md:inline">Noida, IN</span><span data-clock>--:--:-- IST</span></div>
+  </div>
+</div>
+
+<header class="fixed top-9 left-0 right-0 z-[60] bg-bg/55 backdrop-blur-2xl border-b border-white/5">
+  <nav class="max-w-page mx-auto px-edge h-[80px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5"><span class="brand-wordmark text-[14px] md:text-[17px]">WISETRACK&nbsp;TECHNOLOGIES<span class="text-violet">.</span></span></a>
+    <div class="hidden md:block">
+      <div class="nav-links">
+        <a href="solutions.html">Solutions</a>
+        <a href="portfolio.html">Work</a>
+        <a href="methodology.html">Method</a>
+        <a href="insights.html" class="is-active">Journal</a>
+        <a href="careers.html">Careers</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden sm:inline-flex magnetic btn-primary text-sm">Start a project <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10" data-menu-toggle aria-expanded="false"><span class="block w-4 h-[1.5px] bg-text mb-1"></span><span class="block w-4 h-[1.5px] bg-text"></span></button>
+    </div>
+  </nav>
+  <div data-menu class="md:hidden hidden bg-bg border-t border-white/5 [&.open]:block">
+    <div class="px-edge py-6 flex flex-col gap-4 text-lg">
+      <a href="solutions.html" class="py-2">Solutions</a>
+      <a href="portfolio.html" class="py-2">Work</a>
+      <a href="methodology.html" class="py-2">Method</a>
+      <a href="insights.html" class="py-2 text-text">Journal</a>
+      <a href="careers.html" class="py-2">Careers</a>
+      <a href="contact.html" class="btn-primary w-fit mt-2">Start a project</a>
+    </div>
+  </div>
+</header>
+
+
+<main class="relative pt-[120px]">
+
+<!-- Article hero -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 -z-0 pointer-events-none">
+    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.4"></div>
+    <div class="absolute inset-0 bp-grid"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
+    <div class="grain"></div>
+  </div>
+
+  <div class="relative max-w-page mx-auto px-edge pt-12 md:pt-16 pb-16">
+    <div class="relative hud hud-cyan p-6 md:p-10 lg:p-14 border border-white/8 rounded-2xl bg-white/[0.015]">
+      <div class="absolute top-3 left-6 mono text-[10px] tracking-widest text-muted">FILE&nbsp;·&nbsp;wisetrack.in/post-postgres-is-enough</div>
+      <div class="absolute top-3 right-6 mono text-[10px] tracking-widest text-cyan flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>JOURNAL&nbsp;/&nbsp;ARTICLE</div>
+      <div class="absolute bottom-3 left-6 mono text-[10px] tracking-widest text-muted">22 Sep 2025</div>
+      <div class="absolute bottom-3 right-6 mono text-[10px] tracking-widest text-muted">9 min read</div>
+
+      <div class="mt-8">
+        <a href="insights.html" class="inline-flex items-center gap-2 mono text-[11px] tracking-widest text-muted hover:text-text transition-colors">
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          BACK&nbsp;TO&nbsp;JOURNAL
+        </a>
+      </div>
+
+      <div class="mt-6 flex items-center gap-3 reveal">
+        <span class="tag tag-cyan">Engineering</span>
+        <span class="mono text-[11px] tracking-widest text-muted">22 Sep 2025&nbsp;·&nbsp;Priya&nbsp;·&nbsp;9 min read</span>
+      </div>
+
+      <h1 class="serif text-[clamp(2.4rem,5vw,5rem)] leading-[1] tracking-tight mt-5 reveal" data-delay="80">
+        Postgres is enough, until it <span class="serif-italic text-gradient">isn't</span><span class="text-violet">.</span>
+      </h1>
+
+      <p class="mt-6 text-xl text-text-2/85 leading-relaxed max-w-prose reveal" data-delay="160">
+        A field guide to the moment you should stop reaching for a new database — and when to.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article body -->
+<section class="relative">
+  <div class="max-w-page mx-auto px-edge pb-24 grid grid-cols-12 gap-gutter">
+    <aside class="col-span-12 lg:col-span-3 lg:sticky lg:top-36 lg:self-start reveal">
+      <div class="mono text-[10px] tracking-widest text-muted mb-4">/CONTENTS</div>
+      <ul class="flex flex-col gap-2 text-sm">
+        <li><a class="text-text-2 hover:text-text" href="#further-than-you-think">01 · Postgres goes further than you think</a></li>
+        <li><a class="text-text-2 hover:text-text" href="#three-signals">02 · Three signals to look for</a></li>
+        <li><a class="text-text-2 hover:text-text" href="#migration-cost">03 · The real migration cost</a></li>
+        <li><a class="text-text-2 hover:text-text" href="#playbook">04 · A practical playbook</a></li>
+      </ul>
+      <div class="hairline-soft my-6"></div>
+      <div class="mono text-[10px] tracking-widest text-muted mb-2">SHARE</div>
+      <div class="flex gap-3 text-sm text-text-2">
+        <a class="hover:text-text" href="https://twitter.com/intent/tweet?text=Postgres%20is%20enough,%20until%20it%20isn&#x27;t&url=https://wisetrack.in/post-postgres-is-enough.html" target="_blank" rel="noopener">𝕏</a>
+        <a class="hover:text-text" href="https://www.linkedin.com/sharing/share-offsite/?url=https://wisetrack.in/post-postgres-is-enough.html" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="hover:text-text" href="mailto:?subject=Postgres%20is%20enough,%20until%20it%20isn&#x27;t&body=https://wisetrack.in/post-postgres-is-enough.html">Email</a>
+      </div>
+    </aside>
+
+    <article class="col-span-12 lg:col-span-9 flex flex-col gap-12 max-w-3xl prose reveal" data-delay="100">
+  <section id="further-than-you-think">
+    <span class="slug">§ 01</span>
+    <h2 class="serif text-3xl md:text-4xl leading-tight tracking-tight mt-2">Postgres goes further than you think.</h2>
+        <p>Most teams reach for a specialised database too early. They read a blog post about how some unicorn company runs everything on a streaming system and assume their CRUD app needs the same. It does not.</p>
+<p>On the systems we run, Postgres comfortably handles single-instance setups well into the millions of rows with simple indexing, the high tens of millions with proper partitioning and a thoughtful schema, and into hundreds of millions when you accept the operational complexity of read replicas and connection pooling. None of that requires moving off Postgres.</p>
+<p>We have shipped real-time-feeling dashboards on raw Postgres with materialised views and a careful refresh strategy. We have run multi-tenant SaaS with row-level security and tenant-keyed partitioning. We have done event-sourced workflows with an append-only table and a few smart indexes. Postgres is, in our experience, very rarely the bottleneck.</p>
+  </section>
+
+  <section id="three-signals">
+    <span class="slug">§ 02</span>
+    <h2 class="serif text-3xl md:text-4xl leading-tight tracking-tight mt-2">Three signals to start considering alternatives.</h2>
+        <p>There are three honest signals that you should consider adding (not replacing — adding) another data store. Each one needs to be reproducible, measurable, and not solvable by indexing.</p>
+<p><strong>Signal 1 — Hot path latency you cannot index away.</strong> If a small set of queries serves the majority of traffic and they cannot be made fast through indexing, materialised views, or a query rewrite, a key-value cache in front of Postgres usually solves it. Redis. That's the answer.</p>
+<p><strong>Signal 2 — Write throughput you cannot batch.</strong> If sustained writes outpace what a single Postgres primary can absorb and you cannot shard or batch your writes, then a purpose-built time-series or column store may help. We have used ClickHouse for analytics dashboards where the read pattern is OLAP-shaped. Postgres still owns the operational data.</p>
+<p><strong>Signal 3 — Search beyond LIKE.</strong> If you need ranked full-text search across long documents with synonyms and stemming, Postgres's built-in full-text is good enough until it isn't, and at that point a dedicated search engine is the right call. Until then, do not.</p>
+  </section>
+
+  <section id="migration-cost">
+    <span class="slug">§ 03</span>
+    <h2 class="serif text-3xl md:text-4xl leading-tight tracking-tight mt-2">The real migration cost.</h2>
+        <p>Moving primary data off Postgres is one of the most expensive things you can do. You pay it in three currencies. Engineering hours, because every query, ORM mapping, transaction boundary, and integrity constraint has to be re-thought. Operational complexity, because you now run two systems and the failure modes multiply. And cognitive load on every new engineer who joins, forever.</p>
+<p>We have seen teams pay all three of those costs to escape a problem they could have indexed away in an afternoon. We have also seen teams put it off too long and run into a real wall. The judgment call is what we get paid for.</p>
+  </section>
+
+  <section id="playbook">
+    <span class="slug">§ 04</span>
+    <h2 class="serif text-3xl md:text-4xl leading-tight tracking-tight mt-2">A practical playbook.</h2>
+        <p>If you're feeling pain, do these in order and stop the moment the pain goes away.</p>
+<p><strong>Step 1.</strong> Run <code>EXPLAIN ANALYZE</code> on the slow queries. Most of the time, there's an index that doesn't exist yet, or a join that's doing something dumb.</p>
+<p><strong>Step 2.</strong> Look at <code>pg_stat_statements</code>. The hot queries are not always the ones you think.</p>
+<p><strong>Step 3.</strong> Add Redis in front of the hot read path. Cache invalidation is hard, but cheaper than data-store migration.</p>
+<p><strong>Step 4.</strong> Move read traffic to replicas if write contention is the issue, not raw query speed.</p>
+<p><strong>Step 5.</strong> Partition the largest tables by tenant or by date.</p>
+<p><strong>Step 6.</strong> Only after all of the above: introduce a second store for the specific workload that doesn't fit Postgres's shape.</p>
+<p>We have shipped many production systems and only reached step 6 a handful of times. It's a long way down the list for a reason.</p>
+  </section>
+
+    </article>
+  </div>
+</section>
+
+<!-- Author / CTA strip -->
+<section class="relative border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge py-16 grid grid-cols-12 gap-gutter items-center">
+    <div class="col-span-12 md:col-span-7">
+      <span class="slug">§ Continue reading</span>
+      <h3 class="serif text-2xl md:text-3xl leading-tight tracking-tight mt-3">More from the <span class="serif-italic text-gradient">journal</span>.</h3>
+      <p class="mt-3 text-text-2/85">Short pieces on engineering, products, and the work — written when we have something we'd want to read.</p>
+    </div>
+    <div class="col-span-12 md:col-span-5 md:text-right flex flex-col md:items-end gap-3">
+      <a href="insights.html" class="btn-ghost w-fit">All articles <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="contact.html" class="btn-primary magnetic w-fit">Start a project <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="relative border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge pt-20 pb-10">
+    <div class="grid grid-cols-12 gap-gutter">
+      <div class="col-span-12 lg:col-span-4">
+        <a href="index.html" class="flex items-center gap-2.5"><span class="brand-wordmark text-[17px] md:text-[20px]">WISETRACK&nbsp;TECHNOLOGIES<span class="text-violet">.</span></span></a>
+        <p class="mt-6 max-w-md text-text-2/80 leading-relaxed">Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our flagship product.</p>
+        <div class="mt-6 flex items-center gap-3 text-muted text-sm"><span class="dot"></span><span>Open for new engagements · Q1–Q2 2026</span></div>
+      </div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-6"><div class="mono text-[11px] tracking-widest text-muted mb-5">EXPLORE</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="solutions.html" class="hover:text-text">Solutions</a></li><li><a href="portfolio.html" class="hover:text-text">Work</a></li><li><a href="methodology.html" class="hover:text-text">Method</a></li><li><a href="insights.html" class="hover:text-text">Journal</a></li></ul></div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">BRANDS</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="https://hyperscripts.io/" target="_blank" rel="noopener" class="hover:text-text">HyperScripts</a></li><li><a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="hover:text-text">Ragenaizer</a></li><li><a href="careers.html" class="hover:text-text">Careers</a></li><li><a href="client-portal.html" class="hover:text-text">Client portal</a></li></ul></div>
+      <div class="col-span-6 md:col-span-3 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">LEGAL</div><ul class="flex flex-col gap-3 text-text-2"><li><a href="terms.html" class="hover:text-text">Terms</a></li><li><a href="privacy.html" class="hover:text-text">Privacy</a></li><li><a href="cookies.html" class="hover:text-text">Cookies</a></li></ul></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-2"><div class="mono text-[11px] tracking-widest text-muted mb-5">FIELD NOTES</div><p class="text-text-2/85 mb-3">Occasional writing on engineering, products, and the work.</p><form class="flex items-center gap-2"><input type="email" placeholder="you@company.com" class="field flex-1"/><button class="btn-primary magnetic" type="submit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form></div>
+    </div>
+    <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center"><p class="mono text-[11px] text-muted tracking-widest">© 2026 WISETRACK TECHNOLOGIES · HARD SOFTWARE, BUILT SELECTIVELY</p><div class="flex gap-6 text-sm text-muted"><a href="privacy.html" class="hover:text-text">Privacy</a><a href="terms.html" class="hover:text-text">Terms</a><a href="cookies.html" class="hover:text-text">Cookies</a><a href="contact.html" class="hover:text-text">Contact</a></div></div>
+  </div>
+</footer>
+
+
+</body>
+</html>
