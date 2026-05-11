@@ -23,7 +23,7 @@ ORG = {
     "url": "https://wisetrack.in/",
     "logo": "https://wisetrack.in/assets/logo.png",
     "image": "https://wisetrack.in/assets/og-image.jpg",
-    "description": "Custom applications, finance systems on Zoho, and Ragenaizer — a Business OS we license to clients.",
+    "description": "Custom applications, finance integrations with whatever the client runs, and Ragenaizer — a Business OS we license to clients.",
     "foundingDate": "2020",
     "email": "support@wisetrack.in",
     "telephone": "+91-120-4848000",
@@ -54,8 +54,12 @@ ORG = {
     "knowsAbout": [
         "C#", ".NET", "ASP.NET Core", "Blazor", "Razor",
         "Postgres", "SQL Server", "Docker", "Linux", "Kubernetes",
-        "Zoho integration", "Custom software development",
+        "Custom software development",
         "Real-time dashboards", "Multi-tenant SaaS",
+        "Business OS", "CRM", "HRMS", "Project management",
+        "Accounting software", "LMS", "Video conferencing",
+        "Team chat", "Cloud storage", "Unified inbox",
+        "REST APIs", "Webhooks", "OAuth integrations",
     ],
 }
 
@@ -94,7 +98,6 @@ POSTS = {
     "post-real-cost-of-wrong-stack":  ("The real cost of the wrong stack.", "Tech choices made on day one show up in the bill two years later.", "Karthik", "2025-12-12", "Engineering"),
     "post-one-app-vs-seven":          ("One app vs. seven.", "A 200-person firm moved from seven tools to Ragenaizer. The interesting parts weren't technical.", "Sara", "2025-11-04", "Ragenaizer"),
     "post-postgres-is-enough":        ("Postgres is enough, until it isn't.", "A field guide to the moment you should stop reaching for a new database — and when to.", "Priya", "2025-09-22", "Engineering"),
-    "post-zoho-finance-deep":         ("Zoho, but how a 50-person finance team would want it.", "The patterns that show up over and over when we wire deep finance ops into Zoho.", "Karthik", "2025-06-17", "Zoho"),
     "post-two-week-demos":            ("Two-week demos beat documents.", "Why we never write a 60-page spec, and what we do instead.", "Anand", "2025-08-08", "Method"),
 }
 

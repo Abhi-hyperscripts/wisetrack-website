@@ -7,7 +7,7 @@
 > at a time and say no to roughly half of inbound work — by design.
 
 ## Brands
-- [HyperScripts](https://hyperscripts.io/): Custom software engagements. Web apps, mobile apps, finance systems on Zoho, multi-source dashboards.
+- [HyperScripts](https://hyperscripts.io/): Custom software engagements. Web apps, mobile apps, finance integrations with whatever system the client runs, multi-source dashboards.
 - [Ragenaizer](https://ragenaizer.com/): Our own product — one app to run a business. Projects, sales, tasks, reports, your team. Replaces 5–10 SaaS tools.
 
 ## Core site
@@ -25,7 +25,6 @@
 - [The real cost of the wrong stack](https://wisetrack.in/post-real-cost-of-wrong-stack.html): Hiring risk, operational tax, and why we default to .NET.
 - [One app vs. seven](https://wisetrack.in/post-one-app-vs-seven.html): A Ragenaizer rollout for a 200-person firm.
 - [Postgres is enough, until it isn't](https://wisetrack.in/post-postgres-is-enough.html): When to add a second data store, and when not to.
-- [Zoho, but how a 50-person finance team would want it](https://wisetrack.in/post-zoho-finance-deep.html): The pattern we use for deep Zoho extensions.
 - [Two-week demos beat documents](https://wisetrack.in/post-two-week-demos.html): Why we replace long specs with demo-driven planning.
 
 ## Stack
@@ -33,7 +32,7 @@
 - Frontend: Blazor (Server + WASM), Razor; native iOS / Android for mobile
 - Data: Postgres, Redis, S3-compatible object storage
 - Infra: Docker, Linux, Kubernetes
-- Integrations: Zoho One (Books, CRM, Inventory, Sign, Desk), Stripe / Razorpay
+- Integrations: any system the client already uses (REST / GraphQL / webhooks / OAuth), payment gateways (Stripe / Razorpay)
 
 ## Facts
 - Location: Noida, Uttar Pradesh, India
