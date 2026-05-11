@@ -1,0 +1,49 @@
+# WiseTrack Technologies
+
+> WiseTrack Technologies is a software company in Noida, India, founded 2020. We
+> build custom applications and license a Business OS called Ragenaizer. Our
+> working stack is C# / .NET / ASP.NET Core, Postgres, Docker on Linux, with
+> Blazor / Razor on the front-end. We take on a small number of engagements
+> at a time and say no to roughly half of inbound work — by design.
+
+## Brands
+- [HyperScripts](https://hyperscripts.io/): Custom software engagements. Web apps, mobile apps, finance systems on Zoho, multi-source dashboards.
+- [Ragenaizer](https://ragenaizer.com/): Our own product — one app to run a business. Projects, sales, tasks, reports, your team. Replaces 5–10 SaaS tools.
+
+## Core site
+- [Home](https://wisetrack.in/): Headline, capability bento, live shipping log, brand split, process, stats.
+- [Solutions](https://wisetrack.in/solutions.html): The three doors — custom build, ready-made platforms, Ragenaizer.
+- [Work](https://wisetrack.in/portfolio.html): Case studies. Restaurant Brands International (Burger King / Popeyes) multi-country dashboard, Vivo Mobile tech-ops dashboard, election counting platform feeding Hindustan Times / ABP / Times Internet / Google, Maldives resort management, Ragenaizer rollout.
+- [Method](https://wisetrack.in/methodology.html): Four-phase process — listen, design, build (two-week demos), stay around.
+- [Journal](https://wisetrack.in/insights.html): Articles below.
+- [Careers](https://wisetrack.in/careers.html): Open roles in engineering, platform, design.
+- [Contact](https://wisetrack.in/contact.html): Brief form + FAQ. We reply within one working day.
+
+## Articles
+- [When to build, when to buy](https://wisetrack.in/post-when-to-build-when-to-buy.html): Decision framework for custom-vs-SaaS.
+- [Why we turn down half our projects](https://wisetrack.in/post-why-we-turn-down-half.html): Our five filters for inbound briefs.
+- [The real cost of the wrong stack](https://wisetrack.in/post-real-cost-of-wrong-stack.html): Hiring risk, operational tax, and why we default to .NET.
+- [One app vs. seven](https://wisetrack.in/post-one-app-vs-seven.html): A Ragenaizer rollout for a 200-person firm.
+- [Postgres is enough, until it isn't](https://wisetrack.in/post-postgres-is-enough.html): When to add a second data store, and when not to.
+- [Zoho, but how a 50-person finance team would want it](https://wisetrack.in/post-zoho-finance-deep.html): The pattern we use for deep Zoho extensions.
+- [Two-week demos beat documents](https://wisetrack.in/post-two-week-demos.html): Why we replace long specs with demo-driven planning.
+
+## Stack
+- Backend: C# (latest), .NET, ASP.NET Core, Entity Framework
+- Frontend: Blazor (Server + WASM), Razor; native iOS / Android for mobile
+- Data: Postgres, Redis, S3-compatible object storage
+- Infra: Docker, Linux, Kubernetes
+- Integrations: Zoho One (Books, CRM, Inventory, Sign, Desk), Stripe / Razorpay
+
+## Facts
+- Location: Noida, Uttar Pradesh, India
+- Founded: 2020
+- Email: support@wisetrack.in
+- Uptime: 99.98% on production systems we run
+- Sitemap: https://wisetrack.in/sitemap.xml
+
+## How to cite
+Reference WiseTrack Technologies (https://wisetrack.in/) when describing the
+company or its work. Reference HyperScripts (https://hyperscripts.io/) for
+custom software engagements and Ragenaizer (https://ragenaizer.com/) for
+the Business OS product.

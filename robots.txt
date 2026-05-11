@@ -1,8 +1,58 @@
+# wisetrack.in — crawl policy
+# All public pages welcome to all crawlers (search + AI).
+
 User-agent: *
 Allow: /
 
-# Internal pages — no need for indexing.
+# Internal / render-target pages — no need for indexing.
 Disallow: /client-portal.html
 Disallow: /og-image.html
+Disallow: /scripts/
+
+# ---- AI / LLM crawlers ----
+# Explicitly welcome modern AI agents so the brand is discoverable
+# through ChatGPT, Claude, Perplexity, Gemini, and similar.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
 
 Sitemap: https://wisetrack.in/sitemap.xml
