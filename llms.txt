@@ -27,6 +27,19 @@
 - [Postgres is enough, until it isn't](https://wisetrack.in/post-postgres-is-enough.html): When to add a second data store, and when not to.
 - [Two-week demos beat documents](https://wisetrack.in/post-two-week-demos.html): Why we replace long specs with demo-driven planning.
 
+
+## Custom builds (we've shipped each of these inside Ragenaizer; we'll build yours)
+- [Custom HRMS](https://wisetrack.in/build-hrms.html): Multi-country payroll, geofenced attendance, statutory engine.
+- [Custom CRM](https://wisetrack.in/build-crm.html): Pipeline, multi-channel lead capture, shared customer record.
+- [Custom PMS](https://wisetrack.in/build-pms.html): Engineering-grade issues, timesheets, client billing.
+- [Custom video conferencing](https://wisetrack.in/build-vision.html): WebRTC at scale, live captions, AI summaries.
+- [Custom cloud Drive](https://wisetrack.in/build-drive.html): Resumable uploads, revocable shares, audit-grade storage.
+- [Custom accounting](https://wisetrack.in/build-accounts.html): Double-entry, multi-currency, audit-locked periods.
+- [Custom LMS](https://wisetrack.in/build-lms.html): Courses, live sessions, verifiable certificates.
+- [Custom research/analytics](https://wisetrack.in/build-research.html): Cross-tabs, drivers, segmentation, focus-group transcription.
+- [Custom unified inbox](https://wisetrack.in/build-email.html): Multi-provider unified inbox, shared queues, self-host.
+- [Custom team chat](https://wisetrack.in/build-chat.html): Real-time WebSocket, unlimited history, guest access.
+
 ## Stack
 - Backend: C# (latest), .NET, ASP.NET Core, Entity Framework
 - Frontend: Blazor (Server + WASM), Razor; native iOS / Android for mobile

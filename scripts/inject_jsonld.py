@@ -89,6 +89,16 @@ PAGE_META = {
     "cookies.html":      ("Cookie Policy — WiseTrack", "Cookies"),
     "dashboard.html":    ("Ragenaizer · Live demo — WiseTrack", "Ragenaizer Demo"),
     "client-portal.html":("Client Portal — WiseTrack", "Client Portal"),
+    "build-hrms.html":      ("Custom HRMS — WiseTrack", "Custom HRMS"),
+    "build-crm.html":       ("Custom CRM — WiseTrack", "Custom CRM"),
+    "build-pms.html":       ("Custom PMS — WiseTrack", "Custom PMS"),
+    "build-vision.html":    ("Custom video conferencing — WiseTrack", "Custom video"),
+    "build-drive.html":     ("Custom cloud Drive — WiseTrack", "Custom Drive"),
+    "build-accounts.html":  ("Custom accounting — WiseTrack", "Custom accounting"),
+    "build-lms.html":       ("Custom LMS — WiseTrack", "Custom LMS"),
+    "build-research.html":  ("Custom research platform — WiseTrack", "Custom research"),
+    "build-email.html":     ("Custom unified inbox — WiseTrack", "Custom inbox"),
+    "build-chat.html":      ("Custom team chat — WiseTrack", "Custom chat"),
 }
 
 # Blog posts: slug -> (title, summary, author, date_iso, tag/section)
