@@ -1,0 +1,93 @@
+# WiseTrack Technologies · Full Profile
+
+## Identity
+- Legal name: WiseTrack Technologies
+- Founded: 2020
+- Office: Unit 314, Tower A, ATS Bouquet, Sector 132, Noida, Uttar Pradesh, India
+- Email: support@wisetrack.in
+- WhatsApp: https://wa.me/919220474451
+- Site: https://wisetrack.in/
+
+## Brands
+- **HyperScripts** (https://hyperscripts.io) — custom software engagements
+- **Ragenaizer** (https://ragenaizer.com) — Business OS we license, ten modules
+
+## What we sell
+We sell custom software builds and a licensable Business OS:
+1. Custom web platforms (Multi-tenant SaaS, internal tools, complex workflows)
+2. Finance & integrations (custom finance/accounting apps tied to whatever ERP the client runs)
+3. Native mobile apps (iOS + Android, real backend)
+4. Real-time dashboards (multi-source, fast queries)
+5. AI & Agentic AI engineering — see https://wisetrack.in/ai.html
+6. Ragenaizer license (off-the-shelf, ten modules, fast time-to-deploy)
+7. Custom builds of each Ragenaizer module — proof of capability already shipped
+
+## Stack
+- **Backend**: C#, .NET 9, ASP.NET Core
+- **Frontend**: Blazor (Server + WASM), Razor components
+- **Data**: Postgres (primary OLTP), ClickHouse (OLAP + vector store), Redis (cache + queue), S3-compatible objects
+- **Infra**: Docker, Linux, Kubernetes (selectively)
+- **AI**: Anthropic Claude (Haiku 4.5 default for tool loops, Sonnet 4.5 for hard reasoning), direct HTTP integration (no LangChain/Semantic Kernel), prompt caching via anthropic-beta, bge-small-en for embeddings, ClickHouse for vector storage
+
+## AI / Agentic capabilities
+- Real multi-turn agent loop (up to 40 tool rounds per run, 60 tools/min rate limit)
+- 90+ tools exposed to the LLM across 9 production business modules
+- Three-tier safety gates: Safe (GET / read) / Moderate (POST/PUT, user confirms) / Critical (DELETE / payroll / hard gate)
+- ClickHouse-backed RAG with cosine similarity, top-K configurable, bge-small-en embeddings
+- Streaming responses via SSE; gRPC bidirectional for research / FGD pipelines
+- Token + cost observability via `ai_token_usage` audit table (async fire-and-forget)
+- Auto-fallback Haiku → Sonnet on 529 overload
+- Anthropic Batch API support for long-running research jobs (50% cost discount)
+- Per-tenant API keys, never stored at rest
+- Modules with deep AI integration: Accounts, HRMS, PMS, Procurement
+- Moderate AI integration: CRM, LMS, Research (async pipelines), Vision (transcription)
+- Light: Drive
+
+## Engagement model
+- Small team. Two slots per quarter usually.
+- We turn down roughly half of inbound briefs — by design.
+- Two-week demos rather than three-month specs.
+- We tell clients "build custom" or "license Ragenaizer" honestly — sometimes the answer is "buy a SaaS we don't sell."
+
+## Past work (selected)
+- Restaurant Brands International (Burger King + Popeyes) — multi-country QSR ops dashboard
+- Vivo Mobile — tech-ops dashboard across India retail
+- Elections counting platform — feeding Hindustan Times, ABP, Times Internet, Google
+- Maldives resort operations — bookings, housekeeping, F&B, kitchen
+- Ragenaizer rollouts — multiple internal-platform consolidations replacing 5–10 SaaS tools
+
+## Contact
+- Sales / support: support@wisetrack.in
+- WhatsApp Business: https://wa.me/919220474451
+- Average reply time: 7 hours within working week, worst case one working day
+
+## Page index
+- https://wisetrack.in/ — WiseTrack — Software that needs real engineering. · Custom applications, finance integrations, and Ragenaizer — a Business OS — plus production-grade agentic AI.
+- https://wisetrack.in/solutions.html — Solutions — three ways we engage · Three doors — custom build via HyperScripts, ready-made platforms, or licence Ragenaizer.
+- https://wisetrack.in/ai.html — AI & Agentic AI — engineered, not glued together · Production agent loops on Anthropic Claude — 90+ tools across 9 business modules, ClickHouse RAG, three-tier safety gates, full token + cost observability.
+- https://wisetrack.in/portfolio.html — Work — selected engagements · Case studies: RBI (Burger King / Popeyes) QSR dashboard, Vivo Mobile, an elections counting platform feeding Hindustan Times / ABP / Times Internet / Google, Maldives resort ops, the Ragenaizer rollout.
+- https://wisetrack.in/methodology.html — Method — how we run an engagement · Four-phase process — listen, design, build (two-week demos), and stay around for what matters.
+- https://wisetrack.in/insights.html — Journal — field notes on engineering · Writing on custom vs SaaS decisions, the cost of the wrong stack, agentic AI in production, the discipline of saying no.
+- https://wisetrack.in/careers.html — Careers — engineering hires · Open roles in engineering, platform, and design. A small team, deliberate hiring, work that ships.
+- https://wisetrack.in/contact.html — Contact — start a project · Tell us what you want to build. We reply within one working day.
+- https://wisetrack.in/dashboard.html — Ragenaizer · live dashboard demo · A live, interactive demo of a Ragenaizer dashboard — restaurant brands ops with revenue, orders, signal health.
+- https://wisetrack.in/client-portal.html — Client portal · Sign-in for existing clients. Engagements, sprints, invoices, support.
+- https://wisetrack.in/terms.html — Terms & Conditions · Governing terms for use of wisetrack.in and our engagements.
+- https://wisetrack.in/privacy.html — Privacy Policy · How we handle data on wisetrack.in.
+- https://wisetrack.in/cookies.html — Cookie Policy · What cookies we set on wisetrack.in and why.
+- https://wisetrack.in/post-when-to-build-when-to-buy.html — When to build, when to buy · Decision framework for custom-vs-SaaS — five questions, one honest call.
+- https://wisetrack.in/post-why-we-turn-down-half.html — Why we turn down half our projects · Our five filters for inbound briefs — fit, urgency, technical interest, ownership, integrity.
+- https://wisetrack.in/post-real-cost-of-wrong-stack.html — The real cost of the wrong stack · Hiring risk, operational tax, observability cost — why default-to-.NET pays off in practice.
+- https://wisetrack.in/post-one-app-vs-seven.html — One app vs. seven · A Ragenaizer rollout for a 200-person firm — replacing seven SaaS tools with a single platform.
+- https://wisetrack.in/post-postgres-is-enough.html — Postgres is enough, until it isn't · When to add a second data store, and when not to — engineering judgment, not cargo culting.
+- https://wisetrack.in/post-two-week-demos.html — Two-week demos beat documents · Why we replace long specs with demo-driven planning, and how that keeps engagements honest.
+- https://wisetrack.in/build-hrms.html — Custom HRMS · multi-country payroll & attendance · We've built a multi-country HRMS with transparent payroll, geofenced attendance, and a country-agnostic statutory engine. Custom build vs Ragenaizer license.
+- https://wisetrack.in/build-crm.html — Custom CRM · pipeline & lead capture · We've shipped a sales CRM with visual pipeline, multi-channel capture, Facebook Lead Ads, and a shared customer record across finance and ops.
+- https://wisetrack.in/build-pms.html — Custom PMS · projects + engineering bug tracker · A project management system that's also an honest bug tracker — issue types, severity, SLA, time tracking, billing.
+- https://wisetrack.in/build-vision.html — Custom video conferencing — meeting platform · An HD video conferencing system — meeting lobby, live captions, AI transcription, auto-recording, guest access. Custom build vs Zoom/Meet.
+- https://wisetrack.in/build-drive.html — Custom cloud Drive — file storage with audit · A cloud storage product — 5GB resumable chunked uploads, password-protected shares, revocable links, audit logging, S3/Wasabi backends.
+- https://wisetrack.in/build-accounts.html — Custom accounting — double-entry, multi-currency, GST · Double-entry accounting with multi-currency, bank reconciliation, GST returns, fixed-asset depreciation, subscriptions, period close.
+- https://wisetrack.in/build-lms.html — Custom LMS · courses, live training, certificates · Learning management with course builders, live training rooms, quizzes, public certificate verification, compliance reporting.
+- https://wisetrack.in/build-research.html — Custom research platform — cross-tabs, segmentation, FGD · Market research platform with cross-tabs, driver analysis, K-means segmentation, TURF, FGD transcription, auto-coding of open-ends.
+- https://wisetrack.in/build-email.html — Custom unified inbox — Gmail/Outlook/IMAP bridge · Unified inbox bridging Gmail / Outlook / Microsoft 365 / IMAP+SMTP. Shared team inboxes, email-to-deal/task in one click.
+- https://wisetrack.in/build-chat.html — Custom team chat — real-time messaging · Real-time team messaging — direct + group + channels, attachments, read receipts, presence, audited edits, guest access.
