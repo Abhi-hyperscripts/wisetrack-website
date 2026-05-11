@@ -2,6 +2,17 @@
    Electric violet + cyan + indigo + acid lime on machined steel-black.
    HUD-style accents, schematic backgrounds, sharper edges. */
 
+/* Corpta — self-hosted brand wordmark face.
+   NOTE: bundled file is the personal-use DEMO; replace with a licensed
+   commercial cut from the foundry before launch. */
+@font-face {
+  font-family: "Corpta";
+  src: url("./fonts/corpta-demo.otf") format("opentype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #07080F;
   --bg-2: #0A0B16;
@@ -518,24 +529,17 @@ html.js .chars.in .char {
 .commit .who { color: var(--cyan); }
 .commit .when { color: var(--muted); }
 
-/* Wordmark mark */
-.mark {
-  position: relative;
-  display: inline-grid;
-  place-items: center;
-  width: 34px; height: 34px;
-  border-radius: 9px;
-  background: conic-gradient(from 180deg, #A78BFA, #6366F1, #22D3EE, #38BDF8, #A78BFA);
-  animation: orbSpin 18s linear infinite;
+/* Wordmark — text-only, robotic/futuristic.
+   `WISETRACK` set in Corpta — the brand wordmark face. Violet period accent. */
+.brand-wordmark {
+  font-family: "Corpta", "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
-.mark::before {
-  content: "";
-  position: absolute;
-  inset: 1.2px;
-  border-radius: 8px;
-  background: var(--bg);
-}
-.mark svg { position: relative; z-index: 1; }
+/* Legacy .mark (rotating gradient icon) kept as a no-op so any stale markup
+   doesn't crash — but renders nothing visible. */
+.mark { display: none; }
 
 .brandmark {
   position: relative;

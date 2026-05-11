@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Internal pages — no need for indexing.
+Disallow: /client-portal.html
+Disallow: /og-image.html
+
+Sitemap: https://wisetrack.in/sitemap.xml
