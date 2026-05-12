@@ -179,35 +179,35 @@
       <div class="col-span-12 lg:col-span-6 lg:col-start-7 reveal" data-delay="160">
         <div class="glass rounded-3xl p-7 md:p-10 relative overflow-hidden">
           <div class="absolute -inset-1 pointer-events-none opacity-50"><div class="aurora animate-drift" style="left:0%; top:-30%; width:60vmax;height:60vmax;opacity:.4"></div></div>
-          <form class="relative grid grid-cols-2 gap-4">
-            <div class="col-span-2 flex items-center justify-between">
+          <form class="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="sm:col-span-2 flex items-center justify-between">
               <span class="mono text-[11px] tracking-widest text-muted">FORM · BRIEF</span>
               <span class="mono text-[11px] tracking-widest text-mint flex items-center gap-1.5"><span class="dot scale-75"></span>SECURE</span>
             </div>
-            <div class="col-span-1">
+            <div>
               <label class="mono text-[10px] tracking-widest text-muted">FULL NAME</label>
               <input type="text" class="field mt-2" placeholder="Jane Doe"/>
             </div>
-            <div class="col-span-1">
+            <div>
               <label class="mono text-[10px] tracking-widest text-muted">EMAIL</label>
               <input type="email" class="field mt-2" placeholder="jane@company.com"/>
             </div>
-            <div class="col-span-2">
+            <div class="sm:col-span-2">
               <label class="mono text-[10px] tracking-widest text-muted">COMPANY</label>
               <input type="text" class="field mt-2" placeholder="Acme Inc."/>
             </div>
-            <div class="col-span-2">
+            <div class="sm:col-span-2">
               <label class="mono text-[10px] tracking-widest text-muted">WHAT CAN WE HELP WITH?</label>
-              <select class="field mt-2">
-                <option>Custom application (HyperScripts)</option>
-                <option>Finance system integration (HyperScripts)</option>
-                <option>Multivendor / E-commerce platform</option>
-                <option>EdTech course platform (whitelabel)</option>
-                <option>Business OS (Ragenaizer)</option>
+              <select class="field mt-2 text-sm sm:text-base">
+                <option>Custom application</option>
+                <option>Finance system integration</option>
+                <option>Multivendor / e-commerce</option>
+                <option>EdTech / LMS (whitelabel)</option>
+                <option>Business OS · Ragenaizer</option>
                 <option>Careers &amp; partnerships</option>
               </select>
             </div>
-            <div class="col-span-2 grid grid-cols-2 gap-4">
+            <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="mono text-[10px] tracking-widest text-muted">BUDGET</label>
                 <div class="mt-2 flex flex-wrap gap-2">
@@ -225,11 +225,11 @@
                 </div>
               </div>
             </div>
-            <div class="col-span-2">
+            <div class="sm:col-span-2">
               <label class="mono text-[10px] tracking-widest text-muted">PROJECT DETAILS</label>
               <textarea rows="5" class="field mt-2 resize-none" placeholder="What do you want to build? When do you need it? Any constraints we should know about…"></textarea>
             </div>
-            <div class="col-span-2 flex items-center justify-between mt-2">
+            <div class="sm:col-span-2 flex items-center justify-between mt-2">
               <span class="mono text-[10px] tracking-widest text-muted">WE REPLY WITHIN ONE WORKING DAY.</span>
               <button class="btn-primary magnetic" type="submit">Send brief <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
