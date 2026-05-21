@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<title>WiseTrack YouTube banner render target</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="assets/tailwind-config.js"></script>
+<link href="assets/styles.css" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; width: 2048px; height: 1152px; overflow: hidden; }
+  body { background: #07080F; }
+
+  /* YouTube safe-area visual (debugging only — toggled off for final) */
+  .safe-area-hint {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1235px;
+    height: 338px;
+    transform: translate(-50%, -50%);
+    border: 1px dashed rgba(255,255,255,0.05);
+    pointer-events: none;
+  }
+</style>
+</head>
+<body class="text-text font-sans antialiased">
+
+<div class="relative w-[2048px] h-[1152px] overflow-hidden">
+
+  <!-- Atmosphere — extends across the full 2048×1152 -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="aurora" style="top:-25%; left:-15%; width:90vmax; height:90vmax; opacity:.55"></div>
+    <div class="aurora" style="bottom:-35%; right:-20%; width:80vmax; height:80vmax; opacity:.42"></div>
+    <div class="absolute inset-0 bp-grid"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-bg/30 to-bg"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- HUD frame across full canvas -->
+  <div class="relative hud hud-cyan border border-white/10 rounded-3xl bg-white/[0.015] m-14 p-20 h-[calc(100%-112px)]">
+
+    <!-- Top strip: wordmark + handle/status (kept inside HUD but outside safe area, visible on desktop+tablet+mobile but NOT on TV) -->
+    <div class="absolute top-14 left-14 right-14 flex items-start justify-between">
+      <div class="flex items-center gap-5">
+        <img src="assets/logo/wt-mark.svg" alt="" aria-hidden="true" class="h-[64px] w-auto" />
+        <img src="assets/logo/wordmark.svg" alt="Wisetrack Technologies" class="h-[36px] w-auto" />
+      </div>
+      <div class="flex flex-col gap-1 items-end mono text-[15px] tracking-widest">
+        <span class="flex items-center gap-2 text-lime"><span class="h-1.5 w-1.5 rounded-full bg-lime"></span>OPEN&nbsp;FOR&nbsp;NEW&nbsp;WORK</span>
+        <span class="text-muted">@WisetrackTechnologies</span>
+      </div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- SAFE AREA: 1235 × 338 centered -->
+    <!-- ============================= -->
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1235px] h-[338px] flex flex-col justify-center items-center text-center">
+
+      <span class="mono text-[15px] tracking-widest text-muted mb-5">
+        WISETRACK&nbsp;TECHNOLOGIES&nbsp;·&nbsp;THE&nbsp;CENTRALIZED&nbsp;BUSINESS&nbsp;OS
+      </span>
+
+      <h1 class="serif font-light text-[88px] leading-[0.95] tracking-[-0.035em]">
+        <span>Real engineering for</span><br>
+        <span class="serif-italic text-gradient">business operations<span class="text-violet">.</span></span>
+      </h1>
+
+      <p class="mt-7 text-[22px] text-text-2/85 leading-snug max-w-[860px]">
+        Ragenaizer is one platform for CRM, HRMS, accounts, projects, drive &amp; meetings — replacing the typical seven-SaaS sprawl.
+      </p>
+
+    </div>
+    <!-- ============================= -->
+    <!-- /SAFE AREA                    -->
+    <!-- ============================= -->
+
+    <!-- Bottom strip: module tags + URL (visible on desktop/tablet/mobile; cropped on TV) -->
+    <div class="absolute bottom-14 left-14 right-14 flex items-end justify-between gap-6">
+      <div class="flex flex-wrap gap-2">
+        <span class="tag tag-violet text-[14px]">CRM</span>
+        <span class="tag tag-cyan text-[14px]">HRMS</span>
+        <span class="tag tag-sky text-[14px]">ACCOUNTS</span>
+        <span class="tag tag-indigo text-[14px]">PMS</span>
+        <span class="tag tag-mint text-[14px]">DRIVE</span>
+        <span class="tag tag-lime text-[14px]">VISION</span>
+        <span class="tag tag-steel text-[14px]">AI ENGINE</span>
+      </div>
+      <div class="mono text-[15px] tracking-widest text-muted">
+        ragenaizer.com
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
