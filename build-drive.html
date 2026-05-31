@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P32QMPCK');</script>
+<!-- End Google Tag Manager -->
 <meta name="theme-color" content="#0a0a0c"/>
 <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
 <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
@@ -41,6 +48,10 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How big a file can someone upload?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 5 GB per file by default with resumable chunked uploads — survives flaky networks. Larger limits are configurable per tenant. Direct uploads for files <100 MB, multipart for 100 MB-5 GB, chunked for unreliable networks."}}, {"@type": "Question", "name": "Are share links secure?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — every share link is a 24-byte random token (not guessable), optionally password-protected with BCrypt, with expiry dates and download-count limits. Links are revocable instantly and every access is audit-logged."}}, {"@type": "Question", "name": "What's the storage backend?", "acceptedAnswer": {"@type": "Answer", "text": "S3-compatible — we default to Wasabi (significantly cheaper than AWS S3 with no egress fees) but any S3, R2, or self-hosted MinIO works. You pick based on your data residency and cost requirements."}}, {"@type": "Question", "name": "Can the team see who downloaded what?", "acceptedAnswer": {"@type": "Answer", "text": "Every download is audit-logged with IP, user agent, timestamp, and file fingerprint. Admins get a queryable audit trail; users see their own activity."}}]}</script>
 </head>
 <body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P32QMPCK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
 

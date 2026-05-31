@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P32QMPCK');</script>
+<!-- End Google Tag Manager -->
 <meta name="theme-color" content="#0a0a0c"/>
 <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
 <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
@@ -41,6 +48,10 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can your video platform replace Zoom or Google Meet for our team?", "acceptedAnswer": {"@type": "Answer", "text": "For the meetings teams actually have — 1:1s, all-hands, client demos, screen-share-heavy calls — yes. We've shipped HD video conferencing with meeting lobby, live captions, AI transcription, auto-recording, and guest access. Webinars / large broadcasts (1000+ attendees) are not our focus."}}, {"@type": "Question", "name": "Do you write your own SFU or use a third party?", "acceptedAnswer": {"@type": "Answer", "text": "We run our own SFU servers (built on LiveKit) so latency, recording, and egress are under our control. We don't wrap Twilio or Zoom's SDKs — your stream never leaves your infrastructure."}}, {"@type": "Question", "name": "Are recordings stored and searchable?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. LiveKit Egress drops MP4 + transcript into S3-compatible storage (we use Wasabi by default). Transcripts are AI-processed (Whisper / Deepgram) and the resulting captions are searchable across meetings."}}, {"@type": "Question", "name": "Can we white-label it for client portals?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the platform is built to be reskinned. Replace the logo, theme, domain, and email templates; the meeting URL becomes meet.your-domain.com."}}]}</script>
 </head>
 <body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P32QMPCK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
 

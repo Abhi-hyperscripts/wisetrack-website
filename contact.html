@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P32QMPCK');</script>
+<!-- End Google Tag Manager -->
 <meta name="theme-color" content="#0a0a0c"/>
 <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
 <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
@@ -46,6 +53,10 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you take on small projects?","acceptedAnswer":{"@type":"Answer","text":"If the engineering is interesting and the scope is honest, yes. We've shipped projects under ₹10L when they fit. We turn down poorly-scoped large ones much more often."}},{"@type":"Question","name":"How long until you reply?","acceptedAnswer":{"@type":"Answer","text":"Average is 7 hours during the working week. Worst case, one full working day."}},{"@type":"Question","name":"Do you sign an NDA?","acceptedAnswer":{"@type":"Answer","text":"Standard mutual NDA, yes. Send us yours or use ours. Either is fine."}},{"@type":"Question","name":"Can you work with our internal team?","acceptedAnswer":{"@type":"Answer","text":"Often. We work well as the engineering arm next to a product or design team. Pair-engineering with your folks is welcome."}}]}</script>
 </head>
 <body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P32QMPCK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
 
@@ -486,6 +497,18 @@
       try { await res.json(); } catch (_) {}
       form.style.display = 'none';
       document.getElementById('contactSuccess').style.display = '';
+      // GTM conversion event — wired into GA4 as a key event in the container.
+      // Includes a few high-signal payload fields so GA4 can segment by intent.
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'lead_form_submit',
+        form_name: 'contact_brief',
+        service_type: payload.service_type || null,
+        budget: payload.budget || null,
+        timeline: payload.timeline || null,
+        utm_source: payload.utm_source || null,
+        utm_campaign: payload.utm_campaign || null
+      });
     } catch (e) {
       console.error('[ContactForm] submit failed', e);
       errEl.textContent = "Something blocked the send. Try again, or WhatsApp +91 92204 74451 / email support@wisetrack.in.";
