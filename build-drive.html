@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0a0c"/>
 <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
 <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon-180.png" />
@@ -37,6 +38,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://wisetrack.in/build-drive.html","name":"Custom cloud Drive — WiseTrack","isPartOf":{"@id":"https://wisetrack.in/#website"},"publisher":{"@id":"https://wisetrack.in/#organization"},"inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wisetrack.in/"},{"@type":"ListItem","position":2,"name":"Custom Drive","item":"https://wisetrack.in/build-drive.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Custom cloud Drive build","serviceType":"Cloud storage platform","description":"File storage, sharing, audit logging, S3/Wasabi backends","url":"https://wisetrack.in/build-drive.html","provider":{"@id":"https://wisetrack.in/#organization"},"areaServed":["Worldwide"],"audience":{"@type":"Audience","audienceType":"Business"},"category":"Custom software development"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How big a file can someone upload?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 5 GB per file by default with resumable chunked uploads — survives flaky networks. Larger limits are configurable per tenant. Direct uploads for files <100 MB, multipart for 100 MB-5 GB, chunked for unreliable networks."}}, {"@type": "Question", "name": "Are share links secure?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — every share link is a 24-byte random token (not guessable), optionally password-protected with BCrypt, with expiry dates and download-count limits. Links are revocable instantly and every access is audit-logged."}}, {"@type": "Question", "name": "What's the storage backend?", "acceptedAnswer": {"@type": "Answer", "text": "S3-compatible — we default to Wasabi (significantly cheaper than AWS S3 with no egress fees) but any S3, R2, or self-hosted MinIO works. You pick based on your data residency and cost requirements."}}, {"@type": "Question", "name": "Can the team see who downloaded what?", "acceptedAnswer": {"@type": "Answer", "text": "Every download is audit-logged with IP, user agent, timestamp, and file fingerprint. Admins get a queryable audit trail; users see their own activity."}}]}</script>
 </head>
 <body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
 
@@ -160,7 +162,7 @@
 
         <div class="col-span-12 lg:col-span-4 reveal" data-delay="120">
           <div class="card p-6 hud hud-lime">
-            <div class="h-32 -mx-6 -mt-6 mb-5 relative overflow-hidden rounded-t-[16px]"><img src="assets/photos/module-drive.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div></div>
+            <div class="h-32 -mx-6 -mt-6 mb-5 relative overflow-hidden rounded-t-[16px]"><picture><source srcset="assets/photos/module-drive.webp" type="image/webp"><img src="assets/photos/module-drive.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" /></picture><div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div></div>
             <div class="mono text-[10px] tracking-widest text-muted">PROOF&nbsp;OF&nbsp;CAPABILITY</div>
             <div class="serif text-2xl mt-3 leading-tight">Ragenaizer · Drive</div>
             <p class="mt-3 text-sm text-text-2/85">A production-grade drive module already built and running. We ship a custom one for clients who need their own.</p>

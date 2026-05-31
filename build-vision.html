@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0a0c"/>
 <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
 <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon-180.png" />
@@ -37,6 +38,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://wisetrack.in/build-vision.html","name":"Custom video conferencing — WiseTrack","isPartOf":{"@id":"https://wisetrack.in/#website"},"publisher":{"@id":"https://wisetrack.in/#organization"},"inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wisetrack.in/"},{"@type":"ListItem","position":2,"name":"Custom video","item":"https://wisetrack.in/build-vision.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Custom video conferencing build","serviceType":"Video conferencing platform","description":"HD video, meeting lobby, transcription, recording","url":"https://wisetrack.in/build-vision.html","provider":{"@id":"https://wisetrack.in/#organization"},"areaServed":["Worldwide"],"audience":{"@type":"Audience","audienceType":"Business"},"category":"Custom software development"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can your video platform replace Zoom or Google Meet for our team?", "acceptedAnswer": {"@type": "Answer", "text": "For the meetings teams actually have — 1:1s, all-hands, client demos, screen-share-heavy calls — yes. We've shipped HD video conferencing with meeting lobby, live captions, AI transcription, auto-recording, and guest access. Webinars / large broadcasts (1000+ attendees) are not our focus."}}, {"@type": "Question", "name": "Do you write your own SFU or use a third party?", "acceptedAnswer": {"@type": "Answer", "text": "We run our own SFU servers (built on LiveKit) so latency, recording, and egress are under our control. We don't wrap Twilio or Zoom's SDKs — your stream never leaves your infrastructure."}}, {"@type": "Question", "name": "Are recordings stored and searchable?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. LiveKit Egress drops MP4 + transcript into S3-compatible storage (we use Wasabi by default). Transcripts are AI-processed (Whisper / Deepgram) and the resulting captions are searchable across meetings."}}, {"@type": "Question", "name": "Can we white-label it for client portals?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the platform is built to be reskinned. Replace the logo, theme, domain, and email templates; the meeting URL becomes meet.your-domain.com."}}]}</script>
 </head>
 <body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
 

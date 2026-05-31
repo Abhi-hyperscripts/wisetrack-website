@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0a0c"/>
 <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
 <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon-180.png" />
@@ -33,6 +34,12 @@
 <link href="assets/styles.css" rel="stylesheet" />
 <script>document.documentElement.classList.add("js")</script>
 <script src="assets/site.js" defer></script>
+<style>
+  /* Selected state on budget/timeline tag buttons */
+  .tag.is-on { background: rgba(99,102,241,0.18); border-color: rgba(99,102,241,0.55); color: #c7d2fe; box-shadow: 0 0 0 1px rgba(99,102,241,0.35) inset; }
+  /* Button busy state */
+  #contactSubmitBtn[aria-busy="true"] { opacity: 0.6; pointer-events: none; }
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://wisetrack.in/#organization","name":"WiseTrack Technologies","alternateName":"WiseTrack","url":"https://wisetrack.in/","logo":"https://wisetrack.in/assets/logo.png","image":"https://wisetrack.in/assets/og-image.jpg","description":"Custom applications, finance integrations with whatever the client runs, and Ragenaizer — a Business OS we license to clients.","foundingDate":"2020","email":"support@wisetrack.in","address":{"@type":"PostalAddress","streetAddress":"Unit 314, Tower A, ATS Bouquet, Sector 132","addressLocality":"Noida","addressRegion":"Uttar Pradesh","postalCode":"201304","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","email":"support@wisetrack.in","areaServed":"Worldwide","availableLanguage":["English","Hindi"]},"sameAs":["https://hyperscripts.io/","https://ragenaizer.com/"],"subOrganization":[{"@type":"Organization","name":"HyperScripts","url":"https://hyperscripts.io/"},{"@type":"Organization","name":"Ragenaizer","url":"https://ragenaizer.com/"}],"knowsAbout":["C#",".NET","ASP.NET Core","Blazor","Razor","Postgres","SQL Server","Docker","Linux","Kubernetes","Custom software development","Real-time dashboards","Multi-tenant SaaS","Business OS","CRM","HRMS","Project management","Accounting software","LMS","Video conferencing","Team chat","Cloud storage","Unified inbox","REST APIs","Webhooks","OAuth integrations"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://wisetrack.in/contact.html","name":"Contact — WiseTrack","isPartOf":{"@id":"https://wisetrack.in/#website"},"publisher":{"@id":"https://wisetrack.in/#organization"},"inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wisetrack.in/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://wisetrack.in/contact.html"}]}</script>
@@ -180,61 +187,89 @@
       <div class="col-span-12 lg:col-span-6 lg:col-start-7 reveal" data-delay="160">
         <div class="glass rounded-3xl p-7 md:p-10 relative overflow-hidden">
           <div class="absolute -inset-1 pointer-events-none opacity-50"><div class="aurora animate-drift" style="left:0%; top:-30%; width:60vmax;height:60vmax;opacity:.4"></div></div>
-          <form class="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <form id="contactForm" class="relative grid grid-cols-1 sm:grid-cols-2 gap-4" novalidate>
             <div class="sm:col-span-2 flex items-center justify-between">
               <span class="mono text-[11px] tracking-widest text-muted">FORM · BRIEF</span>
               <span class="mono text-[11px] tracking-widest text-mint flex items-center gap-1.5"><span class="dot scale-75"></span>SECURE</span>
             </div>
             <div>
               <label class="mono text-[10px] tracking-widest text-muted">FULL NAME</label>
-              <input type="text" class="field mt-2" placeholder="Jane Doe"/>
+              <input type="text" name="full_name" required autocomplete="name" class="field mt-2" placeholder="Jane Doe"/>
             </div>
             <div>
               <label class="mono text-[10px] tracking-widest text-muted">EMAIL</label>
-              <input type="email" class="field mt-2" placeholder="jane@company.com"/>
+              <input type="email" name="email" required autocomplete="email" class="field mt-2" placeholder="jane@company.com"/>
             </div>
-            <div class="sm:col-span-2">
+            <div>
+              <label class="mono text-[10px] tracking-widest text-muted">PHONE</label>
+              <input type="tel" name="phone" required autocomplete="tel" class="field mt-2" placeholder="+91 98765 43210"/>
+            </div>
+            <div>
               <label class="mono text-[10px] tracking-widest text-muted">COMPANY</label>
-              <input type="text" class="field mt-2" placeholder="Acme Inc."/>
+              <input type="text" name="company_name" autocomplete="organization" class="field mt-2" placeholder="Acme Inc."/>
             </div>
             <div class="sm:col-span-2">
               <label class="mono text-[10px] tracking-widest text-muted">WHAT CAN WE HELP WITH?</label>
-              <select class="field mt-2 text-sm sm:text-base">
-                <option>Custom application</option>
-                <option>Finance system integration</option>
-                <option>Multivendor / e-commerce</option>
-                <option>EdTech / LMS (whitelabel)</option>
-                <option>Business OS · Ragenaizer</option>
-                <option>Careers &amp; partnerships</option>
+              <select name="service_type" class="field mt-2 text-sm sm:text-base">
+                <option value="">— select —</option>
+                <option value="custom_application">Custom application</option>
+                <option value="finance_integration">Finance system integration</option>
+                <option value="multivendor_ecommerce">Multivendor / e-commerce</option>
+                <option value="edtech_lms">EdTech / LMS (whitelabel)</option>
+                <option value="business_os_ragenaizer">Business OS · Ragenaizer</option>
+                <option value="careers_partnerships">Careers &amp; partnerships</option>
               </select>
             </div>
             <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="mono text-[10px] tracking-widest text-muted">BUDGET</label>
-                <div class="mt-2 flex flex-wrap gap-2">
-                  <span class="tag cursor-pointer">< ₹10L</span>
-                  <span class="tag tag-violet cursor-pointer">₹10–50L</span>
-                  <span class="tag cursor-pointer">₹50L+</span>
+                <input type="hidden" name="budget" value=""/>
+                <div class="mt-2 flex flex-wrap gap-2" data-tag-group="budget">
+                  <span class="tag cursor-pointer" data-tag-value="under_10l">&lt; ₹10L</span>
+                  <span class="tag cursor-pointer" data-tag-value="10l_to_50l">₹10–50L</span>
+                  <span class="tag cursor-pointer" data-tag-value="over_50l">₹50L+</span>
                 </div>
               </div>
               <div>
                 <label class="mono text-[10px] tracking-widest text-muted">TIMELINE</label>
-                <div class="mt-2 flex flex-wrap gap-2">
-                  <span class="tag cursor-pointer">< 3 mo</span>
-                  <span class="tag tag-cyan cursor-pointer">3–6 mo</span>
-                  <span class="tag cursor-pointer">6 mo+</span>
+                <input type="hidden" name="timeline" value=""/>
+                <div class="mt-2 flex flex-wrap gap-2" data-tag-group="timeline">
+                  <span class="tag cursor-pointer" data-tag-value="under_3mo">&lt; 3 mo</span>
+                  <span class="tag cursor-pointer" data-tag-value="3_to_6mo">3–6 mo</span>
+                  <span class="tag cursor-pointer" data-tag-value="over_6mo">6 mo+</span>
                 </div>
               </div>
             </div>
             <div class="sm:col-span-2">
               <label class="mono text-[10px] tracking-widest text-muted">PROJECT DETAILS</label>
-              <textarea rows="5" class="field mt-2 resize-none" placeholder="What do you want to build? When do you need it? Any constraints we should know about…"></textarea>
+              <textarea name="detail" rows="5" required class="field mt-2 resize-none" placeholder="What do you want to build? When do you need it? Any constraints we should know about…"></textarea>
             </div>
+            <!-- First-touch UTM attribution — populated by submit handler from localStorage / URL params -->
+            <input type="hidden" name="utm_source" value=""/>
+            <input type="hidden" name="utm_medium" value=""/>
+            <input type="hidden" name="utm_campaign" value=""/>
+            <input type="hidden" name="utm_content" value=""/>
+            <input type="hidden" name="utm_term" value=""/>
+            <input type="hidden" name="referrer" value=""/>
+            <input type="hidden" name="landing_page" value=""/>
+            <div id="contactFormError" class="sm:col-span-2 hidden text-sm text-red-400 mono tracking-wide"></div>
             <div class="sm:col-span-2 flex items-center justify-between mt-2">
               <span class="mono text-[10px] tracking-widest text-muted">WE REPLY WITHIN ONE WORKING DAY.</span>
-              <button class="btn-primary magnetic" type="submit">Send brief <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button id="contactSubmitBtn" class="btn-primary magnetic" type="submit">Send brief <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
           </form>
+          <div id="contactSuccess" class="relative text-center py-8" style="display:none;">
+            <div class="mx-auto w-14 h-14 rounded-full bg-mint/15 grid place-items-center mb-4">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="serif text-2xl md:text-3xl text-text mb-3">Got it.</h3>
+            <p class="text-text-2/85 max-w-sm mx-auto">We'll reply within one working day. The brief just landed in our inbox.</p>
+            <p class="mt-6 text-sm text-muted">Anything urgent?</p>
+            <a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-2 btn-primary magnetic">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Z"/></svg>
+              WhatsApp us
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -245,7 +280,7 @@
 <section class="relative">
   <div class="max-w-page mx-auto px-edge pb-4 reveal">
     <div class="relative h-44 md:h-56 overflow-hidden rounded-3xl border border-white/8">
-      <img src="assets/photos/page-contact.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+      <picture><source srcset="assets/photos/page-contact.webp" type="image/webp"><img src="assets/photos/page-contact.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" /></picture>
       <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent"></div>
     </div>
   </div>
@@ -332,5 +367,134 @@
   </span>
   <span class="wa-label">Chat with us</span>
 </a>
+<script>
+/* Contact form — UTM first-touch capture + tag toggles + JSON POST to CRM webhook
+ * Webhook: https://crm.ragenaizer.com/api/leads/capture/u4d7sfkczfg6sh3ltwby9c1u0ogfpl9p
+ * Lead source: "Wisetrack — wisetrack.in (contact page)" (id 9115ae36-…)
+ */
+(function () {
+  var WEBHOOK_URL = 'https://crm.ragenaizer.com/api/leads/capture/u4d7sfkczfg6sh3ltwby9c1u0ogfpl9p';
+  var STORAGE_KEY = 'wisetrack_first_touch';
+  var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+
+  // 1. Capture UTMs from URL on every page load. First-touch wins — once stored
+  //    in localStorage, subsequent visits don't overwrite (so the originating
+  //    campaign of the visitor is preserved even if they come back later via
+  //    direct nav). If URL has no UTMs, also persist whatever's there now.
+  function captureFirstTouch() {
+    try {
+      var existing = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+      if (existing && existing.utm_campaign) return existing; // first-touch already set
+      var params = new URLSearchParams(window.location.search);
+      var touch = { ts: Date.now(), referrer: document.referrer || '', landing_page: window.location.href };
+      var hasAny = false;
+      UTM_KEYS.forEach(function (k) {
+        var v = params.get(k);
+        if (v) { touch[k] = v; hasAny = true; }
+      });
+      // Even with no UTMs, persist referrer + landing so we know where they came from
+      if (hasAny || !existing) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(touch));
+        return touch;
+      }
+      return existing;
+    } catch (e) { return null; }
+  }
+  var firstTouch = captureFirstTouch();
+
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+
+  // 2. Tag-button selection (Budget / Timeline) — clicking sets the hidden input
+  document.querySelectorAll('[data-tag-group]').forEach(function (group) {
+    var name = group.getAttribute('data-tag-group');
+    var hidden = form.querySelector('input[type="hidden"][name="' + name + '"]');
+    group.querySelectorAll('[data-tag-value]').forEach(function (tag) {
+      tag.addEventListener('click', function () {
+        var v = tag.getAttribute('data-tag-value');
+        var alreadyOn = tag.classList.contains('is-on');
+        group.querySelectorAll('[data-tag-value]').forEach(function (t) { t.classList.remove('is-on'); });
+        if (!alreadyOn) {
+          tag.classList.add('is-on');
+          if (hidden) hidden.value = v;
+        } else {
+          if (hidden) hidden.value = '';
+        }
+      });
+    });
+  });
+
+  // 3. Submit handler — collect form data, merge first-touch, POST as JSON
+  form.addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    var btn = document.getElementById('contactSubmitBtn');
+    var errEl = document.getElementById('contactFormError');
+    errEl.classList.add('hidden');
+    errEl.textContent = '';
+
+    // Browser-level required check (since novalidate is on the form)
+    var requiredFields = form.querySelectorAll('[required]');
+    for (var i = 0; i < requiredFields.length; i++) {
+      var f = requiredFields[i];
+      if (!String(f.value || '').trim()) {
+        errEl.textContent = 'Please fill ' + (f.previousElementSibling ? f.previousElementSibling.textContent.toLowerCase() : 'this field') + '.';
+        errEl.classList.remove('hidden');
+        f.focus();
+        return;
+      }
+    }
+    // Lightweight email sanity check
+    var emailEl = form.querySelector('input[name="email"]');
+    if (emailEl && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailEl.value)) {
+      errEl.textContent = 'Email looks off — double-check it.';
+      errEl.classList.remove('hidden');
+      emailEl.focus();
+      return;
+    }
+
+    // Merge first-touch into hidden UTM inputs right before submit
+    if (firstTouch) {
+      UTM_KEYS.forEach(function (k) {
+        var el = form.querySelector('input[name="' + k + '"]');
+        if (el && firstTouch[k]) el.value = firstTouch[k];
+      });
+      var refEl = form.querySelector('input[name="referrer"]');
+      if (refEl) refEl.value = firstTouch.referrer || document.referrer || '';
+      var lpEl = form.querySelector('input[name="landing_page"]');
+      if (lpEl) lpEl.value = firstTouch.landing_page || window.location.href;
+    }
+
+    // Build payload — empty-string fields are dropped (server treats missing = unset)
+    var payload = {};
+    new FormData(form).forEach(function (v, k) {
+      var s = String(v || '').trim();
+      if (s) payload[k] = s;
+    });
+
+    btn.setAttribute('aria-busy', 'true');
+    btn.dataset.originalLabel = btn.innerHTML;
+    btn.innerHTML = 'Sending…';
+
+    try {
+      var res = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      // Some webhook handlers return empty body — that's fine
+      try { await res.json(); } catch (_) {}
+      form.style.display = 'none';
+      document.getElementById('contactSuccess').style.display = '';
+    } catch (e) {
+      console.error('[ContactForm] submit failed', e);
+      errEl.textContent = "Something blocked the send. Try again, or WhatsApp +91 92204 74451 / email support@wisetrack.in.";
+      errEl.classList.remove('hidden');
+      btn.removeAttribute('aria-busy');
+      btn.innerHTML = btn.dataset.originalLabel || 'Send brief';
+    }
+  });
+})();
+</script>
 </body>
 </html>
