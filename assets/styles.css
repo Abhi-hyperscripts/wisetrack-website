@@ -1094,6 +1094,14 @@ html.light .wa-strip {
     rgba(255, 255, 255, 0.8);
   border-color: rgba(37, 211, 102, 0.4);
 }
+/* "WHATSAPP · SALES & SUPPORT" label is lime/acid-green at 0.9 alpha —
+   invisible on a light-green strip. Darken to deep green on light. */
+html.light .wa-strip .copy .label { color: #15803D; }
+/* Heading em uses a near-white→lime gradient text-fill — first stop is
+   #EAEAF5 which vanishes on white. Swap stops for dark green tones. */
+html.light .wa-strip .copy .head em {
+  background-image: linear-gradient(95deg, #0A0B14, #15803D);
+}
 
 /* Section divider marquee — needs visible borders on light */
 html.light .divider-marquee {
