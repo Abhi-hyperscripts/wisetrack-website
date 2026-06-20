@@ -5,17 +5,23 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        bg: "#07070C",
-        "bg-2": "#0A0A12",
-        surface: "#0E0F18",
-        "surface-2": "#15161F",
-        "surface-3": "#1B1D29",
-        line: "#23253A",
-        "line-2": "#2F3247",
-        text: "#EDEAF7",
-        "text-2": "#C6C2D8",
-        muted: "#9692B0",
-        dim: "#5E5A77",
+        // Theme-aware: flip per :root vs html.light overrides in styles.css.
+        // 'white' is overridden so border-white/X + bg-white/X scrim utilities
+        // (used everywhere for HUD borders and glass surfaces) automatically
+        // flip to black-with-alpha on light theme. --scrim = comma-RGB triplet
+        // that swaps from "255, 255, 255" → "0, 0, 0".
+        white: "rgba(var(--scrim), <alpha-value>)",
+        bg: "var(--bg)",
+        "bg-2": "var(--bg-2)",
+        surface: "var(--surface)",
+        "surface-2": "var(--surface-2)",
+        "surface-3": "var(--surface-3)",
+        line: "var(--line)",
+        "line-2": "var(--line-2)",
+        text: "var(--text)",
+        "text-2": "var(--text-2)",
+        muted: "var(--muted)",
+        dim: "var(--dim)",
         // Primary accent system
         violet: "#7C3AED",
         "violet-2": "#A78BFA",

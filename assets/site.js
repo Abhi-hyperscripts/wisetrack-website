@@ -510,7 +510,57 @@
     });
   }
 
+  /* ───────── Theme toggle (dark ↔ light) ─────────
+     Anti-FOUC inline <head> script already applied 'light' class if
+     localStorage said so. Here we inject the nav button + handle clicks. */
+  function initThemeToggle() {
+    const SVG_MOON = '<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    const SVG_SUN  = '<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
+
+    function makeBtn() {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "theme-toggle";
+      btn.setAttribute("data-theme-toggle", "");
+      btn.setAttribute("aria-label", "Toggle light / dark theme");
+      btn.innerHTML = SVG_MOON + SVG_SUN;
+      btn.addEventListener("click", function () {
+        const isLight = document.documentElement.classList.toggle("light");
+        try { localStorage.setItem("theme", isLight ? "light" : "dark"); } catch (e) { /* private mode */ }
+      });
+      return btn;
+    }
+
+    // Mount once into the right-side nav cluster (next to "Start a project").
+    // Cluster = the last flex container with .btn-primary inside <nav>.
+    const nav = document.querySelector("header nav");
+    if (!nav) return;
+    const cluster = nav.querySelector(".flex.items-center.gap-3, .flex.items-center.gap-2");
+    if (!cluster || cluster.querySelector("[data-theme-toggle]")) return;
+    // Insert before "Start a project" so visual order = [toggle][CTA][hamburger]
+    const cta = cluster.querySelector("a.btn-primary, .btn-primary");
+    const btn = makeBtn();
+    if (cta) cluster.insertBefore(btn, cta);
+    else cluster.insertBefore(btn, cluster.firstChild);
+
+    // Mobile menu — also expose the toggle inside the hamburger panel so
+    // it's reachable when the desktop nav cluster is hidden.
+    const mobileMenu = document.querySelector("[data-menu]");
+    if (mobileMenu && !mobileMenu.querySelector("[data-theme-toggle-mobile]")) {
+      const wrap = document.createElement("div");
+      wrap.className = "px-edge pb-6 pt-2 flex items-center gap-3 text-sm text-muted";
+      wrap.setAttribute("data-theme-toggle-mobile", "");
+      const label = document.createElement("span");
+      label.textContent = "Appearance";
+      const mBtn = makeBtn();
+      wrap.appendChild(label);
+      wrap.appendChild(mBtn);
+      mobileMenu.appendChild(wrap);
+    }
+  }
+
   function init() {
+    initThemeToggle();
     initCursor();
     initReveal();
     initCounters();
