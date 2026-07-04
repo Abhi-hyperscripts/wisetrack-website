@@ -535,7 +535,11 @@
     // Cluster = the last flex container with .btn-primary inside <nav>.
     const nav = document.querySelector("header nav");
     if (!nav) return;
-    const cluster = nav.querySelector(".flex.items-center.gap-3, .flex.items-center.gap-2");
+    const cluster = Array.from(nav.children).find(child => 
+      child.classList.contains("flex") && 
+      child.classList.contains("items-center") && 
+      (child.classList.contains("gap-3") || child.classList.contains("gap-2"))
+    );
     if (!cluster || cluster.querySelector("[data-theme-toggle]")) return;
     // Insert before "Start a project" so visual order = [toggle][CTA][hamburger]
     const cta = cluster.querySelector("a.btn-primary, .btn-primary");
