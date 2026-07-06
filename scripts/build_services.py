@@ -23,20 +23,47 @@ SERVICES = [
         "slug": "hrms",
         "code": "01",
         "module": "HRMS",
-        "tagline": "Custom HRMS, built by people who've shipped one in production.",
-        "italic": "production",
-        "blurb": "We've already built a multi-country HRMS with transparent payroll, geofenced attendance, and a country-agnostic statutory engine — it ships inside Ragenaizer. If your team needs a custom HRMS instead, the hard problems are already solved.",
+        "tagline": "Custom HRMS Software, Built Around Your Business",
+        "italic": "Your Business",
+        "blurb": "Every company manages people differently. Instead of forcing your team to adapt to generic HR software, we build a custom HRMS tailored to your workflows, policies, and payroll requirements.\n\nPowered by the production-tested HRMS engine inside Ragenaizer, our solution helps you launch faster while avoiding the complexity of building everything from scratch.",
         "ragenaizer_url": "https://ragenaizer.com/pages/hrms.html",
+        "hero_right_card_html": """<div class="col-span-12 lg:col-span-4 reveal" data-delay="120">
+          <div class="card p-6 hud hud-lime">
+            <div class="mono text-[10px] tracking-widest text-muted">KEY STRENGTHS</div>
+            <ul class="mt-4 flex flex-col gap-3.5 text-sm text-text-2/95">
+              <li class="flex items-start gap-2.5">
+                <span class="text-lime text-base leading-none">✔</span>
+                <span>Custom Development</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-lime text-base leading-none">✔</span>
+                <span>Payroll &amp; Compliance Ready</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-lime text-base leading-none">✔</span>
+                <span>Cloud-Based &amp; Scalable</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-lime text-base leading-none">✔</span>
+                <span>Built for Indian &amp; Global Businesses</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="mt-6 inline-flex items-center gap-2 text-lime text-sm hover:underline">
+              Book a Free Consultation
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>""",
         "capabilities": [
-            ("Transparent payroll", "Every payslip line traceable back to its formula, inputs, and values. Audit-ready by default."),
-            ("Country-agnostic engine", "Statutory rules (PF, ESI, PT, TDS, social security, regional tax) driven by JSON configs, not hard-coded. Adding a new country is a config change, not a rewrite."),
-            ("Geofenced attendance", "GPS + NFC + selfie verification. Regularisation workflow with approval chain. Overtime + shift handling."),
-            ("Salary structure versioning", "Mid-period revisions, retroactive corrections, and statutory ceiling changes handled in the same payroll run."),
-            ("Bank file generation", "NEFT / RTGS / ACH / wire formats. Direct to bank or via approval queue."),
-            ("Self-service portal", "Payslips, leave applications, expense claims, document requests. Mobile-first."),
-            ("Compliance pack", "GST, TDS, PF, ESI return generation. Country-specific (India today; UK / UAE / US patterns ready)."),
-            ("Payroll → finance bridge", "Payroll runs post journal entries straight into Accounts. No CSV round-tripping."),
+            ("Payroll That Finance Can Trust", "Transparent salary calculations, multiple salary structures, payroll revisions &amp; arrears, bank file generation, statutory deductions, and payroll audit trails.<br/><br/><strong>Result:</strong> Faster payroll cycles with fewer manual errors."),
+            ("Attendance That Works Everywhere", "GPS attendance, geofencing, selfie verification, NFC, biometric integration, shift management, overtime tracking, and attendance corrections.<br/><br/><strong>Result:</strong> Accurate attendance without manual follow-ups."),
+            ("Leave &amp; Employee Management", "Employees can apply for leave, view payslips, submit expense claims, update personal information, download HR documents, and track approvals.<br/><br/><strong>Result:</strong> Better employee experience with less work for HR."),
+            ("Built-In Compliance", "PF, ESI, Professional Tax, TDS, custom statutory rules, and multi-country configurations. Resulting in less compliance risk and easier reporting."),
+            ("Built for Growing Businesses", "Multiple branches, departments, cost centres, employee transfers, salary revisions, multi-company operations, and multi-currency payroll. No rebuilding required."),
         ],
+        "hard_slug": "Why Wisetrack",
+        "hard_headline_html": "Proven foundation, <span class=\"serif-italic text-gradient-cool\">not</span> an empty repository.",
+        "hard_blurb": "Most software companies build HRMS from scratch. We don't. We've already solved the complex engineering behind payroll, attendance, compliance, and employee management through our own production platform.<br/><br/>That means your custom HRMS starts with a proven foundation. You get the flexibility of custom software with the speed and reliability of software that's already running in real businesses.",
         "hard_problems": [
             "Time-zone-correct attendance across a workforce distributed across regions, including DST edges.",
             "Retroactive salary revisions inside a closed period — without breaking statutory filings or audit trails.",
@@ -45,6 +72,9 @@ SERVICES = [
             "Statutory ceiling changes mid-year (the kind of thing the government does in March), applied without forcing a re-run on every closed period.",
         ],
         "stack": "ASP.NET Core services, Postgres, an event-sourced ledger for payroll, separate read models for reporting. Single tenant or multi-tenant, your call. Deploys on Docker / Linux.",
+        "cta_slug": "Get Started",
+        "cta_headline_html": "Ready to Build an HRMS That <span class=\"serif-italic text-gradient\">Fits Your Business</span>?",
+        "cta_blurb": "Whether you're replacing spreadsheets, upgrading legacy software, or building a custom HR platform from scratch, we'll help you design a solution that matches your workflows, payroll policies, and business goals.<br/><br/><strong>Let's build your HRMS together.</strong>",
     },
     {
         "slug": "crm",
@@ -611,17 +641,7 @@ TEMPLATE = """\
           </div>
         </div>
 
-        <div class="col-span-12 lg:col-span-4 reveal" data-delay="120">
-          <div class="card p-6 hud hud-lime">
-            <div class="mono text-[10px] tracking-widest text-muted">PROOF&nbsp;OF&nbsp;CAPABILITY</div>
-            <div class="serif text-2xl mt-3 leading-tight">Ragenaizer · {module_short}</div>
-            <p class="mt-3 text-sm text-text-2/85">A production-grade {module_lower} module already built and running. We ship a custom one for clients who need their own.</p>
-            <a href="{ragenaizer_url}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-lime text-sm">
-              ragenaizer.com / {module_lower}
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
+        {hero_right_card_html}
       </div>
     </div>
   </div>
@@ -652,12 +672,12 @@ TEMPLATE = """\
   <div class="max-w-page mx-auto px-edge">
     <div class="grid grid-cols-12 gap-gutter">
       <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ The hard bits</span>
+        <span class="slug">§ {hard_slug}</span>
         <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
-          The problems that <span class="serif-italic text-gradient-cool">don't</span> show up in the demo.
+          {hard_headline_html}
         </h2>
         <p class="mt-5 text-text-2/85 leading-relaxed">
-          These are the ones that take a custom build from "works in a screenshot" to "works in production for three years." We've already learned them once.
+          {hard_blurb}
         </p>
       </div>
       <div class="col-span-12 md:col-span-7 reveal" data-delay="120">
@@ -745,12 +765,12 @@ TEMPLATE = """\
       <div class="absolute -inset-1 pointer-events-none opacity-60"><div class="aurora animate-drift" style="left:-10%; top:-30%"></div></div>
       <div class="relative grid grid-cols-12 gap-gutter items-end">
         <div class="col-span-12 md:col-span-8">
-          <span class="slug">§ Next step</span>
+          <span class="slug">§ {cta_slug}</span>
           <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] tracking-tight mt-4">
-            Custom {module_lower}? <span class="serif-italic text-gradient">Tell us what you need.</span>
+            {cta_headline_html}
           </h2>
           <p class="mt-5 max-w-prose text-text-2/85 text-lg">
-            One conversation. We tell you whether it's a custom build, a Ragenaizer rollout, or something we shouldn't take on.
+            {cta_blurb}
           </p>
         </div>
         <div class="col-span-12 md:col-span-4 md:text-right">
@@ -803,6 +823,52 @@ def build(s: dict) -> str:
         )
     else:
         headline_html = s["tagline"]
+
+    # Hero Right Card
+    hero_right_card_html = s.get("hero_right_card_html")
+    if not hero_right_card_html:
+        hero_right_card_html = f"""<div class="col-span-12 lg:col-span-4 reveal" data-delay="120">
+          <div class="card p-6 hud hud-lime">
+            <div class="mono text-[10px] tracking-widest text-muted">PROOF&nbsp;OF&nbsp;CAPABILITY</div>
+            <div class="serif text-2xl mt-3 leading-tight">Ragenaizer · {html.escape(module_short)}</div>
+            <p class="mt-3 text-sm text-text-2/85">A production-grade {html.escape(module_lower)} module already built and running. We ship a custom one for clients who need their own.</p>
+            <a href="{s['ragenaizer_url']}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-lime text-sm">
+              ragenaizer.com / {html.escape(module_lower)}
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </a>
+          </div>
+        </div>"""
+
+    # Hard Problems
+    hard_slug = s.get("hard_slug", "The hard bits")
+    hard_headline_html = s.get("hard_headline_html")
+    if not hard_headline_html:
+        hard_title = s.get("hard_title", "The problems that [don't] show up in the demo.")
+        hard_italic = s.get("hard_italic", "don't")
+        if hard_italic in hard_title:
+            hard_headline_html = hard_title.replace(
+                hard_italic, f'<span class="serif-italic text-gradient-cool">{hard_italic}</span>', 1
+            ).replace("[", "").replace("]", "")
+        else:
+            hard_headline_html = hard_title
+    
+    hard_blurb = s.get("hard_blurb", "These are the ones that take a custom build from \"works in a screenshot\" to \"works in production for three years.\" We've already learned them once.")
+
+    # CTA
+    cta_slug = s.get("cta_slug", "Next step")
+    cta_headline_html = s.get("cta_headline_html")
+    if not cta_headline_html:
+        cta_title = f"Custom {module_lower}? [Tell us what you need.]"
+        cta_italic = "Tell us what you need."
+        cta_headline_html = cta_title.replace(
+            cta_italic, f'<span class="serif-italic text-gradient">{cta_italic}</span>', 1
+        ).replace("[", "").replace("]", "")
+    
+    cta_blurb = s.get("cta_blurb", "One conversation. We tell you whether it's a custom build, a Ragenaizer rollout, or something we shouldn't take on.")
+
+    # Escaping blurbs for safety
+    blurb_escaped = html.escape(s["blurb"]).replace("\n", "<br/>")
+
     return TEMPLATE.format(
         slug=s["slug"],
         code=s["code"],
@@ -811,12 +877,19 @@ def build(s: dict) -> str:
         module_upper=html.escape(module_upper),
         module_lower=html.escape(module_lower),
         headline_html=headline_html,
-        blurb=html.escape(s["blurb"]),
-        description=html.escape(s["blurb"]),
+        blurb=blurb_escaped,
+        description=html.escape(s["blurb"].split("\n")[0]),
         ragenaizer_url=s["ragenaizer_url"],
+        hero_right_card_html=hero_right_card_html,
         capability_cards="\n".join(cap_card(i, n, d) for i, (n, d) in enumerate(s["capabilities"])),
+        hard_slug=html.escape(hard_slug),
+        hard_headline_html=hard_headline_html,
+        hard_blurb=hard_blurb,
         hard_problems_list="\n".join(hard_item(i, t) for i, t in enumerate(s["hard_problems"])),
         stack=html.escape(s["stack"]),
+        cta_slug=html.escape(cta_slug),
+        cta_headline_html=cta_headline_html,
+        cta_blurb=cta_blurb,
         nav=NAV,
         footer=FOOTER,
     )
