@@ -224,10 +224,153 @@ SERVICES = [
     </div>
   </div>
 </section>
+
+<!-- Why Companies Choose Wisetrack Section -->
+<section class="relative py-16 md:py-24 bg-gradient-to-b from-transparent via-bg-2/20 to-transparent border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter items-start">
+      <!-- Left Column -->
+      <div class="col-span-12 lg:col-span-5 reveal">
+        <span class="slug">§ WHY WISETRACK</span>
+        <h2 class="serif text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[1.05] tracking-tight mt-3">
+          Why Companies Choose <span class="serif-italic text-gradient">Wisetrack</span>
+        </h2>
+        <p class="mt-6 text-text-2/85 text-base leading-relaxed">
+          We don't start from scratch. Your HRMS is built on <strong>Ragenaizer</strong>, our production-tested enterprise platform that already powers complex payroll, HR, and workflow systems.
+        </p>
+        <p class="mt-4 text-text-2/85 text-base leading-relaxed">
+          This gives you faster delivery, lower risk, and software built specifically around your business.
+        </p>
+        
+        <!-- Powered By Card -->
+        <div class="mt-8 p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-center gap-4 max-w-sm">
+          <div class="w-12 h-12 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center text-violet font-bold text-xl shadow-inner flex-shrink-0">
+            R
+          </div>
+          <div>
+            <div class="mono text-[9px] tracking-widest text-muted">POWERED BY</div>
+            <div class="font-sans font-bold text-sm text-text">Ragenaizer</div>
+            <div class="text-xs text-text-2/70 mt-0.5">Our enterprise platform for HR, Payroll &amp; Workflow automation.</div>
+          </div>
+        </div>
+        
+        <!-- Action Button -->
+        <div class="mt-8">
+          <a href="methodology.html" class="btn-primary magnetic w-fit flex items-center gap-2">
+            See How We Build
+            <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Right Column (Grid of 6 Cards) -->
+      <div class="col-span-12 lg:col-span-7 reveal lg:pl-6 mt-12 lg:mt-0">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Card 1: 40-60% Faster Delivery -->
+          <div class="flex flex-col items-start p-6 bg-white/[0.015] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.03] rounded-2xl transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-indigo/5 border border-indigo/10 flex items-center justify-center text-indigo mb-4 transition-transform group-hover:scale-110">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5M12 2C7.58 2 4 5.58 4 10c0 4.42 3.58 8 8 8s8-3.58 8-8c0-4.42-3.58-8-8-8z"/><path d="M12 6v8M9 9h6"/></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-text">40–60% Faster Delivery</h4>
+            <p class="text-xs text-text-2/70 mt-1.5 leading-relaxed">Production-ready foundation instead of building everything from scratch.</p>
+          </div>
+          
+          <!-- Card 2: Lower Project Risk -->
+          <div class="flex flex-col items-start p-6 bg-white/[0.015] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.03] rounded-2xl transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-indigo/5 border border-indigo/10 flex items-center justify-center text-indigo mb-4 transition-transform group-hover:scale-110">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 11 2 2 4-4"/></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-text">Lower Project Risk</h4>
+            <p class="text-xs text-text-2/70 mt-1.5 leading-relaxed">Core HR, payroll and workflow engines are already tested in production.</p>
+          </div>
+          
+          <!-- Card 3: Built Around Your Business -->
+          <div class="flex flex-col items-start p-6 bg-white/[0.015] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.03] rounded-2xl transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-indigo/5 border border-indigo/10 flex items-center justify-center text-indigo mb-4 transition-transform group-hover:scale-110">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-text">Built Around Your Business</h4>
+            <p class="text-xs text-text-2/70 mt-1.5 leading-relaxed">Your approvals, payroll rules, attendance policies and workflows — your way.</p>
+          </div>
+          
+          <!-- Card 4: Enterprise Integrations -->
+          <div class="flex flex-col items-start p-6 bg-white/[0.015] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.03] rounded-2xl transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-indigo/5 border border-indigo/10 flex items-center justify-center text-indigo mb-4 transition-transform group-hover:scale-110">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-4h3a2 2 0 0 0 2-2v-3h4v-3H17v-3a2 2 0 0 0-2-2h-3V1H9v4H6a2 2 0 0 0-2 2v3H1v3h3v3a2 2 0 0 0 2 2h3v4h3Z"/></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-text">Enterprise Integrations</h4>
+            <p class="text-xs text-text-2/70 mt-1.5 leading-relaxed">Seamless integration with ERP, biometric devices, accounting software and third-party APIs.</p>
+          </div>
+          
+          <!-- Card 5: Scales With Your Growth -->
+          <div class="flex flex-col items-start p-6 bg-white/[0.015] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.03] rounded-2xl transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-indigo/5 border border-indigo/10 flex items-center justify-center text-indigo mb-4 transition-transform group-hover:scale-110">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-text">Scales With Your Growth</h4>
+            <p class="text-xs text-text-2/70 mt-1.5 leading-relaxed">From 100 employees to 10,000+, the platform grows with your organization.</p>
+          </div>
+          
+          <!-- Card 6: You Own The Software -->
+          <div class="flex flex-col items-start p-6 bg-white/[0.015] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.03] rounded-2xl transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-indigo/5 border border-indigo/10 flex items-center justify-center text-indigo mb-4 transition-transform group-hover:scale-110">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h4 class="font-sans font-bold text-sm text-text">You Own The Software</h4>
+            <p class="text-xs text-text-2/70 mt-1.5 leading-relaxed">Full ownership of source code with no vendor lock-in or monthly SaaS limitations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Strip -->
+    <div class="mt-12 p-6 bg-white/[0.01] border border-white/5 rounded-2xl flex flex-col lg:flex-row justify-between items-center gap-6 reveal">
+      <div class="flex items-center gap-4 flex-1">
+        <div class="w-12 h-12 rounded-full bg-violet/10 flex items-center justify-center text-violet flex-shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div>
+          <p class="text-xs text-text-2/70 leading-relaxed">Most software companies spend months rebuilding standard HR features.</p>
+          <p class="text-sm font-bold text-violet mt-0.5">We start with a production-tested foundation and customize only what makes your business unique.</p>
+        </div>
+      </div>
+      
+      <div class="h-[1px] w-full lg:h-12 lg:w-[1px] bg-white/5"></div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 flex-shrink-0 w-full lg:w-auto">
+        <div class="flex items-center gap-2.5">
+          <svg class="w-4 h-4 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <div class="text-[10px] font-bold text-text">Faster</div>
+            <div class="text-[9px] text-muted tracking-wide">Time to Value</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <svg class="w-4 h-4 text-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 11 2 2 4-4"/></svg>
+          <div>
+            <div class="text-[10px] font-bold text-text">Lower</div>
+            <div class="text-[9px] text-muted tracking-wide">Risk</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="text-xs font-bold text-violet w-4 h-4 flex items-center justify-center bg-violet/10 rounded-full">₹</div>
+          <div>
+            <div class="text-[10px] font-bold text-text">Better</div>
+            <div class="text-[9px] text-muted tracking-wide">ROI</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <svg class="w-4 h-4 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+          <div>
+            <div class="text-[10px] font-bold text-text">Proven</div>
+            <div class="text-[9px] text-muted tracking-wide">Results</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 """,
-        "hard_slug": "Why Wisetrack",
-        "hard_headline_html": "Proven foundation, <span class=\"serif-italic text-gradient-cool\">not</span> an empty repository.",
-        "hard_blurb": "Most software companies build HRMS from scratch. We don't. We've already solved the complex engineering behind payroll, attendance, compliance, and employee management through our own production platform.<br/><br/>That means your custom HRMS starts with a proven foundation. You get the flexibility of custom software with the speed and reliability of software that's already running in real businesses.",
         "hard_problems": [
             "Time-zone-correct attendance across a workforce distributed across regions, including DST edges.",
             "Retroactive salary revisions inside a closed period — without breaking statutory filings or audit trails.",
