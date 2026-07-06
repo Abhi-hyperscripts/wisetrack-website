@@ -537,8 +537,9 @@ FOOTER = """\
 
 TEMPLATE = """\
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
+<script>(function(){{try{{if(localStorage.getItem("theme")!=="dark"){{document.documentElement.classList.add("light");}}else{{document.documentElement.classList.remove("light");}}}}catch(e){{}}}})();</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" href="assets/logo.png" />
