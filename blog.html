@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <script>(function(){try{if(localStorage.getItem("theme")==="light"){document.documentElement.classList.add("light");}else{document.documentElement.classList.add("dark");document.documentElement.classList.remove("light");}}catch(e){}})();</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P32QMPCK');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="theme-color" content="#0a0a0c"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon-180.png" />
+  
+  <title>WiseTrack Blog — Software Engineering & Operations Insights for SMBs</title>
+  <meta name="description" content="Read field notes and essays on software engineering, custom database scaling, agentic AI deployment, and SaaS vs custom builds for growing businesses." />
+  <meta name="keywords" content="software engineering blog, custom vs saas, build vs buy software, postgres scaling, tech stack selection, agentic ai in production" />
+  <link rel="canonical" href="https://wisetrack.in/blog.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Wisetrack Technologies" />
+  <meta property="og:title" content="WiseTrack Blog — Software Engineering & Operations Insights for SMBs" />
+  <meta property="og:description" content="Field notes on custom software engineering, databases, and business operating systems. Honest advice on tech decisions." />
+  <meta property="og:image" content="https://wisetrack.in/assets/og-image.jpg" />
+  <meta property="og:url" content="https://wisetrack.in/blog.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind-config.js?v=20260620h"></script>
+  <link href="assets/styles.css?v=20260620h" rel="stylesheet" />
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="assets/site.js?v=20260620h" defer></script>
+  
+  <!-- Schema JSON-LD Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "WiseTrack Blog",
+    "url": "https://wisetrack.in/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "WiseTrack Technologies",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://wisetrack.in/assets/logo.png"
+      }
+    }
+  }
+  </script>
+</head>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P32QMPCK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Scroll progress -->
+  <div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+
+  <!-- Top Announcement Bar -->
+  <div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+      <div class="flex items-center gap-3">
+        <span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span>
+        <span class="hidden sm:inline">OPEN · accepting new engagements / Q1–Q2 2026</span>
+        <span class="sm:hidden">OPEN · Q1–Q2 2026</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <span class="hidden md:inline">Noida, IN</span>
+        <span data-clock>--:--:-- IST</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary nav -->
+  <header class="fixed top-9 left-0 right-0 z-[60] bg-bg/55 backdrop-blur-2xl border-b border-white/5 transition-all duration-300">
+    <nav class="max-w-page mx-auto px-edge h-[80px] flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <img src="assets/logo/wt-mark.svg" alt="Wisetrack Logo" class="h-[26px] md:h-[30px] w-auto transition-transform group-hover:scale-105" />
+        <div class="flex flex-col">
+          <span class="font-sans font-black text-sm md:text-base tracking-tight leading-none text-text">WISETRACK</span>
+          <span class="font-mono text-[9px] text-indigo tracking-wider leading-none mt-0.5">TECHNOLOGIES</span>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8 text-[13px] font-semibold text-text-2">
+        <div class="relative group py-6">
+          <a href="products.html" class="hover:text-text flex items-center gap-1 transition-colors">
+            Products
+            <svg class="w-3 h-3 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </a>
+          <!-- Mega Dropdown -->
+          <div class="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-[850px] pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50">
+            <div class="bg-surface border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-2xl text-left">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+                <div>
+                  <span class="font-display font-light text-xl text-text">Our Flagship Business OS: <b class="font-bold text-indigo">Ragenaizer</b></span>
+                  <p class="text-xs text-text-2/70 mt-1">One integrated database system replacing up to 7 separate B2B SaaS licenses.</p>
+                </div>
+                <a href="products.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1">SEE ALL PRODUCTS &rarr;</a>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="build-hrms.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">👥</span>
+                    <div class="text-sm font-bold text-text">HRMS & Payroll</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Statutory Indian payroll compliance, tax filing, geofenced attendance.</p>
+                  <span class="text-[10px] font-bold text-indigo tracking-wider font-mono">EXPLORE MODULE &rarr;</span>
+                </a>
+                <a href="build-crm.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">💼</span>
+                    <div class="text-sm font-bold text-text">CRM & Sales</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Pipeline mapping, lead forms integration, client record sharing.</p>
+                  <span class="text-[10px] font-bold text-indigo tracking-wider font-mono">EXPLORE MODULE &rarr;</span>
+                </a>
+                <a href="build-pms.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">🛠️</span>
+                    <div class="text-sm font-bold text-text">PMS & Projects</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Milestone tracking, engineering bug manager, timesheets & billing.</p>
+                  <span class="text-[10px] font-bold text-indigo tracking-wider font-mono">EXPLORE MODULE &rarr;</span>
+                </a>
+                <a href="build-lms.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-cyan/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">🎓</span>
+                    <div class="text-sm font-bold text-text">LMS & Training</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Structured employee training, compliance testing, digital certificates.</p>
+                  <span class="text-[10px] font-bold text-indigo tracking-wider font-mono">EXPLORE MODULE &rarr;</span>
+                </a>
+                <a href="build-accounts.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-lime/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">🧾</span>
+                    <div class="text-sm font-bold text-text">Double-Entry Accounts</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Ledger sync, automated invoicing, expenses, cashflow analysis.</p>
+                  <span class="text-[10px] font-bold text-indigo tracking-wider font-mono">EXPLORE MODULE &rarr;</span>
+                </a>
+                <a href="build-chat.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-sky/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">💬</span>
+                    <div class="text-sm font-bold text-text">Enterprise Chat</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Audit-logged messaging, file attachments, team channel controls.</p>
+                  <span class="text-[10px] font-bold text-indigo tracking-wider font-mono">EXPLORE MODULE &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group py-6">
+          <a href="services.html" class="hover:text-text flex items-center gap-1 transition-colors">
+            Services
+            <svg class="w-3 h-3 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </a>
+          <!-- Services Dropdown -->
+          <div class="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-[650px] pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50">
+            <div class="bg-surface border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-2xl text-left">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+                <div>
+                  <span class="font-display font-light text-xl text-text">Software Development: <b class="font-bold text-indigo">HyperScripts</b></span>
+                  <p class="text-xs text-text-2/70 mt-1">High-performance custom engineering for web, mobile, and workflow systems.</p>
+                </div>
+                <a href="services.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1">SEE ALL SERVICES &rarr;</a>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="services.html#custom-software" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">💻</span>
+                    <div class="text-sm font-bold text-text">Custom Web & OS Software</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">C#, .NET Core, Blazor, Postgres. Scalable business architecture.</p>
+                </a>
+                <a href="services.html#mobile-apps" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-lime/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">📱</span>
+                    <div class="text-sm font-bold text-text">Mobile Applications</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Native iOS & Android apps mapped to central business databases.</p>
+                </a>
+                <a href="services.html#ai-automation" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">🤖</span>
+                    <div class="text-sm font-bold text-text">Agentic AI Solutions</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Production agent loops using Claude 3.5, RAG, and ClickHouse.</p>
+                </a>
+                <a href="services.html#dashboards" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-sky/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="text-lg">📊</span>
+                    <div class="text-sm font-bold text-text">Interactive Dashboards</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Consolidated metrics visualizer showing real-time operational status.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="ai.html" class="hover:text-text transition-colors">AI</a>
+        <a href="portfolio.html" class="hover:text-text transition-colors">Work</a>
+        <a href="methodology.html" class="hover:text-text transition-colors">Method</a>
+        <a href="blog.html" class="text-text hover:text-text transition-colors">Blog</a>
+        <a href="careers.html" class="hover:text-text transition-colors">Careers</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="btn-primary flex items-center gap-2 text-xs font-semibold py-2 px-4 rounded-lg bg-indigo text-white hover:opacity-90 transition-all">
+          Start a Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10" data-menu-toggle aria-expanded="false" aria-label="Open menu">
+          <span class="block w-4 h-[1.5px] bg-text mb-1"></span><span class="block w-4 h-[1.5px] bg-text"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div data-menu class="md:hidden hidden bg-bg border-t border-white/5 [&.open]:block">
+      <div class="px-edge py-6 flex flex-col gap-4 text-lg text-left">
+        <a href="index.html" class="py-2 hover:text-text">Home</a>
+        <details class="py-2 group">
+          <summary class="flex items-center justify-between text-lg cursor-pointer list-none text-text font-semibold">
+            <span>Products</span>
+            <svg class="opacity-60 transition-transform group-open:rotate-180" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="mobile-build-list mt-3 pl-3 flex flex-col gap-2">
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text hover:text-text font-bold" href="products.html">All Products &rarr;</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-hrms.html">HRMS</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-crm.html">CRM</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-pms.html">PMS</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-lms.html">LMS</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-accounts.html">Accounts</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-chat.html">Chat & Video</a>
+          </div>
+        </details>
+        <details class="py-2 group">
+          <summary class="flex items-center justify-between text-lg cursor-pointer list-none text-text font-semibold">
+            <span>Services</span>
+            <svg class="opacity-60 transition-transform group-open:rotate-180" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="mobile-build-list mt-3 pl-3 flex flex-col gap-2">
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text hover:text-text font-bold" href="services.html">All Services &rarr;</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="services.html#custom-software">Custom Web Development</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="services.html#mobile-apps">Mobile Applications</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="services.html#ai-automation">Agentic AI Loops</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="services.html#dashboards">Custom Dashboards</a>
+          </div>
+        </details>
+        <a href="ai.html" class="py-2 hover:text-text">AI Solutions</a>
+        <a href="portfolio.html" class="py-2 hover:text-text">Work</a>
+        <a href="methodology.html" class="py-2 hover:text-text">Company</a>
+        <a href="blog.html" class="py-2 hover:text-text font-bold">Blog</a>
+        <a href="careers.html" class="py-2 hover:text-text">Careers</a>
+        <a href="contact.html" class="btn-primary w-fit mt-2">Start a Project</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative pt-[130px]">
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden py-16 md:py-24 animate-rise">
+      <div class="absolute inset-0 -z-10 pointer-events-none">
+        <div class="aurora animate-drift" style="top:-20%; left:-10%; opacity:.4"></div>
+        <div class="absolute inset-0 bp-grid"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
+        <div class="absolute inset-0 grain"></div>
+      </div>
+
+      <div class="max-w-page mx-auto px-edge text-center flex flex-col items-center">
+        <span class="mono text-xs text-indigo tracking-widest uppercase">FIELD NOTES</span>
+        <h1 class="font-display font-light text-[clamp(2.4rem,5.5vw,4.8rem)] leading-[0.98] tracking-[-0.03em] text-text mt-4 max-w-4xl">
+          Observations on <span class="font-display italic bg-gradient-to-r from-violet via-indigo to-cyan bg-clip-text text-transparent">building software.</span>
+        </h1>
+        <p class="mt-6 text-base md:text-lg text-text-2/85 leading-relaxed max-w-2xl">
+          B2B SaaS engineering, custom database scaling, and product management lessons learned on Noida-based production servers.
+        </p>
+      </div>
+    </section>
+
+    <!-- ARTICLES LIST -->
+    <section class="py-12 relative">
+      <div class="max-w-page mx-auto px-edge">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Post 1 -->
+          <article class="p-6 bg-surface border border-line rounded-2xl flex flex-col justify-between hover:border-indigo/30 transition-all duration-300">
+            <div>
+              <span class="mono text-[10px] text-muted">26 Feb 2026</span>
+              <h2 class="font-display text-xl text-text font-semibold mt-3 mb-4">When to build, when to buy.</h2>
+              <p class="text-xs text-text-2/80 leading-relaxed mb-6">
+                Most teams should buy off-the-shelf and move on. Some should build something custom. Here's our simple decision framework.
+              </p>
+            </div>
+            <a href="post-when-to-build-when-to-buy.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1 mt-4">
+              READ ESSAY &rarr;
+            </a>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="p-6 bg-surface border border-line rounded-2xl flex flex-col justify-between hover:border-indigo/30 transition-all duration-300">
+            <div>
+              <span class="mono text-[10px] text-muted">14 Jan 2026</span>
+              <h2 class="font-display text-xl text-text font-semibold mt-3 mb-4">Why we turn down half our projects.</h2>
+              <p class="text-xs text-text-2/80 leading-relaxed mb-6">
+                A small, selective engineering team delivers 10x quality. Inside our strict five-point vetting filter for inbound software briefs.
+              </p>
+            </div>
+            <a href="post-why-we-turn-down-half.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1 mt-4">
+              READ ESSAY &rarr;
+            </a>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="p-6 bg-surface border border-line rounded-2xl flex flex-col justify-between hover:border-indigo/30 transition-all duration-300">
+            <div>
+              <span class="mono text-[10px] text-muted">05 Dec 2025</span>
+              <h2 class="font-display text-xl text-text font-semibold mt-3 mb-4">The real cost of the wrong stack.</h2>
+              <p class="text-xs text-text-2/80 leading-relaxed mb-6">
+                Hiring friction, continuous package updates, and testing drag. Why opting for C# .NET Core and Postgres defaults is a solid decision.
+              </p>
+            </div>
+            <a href="post-real-cost-of-wrong-stack.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1 mt-4">
+              READ ESSAY &rarr;
+            </a>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="p-6 bg-surface border border-line rounded-2xl flex flex-col justify-between hover:border-indigo/30 transition-all duration-300">
+            <div>
+              <span class="mono text-[10px] text-muted">21 Oct 2025</span>
+              <h2 class="font-display text-xl text-text font-semibold mt-3 mb-4">One app vs. seven.</h2>
+              <p class="text-xs text-text-2/80 leading-relaxed mb-6">
+                Case study: Replacing Slack, Zoho, Drive, and Jira inside a 200-person Indian manufacturing organization with one Ragenaizer OS.
+              </p>
+            </div>
+            <a href="post-one-app-vs-seven.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1 mt-4">
+              READ ESSAY &rarr;
+            </a>
+          </article>
+
+          <!-- Post 5 -->
+          <article class="p-6 bg-surface border border-line rounded-2xl flex flex-col justify-between hover:border-indigo/30 transition-all duration-300">
+            <div>
+              <span class="mono text-[10px] text-muted">11 Sep 2025</span>
+              <h2 class="font-display text-xl text-text font-semibold mt-3 mb-4">Postgres is enough, until it isn't.</h2>
+              <p class="text-xs text-text-2/80 leading-relaxed mb-6">
+                Avoid premature clustering architecture. Scale your relational DB with indexing, partition tables, and ClickHouse vectorized search.
+              </p>
+            </div>
+            <a href="post-postgres-is-enough.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1 mt-4">
+              READ ESSAY &rarr;
+            </a>
+          </article>
+
+          <!-- Post 6 -->
+          <article class="p-6 bg-surface border border-line rounded-2xl flex flex-col justify-between hover:border-indigo/30 transition-all duration-300">
+            <div>
+              <span class="mono text-[10px] text-muted">04 Aug 2025</span>
+              <h2 class="font-display text-xl text-text font-semibold mt-3 mb-4">Two-week demos beat documents.</h2>
+              <p class="text-xs text-text-2/80 leading-relaxed mb-6">
+                Why reading flat PDFs fails compared to clickable prototypes. Prototype-first testing makes development cycles faster.
+              </p>
+            </div>
+            <a href="post-two-week-demos.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1 mt-4">
+              READ ESSAY &rarr;
+            </a>
+          </article>
+
+          <!-- Post 7 (New template/detail example) -->
+          <article class="p-6 bg-surface border border-line rounded-2xl flex flex-col justify-between hover:border-indigo/30 transition-all duration-300">
+            <div>
+              <span class="mono text-[10px] text-muted">06 Jul 2026</span>
+              <h2 class="font-display text-xl text-text font-semibold mt-3 mb-4">Custom Software in Noida: The Digital Shift.</h2>
+              <p class="text-xs text-text-2/80 leading-relaxed mb-6">
+                Indian SMBs are moving from isolated spreadsheets to integrated, audit-logged enterprise operating databases. What this means for your workflow.
+              </p>
+            </div>
+            <a href="blog-detail.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1 mt-4">
+              READ ESSAY &rarr;
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-16 border-t border-line bg-surface/10">
+    <div class="max-w-page mx-auto px-edge">
+      <div class="grid grid-cols-12 gap-y-12 gap-x-8">
+        <div class="col-span-12 lg:col-span-4">
+          <a href="index.html" class="flex items-center gap-2.5">
+            <img src="assets/logo/wt-mark.svg" alt="" aria-hidden="true" class="h-[29px] w-auto" />
+            <span class="font-sans font-extrabold text-base tracking-tight text-text">WISETRACK</span>
+          </a>
+          <p class="mt-6 text-sm text-text-2/80 leading-relaxed max-w-sm">
+            Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our Business OS product.
+          </p>
+          <div class="mt-6 flex items-center gap-3 text-muted text-xs">
+            <span class="h-1.5 w-1.5 rounded-full bg-mint"></span>
+            <span>Open for Q1-Q2 2026 engagements</span>
+          </div>
+        </div>
+
+        <div class="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-6">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">EXPLORE</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="products.html" class="hover:text-text font-semibold">Products</a></li>
+            <li><a href="services.html" class="hover:text-text">Services</a></li>
+            <li><a href="portfolio.html" class="hover:text-text">Our Work</a></li>
+            <li><a href="blog.html" class="hover:text-text font-semibold">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">BRANDS</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="https://hyperscripts.io/" target="_blank" rel="noopener" class="hover:text-text">HyperScripts</a></li>
+            <li><a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="hover:text-text">Ragenaizer</a></li>
+            <li><a href="careers.html" class="hover:text-text">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">LEGAL</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="terms.html" class="hover:text-text">Terms</a></li>
+            <li><a href="privacy.html" class="hover:text-text">Privacy</a></li>
+            <li><a href="cookies.html" class="hover:text-text">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-line flex flex-col md:flex-row gap-6 justify-between items-center text-xs text-muted">
+        <p>© 2026 WISETRACK TECHNOLOGIES · SELECTIVE ENGINEERING</p>
+        <div class="flex gap-6">
+          <a href="sitemap.html" class="hover:text-text">Sitemap</a>
+          <a href="privacy.html" class="hover:text-text">Privacy</a>
+          <a href="contact.html" class="hover:text-text">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="wa-fab" aria-label="Chat with WiseTrack on WhatsApp">
+    <span class="wa-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Zm4.49-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.12.17 1.78 2.72 4.3 3.81.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+    </span>
+    <span class="wa-label">Chat with us</span>
+  </a>
+</body>
+</html>
