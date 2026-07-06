@@ -33,10 +33,13 @@ OG_ALT = "WiseTrack Technologies — Software that needs real engineering."
 PAGES = [
     ("",                              "WiseTrack — Software that needs real engineering.",          "Custom applications, finance integrations, and Ragenaizer — a Business OS — plus production-grade agentic AI.", 1.00, "weekly"),
     ("solutions.html",                "Solutions — three ways we engage",                            "Three doors — custom build via HyperScripts, ready-made platforms, or licence Ragenaizer.", 0.92, "monthly"),
+    ("custom-services.html",          "Custom Software Services — HyperScripts",                      "High-performance custom engineering for web, mobile, agentic AI, and interactive dashboards.", 0.92, "monthly"),
+    ("hrms-payroll.html",             "Custom HRMS & Payroll Solutions",                              "Statutory Indian payroll compliance, tax filing, geofenced attendance, and HR software.", 0.92, "monthly"),
+    ("crm-sales.html",                "Custom CRM & Sales Software",                                  "Pipeline mapping, lead forms integration, and client record sharing CRM software.", 0.92, "monthly"),
     ("ai.html",                       "AI & Agentic AI — engineered, not glued together",            "Production agent loops on Anthropic Claude — 90+ tools across 9 business modules, ClickHouse RAG, three-tier safety gates, full token + cost observability.", 0.95, "monthly"),
     ("portfolio.html",                "Work — selected engagements",                                  "Case studies: RBI (Burger King / Popeyes) QSR dashboard, Vivo Mobile, an elections counting platform feeding Hindustan Times / ABP / Times Internet / Google, Maldives resort ops, the Ragenaizer rollout.", 0.90, "monthly"),
     ("methodology.html",              "Method — how we run an engagement",                            "Four-phase process — listen, design, build (two-week demos), and stay around for what matters.", 0.80, "monthly"),
-    ("insights.html",                 "Journal — field notes on engineering",                        "Writing on custom vs SaaS decisions, the cost of the wrong stack, agentic AI in production, the discipline of saying no.", 0.78, "weekly"),
+    ("blog.html",                     "Journal — field notes on engineering",                        "Writing on custom vs SaaS decisions, the cost of the wrong stack, agentic AI in production, the discipline of saying no.", 0.78, "weekly"),
     ("careers.html",                  "Careers — engineering hires",                                  "Open roles in engineering, platform, and design. A small team, deliberate hiring, work that ships.", 0.78, "weekly"),
     ("contact.html",                  "Contact — start a project",                                    "Tell us what you want to build. We reply within one working day.", 0.72, "monthly"),
     ("dashboard.html",                "Ragenaizer · live dashboard demo",                            "A live, interactive demo of a Ragenaizer dashboard — restaurant brands ops with revenue, orders, signal health.", 0.55, "monthly"),
@@ -175,7 +178,7 @@ def blog_jsonld() -> str:
         "@context": "https://schema.org",
         "@type": "Blog",
         "name": "WiseTrack Journal",
-        "url": f"{BASE}/insights.html",
+        "url": f"{BASE}/blog.html",
         "publisher": {"@id": f"{BASE}/#organization"},
         "blogPost": [
             {"@type": "BlogPosting", "headline": title, "url": f"{BASE}/{slug}"}
@@ -241,7 +244,7 @@ def careers_jsonld() -> str:
 
 # ───────── Per-page processing ─────────
 def process_page(p: pathlib.Path) -> bool:
-    text = p.read_text()
+    text = p.read_text(encoding="utf-8")
     orig = text
 
     # 1. OG image dimensions + secure_url + type
@@ -258,7 +261,7 @@ def process_page(p: pathlib.Path) -> bool:
         page_alt = "WiseTrack — AI & Agentic AI services"
     elif p.name == 'portfolio.html':
         page_alt = "WiseTrack — selected work"
-    elif p.name == 'insights.html':
+    elif p.name == 'blog.html':
         page_alt = "WiseTrack Journal — field notes on engineering"
     text = upsert_meta_alt(text, page_alt)
 
@@ -273,7 +276,7 @@ def process_page(p: pathlib.Path) -> bool:
         text = remove_existing_jsonld(text, "BreadcrumbList")
         new_jsonld.append(breadcrumb_jsonld([("Home", f"{BASE}/")]))
 
-    if p.name == 'insights.html':
+    if p.name == 'blog.html':
         text = remove_existing_jsonld(text, "Blog")
         new_jsonld.append(blog_jsonld())
 
@@ -289,7 +292,7 @@ def process_page(p: pathlib.Path) -> bool:
         text = inject_before_head_close(text, ''.join(new_jsonld))
 
     if text != orig:
-        p.write_text(text)
+        p.write_text(text, encoding="utf-8")
         return True
     return False
 
@@ -306,7 +309,7 @@ def write_sitemap():
         out.append(f'    <priority>{prio:.2f}</priority>')
         out.append('  </url>')
     out.append('</urlset>')
-    (ROOT / 'sitemap.xml').write_text('\n'.join(out) + '\n')
+    (ROOT / 'sitemap.xml').write_text('\n'.join(out) + '\n', encoding="utf-8")
 
 
 # ───────── llms.txt ─────────
@@ -356,7 +359,7 @@ def write_llms():
     lines.append("- Infra: Docker, Linux, Kubernetes")
     lines.append("- AI: Anthropic Claude (Haiku 4.5, Sonnet 4.5), bge-small-en embeddings, custom agent loop with tool-use, prompt caching, three-tier safety gates, full token + cost observability")
     lines.append("")
-    (ROOT / 'llms.txt').write_text('\n'.join(lines) + '\n')
+    (ROOT / 'llms.txt').write_text('\n'.join(lines) + '\n', encoding="utf-8")
 
 
 # ───────── llms-full.txt — richer agent grounding ─────────
@@ -429,7 +432,7 @@ We sell custom software builds and a licensable Business OS:
     for slug, title, summary, _, _ in PAGES:
         url = f"{BASE}/" if slug == "" else f"{BASE}/{slug}"
         content += f"- {url} — {title} · {summary}\n"
-    (ROOT / 'llms-full.txt').write_text(content)
+    (ROOT / 'llms-full.txt').write_text(content, encoding="utf-8")
 
 
 # ───────── Main ─────────
@@ -454,13 +457,13 @@ def main():
     print(f"\n{changed} pages updated.")
 
     write_sitemap()
-    print("✓ sitemap.xml regenerated with lastmod")
+    print("[OK] sitemap.xml regenerated with lastmod")
 
     write_llms()
-    print("✓ llms.txt rewritten with full inventory")
+    print("[OK] llms.txt rewritten with full inventory")
 
     write_llms_full()
-    print("✓ llms-full.txt written for agent grounding")
+    print("[OK] llms-full.txt written for agent grounding")
 
 
 if __name__ == "__main__":

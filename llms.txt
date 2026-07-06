@@ -14,10 +14,13 @@
 ## Core pages
 - [WiseTrack — Software that needs real engineering.](https://wisetrack.in/): Custom applications, finance integrations, and Ragenaizer — a Business OS — plus production-grade agentic AI.
 - [Solutions — three ways we engage](https://wisetrack.in/solutions.html): Three doors — custom build via HyperScripts, ready-made platforms, or licence Ragenaizer.
+- [Custom Software Services — HyperScripts](https://wisetrack.in/custom-services.html): High-performance custom engineering for web, mobile, agentic AI, and interactive dashboards.
+- [Custom HRMS & Payroll Solutions](https://wisetrack.in/hrms-payroll.html): Statutory Indian payroll compliance, tax filing, geofenced attendance, and HR software.
+- [Custom CRM & Sales Software](https://wisetrack.in/crm-sales.html): Pipeline mapping, lead forms integration, and client record sharing CRM software.
 - [AI & Agentic AI — engineered, not glued together](https://wisetrack.in/ai.html): Production agent loops on Anthropic Claude — 90+ tools across 9 business modules, ClickHouse RAG, three-tier safety gates, full token + cost observability.
 - [Work — selected engagements](https://wisetrack.in/portfolio.html): Case studies: RBI (Burger King / Popeyes) QSR dashboard, Vivo Mobile, an elections counting platform feeding Hindustan Times / ABP / Times Internet / Google, Maldives resort ops, the Ragenaizer rollout.
 - [Method — how we run an engagement](https://wisetrack.in/methodology.html): Four-phase process — listen, design, build (two-week demos), and stay around for what matters.
-- [Journal — field notes on engineering](https://wisetrack.in/insights.html): Writing on custom vs SaaS decisions, the cost of the wrong stack, agentic AI in production, the discipline of saying no.
+- [Journal — field notes on engineering](https://wisetrack.in/blog.html): Writing on custom vs SaaS decisions, the cost of the wrong stack, agentic AI in production, the discipline of saying no.
 - [Careers — engineering hires](https://wisetrack.in/careers.html): Open roles in engineering, platform, and design. A small team, deliberate hiring, work that ships.
 - [Contact — start a project](https://wisetrack.in/contact.html): Tell us what you want to build. We reply within one working day.
 - [Ragenaizer · live dashboard demo](https://wisetrack.in/dashboard.html): A live, interactive demo of a Ragenaizer dashboard — restaurant brands ops with revenue, orders, signal health.
