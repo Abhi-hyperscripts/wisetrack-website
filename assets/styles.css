@@ -939,6 +939,27 @@ html.js .chars.in .char {
 }
 .wa-strip .cta:hover { transform: translateY(-1px); filter: brightness(1.05); }
 
+@media (max-width: 640px) {
+  .wa-strip {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 1.5rem 1rem;
+  }
+  .wa-strip .qr {
+    display: none;
+  }
+  .wa-strip .copy {
+    flex: 1 1 auto;
+  }
+  .wa-strip .cta {
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 8px 20px -6px rgba(37,211,102,0.4);
+  }
+}
+
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

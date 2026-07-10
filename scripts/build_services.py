@@ -944,6 +944,7 @@ TEMPLATE = """\
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="contact.html" class="btn-primary magnetic">Tell us about your build <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            {case_study_btn}
             <a href="{ragenaizer_url}" target="_blank" rel="noopener" class="btn-ghost">See it shipped <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
@@ -1178,6 +1179,10 @@ def build(s: dict) -> str:
     # Escaping blurbs for safety
     blurb_escaped = html.escape(s["blurb"]).replace("\n", "<br/>")
 
+    case_study_btn = ""
+    if s["slug"] in ["crm", "hrms", "pms"]:
+        case_study_btn = f'<a href="{s["slug"]}-case-study.html" class="btn-ghost">Case Study &rarr;</a>'
+
     return TEMPLATE.format(
         slug=s["slug"],
         code=s["code"],
@@ -1200,6 +1205,7 @@ def build(s: dict) -> str:
         cta_headline_html=cta_headline_html,
         cta_blurb=cta_blurb,
         extra_section_html=s.get("extra_section_html", ""),
+        case_study_btn=case_study_btn,
         nav=NAV,
         footer=FOOTER,
     )
