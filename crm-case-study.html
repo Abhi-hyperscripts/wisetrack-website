@@ -21,58 +21,6 @@
 </head>
 <body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
 
-  <!-- Fullscreen Typewriter Preloader (Split Shutter Reveal) -->
-  <div id="preloader" class="fixed inset-0 z-[9999] pointer-events-auto flex items-center justify-center select-none">
-    <div id="shutter-top" class="absolute top-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-b border-black/5" style="transform: translateY(0);"></div>
-    <div id="shutter-bottom" class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-t border-black/5" style="transform: translateY(0);"></div>
-    <div id="preloader-content" class="relative z-10 text-center flex items-center justify-center">
-      <h1 id="preloader-text" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
-      <span class="inline-block w-1 h-8 sm:h-12 bg-black ml-2 animate-blink"></span>
-    </div>
-  </div>
-  <script>
-    (function() {
-      const text = "CRM CASE STUDY";
-      const speed = 75;
-      let i = 0;
-      const target = document.getElementById("preloader-text");
-      
-      function typeWriter() {
-        if (i < text.length) {
-          target.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeWriter, speed);
-        } else {
-          setTimeout(() => {
-            const content = document.getElementById("preloader-content");
-            const topShutter = document.getElementById("shutter-top");
-            const bottomShutter = document.getElementById("shutter-bottom");
-            const preloader = document.getElementById("preloader");
-            
-            if (content) {
-              content.style.opacity = "0";
-              content.style.transform = "scale(0.95)";
-              content.style.transition = "all 0.35s ease-in-out";
-            }
-            if (topShutter && bottomShutter) {
-              topShutter.style.transition = "transform 0.9s cubic-bezier(0.85, 0, 0.15, 1)";
-              bottomShutter.style.transition = "transform 0.9s cubic-bezier(0.85, 0, 0.15, 1)";
-              topShutter.style.transform = "translateY(-100%)";
-              bottomShutter.style.transform = "translateY(100%)";
-            }
-            if (preloader) {
-              preloader.style.pointerEvents = "none";
-              document.body.style.overflow = "";
-              setTimeout(() => preloader.remove(), 950);
-            }
-          }, 700);
-        }
-      }
-      document.body.style.overflow = "hidden";
-      setTimeout(typeWriter, 350);
-    })();
-  </script>
-
   <!-- Scroll progress -->
   <div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
   <div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
@@ -221,7 +169,7 @@
           </div>
         </div>
 
-        <a href="portfolio.html" class="hover:text-text transition-colors text-text font-bold border-b-2 border-indigo pb-1">Case Studies</a>
+        <a href="portfolio.html" class="hover:text-text transition-colors">Work</a>
         <a href="blog.html" class="hover:text-text transition-colors">Blog</a>
         <a href="careers.html" class="hover:text-text transition-colors">Careers</a>
         <a href="contact.html" class="hover:text-text transition-colors">Contact</a>
@@ -267,7 +215,7 @@
             <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="custom-services.html#dashboards">Custom Dashboards</a>
           </div>
         </details>
-        <a href="portfolio.html" class="py-2 hover:text-text font-bold text-text">Case Studies</a>
+        <a href="portfolio.html" class="py-2 hover:text-text">Work</a>
         <a href="blog.html" class="py-2 hover:text-text">Blog</a>
         <a href="careers.html" class="py-2 hover:text-text">Careers</a>
         <a href="contact.html" class="py-2 hover:text-text">Contact</a>
