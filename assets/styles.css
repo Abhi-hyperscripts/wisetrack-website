@@ -1324,3 +1324,13 @@ html.light svg [stroke="rgba(255,255,255,0.04)"] { stroke: rgba(0, 0, 0, 0.08); 
 .theme-toggle .icon-moon { display: block; }
 html.light .theme-toggle .icon-sun { display: block; }
 html.light .theme-toggle .icon-moon { display: none; }
+
+/* Theme-specific logo toggles for Core Offerings */
+.logo-dark-theme { display: none; }
+.logo-light-theme { display: block; }
+
+html.light .logo-dark-theme { display: none; }
+html.light .logo-light-theme { display: block; }
+
+html:not(.light) .logo-dark-theme { display: block; }
+html:not(.light) .logo-light-theme { display: none; }
