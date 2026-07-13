@@ -32,6 +32,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script src="assets/tailwind-config.js"></script>
 <link href="assets/styles.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <script>document.documentElement.classList.add("js")</script>
 <script src="assets/site.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Custom CRM development","serviceType":"Sales & customer relationship software","description":"Sales pipeline, lead capture, customer record","url":"https://wisetrack.in/build-crm.html","provider":{"@id":"https://wisetrack.in/#organization"},"areaServed":["Worldwide"],"audience":{"@type":"Audience","audienceType":"Business"},"category":"Custom software development"}</script>
@@ -234,246 +235,790 @@
 
 <main class="relative pt-[120px]">
 
-<!-- HERO -->
-<section class="relative overflow-hidden">
+<!-- HERO SECTION -->
+<section class="relative overflow-hidden pt-8 pb-16 md:py-24">
+  <!-- Aurora Background -->
   <div class="absolute inset-0 -z-0 pointer-events-none">
-    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.4"></div>
-    <div class="absolute inset-0 bp-grid"></div>
+    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.35"></div>
+    <div class="absolute inset-0 bg-grid-dots [background-size:24px_24px] opacity-10"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
-    <div class="grain"></div>
   </div>
 
-  <div class="relative max-w-page mx-auto px-edge pt-12 md:pt-16 pb-16">
-    <div class="relative hud hud-cyan p-6 md:p-10 lg:p-14 border border-white/8 rounded-2xl bg-white/[0.015]">
-      <div class="hidden md:block absolute top-3 left-6 mono text-[10px] tracking-widest text-muted">FILE&nbsp;·&nbsp;wisetrack.in/build-crm</div>
-      <div class="hidden md:block absolute top-3 right-6 mono text-[10px] tracking-widest text-cyan flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>BUILD&nbsp;·&nbsp;CRM</div>
-      <div class="hidden md:block absolute bottom-3 left-6 mono text-[10px] tracking-widest text-muted">REF&nbsp;·&nbsp;RAGENAIZER</div>
-      <div class="hidden md:block absolute bottom-3 right-6 mono text-[10px] tracking-widest text-muted">REV&nbsp;2026.05</div>
+  <div class="relative max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter items-center">
+      <!-- Hero Left Text -->
+      <div class="col-span-12 lg:col-span-6 reveal">
+        <span class="slug block mb-4">§ RAGENAIZER CRM</span>
+        <h1 class="serif text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05] tracking-tight">
+          CRM Software for <br/><span class="serif-italic text-gradient">Growing Businesses</span>
+        </h1>
+        <p class="mt-6 text-lg text-text-2/85 leading-relaxed max-w-prose">
+          Manage leads, close deals faster, and build stronger customer relationships with Ragenaizer CRM.
+        </p>
+        
+        <!-- Checklist -->
+        <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-sm text-text-2/90">
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Capture, track & convert leads
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Automate follow-ups
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Get real-time sales insights
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Improve team productivity
+          </li>
+        </ul>
 
-      <div class="grid grid-cols-12 gap-gutter mt-8">
-        <div class="col-span-12 lg:col-span-8 reveal">
-          <a href="solutions.html" class="inline-flex items-center gap-2 mono text-[11px] tracking-widest text-muted hover:text-text transition-colors">
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            BACK&nbsp;TO&nbsp;SOLUTIONS
+        <!-- CTA Buttons -->
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="contact.html" class="btn-primary magnetic bg-indigo text-white px-6 py-3 rounded-lg hover:opacity-90 flex items-center gap-2 font-semibold">
+            Book Free Demo
+            <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <span class="slug block mt-6">§ 02 · CUSTOM&nbsp;CRM</span>
-          <h1 class="serif text-[clamp(2.2rem,5vw,4.6rem)] leading-[1] tracking-tight mt-4">
-            Custom CRM, with the integrations you <span class="serif-italic text-gradient">actually</span> need.
-          </h1>
-          <p class="mt-6 text-lg md:text-xl text-text-2/85 leading-relaxed max-w-prose">
-            We&#x27;ve built and shipped a sales CRM with a visual pipeline, multi-channel lead capture, Facebook Lead Ads integration, and a shared customer record across finance and operations. If you want yours instead of Salesforce — these are the gears.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="contact.html" class="btn-primary magnetic">Tell us about your build <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="crm-case-study.html" class="btn-ghost">Case Study &rarr;</a>
-            <a href="https://ragenaizer.com/pages/crm.html" target="_blank" rel="noopener" class="btn-ghost">See it shipped <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="crm-case-study.html" class="btn-ghost border border-white/10 text-text px-6 py-3 rounded-lg hover:bg-white/5 transition-all">
+            Case Study &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Right Mockup Dashboard -->
+      <div class="col-span-12 lg:col-span-6 reveal" data-delay="120">
+        <div class="relative w-full rounded-2xl border border-slate-200 bg-white shadow-glow overflow-hidden font-sans text-xs text-slate-800" >
+          <!-- Window Controls Header -->
+          <div class="flex items-center gap-1.5 px-4 md:px-6 py-3 border-b border-slate-100 bg-white" style="background-color: white;">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+            <span class="ml-4 mono text-[10px] text-slate-400">RAGENAIZER CRM DASHBOARD</span>
+          </div>
+
+          <div class="grid grid-cols-12">
+            <!-- Sidebar -->
+            <div class="hidden sm:block col-span-3 bg-white p-4 md:p-5 border-r border-slate-100" style="background-color: white;">
+              <div class="flex items-center gap-2 mb-6">
+                <div class="w-5 h-5 rounded bg-indigo flex items-center justify-center text-white text-[10px] font-bold">R</div>
+                <span class="font-bold text-slate-900 text-[11px]">RAGENAIZER</span>
+              </div>
+              <ul class="flex flex-col gap-2">
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded bg-indigo-55 text-indigo-600 font-bold cursor-default">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z"/></svg>
+                  Dashboard
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded text-slate-600 hover:bg-slate-55 hover:text-slate-900 cursor-pointer transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                  Leads
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded text-slate-600 hover:bg-slate-55 hover:text-slate-900 cursor-pointer transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                  Contacts
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded text-slate-600 hover:bg-slate-55 hover:text-slate-900 cursor-pointer transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Deals
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded text-slate-600 hover:bg-slate-55 hover:text-slate-900 cursor-pointer transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                  Tasks
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded text-slate-600 hover:bg-slate-55 hover:text-slate-900 cursor-pointer transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  Calendar
+                </li>
+              </ul>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-span-12 sm:col-span-9 bg-slate-50 p-4 md:p-5 flex flex-col gap-4">
+              <!-- Welcome Header -->
+              <div class="flex justify-between items-center pb-2 border-b border-slate-200/60">
+                <div>
+                  <h5 class="font-bold text-slate-900 text-sm">Welcome, Admin!</h5>
+                  <span class="text-[10px] text-slate-400">Here is your sales performance overview</span>
+                </div>
+                <div class="flex gap-2">
+                  <div class="relative">
+                    <span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                    <svg class="w-4 h-4 text-slate-500 hover:text-slate-800 cursor-pointer" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                  </div>
+                  <span class="w-4 h-4 rounded-full bg-indigo/10 border border-indigo/20 flex items-center justify-center text-[9px] text-indigo font-bold">A</span>
+                </div>
+              </div>
+
+              <!-- KPI Metrics Grid -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors" style="background-color: white;">
+                  <span class="text-[10px] text-slate-500 block">Total Leads</span>
+                  <span class="font-bold text-slate-900 text-xs md:text-sm block mt-0.5">1,250</span>
+                  <span class="text-[9px] text-emerald-600 flex items-center gap-0.5 mt-0.5"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg> 12.5%</span>
+                </div>
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors" style="background-color: white;">
+                  <span class="text-[10px] text-slate-500 block">Open Deals</span>
+                  <span class="font-bold text-slate-900 text-xs md:text-sm block mt-0.5">320</span>
+                  <span class="text-[9px] text-emerald-600 flex items-center gap-0.5 mt-0.5"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg> 8.4%</span>
+                </div>
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors" style="background-color: white;">
+                  <span class="text-[10px] text-slate-500 block">Won Deals</span>
+                  <span class="font-bold text-slate-900 text-xs md:text-sm block mt-0.5">210</span>
+                  <span class="text-[9px] text-emerald-600 flex items-center gap-0.5 mt-0.5"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg> 15.2%</span>
+                </div>
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors" style="background-color: white;">
+                  <span class="text-[10px] text-slate-500 block">Revenue</span>
+                  <span class="font-bold text-slate-900 text-xs md:text-sm block mt-0.5">₹ 42.8L</span>
+                  <span class="text-[9px] text-emerald-600 flex items-center gap-0.5 mt-0.5"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg> 10.6%</span>
+                </div>
+              </div>
+
+              <!-- Sales Pipeline Stages -->
+              <div class="p-3 rounded-lg border border-slate-200 bg-white" style="background-color: white;">
+                <span class="text-[10px] text-slate-500 block mb-2 font-semibold">Sales Pipeline Stages</span>
+                <div class="grid grid-cols-5 gap-1.5 text-center">
+                  <div class="p-1 rounded bg-violet/10 border border-violet/20 text-violet">
+                    <span class="block font-bold text-[9px] md:text-[10px]">New Lead</span>
+                    <span class="block text-[8px] md:text-[9px] opacity-80">350</span>
+                  </div>
+                  <div class="p-1 rounded bg-indigo/10 border border-indigo/20 text-indigo">
+                    <span class="block font-bold text-[9px] md:text-[10px]">Qualified</span>
+                    <span class="block text-[8px] md:text-[9px] opacity-80">250</span>
+                  </div>
+                  <div class="p-1 rounded bg-sky/10 border border-sky/20 text-sky">
+                    <span class="block font-bold text-[9px] md:text-[10px]">Proposal</span>
+                    <span class="block text-[8px] md:text-[9px] opacity-80">150</span>
+                  </div>
+                  <div class="p-1 rounded bg-cyan/10 border border-cyan/20 text-cyan">
+                    <span class="block font-bold text-[9px] md:text-[10px]">Negotiation</span>
+                    <span class="block text-[8px] md:text-[9px] opacity-80">90</span>
+                  </div>
+                  <div class="p-1 rounded bg-emerald-50 border border-emerald-200 text-emerald-700">
+                    <span class="block font-bold text-[9px] md:text-[10px]">Won</span>
+                    <span class="block text-[8px] md:text-[9px] opacity-80">60</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Charts Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Donut Chart -->
+                <div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center justify-between gap-2" style="background-color: white;">
+                  <div>
+                    <span class="text-[10px] text-slate-500 block mb-2 font-semibold">Leads by Source</span>
+                    <ul class="flex flex-col gap-1 text-[9px] text-slate-600">
+                      <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan"></span>Website (35%)</li>
+                      <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-violet"></span>Referrals (25%)</li>
+                      <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo"></span>Social Media (20%)</li>
+                      <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-sky"></span>Campaigns (20%)</li>
+                    </ul>
+                  </div>
+                  <div class="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0" style="background-color: white;">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#e2e8f0" stroke-width="4"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#22d3ee" stroke-width="4" stroke-dasharray="35 65" stroke-dashoffset="0"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#7c3aed" stroke-width="4" stroke-dasharray="25 75" stroke-dashoffset="-35"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#6366f1" stroke-width="4" stroke-dasharray="20 80" stroke-dashoffset="-60"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="20 80" stroke-dashoffset="-80"></circle>
+                    </svg>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center">
+                      <span class="font-bold text-[8px] md:text-[9px] text-slate-800">1,250</span>
+                      <span class="text-[6px] md:text-[7px] text-slate-400">Total</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Line Chart -->
+                <div class="p-3 rounded-lg border border-slate-200 bg-white flex flex-col justify-between" style="background-color: white;">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-[10px] text-slate-500 font-semibold">Sales Trend</span>
+                    <span class="text-[8px] px-1 bg-slate-200 rounded text-slate-600">This Month</span>
+                  </div>
+                  <div class="h-12 w-full mt-2 relative">
+                    <svg class="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="chartGlowLight" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"></stop>
+                          <stop offset="100%" stop-color="#6366f1" stop-opacity="0"></stop>
+                        </linearGradient>
+                      </defs>
+                      <path d="M 0 25 Q 20 10 40 18 T 80 5 T 100 8 L 100 30 L 0 30 Z" fill="url(#chartGlowLight)"></path>
+                      <path d="M 0 25 Q 20 10 40 18 T 80 5 T 100 8" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg>
+                  </div>
+                  <div class="flex justify-between text-[7px] text-slate-400 mt-1 px-1">
+                    <span>1st</span>
+                    <span>10th</span>
+                    <span>20th</span>
+                    <span>30th</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="col-span-12 lg:col-span-4 reveal" data-delay="120">
-          <div class="card p-6 hud hud-lime">
-            <div class="mono text-[10px] tracking-widest text-muted">PROOF&nbsp;OF&nbsp;CAPABILITY</div>
-            <div class="serif text-2xl mt-3 leading-tight">Ragenaizer · CRM</div>
-            <p class="mt-3 text-sm text-text-2/85">A production-grade crm module already built and running. We ship a custom one for clients who need their own.</p>
-            <a href="https://ragenaizer.com/pages/crm.html" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-lime text-sm">
-              ragenaizer.com / crm
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+<!-- FEATURES SECTION -->
+<section class="relative py-16 md:py-24 border-t border-white/5 bg-white/[0.005]">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="slug block mb-3">§ Capabilities & Modules</span>
+      <h2 class="serif text-[clamp(2rem,4vw,3.2rem)] leading-tight tracking-tight">
+        Powerful Features to Simplify Your <span class="serif-italic text-gradient">Sales Process</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <div class="card p-6 bg-white/[0.01] border border-white/5 hover:border-cyan/30 hover:bg-white/[0.02] rounded-2xl transition-all duration-300 group">
+        <div class="w-10 h-10 rounded-xl bg-cyan/10 border border-cyan/20 flex items-center justify-center text-cyan mb-4 transition-transform group-hover:scale-110">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        </div>
+        <h4 class="font-sans font-bold text-base text-text">Lead Management</h4>
+        <p class="text-xs text-text-2/70 mt-2 leading-relaxed">Capture leads from website, social media, email, WhatsApp and more.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card p-6 bg-white/[0.01] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.02] rounded-2xl transition-all duration-300 group">
+        <div class="w-10 h-10 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center text-indigo mb-4 transition-transform group-hover:scale-110">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h4 class="font-sans font-bold text-base text-text">Sales Pipeline</h4>
+        <p class="text-xs text-text-2/70 mt-2 leading-relaxed">Visual pipelines to track every deal from inquiry to closure.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card p-6 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-2xl transition-all duration-300 group">
+        <div class="w-10 h-10 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center text-violet mb-4 transition-transform group-hover:scale-110">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A2.25 2.25 0 0112.75 21.5h-1.5a2.25 2.25 0 01-2.25-2.263V19.13m-2.625.372a9.337 9.337 0 01-4.121-.952 4.125 4.125 0 017.538-2.493l.001.001A4.125 4.125 0 0112 15v-3m-6 3a9 9 0 00-3.472-1.17M12 12a3 3 0 003-3V6a3 3 0 00-6 0v3a3 3 0 003 3z"/></svg>
+        </div>
+        <h4 class="font-sans font-bold text-base text-text">Contact Management</h4>
+        <p class="text-xs text-text-2/70 mt-2 leading-relaxed">Store all customer information, interactions, notes & history.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card p-6 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-2xl transition-all duration-300 group">
+        <div class="w-10 h-10 rounded-xl bg-mint/10 border border-mint/20 flex items-center justify-center text-mint mb-4 transition-transform group-hover:scale-110">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4 class="font-sans font-bold text-base text-text">Task & Follow-up Automation</h4>
+        <p class="text-xs text-text-2/70 mt-2 leading-relaxed">Automate tasks, reminders and follow-ups so you never miss out.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card p-6 bg-white/[0.01] border border-white/5 hover:border-cyan/30 hover:bg-white/[0.02] rounded-2xl transition-all duration-300 group">
+        <div class="w-10 h-10 rounded-xl bg-cyan/10 border border-cyan/20 flex items-center justify-center text-cyan mb-4 transition-transform group-hover:scale-110">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h4 class="font-sans font-bold text-base text-text">Quotation & Proposal</h4>
+        <p class="text-xs text-text-2/70 mt-2 leading-relaxed">Create, send and track quotations and proposals in minutes.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card p-6 bg-white/[0.01] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.02] rounded-2xl transition-all duration-300 group">
+        <div class="w-10 h-10 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center text-indigo mb-4 transition-transform group-hover:scale-110">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.003 9.003 0 1020.945 13H11V3.055z"/></svg>
+        </div>
+        <h4 class="font-sans font-bold text-base text-text">Sales Analytics</h4>
+        <p class="text-xs text-text-2/70 mt-2 leading-relaxed">Real-time dashboards and reports to monitor performance.</p>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="card p-6 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-2xl transition-all duration-300 group">
+        <div class="w-10 h-10 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center text-violet mb-4 transition-transform group-hover:scale-110">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h4 class="font-sans font-bold text-base text-text">Email & WhatsApp Integration</h4>
+        <p class="text-xs text-text-2/70 mt-2 leading-relaxed">Connect with customers on email and WhatsApp from one place.</p>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="card p-6 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-2xl transition-all duration-300 group">
+        <div class="w-10 h-10 rounded-xl bg-mint/10 border border-mint/20 flex items-center justify-center text-mint mb-4 transition-transform group-hover:scale-110">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6 15h9"/></svg>
+        </div>
+        <h4 class="font-sans font-bold text-base text-text">Mobile CRM</h4>
+        <p class="text-xs text-text-2/70 mt-2 leading-relaxed">Access your CRM on the go with our mobile-friendly platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES WE SERVE -->
+<section class="relative py-16 md:py-20 border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <span class="slug block mb-3">§ Market Verticals</span>
+      <h2 class="serif text-[clamp(1.8rem,3.5vw,2.8rem)] leading-tight tracking-tight">
+        Industries We Serve
+      </h2>
+    </div>
+
+    <!-- Grid of chips -->
+    <div class="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text-2 hover:border-cyan/40 hover:text-text transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan"></span> Manufacturing
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text-2 hover:border-violet/40 hover:text-text transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-violet"></span> Healthcare
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text-2 hover:border-indigo/40 hover:text-text transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-indigo"></span> Education
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text-2 hover:border-mint/40 hover:text-text transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-mint"></span> Logistics
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text-2 hover:border-sky/40 hover:text-text transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-sky"></span> Real Estate
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text-2 hover:border-lime/40 hover:text-text transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-lime"></span> Recruitment
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text-2 hover:border-cyan/40 hover:text-text transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan"></span> IT & SaaS
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text-2 hover:border-violet/40 hover:text-text transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-violet"></span> Retail
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text-2 hover:border-indigo/40 hover:text-text transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-indigo"></span> Export & Import
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.01] border border-white/5 rounded-full text-xs text-text hover:border-mint/40 transition-all duration-250 cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-mint animate-pulse"></span> More Industries
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE RAGENAIZER CRM -->
+<section class="relative py-16 md:py-24 border-t border-white/5 bg-gradient-to-b from-transparent via-bg-2/30 to-transparent">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter items-center">
+      <!-- Left Column: Why Choose -->
+      <div class="col-span-12 lg:col-span-4 reveal">
+        <span class="slug">§ Unified System</span>
+        <h2 class="serif text-[clamp(1.8rem,3.5vw,2.6rem)] leading-tight tracking-tight mt-3">
+          Why Choose Ragenaizer CRM?
+        </h2>
+        <p class="mt-4 text-text-2/80 text-sm leading-relaxed">
+          Ragenaizer CRM is part of a complete Business Operating System. As your business grows, you can add more modules and manage everything in one unified platform.
+        </p>
+        
+        <ul class="mt-6 flex flex-col gap-3 text-sm text-text-2/95">
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+            All-in-one Business OS
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+            Fully Customizable
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+            Scalable for Any Business Size
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+            Secure & Cloud-Based
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+            Easy to Use Interface
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+            Dedicated Support
+          </li>
+        </ul>
+      </div>
+
+      <!-- Middle Column: Spider Network Diagram -->
+      <div class="col-span-12 md:col-span-6 lg:col-span-5 flex items-center justify-center py-8 reveal" data-delay="100">
+        <style>
+          @keyframes march {
+            to { stroke-dashoffset: -20; }
+          }
+          .animate-marching-lines line {
+            stroke-dasharray: 5 5;
+            animation: march 2s linear infinite;
+          }
+        </style>
+        <div class="relative w-80 h-80 grid grid-cols-3 grid-rows-3 gap-2">
+          <!-- Connecting Lines SVG -->
+          <svg class="absolute inset-0 w-full h-full text-white/10 pointer-events-none animate-marching-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line x1="50" y1="50" x2="20" y2="20" stroke="currentColor" stroke-width="1.5" />
+            <line x1="50" y1="50" x2="50" y2="15" stroke="currentColor" stroke-width="1.5" />
+            <line x1="50" y1="50" x2="80" y2="20" stroke="currentColor" stroke-width="1.5" />
+            <line x1="50" y1="50" x2="15" y2="50" stroke="currentColor" stroke-width="1.5" />
+            <line x1="50" y1="50" x2="85" y2="50" stroke="currentColor" stroke-width="1.5" />
+            <line x1="50" y1="50" x2="20" y2="80" stroke="currentColor" stroke-width="1.5" />
+            <line x1="50" y1="50" x2="50" y2="85" stroke="currentColor" stroke-width="1.5" />
+            <line x1="50" y1="50" x2="80" y2="80" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+
+          <!-- Outer Orbiting Nodes -->
+          <!-- Row 1 -->
+          <!-- 1. DRIVE (Orange) -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="w-12 h-12 rounded-full border border-orange-500/20 bg-orange-500/5 flex items-center justify-center text-orange-400 shadow-md hover:border-orange-500/50 hover:scale-110 transition-all cursor-pointer">
+              <i class="fa-solid fa-cloud text-sm"></i>
+            </div>
+            <span class="text-[7.5px] mono text-orange-400 font-bold mt-1.5 uppercase tracking-wide">DRIVE</span>
+          </div>
+
+          <!-- 2. CRM (Cyan - active) -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="w-12 h-12 rounded-full border border-cyan/40 bg-cyan/15 flex items-center justify-center text-cyan shadow-[0_0_15px_rgba(34,211,238,0.25)] hover:scale-110 transition-all cursor-pointer z-10 animate-pulse">
+              <i class="fa-solid fa-user-check text-sm"></i>
+            </div>
+            <span class="text-[7.5px] mono text-cyan font-bold mt-1.5 uppercase tracking-wide">CRM</span>
+          </div>
+
+          <!-- 3. HRMS (Mint) -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="w-12 h-12 rounded-full border border-mint/20 bg-mint/5 flex items-center justify-center text-mint shadow-md hover:border-mint/50 hover:scale-110 transition-all cursor-pointer">
+              <i class="fa-solid fa-users text-sm"></i>
+            </div>
+            <span class="text-[7.5px] mono text-mint font-bold mt-1.5 uppercase tracking-wide">HRMS</span>
+          </div>
+
+          <!-- Row 2 -->
+          <!-- 4. EMAIL (Violet) -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="w-12 h-12 rounded-full border border-violet/20 bg-violet/5 flex items-center justify-center text-violet shadow-md hover:border-violet/50 hover:scale-110 transition-all cursor-pointer">
+              <i class="fa-solid fa-envelope text-sm"></i>
+            </div>
+            <span class="text-[7.5px] mono text-violet font-bold mt-1.5 uppercase tracking-wide">EMAIL</span>
+          </div>
+
+          <!-- CENTER HUB (White background, black text/accent) -->
+          <div class="flex items-center justify-center z-10">
+            <div class="w-20 h-20 rounded-full border border-slate-200 bg-white flex flex-col items-center justify-center text-center p-2 shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 transition-all cursor-default">
+              <span class="text-[6px] text-slate-500 block uppercase tracking-wider font-bold">RAGENAIZER</span>
+              <span class="text-[8px] text-slate-900 font-bold leading-tight mt-0.5">BUSINESS OS</span>
+            </div>
+          </div>
+
+          <!-- 5. PMS (Indigo) -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="w-12 h-12 rounded-full border border-indigo/20 bg-indigo/5 flex items-center justify-center text-indigo shadow-md hover:border-indigo/50 hover:scale-110 transition-all cursor-pointer">
+              <i class="fa-solid fa-list-check text-sm"></i>
+            </div>
+            <span class="text-[7.5px] mono text-indigo font-bold mt-1.5 uppercase tracking-wide">PMS</span>
+          </div>
+
+          <!-- Row 3 -->
+          <!-- 6. CHAT (Sky) -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="w-12 h-12 rounded-full border border-sky/20 bg-sky/5 flex items-center justify-center text-sky shadow-md hover:border-sky/50 hover:scale-110 transition-all cursor-pointer">
+              <i class="fa-solid fa-comments text-sm"></i>
+            </div>
+            <span class="text-[7.5px] mono text-sky font-bold mt-1.5 uppercase tracking-wide">CHAT</span>
+          </div>
+
+          <!-- 7. ACCOUNTS (Lime) -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="w-12 h-12 rounded-full border border-lime/20 bg-lime/5 flex items-center justify-center text-lime shadow-md hover:border-lime/50 hover:scale-110 transition-all cursor-pointer">
+              <i class="fa-solid fa-file-invoice-dollar text-sm"></i>
+            </div>
+            <span class="text-[7.5px] mono text-lime font-bold mt-1.5 uppercase tracking-wide">ACCOUNTS</span>
+          </div>
+
+          <!-- 8. MORE APPS (Muted) -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-slate-400 shadow-md hover:border-white/30 hover:scale-110 transition-all cursor-pointer">
+              <i class="fa-solid fa-cubes text-sm"></i>
+            </div>
+            <span class="text-[7.5px] mono text-slate-400 font-bold mt-1.5 uppercase tracking-wide">MORE APPS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Perfect For -->
+      <div class="col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-10 reveal" data-delay="120">
+        <div class="p-6 rounded-2xl border border-white/5 bg-white/[0.01]">
+          <span class="mono text-[9px] text-cyan tracking-wider uppercase font-bold">Audience Focus</span>
+          <h4 class="serif text-xl mt-2 mb-4">Perfect For</h4>
+          <ul class="flex flex-col gap-2.5 text-xs text-text-2/95">
+            <li class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Startups
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Small & Medium Businesses
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Enterprises
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Sales Teams
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Marketing Teams
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Customer Success Teams
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Field Sales Teams
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Business Owners
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY BENEFITS -->
+<section class="relative py-16 md:py-24 border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <span class="slug block mb-3">§ Value Proposition</span>
+      <h2 class="serif text-[clamp(2rem,4vw,3.2rem)] leading-tight tracking-tight">
+        Key Benefits
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="p-6 bg-white/[0.01] border border-white/5 hover:border-cyan/30 rounded-2xl transition-all duration-300 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center text-cyan flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.281m5.94 2.28l-2.28 5.941"/></svg>
+        </div>
+        <div>
+          <h4 class="font-sans font-bold text-sm text-text">Increase Sales Conversion</h4>
+          <p class="text-xs text-text-2/70 mt-1 leading-relaxed">Turn more leads into paying customers with optimized nurturing paths.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="p-6 bg-white/[0.01] border border-white/5 hover:border-indigo/30 rounded-2xl transition-all duration-300 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-lg bg-indigo/10 border border-indigo/20 flex items-center justify-center text-indigo flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+        </div>
+        <div>
+          <h4 class="font-sans font-bold text-sm text-text">Track Every Lead & Opportunity</h4>
+          <p class="text-xs text-text-2/70 mt-1 leading-relaxed">Never let a deal slip away with centralized pipeline stage management.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="p-6 bg-white/[0.01] border border-white/5 hover:border-violet/30 rounded-2xl transition-all duration-300 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-lg bg-violet/10 border border-violet/20 flex items-center justify-center text-violet flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+        </div>
+        <div>
+          <h4 class="font-sans font-bold text-sm text-text">Improve Customer Experience</h4>
+          <p class="text-xs text-text-2/70 mt-1 leading-relaxed">Respond faster with unified communication history and context at hand.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="p-6 bg-white/[0.01] border border-white/5 hover:border-mint/30 rounded-2xl transition-all duration-300 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-lg bg-mint/10 border border-mint/20 flex items-center justify-center text-mint flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        </div>
+        <div>
+          <h4 class="font-sans font-bold text-sm text-text">Automate Daily Tasks</h4>
+          <p class="text-xs text-text-2/70 mt-1 leading-relaxed">Save hours of repetitive manual data entry, follow-ups, and calendar sync.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="p-6 bg-white/[0.01] border border-white/5 hover:border-sky/30 rounded-2xl transition-all duration-300 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-lg bg-sky/10 border border-sky/20 flex items-center justify-center text-sky flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+        </div>
+        <div>
+          <h4 class="font-sans font-bold text-sm text-text">Better Team Collaboration</h4>
+          <p class="text-xs text-text-2/70 mt-1 leading-relaxed">Share context across sales, marketing, and customer success instantly.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="p-6 bg-white/[0.01] border border-white/5 hover:border-lime/30 rounded-2xl transition-all duration-300 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-lg bg-lime/10 border border-lime/20 flex items-center justify-center text-lime flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"/></svg>
+          <svg class="w-4 h-4 absolute" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"/></svg>
+        </div>
+        <div>
+          <h4 class="font-sans font-bold text-sm text-text">Make Data-Driven Decisions</h4>
+          <p class="text-xs text-text-2/70 mt-1 leading-relaxed">Analyze performance trends, lead sources, and deal close metrics in real time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS -->
+<section class="relative py-16 md:py-24 border-t border-white/5 bg-gradient-to-b from-transparent via-bg-2/20 to-transparent">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <span class="slug block mb-3">§ Support & Info</span>
+      <h2 class="serif text-[clamp(2rem,4vw,3.2rem)] leading-tight tracking-tight">
+        Frequently Asked Questions
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2 max-w-5xl mx-auto">
+      <!-- FAQ Column 1 -->
+      <div class="flex flex-col">
+        <details class="group py-4 border-b border-white/5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm text-text list-none select-none">
+            <span>What is CRM software?</span>
+            <span class="transition-transform duration-300 group-open:rotate-180 text-cyan">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </span>
+          </summary>
+          <p class="text-xs text-text-2/80 leading-relaxed mt-3 pr-4 cursor-default">
+            CRM (Customer Relationship Management) software helps businesses manage leads, customers, sales pipelines, communication, and follow-ups from one centralized platform.
+          </p>
+        </details>
+
+        <details class="group py-4 border-b border-white/5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm text-text list-none select-none">
+            <span>Is Ragenaizer CRM suitable for small businesses?</span>
+            <span class="transition-transform duration-300 group-open:rotate-180 text-cyan">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </span>
+          </summary>
+          <p class="text-xs text-text-2/80 leading-relaxed mt-3 pr-4 cursor-default">
+            Yes. It is fully scalable and designed with customizable features so that small businesses can start easily and unlock advanced automation as they grow.
+          </p>
+        </details>
+
+        <details class="group py-4 border-b border-white/5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm text-text list-none select-none">
+            <span>Can I customize the CRM?</span>
+            <span class="transition-transform duration-300 group-open:rotate-180 text-cyan">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </span>
+          </summary>
+          <p class="text-xs text-text-2/80 leading-relaxed mt-3 pr-4 cursor-default">
+            Absolutely. You can customize fields, pipelines, stages, notification triggers, and user access roles to align exactly with your existing workflows.
+          </p>
+        </details>
+      </div>
+
+      <!-- FAQ Column 2 -->
+      <div class="flex flex-col">
+        <details class="group py-4 border-b border-white/5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm text-text list-none select-none">
+            <span>Does Ragenaizer support integrations?</span>
+            <span class="transition-transform duration-300 group-open:rotate-180 text-cyan">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </span>
+          </summary>
+          <p class="text-xs text-text-2/80 leading-relaxed mt-3 pr-4 cursor-default">
+            Yes. It integrates natively with email (SMTP/IMAP), WhatsApp business API, website forms, Facebook Lead Ads, Google Ads, and offers custom webhook triggers.
+          </p>
+        </details>
+
+        <details class="group py-4 border-b border-white/5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm text-text list-none select-none">
+            <span>Is my business data secure?</span>
+            <span class="transition-transform duration-300 group-open:rotate-180 text-cyan">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </span>
+          </summary>
+          <p class="text-xs text-text-2/80 leading-relaxed mt-3 pr-4 cursor-default">
+            Yes. We enforce bank-grade SSL encryption, multi-tenant database isolation, row-level security policies (RLS), and perform automated redundant backups daily.
+          </p>
+        </details>
+
+        <details class="group py-4 border-b border-white/5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm text-text list-none select-none">
+            <span>Do you provide implementation and support?</span>
+            <span class="transition-transform duration-300 group-open:rotate-180 text-cyan">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </span>
+          </summary>
+          <p class="text-xs text-text-2/80 leading-relaxed mt-3 pr-4 cursor-default">
+            Yes. We offer standard onboarding assistance, documentation, and dedicated enterprise support plans to guide your team through setup and data migrations.
+          </p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="relative py-16 md:py-24 border-t border-white/5">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="relative p-8 md:p-12 border border-white/10 rounded-3xl bg-white/[0.015] overflow-hidden animate-glow-slow">
+      <!-- Grid Dots & Aurora bg -->
+      <div class="absolute inset-0 bg-grid-dots [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+      <div class="absolute -inset-1 pointer-events-none opacity-40"><div class="aurora animate-drift" style="left:20%; top:-40%"></div></div>
+
+      <div class="relative grid grid-cols-12 gap-gutter items-center">
+        <!-- CTA Left -->
+        <div class="col-span-12 lg:col-span-8">
+          <span class="slug block mb-3">§ Scale Your Sales</span>
+          <h2 class="serif text-[clamp(2rem,4.5vw,3.4rem)] leading-none tracking-tight">
+            Ready to Grow Faster?
+          </h2>
+          <p class="mt-4 text-text-2/80 text-sm md:text-base leading-relaxed max-w-xl">
+            Switch to Ragenaizer CRM and empower your sales team with a modern, customizable CRM platform.
+          </p>
+          
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="contact.html" class="btn-primary magnetic bg-indigo text-white px-5 py-2.5 rounded-lg hover:opacity-90 flex items-center gap-2 font-semibold text-sm">
+              Book Free Demo
+              <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="contact.html" class="btn-ghost border border-white/10 text-text px-5 py-2.5 rounded-lg hover:bg-white/5 transition-all text-sm">
+              Start Free Trial &rarr;
             </a>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Capabilities -->
-<section class="relative py-12 md:py-20">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter mb-10">
-      <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ Capabilities</span>
-        <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
-          What goes inside a real <span class="serif-italic text-gradient">crm</span>.
-        </h2>
-      </div>
-      <p class="col-span-12 md:col-span-6 md:col-start-7 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
-        These are the moving parts we've shipped before. Your custom build picks a subset — and we tell you upfront which parts are worth re-implementing and which ones aren't.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-      <div class="card p-6 hud hud-violet reveal" data-delay="0">
-        <div class="mono text-[10px] tracking-widest text-muted">/01</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Visual pipeline</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Drag-to-stage Kanban. Per-pipeline stages, win/loss reasons, deal velocity, weighted forecasts.</p>
-      </div>
-      <div class="card p-6 hud hud-cyan reveal" data-delay="60">
-        <div class="mono text-[10px] tracking-widest text-muted">/02</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Universal lead capture</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Webhook ingestion from any web form. Native connectors for Facebook Lead Ads and Google Ads.</p>
-      </div>
-      <div class="card p-6 hud hud-lime reveal" data-delay="120">
-        <div class="mono text-[10px] tracking-widest text-muted">/03</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">AI lead enrichment</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Automatic enrichment from public profiles + scoring. Workable without becoming creepy.</p>
-      </div>
-      <div class="card p-6 hud hud-sky reveal" data-delay="180">
-        <div class="mono text-[10px] tracking-widest text-muted">/04</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Activities & tasks</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Threads on every deal. Reminders, follow-up cadences, owner reassignment.</p>
-      </div>
-      <div class="card p-6 hud hud-violet reveal" data-delay="0">
-        <div class="mono text-[10px] tracking-widest text-muted">/05</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Shared customer record</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">One record across CRM, billing, projects. No duplicate-customer rabbit hole.</p>
-      </div>
-      <div class="card p-6 hud hud-cyan reveal" data-delay="60">
-        <div class="mono text-[10px] tracking-widest text-muted">/06</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Conversion to deal / project / invoice</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Won deals can spawn projects, contracts, invoices — auto-numbered, owner-assigned, audit-trailed.</p>
-      </div>
-      <div class="card p-6 hud hud-lime reveal" data-delay="120">
-        <div class="mono text-[10px] tracking-widest text-muted">/07</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Reporting</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Pipeline health, conversion by stage, win rate by source, by rep, by segment. Embedded dashboards.</p>
-      </div>
-      <div class="card p-6 hud hud-sky reveal" data-delay="180">
-        <div class="mono text-[10px] tracking-widest text-muted">/08</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Email + WhatsApp threads</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Conversation history attached to the deal, not the rep.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Hard problems -->
-<section class="relative bg-gradient-to-b from-transparent via-bg-2/40 to-transparent border-y border-white/5 py-16 md:py-24">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter">
-      <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ The hard bits</span>
-        <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
-          The problems that <span class="serif-italic text-gradient-cool">don't</span> show up in the demo.
-        </h2>
-        <p class="mt-5 text-text-2/85 leading-relaxed">
-          These are the ones that take a custom build from "works in a screenshot" to "works in production for three years." We've already learned them once.
-        </p>
-      </div>
-      <div class="col-span-12 md:col-span-7 reveal" data-delay="120">
-        <ol class="flex flex-col gap-5">
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">01</span>
-            <span class="text-text-2/90 leading-relaxed">Deduplication when leads arrive from 4 channels in the same hour — same person, different casing, missing fields.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">02</span>
-            <span class="text-text-2/90 leading-relaxed">Pipeline-state machine that allows custom stages per pipeline without losing reporting consistency.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">03</span>
-            <span class="text-text-2/90 leading-relaxed">Permission model: a sales lead who can see their team but not their peers; a manager who can see all of one BU; an exec who sees aggregates only.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">04</span>
-            <span class="text-text-2/90 leading-relaxed">Multi-currency forecasts with FX as of report-run time, not deal-creation time.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">05</span>
-            <span class="text-text-2/90 leading-relaxed">Cross-module live data — when a deal's contract is signed, that customer record should appear in Accounts the same second.</span>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stack -->
-<section class="relative py-16 md:py-24">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter items-center">
-      <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ Stack &amp; shape</span>
-        <h2 class="serif text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight tracking-tight mt-3">
-          How we'd put it together.
-        </h2>
-      </div>
-      <div class="col-span-12 md:col-span-7 reveal" data-delay="100">
-        <div class="card p-6 md:p-8 hud hud-cyan">
-          <div class="mono text-[10px] tracking-widest text-muted">DEFAULT&nbsp;STACK&nbsp;·&nbsp;SUBSTITUTABLE</div>
-          <p class="mt-4 text-text-2/90 leading-relaxed">ASP.NET Core, Postgres with row-level security for tenant + role isolation, Redis for queue + cache, webhooks via a thin gateway service. Frontend in Blazor or your stack of choice.</p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="tag tag-violet">C# · .NET</span>
-            <span class="tag tag-cyan">ASP.NET Core</span>
-            <span class="tag tag-lime">Postgres</span>
-            <span class="tag">Docker · Linux</span>
-            <span class="tag tag-sky">gRPC where it earns its keep</span>
-            <span class="tag">Multi-tenant by default</span>
+        <!-- CTA Right Badges -->
+        <div class="col-span-12 lg:col-span-4 lg:col-start-9 flex flex-col gap-3">
+          <div class="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-black/40">
+            <div class="w-6 h-6 rounded-full bg-cyan/15 flex items-center justify-center text-cyan flex-shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            </div>
+            <div>
+              <span class="font-sans font-bold text-xs text-text block">Quick Setup</span>
+              <span class="text-[10px] text-muted">Get up and running in minutes</span>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- When build vs license -->
-<section class="relative bg-gradient-to-b from-transparent via-bg-2/30 to-transparent border-y border-white/5 py-16 md:py-24">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter mb-10">
-      <div class="col-span-12 md:col-span-6 reveal">
-        <span class="slug">§ Build vs. license</span>
-        <h2 class="serif text-[clamp(2rem,4.2vw,3.4rem)] leading-[1] tracking-tight mt-3">
-          We'll tell you when <span class="serif-italic text-gradient-warm">not</span> to build.
-        </h2>
-      </div>
-      <p class="col-span-12 md:col-span-5 md:col-start-8 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
-        Custom isn't always the right call. We've shipped Ragenaizer so we can say that honestly.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-      <div class="card p-7 hud hud-cyan reveal">
-        <div class="mono text-[10px] tracking-widest text-muted">BUILD&nbsp;CUSTOM&nbsp;WHEN</div>
-        <ul class="mt-5 flex flex-col gap-3 text-text-2/90">
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>The crm <em>is</em> the moat — your competitor can't have the same one.</span></li>
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>You have compliance / sovereignty / data-residency requirements no SaaS will satisfy.</span></li>
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>You need to integrate at a level deeper than off-the-shelf vendors expose.</span></li>
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>Per-seat pricing across thousands of users makes the build cheaper inside 24 months.</span></li>
-        </ul>
-      </div>
-      <div class="card p-7 hud hud-lime reveal" data-delay="120">
-        <div class="mono text-[10px] tracking-widest text-muted">LICENSE&nbsp;RAGENAIZER&nbsp;INSTEAD&nbsp;WHEN</div>
-        <ul class="mt-5 flex flex-col gap-3 text-text-2/90">
-          <li class="flex gap-3"><span class="text-lime">→</span><span>The workflow is generic enough that a configurable platform will do.</span></li>
-          <li class="flex gap-3"><span class="text-lime">→</span><span>You want it in weeks, not quarters.</span></li>
-          <li class="flex gap-3"><span class="text-lime">→</span><span>You'd rather buy than own — let someone else maintain the crm forever.</span></li>
-          <li class="flex gap-3"><span class="text-lime">→</span><span>Your engineering capacity should go to the parts of your product that no SaaS covers.</span></li>
-        </ul>
-        <a href="https://ragenaizer.com/pages/crm.html" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-lime text-sm">
-          Look at Ragenaizer first
-          <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-black/40">
+            <div class="w-6 h-6 rounded-full bg-indigo/15 flex items-center justify-center text-indigo flex-shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            </div>
+            <div>
+              <span class="font-sans font-bold text-xs text-text block">Free Onboarding</span>
+              <span class="text-[10px] text-muted">Dedicated support for your data migration</span>
+            </div>
+          </div>
 
-<!-- CTA -->
-<section class="relative py-16 md:py-24">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="card p-10 md:p-16 relative overflow-hidden reveal">
-      <div class="absolute -inset-1 pointer-events-none opacity-60"><div class="aurora animate-drift" style="left:-10%; top:-30%"></div></div>
-      <div class="relative grid grid-cols-12 gap-gutter items-end">
-        <div class="col-span-12 md:col-span-8">
-          <span class="slug">§ Next step</span>
-          <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] tracking-tight mt-4">
-            Custom crm? <span class="serif-italic text-gradient">Tell us what you need.</span>
-          </h2>
-          <p class="mt-5 max-w-prose text-text-2/85 text-lg">
-            One conversation. We tell you whether it's a custom build, a Ragenaizer rollout, or something we shouldn't take on.
-          </p>
-        </div>
-        <div class="col-span-12 md:col-span-4 md:text-right">
-          <a href="contact.html" class="btn-primary magnetic w-fit">Start a project <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-black/40">
+            <div class="w-6 h-6 rounded-full bg-violet/15 flex items-center justify-center text-violet flex-shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            </div>
+            <div>
+              <span class="font-sans font-bold text-xs text-text block">No Credit Card Required</span>
+              <span class="text-[10px] text-muted">Risk-free trial, cancel anytime</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
