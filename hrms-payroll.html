@@ -272,9 +272,193 @@
         </div>
 
         <div class="col-span-12 lg:col-span-6 reveal" data-delay="120">
-          <div class="relative h-full w-full flex items-center justify-center">
-            <img src="httpswisetrack.inhrms-payroll.png" alt="HRMS and Payroll Software Interface" class="max-w-full h-auto rounded-lg shadow-lg">
+          <!-- Flowchart container style overrides -->
+          <style>
+            @keyframes flowPulse {
+              0% { top: 0%; opacity: 0; }
+              5% { opacity: 1; }
+              95% { opacity: 1; }
+              100% { top: 100%; opacity: 0; }
+            }
+            .animate-flow-pulse {
+              animation: flowPulse 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            }
+          </style>
+          
+          <div class="relative w-full rounded-2xl border border-white/10 bg-white/[0.015] p-6 md:p-8 backdrop-blur-xl shadow-card overflow-hidden">
+            <!-- Grid Dots background pattern -->
+            <div class="absolute inset-0 bg-grid-dots [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+            
+            <!-- Aurora glow behind -->
+            <div class="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-indigo/10 blur-[80px] pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-48 h-48 rounded-full bg-cyan/10 blur-[80px] pointer-events-none"></div>
+
+            <!-- Header of the widget -->
+            <div class="relative flex items-center justify-between pb-4 border-b border-white/5 mb-6">
+              <div class="flex items-center gap-3">
+                <span class="mono text-[10px] text-cyan tracking-wider uppercase font-bold">HRMS FLOW ENGINE</span>
+                <span class="h-2 w-2 rounded-full bg-mint animate-pulse"></span>
+              </div>
+              <div class="mono text-[10px] text-muted">SYNCHRONIZED ACTIVE</div>
+            </div>
+
+            <!-- Flowchart Body -->
+            <div class="relative flex gap-4 md:gap-6">
+              <!-- Vertical line and nodes -->
+              <div class="relative flex flex-col items-center flex-shrink-0 w-8">
+                <!-- SVG path with gradient -->
+                <div class="absolute top-4 bottom-4 w-[2px] bg-white/5">
+                  <!-- Running light overlay -->
+                  <div class="absolute top-0 left-0 w-full h-[60px] bg-gradient-to-b from-transparent via-cyan to-transparent animate-flow-pulse"></div>
+                </div>
+                
+                <!-- Nodes along the line -->
+                <!-- Node 1 -->
+                <div id="flow-node-1" class="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-bg border border-violet/40 text-violet shadow-[0_0_10px_rgba(124,58,237,0.2)] mt-2 transition-all duration-300" data-flow-step="1">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                </div>
+                <div class="h-24"></div> <!-- Spacer between nodes -->
+                
+                <!-- Node 2 -->
+                <div id="flow-node-2" class="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-bg border border-indigo/40 text-indigo shadow-[0_0_10px_rgba(99,102,241,0.2)] transition-all duration-300" data-flow-step="2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div class="h-24"></div> <!-- Spacer -->
+
+                <!-- Node 3 -->
+                <div id="flow-node-3" class="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-bg border border-cyan/40 text-cyan shadow-[0_0_10px_rgba(34,211,238,0.2)] transition-all duration-300" data-flow-step="3">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                </div>
+                <div class="h-24"></div> <!-- Spacer -->
+
+                <!-- Node 4 -->
+                <div id="flow-node-4" class="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-bg border border-mint/40 text-mint shadow-[0_0_10px_rgba(52,211,153,0.2)] transition-all duration-300" data-flow-step="4">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                </div>
+              </div>
+
+              <!-- Cards container -->
+              <div class="flex-grow flex flex-col gap-4">
+                <!-- Card 1 -->
+                <div class="group/card relative p-4 rounded-xl border border-white/5 bg-white/[0.005] hover:bg-white/[0.02] hover:border-violet/30 transition-all duration-300 cursor-pointer" data-step="1">
+                  <div class="flex justify-between items-start mb-1">
+                    <h4 class="font-sans font-bold text-sm text-text group-hover/card:text-violet transition-colors">1. Talent & Onboarding</h4>
+                    <span class="mono text-[8px] px-1.5 py-0.5 rounded bg-violet/10 text-violet border border-violet/20">STAGE_01</span>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-2.5">Candidate records transfer from pipelines directly to Employee Database.</p>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="text-[9px] mono px-2 py-0.5 rounded-full bg-white/5 border border-white/5 text-text-2">Offer Dispatch</span>
+                    <span class="text-[9px] mono px-2 py-0.5 rounded-full bg-white/5 border border-white/5 text-text-2">Doc Upload</span>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group/card relative p-4 rounded-xl border border-white/5 bg-white/[0.005] hover:bg-white/[0.02] hover:border-indigo/30 transition-all duration-300 cursor-pointer" data-step="2">
+                  <div class="flex justify-between items-start mb-1">
+                    <h4 class="font-sans font-bold text-sm text-text group-hover/card:text-indigo transition-colors">2. Core HR & Attendance</h4>
+                    <span class="mono text-[8px] px-1.5 py-0.5 rounded bg-indigo/10 text-indigo border border-indigo/20">STAGE_02</span>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-2.5">Live tracking of attendance records, shifts, and leave approvals.</p>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="text-[9px] mono px-2 py-0.5 rounded-full bg-white/5 border border-white/5 text-text-2">Biometric Sync</span>
+                    <span class="text-[9px] mono px-2 py-0.5 rounded-full bg-white/5 border border-white/5 text-text-2">Leave Workflow</span>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group/card relative p-4 rounded-xl border border-white/5 bg-white/[0.005] hover:bg-white/[0.02] hover:border-cyan/30 transition-all duration-300 cursor-pointer" data-step="3">
+                  <div class="flex justify-between items-start mb-1">
+                    <h4 class="font-sans font-bold text-sm text-text group-hover/card:text-cyan transition-colors">3. Payroll & Compliance</h4>
+                    <span class="mono text-[8px] px-1.5 py-0.5 rounded bg-cyan/10 text-cyan border border-cyan/20">STAGE_03</span>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-2.5">Calculates gross-to-net pay with real-time tax & PF computations.</p>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="text-[9px] mono px-2 py-0.5 rounded-full bg-white/5 border border-white/5 text-text-2">PF / ESI Calc</span>
+                    <span class="text-[9px] mono px-2 py-0.5 rounded-full bg-white/5 border border-white/5 text-text-2">One-Click Pay</span>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group/card relative p-4 rounded-xl border border-white/5 bg-white/[0.005] hover:bg-white/[0.02] hover:border-mint/30 transition-all duration-300 cursor-pointer" data-step="4">
+                  <div class="flex justify-between items-start mb-1">
+                    <h4 class="font-sans font-bold text-sm text-text group-hover/card:text-mint transition-colors">4. Appraisals & Exit</h4>
+                    <span class="mono text-[8px] px-1.5 py-0.5 rounded bg-mint/10 text-mint border border-mint/20">STAGE_04</span>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-2.5">Coordinates annual performance evaluations and full & final (FNF) settlements.</p>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="text-[9px] mono px-2 py-0.5 rounded-full bg-white/5 border border-white/5 text-text-2">Goal Tracking</span>
+                    <span class="text-[9px] mono px-2 py-0.5 rounded-full bg-white/5 border border-white/5 text-text-2">FNF Settled</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Console Status Bar -->
+            <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between mono text-[10px] text-muted">
+              <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-mint animate-ping"></span>
+                <span id="flow-console-status">CONSOLE: READY // HOVER STAGE TO SIMULATE DATA FLOW</span>
+              </div>
+            </div>
           </div>
+          
+          <!-- Interaction Script -->
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const cards = document.querySelectorAll('[data-step]');
+              const consoleStatus = document.getElementById('flow-console-status');
+              
+              const messages = {
+                '1': 'CONSOLE: ONBOARDING NEW EMPLOYEE - CREATING CENTRAL RECORDS...',
+                '2': 'CONSOLE: SYNCHRONIZING ATTENDANCE AND CALCULATING WORKED DAYS...',
+                '3': 'CONSOLE: COMPUTING PF/TAX DEDUCTIONS AND INITIATING BANK PAYOUTS...',
+                '4': 'CONSOLE: EVALUATING APPRAISAL OKRs AND GENERATING EXIT WORKFLOWS...'
+              };
+              
+              const activeClasses = {
+                '1': ['scale-110', 'border-violet', 'shadow-[0_0_15px_rgba(124,58,237,0.6)]'],
+                '2': ['scale-110', 'border-indigo', 'shadow-[0_0_15px_rgba(99,102,241,0.6)]'],
+                '3': ['scale-110', 'border-cyan', 'shadow-[0_0_15px_rgba(34,211,238,0.6)]'],
+                '4': ['scale-110', 'border-mint', 'shadow-[0_0_15px_rgba(52,211,153,0.6)]']
+              };
+
+              cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                  const step = card.getAttribute('data-step');
+                  
+                  // Update text
+                  if (consoleStatus) {
+                    consoleStatus.textContent = messages[step] || 'CONSOLE: RUNNING SIMULATION...';
+                    consoleStatus.classList.add('text-text');
+                    consoleStatus.classList.remove('text-muted');
+                  }
+                  
+                  // Light up node
+                  const node = document.getElementById(`flow-node-${step}`);
+                  if (node && activeClasses[step]) {
+                    node.classList.add(...activeClasses[step]);
+                  }
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                  const step = card.getAttribute('data-step');
+                  
+                  // Reset text
+                  if (consoleStatus) {
+                    consoleStatus.textContent = 'CONSOLE: READY // HOVER STAGE TO SIMULATE DATA FLOW';
+                    consoleStatus.classList.remove('text-text');
+                    consoleStatus.classList.add('text-muted');
+                  }
+                  
+                  // Reset node
+                  const node = document.getElementById(`flow-node-${step}`);
+                  if (node && activeClasses[step]) {
+                    node.classList.remove(...activeClasses[step]);
+                  }
+                });
+              });
+            });
+          </script>
         </div>
       </div>
     </div>
