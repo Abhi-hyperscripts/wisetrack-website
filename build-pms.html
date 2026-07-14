@@ -29,6 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script src="assets/tailwind-config.js"></script>
 <link href="assets/styles.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <script>document.documentElement.classList.add("js")</script>
 <script src="assets/site.js" defer></script>
 </head>
@@ -229,184 +230,329 @@
   </div>
 </header>
 
-
 <main class="relative pt-[120px]">
 
-<!-- HERO -->
-<section class="relative overflow-hidden">
+<!-- HERO SECTION -->
+<section class="relative overflow-hidden pt-8 pb-16 md:py-24">
+  <!-- Aurora Background -->
   <div class="absolute inset-0 -z-0 pointer-events-none">
-    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.4"></div>
-    <div class="absolute inset-0 bp-grid"></div>
+    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.35"></div>
+    <div class="absolute inset-0 bg-grid-dots [background-size:24px_24px] opacity-10"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
-    <div class="grain"></div>
   </div>
 
-  <div class="relative max-w-page mx-auto px-edge pt-12 md:pt-16 pb-16">
-    <div class="relative hud hud-cyan p-6 md:p-10 lg:p-14 border border-white/8 rounded-2xl bg-white/[0.015]">
-      <div class="hidden md:block absolute top-3 left-6 mono text-[10px] tracking-widest text-muted">FILE&nbsp;·&nbsp;wisetrack.in/build-pms</div>
-      <div class="hidden md:block absolute top-3 right-6 mono text-[10px] tracking-widest text-cyan flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>BUILD&nbsp;·&nbsp;PMS</div>
-      <div class="hidden md:block absolute bottom-3 left-6 mono text-[10px] tracking-widest text-muted">REF&nbsp;·&nbsp;RAGENAIZER</div>
-      <div class="hidden md:block absolute bottom-3 right-6 mono text-[10px] tracking-widest text-muted">REV&nbsp;2026.05</div>
-
-      <div class="grid grid-cols-12 gap-gutter mt-8">
-        <div class="col-span-12 lg:col-span-8 reveal">
-          <a href="solutions.html" class="inline-flex items-center gap-2 mono text-[11px] tracking-widest text-muted hover:text-text transition-colors">
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            BACK&nbsp;TO&nbsp;SOLUTIONS
-          </a>
-          <span class="slug block mt-6">§ 03 · CUSTOM&nbsp;PMS</span>
-          <h1 class="serif text-[clamp(2.2rem,5vw,4.6rem)] leading-[1] tracking-tight mt-4">
-            Custom project &amp; issue tracking, with the seriousness of an <span class="serif-italic text-gradient">engineering</span> tracker.
-          </h1>
-          <p class="mt-6 text-lg md:text-xl text-text-2/85 leading-relaxed max-w-prose">
-            We&#x27;ve shipped a project management system that&#x27;s also an honest engineering bug tracker — Bug / Feature / Task / Regression issue types, severity, priority, SLA stats, threaded comments, watchers, time-tracking, billing. If you want yours instead of Jira-plus-five-tools, here&#x27;s what it takes.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="contact.html" class="btn-primary magnetic">Tell us about your build <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="pms-case-study.html" class="btn-ghost">Case Study &rarr;</a>
-            <a href="https://ragenaizer.com/pages/pms.html" target="_blank" rel="noopener" class="btn-ghost">See it shipped <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <div class="col-span-12 lg:col-span-4 reveal" data-delay="120">
-          <div class="card p-6 hud hud-lime">
-            <div class="mono text-[10px] tracking-widest text-muted">PROOF&nbsp;OF&nbsp;CAPABILITY</div>
-            <div class="serif text-2xl mt-3 leading-tight">Ragenaizer · PMS</div>
-            <p class="mt-3 text-sm text-text-2/85">A production-grade pms module already built and running. We ship a custom one for clients who need their own.</p>
-            <a href="https://ragenaizer.com/pages/pms.html" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-lime text-sm">
-              ragenaizer.com / pms
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Capabilities -->
-<section class="relative py-12 md:py-20">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter mb-10">
-      <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ Capabilities</span>
-        <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
-          What goes inside a real <span class="serif-italic text-gradient">pms</span>.
-        </h2>
-      </div>
-      <p class="col-span-12 md:col-span-6 md:col-start-7 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
-        These are the moving parts we've shipped before. Your custom build picks a subset — and we tell you upfront which parts are worth re-implementing and which ones aren't.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-      <div class="card p-6 hud hud-violet reveal" data-delay="0">
-        <div class="mono text-[10px] tracking-widest text-muted">/01</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Project + issues, one system</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Projects with auto-numbered issue keys (PRJ-1234), threaded comments, attachments, status workflows.</p>
-      </div>
-      <div class="card p-6 hud hud-cyan reveal" data-delay="60">
-        <div class="mono text-[10px] tracking-widest text-muted">/02</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Engineering-grade issues</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Bug / Feature / Task / Regression types. Severity, priority, reproducibility, environment, fixed-in-version.</p>
-      </div>
-      <div class="card p-6 hud hud-lime reveal" data-delay="120">
-        <div class="mono text-[10px] tracking-widest text-muted">/03</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">SLA tracking</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Per-priority SLA timers. Breach alerts. Average resolution stats by type / owner / project.</p>
-      </div>
-      <div class="card p-6 hud hud-sky reveal" data-delay="180">
-        <div class="mono text-[10px] tracking-widest text-muted">/04</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Time tracking + timesheets</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Daily logs, weekly approval, per-member billing rates. Roll up to client invoices.</p>
-      </div>
-      <div class="card p-6 hud hud-violet reveal" data-delay="0">
-        <div class="mono text-[10px] tracking-widest text-muted">/05</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Kanban + Sprints</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Drag-to-status boards, sprint planning, burn-down. Configurable workflows.</p>
-      </div>
-      <div class="card p-6 hud hud-cyan reveal" data-delay="60">
-        <div class="mono text-[10px] tracking-widest text-muted">/06</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Linked items</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Mark-as-duplicate, relates-to, blocks, blocked-by. Walk the graph in reports.</p>
-      </div>
-      <div class="card p-6 hud hud-lime reveal" data-delay="120">
-        <div class="mono text-[10px] tracking-widest text-muted">/07</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Watchers & subscriptions</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Granular notification rules per issue and per project.</p>
-      </div>
-      <div class="card p-6 hud hud-sky reveal" data-delay="180">
-        <div class="mono text-[10px] tracking-widest text-muted">/08</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Project meeting rooms</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Auto-created video rooms per project — no calendar dance.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Hard problems -->
-<section class="relative bg-gradient-to-b from-transparent via-bg-2/40 to-transparent border-y border-white/5 py-16 md:py-24">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter">
-      <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ The hard bits</span>
-        <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
-          The problems that <span class="serif-italic text-gradient-cool">don't</span> show up in the demo.
-        </h2>
-        <p class="mt-5 text-text-2/85 leading-relaxed">
-          These are the ones that take a custom build from "works in a screenshot" to "works in production for three years." We've already learned them once.
-        </p>
-      </div>
-      <div class="col-span-12 md:col-span-7 reveal" data-delay="120">
-        <ol class="flex flex-col gap-5">
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">01</span>
-            <span class="text-text-2/90 leading-relaxed">Permission model that handles client visibility ("clients can see their tickets, not other clients'") without making the staff UI miserable.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">02</span>
-            <span class="text-text-2/90 leading-relaxed">Cross-project issue linking when projects live in different tenants of the same multi-tenant install.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">03</span>
-            <span class="text-text-2/90 leading-relaxed">Time-tracking integrity — a developer's accidental 47-hour day should be caught and corrected without destroying their week.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">04</span>
-            <span class="text-text-2/90 leading-relaxed">Workflow customisation per project without forking the data model.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">05</span>
-            <span class="text-text-2/90 leading-relaxed">Roll-up reporting across hundreds of projects without query-of-doom dashboards.</span>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stack -->
-<section class="relative py-16 md:py-24">
-  <div class="max-w-page mx-auto px-edge">
+  <div class="relative max-w-page mx-auto px-edge">
     <div class="grid grid-cols-12 gap-gutter items-center">
-      <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ Stack &amp; shape</span>
-        <h2 class="serif text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight tracking-tight mt-3">
-          How we'd put it together.
-        </h2>
+      <!-- Hero Left Text -->
+      <div class="col-span-12 lg:col-span-6 reveal">
+        <span class="slug block mb-4">1 RAGENAIZER PMS</span>
+        <h1 class="serif text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05] tracking-tight">
+          Plan. Track. <br/>Deliver. <span class="serif-italic text-gradient">Repeat.</span>
+        </h1>
+        <p class="mt-6 text-lg text-text-2/85 leading-relaxed max-w-prose">
+          One system to manage Projects, Issues, Sprints, Time & Teams – from start to successful delivery.
+        </p>
+        
+        <!-- Small feature columns -->
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
+            <div class="w-10 h-10 rounded-full border border-indigo-500/20 bg-indigo-500/5 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-layer-group text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[11px] text-text">All-in-One</h4>
+              <p class="text-[9px] text-text-2/70 mt-0.5">Project System</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
+            <div class="w-10 h-10 rounded-full border border-indigo-500/20 bg-indigo-500/5 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-chart-line text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[11px] text-text">Real-time</h4>
+              <p class="text-[9px] text-text-2/70 mt-0.5">Visibility</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
+            <div class="w-10 h-10 rounded-full border border-indigo-500/20 bg-indigo-500/5 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-rotate-left text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[11px] text-text">Agile</h4>
+              <p class="text-[9px] text-text-2/70 mt-0.5">Ready</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
+            <div class="w-10 h-10 rounded-full border border-indigo-500/20 bg-indigo-500/5 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-people-group text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[11px] text-text">Built for</h4>
+              <p class="text-[9px] text-text-2/70 mt-0.5">Teams</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons (Total 3 buttons: Book a Demo, Start Free Trial, Case Study) -->
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="contact.html" class="btn-primary magnetic bg-indigo text-white px-6 py-3 rounded-lg hover:opacity-90 flex items-center gap-2 font-semibold">
+            Book a Demo
+            <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="contact.html" class="btn-ghost border border-white/10 text-text px-6 py-3 rounded-lg hover:bg-white/5 transition-all">
+            Start Free Trial
+          </a>
+          <a href="pms-case-study.html" class="btn-ghost border border-white/10 text-text px-6 py-3 rounded-lg hover:bg-white/5 transition-all">
+            Case Study &rarr;
+          </a>
+        </div>
       </div>
-      <div class="col-span-12 md:col-span-7 reveal" data-delay="100">
-        <div class="card p-6 md:p-8 hud hud-cyan">
-          <div class="mono text-[10px] tracking-widest text-muted">DEFAULT&nbsp;STACK&nbsp;·&nbsp;SUBSTITUTABLE</div>
-          <p class="mt-4 text-text-2/90 leading-relaxed">ASP.NET Core, Postgres, MeiliSearch / OpenSearch for issue search, a worker queue for notifications and SLA breaches. Optional Slack / Teams bridges.</p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="tag tag-violet">C# · .NET</span>
-            <span class="tag tag-cyan">ASP.NET Core</span>
-            <span class="tag tag-lime">Postgres</span>
-            <span class="tag">Docker · Linux</span>
-            <span class="tag tag-sky">gRPC where it earns its keep</span>
-            <span class="tag">Multi-tenant by default</span>
+
+      <!-- PMS Dashboard Mockup -->
+      <div class="col-span-12 lg:col-span-6 reveal" data-delay="120">
+        <div class="relative w-full rounded-2xl border border-slate-200 bg-white shadow-glow overflow-hidden font-sans text-xs text-slate-800">
+          <!-- Window Controls Header -->
+          <div class="flex items-center justify-between px-4 md:px-6 py-3 border-b border-slate-100 bg-white" style="background-color: white;">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+              <span class="ml-4 mono text-[10px] text-slate-400">RAGENAIZER PMS DASHBOARD</span>
+            </div>
+            <!-- Header search and notification icons -->
+            <div class="flex items-center gap-3 text-slate-400">
+              <i class="fa-solid fa-magnifying-glass hover:text-slate-600 cursor-pointer"></i>
+              <i class="fa-solid fa-bell hover:text-slate-600 cursor-pointer"></i>
+              <span class="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-[9px] font-bold text-slate-700">A</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-12">
+            <!-- Sidebar (Dark background, matching website dark theme) -->
+            <div class="hidden sm:block col-span-3 bg-[#0B0F19] text-slate-400 p-4 md:p-5 border-r border-white/5" style="background-color: white;">
+              <div class="flex items-center gap-2 mb-6">
+                <div class="w-5 h-5 rounded bg-indigo flex items-center justify-center text-white text-[10px] font-bold">R</div>
+                <span class="font-bold text-white text-[11px] tracking-wide">RAGENAIZER</span>
+              </div>
+              <ul class="flex flex-col gap-1.5">
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded bg-indigo/15 text-indigo-400 font-bold cursor-default">
+                  <i class="fa-solid fa-chart-simple text-[11px]"></i>
+                  Dashboard
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-folder-open text-[11px]"></i>
+                  Projects
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-bug text-[11px]"></i>
+                  Issues
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-square-poll-horizontal text-[11px]"></i>
+                  Kanban Board
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-arrows-spin text-[11px]"></i>
+                  Sprints
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-clock text-[11px]"></i>
+                  Timesheets
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-chart-pie text-[11px]"></i>
+                  Reports
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-video text-[11px]"></i>
+                  Meetings
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-file-shield text-[11px]"></i>
+                  Files
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors mt-4 border-t border-white/5 pt-3">
+                  <i class="fa-solid fa-gear text-[11px]"></i>
+                  Settings
+                </li>
+              </ul>
+            </div>
+
+            <!-- Main Content Area (Light Slate background) -->
+            <div class="col-span-12 sm:col-span-9 bg-slate-50 p-4 md:p-5 flex flex-col gap-4">
+              <!-- KPI Metrics Grid -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white flex items-center gap-2" style="background-color: white;">
+                  <div class="w-8 h-8 rounded bg-indigo-50 flex items-center justify-center text-indigo-600 flex-shrink-0">
+                    <i class="fa-solid fa-folder-open text-xs"></i>
+                  </div>
+                  <div>
+                    <span class="text-[9px] text-slate-500 block uppercase">Projects</span>
+                    <span class="font-bold text-slate-900 text-sm block leading-none mt-0.5">24</span>
+                  </div>
+                </div>
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white flex items-center gap-2" style="background-color: white;">
+                  <div class="w-8 h-8 rounded bg-red-50 flex items-center justify-center text-red-600 flex-shrink-0">
+                    <i class="fa-solid fa-fire text-xs"></i>
+                  </div>
+                  <div>
+                    <span class="text-[9px] text-slate-500 block uppercase">Open Issues</span>
+                    <span class="font-bold text-slate-900 text-sm block leading-none mt-0.5">182</span>
+                  </div>
+                </div>
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white flex items-center gap-2  " style="background-color: white;">
+                  <div class="w-8 h-8 rounded bg-amber-50 flex items-center justify-center text-amber-600 flex-shrink-0">
+                    <i class="fa-solid fa-spinner text-xs"></i>
+                  </div>
+                  <div>
+                    <span class="text-[9px] text-slate-500 block uppercase">In Progress</span>
+                    <span class="font-bold text-slate-900 text-sm block leading-none mt-0.5">76</span>
+                  </div>
+                </div>
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white flex items-center gap-2" style="background-color: white;">
+                  <div class="w-8 h-8 rounded bg-emerald-50 flex items-center justify-center text-emerald-600 flex-shrink-0">
+                    <i class="fa-solid fa-circle-check text-xs"></i>
+                  </div>
+                  <div>
+                    <span class="text-[9px] text-slate-500 block uppercase">Closed Issues</span>
+                    <span class="font-bold text-slate-900 text-sm block leading-none mt-0.5">106</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Line Chart and Donut Chart Row -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <!-- Line Chart: Issue Trend (col-span-2) -->
+                <div class="col-span-1 md:col-span-2 p-3 rounded-lg border border-slate-200 bg-white flex flex-col justify-between" style="background-color: white;">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-[10px] text-slate-500 font-semibold uppercase">Issue Trend</span>
+                    <span class="text-[8px] px-1 bg-slate-100 rounded text-slate-600">This Week</span>
+                  </div>
+                  <div class="h-16 w-full mt-2 relative">
+                    <svg class="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="chartGlowLight" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"></stop>
+                          <stop offset="100%" stop-color="#6366f1" stop-opacity="0"></stop>
+                        </linearGradient>
+                      </defs>
+                      <path d="M 0 25 Q 15 15 30 18 T 60 10 T 80 15 T 100 8 L 100 30 L 0 30 Z" fill="url(#chartGlowLight)"></path>
+                      <path d="M 0 25 Q 15 15 30 18 T 60 10 T 80 15 T 100 8" fill="none" stroke="#6366f1" stroke-width="1.2" stroke-linecap="round"></path>
+                      
+                      <!-- Second line (resolved issues in green) -->
+                      <path d="M 0 27 Q 15 20 30 22 T 60 15 T 80 18 T 100 12" fill="none" stroke="#10b981" stroke-width="1.2" stroke-linecap="round"></path>
+                    </svg>
+                  </div>
+                  <div class="flex justify-between text-[7px] text-slate-400 mt-1 px-1">
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span>Sun</span>
+                  </div>
+                </div>
+
+                <!-- Donut Chart: Issues by Type (col-span-1) -->
+                <div class="p-3 rounded-lg border border-slate-200 bg-white flex flex-col justify-between items-center gap-1.5" style="background-color: white;">
+                  <span class="text-[9px] text-slate-500 font-semibold uppercase self-start">Issues by Type</span>
+                  <div class="relative w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#e2e8f0" stroke-width="5"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#ef4444" stroke-width="5" stroke-dasharray="45 55" stroke-dashoffset="0"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#3b82f6" stroke-width="5" stroke-dasharray="25 75" stroke-dashoffset="-45"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#10b981" stroke-width="5" stroke-dasharray="20 80" stroke-dashoffset="-70"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#a855f7" stroke-width="5" stroke-dasharray="10 90" stroke-dashoffset="-90"></circle>
+                    </svg>
+                  </div>
+                  <div class="grid grid-cols-2 gap-x-2 gap-y-0.5 text-[7px] text-slate-500 w-full mt-1">
+                    <div class="flex items-center gap-0.5"><span class="w-1 h-1 rounded-full bg-red-500"></span>Bug (45%)</div>
+                    <div class="flex items-center gap-0.5"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Feat (25%)</div>
+                    <div class="flex items-center gap-0.5"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Task (20%)</div>
+                    <div class="flex items-center gap-0.5"><span class="w-1 h-1 rounded-full bg-purple-500"></span>Regr (10%)</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Open Issues Table & SLA Overview Row -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <!-- Open Issues Table (col-span-2) -->
+                <div class="col-span-1 md:col-span-2 p-3 rounded-lg border border-slate-200 bg-white" style="background-color: white;">
+                  <span class="text-[10px] text-slate-500 font-semibold uppercase block mb-2">My Open Issues</span>
+                  <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                      <thead>
+                        <tr class="border-b border-slate-100 text-[8px] text-slate-400 font-bold uppercase">
+                          <th class="pb-1.5">Key</th>
+                          <th class="pb-1.5">Summary</th>
+                          <th class="pb-1.5">Type</th>
+                          <th class="pb-1.5">Priority</th>
+                          <th class="pb-1.5">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-[8px] text-slate-600">
+                        <tr class="border-b border-slate-100/50">
+                          <td class="py-1 font-mono text-indigo-600">PRJ-1012</td>
+                          <td class="py-1 font-medium text-slate-800">Login page error on Safari</td>
+                          <td class="py-1"><span class="px-1 py-0.5 rounded bg-red-50 text-red-600 font-bold">Bug</span></td>
+                          <td class="py-1"><span class="text-red-500 font-semibold">High</span></td>
+                          <td class="py-1"><span class="text-blue-500">In Progress</span></td>
+                        </tr>
+                        <tr class="border-b border-slate-100/50">
+                          <td class="py-1 font-mono text-indigo-600">PRJ-1013</td>
+                          <td class="py-1 font-medium text-slate-800">Add export to CSV</td>
+                          <td class="py-1"><span class="px-1 py-0.5 rounded bg-blue-50 text-blue-600 font-bold">Feat</span></td>
+                          <td class="py-1"><span class="text-amber-500 font-semibold">Medium</span></td>
+                          <td class="py-1"><span class="text-slate-400">To Do</span></td>
+                        </tr>
+                        <tr class="border-b border-slate-100/50">
+                          <td class="py-1 font-mono text-indigo-600">PRJ-1014</td>
+                          <td class="py-1 font-medium text-slate-800">Improve dashboard performance</td>
+                          <td class="py-1"><span class="px-1 py-0.5 rounded bg-emerald-50 text-emerald-600 font-bold">Task</span></td>
+                          <td class="py-1"><span class="text-slate-400 font-semibold">Low</span></td>
+                          <td class="py-1"><span class="text-blue-500">In Progress</span></td>
+                        </tr>
+                        <tr class="border-b border-slate-100/50">
+                          <td class="py-1 font-mono text-indigo-600">PRJ-1015</td>
+                          <td class="py-1 font-medium text-slate-800">Payment gateway failure</td>
+                          <td class="py-1"><span class="px-1 py-0.5 rounded bg-red-50 text-red-600 font-bold">Bug</span></td>
+                          <td class="py-1"><span class="text-red-700 font-bold">Critical</span></td>
+                          <td class="py-1"><span class="text-blue-500">In Progress</span></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1 font-mono text-indigo-600">PRJ-1016</td>
+                          <td class="py-1 font-medium text-slate-800">UI alignment issue</td>
+                          <td class="py-1"><span class="px-1 py-0.5 rounded bg-emerald-50 text-emerald-600 font-bold">Task</span></td>
+                          <td class="py-1"><span class="text-slate-400 font-semibold">Low</span></td>
+                          <td class="py-1"><span class="text-slate-400">To Do</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- SLA Overview (col-span-1) -->
+                <div class="p-3 rounded-lg border border-slate-200 bg-white flex flex-col justify-between" style="background-color: white;">
+                  <div>
+                    <span class="text-[9px] text-slate-500 font-semibold uppercase block mb-2">SLA Overview</span>
+                    <span class="text-[8px] text-slate-400 font-bold block mb-1">Avg Resolution Time</span>
+                    <ul class="flex flex-col gap-1.5 text-[8px] text-slate-600">
+                      <li class="flex justify-between border-b border-slate-100 pb-0.5"><span>Bug</span><span class="font-bold text-slate-800">8h 24m</span></li>
+                      <li class="flex justify-between border-b border-slate-100 pb-0.5"><span>Feature</span><span class="font-bold text-slate-800">1d 4h</span></li>
+                      <li class="flex justify-between pb-0.5"><span>Task</span><span class="font-bold text-slate-800">12h 15m</span></li>
+                    </ul>
+                  </div>
+                  <div class="border-t border-slate-100 pt-1.5 flex justify-between items-center mt-2">
+                    <div>
+                      <span class="text-[7px] text-slate-400 uppercase block leading-none">SLA Breaches</span>
+                      <span class="text-xs font-bold text-red-500 block mt-0.5">7</span>
+                    </div>
+                    <a href="#" class="text-[8px] font-bold text-indigo hover:underline">View All &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -414,64 +560,155 @@
   </div>
 </section>
 
-<!-- When build vs license -->
-<section class="relative bg-gradient-to-b from-transparent via-bg-2/30 to-transparent border-y border-white/5 py-16 md:py-24">
+<!-- PMS CAPABILITIES SECTION -->
+<section class="relative py-16 md:py-24 border-t border-white/5 bg-white/[0.005]">
   <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter mb-10">
-      <div class="col-span-12 md:col-span-6 reveal">
-        <span class="slug">§ Build vs. license</span>
-        <h2 class="serif text-[clamp(2rem,4.2vw,3.4rem)] leading-[1] tracking-tight mt-3">
-          We'll tell you when <span class="serif-italic text-gradient-warm">not</span> to build.
-        </h2>
-      </div>
-      <p class="col-span-12 md:col-span-5 md:col-start-8 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
-        Custom isn't always the right call. We've shipped Ragenaizer so we can say that honestly.
-      </p>
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="slug">2 Capabilities</span>
+      <h2 class="serif text-[clamp(2.2rem,5vw,3.2rem)] leading-[1.1] tracking-tight mt-3">
+        Powerful PMS Capabilities <br/>in <span class="serif-italic text-gradient">One System</span>
+      </h2>
+      <div class="w-12 h-0.5 bg-indigo mx-auto mt-4"></div>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-      <div class="card p-7 hud hud-cyan reveal">
-        <div class="mono text-[10px] tracking-widest text-muted">BUILD&nbsp;CUSTOM&nbsp;WHEN</div>
-        <ul class="mt-5 flex flex-col gap-3 text-text-2/90">
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>The pms <em>is</em> the moat — your competitor can't have the same one.</span></li>
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>You have compliance / sovereignty / data-residency requirements no SaaS will satisfy.</span></li>
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>You need to integrate at a level deeper than off-the-shelf vendors expose.</span></li>
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>Per-seat pricing across thousands of users makes the build cheaper inside 24 months.</span></li>
-        </ul>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mt-10">
+      <!-- 01 -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-2xl reveal group/card">
+        <div class="flex justify-between items-start">
+          <div class="w-10 h-10 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center text-violet group-hover/card:scale-110 transition-transform">
+            <i class="fa-solid fa-folder-tree text-lg"></i>
+          </div>
+          <span class="mono text-[10px] tracking-widest text-muted">/01</span>
+        </div>
+        <h3 class="serif text-xl md:text-2xl mt-4 leading-tight">Project + Issues, One System</h3>
+        <p class="mt-2 text-text-2/70 text-sm leading-relaxed">Projects with auto-numbered issue keys (PRJ-1234), threaded comments, attachments, status workflows.</p>
       </div>
-      <div class="card p-7 hud hud-lime reveal" data-delay="120">
-        <div class="mono text-[10px] tracking-widest text-muted">LICENSE&nbsp;RAGENAIZER&nbsp;INSTEAD&nbsp;WHEN</div>
-        <ul class="mt-5 flex flex-col gap-3 text-text-2/90">
-          <li class="flex gap-3"><span class="text-lime">→</span><span>The workflow is generic enough that a configurable platform will do.</span></li>
-          <li class="flex gap-3"><span class="text-lime">→</span><span>You want it in weeks, not quarters.</span></li>
-          <li class="flex gap-3"><span class="text-lime">→</span><span>You'd rather buy than own — let someone else maintain the pms forever.</span></li>
-          <li class="flex gap-3"><span class="text-lime">→</span><span>Your engineering capacity should go to the parts of your product that no SaaS covers.</span></li>
-        </ul>
-        <a href="https://ragenaizer.com/pages/pms.html" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-lime text-sm">
-          Look at Ragenaizer first
-          <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+
+      <!-- 02 -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-2xl reveal group/card" data-delay="60">
+        <div class="flex justify-between items-start">
+          <div class="w-10 h-10 rounded-xl bg-cyan/10 border border-cyan/20 flex items-center justify-center text-cyan group-hover/card:scale-110 transition-transform">
+            <i class="fa-solid fa-bug text-lg"></i>
+          </div>
+          <span class="mono text-[10px] tracking-widest text-muted">/02</span>
+        </div>
+        <h3 class="serif text-xl md:text-2xl mt-4 leading-tight">Engineering-Grade Issues</h3>
+        <p class="mt-2 text-text-2/70 text-sm leading-relaxed">Bug / Feature / Task / Regression types. Severity, priority, reproducibility, environment, fixed-in-version.</p>
+      </div>
+
+      <!-- 03 -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-2xl reveal group/card" data-delay="120">
+        <div class="flex justify-between items-start">
+          <div class="w-10 h-10 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center text-lime group-hover/card:scale-110 transition-transform">
+            <i class="fa-solid fa-clock text-lg"></i>
+          </div>
+          <span class="mono text-[10px] tracking-widest text-muted">/03</span>
+        </div>
+        <h3 class="serif text-xl md:text-2xl mt-4 leading-tight">SLA Tracking</h3>
+        <p class="mt-2 text-text-2/70 text-sm leading-relaxed">Per-priority SLA timers. Breach alerts. Average resolution stats by type / owner / project.</p>
+      </div>
+
+      <!-- 04 -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-2xl reveal group/card" data-delay="180">
+        <div class="flex justify-between items-start">
+          <div class="w-10 h-10 rounded-xl bg-sky/10 border border-sky/20 flex items-center justify-center text-sky group-hover/card:scale-110 transition-transform">
+            <i class="fa-solid fa-stopwatch text-lg"></i>
+          </div>
+          <span class="mono text-[10px] tracking-widest text-muted">/04</span>
+        </div>
+        <h3 class="serif text-xl md:text-2xl mt-4 leading-tight">Time Tracking + Timesheets</h3>
+        <p class="mt-2 text-text-2/70 text-sm leading-relaxed">Daily logs, weekly approval, per-member billing rates. Roll up to client invoices.</p>
+      </div>
+
+      <!-- 05 -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-2xl reveal group/card">
+        <div class="flex justify-between items-start">
+          <div class="w-10 h-10 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center text-violet group-hover/card:scale-110 transition-transform">
+            <i class="fa-solid fa-table-columns text-lg"></i>
+          </div>
+          <span class="mono text-[10px] tracking-widest text-muted">/05</span>
+        </div>
+        <h3 class="serif text-xl md:text-2xl mt-4 leading-tight">Kanban + Sprints</h3>
+        <p class="mt-2 text-text-2/70 text-sm leading-relaxed">Drag-to-status boards, sprint planning, burn-down. Configurable workflows.</p>
+      </div>
+
+      <!-- 06 -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-2xl reveal group/card" data-delay="60">
+        <div class="flex justify-between items-start">
+          <div class="w-10 h-10 rounded-xl bg-cyan/10 border border-cyan/20 flex items-center justify-center text-cyan group-hover/card:scale-110 transition-transform">
+            <i class="fa-solid fa-link text-lg"></i>
+          </div>
+          <span class="mono text-[10px] tracking-widest text-muted">/06</span>
+        </div>
+        <h3 class="serif text-xl md:text-2xl mt-4 leading-tight">Linked Items</h3>
+        <p class="mt-2 text-text-2/70 text-sm leading-relaxed">Mark-as-duplicate, relates-to, blocks, blocked-by. Walk the graph in reports.</p>
+      </div>
+
+      <!-- 07 -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-2xl reveal group/card" data-delay="120">
+        <div class="flex justify-between items-start">
+          <div class="w-10 h-10 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center text-lime group-hover/card:scale-110 transition-transform">
+            <i class="fa-solid fa-bell text-lg"></i>
+          </div>
+          <span class="mono text-[10px] tracking-widest text-muted">/07</span>
+        </div>
+        <h3 class="serif text-xl md:text-2xl mt-4 leading-tight">Watchers & Subscriptions</h3>
+        <p class="mt-2 text-text-2/70 text-sm leading-relaxed">Granular notification rules per issue and per project.</p>
+      </div>
+
+      <!-- 08 -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-2xl reveal group/card" data-delay="180">
+        <div class="flex justify-between items-start">
+          <div class="w-10 h-10 rounded-xl bg-sky/10 border border-sky/20 flex items-center justify-center text-sky group-hover/card:scale-110 transition-transform">
+            <i class="fa-solid fa-video text-lg"></i>
+          </div>
+          <span class="mono text-[10px] tracking-widest text-muted">/08</span>
+        </div>
+        <h3 class="serif text-xl md:text-2xl mt-4 leading-tight">Project Meeting Rooms</h3>
+        <p class="mt-2 text-text-2/70 text-sm leading-relaxed">Auto-created video rooms per project — no calendar dance.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="relative py-16 md:py-24">
+<!-- STATS / BENEFITS SUMMARY STRIP -->
+<section class="relative py-10 border-y border-white/5 bg-white/[0.003]">
   <div class="max-w-page mx-auto px-edge">
-    <div class="card p-10 md:p-16 relative overflow-hidden reveal">
-      <div class="absolute -inset-1 pointer-events-none opacity-60"><div class="aurora animate-drift" style="left:-10%; top:-30%"></div></div>
-      <div class="relative grid grid-cols-12 gap-gutter items-end">
-        <div class="col-span-12 md:col-span-8">
-          <span class="slug">§ Next step</span>
-          <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] tracking-tight mt-4">
-            Custom pms? <span class="serif-italic text-gradient">Tell us what you need.</span>
-          </h2>
-          <p class="mt-5 max-w-prose text-text-2/85 text-lg">
-            One conversation. We tell you whether it's a custom build, a Ragenaizer rollout, or something we shouldn't take on.
-          </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="flex items-center gap-3.5 reveal">
+        <div class="w-10 h-10 rounded-lg bg-indigo/10 border border-indigo/25 flex items-center justify-center text-indigo flex-shrink-0">
+          <i class="fa-solid fa-eye text-sm"></i>
         </div>
-        <div class="col-span-12 md:col-span-4 md:text-right">
-          <a href="contact.html" class="btn-primary magnetic w-fit">Start a project <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div>
+          <h4 class="font-bold text-xs text-text">Complete Visibility</h4>
+          <p class="text-[10px] text-text-2/70 mt-0.5">Real-time view of projects, issues, team & performance.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3.5 reveal" data-delay="60">
+        <div class="w-10 h-10 rounded-lg bg-indigo/10 border border-indigo/25 flex items-center justify-center text-indigo flex-shrink-0">
+          <i class="fa-solid fa-rocket text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs text-text">Faster Delivery</h4>
+          <p class="text-[10px] text-text-2/70 mt-0.5">Agile workflows and automation help teams move faster.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3.5 reveal" data-delay="120">
+        <div class="w-10 h-10 rounded-lg bg-indigo/10 border border-indigo/25 flex items-center justify-center text-indigo flex-shrink-0">
+          <i class="fa-solid fa-users text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs text-text">Better Collaboration</h4>
+          <p class="text-[10px] text-text-2/70 mt-0.5">Centralized communication, files, and updates.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3.5 reveal" data-delay="180">
+        <div class="w-10 h-10 rounded-lg bg-indigo/10 border border-indigo/25 flex items-center justify-center text-indigo flex-shrink-0">
+          <i class="fa-solid fa-chart-pie text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs text-text">Data-Driven Decisions</h4>
+          <p class="text-[10px] text-text-2/70 mt-0.5">Powerful reports to improve productivity and results.</p>
         </div>
       </div>
     </div>
