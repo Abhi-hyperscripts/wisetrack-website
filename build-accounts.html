@@ -29,6 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script src="assets/tailwind-config.js"></script>
 <link href="assets/styles.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <script>document.documentElement.classList.add("js")</script>
 <script src="assets/site.js" defer></script>
 </head>
@@ -227,186 +228,524 @@
       <a href="contact.html" class="btn-primary w-fit mt-2">Start a Project</a>
     </div>
   </div>
-</header>
+</header><main class="relative pt-[120px]">
 
-
-<main class="relative pt-[120px]">
-
-<!-- HERO -->
-<section class="relative overflow-hidden">
+<!-- HERO SECTION -->
+<section class="relative overflow-hidden pt-8 pb-16 md:py-24">
+  <!-- Aurora Background -->
   <div class="absolute inset-0 -z-0 pointer-events-none">
-    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.4"></div>
-    <div class="absolute inset-0 bp-grid"></div>
+    <div class="aurora animate-drift" style="top:-30%; left:-10%; opacity:.35"></div>
+    <div class="absolute inset-0 bg-grid-dots [background-size:24px_24px] opacity-10"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
-    <div class="grain"></div>
   </div>
 
-  <div class="relative max-w-page mx-auto px-edge pt-12 md:pt-16 pb-16">
-    <div class="relative hud hud-cyan p-6 md:p-10 lg:p-14 border border-white/8 rounded-2xl bg-white/[0.015]">
-      <div class="hidden md:block absolute top-3 left-6 mono text-[10px] tracking-widest text-muted">FILE&nbsp;·&nbsp;wisetrack.in/build-accounts</div>
-      <div class="hidden md:block absolute top-3 right-6 mono text-[10px] tracking-widest text-cyan flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span>BUILD&nbsp;·&nbsp;ACCOUNTS</div>
-      <div class="hidden md:block absolute bottom-3 left-6 mono text-[10px] tracking-widest text-muted">REF&nbsp;·&nbsp;RAGENAIZER</div>
-      <div class="hidden md:block absolute bottom-3 right-6 mono text-[10px] tracking-widest text-muted">REV&nbsp;2026.05</div>
-
-      <div class="grid grid-cols-12 gap-gutter mt-8">
-        <div class="col-span-12 lg:col-span-8 reveal">
-          <a href="solutions.html" class="inline-flex items-center gap-2 mono text-[11px] tracking-widest text-muted hover:text-text transition-colors">
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            BACK&nbsp;TO&nbsp;SOLUTIONS
-          </a>
-          <span class="slug block mt-6">§ 06 · CUSTOM&nbsp;ACCOUNTS</span>
-          <h1 class="serif text-[clamp(2.2rem,5vw,4.6rem)] leading-[1] tracking-tight mt-4">
-            Custom accounting software, <span class="serif-italic text-gradient">audit-ready</span> by default.
-          </h1>
-          <p class="mt-6 text-lg md:text-xl text-text-2/85 leading-relaxed max-w-prose">
-            We&#x27;ve shipped a double-entry accounting system with multi-currency, bank reconciliation, GST returns, fixed-asset depreciation, subscriptions, period close. If your business is large enough that QuickBooks / Tally / Zoho start hurting, here&#x27;s what the custom build actually involves.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="contact.html" class="btn-primary magnetic">Tell us about your build <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            
-            <a href="https://ragenaizer.com/pages/accounts.html" target="_blank" rel="noopener" class="btn-ghost">See it shipped <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <div class="col-span-12 lg:col-span-4 reveal" data-delay="120">
-          <div class="card p-6 hud hud-lime">
-            <div class="mono text-[10px] tracking-widest text-muted">PROOF&nbsp;OF&nbsp;CAPABILITY</div>
-            <div class="serif text-2xl mt-3 leading-tight">Ragenaizer · Accounts</div>
-            <p class="mt-3 text-sm text-text-2/85">A production-grade accounts module already built and running. We ship a custom one for clients who need their own.</p>
-            <a href="https://ragenaizer.com/pages/accounts.html" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-lime text-sm">
-              ragenaizer.com / accounts
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Capabilities -->
-<section class="relative py-12 md:py-20">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter mb-10">
-      <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ Capabilities</span>
-        <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
-          What goes inside a real <span class="serif-italic text-gradient">accounts</span>.
-        </h2>
-      </div>
-      <p class="col-span-12 md:col-span-6 md:col-start-7 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
-        These are the moving parts we've shipped before. Your custom build picks a subset — and we tell you upfront which parts are worth re-implementing and which ones aren't.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-      <div class="card p-6 hud hud-violet reveal" data-delay="0">
-        <div class="mono text-[10px] tracking-widest text-muted">/01</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Double-entry ledger</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Journal-first design — every transaction is balanced by construction. Reports derive from journals, never the other way around.</p>
-      </div>
-      <div class="card p-6 hud hud-cyan reveal" data-delay="60">
-        <div class="mono text-[10px] tracking-widest text-muted">/02</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Multi-currency</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Transactions in any currency. FX rates at transaction time, FX revaluation at period close. Realised + unrealised gain/loss handled cleanly.</p>
-      </div>
-      <div class="card p-6 hud hud-lime reveal" data-delay="120">
-        <div class="mono text-[10px] tracking-widest text-muted">/03</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Bank reconciliation</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Statement import, auto-match, fuzzy match for slight differences, manual override with audit trail.</p>
-      </div>
-      <div class="card p-6 hud hud-sky reveal" data-delay="180">
-        <div class="mono text-[10px] tracking-widest text-muted">/04</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">AR + AP</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Invoices, recurring invoices, credit notes, vendor bills, purchase orders, AR / AP aging.</p>
-      </div>
-      <div class="card p-6 hud hud-violet reveal" data-delay="0">
-        <div class="mono text-[10px] tracking-widest text-muted">/05</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Tax engine</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">GST + TDS for India out of the box. Returns generation (GSTR-1, GSTR-3B). Extensible for other jurisdictions.</p>
-      </div>
-      <div class="card p-6 hud hud-cyan reveal" data-delay="60">
-        <div class="mono text-[10px] tracking-widest text-muted">/06</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Fixed assets</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Depreciation methods (straight-line / WDV / units-of-production), batch run, disposal, gain/loss postings.</p>
-      </div>
-      <div class="card p-6 hud hud-lime reveal" data-delay="120">
-        <div class="mono text-[10px] tracking-widest text-muted">/07</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Subscriptions / recurring billing</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Plans, trials, metered usage, dunning. Webhooks from Stripe / Razorpay auto-post.</p>
-      </div>
-      <div class="card p-6 hud hud-sky reveal" data-delay="180">
-        <div class="mono text-[10px] tracking-widest text-muted">/08</div>
-        <h3 class="serif text-xl md:text-2xl mt-3 leading-tight">Period close & audit lock</h3>
-        <p class="mt-3 text-text-2/85 leading-relaxed">Soft close, hard close, year-end close with check-lists. Reopen-with-reason if you must.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Hard problems -->
-<section class="relative bg-gradient-to-b from-transparent via-bg-2/40 to-transparent border-y border-white/5 py-16 md:py-24">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter">
-      <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ The hard bits</span>
-        <h2 class="serif text-[clamp(2rem,4vw,3rem)] leading-[1] tracking-tight mt-3">
-          The problems that <span class="serif-italic text-gradient-cool">don't</span> show up in the demo.
-        </h2>
-        <p class="mt-5 text-text-2/85 leading-relaxed">
-          These are the ones that take a custom build from "works in a screenshot" to "works in production for three years." We've already learned them once.
+  <div class="relative max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-12 gap-gutter items-center">
+      <!-- Hero Left Text -->
+      <div class="col-span-12 lg:col-span-6 reveal">
+        <span class="slug block mb-4">1. RAGENAIZER ACCOUNTS</span>
+        <h1 class="serif text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05] tracking-tight">
+          Accurate Accounting. <br/>Smarter Financial <span class="serif-italic text-gradient">Control.</span>
+        </h1>
+        <p class="mt-6 text-lg text-text-2/85 leading-relaxed max-w-prose">
+          Manage double entry bookkeeping, GST billing, receivables, payables, bank reconciliation and financial reports in one powerful accounting platform.
         </p>
+
+        <!-- CTA Buttons (Total 3 buttons: Book a Demo, Start Free Trial, Case Study) -->
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="contact.html" class="btn-primary bg-indigo text-white px-6 py-3 rounded-lg hover:opacity-90 flex items-center gap-2 font-semibold">
+            Book a Demo
+            <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="contact.html" class="btn-ghost border border-white/10 text-text px-6 py-3 rounded-lg hover:bg-white/5 transition-all">
+            Start Free Trial
+          </a>
+          <a href="accounts-case-study.html" class="btn-ghost border border-white/10 text-text px-6 py-3 rounded-lg hover:bg-white/5 transition-all">
+            Case Study &rarr;
+          </a>
+        </div>
+        
+        <!-- Small feature columns -->
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
+            <div class="w-10 h-10 rounded-full border border-indigo-500/20 bg-indigo-500/5 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-book-open text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[11px] text-text">Double Entry</h4>
+              <p class="text-[9px] text-text-2/70 mt-0.5">Bookkeeping</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
+            <div class="w-10 h-10 rounded-full border border-indigo-500/20 bg-indigo-500/5 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-file-invoice-dollar text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[11px] text-text">GST Compliant</h4>
+              <p class="text-[9px] text-text-2/70 mt-0.5">Billing</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
+            <div class="w-10 h-10 rounded-full border border-indigo-500/20 bg-indigo-500/5 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-building-columns text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[11px] text-text">Bank</h4>
+              <p class="text-[9px] text-text-2/70 mt-0.5">Reconciliation</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
+            <div class="w-10 h-10 rounded-full border border-indigo-500/20 bg-indigo-500/5 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-chart-line text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[11px] text-text">Real-time</h4>
+              <p class="text-[9px] text-text-2/70 mt-0.5">Financial Insights</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-span-12 md:col-span-7 reveal" data-delay="120">
-        <ol class="flex flex-col gap-5">
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">01</span>
-            <span class="text-text-2/90 leading-relaxed">Audit trail that survives schema migrations — five years from now, the journal entry needs to be readable.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">02</span>
-            <span class="text-text-2/90 leading-relaxed">Period locking that allows late adjustments via reversal-and-correction without rewriting history.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">03</span>
-            <span class="text-text-2/90 leading-relaxed">Multi-entity / multi-book consolidation with intercompany eliminations.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">04</span>
-            <span class="text-text-2/90 leading-relaxed">FX revaluation that posts correctly to realised / unrealised buckets at the right granularity.</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="serif text-3xl text-gradient leading-none mt-1">05</span>
-            <span class="text-text-2/90 leading-relaxed">Number-sequence allocation in a multi-writer cluster without gaps — accountants notice.</span>
-          </li>
-        </ol>
+
+      <!-- Accounting Dashboard Mockup -->
+      <div class="col-span-12 lg:col-span-6 reveal" data-delay="120">
+        <div class="relative w-full rounded-2xl border border-slate-200 bg-white shadow-glow overflow-hidden font-sans text-xs text-slate-800">
+          <!-- Window Controls Header -->
+          <div class="flex items-center justify-between px-4 md:px-6 py-3 border-b border-slate-100 bg-white" style="background-color: white;">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+              <span class="ml-4 mono text-[10px] text-slate-400">RAGENAIZER ACCOUNTS DASHBOARD</span>
+            </div>
+            <!-- FY and Header Icons -->
+            <div class="flex items-center gap-3 text-slate-400">
+              <span class="text-[9px] font-bold border border-slate-250 px-2 py-0.5 rounded text-slate-700 bg-slate-50">FY 2024-25</span>
+              <i class="fa-solid fa-bell hover:text-slate-600 cursor-pointer"></i>
+              <span class="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-[9px] font-bold text-slate-700">A</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-12">
+            <!-- Sidebar (Dark background, matching website dark theme) -->
+            <div class="hidden sm:block col-span-3 bg-[#0B0F19] text-slate-400 p-4 md:p-5 border-r border-white/5">
+              <div class="flex items-center gap-2 mb-6">
+                <div class="w-5 h-5 rounded bg-indigo flex items-center justify-center text-white text-[10px] font-bold">R</div>
+                <span class="font-bold text-white text-[11px] tracking-wide" style="color: white;">RAGENAIZER</span>
+              </div>
+              <ul class="flex flex-col gap-1.5">
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded bg-indigo/15 text-indigo-400 font-bold cursor-default">
+                  <i class="fa-solid fa-chart-simple text-[11px]"></i>
+                  Dashboard
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-wallet text-[11px]"></i>
+                  Sales
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-cart-shopping text-[11px]"></i>
+                  Purchases
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-building-columns text-[11px]"></i>
+                  Banking
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-book-bookmark text-[11px]"></i>
+                  Journals
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-book-open text-[11px]"></i>
+                  Ledger
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-network-wired text-[11px]"></i>
+                  Chart of Accounts
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-coins text-[11px]"></i>
+                  GST
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+                  <i class="fa-solid fa-chart-pie text-[11px]"></i>
+                  Reports
+                </li>
+                <li class="flex items-center gap-2 px-2.5 py-1.5 rounded hover:bg-white/5 hover:text-white cursor-pointer transition-colors mt-6 border-t border-white/5 pt-3">
+                  <i class="fa-solid fa-gear text-[11px]"></i>
+                  Settings
+                </li>
+              </ul>
+            </div>
+
+            <!-- Main Content Area (Light Slate background) -->
+            <div class="col-span-12 sm:col-span-9 bg-slate-50 p-4 md:p-5 flex flex-col gap-4">
+              <!-- KPI Metrics Grid -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white flex flex-col justify-between" style="background-color: white;">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[8px] text-slate-500 font-bold uppercase">Total Sales</span>
+                    <i class="fa-solid fa-wallet text-indigo text-[10px]"></i>
+                  </div>
+                  <div class="mt-1">
+                    <span class="font-bold text-slate-900 text-[11px] block leading-none">₹ 48,75,000</span>
+                    <span class="text-[7.5px] text-emerald-600 font-bold block mt-0.5">▲ 12.5%</span>
+                  </div>
+                </div>
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white flex flex-col justify-between" style="background-color: white;">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[8px] text-slate-500 font-bold uppercase">Total Purchases</span>
+                    <i class="fa-solid fa-cart-shopping text-emerald-600 text-[10px]"></i>
+                  </div>
+                  <div class="mt-1">
+                    <span class="font-bold text-slate-900 text-[11px] block leading-none">₹ 28,40,000</span>
+                    <span class="text-[7.5px] text-emerald-600 font-bold block mt-0.5">▲ 8.3%</span>
+                  </div>
+                </div>
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white flex flex-col justify-between" style="background-color: white;">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[8px] text-slate-500 font-bold uppercase">Net Profit</span>
+                    <i class="fa-solid fa-scale-balanced text-indigo text-[10px]"></i>
+                  </div>
+                  <div class="mt-1">
+                    <span class="font-bold text-slate-900 text-[11px] block leading-none">₹ 9,85,000</span>
+                    <span class="text-[7.5px] text-emerald-600 font-bold block mt-0.5">▲ 15.7%</span>
+                  </div>
+                </div>
+                <div class="p-2 md:p-2.5 rounded-lg border border-slate-200 bg-white flex flex-col justify-between" style="background-color: white;">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[8px] text-slate-500 font-bold uppercase">Cash in Hand</span>
+                    <i class="fa-solid fa-money-bill-wave text-blue-500 text-[10px]"></i>
+                  </div>
+                  <div class="mt-1">
+                    <span class="font-bold text-slate-900 text-[11px] block leading-none">₹ 6,25,000</span>
+                    <span class="text-[7.5px] text-emerald-600 font-bold block mt-0.5">▲ 10.2%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cash Flow Line Chart and Expense Donut Chart Row -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <!-- Line Chart: Cash Flow (col-span-2) -->
+                <div class="col-span-1 md:col-span-2 p-3 rounded-lg border border-slate-200 bg-white flex flex-col justify-between" style="background-color: white;">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-[9px] text-slate-500 font-semibold uppercase">Cash Flow</span>
+                    <div class="flex gap-2 text-[7.5px] text-slate-500">
+                      <span class="flex items-center gap-0.5"><span class="w-1.5 h-1.5 bg-indigo rounded-full"></span>Inflow</span>
+                      <span class="flex items-center gap-0.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>Outflow</span>
+                    </div>
+                  </div>
+                  <div class="h-16 w-full mt-2 relative">
+                    <svg class="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="chartGlowLight" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#6366f1" stop-opacity="0.2"></stop>
+                          <stop offset="100%" stop-color="#6366f1" stop-opacity="0"></stop>
+                        </linearGradient>
+                      </defs>
+                      <path d="M 0 25 Q 15 15 30 18 T 60 10 T 80 15 T 100 8 L 100 30 L 0 30 Z" fill="url(#chartGlowLight)"></path>
+                      <path d="M 0 25 Q 15 15 30 18 T 60 10 T 80 15 T 100 8" fill="none" stroke="#6366f1" stroke-width="1.2" stroke-linecap="round"></path>
+                      <!-- Outflow Line in Green -->
+                      <path d="M 0 27 Q 15 22 30 24 T 60 18 T 80 20 T 100 15" fill="none" stroke="#10b981" stroke-width="1.2" stroke-linecap="round"></path>
+                    </svg>
+                  </div>
+                  <div class="flex justify-between text-[7px] text-slate-400 mt-1 px-1">
+                    <span>Apr</span>
+                    <span>May</span>
+                    <span>Jun</span>
+                    <span>Jul</span>
+                    <span>Aug</span>
+                    <span>Sep</span>
+                  </div>
+                </div>
+
+                <!-- Donut Chart: Expense Overview (col-span-1) -->
+                <div class="p-3 rounded-lg border border-slate-200 bg-white flex flex-col justify-between items-center gap-1.5" style="background-color: white;">
+                  <span class="text-[9px] text-slate-500 font-semibold uppercase self-start">Expenses</span>
+                  <div class="relative w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#e2e8f0" stroke-width="5"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#3b82f6" stroke-width="5" stroke-dasharray="40 60" stroke-dashoffset="0"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#10b981" stroke-width="5" stroke-dasharray="20 80" stroke-dashoffset="-40"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#f59e0b" stroke-width="5" stroke-dasharray="15 85" stroke-dashoffset="-60"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#8b5cf6" stroke-width="5" stroke-dasharray="10 90" stroke-dashoffset="-75"></circle>
+                      <circle cx="18" cy="18" r="15.915" fill="none" stroke="#6b7280" stroke-width="5" stroke-dasharray="15 85" stroke-dashoffset="-85"></circle>
+                    </svg>
+                  </div>
+                  <div class="grid grid-cols-2 gap-x-1.5 gap-y-0.5 text-[6.5px] text-slate-500 w-full mt-1">
+                    <div class="flex items-center gap-0.5"><span class="w-1 h-1 rounded-full bg-blue-500"></span>Purch (40%)</div>
+                    <div class="flex items-center gap-0.5"><span class="w-1 h-1 rounded-full bg-emerald-500"></span>Salary (20%)</div>
+                    <div class="flex items-center gap-0.5"><span class="w-1 h-1 rounded-full bg-amber-500"></span>Rent (15%)</div>
+                    <div class="flex items-center gap-0.5"><span class="w-1 h-1 rounded-full bg-purple-500"></span>Util (10%)</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bank Accounts, Transactions & P&L Row -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <!-- Bank Accounts -->
+                <div class="p-3 rounded-lg border border-slate-200 bg-white" style="background-color: white;">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-[9px] text-slate-500 font-semibold uppercase">Bank Accounts</span>
+                    <a href="#" class="text-[7.5px] font-bold text-indigo hover:underline">View All</a>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-1.5">
+                      <div>
+                        <span class="font-bold text-[8.5px] text-slate-800 block">HDFC Bank A/c</span>
+                        <span class="text-[7px] text-slate-400">Main Operations</span>
+                      </div>
+                      <div class="text-right">
+                        <span class="font-bold text-[9px] text-slate-800">₹ 4,85,000</span>
+                        <span class="text-[6.5px] text-emerald-600 block leading-none mt-0.5">In Balance</span>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-1.5">
+                      <div>
+                        <span class="font-bold text-[8.5px] text-slate-800 block">ICICI Bank A/c</span>
+                        <span class="text-[7px] text-slate-400">Payroll A/c</span>
+                      </div>
+                      <div class="text-right">
+                        <span class="font-bold text-[9px] text-slate-800">₹ 2,15,000</span>
+                        <span class="text-[6.5px] text-emerald-600 block leading-none mt-0.5">In Balance</span>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <div>
+                        <span class="font-bold text-[8.5px] text-slate-800 block">State Bank A/c</span>
+                        <span class="text-[7px] text-slate-400">Tax Reserves</span>
+                      </div>
+                      <div class="text-right">
+                        <span class="font-bold text-[9px] text-slate-800">₹ 1,25,000</span>
+                        <span class="text-[6.5px] text-emerald-600 block leading-none mt-0.5">In Balance</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="p-3 rounded-lg border border-slate-200 bg-white" style="background-color: white;">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-[9px] text-slate-500 font-semibold uppercase">Recent Txns</span>
+                    <a href="#" class="text-[7.5px] font-bold text-indigo hover:underline">View All</a>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-1">
+                      <div>
+                        <span class="font-semibold text-[8px] text-slate-800 block leading-tight">Sales Invoice - Raj Traders</span>
+                        <span class="text-[6.5px] text-slate-450">20 May 2024 · Sales</span>
+                      </div>
+                      <span class="font-bold text-[8.5px] text-emerald-600">₹ 45,000</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-1">
+                      <div>
+                        <span class="font-semibold text-[8px] text-slate-800 block leading-tight">Purchase Bill - Gupta Stores</span>
+                        <span class="text-[6.5px] text-slate-450">20 May 2024 · Purchase</span>
+                      </div>
+                      <span class="font-bold text-[8.5px] text-red-500">₹ 32,000</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-1">
+                      <div>
+                        <span class="font-semibold text-[8px] text-slate-800 block leading-tight">Payment - ABC Pvt. Ltd.</span>
+                        <span class="text-[6.5px] text-slate-450">19 May 2024 · Payment</span>
+                      </div>
+                      <span class="font-bold text-[8.5px] text-red-500">₹ 25,000</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <div>
+                        <span class="font-semibold text-[8px] text-slate-800 block leading-tight">Receipt - Sharma &amp; Co.</span>
+                        <span class="text-[6.5px] text-slate-450">19 May 2024 · Receipt</span>
+                      </div>
+                      <span class="font-bold text-[8.5px] text-emerald-600">₹ 18,000</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Profit & Loss (This FY) -->
+                <div class="p-3 rounded-lg border border-slate-200 bg-white flex flex-col justify-between" style="background-color: white;">
+                  <div>
+                    <span class="text-[9px] text-slate-500 font-semibold uppercase block mb-2">Profit &amp; Loss (This FY)</span>
+                    <div class="flex flex-col gap-1.5 text-[8px]">
+                      <div>
+                        <div class="flex justify-between text-slate-600 font-bold mb-0.5"><span>Income</span><span class="text-slate-800">₹ 5,68,40,000</span></div>
+                        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-blue-500 rounded-full" style="width: 80%"></div></div>
+                      </div>
+                      <div>
+                        <div class="flex justify-between text-slate-600 font-bold mb-0.5"><span>Expenses</span><span class="text-slate-800">₹ 4,32,15,000</span></div>
+                        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-red-500 rounded-full" style="width: 60%"></div></div>
+                      </div>
+                      <div>
+                        <div class="flex justify-between text-slate-600 font-bold mb-0.5"><span>Net Profit</span><span class="text-slate-800">₹ 1,36,25,000</span></div>
+                        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-emerald-500 rounded-full" style="width: 20%"></div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#" class="text-[7.5px] font-bold text-indigo hover:underline mt-2 block text-right">View Full Report &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Stack -->
-<section class="relative py-16 md:py-24">
+<!-- ACCOUNTS FEATURES SECTION -->
+<section class="relative py-16 md:py-24 border-t border-white/5 bg-white/[0.005]">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="slug">2. POWERFUL FEATURES</span>
+      <h2 class="serif text-[clamp(2.2rem,5vw,3.2rem)] leading-[1.1] tracking-tight mt-3">
+        Everything You Need <br/>in <span class="serif-italic text-gradient">One Accounting System</span>
+      </h2>
+      <div class="w-12 h-0.5 bg-indigo mx-auto mt-4"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mt-10">
+      <!-- 01 Double Entry Bookkeeping -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:border-violet/30 hover:bg-white/[0.02] rounded-2xl reveal group/card transition-all">
+        <div class="w-10 h-10 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center text-violet group-hover/card:scale-110 transition-transform">
+          <i class="fa-solid fa-book-open text-lg"></i>
+        </div>
+        <h3 class="serif text-lg md:text-xl mt-5 leading-tight font-bold">Double Entry</h3>
+        <p class="mt-2 text-text-2/70 text-xs leading-relaxed">Every transaction is recorded with automatic debit &amp; credit entries. Ensure accurate and balanced books.</p>
+      </div>
+
+      <!-- 02 General Ledger -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:border-cyan/30 hover:bg-white/[0.02] rounded-2xl reveal group/card transition-all" data-delay="60">
+        <div class="w-10 h-10 rounded-xl bg-cyan/10 border border-cyan/20 flex items-center justify-center text-cyan group-hover/card:scale-110 transition-transform">
+          <i class="fa-solid fa-table-list text-lg"></i>
+        </div>
+        <h3 class="serif text-lg md:text-xl mt-5 leading-tight font-bold">General Ledger</h3>
+        <p class="mt-2 text-text-2/70 text-xs leading-relaxed">Maintain chart of accounts, journals, ledgers, trial balance and financial statements with complete control.</p>
+      </div>
+
+      <!-- 03 Sales & Purchase Management -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:border-lime/30 hover:bg-white/[0.02] rounded-2xl reveal group/card transition-all" data-delay="120">
+        <div class="w-10 h-10 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center text-lime group-hover/card:scale-110 transition-transform">
+          <i class="fa-solid fa-file-invoice text-lg"></i>
+        </div>
+        <h3 class="serif text-lg md:text-xl mt-5 leading-tight font-bold">Sales &amp; Purchase</h3>
+        <p class="mt-2 text-text-2/70 text-xs leading-relaxed">Create GST invoices, purchase orders, credit/debit notes and track all customer &amp; vendor transactions.</p>
+      </div>
+
+      <!-- 04 Accounts Receivable & Payable -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:border-sky/30 hover:bg-white/[0.02] rounded-2xl reveal group/card transition-all" data-delay="180">
+        <div class="w-10 h-10 rounded-xl bg-sky/10 border border-sky/20 flex items-center justify-center text-sky group-hover/card:scale-110 transition-transform">
+          <i class="fa-solid fa-people-arrows text-lg"></i>
+        </div>
+        <h3 class="serif text-lg md:text-xl mt-5 leading-tight font-bold">Receivables &amp; Payables</h3>
+        <p class="mt-2 text-text-2/70 text-xs leading-relaxed">Track outstanding invoices, follow up payments, manage vendor dues and improve cash flow efficiency.</p>
+      </div>
+
+      <!-- 05 Bank Reconciliation -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:border-violet/30 hover:bg-white/[0.02] rounded-2xl reveal group/card transition-all">
+        <div class="w-10 h-10 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center text-violet group-hover/card:scale-110 transition-transform">
+          <i class="fa-solid fa-building-columns text-lg"></i>
+        </div>
+        <h3 class="serif text-lg md:text-xl mt-5 leading-tight font-bold">Bank Reconciliation</h3>
+        <p class="mt-2 text-text-2/70 text-xs leading-relaxed">Match bank statements with your books, identify differences and maintain accurate accounting records.</p>
+      </div>
+
+      <!-- 06 GST & Tax Compliance -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:border-cyan/30 hover:bg-white/[0.02] rounded-2xl reveal group/card transition-all" data-delay="60">
+        <div class="w-10 h-10 rounded-xl bg-cyan/10 border border-cyan/20 flex items-center justify-center text-cyan group-hover/card:scale-110 transition-transform">
+          <i class="fa-solid fa-file-shield text-lg"></i>
+        </div>
+        <h3 class="serif text-lg md:text-xl mt-5 leading-tight font-bold">GST &amp; Tax Compliance</h3>
+        <p class="mt-2 text-text-2/70 text-xs leading-relaxed">Generate GST returns, tax reports, e-Invoices, TDS reports and stay 100% compliant with regulations.</p>
+      </div>
+
+      <!-- 07 Financial Reports -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:border-lime/30 hover:bg-white/[0.02] rounded-2xl reveal group/card transition-all" data-delay="120">
+        <div class="w-10 h-10 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center text-lime group-hover/card:scale-110 transition-transform">
+          <i class="fa-solid fa-chart-simple text-lg"></i>
+        </div>
+        <h3 class="serif text-lg md:text-xl mt-5 leading-tight font-bold">Financial Reports</h3>
+        <p class="mt-2 text-text-2/70 text-xs leading-relaxed">Access Profit &amp; Loss, Balance Sheet, Cash Flow, Trial Balance and custom reports in real time.</p>
+      </div>
+
+      <!-- 08 Multi-Branch & Secure Access -->
+      <div class="card p-6 border border-white/5 bg-white/[0.01] hover:border-sky/30 hover:bg-white/[0.02] rounded-2xl reveal group/card transition-all" data-delay="180">
+        <div class="w-10 h-10 rounded-xl bg-sky/10 border border-sky/20 flex items-center justify-center text-sky group-hover/card:scale-110 transition-transform">
+          <i class="fa-solid fa-user-shield text-lg"></i>
+        </div>
+        <h3 class="serif text-lg md:text-xl mt-5 leading-tight font-bold">Multi-Branch &amp; Roles</h3>
+        <p class="mt-2 text-text-2/70 text-xs leading-relaxed">Manage multiple branches, companies and users with role-based access and approval workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS STRIP -->
+<section class="relative py-10 border-y border-white/5 bg-white/[0.003]">
+  <div class="max-w-page mx-auto px-edge">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="flex items-center gap-3.5 reveal">
+        <div class="w-10 h-10 rounded-lg bg-indigo/10 border border-indigo/25 flex items-center justify-center text-indigo flex-shrink-0">
+          <i class="fa-solid fa-bullseye text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs text-text">100% Accurate</h4>
+          <p class="text-[10px] text-text-2/70 mt-0.5">Eliminate manual errors with double entry validation.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3.5 reveal" data-delay="60">
+        <div class="w-10 h-10 rounded-lg bg-indigo/10 border border-indigo/25 flex items-center justify-center text-indigo flex-shrink-0">
+          <i class="fa-solid fa-clock text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs text-text">Save Time</h4>
+          <p class="text-[10px] text-text-2/70 mt-0.5">Automate recurring invoices, tax calculations & reconciliation.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3.5 reveal" data-delay="120">
+        <div class="w-10 h-10 rounded-lg bg-indigo/10 border border-indigo/25 flex items-center justify-center text-indigo flex-shrink-0">
+          <i class="fa-solid fa-chart-line text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs text-text">Better Decisions</h4>
+          <p class="text-[10px] text-text-2/70 mt-0.5">Live dashboards, reports, and projections at your disposal.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3.5 reveal" data-delay="180">
+        <div class="w-10 h-10 rounded-lg bg-indigo/10 border border-indigo/25 flex items-center justify-center text-indigo flex-shrink-0">
+          <i class="fa-solid fa-lock text-sm"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs text-text">Secure &amp; Compliant</h4>
+          <p class="text-[10px] text-text-2/70 mt-0.5">Keep audit history, encrypted records, and backup configurations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM HIGHLIGHT CALL-TO-ACTION (CTA) SECTION -->
+<section class="relative py-16 md:py-24 overflow-hidden border-t border-white/5 bg-gradient-to-r from-bg-2/30 to-bg">
   <div class="max-w-page mx-auto px-edge">
     <div class="grid grid-cols-12 gap-gutter items-center">
-      <div class="col-span-12 md:col-span-5 reveal">
-        <span class="slug">§ Stack &amp; shape</span>
-        <h2 class="serif text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight tracking-tight mt-3">
-          How we'd put it together.
+      <!-- Left side: Text content & CTA -->
+      <div class="col-span-12 lg:col-span-5 reveal">
+        <span class="slug">3. GET STARTED</span>
+        <h2 class="serif text-[clamp(1.8rem,4vw,3.2rem)] leading-[1.05] tracking-tight mt-4">
+          Take Control of Your<br/><span class="serif-italic text-gradient">Business Finances</span>
         </h2>
+        <p class="mt-6 text-text-2/80 leading-relaxed max-w-prose">
+          RAGENAIZER Accounting helps you manage every transaction, stay GST compliant and grow your business with confidence.
+        </p>
+        <div class="mt-8">
+          <a href="contact.html" class="btn-primary bg-white text-[#0B0F19] px-6 py-3 rounded-lg hover:bg-slate-100 flex items-center gap-2 font-bold w-fit">
+            Book a Demo
+          </a>
+        </div>
       </div>
-      <div class="col-span-12 md:col-span-7 reveal" data-delay="100">
-        <div class="card p-6 md:p-8 hud hud-cyan">
-          <div class="mono text-[10px] tracking-widest text-muted">DEFAULT&nbsp;STACK&nbsp;·&nbsp;SUBSTITUTABLE</div>
-          <p class="mt-4 text-text-2/90 leading-relaxed">ASP.NET Core, Postgres (the relational integrity matters here — no NoSQL), a separate read-model service for reports, and a Hangfire / Quartz worker for end-of-period batch jobs. Audit log lives in an append-only event store.</p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="tag tag-violet">C# · .NET</span>
-            <span class="tag tag-cyan">ASP.NET Core</span>
-            <span class="tag tag-lime">Postgres</span>
-            <span class="tag">Docker · Linux</span>
-            <span class="tag tag-sky">gRPC where it earns its keep</span>
-            <span class="tag">Multi-tenant by default</span>
+
+      <!-- Center / Right side: Mockup device display showing Journal Spreadsheet & Mobile Screen -->
+      <div class="col-span-12 lg:col-span-7 reveal flex justify-center mt-8 lg:mt-0" data-delay="100">
+        <div class="relative w-full max-w-[550px] aspect-[16/10] rounded-xl border border-white/10 bg-[#0B0F19] shadow-2xl p-3">
+          <div class="w-full h-full rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-center relative overflow-hidden">
+            <img src="assets/photos/proof-accounting.jpg" alt="Ragenaizer Accounting Screen View" class="w-full h-full object-cover opacity-90 rounded" onerror="this.src='assets/photos/module-accounts.jpg'"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-60"></div>
           </div>
         </div>
       </div>
@@ -414,69 +753,57 @@
   </div>
 </section>
 
-<!-- When build vs license -->
-<section class="relative bg-gradient-to-b from-transparent via-bg-2/30 to-transparent border-y border-white/5 py-16 md:py-24">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="grid grid-cols-12 gap-gutter mb-10">
-      <div class="col-span-12 md:col-span-6 reveal">
-        <span class="slug">§ Build vs. license</span>
-        <h2 class="serif text-[clamp(2rem,4.2vw,3.4rem)] leading-[1] tracking-tight mt-3">
-          We'll tell you when <span class="serif-italic text-gradient-warm">not</span> to build.
-        </h2>
+<!-- BUILT FOR EVERY INDUSTRY SECTION -->
+<section class="relative py-12 md:py-16 border-t border-white/5 bg-white/[0.003]">
+  <div class="max-w-page mx-auto px-edge text-center">
+    <span class="slug">4. Industry Scope</span>
+    <h3 class="serif text-2xl md:text-3xl mt-2 tracking-tight">Built for Every Industry</h3>
+    <div class="mt-8 grid grid-cols-2 sm:grid-cols-5 gap-4">
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal">
+        <i class="fa-solid fa-industry text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">Manufacturing</span>
       </div>
-      <p class="col-span-12 md:col-span-5 md:col-start-8 self-end text-text-2/85 text-lg leading-relaxed reveal" data-delay="100">
-        Custom isn't always the right call. We've shipped Ragenaizer so we can say that honestly.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-      <div class="card p-7 hud hud-cyan reveal">
-        <div class="mono text-[10px] tracking-widest text-muted">BUILD&nbsp;CUSTOM&nbsp;WHEN</div>
-        <ul class="mt-5 flex flex-col gap-3 text-text-2/90">
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>The accounts <em>is</em> the moat — your competitor can't have the same one.</span></li>
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>You have compliance / sovereignty / data-residency requirements no SaaS will satisfy.</span></li>
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>You need to integrate at a level deeper than off-the-shelf vendors expose.</span></li>
-          <li class="flex gap-3"><span class="text-cyan">→</span><span>Per-seat pricing across thousands of users makes the build cheaper inside 24 months.</span></li>
-        </ul>
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal" data-delay="50">
+        <i class="fa-solid fa-cart-flatbed text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">Trading</span>
       </div>
-      <div class="card p-7 hud hud-lime reveal" data-delay="120">
-        <div class="mono text-[10px] tracking-widest text-muted">LICENSE&nbsp;RAGENAIZER&nbsp;INSTEAD&nbsp;WHEN</div>
-        <ul class="mt-5 flex flex-col gap-3 text-text-2/90">
-          <li class="flex gap-3"><span class="text-lime">→</span><span>The workflow is generic enough that a configurable platform will do.</span></li>
-          <li class="flex gap-3"><span class="text-lime">→</span><span>You want it in weeks, not quarters.</span></li>
-          <li class="flex gap-3"><span class="text-lime">→</span><span>You'd rather buy than own — let someone else maintain the accounts forever.</span></li>
-          <li class="flex gap-3"><span class="text-lime">→</span><span>Your engineering capacity should go to the parts of your product that no SaaS covers.</span></li>
-        </ul>
-        <a href="https://ragenaizer.com/pages/accounts.html" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-lime text-sm">
-          Look at Ragenaizer first
-          <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal" data-delay="100">
+        <i class="fa-solid fa-store text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">Retail</span>
+      </div>
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal" data-delay="150">
+        <i class="fa-solid fa-cart-shopping text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">E-commerce</span>
+      </div>
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal" data-delay="200">
+        <i class="fa-solid fa-heart-pulse text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">Healthcare</span>
+      </div>
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal" data-delay="250">
+        <i class="fa-solid fa-helmet-safety text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">Construction</span>
+      </div>
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal" data-delay="300">
+        <i class="fa-solid fa-truck text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">Logistics</span>
+      </div>
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal" data-delay="350">
+        <i class="fa-solid fa-laptop-code text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">IT Companies</span>
+      </div>
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal" data-delay="400">
+        <i class="fa-solid fa-user-tie text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">Services</span>
+      </div>
+      <div class="p-3 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] rounded-xl flex items-center justify-center gap-2 reveal" data-delay="450">
+        <i class="fa-solid fa-building text-indigo"></i>
+        <span class="text-xs font-bold text-text uppercase">SMEs</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="relative py-16 md:py-24">
-  <div class="max-w-page mx-auto px-edge">
-    <div class="card p-10 md:p-16 relative overflow-hidden reveal">
-      <div class="absolute -inset-1 pointer-events-none opacity-60"><div class="aurora animate-drift" style="left:-10%; top:-30%"></div></div>
-      <div class="relative grid grid-cols-12 gap-gutter items-end">
-        <div class="col-span-12 md:col-span-8">
-          <span class="slug">§ Next step</span>
-          <h2 class="serif text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] tracking-tight mt-4">
-            Custom accounts? <span class="serif-italic text-gradient">Tell us what you need.</span>
-          </h2>
-          <p class="mt-5 max-w-prose text-text-2/85 text-lg">
-            One conversation. We tell you whether it's a custom build, a Ragenaizer rollout, or something we shouldn't take on.
-          </p>
-        </div>
-        <div class="col-span-12 md:col-span-4 md:text-right">
-          <a href="contact.html" class="btn-primary magnetic w-fit">Start a project <svg class="arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 </main>
 
