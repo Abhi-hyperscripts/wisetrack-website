@@ -22,54 +22,80 @@
 <body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
 
   <!-- Fullscreen Typewriter Preloader (Split Shutter Reveal) -->
-  <div id="preloader" class="fixed inset-0 z-[9999] pointer-events-auto flex items-center justify-center select-none">
-    <div id="shutter-top" class="absolute top-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-b border-black/5" style="transform: translateY(0);"></div>
-    <div id="shutter-bottom" class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-t border-black/5" style="transform: translateY(0);"></div>
-    <div id="preloader-content" class="relative z-10 text-center flex items-center justify-center">
-      <h1 id="preloader-text" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
-      <span class="inline-block w-1 h-8 sm:h-12 bg-black ml-2 animate-blink"></span>
+  <div id="preloader" class="fixed inset-0 z-[9999] pointer-events-auto select-none">
+    <!-- Top Half Shutter -->
+    <div id="shutter-top" class="absolute top-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-b border-black/5" style="transform: translateY(0);">
+      <div class="absolute bottom-0 left-0 right-0 pb-4 flex flex-col items-center justify-end">
+        <img src="assets/logo/wt-mark.svg" alt="Wisetrack" class="w-14 h-14 sm:w-20 sm:h-20 mb-6 sm:mb-8" style="filter: brightness(0);" />
+        <h1 id="preloader-text-top" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
+      </div>
+    </div>
+
+    <!-- Bottom Half Shutter -->
+    <div id="shutter-bottom" class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-t border-black/5" style="transform: translateY(0);">
+      <div class="absolute top-0 left-0 right-0 pt-4 flex items-start justify-center">
+        <h1 id="preloader-text-bottom" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
+        <span id="preloader-cursor" class="inline-block w-1 h-8 sm:h-12 bg-black ml-2 animate-blink"></span>
+      </div>
     </div>
   </div>
   <script>
-    (function() {
-      const text = "PMS CASE STUDY";
-      const speed = 75;
+    (function () {
+      const textTop = "WISETRACK";
+      const textBottom = "TECHNOLOGIES";
+      const speed = 75; // speed of typing in ms
       let i = 0;
-      const target = document.getElementById("preloader-text");
-      
-      function typeWriter() {
-        if (i < text.length) {
-          target.textContent += text.charAt(i);
+      let j = 0;
+      const targetTop = document.getElementById("preloader-text-top");
+      const targetBottom = document.getElementById("preloader-text-bottom");
+      const cursor = document.getElementById("preloader-cursor");
+
+      function typeWriterTop() {
+        if (i < textTop.length) {
+          targetTop.textContent += textTop.charAt(i);
           i++;
-          setTimeout(typeWriter, speed);
+          setTimeout(typeWriterTop, speed);
         } else {
+          // Finished typing top, start typing bottom after a brief pause
+          setTimeout(typeWriterBottom, 150);
+        }
+      }
+
+      function typeWriterBottom() {
+        if (j < textBottom.length) {
+          targetBottom.textContent += textBottom.charAt(j);
+          j++;
+          setTimeout(typeWriterBottom, speed);
+        } else {
+          // Finished typing everything, trigger split reveal
           setTimeout(() => {
-            const content = document.getElementById("preloader-content");
             const topShutter = document.getElementById("shutter-top");
             const bottomShutter = document.getElementById("shutter-bottom");
             const preloader = document.getElementById("preloader");
-            
-            if (content) {
-              content.style.opacity = "0";
-              content.style.transform = "scale(0.95)";
-              content.style.transition = "all 0.35s ease-in-out";
+
+            if (cursor) {
+              cursor.style.display = "none";
             }
+
             if (topShutter && bottomShutter) {
-              topShutter.style.transition = "transform 0.9s cubic-bezier(0.85, 0, 0.15, 1)";
-              bottomShutter.style.transition = "transform 0.9s cubic-bezier(0.85, 0, 0.15, 1)";
+              topShutter.style.transition = "transform 1.1s cubic-bezier(0.85, 0, 0.15, 1)";
+              bottomShutter.style.transition = "transform 1.1s cubic-bezier(0.85, 0, 0.15, 1)";
+
               topShutter.style.transform = "translateY(-100%)";
               bottomShutter.style.transform = "translateY(100%)";
             }
+
             if (preloader) {
               preloader.style.pointerEvents = "none";
               document.body.style.overflow = "";
-              setTimeout(() => preloader.remove(), 950);
+              setTimeout(() => preloader.remove(), 1150);
             }
           }, 700);
         }
       }
+
       document.body.style.overflow = "hidden";
-      setTimeout(typeWriter, 350);
+      setTimeout(typeWriterTop, 350);
     })();
   </script>
 
@@ -593,7 +619,7 @@
       <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         <!-- Left: Business Impact -->
-        <div class="col-span-12 lg:col-span-6 flex flex-col justify-between">
+        <div class="col-span-12 flex flex-col justify-between">
           <div>
             <span class="mono text-xs text-indigo tracking-widest uppercase">BUSINESS IMPACT</span>
             <h2 class="font-display font-light text-3xl md:text-4xl text-text mt-3">
@@ -604,7 +630,7 @@
             </p>
           </div>
 
-          <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             <div class="flex items-center gap-2.5 p-3 rounded-lg border border-mint/20 bg-mint/5">
               <svg class="w-4 h-4 text-mint flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
                 <polyline points="20 6 9 17 4 12"></polyline>
@@ -632,61 +658,7 @@
           </div>
         </div>
 
-        <!-- Right: Tech Stack -->
-        <div class="col-span-12 lg:col-span-6 flex flex-col justify-between">
-          <div>
-            <span class="mono text-xs text-indigo tracking-widest uppercase">TECHNOLOGY STACK</span>
-            <h2 class="font-display font-light text-3xl md:text-4xl text-text mt-3">
-              Modern project architecture.
-            </h2>
-            <p class="mt-6 text-sm text-text-2/80 leading-relaxed">
-              We leverage reliable, scalable technologies that run locally on light frameworks with low server costs and blazing speed.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-3 gap-6 mt-8">
-            <div class="flex flex-col items-center p-4 bg-surface border border-white/5 rounded-xl text-center">
-              <svg class="w-8 h-8 text-[#61DAFB]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="2"/>
-                <ellipse rx="10" ry="4" transform="rotate(30 12 12)"/>
-                <ellipse rx="10" ry="4" transform="rotate(90 12 12)"/>
-                <ellipse rx="10" ry="4" transform="rotate(150 12 12)"/>
-              </svg>
-              <span class="text-xs font-bold text-text mt-3">React.js</span>
-            </div>
-            <div class="flex flex-col items-center p-4 bg-surface border border-white/5 rounded-xl text-center">
-              <svg class="w-8 h-8 text-[#68A063]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-              <span class="text-xs font-bold text-text mt-3">Node.js</span>
-            </div>
-            <div class="flex flex-col items-center p-4 bg-surface border border-white/5 rounded-xl text-center">
-              <svg class="w-8 h-8 text-[#336791]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 6v12M6 12h12"/>
-              </svg>
-              <span class="text-xs font-bold text-text mt-3">PostgreSQL</span>
-            </div>
-            <div class="flex flex-col items-center p-4 bg-surface border border-white/5 rounded-xl text-center">
-              <svg class="w-8 h-8 text-[#FF9900]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 10h4M2 10h4M12 2v4M12 18v4M6 6l3 3M18 18l3 3M6 18l3-3M18 6l3-3"/>
-              </svg>
-              <span class="text-xs font-bold text-text mt-3">AWS Cloud</span>
-            </div>
-            <div class="flex flex-col items-center p-4 bg-surface border border-white/5 rounded-xl text-center">
-              <svg class="w-8 h-8 text-[#2496ED]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="4"></rect>
-                <path d="M6 12h12M12 6v12"></path>
-              </svg>
-              <span class="text-xs font-bold text-text mt-3">Docker</span>
-            </div>
-            <div class="flex flex-col items-center p-4 bg-surface border border-white/5 rounded-xl text-center">
-              <svg class="w-8 h-8 text-[#00c853]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-              <span class="text-xs font-bold text-text mt-3">REST APIs</span>
-            </div>
-          </div>
-        </div>
+       
 
       </div>
     </section>
