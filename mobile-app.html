@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <script>(function(){try{if(localStorage.getItem("theme")!=="dark"){document.documentElement.classList.add("light");}else{document.documentElement.classList.remove("light");}}catch(e){}})();</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0c"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon-180.png" />
+  <title>Mobile Application Development · WiseTrack</title>
+  <meta name="description" content="We build high-performance, secure and intuitive mobile applications for iOS and Android that delight users and drive business growth." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind-config.js?v=20260620h"></script>
+  <link href="assets/styles.css?v=20260620h" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="assets/site.js?v=20260620h" defer></script>
+</head>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+  <!-- Fullscreen Typewriter Preloader (Split Shutter Reveal) -->
+  <div id="preloader" class="fixed inset-0 z-[9999] pointer-events-auto select-none">
+    <!-- Top Half Shutter -->
+    <div id="shutter-top" class="absolute top-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-b border-black/5" style="transform: translateY(0);">
+      <div class="absolute bottom-0 left-0 right-0 pb-4 flex flex-col items-center justify-end">
+        <img src="assets/logo/wt-mark.svg" alt="Wisetrack" class="w-14 h-14 sm:w-20 sm:h-20 mb-6 sm:mb-8" style="filter: brightness(0);" />
+        <h1 id="preloader-text-top" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
+      </div>
+    </div>
+
+    <!-- Bottom Half Shutter -->
+    <div id="shutter-bottom" class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-t border-black/5" style="transform: translateY(0);">
+      <div class="absolute top-0 left-0 right-0 pt-4 flex items-start justify-center">
+        <h1 id="preloader-text-bottom" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
+        <span id="preloader-cursor" class="inline-block w-1 h-8 sm:h-12 bg-black ml-2 animate-blink"></span>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const textTop = "WISETRACK";
+      const textBottom = "TECHNOLOGIES";
+      const speed = 75; // speed of typing in ms
+      let i = 0;
+      let j = 0;
+      const targetTop = document.getElementById("preloader-text-top");
+      const targetBottom = document.getElementById("preloader-text-bottom");
+      const cursor = document.getElementById("preloader-cursor");
+
+      function typeWriterTop() {
+        if (i < textTop.length) {
+          targetTop.textContent += textTop.charAt(i);
+          i++;
+          setTimeout(typeWriterTop, speed);
+        } else {
+          // Finished typing top, start typing bottom after a brief pause
+          setTimeout(typeWriterBottom, 150);
+        }
+      }
+
+      function typeWriterBottom() {
+        if (j < textBottom.length) {
+          targetBottom.textContent += textBottom.charAt(j);
+          j++;
+          setTimeout(typeWriterBottom, speed);
+        } else {
+          // Finished typing everything, trigger split reveal
+          setTimeout(() => {
+            const topShutter = document.getElementById("shutter-top");
+            const bottomShutter = document.getElementById("shutter-bottom");
+            const preloader = document.getElementById("preloader");
+
+            if (cursor) {
+              cursor.style.display = "none";
+            }
+
+            if (topShutter && bottomShutter) {
+              topShutter.style.transition = "transform 1.1s cubic-bezier(0.85, 0, 0.15, 1)";
+              bottomShutter.style.transition = "transform 1.1s cubic-bezier(0.85, 0, 0.15, 1)";
+
+              topShutter.style.transform = "translateY(-100%)";
+              bottomShutter.style.transform = "translateY(100%)";
+            }
+
+            if (preloader) {
+              preloader.style.pointerEvents = "none";
+              document.body.style.overflow = "";
+              setTimeout(() => preloader.remove(), 1150);
+            }
+          }, 700);
+        }
+      }
+
+      document.body.style.overflow = "hidden";
+      setTimeout(typeWriterTop, 350);
+    })();
+  </script>
+
+  <!-- Scroll progress -->
+  <div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+  
+  <div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+      <div class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span><span class="hidden sm:inline">CAPABILITIES · CUSTOM BUILD</span><span class="sm:hidden">CAPABILITIES</span></div>
+      <div class="flex items-center gap-5"><span class="hidden md:inline">Noida, IN</span><span data-clock>--:--:-- IST</span></div>
+    </div>
+  </div>
+
+  <!-- Primary nav -->
+  <header class="fixed top-9 left-0 right-0 z-[60] bg-bg/55 backdrop-blur-2xl border-b border-white/5 transition-all duration-300">
+    <nav class="max-w-page mx-auto px-edge h-[80px] flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <img src="assets/logo/wt-mark.svg" alt="Wisetrack Logo" class="h-[24px] md:h-[29px] w-auto transition-transform group-hover:scale-105" />
+        <span class="font-sans font-extrabold text-base md:text-lg tracking-tight text-text whitespace-nowrap">WISETRACK TECHNOLOGIES</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-[13px] font-semibold text-text-2">
+        <!-- Products Dropdown -->
+        <div class="relative group py-6">
+          <a href="products.html" class="hover:text-text flex items-center gap-1 transition-colors">
+            Products
+            <svg class="w-3.5 h-3.5 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-[850px] pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50">
+            <div class="bg-surface border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-2xl text-left">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+                <div>
+                  <span class="font-display font-light text-xl text-text">Our Flagship Business OS: <b class="font-bold text-indigo">Ragenaizer</b></span>
+                  <p class="text-xs text-text-2/70 mt-1">One integrated database system replacing up to 7 separate B2B SaaS licenses.</p>
+                </div>
+                <a href="products.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1">SEE ALL PRODUCTS &rarr;</a>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="hrms-payroll.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-violet group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="text-sm font-bold text-text">HRMS & Payroll</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Statutory Indian payroll compliance, tax filing, geofenced attendance.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="crm-sales.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-mint group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    <div class="text-sm font-bold text-text">CRM & Sales</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Pipeline mapping, lead forms integration, client record sharing.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="build-pms.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-indigo group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    <div class="text-sm font-bold text-text">PMS & Projects</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Milestone tracking, engineering bug manager, timesheets & billing.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="build-lms.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-cyan/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-cyan group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                    <div class="text-sm font-bold text-text">LMS & Training</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Structured employee training, compliance testing, digital certificates.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="build-accounts.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-lime/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-lime group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"></path><path d="M16 8H8m8 4H8m6 4H8"></path></svg>
+                    <div class="text-sm font-bold text-text">Double-Entry Accounts</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Ledger sync, automated invoicing, expenses, cashflow analysis.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="build-chat.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-sky/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-sky group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="text-sm font-bold text-text">Enterprise Chat</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Audit-logged messaging, file attachments, team channel controls.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Dropdown -->
+        <div class="relative group py-6">
+          <a href="custom-services.html" class="hover:text-text flex items-center gap-1 transition-colors">
+            Services
+            <svg class="w-3.5 h-3.5 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-[850px] pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50">
+            <div class="bg-surface border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-2xl text-left">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+                <div>
+                  <span class="font-display font-light text-xl text-text">Software Development: <b class="font-bold text-indigo">HyperScripts</b></span>
+                  <p class="text-xs text-text-2/70 mt-1">High-performance custom engineering for web, mobile, and workflow systems.</p>
+                </div>
+                <a href="custom-services.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1">SEE ALL SERVICES &rarr;</a>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="custom-web-os-software.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-violet group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    <div class="text-sm font-bold text-text">Custom Web &amp; OS Software</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">C#, .NET Core, Blazor, Postgres. Scalable business architecture.</p>
+                </a>
+                <a href="mobile-app.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-lime/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-lime group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    <div class="text-sm font-bold text-text">Mobile Applications</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Native iOS & Android apps mapped to central business databases.</p>
+                </a>
+                <a href="custom-services.html#ai-automation" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-mint group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4m-4 5h8M8 12V9a4 4 0 0 1 8 0v3"></path></svg>
+                    <div class="text-sm font-bold text-text">Agentic AI Solutions</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Production agent loops using Claude 3.5, RAG, and ClickHouse.</p>
+                </a>
+                <a href="custom-services.html#dashboards" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-sky/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-sky group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <div class="text-sm font-bold text-text">Interactive Dashboards</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Consolidated metrics visualizer showing real-time operational status.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="portfolio.html" class="hover:text-text transition-colors">Work</a>
+        <a href="blog.html" class="hover:text-text transition-colors">Blog</a>
+        <a href="careers.html" class="hover:text-text transition-colors">Careers</a>
+        <a href="contact.html" class="hover:text-text transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="btn-primary hidden sm:flex items-center gap-2 text-xs font-semibold py-2 px-4 rounded-lg bg-indigo text-white hover:opacity-90 transition-all" style="color:white;">
+          Start a Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10" data-menu-toggle aria-expanded="false" aria-label="Open menu">
+          <span class="block w-4 h-[1.5px] bg-text mb-1"></span><span class="block w-4 h-[1.5px] bg-text"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative pt-[120px]">
+    
+    <!-- BREADCRUMBS -->
+    <div class="max-w-page mx-auto px-edge pt-6 text-xs text-muted flex items-center gap-2">
+      <a href="index.html" class="hover:text-text transition-colors">Home</a>
+      <span>&rsaquo;</span>
+      <a href="custom-services.html" class="hover:text-text transition-colors">Services</a>
+      <span>&rsaquo;</span>
+      <span class="text-text">Mobile Applications</span>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="py-16 md:py-24 relative overflow-hidden ">
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Text content -->
+        <div class="col-span-12 lg:col-span-6 flex flex-col items-start relative z-10">
+          <span class="bg-indigo/10 border border-indigo/20 text-indigo px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide inline-block mb-6">
+            Mobile App Development
+          </span>
+          <h1 class="font-sans font-semibold text-4xl md:text-5xl lg:text-6xl text-text leading-tight">
+            Mobile Applications <br>that <span class="font-display italic text-gradient font-semibold">Engage.<br>Perform. Scale.</span>
+          </h1>
+          <p class="mt-6 text-sm md:text-base text-text-2/85 leading-relaxed max-w-lg">
+            We build high-performance, secure and intuitive mobile applications for iOS and Android that delight users and drive business growth.
+          </p>
+
+          <!-- 4 Pillars Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 w-full border-t border-line pt-6">
+            <div class="flex flex-col items-start">
+              <div class="w-8 h-8 rounded-lg bg-indigo/10 border border-indigo/20 flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-text leading-tight">User-Centric<br>Design</span>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="w-8 h-8 rounded-lg bg-indigo/10 border border-indigo/20 flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-text leading-tight">High<br>Performance</span>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="w-8 h-8 rounded-lg bg-indigo/10 border border-indigo/20 flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-text leading-tight">Secure &amp;<br>Reliable</span>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="w-8 h-8 rounded-lg bg-indigo/10 border border-indigo/20 flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5M12 2c5.5 0 10 4.5 10 10 0 2.5-1 4.5-2.5 6l-6-6 1-8z"></path></svg>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-text leading-tight">Scalable for<br>the Future</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="contact.html" class="py-3 px-6 rounded-lg bg-indigo hover:opacity-90 text-white font-semibold text-sm transition-all flex items-center gap-2 shadow-lg shadow-indigo/20" style="color: white;">
+              Let's Build Your App <span class="font-bold">&rarr;</span>
+            </a>
+            <a href="portfolio.html" class="py-3 px-6 rounded-lg border border-line hover:bg-white/5 text-text font-semibold text-sm transition-all">
+              Explore Our Work
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Overlapping mockups with floating badges matching mob-app.jpeg -->
+        <div class="col-span-12 lg:col-span-6 flex justify-center items-center">
+          <div class="relative w-full max-w-[500px] aspect-[4/3] flex items-center">
+            <!-- Soft Aurora Glow Behind Mockup -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-indigo/10 via-cyan/5 to-violet/10 blur-2xl rounded-full pointer-events-none"></div>
+
+            <!-- SVG Dotted Connectors -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none z-20" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <!-- Line 1: iOS Dev to Left phone -->
+              <path d="M 80,10 Q 72,14 62,18" fill="none" stroke="var(--indigo)" stroke-width="0.3" stroke-dasharray="1 1" />
+              <!-- Line 2: Android Dev to Right phone -->
+              <path d="M 80,28 Q 74,32 68,36" fill="none" stroke="var(--indigo)" stroke-width="0.3" stroke-dasharray="1 1" />
+              <!-- Line 3: Flutter Dev to Left phone dashboard -->
+              <path d="M 80,48 Q 68,52 50,56" fill="none" stroke="var(--indigo)" stroke-width="0.3" stroke-dasharray="1 1" />
+              <!-- Line 4: React Native to Right phone actions -->
+              <path d="M 80,66 Q 72,70 65,74" fill="none" stroke="var(--indigo)" stroke-width="0.3" stroke-dasharray="1 1" />
+
+              <circle cx="62" cy="18" r="0.8" fill="var(--indigo)" />
+              <circle cx="68" cy="36" r="0.8" fill="var(--indigo)" />
+              <circle cx="50" cy="56" r="0.8" fill="var(--indigo)" />
+              <circle cx="65" cy="74" r="0.8" fill="var(--indigo)" />
+            </svg>
+
+            <!-- Floating Badge 1: iOS Development (top right) -->
+            <div class="absolute top-[6%] right-[2%] z-30 bg-surface border border-line text-text text-[9px] sm:text-[11px] font-semibold py-1.5 px-3 rounded-xl shadow-lg flex items-center gap-2">
+              <i class="fa-brands fa-apple text-indigo text-xs"></i>
+              <span>iOS Development</span>
+            </div>
+
+            <!-- Floating Badge 2: Android Development (middle right) -->
+            <div class="absolute top-[24%] right-[0%] z-30 bg-surface border border-line text-text text-[9px] sm:text-[11px] font-semibold py-1.5 px-3 rounded-xl shadow-lg flex items-center gap-2">
+              <i class="fa-brands fa-android text-emerald-500 text-xs"></i>
+              <span>Android Development</span>
+            </div>
+
+            <!-- Floating Badge 3: Flutter Development -->
+            <div class="absolute top-[44%] right-[2%] z-30 bg-surface border border-line text-text text-[9px] sm:text-[11px] font-semibold py-1.5 px-3 rounded-xl shadow-lg flex items-center gap-2">
+              <svg class="w-3 h-3 text-cyan" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.3 2.3L5 11.6l3.7 3.7 9.3-9.3M14.3 21.7l9.3-9.3-3.7-3.7-9.3 9.3" />
+              </svg>
+              <span>Flutter Development</span>
+            </div>
+
+            <!-- Floating Badge 4: React Native Development -->
+            <div class="absolute top-[62%] right-[0%] z-30 bg-surface border border-line text-text text-[9px] sm:text-[11px] font-semibold py-1.5 px-3 rounded-xl shadow-lg flex items-center gap-2">
+              <i class="fa-brands fa-react text-cyan text-xs animate-spin-slow"></i>
+              <span>React Native</span>
+            </div>
+
+            <!-- Overlapping Phone Mockups -->
+            <div class="relative w-[70%] aspect-[0.9] flex items-center justify-start">
+              
+              <!-- iPhone 1: Left Phone (Front/Tilted) -->
+              <div class="absolute left-[5%] top-[5%] w-[62%] h-[92%] z-20 bg-surface border-[4px] border-slate-800 rounded-[30px] shadow-2xl overflow-hidden flex flex-col transform -rotate-3 transition-transform hover:rotate-0 duration-300">
+                <!-- Speaker / Notch -->
+                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-[35%] h-3 bg-slate-800 rounded-full z-30 flex items-center justify-center">
+                  <div class="w-1.5 h-1.5 rounded-full bg-slate-900 absolute left-2"></div>
+                </div>
+                
+                <!-- Screen Content -->
+                <div class="flex-1 p-2.5 pt-6 flex flex-col justify-between text-[8px] bg-bg">
+                  <div class="flex justify-between items-center mb-2 px-1">
+                    <span class="font-bold text-[7px] text-text">9:21</span>
+                    <span class="font-bold text-text-2">Dashboard</span>
+                    <i class="fa-solid fa-circle-user text-text-2 text-xs"></i>
+                  </div>
+
+                  <!-- Sales Block -->
+                  <div class="bg-surface border border-line rounded-lg p-2 flex flex-col justify-between mb-2">
+                    <div class="flex justify-between items-center text-[6px] text-text-2">
+                      <span>Total Sales</span>
+                      <span class="text-emerald-500 font-bold">+12.5%</span>
+                    </div>
+                    <span class="text-[11px] font-extrabold text-text font-mono mt-0.5">₹ 24,80,000</span>
+                  </div>
+
+                  <!-- Chart Block -->
+                  <div class="bg-surface border border-line rounded-lg p-2 mb-2 flex-1 flex flex-col justify-between">
+                    <span class="text-[6px] text-text-2">Sales Overview</span>
+                    <div class="flex-1 flex items-end mt-1">
+                      <svg class="w-full h-8 text-indigo" viewBox="0 0 100 30" preserveAspectRatio="none">
+                        <path d="M0,25 Q15,8 30,18 T60,5 T90,20 T100,12" fill="none" stroke="currentColor" stroke-width="1.5" />
+                        <circle cx="30" cy="18" r="2" fill="currentColor" />
+                        <circle cx="60" cy="5" r="2" fill="currentColor" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Top Products list -->
+                  <div class="space-y-1 bg-surface border border-line rounded-lg p-2">
+                    <div class="flex justify-between text-[5px] text-text-2 border-b border-line pb-0.5 mb-1 font-bold">
+                      <span>Top Products</span>
+                      <span>Value</span>
+                    </div>
+                    <div class="flex justify-between text-[6px]">
+                      <span class="text-text">Product 1</span>
+                      <span class="font-mono text-text-2">₹ 8,40,000</span>
+                    </div>
+                    <div class="flex justify-between text-[6px]">
+                      <span class="text-text">Product 2</span>
+                      <span class="font-mono text-text-2">₹ 6,20,000</span>
+                    </div>
+                    <div class="flex justify-between text-[6px]">
+                      <span class="text-text">Product 3</span>
+                      <span class="font-mono text-text-2">₹ 4,10,000</span>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Nav Bar -->
+                  <div class="flex justify-between items-center border-t border-line pt-1.5 mt-2 px-2 text-text-2 text-[8px]">
+                    <i class="fa-solid fa-house text-indigo"></i>
+                    <i class="fa-solid fa-list-check"></i>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- iPhone 2: Right Phone (Slightly behind, shifted right) -->
+              <div class="absolute right-[8%] top-[8%] w-[62%] h-[92%] z-10 bg-surface border-[4px] border-slate-800 rounded-[30px] shadow-xl overflow-hidden flex flex-col">
+                <!-- Notch -->
+                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-[35%] h-3 bg-slate-800 rounded-full z-30"></div>
+                
+                <!-- Screen Content -->
+                <div class="flex-1 p-2.5 pt-6 flex flex-col justify-between text-[8px] bg-bg">
+                  <!-- Top greeting -->
+                  <div class="flex justify-between items-center mb-2 px-1">
+                    <div>
+                      <span class="text-[5px] text-text-2 uppercase block leading-none">Hi, Alex</span>
+                      <span class="font-bold text-[8px] text-text">Good Morning!</span>
+                    </div>
+                    <div class="w-5 h-5 rounded-full bg-indigo/20 flex items-center justify-center text-[9px] text-indigo font-bold">A</div>
+                  </div>
+
+                  <!-- Orders summary -->
+                  <div class="bg-surface border border-line rounded-lg p-2 mb-2 flex justify-between items-center">
+                    <div>
+                      <span class="text-[5px] text-text-2 block">Orders This Month</span>
+                      <span class="text-[11px] font-extrabold text-text font-mono">128</span>
+                    </div>
+                    <span class="text-[6px] text-emerald-500 font-bold bg-emerald-500/10 px-1 py-0.5 rounded">+18.2%</span>
+                  </div>
+
+                  <!-- Recent orders -->
+                  <div class="space-y-1.5 bg-surface border border-line rounded-lg p-2 flex-1 flex flex-col justify-between mb-2">
+                    <span class="text-[6px] text-text-2 font-bold mb-0.5 block">Recent Orders</span>
+                    <div class="flex justify-between items-center text-[5.5px]">
+                      <span class="text-text">Order #2456</span>
+                      <span class="text-emerald-500 font-bold font-mono">Delivered</span>
+                    </div>
+                    <div class="flex justify-between items-center text-[5.5px]">
+                      <span class="text-text">Order #2455</span>
+                      <span class="text-yellow-500 font-bold font-mono">Processing</span>
+                    </div>
+                    <div class="flex justify-between items-center text-[5.5px]">
+                      <span class="text-text">Order #2454</span>
+                      <span class="text-indigo font-bold font-mono">Shipped</span>
+                    </div>
+                  </div>
+
+                  <!-- Quick Actions -->
+                  <div class="grid grid-cols-2 gap-1 mb-1">
+                    <button class="bg-indigo text-white rounded py-1 text-[5px] font-bold">New Order</button>
+                    <button class="bg-surface-2 border border-line text-text rounded py-1 text-[5px] font-bold">Reports</button>
+                  </div>
+
+                  <!-- Bottom Nav Bar -->
+                  <div class="flex justify-between items-center border-t border-line pt-1.5 mt-1 px-2 text-text-2 text-[8px]">
+                    <i class="fa-solid fa-house"></i>
+                    <i class="fa-solid fa-list-check text-indigo"></i>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS WE BUILD SECTION -->
+    <section class="py-20 border-t border-line bg-surface/30">
+      <div class="max-w-page mx-auto px-edge text-center mb-16">
+        <h2 class="font-sans font-bold text-3xl md:text-4xl text-text">
+          Mobile Solutions We Build
+        </h2>
+        <p class="mt-4 text-sm md:text-base text-text-2/80 max-w-2xl mx-auto">
+          Custom mobile applications designed to optimize user engagement, scale with your needs, and fuel business growth.
+        </p>
+      </div>
+
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+        <!-- Card 1: Consumer Apps -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">Consumer Apps</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Feature-rich consumer apps that deliver seamless experiences.
+          </p>
+        </div>
+
+        <!-- Card 2: Enterprise Apps -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+              <line x1="9" y1="22" x2="9" y2="16" />
+              <line x1="15" y1="22" x2="15" y2="16" />
+              <line x1="9" y1="16" x2="15" y2="16" />
+              <path d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm6-4h2v2h-2V6zm0 4h2v2h-2v-2z" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">Enterprise Apps</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Business mobility solutions to streamline operations.
+          </p>
+        </div>
+
+        <!-- Card 3: On-Demand Apps -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">On-Demand Apps</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            On-demand apps that connect users and service providers.
+          </p>
+        </div>
+
+        <!-- Card 4: Fintech Apps -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+              <line x1="1" y1="10" x2="23" y2="10" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">Fintech Apps</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Secure and compliant fintech apps for modern financial services.
+          </p>
+        </div>
+
+        <!-- Card 5: Health & Fitness Apps -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">Health &amp; Fitness</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Engaging health and fitness apps that promote well-being.
+          </p>
+        </div>
+
+        <!-- Card 6: And Much More -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="1.5" />
+              <circle cx="6" cy="12" r="1.5" />
+              <circle cx="18" cy="12" r="1.5" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">And Much More</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Custom solutions tailored to your unique business needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVELOPMENT PROCESS SECTION -->
+    <section class="py-20 bg-bg">
+      <div class="max-w-page mx-auto px-edge">
+        <div class="bg-[#0B0F19] rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl relative overflow-hidden">
+          <!-- Subtle Glows Inside Dark Container -->
+          <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-indigo/10 blur-[100px] rounded-full pointer-events-none"></div>
+          <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+          <div class="text-center mb-16 relative z-10">
+            <h2 class="font-sans font-bold text-3xl md:text-4xl text-white" style="color: white;">
+              Our Mobile App Development Process
+            </h2>
+          </div>
+
+          <!-- 7 Process Steps Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-y-12 gap-x-6 relative z-10">
+            <!-- Step 1: Discover -->
+            <div class="flex flex-col items-center text-center relative group col-span-1">
+              <!-- Dotted Connector Arrow (only visible on large screens) -->
+              <div class="hidden lg:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">01. Discover</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[130px]">
+                We understand your goals, users and market.
+              </p>
+            </div>
+
+            <!-- Step 2: Plan -->
+            <div class="flex flex-col items-center text-center relative group col-span-1">
+              <!-- Dotted Connector Arrow -->
+              <div class="hidden lg:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">02. Plan</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[130px]">
+                We define the strategy, features and roadmap.
+              </p>
+            </div>
+
+            <!-- Step 3: Design -->
+            <div class="flex flex-col items-center text-center relative group col-span-1">
+              <!-- Dotted Connector Arrow -->
+              <div class="hidden lg:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">03. Design</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[130px]">
+                We create intuitive UI/UX designs that users love.
+              </p>
+            </div>
+
+            <!-- Step 4: Develop -->
+            <div class="flex flex-col items-center text-center relative group col-span-1">
+              <!-- Dotted Connector Arrow -->
+              <div class="hidden lg:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                  <line x1="14" y1="4" x2="10" y2="20" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">04. Develop</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[130px]">
+                We build scalable and high-performing applications.
+              </p>
+            </div>
+
+            <!-- Step 5: Test -->
+            <div class="flex flex-col items-center text-center relative group col-span-1">
+              <!-- Dotted Connector Arrow -->
+              <div class="hidden lg:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 11 12 14 22 4" />
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">05. Test</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[130px]">
+                Rigorous testing for quality, performance and security.
+              </p>
+            </div>
+
+            <!-- Step 6: Deploy -->
+            <div class="flex flex-col items-center text-center relative group col-span-1">
+              <!-- Dotted Connector Arrow -->
+              <div class="hidden lg:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 22h20L12 2z" />
+                  <line x1="12" y1="9" x2="12" y2="17" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">06. Deploy</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[130px]">
+                We deploy and launch your app to the app stores.
+              </p>
+            </div>
+
+            <!-- Step 7: Support -->
+            <div class="flex flex-col items-center text-center group col-span-1">
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">07. Support</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[130px]">
+                We provide ongoing support and continuous improvements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- TECHNOLOGIES WE WORK WITH SECTION -->
+    <section class="py-20 bg-bg border-t border-line">
+      <div class="max-w-page mx-auto px-edge text-center">
+        <h2 class="font-sans font-bold text-2xl md:text-3xl text-text mb-12">
+          Technologies We Work With
+        </h2>
+        <div class="flex flex-wrap justify-around items-center gap-x-12 gap-y-8">
+          <!-- Flutter -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#02569B]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">Flutter</span>
+          </div>
+
+          <!-- React Native -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#61DAFB]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">React Native</span>
+          </div>
+
+         
+
+          <!-- Firebase -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#FFCA28]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.455 8.369c-.538-.748-1.778-2.285-3.681-4.569-.826-.991-1.535-1.832-1.884-2.245a146 146 0 0 0-.488-.576l-.207-.245-.113-.133-.022-.032-.01-.005L12.57 0l-.609.488c-1.555 1.246-2.828 2.851-3.681 4.64-.523 1.064-.864 2.105-1.043 3.176-.047.241-.088.489-.121.738-.209-.017-.421-.028-.632-.033-.018-.001-.035-.002-.059-.003a7.46 7.46 0 0 0-2.28.274l-.317.089-.163.286c-.765 1.342-1.198 2.869-1.252 4.416-.07 2.01.477 3.954 1.583 5.625 1.082 1.633 2.61 2.882 4.42 3.611l.236.095.071.025.003-.001a9.59 9.59 0 0 0 2.941.568q.171.006.342.006c1.273 0 2.513-.249 3.69-.742l.008.004.313-.145a9.63 9.63 0 0 0 3.927-3.335c1.01-1.49 1.577-3.234 1.641-5.042.075-2.161-.643-4.304-2.133-6.371m-7.083 6.695c.328 1.244.264 2.44-.191 3.558-1.135-1.12-1.967-2.352-2.475-3.665-.543-1.404-.87-2.74-.974-3.975.48.157.922.366 1.315.622 1.132.737 1.914 1.902 2.325 3.461zm.207 6.022c.482.368.99.712 1.513 1.028-.771.21-1.565.302-2.369.273a8 8 0 0 1-.373-.022c.458-.394.869-.823 1.228-1.279zm1.347-6.431c-.516-1.957-1.527-3.437-3.002-4.398-.647-.421-1.385-.741-2.194-.95.011-.134.026-.268.043-.4.014-.113.03-.216.046-.313.133-.689.332-1.37.589-2.025.099-.25.206-.499.321-.74l.004-.008c.177-.358.376-.719.61-1.105l.092-.152-.003-.001c.544-.851 1.197-1.627 1.942-2.311l.288.341c.672.796 1.304 1.548 1.878 2.237 1.291 1.549 2.966 3.583 3.612 4.48 1.277 1.771 1.893 3.579 1.83 5.375-.049 1.395-.461 2.755-1.195 3.933-.694 1.116-1.661 2.05-2.8 2.708-.636-.318-1.559-.839-2.539-1.599.79-1.575.952-3.28.479-5.072zm-2.575 5.397c-.725.939-1.587 1.55-2.09 1.856-.081-.029-.163-.06-.243-.093l-.065-.026c-1.49-.616-2.747-1.656-3.635-3.01-.907-1.384-1.356-2.993-1.298-4.653.041-1.19.338-2.327.882-3.379.316-.07.638-.114.96-.131l.084-.002c.162-.003.324-.003.478 0 .227.011.454.035.677.07.073 1.513.445 3.145 1.105 4.852.637 1.644 1.694 3.162 3.144 4.515z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">Firebase</span>
+          </div>
+
+          <!-- Node.js -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#339933]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.57,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z M19.099,13.993 c0-1.9-1.284-2.406-3.987-2.763c-2.731-0.361-3.009-0.548-3.009-1.187c0-0.528,0.235-1.233,2.258-1.233 c1.807,0,2.473,0.389,2.747,1.607c0.024,0.115,0.129,0.199,0.247,0.199h1.141c0.071,0,0.138-0.031,0.186-0.081 c0.048-0.054,0.074-0.123,0.067-0.196c-0.177-2.098-1.571-3.076-4.388-3.076c-2.508,0-4.004,1.058-4.004,2.833 c0,1.925,1.488,2.457,3.895,2.695c2.88,0.282,3.103,0.703,3.103,1.269c0,0.983-0.789,1.402-2.642,1.402 c-2.327,0-2.839-0.584-3.011-1.742c-0.02-0.124-0.126-0.215-0.253-0.215h-1.137c-0.141,0-0.254,0.112-0.254,0.253 c0,1.482,0.806,3.248,4.655,3.248C17.501,17.007,19.099,15.91,19.099,13.993z
+Failed to fetch amazonaws: No path found for amazonwebservices" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">Node.js</span>
+          </div>
+
+          <!-- AWS -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10" viewBox="0 0 333334 199332" fill="none">
+              <path d="M93937 72393c0 4102 443 7428 1219 9867 887 2439 1996 5100 3548 7982 554 887 776 1774 776 2550 0 1109-665 2217-2106 3326l-6985 4656c-998 665-1995 998-2882 998-1109 0-2217-554-3326-1552-1552-1663-2882-3437-3991-5211-1109-1885-2217-3991-3437-6541-8648 10200-19512 15299-32594 15299-9312 0-16740-2661-22172-7982-5432-5322-8204-12417-8204-21286 0-9424 3326-17073 10089-22838s15743-8647 27161-8647c3769 0 7650 332 11752 887 4102 554 8315 1441 12749 2439v-8093c0-8426-1774-14301-5211-17738-3548-3437-9534-5100-18071-5100-3880 0-7871 443-11973 1441s-8093 2217-11973 3769c-1774 776-3104 1219-3880 1441s-1330 332-1774 332c-1552 0-2328-1109-2328-3437v-5432c0-1774 222-3104 776-3880s1552-1552 3104-2328c3880-1996 8537-3659 13969-4989C43606 885 49370 220 55468 220c13193 0 22838 2993 29046 8980 6098 5987 9202 15077 9202 27272v35920h222zM48926 89244c3659 0 7428-665 11419-1995s7539-3769 10532-7095c1774-2106 3104-4435 3770-7095 665-2661 1108-5876 1108-9645v-4656c-3215-776-6652-1441-10199-1885-3548-443-6984-665-10421-665-7428 0-12860 1441-16519 4435-3659 2993-5432 7206-5432 12749 0 5211 1330 9091 4102 11751 2661 2772 6541 4102 11641 4102zm89023 11973c-1996 0-3326-332-4213-1109-887-665-1663-2217-2328-4324l-26053-85697c-665-2217-998-3658-998-4434 0-1774 887-2772 2661-2772h10865c2106 0 3548 333 4324 1109 887 665 1552 2217 2217 4324l18625 73391 17295-73391c554-2217 1219-3659 2106-4324s2439-1109 4435-1109h8869c2106 0 3548 333 4435 1109 887 665 1663 2217 2106 4324l17516 74278 19180-74278c665-2217 1441-3659 2217-4324 887-665 2328-1109 4324-1109h10310c1774 0 2772 887 2772 2772 0 554-111 1109-222 1774s-333 1552-776 2772l-26718 85697c-665 2217-1441 3658-2328 4324-887 665-2328 1109-4213 1109h-9534c-2107 0-3548-333-4435-1109s-1663-2217-2106-4435l-17184-71507-17073 71396c-554 2217-1220 3658-2107 4434s-2439 1109-4434 1109h-9534zm142459 2993c-5765 0-11530-665-17073-1995s-9867-2772-12749-4435c-1774-998-2993-2106-3437-3104-443-998-665-2106-665-3104v-5654c0-2328 887-3437 2550-3437 665 0 1330 111 1995 333s1663 665 2772 1109c3769 1663 7871 2993 12195 3880 4435 887 8758 1330 13193 1330 6984 0 12417-1220 16186-3659s5765-5987 5765-10532c0-3104-998-5654-2993-7760-1996-2107-5765-3991-11197-5765l-16075-4989c-8093-2550-14080-6319-17738-11308-3658-4878-5543-10310-5543-16075 0-4656 998-8758 2993-12306s4656-6652 7982-9091c3326-2550 7095-4434 11530-5765S279190-2 284068-2c2439 0 4989 111 7428 443 2550 333 4878 776 7206 1219 2217 554 4324 1109 6319 1774s3548 1330 4656 1996c1552 887 2661 1774 3326 2771 665 887 998 2107 998 3659v5211c0 2328-887 3548-2550 3548-887 0-2328-444-4213-1331-6319-2882-13415-4324-21286-4324-6319 0-11308 998-14745 3104s-5211 5321-5211 9867c0 3104 1109 5765 3326 7871s6319 4213 12195 6097l15743 4989c7982 2550 13747 6098 17184 10643s5100 9756 5100 15521c0 4767-998 9091-2882 12860-1996 3770-4656 7095-8093 9756-3437 2771-7539 4767-12306 6208-4989 1552-10199 2328-15854 2328z" fill="currentColor" />
+              <path d="M301362 158091c-36474 26940-89467 41241-135031 41241-63858 0-121395-23614-164854-62859-3437-3104-332-7317 3770-4878 47006 27272 104988 43791 164964 43791 40465 0 84921-8426 125830-25721 6097-2772 11308 3991 5321 8426z" fill="#FF9900" />
+              <path d="M316550 140796c-4656-5987-30820-2883-42682-1441-3548 443-4102-2661-887-4989 20842-14634 55099-10421 59090-5543 3991 4989-1109 39246-20620 55653-2993 2550-5876 1220-4545-2106 4435-10976 14301-35698 9645-41574z" fill="#FF9900" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">AWS</span>
+          </div>
+
+          <!-- MongoDB -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#47A248]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">MongoDB</span>
+          </div>
+
+          <!-- PostgreSQL -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#336791]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE WISETRACK SECTION -->
+    <section class="py-20 bg-bg border-t border-line">
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column: Statistics Phone Mockup -->
+        <div class="col-span-12 lg:col-span-4 flex justify-center items-center">
+          <div class="relative w-full max-w-[320px] aspect-square mx-auto flex items-center justify-center">
+            <!-- Soft Background Aura -->
+            <div class="absolute inset-4 bg-indigo/5 rounded-full blur-2xl"></div>
+
+            <!-- Dotted Grid Lines -->
+            <div class="absolute inset-0 border border-dashed border-line rounded-3xl pointer-events-none"></div>
+            <div class="absolute top-1/2 left-0 right-0 border-t border-dashed border-line pointer-events-none"></div>
+            <div class="absolute left-1/2 top-0 bottom-0 border-l border-dashed border-line pointer-events-none"></div>
+
+            <!-- Plus Markers -->
+            <span class="absolute top-2 left-2 text-indigo/30 text-sm font-bold select-none">+</span>
+            <span class="absolute top-2 right-2 text-indigo/30 text-sm font-bold select-none">+</span>
+            <span class="absolute bottom-2 left-2 text-indigo/30 text-sm font-bold select-none">+</span>
+            <span class="absolute bottom-2 right-2 text-indigo/30 text-sm font-bold select-none">+</span>
+
+            <!-- Stats Phone Card -->
+            <div class="relative z-10 w-[200px] h-[340px] bg-surface border-[4px] border-slate-800 rounded-[30px] shadow-2xl overflow-hidden flex flex-col justify-between p-3.5 transform hover:scale-105 transition-transform duration-300">
+              <!-- Notch -->
+              <div class="absolute top-1 left-1/2 -translate-x-1/2 w-[35%] h-2.5 bg-slate-800 rounded-full z-30"></div>
+
+              <!-- Header -->
+              <div class="flex justify-between items-center text-text-2 text-[8px] mt-1.5 px-0.5">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span class="font-bold text-text">Statistics</span>
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+
+              <!-- Main Balance Card -->
+              <div class="bg-surface-2 border border-line rounded-xl p-3 flex flex-col justify-between my-3 flex-1">
+                <div>
+                  <span class="text-[6.5px] text-text-2 block">Total Balance</span>
+                  <span class="text-[14px] font-extrabold text-text font-mono mt-0.5">$ 8,540.00</span>
+                </div>
+                <!-- Small Wave Chart -->
+                <div class="mt-4">
+                  <svg class="w-full h-12 text-indigo" viewBox="0 0 100 30" preserveAspectRatio="none">
+                    <path d="M0,25 Q20,10 40,22 T80,5 T100,18" fill="none" stroke="currentColor" stroke-width="2" />
+                    <circle cx="40" cy="22" r="2.5" fill="currentColor" />
+                    <circle cx="80" cy="5" r="2.5" fill="currentColor" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Transactions list -->
+              <div class="space-y-2">
+                <span class="text-[7px] text-text-2 font-bold uppercase tracking-wider block">Transactions</span>
+                <div class="flex items-center justify-between bg-surface-2 border border-line rounded-lg p-1.5">
+                  <div class="flex items-center gap-1.5">
+                    <div class="w-5 h-5 rounded-full bg-indigo/15 flex items-center justify-center text-indigo text-[8px]">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div>
+                      <span class="text-[6.5px] text-text font-bold block">Shopping</span>
+                      <span class="text-[5.5px] text-text-2 block">12 mins ago</span>
+                    </div>
+                  </div>
+                  <span class="text-[7.5px] text-text font-mono font-bold">-$150.00</span>
+                </div>
+                <div class="flex items-center justify-between bg-surface-2 border border-line rounded-lg p-1.5">
+                  <div class="flex items-center gap-1.5">
+                    <div class="w-5 h-5 rounded-full bg-indigo/15 flex items-center justify-center text-indigo text-[8px]">
+                      <i class="fa-solid fa-plane"></i>
+                    </div>
+                    <div>
+                      <span class="text-[6.5px] text-text font-bold block">Travel</span>
+                      <span class="text-[5.5px] text-text-2 block">2 hours ago</span>
+                    </div>
+                  </div>
+                  <span class="text-[7.5px] text-text font-mono font-bold">-$350.00</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Floating graphic node behind -->
+            <div class="absolute right-[5%] bottom-[15%] w-14 h-10 bg-indigo/10 border border-indigo/20 rounded-lg shadow-lg flex items-center justify-center z-0">
+              <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Column: Title and Checklist -->
+        <div class="col-span-12 lg:col-span-5 flex flex-col items-start">
+          <span class="text-xs font-bold text-indigo uppercase tracking-widest mb-3">Why Choose Wisetrack?</span>
+          <h2 class="font-sans font-bold text-3xl sm:text-4xl text-text leading-tight">
+            We don't just build apps.<br>We build <span class="text-indigo font-extrabold">business growth engines.</span>
+          </h2>
+          <ul class="mt-8 space-y-4 w-full">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">Custom solutions tailored to your business</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">Agile development with rapid delivery</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">Transparent communication</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">Secure, scalable and future-ready apps</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">Post-launch support and maintenance</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column: Vertical Stack of Stats -->
+        <div class="col-span-12 lg:col-span-3">
+          <div class="space-y-4">
+            <!-- Stat 1: Years of Experience -->
+            <div class="p-4 bg-surface border border-line rounded-2xl shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10" />
+                  <line x1="12" y1="20" x2="12" y2="4" />
+                  <line x1="6" y1="20" x2="6" y2="14" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xl sm:text-2xl font-extrabold text-indigo block leading-none">17+</span>
+                <span class="text-[10px] font-semibold text-text-2 uppercase tracking-wider block mt-1">Years of Experience</span>
+              </div>
+            </div>
+
+            <!-- Stat 2: Apps Delivered -->
+            <div class="p-4 bg-surface border border-line rounded-2xl shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                  <line x1="12" y1="18" x2="12.01" y2="18" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xl sm:text-2xl font-extrabold text-indigo block leading-none">200+</span>
+                <span class="text-[10px] font-semibold text-text-2 uppercase tracking-wider block mt-1">Apps Delivered</span>
+              </div>
+            </div>
+
+            <!-- Stat 3: Skilled Experts -->
+            <div class="p-4 bg-surface border border-line rounded-2xl shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xl sm:text-2xl font-extrabold text-indigo block leading-none">40+</span>
+                <span class="text-[10px] font-semibold text-text-2 uppercase tracking-wider block mt-1">Skilled Experts</span>
+              </div>
+            </div>
+
+            <!-- Stat 4: Client Satisfaction -->
+            <div class="p-4 bg-surface border border-line rounded-2xl shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="7" />
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xl sm:text-2xl font-extrabold text-indigo block leading-none">98%</span>
+                <span class="text-[10px] font-semibold text-text-2 uppercase tracking-wider block mt-1">Client Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA BANNER SECTION -->
+    <section class="py-12 bg-bg">
+      <div class="max-w-page mx-auto px-edge">
+        <div class="bg-gradient-to-r from-indigo via-indigo/90 to-violet rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          <!-- Background Glow Decoration -->
+          <div class="absolute -right-10 -bottom-10 w-[200px] h-[200px] bg-white/5 rounded-full pointer-events-none"></div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-6 relative z-10 text-center sm:text-left flex-1">
+            <!-- Rocket Icon Badge -->
+            <div class="w-16 h-16 rounded-full bg-surface flex items-center justify-center flex-shrink-0 shadow-lg shadow-black/10">
+              <svg class="w-8 h-8 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5" />
+                <path d="M12 2C6.5 2 2 6.5 2 12c0 2.5 1 4.5 2.5 6l6-6L12 2z" />
+                <path d="M12 2c5.5 0 10 4.5 10 10 0 2.5-1 4.5-2.5 6l-6-6 1-8z" />
+                <path d="M12 12l6 6c1.5 1.5 2.5 2.5 2.5 2.5s-1-2.25-2.5-3.5" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight">
+                Have an App Idea?
+              </h3>
+              <p class="text-slate-200 text-xs sm:text-sm mt-2 leading-relaxed font-sans">
+                Let's turn your idea into a powerful mobile experience.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative z-10 w-full lg:w-auto flex justify-center flex-shrink-0">
+            <a href="contact.html" class="w-full sm:w-auto px-8 py-3.5 border-2 border-white hover:bg-white hover:text-indigo text-white font-bold text-sm rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
+              Book a Consultation <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-16 border-t border-line bg-surface/10">
+    <div class="max-w-page mx-auto px-edge">
+      <div class="grid grid-cols-12 gap-y-12 gap-x-8">
+        <div class="col-span-12 mb-10">
+          <div class="wa-strip">
+            <div class="qr"><img src="assets/whatsapp_qr.png" alt="WhatsApp QR code for WiseTrack Technologies" /></div>
+            <div class="copy">
+              <div class="label">WHATSAPP · SALES &amp; SUPPORT</div>
+              <div class="head">Quicker than email — <em>chat with us</em>.</div>
+              <p>Scan the QR or tap the button to start a WhatsApp chat with our sales &amp; support team. We reply within working hours, IST.</p>
+            </div>
+            <a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="cta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Zm4.49-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.12.17 1.78 2.72 4.3 3.81.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-4">
+          <a href="index.html" class="flex items-center gap-2.5"><img src="assets/logo/wt-mark.svg" alt="" aria-hidden="true" class="h-[24px] md:h-[34px] w-auto" /><img src="assets/logo/wordmark.svg" alt="Wisetrack Technologies" class="h-[14px] md:h-[20px] w-auto" /></a>
+          <p class="mt-6 text-sm text-text-2/80 leading-relaxed max-w-sm">
+            Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our Business OS product.
+          </p>
+          <div class="mt-6 flex items-center gap-3 text-muted text-xs">
+            <span class="h-1.5 w-1.5 rounded-full bg-mint"></span>
+            <span>Open for Q1-Q2 2026 engagements</span>
+          </div>
+          <div class="mt-4 flex items-center gap-2.5">
+            <a href="https://www.instagram.com/wisetrack_technologies/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#E1306C]/20 bg-[#E1306C]/5 hover:bg-[#E1306C]/10 hover:border-[#E1306C]/40 text-[#E1306C] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/117244938/admin/page-posts/published/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#0077B5]/20 bg-[#0077B5]/5 hover:bg-[#0077B5]/10 hover:border-[#0077B5]/40 text-[#0077B5] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://www.youtube.com/@WisetrackTechnologies" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#FF0000]/20 bg-[#FF0000]/5 hover:bg-[#FF0000]/10 hover:border-[#FF0000]/40 text-[#FF0000] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61590564231668" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#1877F2]/20 bg-[#1877F2]/5 hover:bg-[#1877F2]/10 hover:border-[#1877F2]/40 text-[#1877F2] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-6">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">EXPLORE</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="products.html" class="hover:text-text">Products</a></li>
+            <li><a href="custom-services.html" class="hover:text-text">Services</a></li>
+            <li><a href="portfolio.html" class="hover:text-text">Our Work</a></li>
+            <li><a href="blog.html" class="hover:text-text font-semibold">Blog</a></li><li><a href="ragenaizer-research.html" class="hover:text-text">Data &amp; Insights</a></li>
+          </ul>
+        </div>
+        <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">BRANDS</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="https://hyperscripts.io/" target="_blank" rel="noopener" class="hover:text-text">HyperScripts</a></li>
+            <li><a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="hover:text-text">Ragenaizer</a></li>
+            <li><a href="careers.html" class="hover:text-text">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">LEGAL</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="terms.html" class="hover:text-text">Terms</a></li>
+            <li><a href="privacy.html" class="hover:text-text">Privacy</a></li>
+            <li><a href="cookies.html" class="hover:text-text">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-line flex flex-col md:flex-row gap-6 justify-between items-center text-xs text-muted">
+        <p>© 2026 WISETRACK TECHNOLOGIES · SELECTIVE ENGINEERING</p>
+        <div class="flex gap-6">
+          <a href="sitemap.html" class="hover:text-text">Sitemap</a>
+          <a href="privacy.html" class="hover:text-text">Privacy</a>
+          <a href="contact.html" class="hover:text-text">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp chat FAB -->
+  <a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="wa-fab" aria-label="Chat with WiseTrack on WhatsApp">
+    <span class="wa-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Zm4.49-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.12.17 1.78 2.72 4.3 3.81.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+    </span>
+    <span class="wa-label">Chat with us</span>
+  </a>
+
+</body>
+</html>

@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <script>(function(){try{if(localStorage.getItem("theme")!=="dark"){document.documentElement.classList.add("light");}else{document.documentElement.classList.remove("light");}}catch(e){}})();</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0c"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon-180.png" />
+  <title>Custom Web &amp; OS Software · WiseTrack</title>
+  <meta name="description" content="We build high-performance custom web portals, multi-tenant databases, API integrations, and customized business operating systems tailored to your exact workflow." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind-config.js?v=20260620h"></script>
+  <link href="assets/styles.css?v=20260620h" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="assets/site.js?v=20260620h" defer></script>
+</head>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+  <!-- Fullscreen Typewriter Preloader (Split Shutter Reveal) -->
+  <div id="preloader" class="fixed inset-0 z-[9999] pointer-events-auto select-none">
+    <!-- Top Half Shutter -->
+    <div id="shutter-top" class="absolute top-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-b border-black/5" style="transform: translateY(0);">
+      <div class="absolute bottom-0 left-0 right-0 pb-4 flex flex-col items-center justify-end">
+        <img src="assets/logo/wt-mark.svg" alt="Wisetrack" class="w-14 h-14 sm:w-20 sm:h-20 mb-6 sm:mb-8" style="filter: brightness(0);" />
+        <h1 id="preloader-text-top" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
+      </div>
+    </div>
+
+    <!-- Bottom Half Shutter -->
+    <div id="shutter-bottom" class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-t border-black/5" style="transform: translateY(0);">
+      <div class="absolute top-0 left-0 right-0 pt-4 flex items-start justify-center">
+        <h1 id="preloader-text-bottom" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
+        <span id="preloader-cursor" class="inline-block w-1 h-8 sm:h-12 bg-black ml-2 animate-blink"></span>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const textTop = "WISETRACK";
+      const textBottom = "TECHNOLOGIES";
+      const speed = 75; // speed of typing in ms
+      let i = 0;
+      let j = 0;
+      const targetTop = document.getElementById("preloader-text-top");
+      const targetBottom = document.getElementById("preloader-text-bottom");
+      const cursor = document.getElementById("preloader-cursor");
+
+      function typeWriterTop() {
+        if (i < textTop.length) {
+          targetTop.textContent += textTop.charAt(i);
+          i++;
+          setTimeout(typeWriterTop, speed);
+        } else {
+          // Finished typing top, start typing bottom after a brief pause
+          setTimeout(typeWriterBottom, 150);
+        }
+      }
+
+      function typeWriterBottom() {
+        if (j < textBottom.length) {
+          targetBottom.textContent += textBottom.charAt(j);
+          j++;
+          setTimeout(typeWriterBottom, speed);
+        } else {
+          // Finished typing everything, trigger split reveal
+          setTimeout(() => {
+            const topShutter = document.getElementById("shutter-top");
+            const bottomShutter = document.getElementById("shutter-bottom");
+            const preloader = document.getElementById("preloader");
+
+            if (cursor) {
+              cursor.style.display = "none";
+            }
+
+            if (topShutter && bottomShutter) {
+              topShutter.style.transition = "transform 1.1s cubic-bezier(0.85, 0, 0.15, 1)";
+              bottomShutter.style.transition = "transform 1.1s cubic-bezier(0.85, 0, 0.15, 1)";
+
+              topShutter.style.transform = "translateY(-100%)";
+              bottomShutter.style.transform = "translateY(100%)";
+            }
+
+            if (preloader) {
+              preloader.style.pointerEvents = "none";
+              document.body.style.overflow = "";
+              setTimeout(() => preloader.remove(), 1150);
+            }
+          }, 700);
+        }
+      }
+
+      document.body.style.overflow = "hidden";
+      setTimeout(typeWriterTop, 350);
+    })();
+  </script>
+
+  <!-- Scroll progress -->
+  <div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+  
+  <div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+      <div class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span><span class="hidden sm:inline">CAPABILITIES · CUSTOM BUILD</span><span class="sm:hidden">CAPABILITIES</span></div>
+      <div class="flex items-center gap-5"><span class="hidden md:inline">Noida, IN</span><span data-clock>--:--:-- IST</span></div>
+    </div>
+  </div>
+
+  <!-- Primary nav -->
+  <header class="fixed top-9 left-0 right-0 z-[60] bg-bg/55 backdrop-blur-2xl border-b border-white/5 transition-all duration-300">
+    <nav class="max-w-page mx-auto px-edge h-[80px] flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <img src="assets/logo/wt-mark.svg" alt="Wisetrack Logo" class="h-[24px] md:h-[29px] w-auto transition-transform group-hover:scale-105" />
+        <span class="font-sans font-extrabold text-base md:text-lg tracking-tight text-text whitespace-nowrap">WISETRACK TECHNOLOGIES</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-[13px] font-semibold text-text-2">
+        <!-- Products Dropdown -->
+        <div class="relative group py-6">
+          <a href="products.html" class="hover:text-text flex items-center gap-1 transition-colors">
+            Products
+            <svg class="w-3.5 h-3.5 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-[850px] pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50">
+            <div class="bg-surface border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-2xl text-left">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+                <div>
+                  <span class="font-display font-light text-xl text-text">Our Flagship Business OS: <b class="font-bold text-indigo">Ragenaizer</b></span>
+                  <p class="text-xs text-text-2/70 mt-1">One integrated database system replacing up to 7 separate B2B SaaS licenses.</p>
+                </div>
+                <a href="products.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1">SEE ALL PRODUCTS &rarr;</a>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="hrms-payroll.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-violet group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="text-sm font-bold text-text">HRMS & Payroll</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Statutory Indian payroll compliance, tax filing, geofenced attendance.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="crm-sales.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-mint group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    <div class="text-sm font-bold text-text">CRM & Sales</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Pipeline mapping, lead forms integration, client record sharing.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="build-pms.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-indigo group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    <div class="text-sm font-bold text-text">PMS & Projects</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Milestone tracking, engineering bug manager, timesheets & billing.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="build-lms.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-cyan/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-cyan group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                    <div class="text-sm font-bold text-text">LMS & Training</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Structured employee training, compliance testing, digital certificates.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="build-accounts.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-lime/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-lime group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"></path><path d="M16 8H8m8 4H8m6 4H8"></path></svg>
+                    <div class="text-sm font-bold text-text">Double-Entry Accounts</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Ledger sync, automated invoicing, expenses, cashflow analysis.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <a href="build-chat.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-sky/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-sky group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="text-sm font-bold text-text">Enterprise Chat</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Audit-logged messaging, file attachments, team channel controls.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Dropdown -->
+        <div class="relative group py-6">
+          <a href="custom-services.html" class="hover:text-text flex items-center gap-1 transition-colors">
+            Services
+            <svg class="w-3.5 h-3.5 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-[850px] pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50">
+            <div class="bg-surface border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-2xl text-left">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+                <div>
+                  <span class="font-display font-light text-xl text-text">Software Development: <b class="font-bold text-indigo">HyperScripts</b></span>
+                  <p class="text-xs text-text-2/70 mt-1">High-performance custom engineering for web, mobile, and workflow systems.</p>
+                </div>
+                <a href="custom-services.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1">SEE ALL SERVICES &rarr;</a>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="custom-web-os-software.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-violet group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    <div class="text-sm font-bold text-text">Custom Web &amp; OS Software</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">C#, .NET Core, Blazor, Postgres. Scalable business architecture.</p>
+                </a>
+                <a href="mobile-app.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-lime/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-lime group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    <div class="text-sm font-bold text-text">Mobile Applications</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Native iOS & Android apps mapped to central business databases.</p>
+                </a>
+                <a href="custom-services.html#ai-automation" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-mint group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4m-4 5h8M8 12V9a4 4 0 0 1 8 0v3"></path></svg>
+                    <div class="text-sm font-bold text-text">Agentic AI Solutions</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Production agent loops using Claude 3.5, RAG, and ClickHouse.</p>
+                </a>
+                <a href="custom-services.html#dashboards" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-sky/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-sky group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <div class="text-sm font-bold text-text">Interactive Dashboards</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Consolidated metrics visualizer showing real-time operational status.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="portfolio.html" class="hover:text-text transition-colors">Work</a>
+        <a href="blog.html" class="hover:text-text transition-colors">Blog</a>
+        <a href="careers.html" class="hover:text-text transition-colors">Careers</a>
+        <a href="contact.html" class="hover:text-text transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="btn-primary hidden sm:flex items-center gap-2 text-xs font-semibold py-2 px-4 rounded-lg bg-indigo text-white hover:opacity-90 transition-all" style="color:white;">
+          Start a Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10" data-menu-toggle aria-expanded="false" aria-label="Open menu">
+          <span class="block w-4 h-[1.5px] bg-text mb-1"></span><span class="block w-4 h-[1.5px] bg-text"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative pt-[120px]">
+    
+    <!-- BREADCRUMBS -->
+    <div class="max-w-page mx-auto px-edge pt-6 text-xs text-muted flex items-center gap-2">
+      <a href="index.html" class="hover:text-text transition-colors">Home</a>
+      <span>&rsaquo;</span>
+      <a href="custom-services.html" class="hover:text-text transition-colors">Services</a>
+      <span>&rsaquo;</span>
+      <span class="text-text">Custom Web &amp; OS Software</span>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="py-16 md:py-24 relative overflow-hidden ">
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Text content -->
+        <div class="col-span-12 lg:col-span-6 flex flex-col items-start relative z-10">
+          <span class="bg-indigo/10 border border-indigo/20 text-indigo px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide inline-block mb-6">
+            Custom Software Development
+          </span>
+          <h1 class="font-sans font-semibold text-4xl md:text-5xl lg:text-6xl text-text leading-tight">
+            Custom Web &amp; <br>OS Software <br>Built for <span class="font-display italic text-gradient font-semibold">Your Business</span>
+          </h1>
+          <p class="mt-6 text-sm md:text-base text-text-2/85 leading-relaxed max-w-lg">
+            We design, develop and deliver secure, scalable, and high-performing web and operational software solutions tailored to your unique goals.
+          </p>
+
+          <!-- 4 Pillars Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 w-full border-t border-line pt-6">
+            <div class="flex flex-col items-start">
+              <div class="w-8 h-8 rounded-lg bg-indigo/10 border border-indigo/20 flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-text leading-tight">Tailored<br>to Your Needs</span>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="w-8 h-8 rounded-lg bg-indigo/10 border border-indigo/20 flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 11 2 2 4-4" />
+                </svg>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-text leading-tight">Secure &amp;<br>Reliable</span>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="w-8 h-8 rounded-lg bg-indigo/10 border border-indigo/20 flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5" />
+                  <path d="M12 2C6.5 2 2 6.5 2 12c0 2.5 1 4.5 2.5 6l6-6L12 2z" />
+                  <path d="M12 2c5.5 0 10 4.5 10 10 0 2.5-1 4.5-2.5 6l-6-6 1-8z" />
+                  <path d="M12 12l6 6c1.5 1.5 2.5 2.5 2.5 2.5s-1-2.25-2.5-3.5" />
+                </svg>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-text leading-tight">Scalable for<br>the Future</span>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="w-8 h-8 rounded-lg bg-indigo/10 border border-indigo/20 flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-text leading-tight">Fast Delivery<br>&amp; Support</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="contact.html" class="py-3 px-6 rounded-lg bg-indigo hover:opacity-90 text-white font-semibold text-sm transition-all flex items-center gap-2 shadow-lg shadow-indigo/20" style="color: white;">
+              Let's Build Your Solution <span class="font-bold">&rarr;</span>
+            </a>
+            <a href="portfolio.html" class="py-3 px-6 rounded-lg border border-line hover:bg-white/5 text-text font-semibold text-sm transition-all">
+              Explore Our Work
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Overlapping mockups with floating badges matching customweb.jpeg -->
+        <div class="col-span-12 lg:col-span-6 flex justify-center items-center">
+          <div class="relative w-full max-w-[500px] aspect-[4/3]">
+            <!-- Soft Aurora Glow Behind Mockup -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-indigo/10 via-cyan/5 to-violet/10 blur-2xl rounded-full pointer-events-none"></div>
+
+            <!-- SVG Dotted Connectors with Space -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none z-20" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <!-- Line 1: Web Apps to Code Window -->
+              <path d="M 69,15 Q 67,18 65,22" fill="none" stroke="var(--indigo)" stroke-width="0.3" stroke-dasharray="1 1" />
+              <!-- Line 2: Enterprise Systems to Sidebar -->
+              <path d="M 33,30 Q 34,34 35,38" fill="none" stroke="var(--indigo)" stroke-width="0.3" stroke-dasharray="1 1" />
+              <!-- Line 3: Workflow Automation to Content -->
+              <path d="M 75,43 Q 65,45 55,46" fill="none" stroke="var(--indigo)" stroke-width="0.3" stroke-dasharray="1 1" />
+              <!-- Line 4: Custom OS Solutions to Bottom -->
+              <path d="M 42,77 Q 43,73 45,68" fill="none" stroke="var(--indigo)" stroke-width="0.3" stroke-dasharray="1 1" />
+              <!-- Line 5: APIs & Integrations to Tasks -->
+              <path d="M 73,71 Q 72,69 70,66" fill="none" stroke="var(--indigo)" stroke-width="0.3" stroke-dasharray="1 1" />
+
+              <circle cx="65" cy="22" r="0.8" fill="var(--indigo)" />
+              <circle cx="35" cy="38" r="0.8" fill="var(--indigo)" />
+              <circle cx="55" cy="46" r="0.8" fill="var(--indigo)" />
+              <circle cx="45" cy="68" r="0.8" fill="var(--indigo)" />
+              <circle cx="70" cy="66" r="0.8" fill="var(--indigo)" />
+            </svg>
+
+            <!-- Floating Badge 1: Web Applications (top right) -->
+            <div class="absolute top-[5%] right-[2%] z-30 bg-surface border border-line text-text text-[10px] sm:text-xs font-semibold py-2 px-3.5 rounded-xl shadow-lg flex items-center gap-2">
+              <i class="fa-solid fa-globe text-indigo text-xs"></i>
+              <span>Web Applications</span>
+            </div>
+
+            <!-- Floating Badge 2: Enterprise Systems (middle left) -->
+            <div class="absolute top-[16%] left-[-4%] z-30 bg-surface border border-line text-text text-[10px] sm:text-xs font-semibold py-2 px-3.5 rounded-xl shadow-lg flex items-center gap-2">
+              <i class="fa-solid fa-network-wired text-indigo text-xs"></i>
+              <span>Enterprise Systems</span>
+            </div>
+
+            <!-- Floating Badge 3: Workflow Automation (middle right) -->
+            <div class="absolute top-[34%] right-[-4%] z-30 bg-surface border border-line text-text text-[10px] sm:text-xs font-semibold py-2 px-3.5 rounded-xl shadow-lg flex items-center gap-2">
+              <i class="fa-solid fa-gears text-indigo text-xs"></i>
+              <span>Workflow Automation</span>
+            </div>
+
+            <!-- Floating Badge 4: Custom OS Solutions (bottom left) -->
+            <div class="absolute bottom-[10%] left-[4%] z-30 bg-surface border border-line text-text text-[10px] sm:text-xs font-semibold py-2 px-3.5 rounded-xl shadow-lg flex items-center gap-2">
+              <i class="fa-solid fa-terminal text-indigo text-xs"></i>
+              <span>Custom OS Solutions</span>
+            </div>
+
+            <!-- Floating Badge 5: APIs & Integrations (bottom right) -->
+            <div class="absolute bottom-[18%] right-[-1%] z-30 bg-surface border border-line text-text text-[10px] sm:text-xs font-semibold py-2 px-3.5 rounded-xl shadow-lg flex items-center gap-2">
+              <i class="fa-solid fa-link text-indigo text-xs"></i>
+              <span>APIs &amp; Integrations</span>
+            </div>
+
+            <!-- Window 1: Code Window (Top Right) -->
+            <div class="absolute w-[52%] h-[48%] top-[10%] right-[10%] z-10 bg-[#0B0F19] rounded-xl border border-slate-800 shadow-2xl overflow-hidden">
+              <div class="flex items-center gap-1.5 px-3 py-2 bg-[#06080F]/80 border-b border-slate-900/50">
+                <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+                <span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+                <span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+              </div>
+              <pre class="p-3 font-mono text-[8px] sm:text-[9px] text-slate-400 leading-relaxed overflow-hidden">
+<span class="text-[#E06C75]">import</span> { <span class="text-[#E5C07B]">App</span> } <span class="text-[#E06C75]">from</span> <span class="text-[#98C379]">'core'</span>;
+<span class="text-[#5C6370]">// Initialize Web Engine</span>
+<span class="text-[#C678DD]">const</span> <span class="text-[#61AFEF]">srv</span> <span class="text-[#56B6C2]">=</span> <span class="text-[#C678DD]">new</span> <span class="text-[#61AFEF]">App</span>();
+<span class="text-[#61AFEF]">srv</span>.<span class="text-[#61AFEF]">route</span>(<span class="text-[#98C379]">'/'</span>, (<span class="text-[#E06C75]">req</span>) <span class="text-[#C678DD]">=></span> {
+  <span class="text-[#C678DD]">return</span> { <span class="text-[#E5C07B]">status</span>: <span class="text-[#98C379]">'ok'</span> };
+});</pre>
+            </div>
+
+            <!-- Window 2: Dashboard Window (Middle Front) -->
+            <div class="absolute w-[56%] h-[52%] top-[25%] left-[10%] z-20 bg-surface rounded-xl border border-line shadow-2xl overflow-hidden flex flex-col">
+              <!-- Window Header -->
+              <div class="flex items-center justify-between px-3 py-2 bg-surface-2 border-b border-line">
+                <div class="flex gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+                  <span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+                  <span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+                </div>
+                <span class="text-[7.5px] font-mono text-muted">WiseTrack Console</span>
+              </div>
+              <!-- Window Body -->
+              <div class="flex-1 grid grid-cols-12 overflow-hidden bg-surface">
+                <!-- Sidebar -->
+                <div class="col-span-4 bg-surface-2 p-2 flex flex-col gap-2 border-r border-line">
+                  <div class="flex items-center gap-1.5">
+                    <div class="w-4 h-4 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-[7px] text-emerald-400">
+                      <i class="fa-solid fa-user text-[7px]"></i>
+                    </div>
+                    <span class="text-[7px] font-bold text-text">Admin</span>
+                  </div>
+                  <div class="space-y-1 mt-2">
+                    <div class="h-2 w-10 bg-indigo/20 rounded"></div>
+                    <div class="h-2 w-8 bg-surface-3 rounded"></div>
+                    <div class="h-2 w-11 bg-surface-3 rounded"></div>
+                  </div>
+                </div>
+                <!-- Content Area -->
+                <div class="col-span-8 p-3 flex flex-col justify-between">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <span class="text-[6.5px] text-text-2 uppercase block font-mono">Performance</span>
+                      <span class="text-[10px] font-extrabold text-text font-mono">99.8%</span>
+                    </div>
+                    <div class="w-8 h-3 rounded bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
+                      <span class="text-[5px] text-emerald-400 font-bold uppercase tracking-wider">Active</span>
+                    </div>
+                  </div>
+                  <!-- SVG Wave Chart -->
+                  <div class="mt-2">
+                    <svg class="w-full h-12 text-indigo" viewBox="0 0 100 30" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="chartGradHero" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="var(--indigo)" stop-opacity="0.4"/>
+                          <stop offset="100%" stop-color="var(--indigo)" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,25 Q15,10 30,18 T60,8 T90,20 T100,15 L100,30 L0,30 Z" fill="url(#chartGradHero)" />
+                      <path d="M0,25 Q15,10 30,18 T60,8 T90,20 T100,15" fill="none" stroke="currentColor" stroke-width="1" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Window 3: Tasks Window (Bottom Right) -->
+            <div class="absolute w-[44%] h-[40%] bottom-[12%] right-[10%] z-10 bg-surface rounded-xl border border-line shadow-2xl overflow-hidden flex flex-col">
+              <div class="flex items-center gap-1.5 px-3 py-2 bg-surface-2 border-b border-line">
+                <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+                <span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+                <span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+              </div>
+              <div class="p-2.5 space-y-2 flex-1 flex flex-col justify-center bg-surface">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo"></span>
+                    <span class="text-[7.5px] text-text font-semibold font-mono">Build Queue</span>
+                  </div>
+                  <span class="text-[7.5px] text-text-2 font-mono">100%</span>
+                </div>
+                <!-- Mini Progress Bars -->
+                <div class="space-y-1.5">
+                  <div class="w-full h-1 bg-surface-2 rounded-full overflow-hidden">
+                    <div class="h-full bg-indigo rounded-full" style="width: 85%"></div>
+                  </div>
+                  <div class="w-full h-1 bg-surface-2 rounded-full overflow-hidden">
+                    <div class="h-full bg-cyan rounded-full" style="width: 60%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS WE BUILD SECTION -->
+    <section class="py-20 border-t border-line bg-surface/30">
+      <div class="max-w-page mx-auto px-edge text-center mb-16">
+        <h2 class="font-sans font-bold text-3xl md:text-4xl text-text">
+          Solutions We Build
+        </h2>
+        <p class="mt-4 text-sm md:text-base text-text-2/80 max-w-2xl mx-auto">
+          Custom solutions that streamline operations, enhance efficiency, and drive growth.
+        </p>
+      </div>
+
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+        <!-- Card 1: Web Applications -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="9" y1="3" x2="9" y2="21" />
+              <line x1="9" y1="9" x2="21" y2="9" />
+              <circle cx="6" cy="6" r="1" />
+              <circle cx="6" cy="11" r="1" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">Web Applications</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Dynamic, responsive and feature-rich web applications.
+          </p>
+        </div>
+
+        <!-- Card 2: Mobile Applications -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">Mobile Applications</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Cross-platform mobile apps for iOS and Android platforms.
+          </p>
+        </div>
+
+        <!-- Card 3: Enterprise Software -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="9" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">Enterprise Software</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Powerful systems to simplify complex business processes.
+          </p>
+        </div>
+
+        <!-- Card 4: Workflow Automation -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="6" height="6" rx="1" />
+              <rect x="15" y="3" width="6" height="6" rx="1" />
+              <rect x="9" y="15" width="6" height="6" rx="1" />
+              <path d="M6 9v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V9" />
+              <path d="M12 15v-3" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">Workflow Automation</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Automate repetitive tasks and improve operational efficiency.
+          </p>
+        </div>
+
+        <!-- Card 5: Cloud Solutions -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">Cloud Solutions</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Scalable, secure and cost-effective cloud infrastructure.
+          </p>
+        </div>
+
+        <!-- Card 6: API Integrations -->
+        <div class="p-6 bg-surface border border-line rounded-2xl shadow-sm hover:border-indigo/30 transition-all duration-300 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-xl bg-indigo/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text">API Integrations</h3>
+          <p class="text-xs text-text-2/70 mt-2 leading-relaxed">
+            Seamless integrations with third-party tools and platforms.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVELOPMENT PROCESS SECTION -->
+    <section class="py-20 bg-bg">
+      <div class="max-w-page mx-auto px-edge">
+        <div class="bg-[#0B0F19] rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl relative overflow-hidden">
+          <!-- Subtle Glows Inside Dark Container -->
+          <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-indigo/10 blur-[100px] rounded-full pointer-events-none"></div>
+          <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+          <div class="text-center mb-16 relative z-10">
+            <h2 class="font-sans font-bold text-3xl md:text-4xl text-white" style="color: white;">
+              Our Development Process
+            </h2>
+          </div>
+
+          <!-- 6 Process Steps Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-y-12 gap-x-8 relative z-10">
+            <!-- Step 1: Discover -->
+            <div class="flex flex-col items-center text-center relative group">
+              <!-- Dotted Connector Arrow (only visible on large screens) -->
+              <div class="hidden xl:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">01. Discover</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[150px]">
+                We understand your business, goals and challenges.
+              </p>
+            </div>
+
+            <!-- Step 2: Plan -->
+            <div class="flex flex-col items-center text-center relative group">
+              <!-- Dotted Connector Arrow -->
+              <div class="hidden xl:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">02. Plan</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[150px]">
+                We define the roadmap, architecture and technology stack.
+              </p>
+            </div>
+
+            <!-- Step 3: Design & Build -->
+            <div class="flex flex-col items-center text-center relative group">
+              <!-- Dotted Connector Arrow -->
+              <div class="hidden xl:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                  <line x1="14" y1="4" x2="10" y2="20" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">03. Design &amp; Build</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[150px]">
+                We design UI/UX and build robust, scalable and secure solutions.
+              </p>
+            </div>
+
+            <!-- Step 4: Test -->
+            <div class="flex flex-col items-center text-center relative group">
+              <!-- Dotted Connector Arrow -->
+              <div class="hidden xl:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 11 12 14 22 4" />
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">04. Test</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[150px]">
+                Rigorous testing to ensure quality, performance and security.
+              </p>
+            </div>
+
+            <!-- Step 5: Deploy -->
+            <div class="flex flex-col items-center text-center relative group">
+              <!-- Dotted Connector Arrow -->
+              <div class="hidden xl:block absolute top-[28px] left-[75%] right-[-25%] h-1 pointer-events-none z-10">
+                <svg class="w-full h-full" viewBox="0 0 100 4" fill="none" preserveAspectRatio="none">
+                  <path d="M 0,2 L 92,2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <path d="M 88,0 L 93,2 L 88,4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 22h20L12 2z" />
+                  <line x1="12" y1="9" x2="12" y2="17" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">05. Deploy</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[150px]">
+                Smooth deployment with zero downtime and minimal risk.
+              </p>
+            </div>
+
+            <!-- Step 6: Support -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo group-hover:bg-indigo/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                </svg>
+              </div>
+              <span class="text-xs font-mono font-semibold text-slate-400 block tracking-wider uppercase mb-1">06. Support</span>
+              <p class="text-[11px] text-slate-300 leading-relaxed max-w-[150px]">
+                Ongoing support and maintenance for continuous growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- TECHNOLOGIES WE WORK WITH SECTION -->
+    <section class="py-20 bg-bg border-t border-line">
+      <div class="max-w-page mx-auto px-edge text-center">
+        <h2 class="font-sans font-bold text-2xl md:text-3xl text-text mb-12">
+          Technologies We Work With
+        </h2>
+        <div class="flex flex-wrap justify-around items-center gap-x-12 gap-y-8">
+          <!-- React -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#61DAFB]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">React</span>
+          </div>
+
+          <!-- Next.js -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[currentColor]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">Next.js</span>
+          </div>
+
+          <!-- Vue.js -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#41B883]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24,1.61H14.06L12,5.16,9.94,1.61H0L12,22.39ZM12,14.08,5.16,2.23H9.59L12,6.41l2.41-4.18h4.43Z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">Vue.js</span>
+          </div>
+
+          <!-- Node.js -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#339933]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.57,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z M19.099,13.993 c0-1.9-1.284-2.406-3.987-2.763c-2.731-0.361-3.009-0.548-3.009-1.187c0-0.528,0.235-1.233,2.258-1.233 c1.807,0,2.473,0.389,2.747,1.607c0.024,0.115,0.129,0.199,0.247,0.199h1.141c0.071,0,0.138-0.031,0.186-0.081 c0.048-0.054,0.074-0.123,0.067-0.196c-0.177-2.098-1.571-3.076-4.388-3.076c-2.508,0-4.004,1.058-4.004,2.833 c0,1.925,1.488,2.457,3.895,2.695c2.88,0.282,3.103,0.703,3.103,1.269c0,0.983-0.789,1.402-2.642,1.402 c-2.327,0-2.839-0.584-3.011-1.742c-0.02-0.124-0.126-0.215-0.253-0.215h-1.137c-0.141,0-0.254,0.112-0.254,0.253 c0,1.482,0.806,3.248,4.655,3.248C17.501,17.007,19.099,15.91,19.099,13.993z
+Failed to fetch amazonaws: No path found for amazonwebservices" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">Node.js</span>
+          </div>
+
+          <!-- Laravel -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#FF2D20]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">Laravel</span>
+          </div>
+
+          <!-- PHP -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#777BB4]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">PHP</span>
+          </div>
+
+          <!-- Python -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#3776AB]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">Python</span>
+          </div>
+
+          <!-- AWS -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10" viewBox="0 0 333334 199332" fill="none">
+              <path d="M93937 72393c0 4102 443 7428 1219 9867 887 2439 1996 5100 3548 7982 554 887 776 1774 776 2550 0 1109-665 2217-2106 3326l-6985 4656c-998 665-1995 998-2882 998-1109 0-2217-554-3326-1552-1552-1663-2882-3437-3991-5211-1109-1885-2217-3991-3437-6541-8648 10200-19512 15299-32594 15299-9312 0-16740-2661-22172-7982-5432-5322-8204-12417-8204-21286 0-9424 3326-17073 10089-22838s15743-8647 27161-8647c3769 0 7650 332 11752 887 4102 554 8315 1441 12749 2439v-8093c0-8426-1774-14301-5211-17738-3548-3437-9534-5100-18071-5100-3880 0-7871 443-11973 1441s-8093 2217-11973 3769c-1774 776-3104 1219-3880 1441s-1330 332-1774 332c-1552 0-2328-1109-2328-3437v-5432c0-1774 222-3104 776-3880s1552-1552 3104-2328c3880-1996 8537-3659 13969-4989C43606 885 49370 220 55468 220c13193 0 22838 2993 29046 8980 6098 5987 9202 15077 9202 27272v35920h222zM48926 89244c3659 0 7428-665 11419-1995s7539-3769 10532-7095c1774-2106 3104-4435 3770-7095 665-2661 1108-5876 1108-9645v-4656c-3215-776-6652-1441-10199-1885-3548-443-6984-665-10421-665-7428 0-12860 1441-16519 4435-3659 2993-5432 7206-5432 12749 0 5211 1330 9091 4102 11751 2661 2772 6541 4102 11641 4102zm89023 11973c-1996 0-3326-332-4213-1109-887-665-1663-2217-2328-4324l-26053-85697c-665-2217-998-3658-998-4434 0-1774 887-2772 2661-2772h10865c2106 0 3548 333 4324 1109 887 665 1552 2217 2217 4324l18625 73391 17295-73391c554-2217 1219-3659 2106-4324s2439-1109 4435-1109h8869c2106 0 3548 333 4435 1109 887 665 1663 2217 2106 4324l17516 74278 19180-74278c665-2217 1441-3659 2217-4324 887-665 2328-1109 4324-1109h10310c1774 0 2772 887 2772 2772 0 554-111 1109-222 1774s-333 1552-776 2772l-26718 85697c-665 2217-1441 3658-2328 4324-887 665-2328 1109-4213 1109h-9534c-2107 0-3548-333-4435-1109s-1663-2217-2106-4435l-17184-71507-17073 71396c-554 2217-1220 3658-2107 4434s-2439 1109-4434 1109h-9534zm142459 2993c-5765 0-11530-665-17073-1995s-9867-2772-12749-4435c-1774-998-2993-2106-3437-3104-443-998-665-2106-665-3104v-5654c0-2328 887-3437 2550-3437 665 0 1330 111 1995 333s1663 665 2772 1109c3769 1663 7871 2993 12195 3880 4435 887 8758 1330 13193 1330 6984 0 12417-1220 16186-3659s5765-5987 5765-10532c0-3104-998-5654-2993-7760-1996-2107-5765-3991-11197-5765l-16075-4989c-8093-2550-14080-6319-17738-11308-3658-4878-5543-10310-5543-16075 0-4656 998-8758 2993-12306s4656-6652 7982-9091c3326-2550 7095-4434 11530-5765S279190-2 284068-2c2439 0 4989 111 7428 443 2550 333 4878 776 7206 1219 2217 554 4324 1109 6319 1774s3548 1330 4656 1996c1552 887 2661 1774 3326 2771 665 887 998 2107 998 3659v5211c0 2328-887 3548-2550 3548-887 0-2328-444-4213-1331-6319-2882-13415-4324-21286-4324-6319 0-11308 998-14745 3104s-5211 5321-5211 9867c0 3104 1109 5765 3326 7871s6319 4213 12195 6097l15743 4989c7982 2550 13747 6098 17184 10643s5100 9756 5100 15521c0 4767-998 9091-2882 12860-1996 3770-4656 7095-8093 9756-3437 2771-7539 4767-12306 6208-4989 1552-10199 2328-15854 2328z" fill="currentColor" />
+              <path d="M301362 158091c-36474 26940-89467 41241-135031 41241-63858 0-121395-23614-164854-62859-3437-3104-332-7317 3770-4878 47006 27272 104988 43791 164964 43791 40465 0 84921-8426 125830-25721 6097-2772 11308 3991 5321 8426z" fill="#FF9900" />
+              <path d="M316550 140796c-4656-5987-30820-2883-42682-1441-3548 443-4102-2661-887-4989 20842-14634 55099-10421 59090-5543 3991 4989-1109 39246-20620 55653-2993 2550-5876 1220-4545-2106 4435-10976 14301-35698 9645-41574z" fill="#FF9900" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">AWS</span>
+          </div>
+
+          <!-- Docker -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#2496ED]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">Docker</span>
+          </div>
+
+          <!-- MySQL -->
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-[#00758F]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z" />
+            </svg>
+            <span class="text-xs font-semibold text-text-2">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE WISETRACK SECTION -->
+    <section class="py-20 bg-bg border-t border-line">
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column: Custom Web & OS System Dashboard Mockup -->
+        <div class="col-span-12 lg:col-span-4 flex justify-center items-center">
+          <div class="relative w-full max-w-[340px] aspect-[4/3] rounded-2xl bg-[#080B11]/90 border border-slate-850 shadow-2xl p-4 overflow-hidden flex flex-col justify-between" style="background-color: white;">
+            <!-- Window Header (Mac-style) -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-900/50" >
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/95 shadow-sm"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/95 shadow-sm"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#27C93F]/95 shadow-sm"></span>
+              </div>
+              <span class="text-[9px] font-mono font-bold text-slate-400 tracking-wider">SECURE OS CORE v2.8</span>
+              <div class="w-3"></div> <!-- spacer -->
+            </div>
+
+            <!-- Dashboard Content Grid -->
+            <div class="flex-1 grid grid-cols-2 gap-3 pt-3">
+              <!-- Left Widget: System Load Gauges -->
+              <div class="bg-surface/40 border border-line/40 rounded-xl p-3 flex flex-col justify-between">
+                <span class="text-[8px] text-text-2 uppercase font-mono tracking-wider">Server Load</span>
+                <div class="relative w-16 h-16 mx-auto flex items-center justify-center my-1.5">
+                  <!-- Circular Gauge Progress -->
+                  <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-slate-800" stroke-width="2.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="text-indigo" stroke-dasharray="82, 100" stroke-width="2.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <div class="absolute text-center">
+                    <span class="text-[10px] font-extrabold text-text font-mono">82%</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center text-[7px] text-text-2 font-mono">
+                  <span>RAM: 6.4 GB</span>
+                  <span class="text-emerald-400">Stable</span>
+                </div>
+              </div>
+
+              <!-- Right Widget: Secure DB Pipeline -->
+              <div class="bg-surface/40 border border-line/40 rounded-xl p-3 flex flex-col justify-between">
+                <div class="flex justify-between items-start">
+                  <span class="text-[8px] text-text-2 uppercase font-mono tracking-wider">Sync Pipeline</span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                </div>
+                <!-- Mini Pipeline Flow Visualizer -->
+                <div class="space-y-2 my-2">
+                  <div class="flex items-center gap-1.5 justify-between">
+                    <span class="text-[7px] text-text font-semibold font-mono">OS Core API</span>
+                    <span class="text-[7px] text-emerald-400 font-mono">Active</span>
+                  </div>
+                  <div class="w-full h-1 bg-slate-900 rounded-full overflow-hidden">
+                    <div class="h-full bg-indigo rounded-full" style="width: 90%"></div>
+                  </div>
+                  <div class="flex items-center gap-1.5 justify-between">
+                    <span class="text-[7px] text-text font-semibold font-mono">SaaS Pipeline</span>
+                    <span class="text-[7px] text-indigo font-mono">1.2s lag</span>
+                  </div>
+                  <div class="w-full h-1 bg-slate-900 rounded-full overflow-hidden">
+                    <div class="h-full bg-cyan rounded-full" style="width: 75%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Status Strip -->
+            <div class="mt-3 pt-3 border-t border-slate-900/50 flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <!-- Glowing Shield Icon -->
+                <div class="w-5 h-5 rounded bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                  <i class="fa-solid fa-shield-halved text-[9px]"></i>
+                </div>
+                <span class="text-[8.5px] font-bold text-text">Encrypted Database Tunnel</span>
+              </div>
+              <span class="text-[8px] text-emerald-400 font-mono flex items-center gap-1">
+                <i class="fa-solid fa-lock text-[7px]"></i> HTTPS
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Column: Title and Checklist -->
+        <div class="col-span-12 lg:col-span-5 flex flex-col items-start">
+          <span class="text-xs font-bold text-indigo uppercase tracking-widest mb-3">Why Choose Wisetrack?</span>
+          <h2 class="font-sans font-bold text-3xl sm:text-4xl text-text leading-tight">
+            We don't just build software.<br>We build <span class="text-indigo font-extrabold">long-term value.</span>
+          </h2>
+          <ul class="mt-8 space-y-4 w-full">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">Business-focused approach</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">Agile methodology</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">Transparent communication</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">On-time delivery</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-indigo/10 flex items-center justify-center border border-indigo/20 flex-shrink-0">
+                <svg class="w-3 h-3 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-text-2">Post-deployment support</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column: Vertical Stack of Stats -->
+        <div class="col-span-12 lg:col-span-3">
+          <div class="space-y-4">
+            <!-- Stat 1: Years of Experience -->
+            <div class="p-4 bg-surface border border-line rounded-2xl shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10" />
+                  <line x1="12" y1="20" x2="12" y2="4" />
+                  <line x1="6" y1="20" x2="6" y2="14" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xl sm:text-2xl font-extrabold text-indigo block leading-none">17+</span>
+                <span class="text-[10px] font-semibold text-text-2 uppercase tracking-wider block mt-1">Years of Experience</span>
+              </div>
+            </div>
+
+            <!-- Stat 2: Projects Delivered -->
+            <div class="p-4 bg-surface border border-line rounded-2xl shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                  <path d="m9 14 2 2 4-4" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xl sm:text-2xl font-extrabold text-indigo block leading-none">100+</span>
+                <span class="text-[10px] font-semibold text-text-2 uppercase tracking-wider block mt-1">Projects Delivered</span>
+              </div>
+            </div>
+
+            <!-- Stat 3: Skilled Professionals -->
+            <div class="p-4 bg-surface border border-line rounded-2xl shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xl sm:text-2xl font-extrabold text-indigo block leading-none">40+</span>
+                <span class="text-[10px] font-semibold text-text-2 uppercase tracking-wider block mt-1">Skilled Professionals</span>
+              </div>
+            </div>
+
+            <!-- Stat 4: Client Satisfaction -->
+            <div class="p-4 bg-surface border border-line rounded-2xl shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo/10 border border-indigo/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="7" />
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xl sm:text-2xl font-extrabold text-indigo block leading-none">98%</span>
+                <span class="text-[10px] font-semibold text-text-2 uppercase tracking-wider block mt-1">Client Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA BANNER SECTION -->
+    <section class="py-12 bg-bg">
+      <div class="max-w-page mx-auto px-edge">
+        <div class="bg-gradient-to-r from-indigo via-indigo/90 to-violet rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          <!-- Background Glow Decoration -->
+          <div class="absolute -right-10 -bottom-10 w-[200px] h-[200px] bg-white/5 rounded-full pointer-events-none"></div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-6 relative z-10 text-center sm:text-left flex-1">
+            <!-- Rocket Icon Badge -->
+            <div class="w-16 h-16 rounded-full bg-surface flex items-center justify-center flex-shrink-0 shadow-lg shadow-black/10">
+              <svg class="w-8 h-8 text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5" />
+                <path d="M12 2C6.5 2 2 6.5 2 12c0 2.5 1 4.5 2.5 6l6-6L12 2z" />
+                <path d="M12 2c5.5 0 10 4.5 10 10 0 2.5-1 4.5-2.5 6l-6-6 1-8z" />
+                <path d="M12 12l6 6c1.5 1.5 2.5 2.5 2.5 2.5s-1-2.25-2.5-3.5" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight">
+                Have an Idea? Let's Build It Together.
+              </h3>
+              <p class="text-slate-200 text-xs sm:text-sm mt-2 leading-relaxed font-sans">
+                From concept to code, we turn your ideas into powerful digital solutions.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative z-10 w-full lg:w-auto flex justify-center flex-shrink-0">
+            <a href="contact.html" class="w-full sm:w-auto px-8 py-3.5 border-2 border-white hover:bg-white hover:text-indigo text-white font-bold text-sm rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
+              Talk to Our Experts <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-16 border-t border-line bg-surface/10">
+    <div class="max-w-page mx-auto px-edge">
+      <div class="grid grid-cols-12 gap-y-12 gap-x-8">
+        <div class="col-span-12 mb-10">
+          <div class="wa-strip">
+            <div class="qr"><img src="assets/whatsapp_qr.png" alt="WhatsApp QR code for WiseTrack Technologies" /></div>
+            <div class="copy">
+              <div class="label">WHATSAPP · SALES &amp; SUPPORT</div>
+              <div class="head">Quicker than email — <em>chat with us</em>.</div>
+              <p>Scan the QR or tap the button to start a WhatsApp chat with our sales &amp; support team. We reply within working hours, IST.</p>
+            </div>
+            <a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="cta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Zm4.49-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.12.17 1.78 2.72 4.3 3.81.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-4">
+          <a href="index.html" class="flex items-center gap-2.5"><img src="assets/logo/wt-mark.svg" alt="" aria-hidden="true" class="h-[24px] md:h-[34px] w-auto" /><img src="assets/logo/wordmark.svg" alt="Wisetrack Technologies" class="h-[14px] md:h-[20px] w-auto" /></a>
+          <p class="mt-6 text-sm text-text-2/80 leading-relaxed max-w-sm">
+            Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our Business OS product.
+          </p>
+          <div class="mt-6 flex items-center gap-3 text-muted text-xs">
+            <span class="h-1.5 w-1.5 rounded-full bg-mint"></span>
+            <span>Open for Q1-Q2 2026 engagements</span>
+          </div>
+          <div class="mt-4 flex items-center gap-2.5">
+            <a href="https://www.instagram.com/wisetrack_technologies/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#E1306C]/20 bg-[#E1306C]/5 hover:bg-[#E1306C]/10 hover:border-[#E1306C]/40 text-[#E1306C] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/117244938/admin/page-posts/published/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#0077B5]/20 bg-[#0077B5]/5 hover:bg-[#0077B5]/10 hover:border-[#0077B5]/40 text-[#0077B5] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://www.youtube.com/@WisetrackTechnologies" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#FF0000]/20 bg-[#FF0000]/5 hover:bg-[#FF0000]/10 hover:border-[#FF0000]/40 text-[#FF0000] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61590564231668" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#1877F2]/20 bg-[#1877F2]/5 hover:bg-[#1877F2]/10 hover:border-[#1877F2]/40 text-[#1877F2] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-6">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">EXPLORE</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="products.html" class="hover:text-text">Products</a></li>
+            <li><a href="custom-services.html" class="hover:text-text">Services</a></li>
+            <li><a href="portfolio.html" class="hover:text-text">Our Work</a></li>
+            <li><a href="blog.html" class="hover:text-text font-semibold">Blog</a></li><li><a href="ragenaizer-research.html" class="hover:text-text">Data &amp; Insights</a></li>
+          </ul>
+        </div>
+        <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">BRANDS</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="https://hyperscripts.io/" target="_blank" rel="noopener" class="hover:text-text">HyperScripts</a></li>
+            <li><a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="hover:text-text">Ragenaizer</a></li>
+            <li><a href="careers.html" class="hover:text-text">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">LEGAL</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="terms.html" class="hover:text-text">Terms</a></li>
+            <li><a href="privacy.html" class="hover:text-text">Privacy</a></li>
+            <li><a href="cookies.html" class="hover:text-text">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-line flex flex-col md:flex-row gap-6 justify-between items-center text-xs text-muted">
+        <p>© 2026 WISETRACK TECHNOLOGIES · SELECTIVE ENGINEERING</p>
+        <div class="flex gap-6">
+          <a href="sitemap.html" class="hover:text-text">Sitemap</a>
+          <a href="privacy.html" class="hover:text-text">Privacy</a>
+          <a href="contact.html" class="hover:text-text">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp chat FAB -->
+  <a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="wa-fab" aria-label="Chat with WiseTrack on WhatsApp">
+    <span class="wa-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Zm4.49-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.12.17 1.78 2.72 4.3 3.81.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+    </span>
+    <span class="wa-label">Chat with us</span>
+  </a>
+
+</body>
+</html>
