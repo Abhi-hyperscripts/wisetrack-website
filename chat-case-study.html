@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <script>(function(){try{if(localStorage.getItem("theme")!=="dark"){document.documentElement.classList.add("light");}else{document.documentElement.classList.remove("light");}}catch(e){}})();</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0c"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon-180.png" />
+  <title>Custom Chat &amp; Collaboration Case Study · Wisetrack Technologies</title>
+  <meta name="description" content="Case study of custom team chat &amp; collaboration development that replaced generic communication platforms, reducing operational communication delays by 50% and protecting intellectual property." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind-config.js?v=20260620h"></script>
+  <link href="assets/styles.css?v=20260620h" rel="stylesheet" />
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="assets/site.js?v=20260620h" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+
+  <!-- Fullscreen Typewriter Preloader (Split Shutter Reveal) -->
+  <div id="preloader" class="fixed inset-0 z-[9999] pointer-events-auto select-none">
+    <!-- Top Half Shutter -->
+    <div id="shutter-top" class="absolute top-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-b border-black/5" style="transform: translateY(0);">
+      <div class="absolute bottom-0 left-0 right-0 pb-4 flex flex-col items-center justify-end">
+        <img src="assets/logo/wt-mark.svg" alt="Wisetrack" class="w-14 h-14 sm:w-20 sm:h-20 mb-6 sm:mb-8" style="filter: brightness(0);" />
+        <h1 id="preloader-text-top" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
+      </div>
+    </div>
+
+    <!-- Bottom Half Shutter -->
+    <div id="shutter-bottom" class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#f8f9fa] border-t border-black/5" style="transform: translateY(0);">
+      <div class="absolute top-0 left-0 right-0 pt-4 flex items-start justify-center">
+        <h1 id="preloader-text-bottom" class="font-display font-semibold text-4xl sm:text-6xl tracking-wide text-black" style="font-family: 'Fraunces', serif;"></h1>
+        <span id="preloader-cursor" class="inline-block w-1 h-8 sm:h-12 bg-black ml-2 animate-blink"></span>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const textTop = "WISETRACK";
+      const textBottom = "TECHNOLOGIES";
+      const speed = 75; // speed of typing in ms
+      let i = 0;
+      let j = 0;
+      const targetTop = document.getElementById("preloader-text-top");
+      const targetBottom = document.getElementById("preloader-text-bottom");
+      const cursor = document.getElementById("preloader-cursor");
+
+      function typeWriterTop() {
+        if (i < textTop.length) {
+          targetTop.textContent += textTop.charAt(i);
+          i++;
+          setTimeout(typeWriterTop, speed);
+        } else {
+          // Finished typing top, start typing bottom after a brief pause
+          setTimeout(typeWriterBottom, 150);
+        }
+      }
+
+      function typeWriterBottom() {
+        if (j < textBottom.length) {
+          targetBottom.textContent += textBottom.charAt(j);
+          j++;
+          setTimeout(typeWriterBottom, speed);
+        } else {
+          // Finished typing everything, trigger split reveal
+          setTimeout(() => {
+            const topShutter = document.getElementById("shutter-top");
+            const bottomShutter = document.getElementById("shutter-bottom");
+            const preloader = document.getElementById("preloader");
+
+            if (cursor) {
+              cursor.style.display = "none";
+            }
+
+            if (topShutter && bottomShutter) {
+              topShutter.style.transition = "transform 1.1s cubic-bezier(0.85, 0, 0.15, 1)";
+              bottomShutter.style.transition = "transform 1.1s cubic-bezier(0.85, 0, 0.15, 1)";
+
+              topShutter.style.transform = "translateY(-100%)";
+              bottomShutter.style.transform = "translateY(100%)";
+            }
+
+            if (preloader) {
+              preloader.style.pointerEvents = "none";
+              document.body.style.overflow = "";
+              setTimeout(() => preloader.remove(), 1150);
+            }
+          }, 700);
+        }
+      }
+
+      document.body.style.overflow = "hidden";
+      setTimeout(typeWriterTop, 350);
+    })();
+  </script>
+
+  <!-- Scroll progress -->
+  <div class="fixed top-0 left-0 right-0 h-[2px] z-[80] origin-left scale-x-0 bg-gradient-to-r from-violet via-indigo to-cyan" data-progress></div>
+  <div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
+      <div class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span><span class="hidden sm:inline">CASE STUDY · CUSTOM BUILD</span><span class="sm:hidden">CASE STUDY</span></div>
+      <div class="flex items-center gap-5"><span class="hidden md:inline">Noida, IN</span><span data-clock>--:--:-- IST</span></div>
+    </div>
+  </div>
+
+  <!-- Primary nav -->
+  <header class="fixed top-9 left-0 right-0 z-[60] bg-bg/55 backdrop-blur-2xl border-b border-white/5 transition-all duration-300">
+    <nav class="max-w-page mx-auto px-edge h-[80px] flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <img src="assets/logo/wt-mark.svg" alt="Wisetrack Logo" class="h-[24px] md:h-[29px] w-auto transition-transform group-hover:scale-105" />
+        <span class="font-sans font-extrabold text-base md:text-lg tracking-tight text-text whitespace-nowrap">WISETRACK TECHNOLOGIES</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-[13px] font-semibold text-text-2">
+        <!-- Products Dropdown -->
+        <div class="relative group py-6">
+          <a href="products.html" class="hover:text-text flex items-center gap-1 transition-colors">
+            Products
+            <svg class="w-3.5 h-3.5 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </a>
+          <!-- Dropdown Panel (Mega Menu for Products) -->
+          <div class="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-[850px] pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50">
+            <div class="bg-surface border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-2xl text-left">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+                <div>
+                  <span class="font-display font-light text-xl text-text">Our Flagship Business OS: <b class="font-bold text-indigo">Ragenaizer</b></span>
+                  <p class="text-xs text-text-2/70 mt-1">One integrated database system replacing up to 7 separate B2B SaaS licenses.</p>
+                </div>
+                <a href="products.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1">SEE ALL PRODUCTS &rarr;</a>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- HRMS & Payroll Card -->
+                <a href="hrms-payroll.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-violet group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="text-sm font-bold text-text">HRMS & Payroll</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Statutory Indian payroll compliance, tax filing, geofenced attendance.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <!-- CRM Card -->
+                <a href="crm-sales.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-mint group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    <div class="text-sm font-bold text-text">CRM & Sales</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Pipeline mapping, lead forms integration, client record sharing.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <!-- PMS Card -->
+                <a href="build-pms.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-indigo/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-indigo group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    <div class="text-sm font-bold text-text">PMS & Projects</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Milestone tracking, engineering bug manager, timesheets & billing.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <!-- LMS Card -->
+                <a href="build-lms.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-cyan/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-cyan group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                    <div class="text-sm font-bold text-text">LMS & Training</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Structured employee training, compliance testing, digital certificates.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <!-- Accounts Card -->
+                <a href="build-accounts.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-lime/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-lime group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"></path><path d="M16 8H8m8 4H8m6 4H8"></path></svg>
+                    <div class="text-sm font-bold text-text">Double-Entry Accounts</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Ledger sync, automated invoicing, expenses, cashflow analysis.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+                <!-- Chat Card -->
+                <a href="build-chat.html" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-sky/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-sky group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="text-sm font-bold text-text">Enterprise Chat</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-3">Audit-logged messaging, file attachments, team channel controls.</p>
+                  <div class="text-[10px] font-bold text-indigo tracking-wider font-mono font-semibold">EXPLORE MODULE &rarr;</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Dropdown -->
+        <div class="relative group py-6">
+          <a href="custom-services.html" class="hover:text-text flex items-center gap-1 transition-colors">
+            Services
+            <svg class="w-3.5 h-3.5 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </a>
+          <!-- Dropdown Panel -->
+          <div class="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-[850px] pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-50">
+            <div class="bg-surface border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-2xl text-left">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+                <div>
+                  <span class="font-display font-light text-xl text-text">What We Design &amp; Engineer</span>
+                  <p class="text-xs text-text-2/70 mt-1">High-performance custom software architectures written securely from scratch.</p>
+                </div>
+                <a href="custom-services.html" class="text-xs font-mono font-bold text-indigo hover:underline flex items-center gap-1">SEE ALL SERVICES &rarr;</a>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Custom Software Card -->
+                <a href="custom-services.html#custom-software" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-violet/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-violet group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="text-sm font-bold text-text">Custom Web Architectures</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Tailored databases, enterprise panels, and APIs built with Next.js/Go/Python.</p>
+                </a>
+                <!-- Mobile Apps Card -->
+                <a href="custom-services.html#mobile-apps" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-cyan/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-cyan group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    <div class="text-sm font-bold text-text">Native &amp; Cross-Platform Apps</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Optimized iOS and Android applications utilizing Flutter and React Native.</p>
+                </a>
+                <!-- AI Card -->
+                <a href="custom-services.html#ai-automation" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-mint/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-mint group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4m-4 5h8M8 12V9a4 4 0 0 1 8 0v3"></path></svg>
+                    <div class="text-sm font-bold text-text">Agentic AI Solutions</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Production agent loops using Claude 3.5, RAG, and ClickHouse.</p>
+                </a>
+                <!-- Dashboard -->
+                <a href="custom-services.html#dashboards" class="block p-4 bg-white/[0.01] border border-white/5 hover:border-sky/30 hover:bg-white/[0.02] rounded-xl transition-all duration-200 group/card">
+                  <div class="flex items-center gap-3.5 mb-2">
+                    <svg class="w-5 h-5 text-sky group-hover/card:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <div class="text-sm font-bold text-text">Interactive Dashboards</div>
+                  </div>
+                  <p class="text-xs text-text-2/70 leading-relaxed mb-1">Consolidated metrics visualizer showing real-time operational status.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="portfolio.html" class="hover:text-text transition-colors text-text font-bold border-b-2 border-indigo pb-1">Case Studies</a>
+        <a href="blog.html" class="hover:text-text transition-colors">Blog</a>
+        <a href="careers.html" class="hover:text-text transition-colors">Careers</a>
+        <a href="contact.html" class="hover:text-text transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="btn-primary hidden sm:flex items-center gap-2 text-xs font-semibold py-2 px-4 rounded-lg bg-indigo text-white hover:opacity-90 transition-all" style="color:white;">
+          Start a Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="md:hidden h-9 w-9 grid place-items-center rounded-full border border-white/10" data-menu-toggle aria-expanded="false" aria-label="Open menu">
+          <span class="block w-4 h-[1.5px] bg-text mb-1"></span><span class="block w-4 h-[1.5px] bg-text"></span>
+        </button>
+      </div>
+    </nav>
+    <div data-menu class="md:hidden hidden bg-bg border-t border-white/5 [&.open]:block">
+      <div class="px-edge py-6 flex flex-col gap-4 text-lg text-left">
+        <a href="index.html" class="py-2 hover:text-text font-bold">Home</a>
+        <details class="py-2 group">
+          <summary class="flex items-center justify-between text-lg cursor-pointer list-none text-text font-semibold">
+            <span>Products</span>
+            <svg class="opacity-60 transition-transform group-open:rotate-180" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="mobile-build-list mt-3 pl-3 flex flex-col gap-2">
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text hover:text-text font-bold" href="products.html">All Products &rarr;</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="hrms-payroll.html">HRMS & Payroll &rarr;</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="crm-sales.html">CRM & Sales &rarr;</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-pms.html">PMS</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-lms.html">LMS</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-accounts.html">Accounts</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="build-chat.html">Chat & Video</a>
+          </div>
+        </details>
+        <details class="py-2 group">
+          <summary class="flex items-center justify-between text-lg cursor-pointer list-none text-text font-semibold">
+            <span>Services</span>
+            <svg class="opacity-60 transition-transform group-open:rotate-180" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="mobile-build-list mt-3 pl-3 flex flex-col gap-2">
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text hover:text-text font-bold" href="custom-services.html">All Services &rarr;</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="custom-services.html#custom-software">Custom Web Development</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="custom-services.html#mobile-apps">Mobile Applications</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="custom-services.html#ai-automation">Agentic AI Loops</a>
+            <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="custom-services.html#dashboards">Custom Dashboards</a>
+          </div>
+        </details>
+        <a href="portfolio.html" class="py-2 hover:text-text font-bold text-text">Case Studies</a>
+        <a href="blog.html" class="py-2 hover:text-text">Blog</a>
+        <a href="careers.html" class="py-2 hover:text-text">Careers</a>
+        <a href="contact.html" class="py-2 hover:text-text">Contact</a>
+        <a href="contact.html" class="btn-primary w-fit mt-2">Start a Project</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative pt-[120px]">
+    
+    <!-- BREADCRUMBS -->
+    <div class="max-w-page mx-auto px-edge pt-6 text-xs text-muted flex items-center gap-2">
+      <a href="index.html" class="hover:text-text transition-colors">Home</a>
+      <span>&rsaquo;</span>
+      <a href="portfolio.html" class="hover:text-text transition-colors">Case Studies</a>
+      <span>&rsaquo;</span>
+      <span class="text-text">Custom Chat &amp; Collaboration Development</span>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="py-12 md:py-16">
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+        <!-- Left: Text content -->
+        <div class="col-span-12 lg:col-span-6 flex flex-col items-start">
+          <span class="mono text-xs font-bold text-violet uppercase tracking-widest">TEAM CHAT &amp; COLLABORATION</span>
+          <h1 class="font-display font-light text-4xl md:text-5xl lg:text-6xl text-text mt-4 leading-tight">
+            Custom Team Chat That Reduced <span class="font-display italic text-gradient font-semibold">Communication Delay</span> by <span class="font-display italic text-gradient font-semibold">50%</span>
+          </h1>
+          <p class="mt-6 text-sm md:text-base text-text-2/85 leading-relaxed max-w-prose">
+            We engineered an in-house real-time team messaging platform featuring contextual channels, secure file attachments, read receipts, and seamless push alerts.
+          </p>
+
+          <!-- Meta Grid (4 items) -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mt-10 border-t border-line pt-8">
+            <div class="flex flex-col items-start gap-2.5">
+              <svg class="w-5 h-5 text-indigo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              <div>
+                <div class="mono text-[9px] text-muted uppercase">Industry</div>
+                <div class="text-xs font-bold text-text mt-0.5">IT Services &amp; Logistics</div>
+              </div>
+            </div>
+            <div class="flex flex-col items-start gap-2.5">
+              <svg class="w-5 h-5 text-indigo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <div>
+                <div class="mono text-[9px] text-muted uppercase">Duration</div>
+                <div class="text-xs font-bold text-text mt-0.5">2 Months</div>
+              </div>
+            </div>
+            <div class="flex flex-col items-start gap-2.5">
+              <svg class="w-5 h-5 text-indigo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div>
+                <div class="mono text-[9px] text-muted uppercase">Location</div>
+                <div class="text-xs font-bold text-text mt-0.5">Pune, India</div>
+              </div>
+            </div>
+            <div class="flex flex-col items-start gap-2.5">
+              <svg class="w-5 h-5 text-indigo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <div>
+                <div class="mono text-[9px] text-muted uppercase">Service</div>
+                <div class="text-xs font-bold text-text mt-0.5">Custom Chat</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Image mockup -->
+        <div class="col-span-12 lg:col-span-6 flex justify-center items-center">
+          <div class="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-white/[0.015] hover:border-indigo/20 transition-all duration-300">
+            <img src="assets/photos/chat-mockup.jpg" alt="Custom Chat Dashboard Mockup" class="w-full h-auto object-cover block rounded-2xl" onerror="this.src='assets/photos/module-chat.jpg'"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATS SECTION -->
+    <section class="py-12 border-t border-b border-line bg-surface/30">
+      <div class="max-w-page mx-auto px-edge">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Card 1 -->
+          <div class="flex items-center gap-4 p-5 bg-surface/50 border border-white/5 rounded-xl">
+            <div class="w-12 h-12 rounded-lg bg-indigo/10 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-comments text-xl"></i>
+            </div>
+            <div>
+              <span class="font-display font-light text-2xl md:text-3xl text-gradient font-bold">50%</span>
+              <p class="text-[10px] text-text-2/70 mt-0.5 font-semibold">Shorter Align Cycles</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="flex items-center gap-4 p-5 bg-surface/50 border border-white/5 rounded-xl">
+            <div class="w-12 h-12 rounded-lg bg-indigo/10 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-shield-halved text-xl"></i>
+            </div>
+            <div>
+              <span class="font-display font-light text-2xl md:text-3xl text-gradient font-bold">100%</span>
+              <p class="text-[10px] text-text-2/70 mt-0.5 font-semibold">Data Control &amp; IP Secure</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="flex items-center gap-4 p-5 bg-surface/50 border border-white/5 rounded-xl">
+            <div class="w-12 h-12 rounded-lg bg-indigo/10 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-envelope-open-text text-xl"></i>
+            </div>
+            <div>
+              <span class="font-display font-light text-2xl md:text-3xl text-gradient font-bold">80%</span>
+              <p class="text-[10px] text-text-2/70 mt-0.5 font-semibold">Fewer Internal Emails</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="flex items-center gap-4 p-5 bg-surface/50 border border-white/5 rounded-xl">
+            <div class="w-12 h-12 rounded-lg bg-indigo/10 flex items-center justify-center text-indigo">
+              <i class="fa-solid fa-bolt text-xl"></i>
+            </div>
+            <div>
+              <span class="font-display font-light text-2xl md:text-3xl text-gradient font-bold">94%</span>
+              <p class="text-[10px] text-text-2/70 mt-0.5 font-semibold">SLA Issue Routing Speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGE AND SOLUTION SECTION -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: The Challenge -->
+        <div class="col-span-12 lg:col-span-5 flex flex-col justify-between">
+          <div>
+            <span class="mono text-xs text-indigo tracking-widest uppercase flex items-center gap-1.5"><i class="fa-solid fa-triangle-exclamation"></i> THE CHALLENGE</span>
+            <h2 class="font-display font-light text-3xl md:text-4xl text-text mt-3">
+              Fragmented chats, lost information.
+            </h2>
+            <p class="mt-6 text-sm text-text-2/80 leading-relaxed">
+              Standard messaging apps led to unstructured communications, lost project discussions, lack of file search, and exposure of corporate files outside firewalls.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-5 mt-10">
+            <!-- Pain Point 1 -->
+            <div class="flex gap-4 p-4 rounded-xl border border-white/5 bg-surface/30">
+              <div class="flex-shrink-0 text-violet mt-1">
+                <i class="fa-solid fa-folder-open text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Unstructured Channels</h4>
+                <p class="text-xs text-text-2/70 mt-1">Missing category folders led to fragmented project alignment.</p>
+              </div>
+            </div>
+            <!-- Pain Point 2 -->
+            <div class="flex gap-4 p-4 rounded-xl border border-white/5 bg-surface/30">
+              <div class="flex-shrink-0 text-violet mt-1">
+                <i class="fa-solid fa-circle-question text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Slipped Key Decisions</h4>
+                <p class="text-xs text-text-2/70 mt-1">Critical specifications were lost inside generic chat history timelines.</p>
+              </div>
+            </div>
+            <!-- Pain Point 3 -->
+            <div class="flex gap-4 p-4 rounded-xl border border-white/5 bg-surface/30">
+              <div class="flex-shrink-0 text-violet mt-1">
+                <i class="fa-solid fa-shield-halved text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Vulnerable File Shares</h4>
+                <p class="text-xs text-text-2/70 mt-1">Files shared outside corporate boundaries posed IP protection risks.</p>
+              </div>
+            </div>
+            <!-- Pain Point 4 -->
+            <div class="flex gap-4 p-4 rounded-xl border border-white/5 bg-surface/30">
+              <div class="flex-shrink-0 text-violet mt-1">
+                <i class="fa-solid fa-hourglass-start text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Delayed Push Alerts</h4>
+                <p class="text-xs text-text-2/70 mt-1">Notification delays on critical updates halted operational cycles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Our Solution -->
+        <div class="col-span-12 lg:col-span-7 flex flex-col justify-between">
+          <div>
+            <span class="mono text-xs text-indigo tracking-widest uppercase flex items-center gap-1.5"><i class="fa-solid fa-lightbulb"></i> OUR SOLUTION</span>
+            <h2 class="font-display font-light text-3xl md:text-4xl text-text mt-3">
+              High-speed channels, encrypted storage.
+            </h2>
+            <p class="mt-6 text-sm text-text-2/80 leading-relaxed">
+              A real-time WebSocket messaging platform featuring categorized team channels, secure file attachment shares, and integrated guest access rules.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
+            <!-- Card 1 -->
+            <div class="p-5 border border-white/5 bg-surface/30 rounded-xl flex items-start gap-4">
+              <div class="w-10 h-10 rounded bg-indigo/10 flex items-center justify-center text-indigo flex-shrink-0">
+                <i class="fa-solid fa-bolt text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Real-Time WebSocket Engine</h4>
+                <p class="text-xs text-muted mt-1 leading-relaxed">Sub-100ms message delivery and online status updates.</p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="p-5 border border-white/5 bg-surface/30 rounded-xl flex items-start gap-4">
+              <div class="w-10 h-10 rounded bg-indigo/10 flex items-center justify-center text-indigo flex-shrink-0">
+                <i class="fa-solid fa-hashtag text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Public &amp; Private Channels</h4>
+                <p class="text-xs text-muted mt-1 leading-relaxed">Clean folders and sections for distinct teams and operations.</p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="p-5 border border-white/5 bg-surface/30 rounded-xl flex items-start gap-4">
+              <div class="w-10 h-10 rounded bg-indigo/10 flex items-center justify-center text-indigo flex-shrink-0">
+                <i class="fa-solid fa-lock text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Secure File Attachments</h4>
+                <p class="text-xs text-muted mt-1 leading-relaxed">Encrypted storage system with strict validation on user permissions.</p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="p-5 border border-white/5 bg-surface/30 rounded-xl flex items-start gap-4">
+              <div class="w-10 h-10 rounded bg-indigo/10 flex items-center justify-center text-indigo flex-shrink-0">
+                <i class="fa-solid fa-mobile-screen text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Cross-Device Sync</h4>
+                <p class="text-xs text-muted mt-1 leading-relaxed">Optimized client frameworks to sync notifications across platforms.</p>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="p-5 border border-white/5 bg-surface/30 rounded-xl flex items-start gap-4">
+              <div class="w-10 h-10 rounded bg-indigo/10 flex items-center justify-center text-indigo flex-shrink-0">
+                <i class="fa-solid fa-comments text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Threaded Discussions</h4>
+                <p class="text-xs text-muted mt-1 leading-relaxed">Keeps channel timelines clean by organizing replies in sub-panels.</p>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="p-5 border border-white/5 bg-surface/30 rounded-xl flex items-start gap-4">
+              <div class="w-10 h-10 rounded bg-indigo/10 flex items-center justify-center text-indigo flex-shrink-0">
+                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Full-Text Search Index</h4>
+                <p class="text-xs text-muted mt-1 leading-relaxed">Search through millions of historic messages and documents instantly.</p>
+              </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="p-5 border border-white/5 bg-surface/30 rounded-xl flex items-start gap-4">
+              <div class="w-10 h-10 rounded bg-indigo/10 flex items-center justify-center text-indigo flex-shrink-0">
+                <i class="fa-solid fa-user-plus text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text">Guest Access Controls</h4>
+                <p class="text-xs text-muted mt-1 leading-relaxed">Restrict external vendors to single channels without directory leakage.</p>
+              </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="p-5 border border-white/5 bg-surface/30 rounded-xl flex items-start gap-4">
+              <div class="w-10 h-10 rounded bg-indigo/10 flex items-center justify-center text-indigo flex-shrink-0">
+                <i class="fa-solid fa-handshake-angle text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-[11px] text-muted mt-1 leading-relaxed">Escalation Hooks</h4>
+                <p class="text-xs text-muted mt-1 leading-relaxed">Escalate discussions directly into voice calls and task creations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- IMPACT AND TECH STACK SECTION -->
+    <section class="py-16 md:py-24 border-t border-line bg-surface/10">
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Business Impact -->
+        <div class="col-span-12 flex flex-col justify-between">
+          <div>
+            <span class="mono text-xs text-indigo tracking-widest uppercase flex items-center gap-1.5"><i class="fa-solid fa-chart-line"></i> BUSINESS IMPACT</span>
+            <h2 class="font-display font-light text-3xl md:text-4xl text-text mt-3">
+              Secure data, unified workflow.
+            </h2>
+            <p class="mt-6 text-sm text-text-2/80 leading-relaxed">
+              The custom chat application unified internal channels, kept discussions searchable, and ensured complete security of company data.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            <div class="flex items-center gap-2.5 p-3 rounded-lg border border-mint/20 bg-mint/5">
+              <svg class="w-4 h-4 text-mint flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="text-xs font-semibold text-text">Rapid Alignment</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-lg border border-mint/20 bg-mint/5">
+              <svg class="w-4 h-4 text-mint flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="text-xs font-semibold text-text">Zero IP Leakage</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-lg border border-mint/20 bg-mint/5">
+              <svg class="w-4 h-4 text-mint flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="text-xs font-semibold text-text">Reduced Emails</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-lg border border-mint/20 bg-mint/5">
+              <svg class="w-4 h-4 text-mint flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="text-xs font-semibold text-text">Fast Resolution</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOOKING FOR CUSTOM CHAT BANNER -->
+    <section class="py-20 md:py-28 relative overflow-hidden bg-indigo/5 border-t border-b border-line">
+      <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: content -->
+        <div class="col-span-12 lg:col-span-6 flex flex-col items-start">
+          <span class="mono text-xs text-indigo mb-6 tracking-widest uppercase flex items-center gap-1.5"><i class="fa-solid fa-paper-plane"></i> GET STARTED</span>
+          <h2 class="font-display font-light text-3xl md:text-5xl leading-tight text-text">
+            Looking for a <br><span class="font-display italic text-indigo">Custom Chat</span> Development Company in India?
+          </h2>
+          <p class="mt-6 text-sm md:text-base text-text-2/80 leading-relaxed max-w-md">
+            Wisetrack Technologies builds scalable, secure, and feature-rich real-time messaging panels that help teams optimize communication velocity, file shares, and guest integrations.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 mt-8 w-full">
+            <a href="contact.html" class="py-3 px-6 rounded-lg bg-indigo text-white font-semibold text-sm hover:opacity-90 transition-all">
+              Book a Free Team Chat Consultation
+            </a>
+            <a href="contact.html" class="py-3 px-6 rounded-lg bg-surface border border-line text-text font-semibold text-sm hover:bg-surface-2 transition-all">
+              Request a Live Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Image illustration -->
+        <div class="col-span-12 lg:col-span-6 relative flex justify-center items-center">
+          <div class="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-white/[0.015] hover:border-indigo/20 transition-all duration-300 w-full max-w-[550px]">
+            <img src="assets/photos/crm-cta-illustration.jpg" alt="Collaboration Illustration" class="w-full h-auto object-cover block rounded-2xl" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-16 border-t border-line bg-surface/10">
+    <div class="max-w-page mx-auto px-edge">
+      <div class="grid grid-cols-12 gap-y-12 gap-x-8">
+        <div class="col-span-12 mb-10">
+          <div class="wa-strip">
+            <div class="qr"><img src="assets/whatsapp_qr.png" alt="WhatsApp QR code for WiseTrack Technologies" /></div>
+            <div class="copy">
+              <div class="label">WHATSAPP · SALES &amp; SUPPORT</div>
+              <div class="head">Quicker than email — <em>chat with us</em>.</div>
+              <p>Scan the QR or tap the button to start a WhatsApp chat with our sales &amp; support team. We reply within working hours, IST.</p>
+            </div>
+            <a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="cta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Zm4.49-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.12.17 1.78 2.72 4.3 3.81.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-4">
+          <a href="index.html" class="flex items-center gap-2.5"><img src="assets/logo/wt-mark.svg" alt="" aria-hidden="true" class="h-[24px] md:h-[34px] w-auto" /><img src="assets/logo/wordmark.svg" alt="Wisetrack Technologies" class="h-[14px] md:h-[20px] w-auto" /></a>
+          <p class="mt-6 text-sm text-text-2/80 leading-relaxed max-sm">
+            Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our Business OS product.
+          </p>
+          <div class="mt-6 flex items-center gap-3 text-muted text-xs">
+            <span class="h-1.5 w-1.5 rounded-full bg-mint"></span>
+            <span>Open for Q1-Q2 2026 engagements</span>
+          </div>
+          <div class="mt-4 flex items-center gap-2.5">
+            <a href="https://www.instagram.com/wisetrack_technologies/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#E1306C]/20 bg-[#E1306C]/5 hover:bg-[#E1306C]/10 hover:border-[#E1306C]/40 text-[#E1306C] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/117244938/admin/page-posts/published/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#0077B5]/20 bg-[#0077B5]/5 hover:bg-[#0077B5]/10 hover:border-[#0077B5]/40 text-[#0077B5] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://www.youtube.com/@WisetrackTechnologies" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#FF0000]/20 bg-[#FF0000]/5 hover:bg-[#FF0000]/10 hover:border-[#FF0000]/40 text-[#FF0000] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61590564231668" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#1877F2]/20 bg-[#1877F2]/5 hover:bg-[#1877F2]/10 hover:border-[#1877F2]/40 text-[#1877F2] transition-all active:scale-95">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-6">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">EXPLORE</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="products.html" class="hover:text-text">Products</a></li>
+            <li><a href="custom-services.html" class="hover:text-text">Services</a></li>
+            <li><a href="portfolio.html" class="hover:text-text">Our Work</a></li>
+            <li><a href="blog.html" class="hover:text-text font-semibold">Blog</a></li><li><a href="ragenaizer-research.html" class="hover:text-text">Data &amp; Insights</a></li>
+          </ul>
+        </div>
+        <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">BRANDS</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="https://hyperscripts.io/" target="_blank" rel="noopener" class="hover:text-text">HyperScripts</a></li>
+            <li><a href="https://ragenaizer.com/" target="_blank" rel="noopener" class="hover:text-text">Ragenaizer</a></li>
+            <li><a href="careers.html" class="hover:text-text">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="mono text-[10px] tracking-widest text-muted mb-5">LEGAL</div>
+          <ul class="flex flex-col gap-3 text-sm text-text-2">
+            <li><a href="terms.html" class="hover:text-text">Terms</a></li>
+            <li><a href="privacy.html" class="hover:text-text">Privacy</a></li>
+            <li><a href="cookies.html" class="hover:text-text">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-line flex flex-col md:flex-row gap-6 justify-between items-center text-xs text-muted">
+        <p>© 2026 WISETRACK TECHNOLOGIES · SELECTIVE ENGINEERING</p>
+        <div class="flex gap-6">
+          <a href="sitemap.html" class="hover:text-text">Sitemap</a>
+          <a href="privacy.html" class="hover:text-text">Privacy</a>
+          <a href="contact.html" class="hover:text-text">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp chat FAB -->
+  <a href="https://wa.me/919220474451" target="_blank" rel="noopener" class="wa-fab" aria-label="Chat with WiseTrack on WhatsApp">
+    <span class="wa-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A10.09 10.09 0 0 0 11.93 2C6.5 2 2.07 6.43 2.07 11.85a9.81 9.81 0 0 0 1.41 5.06L2 22l5.25-1.37a9.93 9.93 0 0 0 4.68 1.19h.01c5.43 0 9.86-4.43 9.86-9.85a9.8 9.8 0 0 0-2.75-6.96Zm-7.12 15.16h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.37c0-4.51 3.68-8.18 8.19-8.18a8.13 8.13 0 0 1 5.79 2.4 8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.67 8.21-8.18 8.21Zm4.49-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.12.17 1.78 2.72 4.3 3.81.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+    </span>
+    <span class="wa-label">Chat with us</span>
+  </a>
+
+</body>
+</html>
