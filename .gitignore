@@ -18,3 +18,6 @@ node_modules/
 /proof-section-*.jpg
 /hero-new-*.jpg
 /proof-with-images-*.jpg
+
+# Redundant download — the extracted logo files sit beside it
+assets/logo/Archive.zip
