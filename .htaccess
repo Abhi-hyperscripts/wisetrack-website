@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Existing blog URLs stay the same and now render from the database.
+RewriteRule ^blog\.html$ blog.php [L]
+RewriteRule ^blog-detail\.html$ blog-detail.php?slug=custom-software-in-noida-the-digital-shift [L,QSA]
+RewriteRule ^post-when-to-build-when-to-buy\.html$ blog-detail.php?slug=when-to-build-when-to-buy [L,QSA]
+RewriteRule ^post-why-we-turn-down-half\.html$ blog-detail.php?slug=why-we-turn-down-half [L,QSA]
+RewriteRule ^post-real-cost-of-wrong-stack\.html$ blog-detail.php?slug=the-real-cost-of-the-wrong-stack [L,QSA]
+RewriteRule ^post-one-app-vs-seven\.html$ blog-detail.php?slug=one-app-vs-seven [L,QSA]
+RewriteRule ^post-postgres-is-enough\.html$ blog-detail.php?slug=postgres-is-enough [L,QSA]
+RewriteRule ^post-two-week-demos\.html$ blog-detail.php?slug=two-week-demos [L,QSA]
