@@ -419,7 +419,7 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; gap: 12px 30
   var lowEnd = isMobile || (navigator.hardwareConcurrency || 4) <= 4;
   renderer.outputEncoding = THREE.sRGBEncoding; renderer.physicallyCorrectLights = true; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = lowEnd ? THREE.PCFShadowMap : THREE.PCFSoftShadowMap;
-  var BG_LIGHT = lin('#f8f3ec'), BG_DUSK = lin('#2a0810'), bgCol = BG_LIGHT.clone();
+  var BG_LIGHT = new THREE.Color('#f8f3ec'), BG_DUSK = new THREE.Color('#2a0810'), bgCol = BG_LIGHT.clone();   // the clear colour is written without output encoding in r128, so give it sRGB values
   var scene = new THREE.Scene(); scene.background = bgCol;
   // dark mode: the site toggles html.light (and marks html.js); the standalone concept page has neither and stays light
   var htmlEl = document.documentElement, darkT = 0;
