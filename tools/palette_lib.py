@@ -88,13 +88,13 @@ SRC = {
 }
 
 PALETTES = [
-    {'id': 'curd-sindoor', 'name': 'Curd & Sindoor', 'taupe': (12.0, 0.072), 'sindoor': 'd8261c', 'brass': 'b8903f', 'leaf': '4f7a3a'},
-    {'id': 'curd-maroon', 'name': 'Curd & Maroon', 'taupe': (12.0, 0.072), 'sindoor': '7d1426', 'brass': 'b8903f', 'leaf': '4f7a3a'},
-    {'id': 'saffron', 'name': 'Saffron', 'taupe': (40.0, 0.045), 'sindoor': 'c9560f', 'brass': '8a6a26', 'leaf': '4f7a3a'},
-    {'id': 'emerald', 'name': 'Emerald', 'taupe': (160.0, 0.014), 'sindoor': '0f7d5a', 'brass': 'c9a55a', 'leaf': '3f6b34'},
-    {'id': 'cobalt', 'name': 'Cobalt', 'taupe': (250.0, 0.022), 'sindoor': '1d4fb8', 'brass': 'd9a441', 'leaf': '2f8f5b'},
-    {'id': 'aurora', 'name': 'Aurora', 'taupe': (265.0, 0.032), 'sindoor': '6366f1', 'brass': '22b8d4', 'leaf': '84cc16'},
-    {'id': 'graphite', 'name': 'Graphite & Sky', 'taupe': (250.0, 0.006), 'sindoor': '0284c7', 'brass': 'e0a526', 'leaf': '2f9e5a'},
+    {'id': 'signal', 'name': 'Signal', 'taupe': (12.0, 0.072), 'sindoor': 'd8261c', 'brass': 'b8903f', 'leaf': '4f7a3a'},
+    {'id': 'oxide', 'name': 'Oxide', 'taupe': (12.0, 0.072), 'sindoor': '7d1426', 'brass': 'b8903f', 'leaf': '4f7a3a'},
+    {'id': 'ember', 'name': 'Ember', 'taupe': (40.0, 0.045), 'sindoor': 'c9560f', 'brass': '8a6a26', 'leaf': '4f7a3a'},
+    {'id': 'terminal', 'name': 'Terminal', 'taupe': (160.0, 0.014), 'sindoor': '0f7d5a', 'brass': 'c9a55a', 'leaf': '3f6b34'},
+    {'id': 'circuit', 'name': 'Circuit', 'taupe': (250.0, 0.022), 'sindoor': '1d4fb8', 'brass': 'd9a441', 'leaf': '2f8f5b'},
+    {'id': 'ultraviolet', 'name': 'Ultraviolet', 'taupe': (265.0, 0.032), 'sindoor': '6366f1', 'brass': '22b8d4', 'leaf': '84cc16'},
+    {'id': 'carbon', 'name': 'Carbon', 'taupe': (250.0, 0.006), 'sindoor': '0284c7', 'brass': 'e0a526', 'leaf': '2f9e5a'},
 ]
 
 def retint(h, fam, pal):
