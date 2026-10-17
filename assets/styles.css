@@ -1360,3 +1360,6 @@ html:not(.light) .logo-light-theme { display: none; }
    The old abstract hero photo is violet/blue; warm it into the palette instead of replacing the file. */
 img[src$="backgorund.jpeg"] { filter: sepia(1) hue-rotate(-28deg) saturate(1.4) brightness(1.08) contrast(0.92); opacity: 0.28 !important; }
 html:not(.light) img[src$="backgorund.jpeg"] { opacity: 0.22 !important; }
+
+/* body must not become a scroll container (it would disable position: sticky); clip keeps the horizontal guard */
+body { overflow-x: clip; }

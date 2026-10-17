@@ -92,12 +92,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 #method.go .sound-fab { opacity: 1; }
 #method .preloader-mark { width: 92px; height: 61px; fill: #7d1426; opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards; }
 #method .pill.primary:hover { color: var(--btn-fg); }
-#method .cta { display: flex; align-items: center; flex-wrap: wrap; gap: clamp(16px, 4vw, 64px); }
-#method .cta .copy { flex: 0 1 34rem; }
-#method .team { flex: 1 1 320px; min-width: 0; max-width: 720px; margin: 0 clamp(0px, 5vw, 96px) 0 0; padding: 22px 22px 16px; border-radius: 22px; background: var(--card); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(110,30,35,0.10); transition: background-color .9s ease, border-color .9s ease; }
-#method .team canvas { width: 100%; display: block; }
-#method .team figcaption { margin-top: 12px; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-2); text-align: right; }
-@media (max-width: 760px) { #method .team { margin-right: 0; max-width: 100%; flex-basis: 100%; } #method .team figcaption { text-align: left; } }
+#method { overflow-x: clip; }
+#method .team { position: relative; height: 240vh; height: 240svh; margin: 0; }
+#method .team-stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; background: var(--bg); transition: background-color .9s ease; }
+#method .team-stage::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(80% 70% at 50% 45%, transparent 55%, rgba(110, 30, 35, 0.10)); }
+#method .team canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#method .team-copy { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding-top: 120px; padding-bottom: clamp(24px, 4vh, 48px); max-width: none; background: linear-gradient(to top, var(--bg) 0%, var(--bg) 38%, transparent 100%); transition: background-color .9s ease; }
+#method .team-copy > * { max-width: 40rem; }
+#method .team-copy h2 { font-size: clamp(1.9rem, 3.6vw, 3.2rem); margin: 14px 0 12px; }
+#method .team-copy .lede { max-width: 30rem; font-size: 1rem; }
+@media (max-width: 760px) { #method .team { height: 200vh; height: 200svh; } #method .team-copy { max-width: none; } }
 </style>
 <script>document.documentElement.classList.add("js")</script>
 <script src="assets/site.js?v=20261017" defer></script>
@@ -105,7 +109,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://wisetrack.in/methodology.html","name":"Method — WiseTrack","isPartOf":{"@id":"https://wisetrack.in/#website"},"publisher":{"@id":"https://wisetrack.in/#organization"},"inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wisetrack.in/"},{"@type":"ListItem","position":2,"name":"Method","item":"https://wisetrack.in/methodology.html"}]}</script>
 </head>
-<body class="bg-bg text-text font-sans antialiased overflow-x-hidden">
+<body class="bg-bg text-text font-sans antialiased">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P32QMPCK"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -270,6 +274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
+        <a href="methodology.html" class="hover:text-text transition-colors">How we build</a>
         <a href="portfolio.html" class="hover:text-text transition-colors">Work</a>
         <a href="blog.html" class="hover:text-text transition-colors">Blog</a>
         <a href="careers.html" class="hover:text-text transition-colors">Careers</a>
@@ -316,6 +321,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a class="py-2 px-3 block text-sm border-l border-white/5 text-text-2 hover:text-text" href="custom-services.html#dashboards">Custom Dashboards</a>
           </div>
         </details>
+        <a href="methodology.html" class="py-2 hover:text-text">How we build</a>
         <a href="portfolio.html" class="py-2 hover:text-text">Work</a>
         <a href="blog.html" class="py-2 hover:text-text">Blog</a>
         <a href="careers.html" class="py-2 hover:text-text">Careers</a>
@@ -332,7 +338,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <svg class="preloader-mark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 151"> <g transform="translate(0,151) scale(0.1,-0.1)"  stroke="none"> <path d="M90 1416 c-11 -14 -10 -19 1 -34 8 -9 20 -28 27 -41 18 -31 137 -237 246 -425 47 -82 86 -151 86 -152 0 -2 25 -44 55 -94 30 -50 55 -93 55 -95 0 -11 92 -155 100 -155 10 0 23 16 52 70 14 25 39 70 57 102 l32 56 -22 39 c-12 21 -38 67 -59 103 -21 36 -65 112 -97 170 -54 94 -239 411 -262 450 -15 23 -252 28 -271 6z"/> <path d="M643 1415 c-3 -9 2 -24 11 -34 9 -10 16 -21 16 -24 0 -4 18 -36 40 -72 22 -36 40 -67 40 -70 0 -10 92 -155 98 -155 4 0 32 43 61 95 30 53 62 100 72 105 10 6 71 10 137 10 98 0 121 -3 126 -15 3 -9 -18 -54 -49 -105 -30 -50 -55 -93 -55 -95 0 -2 -25 -45 -55 -95 -30 -50 -55 -93 -55 -95 0 -2 -25 -45 -55 -95 -30 -50 -55 -93 -55 -95 0 -2 -25 -45 -55 -95 -30 -50 -55 -93 -55 -95 0 -2 -20 -38 -45 -78 -48 -79 -53 -101 -31 -132 7 -11 27 -45 44 -75 57 -103 67 -120 74 -120 9 0 40 49 85 130 39 72 211 369 285 493 32 54 58 100 58 102 0 2 25 45 55 95 30 50 55 93 55 95 0 4 51 91 90 155 5 8 19 33 30 55 12 22 29 46 38 53 12 9 87 12 294 12 l278 0 22 38 c13 21 29 47 36 57 23 37 25 47 11 56 -8 5 -353 9 -777 9 -677 0 -763 -2 -769 -15z"/> <path d="M1719 1050 c-14 -8 -45 -58 -137 -220 -105 -185 -135 -236 -143 -244 -12 -14 -41 16 -68 69 -14 29 -29 45 -38 43 -12 -3 -57 -68 -80 -118 -3 -8 -17 -32 -30 -52 -29 -47 -29 -59 2 -108 14 -22 25 -41 25 -43 0 -11 167 -291 175 -294 8 -2 73 102 170 276 17 31 95 165 132 226 7 11 15 27 19 35 4 8 25 43 46 78 21 34 38 64 38 66 0 4 81 146 100 176 5 8 21 36 35 62 21 40 22 47 9 52 -25 10 -237 6 -255 -4z"/> </g> </svg>
     <div class="count" id="count">000</div>
     <div class="rule"><i></i></div>
-    <div class="kicker">Finding your North</div>
+    <div class="kicker">Measuring the brief</div>
   </div>
 </div>
 <canvas id="gl" aria-hidden="true"></canvas>
@@ -356,7 +362,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="w"><span>to</span></span>
         <span class="w"><span><em>production</em></span></span>
       </h1>
-      <p class="lede fade">Our method is an instrument. It measures what your company already does, finds the centre, fixes North, and builds outward in two-week sprints, at a price agreed before we start.</p>
+      <p class="lede fade">Our method is an instrument. It measures what your company already does, finds the centre, sets the direction, and builds outward in two-week sprints, at a price agreed before we start.</p>
       <div class="actions fade">
         <a class="pill primary" href="contact.html">Start a project</a>
         <a class="pill" href="crm-case-study.html">Read a case study</a>
@@ -368,9 +374,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="chapter long wrap" id="instrument" data-key="1">
     <div class="copy scrim right">
       <div class="eyebrow">The instrument</div>
-      <h2 data-split>A degree ring, <em>sixteen</em> workstreams, thirty-two milestones</h2>
-      <p class="lede">We plan a build the way a surveyor reads a site: a protractor marked every degree, sixteen workstreams of 22.5°, thirty-two milestones on the outer ring, and forty-five checks in the grid, laid over your own operation.</p>
-      <div class="meta"><span>Ticks <b>360</b></span><span>Workstreams <b>16</b></span><span>Milestones <b>32</b></span><span>Checks <b>45</b></span></div>
+      <h2 data-split>A milestone ring, <em>sixteen</em> workstreams, forty-five checks</h2>
+      <p class="lede">We plan a build the way an engineer reads a site: a ring marked for every working day, sixteen workstreams around it, thirty-two milestones on the outer ring, and forty-five checks in the grid, laid over your own operation.</p>
+      <div class="meta"><span>Working days <b>360</b></span><span>Workstreams <b>16</b></span><span>Milestones <b>32</b></span><span>Checks <b>45</b></span></div>
     </div>
   </section>
 
@@ -460,12 +466,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="chapter cta wrap" id="cta" data-key="11">
     <div class="copy scrim">
       <div class="eyebrow">Begin</div>
-      <h2 data-split>Ready to find <em>your</em> North?</h2>
+      <h2 data-split>Ready to start <em>your</em> build?</h2>
       <p class="lede">Tell us what your team runs on today. The engineer who would build it calls you back, and you receive a fixed price within one working day of that call.</p>
       <div class="actions"><a class="pill primary" href="contact.html">Start a project</a><a class="pill" href="portfolio.html">See our work</a></div>
       <div class="meta"><span>Noida · remote across India</span><span>English · Hindi</span></div>
     </div>
-    <figure class="team"><canvas id="teamc" aria-label="The Wisetrack team, drawn in particles"></canvas><figcaption>The Wisetrack team · Noida</figcaption></figure>
+  </section>
+
+  <section class="team" id="team" aria-label="The Wisetrack team">
+    <div class="team-stage">
+      <canvas id="teamc" aria-label="The Wisetrack team, drawn in particles"></canvas>
+      <div class="team-copy wrap">
+        <div class="eyebrow">The team</div>
+        <h2>Built in Noida, by people <em>you can call.</em></h2>
+        <p class="lede">Engineers, designers and the people who answer the phone. The person who demos your software is the person who wrote it.</p>
+      </div>
+    </div>
   </section>
 </main>
 </div>
@@ -648,7 +664,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 
   // ---------- data (from the app's geometry.ts) ----------
-  var ZONES = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
+  var ZONES = ['AUTH','DATA','API','WEB','UI','MOB','SYNC','PAY','GST','HR','CRM','STK','RPT','AI','OPS','QA'];
   var AREAS = [22.4, 25.1, 19.3, 24.0, 28.2, 21.1, 17.6, 26.3, 23.0, 20.2, 16.9, 24.4, 27.1, 22.0, 18.8, 20.7];
   // one hue, sixteen tones: the area of a zone sets how deep its maroon is
   var RAMP = ['#efdcd7', '#e2bdbb', '#cf9a9f', '#b8737e', '#a04f5f', '#8a2e40', '#7d1426', '#5e0f1c', '#44081a'];
@@ -942,7 +958,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     x.translate(512, 512); x.strokeStyle = '#6a0e1e'; x.fillStyle = '#6a0e1e'; x.textAlign = 'center'; x.textBaseline = 'middle';
     for (var d = 0; d < 360; d += 2) { var a = brg(d), L = d % 30 === 0 ? 70 : d % 10 === 0 ? 44 : 24; x.lineWidth = d % 30 === 0 ? 5 : 2.5; x.beginPath(); x.moveTo(Math.sin(a) * 400, -Math.cos(a) * 400); x.lineTo(Math.sin(a) * (400 - L), -Math.cos(a) * (400 - L)); x.stroke(); }
     x.lineWidth = 3; x.beginPath(); x.arc(0, 0, 404, 0, Math.PI * 2); x.stroke(); x.beginPath(); x.arc(0, 0, 300, 0, Math.PI * 2); x.stroke();
-    ['N', 'E', 'S', 'W'].forEach(function (l, i) { x.save(); x.rotate(brg(i * 90)); x.font = (i === 0 ? '700 ' : '500 ') + '110px "Cormorant Garamond", Georgia, serif'; x.fillStyle = i === 0 ? '#6a0e1e' : '#3b0d14'; x.fillText(l, 0, -215); x.restore(); });
+    ['PLAN', 'BUILD', 'TEST', 'SHIP'].forEach(function (l, i) { x.save(); x.rotate(brg(i * 90)); x.font = (i === 0 ? '700 ' : '500 ') + '58px "Cormorant Garamond", Georgia, serif'; x.fillStyle = i === 0 ? '#6a0e1e' : '#3b0d14'; x.fillText(l, 0, -215); x.restore(); });
     for (var n = 30; n < 360; n += 30) { if (n % 90 === 0) continue; x.save(); x.rotate(brg(n)); x.font = '500 34px Inter, Arial, sans-serif'; x.fillStyle = '#7a4b4f'; x.fillText(String(n), 0, -250); x.restore(); }
     x.fillStyle = '#d9b45e'; x.beginPath(); x.moveTo(0, -140); x.lineTo(-26, 0); x.lineTo(0, 140); x.lineTo(26, 0); x.closePath(); x.globalAlpha = 0.35; x.fill(); x.globalAlpha = 1;
     return new THREE.CanvasTexture(c);
@@ -977,7 +993,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var s = new THREE.Sprite(new THREE.SpriteMaterial({ map: spriteTex(z), color: lineTint.value, transparent: true, opacity: 0, depthWrite: false }));
     var q = onRing(brg(i * 22.5), 1.34); s.position.set(q[0], 0.05, -q[1]); s.scale.set(0.24, 0.12, 1); scene.add(s); labels.push(s);
   });
-  var mark = new THREE.Sprite(new THREE.SpriteMaterial({ map: spriteTex('253°'), color: axisTint.value, transparent: true, opacity: 0, depthWrite: false }));
+  var mark = new THREE.Sprite(new THREE.SpriteMaterial({ map: spriteTex('DAY 1'), color: axisTint.value, transparent: true, opacity: 0, depthWrite: false }));
   (function () { var q = onRing(brg(DOOR_BEARING), 1.26); mark.position.set(q[0], 0.07, -q[1]); mark.scale.set(0.26, 0.13, 1); scene.add(mark); })();
 
   // dust: condenses onto the ring, then drifts; pushed away by the cursor
@@ -1296,32 +1312,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 })();
 
-  // ---------- the team, in particles: a 2D stipple of the photo that gathers as the last chapter arrives ----------
+  // ---------- the team, in particles: a full-bleed stage; the powder streams in from the four edges as the section scrolls and settles into the photo ----------
   (function () {
-    var sec = document.getElementById('cta'), cv = document.getElementById('teamc'); if (!sec || !cv) return;
+    var sec = document.getElementById('team'), cv = document.getElementById('teamc'); if (!sec || !cv) return;
     var root = document.getElementById('method'), reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches, isMobile = Math.min(window.innerWidth, window.innerHeight) < 760;
     function fit(v, a, b) { return Math.min(1, Math.max(0, (v - a) / (b - a))); }
-    var x = cv.getContext('2d'), img = new Image(), pts = [], W = 0, H = 0, dpr = 1, N = isMobile ? 11000 : 26000, prog = 0, tStart = performance.now();
-    function size() { if (!img.naturalWidth) return; var r = cv.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 2); W = r.width; H = W * img.naturalHeight / img.naturalWidth; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); cv.style.height = H + 'px'; }
+    var x = cv.getContext('2d'), img = new Image(), pts = [], W = 0, H = 0, dpr = 1, N = isMobile ? 16000 : 52000, prog = 0, tStart = performance.now(), geo = null;
+    function size() {
+      var r = cv.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 2); W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      if (!img.naturalWidth) return;
+      var sc = Math.max(W / img.naturalWidth, (H * (isMobile ? 0.55 : 0.0)) / img.naturalHeight), iw = img.naturalWidth * sc, ih = img.naturalHeight * sc;
+      geo = { sc: sc, ox: (W - iw) / 2, oy: (H - ih) / 2 - H * 0.09, iw: iw, ih: ih };
+    }
     img.onload = function () {
       var c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight; var g = c.getContext('2d'); g.drawImage(img, 0, 0);
       var d = g.getImageData(0, 0, c.width, c.height).data, tries = 0;
-      while (pts.length < N && tries < N * 60) { tries++; var px = Math.random() * c.width, py = Math.random() * c.height, v = d[((py | 0) * c.width + (px | 0)) * 4]; if (Math.random() * 255 > v) continue; pts.push({ u: px / c.width, v: py / c.height, w: v / 255, fx: Math.random(), fy: 0.9 + Math.random() * 0.6, s: Math.random(), ph: Math.random() * 6.283 }); }
+      while (pts.length < N && tries < N * 60) {
+        tries++; var px = Math.random() * c.width, py = Math.random() * c.height, v = d[((py | 0) * c.width + (px | 0)) * 4]; if (Math.random() * 255 > v) continue;
+        var side = pts.length % 4, r1 = Math.random(), r2 = Math.random();
+        pts.push({ u: px / c.width, v: py / c.height, w: v / 255, side: side, r1: r1, r2: r2, s: Math.random(), ph: Math.random() * 6.283, sw: (Math.random() - 0.5) * 0.28 });
+      }
       size(); requestAnimationFrame(draw);
     };
     img.src = 'assets/method/team.png';
     window.addEventListener('resize', size);
     function draw(now) {
-      var r = sec.getBoundingClientRect(), target = fit((window.innerHeight * 0.92 - r.top) / (window.innerHeight * 0.7), 0, 1);
-      prog += (target - prog) * (reduced ? 1 : 0.06);
+      var r = sec.getBoundingClientRect(), travel = r.height - window.innerHeight, target = travel > 0 ? fit(-r.top / travel, 0.02, 0.78) : 1;
+      prog += (target - prog) * (reduced ? 1 : 0.1);
       var time = (now - tStart) / 1000, night = root.getAttribute('data-phase') === 'night', ink = night ? '#f6efe3' : '#7d1426', gold = night ? '#d9b26a' : '#b8903f';
       x.setTransform(dpr, 0, 0, dpr, 0, 0); x.clearRect(0, 0, W, H);
-      if (prog > 0.002) for (var i = 0; i < pts.length; i++) {
-        var p = pts[i], st = fit((prog - p.s * 0.4) / 0.6, 0, 1); st = st * st * (3 - 2 * st); if (st <= 0) continue;
-        var tx = p.u * W, ty = p.v * H, ex = tx + (p.fx * W - tx) * (1 - st), ey = ty + (p.fy * H - ty) * (1 - st);
-        if (!reduced) { ex += Math.sin(time * 0.6 + p.ph) * 0.6; ey += Math.cos(time * 0.5 + p.ph) * 0.6; }
-        var sz = 1.1 + 1.7 * p.w;
-        x.globalAlpha = (0.3 + 0.7 * p.w) * st; x.fillStyle = p.s < 0.07 ? gold : ink; x.fillRect(ex, ey, sz, sz);
+      if (geo && prog > 0.002) for (var i = 0; i < pts.length; i++) {
+        var p = pts[i], st = fit((prog - p.s * 0.45) / 0.55, 0, 1); if (st <= 0) continue; var e = st * st * (3 - 2 * st);
+        var tx = geo.ox + p.u * geo.iw, ty = geo.oy + p.v * geo.ih, fx, fy;
+        if (p.side === 0) { fx = -W * (0.1 + p.r1 * 0.5); fy = p.r2 * H; } else if (p.side === 1) { fx = W * (1.1 + p.r1 * 0.5); fy = p.r2 * H; }
+        else if (p.side === 2) { fx = p.r2 * W; fy = -H * (0.1 + p.r1 * 0.5); } else { fx = p.r2 * W; fy = H * (1.1 + p.r1 * 0.5); }
+        var ex = fx + (tx - fx) * e, ey = fy + (ty - fy) * e, arc = Math.sin(e * 3.14159) * p.sw;
+        ex += (ty - fy) * arc; ey -= (tx - fx) * arc;
+        if (!reduced) { var br = (1 - e) * 0 + 0.7; ex += Math.sin(time * 0.6 + p.ph) * br; ey += Math.cos(time * 0.5 + p.ph) * br; }
+        var sz = (1.1 + 1.9 * p.w) * (isMobile ? 0.9 : 1);
+        x.globalAlpha = (0.28 + 0.72 * p.w) * Math.min(1, st * 1.6); x.fillStyle = p.s < 0.07 ? gold : ink; x.fillRect(ex, ey, sz, sz);
       }
       x.globalAlpha = 1;
       requestAnimationFrame(draw);
