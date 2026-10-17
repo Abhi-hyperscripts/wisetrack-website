@@ -20,9 +20,7 @@
       position: "fixed", pointerEvents: "none",
       width: "560px", height: "560px", left: "0", top: "0",
       transform: "translate(-50%, -50%)", borderRadius: "9999px",
-      background: "radial-gradient(closest-side, rgba(139,92,246,0.38), rgba(34,211,238,0.14) 55%, transparent 75%)",
-      filter: "blur(22px)", zIndex: "1", mixBlendMode: "screen",
-      opacity: "0", transition: "opacity 600ms ease"
+      display: "none"
     });
     document.body.appendChild(dot);
 
@@ -31,7 +29,7 @@
       position: "fixed", pointerEvents: "none",
       width: "26px", height: "26px", left: "0", top: "0",
       transform: "translate(-50%, -50%) scale(1)", borderRadius: "9999px",
-      border: "1px solid rgba(235, 233, 245, 0.55)",
+      border: "1px solid rgba(216, 38, 28, 0.55)",
       zIndex: "60",
       transition: "transform 200ms ease, opacity 300ms ease, background 200ms ease, border-color 200ms ease",
       opacity: "0"
@@ -60,13 +58,13 @@
     document.querySelectorAll(sel).forEach((el) => {
       el.addEventListener("mouseenter", () => {
         ring.style.transform = "translate(-50%, -50%) scale(1.7)";
-        ring.style.background = "rgba(139,92,246,0.18)";
-        ring.style.borderColor = "rgba(180,150,255,0.7)";
+        ring.style.background = "rgba(216,38,28,0.12)";
+        ring.style.borderColor = "rgba(216,38,28,0.85)";
       });
       el.addEventListener("mouseleave", () => {
         ring.style.transform = "translate(-50%, -50%) scale(1)";
         ring.style.background = "transparent";
-        ring.style.borderColor = "rgba(235, 233, 245, 0.55)";
+        ring.style.borderColor = "rgba(216, 38, 28, 0.55)";
       });
     });
   }
