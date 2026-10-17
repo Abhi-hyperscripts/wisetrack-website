@@ -599,7 +599,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   'use strict';
   var reduced = false, fine = false;
   try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) {}
-  var root = document.getElementById('method'), siteRoot = document.documentElement;
+  var root = document.getElementById('method'), siteRoot = document.documentElement; siteRoot.classList.add('light'); /* the page opens in its day phase; night chapters flip the chrome, and other pages restore the stored theme */
   var isMobile = Math.min(window.innerWidth, window.innerHeight) < 760;
 
   document.querySelectorAll('.hero .w').forEach(function (w, i) { w.style.setProperty('--i', i); });

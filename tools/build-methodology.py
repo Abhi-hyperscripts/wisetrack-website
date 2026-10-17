@@ -71,7 +71,7 @@ js = scene[scene.rindex('<script>') + 8:scene.rindex('</script>')]
 def R(a, b, n=1):
     global js
     assert js.count(a) == n, (a[:70], js.count(a)); js = js.replace(a, b)
-R("var root = document.documentElement;", "var root = document.getElementById('method'), siteRoot = document.documentElement;")
+R("var root = document.documentElement;", "var root = document.getElementById('method'), siteRoot = document.documentElement; siteRoot.classList.add('light'); /* the page opens in its day phase; night chapters flip the chrome, and other pages restore the stored theme */")
 R("if (phaseNight) root.setAttribute('data-phase', 'night'); else root.removeAttribute('data-phase'); }",
   "if (phaseNight) root.setAttribute('data-phase', 'night'); else root.removeAttribute('data-phase'); siteRoot.classList.toggle('light', !phaseNight); }")
 R("'apg.sound'", "'wt.sound'", js.count("'apg.sound'"))
