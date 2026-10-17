@@ -591,7 +591,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/BokehPass.js"></script>
-<script>  var PT = {"#2a0810": "taupe-20", "#2d5fb8": "sindoor-50b", "#3b0d14": "taupe-24b", "#44081a": "taupe-26b", "#4a0d18": "taupe-27b", "#5a2a34": "taupe-35b", "#5e0f1c": "taupe-32", "#6a0e1e": "sindoor-34", "#7a4b4f": "taupe-47", "#7d1426": "sindoor-39", "#8a2e40": "sindoor-44", "#8dc3ff": "sindoor-80", "#8e4a55": "taupe-50", "#a04f5f": "taupe-53", "#b8232f": "sindoor-51", "#b8737e": "taupe-63", "#b8903f": "brass-68", "#cf9a9f": "taupe-74", "#d9b26a": "brass-78", "#d9b45e": "brass-79", "#e2bdbb": "taupe-83c", "#e7d6bf": "brass-88b", "#e9d7c3": "brass-89c", "#eaa9b0": "taupe-80", "#efdcd7": "taupe-91e", "#f6ecdc": "taupe-95c", "#f6eee2": "taupe-95e", "#f8f3ec": "taupe-97", "#fbf6ee": "taupe-97c", "#ffd27a": "brass-88", "#ffd79a": "brass-90c", "#fff3e0": "taupe-97b", "#fff6e8": "taupe-98", "#fff8ee": "taupe-98b", "#fffcf6": "taupe-99b", "#fffdf9": "taupe-99"};
+<script>  var PT = {"#2a0810": "taupe-20", "#2d5fb8": "sindoor-50b", "#3b0d14": "taupe-24b", "#44081a": "taupe-26b", "#4a0d18": "taupe-27b", "#5a2a34": "taupe-35b", "#5e0f1c": "taupe-32", "#6a0e1e": "sindoor-34", "#7a4b4f": "taupe-47", "#7d1426": "sindoor-39", "#8a2e40": "sindoor-44", "#8dc3ff": "sindoor-80", "#8e4a55": "taupe-50", "#a04f5f": "taupe-53", "#b8232f": "sindoor-51", "#b8737e": "taupe-63", "#b8903f": "brass-68", "#cf9a9f": "taupe-74", "#d9b26a": "brass-78", "#d9b45e": "brass-79", "#dccdbd": "taupe-86", "#e2bdbb": "taupe-83c", "#e7d6bf": "brass-88b", "#e9d7c3": "brass-89c", "#eaa9b0": "taupe-80", "#efdcd7": "taupe-91e", "#f6ecdc": "taupe-95c", "#f6eee2": "taupe-95e", "#f8f3ec": "taupe-97", "#fbf6ee": "taupe-97c", "#ffd27a": "brass-88", "#ffd79a": "brass-90c", "#fff3e0": "taupe-97b", "#fff6e8": "taupe-98", "#fff8ee": "taupe-98b", "#fffcf6": "taupe-99b", "#fffdf9": "taupe-99"};
   function P(h) { var t = PT[h]; if (!t) return h; var v = getComputedStyle(document.getElementById('method')).getPropertyValue('--' + t).trim(); return v || h; }
   (function () { var cur = document.documentElement.getAttribute('data-palette'); new MutationObserver(function () { var n = document.documentElement.getAttribute('data-palette'); if (n !== cur) location.reload(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-palette'] }); })();
 
@@ -1030,15 +1030,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   scene.add(new THREE.Points(embGeo, embMat));
 
   // post: depth of field (desktop), bloom, then sRGB encode + vignette + paper grain
+  var VIG_P = new THREE.Color(P('#f8f3ec')), VIG_S = new THREE.Color(P('#dccdbd'));
+  var VIG = new THREE.Vector3(VIG_S.r / VIG_P.r, VIG_S.g / VIG_P.g, VIG_S.b / VIG_P.b), VIGN = VIG.clone().multiplyScalar(0.52 / ((VIG.x + VIG.y + VIG.z) / 3));
   var composer = new THREE.EffectComposer(renderer);
   composer.addPass(new THREE.RenderPass(scene, camera));
   var bokeh = null;
   if (!lowEnd) { bokeh = new THREE.BokehPass(scene, camera, { focus: 4, aperture: 0.0032, maxblur: 0.0055, width: 1, height: 1 }); composer.addPass(bokeh); }
   var bloom = new THREE.UnrealBloomPass(new THREE.Vector2(1, 1), 0.3, 0.6, 0.92); composer.addPass(bloom);
   var finalPass = new THREE.ShaderPass({
-    uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uDark: { value: 0 } },
+    uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uDark: { value: 0 }, uVig: { value: VIG }, uVigN: { value: VIGN } },
     vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
-    fragmentShader: 'uniform sampler2D tDiffuse; uniform float uTime,uDark; varying vec2 vUv; void main(){ vec4 c=texture2D(tDiffuse,vUv); vec3 col = pow(max(c.rgb,0.0), vec3(1.0/2.2)); vec2 q=vUv-0.5; float v=smoothstep(1.0,0.35,length(q*vec2(1.0,0.8))*1.35); col = mix(col*mix(vec3(0.90,0.84,0.82),vec3(0.55,0.5,0.5),uDark), col, v); float g=fract(sin(dot(gl_FragCoord.xy+mod(uTime*61.0,97.0), vec2(12.9898,78.233)))*43758.5453); col+=(g-0.5)*mix(0.035,0.05,uDark); float linen=(sin(gl_FragCoord.x*1.57)+sin(gl_FragCoord.y*1.57))*0.006*(1.0-uDark); col+=linen; gl_FragColor=vec4(col,1.0); }'
+    fragmentShader: 'uniform sampler2D tDiffuse; uniform float uTime,uDark; uniform vec3 uVig,uVigN; varying vec2 vUv; void main(){ vec4 c=texture2D(tDiffuse,vUv); vec3 col = pow(max(c.rgb,0.0), vec3(1.0/2.2)); vec2 q=vUv-0.5; float v=smoothstep(1.0,0.35,length(q*vec2(1.0,0.8))*1.35); col = mix(col*mix(uVig,uVigN,uDark), col, v); float g=fract(sin(dot(gl_FragCoord.xy+mod(uTime*61.0,97.0), vec2(12.9898,78.233)))*43758.5453); col+=(g-0.5)*mix(0.035,0.05,uDark); float linen=(sin(gl_FragCoord.x*1.57)+sin(gl_FragCoord.y*1.57))*0.006*(1.0-uDark); col+=linen; gl_FragColor=vec4(col,1.0); }'
   });
   composer.addPass(finalPass);
 

@@ -143,6 +143,21 @@ team_js = r"""
 """
 js = js + team_js
 
+# the vignette tint follows the palette: shade/paper ratio of the tokens, not a baked warm vec3
+_old = "col = mix(col*mix(vec3(0.90,0.84,0.82),vec3(0.55,0.5,0.5),uDark), col, v);"
+assert js.count(_old) == 1, 'vignette shader line not found'
+js = js.replace(_old, "col = mix(col*mix(uVig,uVigN,uDark), col, v);")
+_decl = "uniform float uTime,uDark; varying vec2 vUv; void main(){ vec4 c=texture2D(tDiffuse,vUv);"
+assert js.count(_decl) == 1, 'post shader declaration not found'
+js = js.replace(_decl, "uniform float uTime,uDark; uniform vec3 uVig,uVigN; varying vec2 vUv; void main(){ vec4 c=texture2D(tDiffuse,vUv);")
+js = js.replace("uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uDark: { value: 0 } },",
+                "uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uDark: { value: 0 }, uVig: { value: VIG }, uVigN: { value: VIGN } },")
+_vig = ("  var VIG_P = new THREE.Color('#f8f3ec'), VIG_S = new THREE.Color('#dccdbd');\n"
+        "  var VIG = new THREE.Vector3(VIG_S.r / VIG_P.r, VIG_S.g / VIG_P.g, VIG_S.b / VIG_P.b), VIGN = VIG.clone().multiplyScalar(0.52 / ((VIG.x + VIG.y + VIG.z) / 3));\n")
+_anchor = "  var composer = new THREE.EffectComposer(renderer);"
+assert js.count(_anchor) == 1
+js = js.replace(_anchor, _vig + _anchor)
+
 # ---------------------------------------------------------------- palette: scene colours through P()
 # Every whole-string hex literal in the scene script becomes P('#hex'), which returns the current
 # palette's version of that colour from the CSS token. Materials and canvas textures are built once
