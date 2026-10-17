@@ -118,3 +118,17 @@ def save_registry(reg):
 
 HEX_RE = re.compile(r'#([0-9a-fA-F]{6})\b')
 RGBA_RE = re.compile(r'rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*([0-9.]+%?)\s*)?\)')
+
+def register(reg, h, need_rgb=False):
+    """Return the token name for a hex (no '#'), adding it to the registry if new; None if excluded."""
+    h = ALIASES.get(h.lower(), h.lower())
+    if h in EXCLUDE: return None
+    if h not in reg:
+        fam = family_of(h)
+        base = '%s-%02d' % (fam, round(hex_to_oklch(h)[0] * 100))
+        name, suffix = base, 'b'
+        taken = {v['name'] for v in reg.values()}
+        while name in taken: name, suffix = base + suffix, chr(ord(suffix) + 1)
+        reg[h] = {'name': name, 'family': fam, 'rgb': False}
+    if need_rgb: reg[h]['rgb'] = True
+    return reg[h]['name']

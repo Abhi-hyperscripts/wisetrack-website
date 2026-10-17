@@ -34,6 +34,11 @@
   "name": "leaf-38",
   "rgb": true
  },
+ "2d5fb8": {
+  "family": "sindoor",
+  "name": "sindoor-50b",
+  "rgb": false
+ },
  "2e5027": {
   "family": "leaf",
   "name": "leaf-39",
@@ -79,6 +84,11 @@
   "name": "leaf-47",
   "rgb": true
  },
+ "44081a": {
+  "family": "taupe",
+  "name": "taupe-26b",
+  "rgb": false
+ },
  "44101c": {
   "family": "taupe",
   "name": "taupe-27",
@@ -88,6 +98,11 @@
   "family": "taupe",
   "name": "taupe-26",
   "rgb": true
+ },
+ "4a0d18": {
+  "family": "taupe",
+  "name": "taupe-27b",
+  "rgb": false
  },
  "4a2a2e": {
   "family": "taupe",
@@ -139,6 +154,11 @@
   "name": "taupe-35",
   "rgb": false
  },
+ "5a2a34": {
+  "family": "taupe",
+  "name": "taupe-35b",
+  "rgb": false
+ },
  "5a4214": {
   "family": "brass",
   "name": "brass-40",
@@ -158,6 +178,11 @@
   "family": "leaf",
   "name": "leaf-60",
   "rgb": true
+ },
+ "6a0e1e": {
+  "family": "sindoor",
+  "name": "sindoor-34",
+  "rgb": false
  },
  "6b2c37": {
   "family": "taupe",
@@ -239,9 +264,24 @@
   "name": "sindoor-41",
   "rgb": false
  },
+ "8a2e40": {
+  "family": "sindoor",
+  "name": "sindoor-44",
+  "rgb": false
+ },
  "8a6a26": {
   "family": "brass",
   "name": "brass-54",
+  "rgb": false
+ },
+ "8dc3ff": {
+  "family": "sindoor",
+  "name": "sindoor-80",
+  "rgb": false
+ },
+ "8e4a55": {
+  "family": "taupe",
+  "name": "taupe-50",
   "rgb": false
  },
  "8f6a6c": {
@@ -268,6 +308,11 @@
   "family": "leaf",
   "name": "leaf-82",
   "rgb": true
+ },
+ "a04f5f": {
+  "family": "taupe",
+  "name": "taupe-53",
+  "rgb": false
  },
  "a38581": {
   "family": "taupe",
@@ -307,6 +352,16 @@
  "b81d16": {
   "family": "sindoor",
   "name": "sindoor-50",
+  "rgb": false
+ },
+ "b8232f": {
+  "family": "sindoor",
+  "name": "sindoor-51",
+  "rgb": false
+ },
+ "b8737e": {
+  "family": "taupe",
+  "name": "taupe-63",
   "rgb": false
  },
  "b8903f": {
@@ -354,6 +409,11 @@
   "name": "taupe-76",
   "rgb": true
  },
+ "cf9a9f": {
+  "family": "taupe",
+  "name": "taupe-74",
+  "rgb": false
+ },
  "d0241b": {
   "family": "sindoor",
   "name": "sindoor-55b",
@@ -388,6 +448,11 @@
   "family": "brass",
   "name": "brass-78",
   "rgb": true
+ },
+ "d9b45e": {
+  "family": "brass",
+  "name": "brass-79",
+  "rgb": false
  },
  "d9c1b9": {
   "family": "taupe",
@@ -429,6 +494,11 @@
   "name": "sindoor-61",
   "rgb": false
  },
+ "e2bdbb": {
+  "family": "taupe",
+  "name": "taupe-83c",
+  "rgb": false
+ },
  "e3f3dc": {
   "family": "leaf",
   "name": "leaf-95",
@@ -449,10 +519,20 @@
   "name": "taupe-86c",
   "rgb": false
  },
+ "e7d6bf": {
+  "family": "brass",
+  "name": "brass-88b",
+  "rgb": false
+ },
  "e8c987": {
   "family": "brass",
   "name": "brass-85",
   "rgb": true
+ },
+ "e9d7c3": {
+  "family": "brass",
+  "name": "brass-89c",
+  "rgb": false
  },
  "e9d9d3": {
   "family": "taupe",
@@ -492,6 +572,11 @@
  "eedaa6": {
   "family": "brass",
   "name": "brass-89b",
+  "rgb": false
+ },
+ "efdcd7": {
+  "family": "taupe",
+  "name": "taupe-91e",
   "rgb": false
  },
  "efe4d6": {
@@ -554,6 +639,11 @@
   "name": "taupe-95c",
   "rgb": true
  },
+ "f6eee2": {
+  "family": "taupe",
+  "name": "taupe-95e",
+  "rgb": false
+ },
  "f6efe3": {
   "family": "taupe",
   "name": "taupe-95d",
@@ -583,6 +673,11 @@
   "family": "brass",
   "name": "brass-96",
   "rgb": true
+ },
+ "fbf6ee": {
+  "family": "taupe",
+  "name": "taupe-97c",
+  "rgb": false
  },
  "fde4de": {
   "family": "taupe",
@@ -624,9 +719,19 @@
   "name": "taupe-90",
   "rgb": false
  },
+ "ffd27a": {
+  "family": "brass",
+  "name": "brass-88",
+  "rgb": false
+ },
  "ffd5c9": {
   "family": "taupe",
   "name": "taupe-91b",
+  "rgb": false
+ },
+ "ffd79a": {
+  "family": "brass",
+  "name": "brass-90c",
   "rgb": false
  },
  "ffe1d6": {
@@ -643,6 +748,21 @@
   "family": "taupe",
   "name": "taupe-94e",
   "rgb": true
+ },
+ "fff3e0": {
+  "family": "taupe",
+  "name": "taupe-97b",
+  "rgb": false
+ },
+ "fff6e8": {
+  "family": "taupe",
+  "name": "taupe-98",
+  "rgb": false
+ },
+ "fff8ee": {
+  "family": "taupe",
+  "name": "taupe-98b",
+  "rgb": false
  },
  "fffcf6": {
   "family": "taupe",

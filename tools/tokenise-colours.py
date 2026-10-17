@@ -16,23 +16,8 @@ from palette_lib import *
 os.chdir(ROOT)
 reg = load_registry() if os.path.exists(REGISTRY) else {}
 
-def canon(h):
-    h = h.lower()
-    return ALIASES.get(h, h)
-
 def token_for(h, need_rgb):
-    h = canon(h)
-    if h in EXCLUDE: return None
-    if h not in reg:
-        fam = family_of(h)
-        L = hex_to_oklch(h)[0]
-        base = '%s-%02d' % (fam, round(L * 100))
-        name, suffix = base, 'b'
-        taken = {v['name'] for v in reg.values()}
-        while name in taken: name, suffix = base + suffix, chr(ord(suffix) + 1)
-        reg[h] = {'name': name, 'family': fam, 'rgb': False}
-    if need_rgb: reg[h]['rgb'] = True
-    return reg[h]['name']
+    return register(reg, h, need_rgb)
 
 def css_sub(text, alpha_value=False):
     """Rewrite literals in CSS text. alpha_value=True is the Tailwind-colour form."""

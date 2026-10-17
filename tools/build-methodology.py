@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds methodology.html: the Vastu chakra scene (assets/method/src/scene.html) inside the site shell,
    with the copy rewritten for Wisetrack's build process.   python3 tools/build-methodology.py"""
-import re, os
+import re, json, sys, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 scene = open(f'{ROOT}/assets/method/src/scene.html', encoding='utf-8').read()
 shell = open(f'{ROOT}/methodology.html', encoding='utf-8').read() if not os.path.exists(f'{ROOT}/assets/method/src/shell.html') else open(f'{ROOT}/assets/method/src/shell.html', encoding='utf-8').read()
@@ -142,6 +142,29 @@ team_js = r"""
   })();
 """
 js = js + team_js
+
+# ---------------------------------------------------------------- palette: scene colours through P()
+# Every whole-string hex literal in the scene script becomes P('#hex'), which returns the current
+# palette's version of that colour from the CSS token. Materials and canvas textures are built once
+# at boot, so a palette switch reloads the page (Chrome restores the scroll position).
+from palette_lib import load_registry, save_registry, register
+_reg = load_registry()
+_pt = {}
+def _p(m):
+    h = m.group(2).lower()
+    t = register(_reg, h)
+    if not t: return m.group(0)
+    _pt['#' + h] = t
+    return "P('#%s')" % h
+js = re.sub(r"""(['"])#([0-9a-fA-F]{6})\1""", _p, js)
+save_registry(_reg)
+js = ("  var PT = %s;\n" % json.dumps(_pt, sort_keys=True) +
+      "  function P(h) { var t = PT[h]; if (!t) return h; var v = getComputedStyle(document.getElementById('method')).getPropertyValue('--' + t).trim(); return v || h; }\n"
+      "  (function () { var cur = document.documentElement.getAttribute('data-palette'); new MutationObserver(function () { var n = document.documentElement.getAttribute('data-palette'); if (n !== cur) location.reload(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-palette'] }); })();\n"
+      + js)
+_left = re.findall(r'#[0-9a-fA-F]{6}\b', re.sub(r"P\('#[0-9a-f]{6}'\)", '', js))
+print('scene JS colours through P():', len(_pt), '| hex left inside longer strings:', sorted(set(_left)))
+import subprocess; subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'build-palettes.py')], check=True)
 assert "teamc" in js
 
 # ---------------------------------------------------------------- markup
@@ -277,5 +300,8 @@ assert 'method-styles' in head
 libs = '\n'.join(re.findall(r'<script src="https://cdn.jsdelivr.net/npm/three@0\.128\.0/[^"]+"></script>', scene))
 tail = '\n'.join(lines[foot_i:]).replace('</body>', libs + '\n<script>' + js + '</script>\n</body>')
 page = head + '\n<main class="relative pt-[120px]">\n' + markup + '</main>\n' + tail
+# legend swatches in the graph markup follow the palette too
+page = page.replace('background:#7d1426', 'background:var(--%s)' % register(_reg, '7d1426')).replace('background:#e6cbc8', 'background:var(--%s)' % register(_reg, 'e6cbc8'))
+save_registry(_reg)
 open(f'{ROOT}/methodology.html', 'w', encoding='utf-8').write(page)
 print('methodology.html written:', len(page), 'bytes;', ns.count('#method'), 'scoped selectors')

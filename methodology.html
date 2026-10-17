@@ -40,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script src="assets/tailwind-config.js?v=20261018"></script>
-<link href="assets/palettes.css?v=20261018b" rel="stylesheet" />
+<link href="assets/palettes.css?v=20261018c" rel="stylesheet" />
   <link href="assets/styles.css?v=20261018" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
   <style id="method-styles">#method {
@@ -436,7 +436,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="panel">
       <header><h3>Effort balance</h3><span>Northline build · hours per fortnight · indicative</span></header>
       <svg id="bars" viewBox="0 0 640 230" role="img" aria-label="Bar graph of hours per fortnight across sixteen workstreams with max, average and min lines"></svg>
-      <div class="legend"><span><b style="background:#e6cbc8"></b>Pale, configured</span><span><b style="background:#7d1426"></b>Deep, built from scratch</span><span>Lines: (avg + max) / 2 · average · (avg + min) / 2</span></div>
+      <div class="legend"><span><b style="background:var(--taupe-86c)"></b>Pale, configured</span><span><b style="background:var(--sindoor-39)"></b>Deep, built from scratch</span><span>Lines: (avg + max) / 2 · average · (avg + min) / 2</span></div>
     </div>
   </section>
   <section class="chapter long wrap" id="handover" data-key="9">
@@ -591,7 +591,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/BokehPass.js"></script>
-<script>
+<script>  var PT = {"#2a0810": "taupe-20", "#2d5fb8": "sindoor-50b", "#3b0d14": "taupe-24b", "#44081a": "taupe-26b", "#4a0d18": "taupe-27b", "#5a2a34": "taupe-35b", "#5e0f1c": "taupe-32", "#6a0e1e": "sindoor-34", "#7a4b4f": "taupe-47", "#7d1426": "sindoor-39", "#8a2e40": "sindoor-44", "#8dc3ff": "sindoor-80", "#8e4a55": "taupe-50", "#a04f5f": "taupe-53", "#b8232f": "sindoor-51", "#b8737e": "taupe-63", "#b8903f": "brass-68", "#cf9a9f": "taupe-74", "#d9b26a": "brass-78", "#d9b45e": "brass-79", "#e2bdbb": "taupe-83c", "#e7d6bf": "brass-88b", "#e9d7c3": "brass-89c", "#eaa9b0": "taupe-80", "#efdcd7": "taupe-91e", "#f6ecdc": "taupe-95c", "#f6eee2": "taupe-95e", "#f8f3ec": "taupe-97", "#fbf6ee": "taupe-97c", "#ffd27a": "brass-88", "#ffd79a": "brass-90c", "#fff3e0": "taupe-97b", "#fff6e8": "taupe-98", "#fff8ee": "taupe-98b", "#fffcf6": "taupe-99b", "#fffdf9": "taupe-99"};
+  function P(h) { var t = PT[h]; if (!t) return h; var v = getComputedStyle(document.getElementById('method')).getPropertyValue('--' + t).trim(); return v || h; }
+  (function () { var cur = document.documentElement.getAttribute('data-palette'); new MutationObserver(function () { var n = document.documentElement.getAttribute('data-palette'); if (n !== cur) location.reload(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-palette'] }); })();
+
 (function () {
   'use strict';
   var reduced = false, fine = false;
@@ -668,7 +671,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var ZONES = ['AUTH','DATA','API','WEB','UI','MOB','SYNC','PAY','GST','HR','CRM','STK','RPT','AI','OPS','QA'];
   var AREAS = [22.4, 25.1, 19.3, 24.0, 28.2, 21.1, 17.6, 26.3, 23.0, 20.2, 16.9, 24.4, 27.1, 22.0, 18.8, 20.7];
   // one hue, sixteen tones: the area of a zone sets how deep its maroon is
-  var RAMP = ['#efdcd7', '#e2bdbb', '#cf9a9f', '#b8737e', '#a04f5f', '#8a2e40', '#7d1426', '#5e0f1c', '#44081a'];
+  var RAMP = [P('#efdcd7'), P('#e2bdbb'), P('#cf9a9f'), P('#b8737e'), P('#a04f5f'), P('#8a2e40'), P('#7d1426'), P('#5e0f1c'), P('#44081a')];
   var hexLerp = function (a, b, t) { var pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16), r = Math.round(((pa >> 16) & 255) * (1 - t) + ((pb >> 16) & 255) * t), g = Math.round(((pa >> 8) & 255) * (1 - t) + ((pb >> 8) & 255) * t), bl = Math.round((pa & 255) * (1 - t) + (pb & 255) * t); return '#' + ((1 << 24) + (r << 16) + (g << 8) + bl).toString(16).slice(1); };
   var rampAt = function (t) { t = Math.max(0, Math.min(0.9999, t)) * (RAMP.length - 1); var i0 = Math.floor(t); return hexLerp(RAMP[i0], RAMP[i0 + 1], t - i0); };
   var aLo = Math.min.apply(null, AREAS), aHi = Math.max.apply(null, AREAS);
@@ -734,26 +737,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(30, 1, 0.1, 40);
   var lin = function (hex) { return new THREE.Color(hex).convertSRGBToLinear(); };
-  var BG_DAY = lin('#f8f3ec'), BG_NIGHT = lin('#2a0810');
-  var BG_DAY_S = new THREE.Color('#f8f3ec'), BG_MID_S = new THREE.Color('#8e4a55'), BG_NIGHT_S = new THREE.Color('#2a0810');
+  var BG_DAY = lin(P('#f8f3ec')), BG_NIGHT = lin(P('#2a0810'));
+  var BG_DAY_S = new THREE.Color(P('#f8f3ec')), BG_MID_S = new THREE.Color(P('#8e4a55')), BG_NIGHT_S = new THREE.Color(P('#2a0810'));
   var bgColor = BG_DAY.clone();
   scene.background = bgColor; scene.fog = new THREE.FogExp2(bgColor.getHex(), 0.07);
 
   // lights
-  var hemi = new THREE.HemisphereLight(lin('#fff6e8'), lin('#7d1426'), 0.75); scene.add(hemi);
-  var key = new THREE.DirectionalLight(lin('#fff3e0'), 1.3); key.position.set(4.4, 4.2, 3.0); key.castShadow = true;
+  var hemi = new THREE.HemisphereLight(lin(P('#fff6e8')), lin(P('#7d1426')), 0.75); scene.add(hemi);
+  var key = new THREE.DirectionalLight(lin(P('#fff3e0')), 1.3); key.position.set(4.4, 4.2, 3.0); key.castShadow = true;
   key.shadow.mapSize.set(SHADOW, SHADOW); key.shadow.camera.near = 1; key.shadow.camera.far = 16;
   key.shadow.camera.left = key.shadow.camera.bottom = -2.4; key.shadow.camera.right = key.shadow.camera.top = 2.4; key.shadow.bias = -0.0006; key.shadow.normalBias = 0.02; key.shadow.radius = 4;
   scene.add(key); scene.add(key.target);
-  var fill = new THREE.DirectionalLight(lin('#eaa9b0'), 0.35); fill.position.set(-4, 2.5, -3); scene.add(fill);
-  var rim = new THREE.PointLight(lin('#d9b26a'), 0, 6, 2); rim.position.set(0, 0.6, 0); scene.add(rim); // wakes at night
+  var fill = new THREE.DirectionalLight(lin(P('#eaa9b0')), 0.35); fill.position.set(-4, 2.5, -3); scene.add(fill);
+  var rim = new THREE.PointLight(lin(P('#d9b26a')), 0, 6, 2); rim.position.set(0, 0.6, 0); scene.add(rim); // wakes at night
 
   // environment: a warm studio built from a gradient sky and three softboxes, prefiltered once
   (function makeEnv() {
     var env = new THREE.Scene();
     var sky = new THREE.Mesh(new THREE.SphereGeometry(20, 32, 16), new THREE.ShaderMaterial({
       side: THREE.BackSide,
-      uniforms: { uTop: { value: lin('#fff8ee') }, uMid: { value: lin('#e9d7c3') }, uBot: { value: lin('#4a0d18') } },
+      uniforms: { uTop: { value: lin(P('#fff8ee')) }, uMid: { value: lin(P('#e9d7c3')) }, uBot: { value: lin(P('#4a0d18')) } },
       vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
       fragmentShader: 'uniform vec3 uTop,uMid,uBot; varying vec3 vP; void main(){ float h = clamp(vP.y,-1.0,1.0); float up = pow(max(h,0.0),0.6); float dn = pow(max(-h,0.0),0.8); vec3 c = mix(mix(uMid,uBot,dn), uTop, up); gl_FragColor=vec4(c,1.0); }'
     }));
@@ -782,10 +785,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var onRing = function (b, r) { return [Math.sin(b) * r, Math.cos(b) * r]; };
 
   // ground: receives shadows only; the paper itself is the clear colour
-  var ground = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.ShadowMaterial({ color: lin('#3b0d14'), opacity: 0.22 }));
+  var ground = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.ShadowMaterial({ color: lin(P('#3b0d14')), opacity: 0.22 }));
   ground.receiveShadow = true; ground.position.z = -0.002; tilt.add(ground);
   var pool = new THREE.Mesh(new THREE.CircleGeometry(2.4, 64), new THREE.ShaderMaterial({
-    uniforms: { uColor: { value: lin('#7d1426') }, uDark: { value: 0 } },
+    uniforms: { uColor: { value: lin(P('#7d1426')) }, uDark: { value: 0 } },
     vertexShader: 'varying vec2 vP; void main(){ vP=position.xy; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
     fragmentShader: 'uniform vec3 uColor; uniform float uDark; varying vec2 vP; void main(){ float d=length(vP)/2.4; float a = smoothstep(1.0,0.2,d)*mix(0.07,0.0,uDark); float ring = smoothstep(0.006,0.0,abs(d-0.56))*mix(0.0,0.12,uDark); gl_FragColor=vec4(mix(uColor, vec3(1.0,0.85,0.5), uDark), a+ring); }',
     transparent: true, depthWrite: false
@@ -795,13 +798,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // tint helper: a colour that lerps day -> night
   var tints = [];
   var tint = function (dayHex, nightHex) { var t = { day: lin(dayHex), night: lin(nightHex), value: lin(dayHex) }; tints.push(t); return t; };
-  var inkTint = tint('#7d1426', '#fffcf6'), goldTint = tint('#b8903f', '#ffd27a'), lineTint = tint('#3b0d14', '#f6ecdc'), axisTint = tint('#2d5fb8', '#8dc3ff');
+  var inkTint = tint(P('#7d1426'), P('#fffcf6')), goldTint = tint(P('#b8903f'), P('#ffd27a')), lineTint = tint(P('#3b0d14'), P('#f6ecdc')), axisTint = tint(P('#2d5fb8'), P('#8dc3ff'));
 
   // lacquer ring and brass rings
-  var lacquer = new THREE.MeshPhysicalMaterial({ color: lin('#6a0e1e'), roughness: 0.22, metalness: 0.0, clearcoat: 1, clearcoatRoughness: 0.08, envMapIntensity: 1.2 });
+  var lacquer = new THREE.MeshPhysicalMaterial({ color: lin(P('#6a0e1e')), roughness: 0.22, metalness: 0.0, clearcoat: 1, clearcoatRoughness: 0.08, envMapIntensity: 1.2 });
   var torus = new THREE.Mesh(new THREE.TorusGeometry(1.0, 0.018, 20, 256), lacquer); torus.castShadow = true; torus.position.z = 0.018; tilt.add(torus);
-  var brass = new THREE.MeshStandardMaterial({ color: lin('#d9b45e'), roughness: 0.24, metalness: 1.0, envMapIntensity: 1.4 });
-  var ivory = new THREE.MeshPhysicalMaterial({ color: lin('#f6eee2'), roughness: 0.5, metalness: 0, clearcoat: 0.35, clearcoatRoughness: 0.4, envMapIntensity: 0.8 });
+  var brass = new THREE.MeshStandardMaterial({ color: lin(P('#d9b45e')), roughness: 0.24, metalness: 1.0, envMapIntensity: 1.4 });
+  var ivory = new THREE.MeshPhysicalMaterial({ color: lin(P('#f6eee2')), roughness: 0.5, metalness: 0, clearcoat: 0.35, clearcoatRoughness: 0.4, envMapIntensity: 0.8 });
   // the plate: an ivory disc the whole instrument sits on
   var plateGeo = new THREE.CylinderGeometry(1.1, 1.1, 0.014, 128); plateGeo.rotateX(Math.PI / 2);
   var plate = new THREE.Mesh(plateGeo, ivory); plate.position.z = -0.007; plate.receiveShadow = true; plate.castShadow = true; tilt.add(plate);
@@ -848,8 +851,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // 32 entrance padas: lit blocks on the outer brass ring; the favourable ones are gold and glow at night
   var padaNames = []; ['E', 'S', 'W', 'N'].forEach(function (q) { for (var k = 1; k <= 8; k++) padaNames.push(q + k); });
-  var padas = [], padaMatPlain = new THREE.MeshStandardMaterial({ color: lin('#fffdf9'), roughness: 0.6, metalness: 0 });
-  var padaMatGold = new THREE.MeshStandardMaterial({ color: lin('#d9b26a'), roughness: 0.3, metalness: 0.8, emissive: lin('#d9b26a'), emissiveIntensity: 0 });
+  var padas = [], padaMatPlain = new THREE.MeshStandardMaterial({ color: lin(P('#fffdf9')), roughness: 0.6, metalness: 0 });
+  var padaMatGold = new THREE.MeshStandardMaterial({ color: lin(P('#d9b26a')), roughness: 0.3, metalness: 0.8, emissive: lin(P('#d9b26a')), emissiveIntensity: 0 });
   var padaTex = (function () {
     var c = document.createElement('canvas'); c.width = c.height = 1024; var x = c.getContext('2d');
     x.translate(512, 512); x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = '#ffffff'; x.font = '500 12px Inter, Helvetica, Arial, sans-serif';
@@ -890,7 +893,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // house: a curd maquette with real walls, a maroon-ink plan, a door and the door-reading axis
   var house = new THREE.Group(); house.position.z = 0.005; tilt.add(house);
   var HOUSE = [[-0.44, -0.5], [0.44, -0.5], [0.44, 0.12], [0.18, 0.12], [0.18, 0.5], [-0.44, 0.5]];
-  var WALL_H = 0.15, wallMat = new THREE.MeshStandardMaterial({ color: lin('#fffdf9'), roughness: 0.75, metalness: 0, transparent: true, opacity: 1 });
+  var WALL_H = 0.15, wallMat = new THREE.MeshStandardMaterial({ color: lin(P('#fffdf9')), roughness: 0.75, metalness: 0, transparent: true, opacity: 1 });
   var walls = new THREE.Group(); house.add(walls);
   var addWall = function (A, B, th) {
     var dx = B[0] - A[0], dy = B[1] - A[1], len = Math.sqrt(dx * dx + dy * dy);
@@ -900,7 +903,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   for (var e = 1; e < HOUSE.length; e++) addWall(HOUSE[e], HOUSE[(e + 1) % HOUSE.length], 0.028);
   addWall(HOUSE[0], [-0.19, -0.5], 0.028); addWall([-0.01, -0.5], HOUSE[1], 0.028); // the front wall leaves a gap for the main door
   [[[-0.44, 0.0], [0.18, 0.0]], [[-0.1, 0.0], [-0.1, 0.5]], [[0.0, -0.5], [0.0, -0.22]], [[0.0, -0.22], [0.44, -0.22]]].forEach(function (s) { addWall(s[0], s[1], 0.016); });
-  var paneMat = new THREE.MeshPhysicalMaterial({ color: lin('#5a2a34'), roughness: 0.08, metalness: 0.2, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 1.6 });
+  var paneMat = new THREE.MeshPhysicalMaterial({ color: lin(P('#5a2a34')), roughness: 0.08, metalness: 0.2, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 1.6 });
   [[0.44, -0.36, 0], [0.44, 0.0, 0], [-0.44, 0.25, 0], [-0.44, -0.25, 0], [-0.2, 0.5, 1], [0.31, 0.12, 1]].forEach(function (wdw) {
     var pane = new THREE.Mesh(new THREE.BoxGeometry(wdw[2] ? 0.13 : 0.034, wdw[2] ? 0.034 : 0.13, 0.055), paneMat); pane.position.set(wdw[0], wdw[1], 0.095); walls.add(pane);
   });
@@ -943,25 +946,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var arrow = new THREE.Mesh(new THREE.ConeGeometry(0.03, 0.08, 12), arrowMat); arrow.position.set(0, 0.98, 0.17); house.add(arrow);
 
   // centre jewel, pulse, needle
-  var jewel = new THREE.Mesh(new THREE.SphereGeometry(0.026, 32, 20), new THREE.MeshStandardMaterial({ color: lin('#d9b26a'), roughness: 0.2, metalness: 1, emissive: lin('#d9b26a'), emissiveIntensity: 0, transparent: true, opacity: 0 }));
+  var jewel = new THREE.Mesh(new THREE.SphereGeometry(0.026, 32, 20), new THREE.MeshStandardMaterial({ color: lin(P('#d9b26a')), roughness: 0.2, metalness: 1, emissive: lin(P('#d9b26a')), emissiveIntensity: 0, transparent: true, opacity: 0 }));
   jewel.position.z = 0.19; jewel.castShadow = true; tilt.add(jewel);
   var pulseMat = new THREE.MeshBasicMaterial({ color: goldTint.value, transparent: true, opacity: 0, side: THREE.DoubleSide, depthWrite: false });
   var pulse = new THREE.Mesh(new THREE.RingGeometry(0.05, 0.056, 48), pulseMat); pulse.position.z = 0.18; tilt.add(pulse);
   // the second instrument: a brass compass with a glass dome, standing beside the chakra
   var compass = new THREE.Group(); compass.position.set(1.95, -0.3, 0); tilt.add(compass);
-  var domeLight = new THREE.PointLight(lin('#ffd27a'), 0, 1.6, 2); domeLight.position.set(0, 0, 0.22); compass.add(domeLight);
+  var domeLight = new THREE.PointLight(lin(P('#ffd27a')), 0, 1.6, 2); domeLight.position.set(0, 0, 0.22); compass.add(domeLight);
   var caseGeo = new THREE.CylinderGeometry(0.38, 0.4, 0.09, 72); caseGeo.rotateX(Math.PI / 2);
   var cCase = new THREE.Mesh(caseGeo, brass); cCase.position.z = 0.045; cCase.castShadow = true; cCase.receiveShadow = true; compass.add(cCase);
   var cBezel = new THREE.Mesh(new THREE.TorusGeometry(0.36, 0.018, 16, 120), lacquer); cBezel.position.z = 0.095; cBezel.castShadow = true; compass.add(cBezel);
   var faceTex = (function () {
     var c = document.createElement('canvas'); c.width = c.height = 1024; var x = c.getContext('2d');
-    x.fillStyle = '#fbf6ee'; x.beginPath(); x.arc(512, 512, 512, 0, Math.PI * 2); x.fill();
-    x.translate(512, 512); x.strokeStyle = '#6a0e1e'; x.fillStyle = '#6a0e1e'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillStyle = P('#fbf6ee'); x.beginPath(); x.arc(512, 512, 512, 0, Math.PI * 2); x.fill();
+    x.translate(512, 512); x.strokeStyle = P('#6a0e1e'); x.fillStyle = P('#6a0e1e'); x.textAlign = 'center'; x.textBaseline = 'middle';
     for (var d = 0; d < 360; d += 2) { var a = brg(d), L = d % 30 === 0 ? 70 : d % 10 === 0 ? 44 : 24; x.lineWidth = d % 30 === 0 ? 5 : 2.5; x.beginPath(); x.moveTo(Math.sin(a) * 400, -Math.cos(a) * 400); x.lineTo(Math.sin(a) * (400 - L), -Math.cos(a) * (400 - L)); x.stroke(); }
     x.lineWidth = 3; x.beginPath(); x.arc(0, 0, 404, 0, Math.PI * 2); x.stroke(); x.beginPath(); x.arc(0, 0, 300, 0, Math.PI * 2); x.stroke();
-    ['PLAN', 'BUILD', 'TEST', 'SHIP'].forEach(function (l, i) { x.save(); x.rotate(brg(i * 90)); x.font = (i === 0 ? '700 ' : '500 ') + '58px "Cormorant Garamond", Georgia, serif'; x.fillStyle = i === 0 ? '#6a0e1e' : '#3b0d14'; x.fillText(l, 0, -215); x.restore(); });
-    for (var n = 30; n < 360; n += 30) { if (n % 90 === 0) continue; x.save(); x.rotate(brg(n)); x.font = '500 34px Inter, Arial, sans-serif'; x.fillStyle = '#7a4b4f'; x.fillText(String(n), 0, -250); x.restore(); }
-    x.fillStyle = '#d9b45e'; x.beginPath(); x.moveTo(0, -140); x.lineTo(-26, 0); x.lineTo(0, 140); x.lineTo(26, 0); x.closePath(); x.globalAlpha = 0.35; x.fill(); x.globalAlpha = 1;
+    ['PLAN', 'BUILD', 'TEST', 'SHIP'].forEach(function (l, i) { x.save(); x.rotate(brg(i * 90)); x.font = (i === 0 ? '700 ' : '500 ') + '58px "Cormorant Garamond", Georgia, serif'; x.fillStyle = i === 0 ? P('#6a0e1e') : P('#3b0d14'); x.fillText(l, 0, -215); x.restore(); });
+    for (var n = 30; n < 360; n += 30) { if (n % 90 === 0) continue; x.save(); x.rotate(brg(n)); x.font = '500 34px Inter, Arial, sans-serif'; x.fillStyle = P('#7a4b4f'); x.fillText(String(n), 0, -250); x.restore(); }
+    x.fillStyle = P('#d9b45e'); x.beginPath(); x.moveTo(0, -140); x.lineTo(-26, 0); x.lineTo(0, 140); x.lineTo(26, 0); x.closePath(); x.globalAlpha = 0.35; x.fill(); x.globalAlpha = 1;
     return new THREE.CanvasTexture(c);
   })();
   var cFace = new THREE.Mesh(new THREE.CircleGeometry(0.345, 72), new THREE.MeshStandardMaterial({ map: faceTex, roughness: 0.6, metalness: 0 })); cFace.position.z = 0.091; cFace.receiveShadow = true; compass.add(cFace);
@@ -973,12 +976,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var needle = (function () {
     var g = new THREE.BufferGeometry(), L = 0.27, Wd = 0.03;
     g.setAttribute('position', new THREE.Float32BufferAttribute([0, L, 0.006, -Wd, 0, 0, Wd, 0, 0, 0, -L, 0.006, Wd, 0, 0, -Wd, 0, 0], 3));
-    var r = lin('#b8232f'), c = lin('#f6eee2'), col = [];
+    var r = lin(P('#b8232f')), c = lin(P('#f6eee2')), col = [];
     for (var i = 0; i < 3; i++) col.push(r.r, r.g, r.b); for (i = 0; i < 3; i++) col.push(c.r, c.g, c.b);
     g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
     var m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.35, metalness: 0.2, transparent: true, opacity: 0, side: THREE.DoubleSide }));
     m.position.z = 0.104; m.castShadow = true; compass.add(m);
-    var under = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: lin('#2a0810'), transparent: true, opacity: 0, side: THREE.DoubleSide, depthWrite: false })); // the needle's shadow line on the dial
+    var under = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: lin(P('#2a0810')), transparent: true, opacity: 0, side: THREE.DoubleSide, depthWrite: false })); // the needle's shadow line on the dial
     under.position.z = -0.009; under.scale.set(1.06, 1.03, 1); m.add(under); m.userData.under = under; return m;
   })();
 
@@ -1019,7 +1022,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   for (n = 0; n < EMB; n++) { var ra = Math.random() * Math.PI * 2, rd = Math.sqrt(Math.random()) * 3.6; ePos.push(Math.cos(ra) * rd, 0, Math.sin(ra) * rd); eRand.push(Math.random(), Math.random()); }
   var embGeo = new THREE.BufferGeometry(); embGeo.setAttribute('position', new THREE.Float32BufferAttribute(ePos, 3)); embGeo.setAttribute('aRand', new THREE.Float32BufferAttribute(eRand, 2));
   var embMat = new THREE.ShaderMaterial({
-    uniforms: { uTime: { value: 0 }, uDpr: { value: DPR }, uColor: { value: lin('#ffd79a') }, uDark: { value: 0 } },
+    uniforms: { uTime: { value: 0 }, uDpr: { value: DPR }, uColor: { value: lin(P('#ffd79a')) }, uDark: { value: 0 } },
     vertexShader: 'attribute vec2 aRand; uniform float uTime,uDpr; varying float vA; void main(){ float life=fract(aRand.x+uTime*0.035*(0.5+aRand.y)); vec3 p=position; p.y=life*3.2-0.3; p.x+=sin(uTime*0.5+aRand.y*9.0)*0.12; p.z+=cos(uTime*0.4+aRand.x*7.0)*0.12; vec4 mv=modelViewMatrix*vec4(p,1.0); gl_PointSize=(1.6+aRand.y*2.4)*uDpr/ -mv.z; vA=smoothstep(0.0,0.15,life)*smoothstep(1.0,0.6,life)*(0.3+0.7*aRand.y); gl_Position=projectionMatrix*mv; }',
     fragmentShader: 'uniform vec3 uColor; uniform float uDark; varying float vA; void main(){ float d=length(gl_PointCoord-0.5); float a=smoothstep(0.5,0.1,d); gl_FragColor=vec4(uColor*1.6, a*vA*0.85*uDark); }',
     transparent: true, depthWrite: false, blending: THREE.AdditiveBlending
@@ -1078,27 +1081,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var sheets = new THREE.Group(); sheets.visible = false; tilt.add(sheets);
   var sheetTex = function (page) {
     var c = document.createElement('canvas'); c.width = 620; c.height = 880; var x = c.getContext('2d');
-    x.fillStyle = '#fffcf6'; x.fillRect(0, 0, 620, 880);
-    x.fillStyle = '#7d1426'; x.fillRect(0, 0, 620, 96); x.fillStyle = '#d9b26a'; x.fillRect(0, 96, 620, 4);
-    x.fillStyle = '#fffcf6'; x.font = '600 26px "Cormorant Garamond", Georgia, serif'; x.fillText(page === 1 ? 'Scope sheet · Northline Traders' : 'Effort balance · 16 workstreams', 36, 44);
+    x.fillStyle = P('#fffcf6'); x.fillRect(0, 0, 620, 880);
+    x.fillStyle = P('#7d1426'); x.fillRect(0, 0, 620, 96); x.fillStyle = P('#d9b26a'); x.fillRect(0, 96, 620, 4);
+    x.fillStyle = P('#fffcf6'); x.font = '600 26px "Cormorant Garamond", Georgia, serif'; x.fillText(page === 1 ? 'Scope sheet · Northline Traders' : 'Effort balance · 16 workstreams', 36, 44);
     x.font = '500 12px Inter, Arial, sans-serif'; x.fillStyle = 'rgba(255,252,246,0.75)'; x.fillText(page === 1 ? 'KICKOFF 16 OCT 2026  ·  12 WEEKS  ·  FIXED PRICE' : 'HOURS PER FORTNIGHT  ·  SIXTEEN WORKSTREAMS  ·  AVG 22.2', 36, 74);
-    x.strokeStyle = '#7d1426'; x.lineWidth = 1.2;
+    x.strokeStyle = P('#7d1426'); x.lineWidth = 1.2;
     if (page === 1) {
       var cx = 310, cy = 440, R = 230;
       for (var r = 0; r < 3; r++) { x.beginPath(); x.arc(cx, cy, R - r * 18, 0, Math.PI * 2); x.stroke(); }
       for (var d = 0; d < 360; d++) { var L = d % 10 === 0 ? 14 : d % 5 === 0 ? 9 : 5, a = brg(d); x.beginPath(); x.moveTo(cx + Math.sin(a) * (R - 36), cy - Math.cos(a) * (R - 36)); x.lineTo(cx + Math.sin(a) * (R - 36 + L), cy - Math.cos(a) * (R - 36 + L)); x.stroke(); }
       for (var z = 0; z < 16; z++) { var a2 = brg(z * 22.5 - 11.25); x.beginPath(); x.moveTo(cx, cy); x.lineTo(cx + Math.sin(a2) * (R - 36), cy - Math.cos(a2) * (R - 36)); x.stroke(); }
-      x.save(); x.translate(cx, cy); x.rotate(-brg(DOOR_BEARING)); x.lineWidth = 2.5; x.strokeStyle = '#3b0d14'; x.beginPath(); HOUSE.forEach(function (p, i) { i ? x.lineTo(p[0] * 300, -p[1] * 300) : x.moveTo(p[0] * 300, -p[1] * 300); }); x.closePath(); x.stroke();
-      x.strokeStyle = '#2d5fb8'; x.setLineDash([6, 5]); x.lineWidth = 1.5; x.beginPath(); x.moveTo(-30, 150); x.lineTo(0, -R + 20); x.stroke(); x.restore();
-      x.fillStyle = '#3b0d14'; x.font = '500 13px Inter, Arial, sans-serif'; x.fillText('SPRINT 1  ·  WEEK 1 OF 12', 36, 760); x.fillText('Wisetrack Technologies · Noida', 36, 790); x.fillStyle = '#7a4b4f'; x.fillText('16 workstreams · 32 milestones · indicative', 36, 816);
+      x.save(); x.translate(cx, cy); x.rotate(-brg(DOOR_BEARING)); x.lineWidth = 2.5; x.strokeStyle = P('#3b0d14'); x.beginPath(); HOUSE.forEach(function (p, i) { i ? x.lineTo(p[0] * 300, -p[1] * 300) : x.moveTo(p[0] * 300, -p[1] * 300); }); x.closePath(); x.stroke();
+      x.strokeStyle = P('#2d5fb8'); x.setLineDash([6, 5]); x.lineWidth = 1.5; x.beginPath(); x.moveTo(-30, 150); x.lineTo(0, -R + 20); x.stroke(); x.restore();
+      x.fillStyle = P('#3b0d14'); x.font = '500 13px Inter, Arial, sans-serif'; x.fillText('SPRINT 1  ·  WEEK 1 OF 12', 36, 760); x.fillText('Wisetrack Technologies · Noida', 36, 790); x.fillStyle = P('#7a4b4f'); x.fillText('16 workstreams · 32 milestones · indicative', 36, 816);
     } else {
       var bx = 50, by = 560, bw = 32, mx = Math.max.apply(null, AREAS);
       for (var i2 = 0; i2 < 16; i2++) { var h = AREAS[i2] / mx * 330; x.fillStyle = TONE[i2]; x.fillRect(bx + i2 * 33, by - h, bw - 6, h); }
-      x.strokeStyle = '#d9b26a'; x.setLineDash([4, 5]); [26.3, 22.2, 19.5].forEach(function (v) { var yy = by - v / mx * 330; x.beginPath(); x.moveTo(44, yy); x.lineTo(580, yy); x.stroke(); }); x.setLineDash([]);
-      x.fillStyle = '#7a4b4f'; x.font = '500 10px Inter, Arial, sans-serif'; for (i2 = 0; i2 < 16; i2++) x.fillText(ZONES[i2], bx + i2 * 33, by + 16);
-      x.strokeStyle = '#e7d6bf'; x.lineWidth = 1; for (var row = 0; row < 8; row++) { var yy2 = 620 + row * 30; x.beginPath(); x.moveTo(36, yy2); x.lineTo(584, yy2); x.stroke(); x.fillStyle = '#3b0d14'; x.font = '500 12px Inter, Arial, sans-serif'; x.fillText(ZONES[row] + '   ' + AREAS[row].toFixed(1) + ' hrs', 44, yy2 + 20); x.fillText(ZONES[row + 8] + '   ' + AREAS[row + 8].toFixed(1) + ' hrs', 320, yy2 + 20); }
+      x.strokeStyle = P('#d9b26a'); x.setLineDash([4, 5]); [26.3, 22.2, 19.5].forEach(function (v) { var yy = by - v / mx * 330; x.beginPath(); x.moveTo(44, yy); x.lineTo(580, yy); x.stroke(); }); x.setLineDash([]);
+      x.fillStyle = P('#7a4b4f'); x.font = '500 10px Inter, Arial, sans-serif'; for (i2 = 0; i2 < 16; i2++) x.fillText(ZONES[i2], bx + i2 * 33, by + 16);
+      x.strokeStyle = P('#e7d6bf'); x.lineWidth = 1; for (var row = 0; row < 8; row++) { var yy2 = 620 + row * 30; x.beginPath(); x.moveTo(36, yy2); x.lineTo(584, yy2); x.stroke(); x.fillStyle = P('#3b0d14'); x.font = '500 12px Inter, Arial, sans-serif'; x.fillText(ZONES[row] + '   ' + AREAS[row].toFixed(1) + ' hrs', 44, yy2 + 20); x.fillText(ZONES[row + 8] + '   ' + AREAS[row + 8].toFixed(1) + ' hrs', 320, yy2 + 20); }
     }
-    x.fillStyle = '#7a4b4f'; x.font = '500 10px Inter, Arial, sans-serif'; x.textAlign = 'right'; x.fillText('wisetrack.in  ·  how we build', 584, 860);
+    x.fillStyle = P('#7a4b4f'); x.font = '500 10px Inter, Arial, sans-serif'; x.textAlign = 'right'; x.fillText('wisetrack.in  ·  how we build', 584, 860);
     return new THREE.CanvasTexture(c);
   };
   var sheetMat = function (page) { return new THREE.MeshStandardMaterial({ map: sheetTex(page), roughness: 0.9, metalness: 0, side: THREE.DoubleSide }); };
@@ -1340,7 +1343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function draw(now) {
       var r = sec.getBoundingClientRect(), travel = r.height - window.innerHeight, target = travel > 0 ? fit(-r.top / travel, 0.02, 0.78) : 1;
       prog += (target - prog) * (reduced ? 1 : 0.1);
-      var time = (now - tStart) / 1000, night = root.getAttribute('data-phase') === 'night', cs = getComputedStyle(root), ink = cs.getPropertyValue(night ? '--taupe-99' : '--sindoor-39').trim() || '#7d1426', gold = cs.getPropertyValue(night ? '--brass-78' : '--brass-68').trim() || '#b8903f';
+      var time = (now - tStart) / 1000, night = root.getAttribute('data-phase') === 'night', cs = getComputedStyle(root), ink = cs.getPropertyValue(night ? '--taupe-99' : '--sindoor-39').trim() || P('#7d1426'), gold = cs.getPropertyValue(night ? '--brass-78' : '--brass-68').trim() || P('#b8903f');
       x.setTransform(dpr, 0, 0, dpr, 0, 0); x.clearRect(0, 0, W, H);
       if (geo && prog > 0.002) for (var i = 0; i < pts.length; i++) {
         var p = pts[i], st = fit((prog - p.s * 0.45) / 0.55, 0, 1); if (st <= 0) continue; var e = st * st * (3 - 2 * st);
