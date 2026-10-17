@@ -15,17 +15,17 @@
 
 :root {
   /* Dark theme (default) — machined steel-black */
-  --bg: #2a0810;
-  --bg-2: #33050c;
-  --surface: #3a0d16;
-  --surface-2: #44101c;
-  --surface-3: #4f1522;
-  --line: #55202a;
-  --line-2: #6b2c37;
-  --text: #fffdf9;
-  --text-2: #ead6cf;
-  --muted: #c9a9a9;
-  --dim: #8f6a6c;
+  --bg: var(--taupe-20);
+  --bg-2: var(--taupe-21);
+  --surface: var(--taupe-24);
+  --surface-2: var(--taupe-27);
+  --surface-3: var(--taupe-30);
+  --line: var(--taupe-33);
+  --line-2: var(--taupe-38);
+  --text: var(--taupe-99);
+  --text-2: var(--taupe-89);
+  --muted: var(--taupe-76);
+  --dim: var(--taupe-56);
 
   /* Scrim = the RGB triplet used for surface highlights/borders.
      On dark theme this is white (lightens above the bg).
@@ -34,44 +34,44 @@
   --scrim: 255, 255, 255;
 
   /* Body atmosphere (aurora glow) — alpha tuned per theme */
-  --body-glow-1: rgba(201, 48, 31, 0.22);
-  --body-glow-2: rgba(184, 144, 63, 0.14);
+  --body-glow-1: rgb(var(--sindoor-55-rgb) / 0.22);
+  --body-glow-2: rgb(var(--brass-68-rgb) / 0.14);
 
-  --violet: #d8261c;
-  --violet-2: #ff6a45;
-  --indigo: #c9301f;
-  --sky: #c9a55a;
-  --cyan: #d9b26a;
-  --lime: #9fd3a6;
-  --mint: #7fc08a;
-  --steel: #b59a95;
+  --violet: var(--sindoor-57);
+  --violet-2: var(--sindoor-70);
+  --indigo: var(--sindoor-55);
+  --sky: var(--brass-74);
+  --cyan: var(--brass-78);
+  --lime: var(--leaf-82);
+  --mint: var(--leaf-75);
+  --steel: var(--taupe-71);
 }
 
 /* ─── Light theme overrides ─────────────────────────
    Triggered by <html class="light">. Anti-FOUC script in <head>
    reads localStorage and applies this class before first paint. */
 html.light {
-  --bg: #f8f3ec;          /* off-white, subtle violet tint */
-  --bg-2: #f1e8dc;        /* card background */
-  --surface: #fffdf9;     /* highest elevation: cards */
-  --surface-2: #f4ece0;
-  --surface-3: #ebe1d3;
-  --line: #dccdbd;        /* visible neutral border */
-  --line-2: #c4b0a2;
-  --text: #3b0d14;        /* near-black */
-  --text-2: #4a2a2e;      /* dark slate — body copy */
-  --muted: #7a4b4f;       /* still secondary but solidly readable */
-  --dim: #8f6a6c;         /* placeholder/disabled */
+  --bg: var(--taupe-97);          /* off-white, subtle violet tint */
+  --bg-2: var(--taupe-93);        /* card background */
+  --surface: var(--taupe-99);     /* highest elevation: cards */
+  --surface-2: var(--taupe-95);
+  --surface-3: var(--taupe-91);
+  --line: var(--taupe-86);        /* visible neutral border */
+  --line-2: var(--brass-77);
+  --text: var(--taupe-24b);        /* near-black */
+  --text-2: var(--taupe-33b);      /* dark slate — body copy */
+  --muted: var(--taupe-47);       /* still secondary but solidly readable */
+  --dim: var(--taupe-56);         /* placeholder/disabled */
 
   /* Flip scrim to black so 'rgba(var(--scrim), X)' darkens on light */
   --scrim: 0, 0, 0;
 
   /* Soften aurora atmosphere on light bg (otherwise blasts saturation) */
-  --body-glow-1: rgba(216, 38, 28, 0.05);
-  --body-glow-2: rgba(184, 144, 63, 0.05);
+  --body-glow-1: rgb(var(--sindoor-57-rgb) / 0.05);
+  --body-glow-2: rgb(var(--brass-68-rgb) / 0.05);
 
   /* Slightly darker violet for AA contrast on white card bgs */
-  --violet-2: #d8261c;
+  --violet-2: var(--sindoor-57);
 }
 
 html,
@@ -95,7 +95,7 @@ body {
   background-attachment: fixed;
 }
 
-::selection { background: rgba(216, 38, 28, 0.42); color: #fff; }
+::selection { background: rgb(var(--sindoor-57-rgb) / 0.42); color: #fff; }
 
 /* ─── Atmosphere ───────────────────────────── */
 .dotgrid {
@@ -143,15 +143,15 @@ body {
   opacity: 0.6;
   background: conic-gradient(
     from 180deg at 50% 50%,
-    #d8261c 0deg,
-    #c9301f 90deg,
-    #d9b26a 200deg,
-    #c9a55a 300deg,
-    #d8261c 360deg
+    var(--sindoor-57) 0deg,
+    var(--sindoor-55) 90deg,
+    var(--brass-78) 200deg,
+    var(--brass-74) 300deg,
+    var(--sindoor-57) 360deg
   );
 }
 .aurora-soft {
-  background: radial-gradient(closest-side, rgba(216, 38, 28, 0.55), transparent 70%);
+  background: radial-gradient(closest-side, rgb(var(--sindoor-57-rgb) / 0.55), transparent 70%);
   filter: blur(60px);
 }
 
@@ -161,10 +161,10 @@ body {
   inset: -20%;
   pointer-events: none;
   background:
-    radial-gradient(38% 50% at 20% 35%, rgba(216,38,28,0.85) 0%, transparent 60%),
-    radial-gradient(40% 50% at 80% 30%, rgba(201,48,31,0.70) 0%, transparent 60%),
-    radial-gradient(50% 60% at 60% 80%, rgba(184,144,63,0.55) 0%, transparent 60%),
-    radial-gradient(40% 40% at 30% 80%, rgba(201,165,90,0.45) 0%, transparent 60%);
+    radial-gradient(38% 50% at 20% 35%, rgb(var(--sindoor-57-rgb) / 0.85) 0%, transparent 60%),
+    radial-gradient(40% 50% at 80% 30%, rgb(var(--sindoor-55-rgb) / 0.70) 0%, transparent 60%),
+    radial-gradient(50% 60% at 60% 80%, rgb(var(--brass-68-rgb) / 0.55) 0%, transparent 60%),
+    radial-gradient(40% 40% at 30% 80%, rgb(var(--brass-74-rgb) / 0.45) 0%, transparent 60%);
   filter: blur(60px) saturate(140%);
   animation: shaderShift 22s ease-in-out infinite;
 }
@@ -181,7 +181,7 @@ body {
   width: 100%;
   aspect-ratio: 1;
   border-radius: 9999px;
-  background: conic-gradient(from 180deg, #d8261c, #c9301f, #d9b26a, #c9a55a, #d8261c);
+  background: conic-gradient(from 180deg, var(--sindoor-57), var(--sindoor-55), var(--brass-78), var(--brass-74), var(--sindoor-57));
   filter: blur(20px) saturate(130%);
   animation: orbSpin 24s linear infinite;
   opacity: 0.9;
@@ -224,16 +224,16 @@ body {
   box-decoration-break: clone;
 }
 .text-gradient {
-  background-image: linear-gradient(95deg, #fffdf9 0%, #ffb49b 45%, #ff6a45 100%);
+  background-image: linear-gradient(95deg, var(--taupe-99) 0%, var(--taupe-83) 45%, var(--sindoor-70) 100%);
 }
 .text-gradient-cool {
-  background-image: linear-gradient(95deg, #fffdf9 0%, #f0d9a2 50%, #d9b26a 100%);
+  background-image: linear-gradient(95deg, var(--taupe-99) 0%, var(--brass-89) 50%, var(--brass-78) 100%);
 }
 .text-gradient-mint {
-  background-image: linear-gradient(95deg, #fffdf9 0%, #ffb49b 45%, #ff6a45 100%);
+  background-image: linear-gradient(95deg, var(--taupe-99) 0%, var(--taupe-83) 45%, var(--sindoor-70) 100%);
 }
 .text-sweep {
-  background-image: linear-gradient(95deg, #fffdf9 0%, #ff6a45 50%, #d9b26a 100%);
+  background-image: linear-gradient(95deg, var(--taupe-99) 0%, var(--sindoor-70) 50%, var(--brass-78) 100%);
   background-size: 240% 100%;
   transition: background-position 1.2s cubic-bezier(.2,.7,.2,1);
 }
@@ -257,8 +257,8 @@ body {
     135deg,
     rgba(var(--scrim), 0.22),
     rgba(var(--scrim), 0) 30%,
-    rgba(216, 38, 28, 0.22) 70%,
-    rgba(184, 144, 63, 0.22) 100%
+    rgb(var(--sindoor-57-rgb) / 0.22) 70%,
+    rgb(var(--brass-68-rgb) / 0.22) 100%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -288,14 +288,14 @@ body {
   content: "";
   position: absolute;
   width: 16px; height: 16px;
-  border-color: rgba(255,106,69,0.85);
+  border-color: rgb(var(--sindoor-70-rgb) / 0.85);
   border-style: solid;
   pointer-events: none;
 }
 .hud::before { top: 10px; left: 10px; border-width: 1px 0 0 1px; }
 .hud::after  { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
-.hud-cyan::before, .hud-cyan::after { border-color: rgba(184,144,63,0.85); }
-.hud-lime::before, .hud-lime::after { border-color: rgba(79,122,58,0.85); }
+.hud-cyan::before, .hud-cyan::after { border-color: rgb(var(--brass-68-rgb) / 0.85); }
+.hud-lime::before, .hud-lime::after { border-color: rgb(var(--leaf-53-rgb) / 0.85); }
 /* Slightly tighter inset for compact cards / chips. */
 .hud-tight::before { top: 6px; left: 6px; width: 10px; height: 10px; }
 .hud-tight::after  { bottom: 6px; right: 6px; width: 10px; height: 10px; }
@@ -307,14 +307,14 @@ body {
   gap: 0.5rem;
   padding: 0.5rem 0.9rem;
   border-radius: 10px;
-  background: rgba(8, 9, 18, 0.78);
+  background: rgb(var(--taupe-20-rgb) / 0.78);
   border: 1px solid rgba(var(--scrim), 0.14);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   font-family: "JetBrains Mono", monospace;
   font-size: 11.5px;
   letter-spacing: 0.02em;
-  color: #fffdf9;
+  color: var(--taupe-99);
   white-space: nowrap;
   box-shadow:
     0 10px 30px -10px rgba(0,0,0,0.7),
@@ -327,13 +327,13 @@ body {
   flex-shrink: 0;
 }
 .sticker.float { position: absolute; z-index: 30; }
-.sticker.violet { color: #ffe1d6; border-color: rgba(255,106,69,0.55); background: rgba(110,13,18,0.78); }
-.sticker.cyan   { color: #f6e8c8; border-color: rgba(232,201,135,0.55); background: rgba(90,66,20,0.78); }
-.sticker.sky    { color: #f3e3c0; border-color: rgba(201,165,90,0.55); background: rgba(74,55,16,0.78); }
-.sticker.indigo { color: #f6e8dc; border-color: rgba(129,140,248,0.55); background: rgba(30,30,108,0.78); }
-.sticker.lime   { color: #e3f3dc; border-color: rgba(79,122,58,0.55); background: rgba(46,80,39,0.78); }
-.sticker.mint   { color: #def2e0; border-color: rgba(63,107,52,0.55); background: rgba(36,66,32,0.78); }
-.sticker.steel  { color: #efe4d6; border-color: rgba(122,75,79,0.55); background: rgba(31,41,55,0.78); }
+.sticker.violet { color: var(--taupe-93b); border-color: rgb(var(--sindoor-70-rgb) / 0.55); background: rgb(var(--sindoor-35-rgb) / 0.78); }
+.sticker.cyan   { color: var(--brass-93); border-color: rgb(var(--brass-85-rgb) / 0.55); background: rgb(var(--brass-40-rgb) / 0.78); }
+.sticker.sky    { color: var(--brass-92); border-color: rgb(var(--brass-74-rgb) / 0.55); background: rgb(var(--brass-35-rgb) / 0.78); }
+.sticker.indigo { color: var(--taupe-94b); border-color: rgb(var(--sindoor-70-rgb) / 0.55); background: rgb(var(--sindoor-35-rgb) / 0.78); }
+.sticker.lime   { color: var(--leaf-95); border-color: rgb(var(--leaf-53-rgb) / 0.55); background: rgb(var(--leaf-39-rgb) / 0.78); }
+.sticker.mint   { color: var(--leaf-94b); border-color: rgb(var(--leaf-48-rgb) / 0.55); background: rgb(var(--leaf-35-rgb) / 0.78); }
+.sticker.steel  { color: var(--taupe-92); border-color: rgb(var(--taupe-47-rgb) / 0.55); background: rgb(var(--taupe-24b-rgb) / 0.78); }
 
 @keyframes floaty {
   0%,100% { transform: translateY(0) rotate(var(--r, 0deg)); }
@@ -353,13 +353,13 @@ body {
   letter-spacing: -0.005em;
   color: #fff;
   background:
-    linear-gradient(180deg, #e0402e 0%, #9e130c 100%);
+    linear-gradient(180deg, var(--sindoor-61) 0%, var(--sindoor-45) 100%);
   border-radius: 12px;
   border: 1px solid rgba(var(--scrim), 0.18);
   box-shadow:
     0 1px 0 rgba(var(--scrim), 0.22) inset,
-    0 0 0 1px rgba(216,38,28,0.25),
-    0 14px 30px -10px rgba(216,38,28,0.55);
+    0 0 0 1px rgb(var(--sindoor-57-rgb) / 0.25),
+    0 14px 30px -10px rgb(var(--sindoor-57-rgb) / 0.55);
   transition: transform 0.25s ease, box-shadow 0.35s ease, filter 0.25s ease;
 }
 .btn-primary:hover {
@@ -367,9 +367,9 @@ body {
   filter: brightness(1.08);
   box-shadow:
     0 1px 0 rgba(var(--scrim), 0.30) inset,
-    0 0 0 1px rgba(216,38,28,0.4),
-    0 18px 44px -10px rgba(216,38,28,0.78),
-    0 0 0 8px rgba(216,38,28,0.16);
+    0 0 0 1px rgb(var(--sindoor-57-rgb) / 0.4),
+    0 18px 44px -10px rgb(var(--sindoor-57-rgb) / 0.78),
+    0 0 0 8px rgb(var(--sindoor-57-rgb) / 0.16);
 }
 .btn-primary .arr { transition: transform .25s ease; }
 .btn-primary:hover .arr { transform: translateX(3px); }
@@ -405,13 +405,13 @@ body {
   background: rgba(var(--scrim), 0.03);
   border: 1px solid rgba(var(--scrim), 0.08);
 }
-.tag-violet { color: #ffd5c9; border-color: rgba(216, 38, 28, 0.42); background: rgba(216, 38, 28, 0.10); }
-.tag-cyan { color: #f0dca8; border-color: rgba(184, 144, 63, 0.42); background: rgba(184, 144, 63, 0.10); }
-.tag-sky { color: #eedaa6; border-color: rgba(201, 165, 90, 0.42); background: rgba(201, 165, 90, 0.10); }
-.tag-indigo { color: #ffd0c4; border-color: rgba(201, 48, 31, 0.42); background: rgba(201, 48, 31, 0.10); }
-.tag-lime { color: #dcefd4; border-color: rgba(79, 122, 58, 0.42); background: rgba(79, 122, 58, 0.10); }
-.tag-mint { color: #d7eedb; border-color: rgba(63, 107, 52, 0.42); background: rgba(63, 107, 52, 0.10); }
-.tag-steel { color: #e9d9d3; border-color: rgba(122, 75, 79, 0.42); background: rgba(122, 75, 79, 0.10); }
+.tag-violet { color: var(--taupe-91b); border-color: rgb(var(--sindoor-57-rgb) / 0.42); background: rgb(var(--sindoor-57-rgb) / 0.10); }
+.tag-cyan { color: var(--brass-90); border-color: rgb(var(--brass-68-rgb) / 0.42); background: rgb(var(--brass-68-rgb) / 0.10); }
+.tag-sky { color: var(--brass-89b); border-color: rgb(var(--brass-74-rgb) / 0.42); background: rgb(var(--brass-74-rgb) / 0.10); }
+.tag-indigo { color: var(--taupe-90); border-color: rgb(var(--sindoor-55-rgb) / 0.42); background: rgb(var(--sindoor-55-rgb) / 0.10); }
+.tag-lime { color: var(--leaf-93b); border-color: rgb(var(--leaf-53-rgb) / 0.42); background: rgb(var(--leaf-53-rgb) / 0.10); }
+.tag-mint { color: var(--leaf-93c); border-color: rgb(var(--leaf-48-rgb) / 0.42); background: rgb(var(--leaf-48-rgb) / 0.10); }
+.tag-steel { color: var(--taupe-90b); border-color: rgb(var(--taupe-47-rgb) / 0.42); background: rgb(var(--taupe-47-rgb) / 0.10); }
 
 .slug {
   font-family: "JetBrains Mono", monospace;
@@ -423,7 +423,7 @@ body {
 
 .hairline {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(var(--scrim), 0.18) 18%, rgba(216,38,28,0.45) 50%, rgba(184,144,63,0.35) 82%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--scrim), 0.18) 18%, rgb(var(--sindoor-57-rgb) / 0.45) 50%, rgb(var(--brass-68-rgb) / 0.35) 82%, transparent);
 }
 .hairline-soft {
   height: 1px;
@@ -433,12 +433,12 @@ body {
 /* Status dot */
 .dot {
   position: relative; width: 8px; height: 8px; border-radius: 9999px;
-  background: #9fd3a6;
-  box-shadow: 0 0 10px rgba(79,122,58,0.7);
+  background: var(--leaf-82);
+  box-shadow: 0 0 10px rgb(var(--leaf-53-rgb) / 0.7);
 }
 .dot::after {
   content: ""; position: absolute; inset: -6px; border-radius: inherit;
-  border: 1px solid rgba(79,122,58,0.55); animation: pulse 1.8s ease-out infinite;
+  border: 1px solid rgb(var(--leaf-53-rgb) / 0.55); animation: pulse 1.8s ease-out infinite;
 }
 @keyframes pulse {
   0% { transform: scale(0.6); opacity: 1; }
@@ -505,7 +505,7 @@ body {
   position: absolute;
   inset: 18px 0 0 0;
   border-radius: 18px;
-  background: rgba(8, 9, 18, 0.92);
+  background: rgb(var(--taupe-20-rgb) / 0.92);
   border: 1px solid rgba(var(--scrim), 0.08);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -667,18 +667,18 @@ html.js .chars.in .char {
   font-family: inherit;
   transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
-.field::placeholder { color: var(--dim, #8f6a6c); }
+.field::placeholder { color: var(--dim, var(--taupe-56)); }
 .field:focus {
   outline: none;
-  border-color: rgba(216, 38, 28, 0.6);
-  background: rgba(216, 38, 28, 0.04);
-  box-shadow: 0 0 0 4px rgba(216, 38, 28, 0.15);
+  border-color: rgb(var(--sindoor-57-rgb) / 0.6);
+  background: rgb(var(--sindoor-57-rgb) / 0.04);
+  box-shadow: 0 0 0 4px rgb(var(--sindoor-57-rgb) / 0.15);
 }
 .field:-webkit-autofill,
 .field:-webkit-autofill:hover,
 .field:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--text);
-  -webkit-box-shadow: 0 0 0 1000px rgba(15, 16, 24, 1) inset;
+  -webkit-box-shadow: 0 0 0 1000px rgb(var(--taupe-20-rgb) / 1) inset;
   caret-color: var(--text);
   transition: background-color 9999s ease-in-out 0s;
 }
@@ -688,14 +688,14 @@ html.js .chars.in .char {
   position: relative;
   background:
     linear-gradient(180deg, rgba(var(--scrim), 0.05), rgba(var(--scrim), 0.01)),
-    radial-gradient(600px 240px at 80% 0%, rgba(184, 144, 63, 0.16), transparent 60%),
-    radial-gradient(600px 240px at 10% 110%, rgba(216, 38, 28, 0.22), transparent 60%),
-    #2a0810;
+    radial-gradient(600px 240px at 80% 0%, rgb(var(--brass-68-rgb) / 0.16), transparent 60%),
+    radial-gradient(600px 240px at 10% 110%, rgb(var(--sindoor-57-rgb) / 0.22), transparent 60%),
+    var(--taupe-20);
   border: 1px solid rgba(var(--scrim), 0.08);
   border-radius: 16px;
   overflow: hidden;
   box-shadow:
-    0 24px 60px -30px rgba(216,38,28,0.5),
+    0 24px 60px -30px rgb(var(--sindoor-57-rgb) / 0.5),
     inset 0 1px 0 rgba(var(--scrim), 0.05);
 }
 .mock-screen::after {
@@ -705,7 +705,7 @@ html.js .chars.in .char {
   pointer-events: none;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(var(--scrim), 0.25), rgba(var(--scrim), 0) 40%, rgba(216,38,28,0.28));
+  background: linear-gradient(135deg, rgba(var(--scrim), 0.25), rgba(var(--scrim), 0) 40%, rgb(var(--sindoor-57-rgb) / 0.28));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -738,7 +738,7 @@ html.js .chars.in .char {
   width: clamp(120px, 16vw, 220px);
   aspect-ratio: 1;
   border-radius: 9999px;
-  background: conic-gradient(from 180deg, #ff6a45, #c9301f, #d9b26a, #c9a55a, #ff6a45);
+  background: conic-gradient(from 180deg, var(--sindoor-70), var(--sindoor-55), var(--brass-78), var(--brass-74), var(--sindoor-70));
   animation: orbSpin 22s linear infinite;
   filter: saturate(120%);
 }
@@ -755,7 +755,7 @@ html.js .chars.in .char {
 .divider-marquee {
   border-top: 1px solid rgba(var(--scrim), 0.05);
   border-bottom: 1px solid rgba(var(--scrim), 0.05);
-  background: linear-gradient(90deg, rgba(216,38,28,0.05), rgba(184,144,63,0.05));
+  background: linear-gradient(90deg, rgb(var(--sindoor-57-rgb) / 0.05), rgb(var(--brass-68-rgb) / 0.05));
   overflow: hidden;
   padding: 14px 0;
 }
@@ -776,7 +776,7 @@ html.js .chars.in .char {
 [data-rail] a.is-active .line {
   width: 36px;
   background: var(--violet-2);
-  box-shadow: 0 0 12px rgba(255,106,69,0.6);
+  box-shadow: 0 0 12px rgb(var(--sindoor-70-rgb) / 0.6);
 }
 
 /* Cursor blink */
@@ -795,14 +795,14 @@ html.js .chars.in .char {
 
 .glow-line {
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(216,38,28,0.7), rgba(184,144,63,0.7), transparent);
+  background: linear-gradient(90deg, transparent, rgb(var(--sindoor-57-rgb) / 0.7), rgb(var(--brass-68-rgb) / 0.7), transparent);
   filter: blur(0.5px);
 }
 
 /* Terminal block */
 .terminal {
   font-family: "JetBrains Mono", monospace;
-  background: linear-gradient(180deg, rgba(var(--scrim), 0.03), rgba(var(--scrim), 0.01)), #3b0d14;
+  background: linear-gradient(180deg, rgba(var(--scrim), 0.03), rgba(var(--scrim), 0.01)), var(--taupe-24b);
   border: 1px solid rgba(var(--scrim), 0.07);
   border-radius: 10px;
 }
@@ -828,7 +828,7 @@ html.js .chars.in .char {
   padding: 0 18px 0 14px;
   border-radius: 9999px;
   background: linear-gradient(180deg, #25D366 0%, #1FAD53 100%);
-  color: #fffdf9;
+  color: var(--taupe-99);
   box-shadow:
     0 1px 0 rgba(var(--scrim), 0.25) inset,
     0 0 0 1px rgba(37,211,102,0.35),
@@ -905,7 +905,7 @@ html.js .chars.in .char {
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(79, 122, 58, 0.9);
+  color: rgb(var(--leaf-53-rgb) / 0.9);
 }
 .wa-strip .copy .head {
   font-family: "Fraunces", ui-serif, Georgia, serif;
@@ -915,7 +915,7 @@ html.js .chars.in .char {
 }
 .wa-strip .copy .head em {
   font-style: italic;
-  background: linear-gradient(95deg, #fffdf9, #9fd3a6);
+  background: linear-gradient(95deg, var(--taupe-99), var(--leaf-82));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -977,39 +977,39 @@ html.js .chars.in .char {
 
 /* Aurora/shader/orb soften — too intense over white */
 html.light .aurora { opacity: 0.09; filter: blur(90px) saturate(60%); }
-html.light .aurora-soft { background: radial-gradient(closest-side, rgba(216, 38, 28, 0.08), transparent 70%); }
+html.light .aurora-soft { background: radial-gradient(closest-side, rgb(var(--sindoor-57-rgb) / 0.08), transparent 70%); }
 html.light .shader { opacity: 0.45; filter: blur(60px) saturate(90%); }
 html.light .orb { opacity: 0.55; filter: blur(20px) saturate(110%); }
 
 /* Selection — violet too dark on light, switch tint */
-html.light ::selection { background: rgba(216, 38, 28, 0.22); color: #3b0d14; }
+html.light ::selection { background: rgb(var(--sindoor-57-rgb) / 0.22); color: var(--taupe-24b); }
 
 /* Sticker chips — dark on dark, need light surface on light theme */
 html.light .sticker {
   background: rgba(255, 255, 255, 0.85);
-  color: #3a0d16;
+  color: var(--taupe-24);
   border-color: rgba(var(--scrim), 0.14);
   text-shadow: none;
   box-shadow:
     0 8px 24px -10px rgba(0, 0, 0, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
-html.light .sticker.violet { color: #6e0d12; border-color: rgba(216, 38, 28, 0.35); background: rgba(253, 232, 228, 0.95); }
-html.light .sticker.cyan   { color: #6b5220; border-color: rgba(184, 144, 63, 0.35); background: rgba(249, 240, 214, 0.95); }
-html.light .sticker.sky    { color: #5a4416; border-color: rgba(201, 165, 90, 0.35); background: rgba(247, 238, 214, 0.95); }
-html.light .sticker.indigo { color: #6e0d12; border-color: rgba(201, 48, 31, 0.35); background: rgba(253, 228, 222, 0.95); }
-html.light .sticker.lime   { color: #3d612d; border-color: rgba(79, 122, 58, 0.45); background: rgba(228, 240, 222, 0.95); }
-html.light .sticker.mint   { color: #2e5027; border-color: rgba(63, 107, 52, 0.35); background: rgba(223, 238, 224, 0.95); }
-html.light .sticker.steel  { color: #44101c; border-color: rgba(122, 75, 79, 0.35); background: rgba(241, 245, 249, 0.95); }
+html.light .sticker.violet { color: var(--sindoor-35); border-color: rgb(var(--sindoor-57-rgb) / 0.35); background: rgb(var(--taupe-95b-rgb) / 0.95); }
+html.light .sticker.cyan   { color: var(--brass-45); border-color: rgb(var(--brass-68-rgb) / 0.35); background: rgb(var(--brass-96-rgb) / 0.95); }
+html.light .sticker.sky    { color: var(--brass-40b); border-color: rgb(var(--brass-74-rgb) / 0.35); background: rgb(var(--brass-95-rgb) / 0.95); }
+html.light .sticker.indigo { color: var(--sindoor-35); border-color: rgb(var(--sindoor-55-rgb) / 0.35); background: rgb(var(--taupe-94-rgb) / 0.95); }
+html.light .sticker.lime   { color: var(--leaf-45); border-color: rgb(var(--leaf-53-rgb) / 0.45); background: rgb(var(--leaf-94-rgb) / 0.95); }
+html.light .sticker.mint   { color: var(--leaf-39); border-color: rgb(var(--leaf-48-rgb) / 0.35); background: rgb(var(--leaf-93-rgb) / 0.95); }
+html.light .sticker.steel  { color: var(--taupe-27); border-color: rgb(var(--taupe-47-rgb) / 0.35); background: rgb(var(--taupe-97-rgb) / 0.95); }
 
 /* Tags — keep semantic color, lighten backgrounds for light surface */
-html.light .tag-violet { color: #9e130c; background: rgba(216, 38, 28, 0.10); }
-html.light .tag-cyan   { color: #8a6a26; background: rgba(184, 144, 63, 0.10); }
-html.light .tag-sky    { color: #7d5f1e; background: rgba(201, 165, 90, 0.10); }
-html.light .tag-indigo { color: #9e130c; background: rgba(201, 48, 31, 0.10); }
-html.light .tag-lime   { color: #4f7a3a; background: rgba(79, 122, 58, 0.18); }
-html.light .tag-mint   { color: #3f6b34; background: rgba(63, 107, 52, 0.10); }
-html.light .tag-steel  { color: #55202a; background: rgba(122, 75, 79, 0.12); }
+html.light .tag-violet { color: var(--sindoor-45); background: rgb(var(--sindoor-57-rgb) / 0.10); }
+html.light .tag-cyan   { color: var(--brass-54); background: rgb(var(--brass-68-rgb) / 0.10); }
+html.light .tag-sky    { color: var(--brass-50); background: rgb(var(--brass-74-rgb) / 0.10); }
+html.light .tag-indigo { color: var(--sindoor-45); background: rgb(var(--sindoor-55-rgb) / 0.10); }
+html.light .tag-lime   { color: var(--leaf-53); background: rgb(var(--leaf-53-rgb) / 0.18); }
+html.light .tag-mint   { color: var(--leaf-48); background: rgb(var(--leaf-48-rgb) / 0.10); }
+html.light .tag-steel  { color: var(--taupe-33); background: rgb(var(--taupe-47-rgb) / 0.12); }
 
 /* Nav dropdown panel — hardcoded dark bg, override to light surface */
 html.light .nav-dropdown-panel::before {
@@ -1024,34 +1024,34 @@ html.light .nav-dropdown-panel::before {
 html.light .mock-screen {
   background:
     linear-gradient(180deg, rgba(var(--scrim), 0.02), rgba(var(--scrim), 0.005)),
-    radial-gradient(600px 240px at 80% 0%, rgba(184, 144, 63, 0.08), transparent 60%),
-    radial-gradient(600px 240px at 10% 110%, rgba(216, 38, 28, 0.12), transparent 60%),
-    #fffdf9;
+    radial-gradient(600px 240px at 80% 0%, rgb(var(--brass-68-rgb) / 0.08), transparent 60%),
+    radial-gradient(600px 240px at 10% 110%, rgb(var(--sindoor-57-rgb) / 0.12), transparent 60%),
+    var(--taupe-99);
   box-shadow:
-    0 24px 60px -30px rgba(216, 38, 28, 0.18),
+    0 24px 60px -30px rgb(var(--sindoor-57-rgb) / 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-/* Terminal — hardcoded #3b0d14 base, swap to dark-on-light card */
+/* Terminal — hardcoded var(--taupe-24b) base, swap to dark-on-light card */
 html.light .terminal {
-  background: linear-gradient(180deg, rgba(var(--scrim), 0.03), rgba(var(--scrim), 0.01)), #f8f3ec;
+  background: linear-gradient(180deg, rgba(var(--scrim), 0.03), rgba(var(--scrim), 0.01)), var(--taupe-97);
   border-color: rgba(var(--scrim), 0.10);
 }
-html.light .terminal .out { color: #5a2a30; }
-html.light .terminal .key { color: #b3170f; }
-html.light .terminal .str { color: #8a6a26; }
-html.light .terminal .com { color: #8f6a6c; }
+html.light .terminal .out { color: var(--taupe-35); }
+html.light .terminal .key { color: var(--sindoor-49); }
+html.light .terminal .str { color: var(--brass-54); }
+html.light .terminal .com { color: var(--taupe-56); }
 
 /* Input autofill — hardcoded dark fill on Chrome autocomplete */
 html.light .field:-webkit-autofill,
 html.light .field:-webkit-autofill:hover,
 html.light .field:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px #fffdf9 inset;
+  -webkit-box-shadow: 0 0 0 1000px var(--taupe-99) inset;
 }
 html.light .field:focus {
-  background: rgba(216, 38, 28, 0.04);
-  border-color: rgba(216, 38, 28, 0.5);
-  box-shadow: 0 0 0 4px rgba(216, 38, 28, 0.12);
+  background: rgb(var(--sindoor-57-rgb) / 0.04);
+  border-color: rgb(var(--sindoor-57-rgb) / 0.5);
+  box-shadow: 0 0 0 4px rgb(var(--sindoor-57-rgb) / 0.12);
 }
 
 /* Brandmark inner disc — uses var(--bg) which now flips correctly, but
@@ -1074,8 +1074,8 @@ html.light .btn-primary {
   border-color: rgba(255, 255, 255, 0.3);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.35) inset,
-    0 0 0 1px rgba(216, 38, 28, 0.4),
-    0 14px 30px -10px rgba(216, 38, 28, 0.4);
+    0 0 0 1px rgb(var(--sindoor-57-rgb) / 0.4),
+    0 14px 30px -10px rgb(var(--sindoor-57-rgb) / 0.4);
 }
 
 /* Card — explicit light background so it stands above body */
@@ -1090,22 +1090,22 @@ html.light .card-hover:hover { border-color: rgba(var(--scrim), 0.22); }
 
 /* Gradient text — first color is near-white on dark, swap to dark for legibility on white */
 html.light .text-gradient {
-  background-image: linear-gradient(95deg, #3b0d14 0%, #8a1a19 40%, #d8261c 100%);
+  background-image: linear-gradient(95deg, var(--taupe-24b) 0%, var(--sindoor-41) 40%, var(--sindoor-57) 100%);
 }
 html.light .text-gradient-cool {
-  background-image: linear-gradient(95deg, #3b0d14 0%, #7d5f1e 55%, #b8903f 100%);
+  background-image: linear-gradient(95deg, var(--taupe-24b) 0%, var(--brass-50) 55%, var(--brass-68) 100%);
 }
 html.light .text-gradient-mint {
-  background-image: linear-gradient(95deg, #3b0d14 0%, #8a1a19 40%, #d8261c 100%);
+  background-image: linear-gradient(95deg, var(--taupe-24b) 0%, var(--sindoor-41) 40%, var(--sindoor-57) 100%);
 }
 html.light .text-sweep {
-  background-image: linear-gradient(95deg, #3b0d14 0%, #d8261c 50%, #b8903f 100%);
+  background-image: linear-gradient(95deg, var(--taupe-24b) 0%, var(--sindoor-57) 50%, var(--brass-68) 100%);
   background-size: 240% 100%;
 }
 
 /* Hairline — main hairline starts white, swap to neutral dark */
 html.light .hairline {
-  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.12) 18%, rgba(216, 38, 28, 0.45) 50%, rgba(184, 144, 63, 0.35) 82%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.12) 18%, rgb(var(--sindoor-57-rgb) / 0.45) 50%, rgb(var(--brass-68-rgb) / 0.35) 82%, transparent);
 }
 
 /* WhatsApp strip — green palette stays, but base background needed for light */
@@ -1119,15 +1119,15 @@ html.light .wa-strip {
    invisible on a light-green strip. Darken to deep green on light. */
 html.light .wa-strip .copy .label { color: #15803D; }
 /* Heading em uses a near-white→lime gradient text-fill — first stop is
-   #fffdf9 which vanishes on white. Swap stops for dark green tones. */
+   var(--taupe-99) which vanishes on white. Swap stops for dark green tones. */
 html.light .wa-strip .copy .head em {
-  background-image: linear-gradient(95deg, #3b0d14, #15803D);
+  background-image: linear-gradient(95deg, var(--taupe-24b), #15803D);
 }
 
 /* Section divider marquee — needs visible borders on light */
 html.light .divider-marquee {
   border-color: rgba(var(--scrim), 0.10);
-  background: linear-gradient(90deg, rgba(216, 38, 28, 0.06), rgba(184, 144, 63, 0.06));
+  background: linear-gradient(90deg, rgb(var(--sindoor-57-rgb) / 0.06), rgb(var(--brass-68-rgb) / 0.06));
 }
 
 /* Glass — re-balance for light */
@@ -1162,7 +1162,7 @@ html.light .glass {
   border-color: rgba(0, 0, 0, 0.10);
 }
 html.light .glass::before {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0) 30%, rgba(216, 38, 28, 0.2) 70%, rgba(184, 144, 63, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0) 30%, rgb(var(--sindoor-57-rgb) / 0.2) 70%, rgb(var(--brass-68-rgb) / 0.2) 100%);
 }
 html.light .card {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55)), var(--surface);
@@ -1229,20 +1229,20 @@ html.light .scanlines { opacity: 0.12; }
 
 /* ─── Blog post body (.prose) light overrides ─────────────
    Every post-*.html has an INLINE <style> setting .prose p to a light
-   lavender color (rgba(198,194,216,0.92)) tuned for dark mode. Inline
+   lavender color (rgb(var(--taupe-76-rgb) / 0.92)) tuned for dark mode. Inline
    styles can't read CSS vars, so override here with higher specificity
    on light theme. */
 html.light .prose p {
-  color: #4a2a2e !important;  /* matches --text-2 on light */
+  color: var(--taupe-33b) !important;  /* matches --text-2 on light */
 }
 html.light .prose code {
   background: rgba(0, 0, 0, 0.05) !important;
   border-color: rgba(0, 0, 0, 0.10) !important;
-  color: #3b0d14;
+  color: var(--taupe-24b);
 }
 
 /* ─── Logo SVGs loaded via <img> — flip on light theme ──────
-   wt-mark.svg + wordmark.svg use fill="#fffdf9" (near-white) baked into
+   wt-mark.svg + wordmark.svg use fill="var(--taupe-99)" (near-white) baked into
    the file. Since <img src=".svg"> walls off the SVG from CSS, the only
    way to recolor them is a CSS filter. invert(1) on a near-white logo
    produces near-black — perfect for the light theme nav. */
@@ -1255,29 +1255,29 @@ html.light footer img[src*="/logo/wordmark.svg"] {
 
 /* ─── Brand accent text-color overrides for light mode ──────
    The brand palette (violet/cyan/sky/lime/mint) is tuned for dark.
-   On white, the bright shades (lime #9fd3a6, cyan #d9b26a) fail AA
+   On white, the bright shades (lime var(--leaf-82), cyan var(--brass-78)) fail AA
    contrast for body text. Darken accent text utilities only — keep
    the actual --lime/--cyan/--violet variables intact so shapes,
    icons, gradient stops, and box-shadows still glow bright. */
 html.light .text-lime,
 html.light .terminal .prompt,
-html.light .terminal .ok           { color: #4f7a3a !important; }
-html.light .text-cyan              { color: #8a6a26 !important; }
-html.light .text-sky               { color: #7d5f1e !important; }
-html.light .text-violet            { color: #b3170f !important; }
-html.light .text-violet-2          { color: #b3170f !important; }
-html.light .text-indigo            { color: #9e130c !important; }
-html.light .text-mint              { color: #3f6b34 !important; }
+html.light .terminal .ok           { color: var(--leaf-53) !important; }
+html.light .text-cyan              { color: var(--brass-54) !important; }
+html.light .text-sky               { color: var(--brass-50) !important; }
+html.light .text-violet            { color: var(--sindoor-49) !important; }
+html.light .text-violet-2          { color: var(--sindoor-49) !important; }
+html.light .text-indigo            { color: var(--sindoor-45) !important; }
+html.light .text-mint              { color: var(--leaf-48) !important; }
 
-/* SVG: shapes drawn with fill="#9fd3a6" (status dots, brand orbs) stay
+/* SVG: shapes drawn with fill="var(--leaf-82)" (status dots, brand orbs) stay
    bright lime. But fill on TEXT must darken. */
-html.light svg text[fill="#9fd3a6"],
-html.light svg [fill="#9fd3a6"] text { fill: #4f7a3a; }
+html.light svg text[fill="var(--leaf-82)"],
+html.light svg [fill="var(--leaf-82)"] text { fill: var(--leaf-53); }
 
 /* The .dot pulse status indicator (uses bg-lime) on light needs a deeper
    green so the dot reads as a "live" indicator instead of a pale wash */
-html.light .dot { background: #4f7a3a; box-shadow: 0 0 8px rgba(79, 122, 58, 0.5); }
-html.light .dot::after { border-color: rgba(79, 122, 58, 0.45); }
+html.light .dot { background: var(--leaf-53); box-shadow: 0 0 8px rgb(var(--leaf-53-rgb) / 0.5); }
+html.light .dot::after { border-color: rgb(var(--leaf-53-rgb) / 0.45); }
 
 /* ─── Inline SVG text fill overrides for light mode ─────────
    Architecture diagrams + HUD charts across pages use hardcoded
@@ -1288,29 +1288,29 @@ html.light .dot::after { border-color: rgba(79, 122, 58, 0.45); }
    SVG fill inherits, so when a diagram puts fill on a containing <g>,
    the <text> children inherit it — but CSS attribute selectors only
    check the element's own attribute. Hence both selector forms. */
-html.light svg text[fill="#fffdf9"],
-html.light svg text[fill="#f1e8dc"],
-html.light svg g[fill="#fffdf9"] text,
-html.light svg g[fill="#f1e8dc"] text  { fill: #3b0d14; }
+html.light svg text[fill="var(--taupe-99)"],
+html.light svg text[fill="var(--taupe-93)"],
+html.light svg g[fill="var(--taupe-99)"] text,
+html.light svg g[fill="var(--taupe-93)"] text  { fill: var(--taupe-24b); }
 
-html.light svg text[fill="#ffe1d6"],
-html.light svg text[fill="#f8e9e1"],
-html.light svg g[fill="#ffe1d6"] text,
-html.light svg g[fill="#f8e9e1"] text  { fill: #6e0d12; }   /* violet text */
+html.light svg text[fill="var(--taupe-93b)"],
+html.light svg text[fill="var(--taupe-94c)"],
+html.light svg g[fill="var(--taupe-93b)"] text,
+html.light svg g[fill="var(--taupe-94c)"] text  { fill: var(--sindoor-35); }   /* violet text */
 
-html.light svg text[fill="#f6e8c8"],
-html.light svg g[fill="#f6e8c8"] text  { fill: #8a6a26; }   /* cyan text */
+html.light svg text[fill="var(--brass-93)"],
+html.light svg g[fill="var(--brass-93)"] text  { fill: var(--brass-54); }   /* cyan text */
 
-html.light svg text[fill="#e3f3dc"],
-html.light svg g[fill="#e3f3dc"] text  { fill: #3d612d; }   /* lime text */
+html.light svg text[fill="var(--leaf-95)"],
+html.light svg g[fill="var(--leaf-95)"] text  { fill: var(--leaf-45); }   /* lime text */
 
-html.light svg text[fill="#c9a9a9"],
-html.light svg text[fill="#c9a9a9"],
-html.light svg g[fill="#c9a9a9"] text,
-html.light svg g[fill="#c9a9a9"] text  { fill: #8f6a6c; }   /* muted text — slightly darker for AA */
+html.light svg text[fill="var(--taupe-76)"],
+html.light svg text[fill="var(--taupe-76)"],
+html.light svg g[fill="var(--taupe-76)"] text,
+html.light svg g[fill="var(--taupe-76)"] text  { fill: var(--taupe-56); }   /* muted text — slightly darker for AA */
 
-html.light svg text[fill="#ff8a66"],
-html.light svg g[fill="#ff8a66"] text  { fill: #9e130c; }   /* indigo text */
+html.light svg text[fill="var(--sindoor-75)"],
+html.light svg g[fill="var(--sindoor-75)"] text  { fill: var(--sindoor-45); }   /* indigo text */
 /* lane guides / dashed lines on architecture SVG were drawn at 4% white;
    on light they're invisible. Boost via attribute selector. */
 html.light svg [stroke="rgba(255,255,255,0.04)"] { stroke: rgba(0, 0, 0, 0.08); }
@@ -1363,3 +1363,37 @@ html:not(.light) img[src$="backgorund.jpeg"] { opacity: 0.22 !important; }
 
 /* body must not become a scroll container (it would disable position: sticky); clip keeps the horizontal guard */
 body { overflow-x: clip; }
+
+/* ─── Palette picker (injected by site.js next to the theme toggle) ─── */
+.pal-wrap { position: relative; display: inline-flex; }
+.pal-menu {
+  position: absolute; right: 0; top: calc(100% + 10px); z-index: 70; min-width: 232px;
+  padding: 8px; border-radius: 16px; display: none;
+  background: var(--surface); border: 1px solid var(--line);
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.45), 0 1px 0 0 rgba(var(--scrim), 0.04);
+}
+.pal-menu.open { display: block; animation: rise 220ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.pal-wrap.compact .pal-menu { right: auto; left: 0; }
+.pal-head { padding: 6px 10px 8px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.pal-row {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border-radius: 10px;
+  border: 1px solid transparent; background: transparent; color: var(--text-2); font: inherit; font-size: 13.5px; text-align: left; cursor: pointer;
+}
+.pal-row:hover { background: rgba(var(--scrim), 0.05); color: var(--text); }
+.pal-row[aria-checked="true"] { border-color: var(--line-2); color: var(--text); }
+.pal-row[aria-checked="true"] .pal-label::after { content: "✓"; margin-left: auto; color: var(--violet); }
+.pal-label { display: flex; flex: 1; }
+.pal-chips { display: inline-flex; gap: 3px; }
+.pal-chips i { width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(var(--scrim), 0.12); }
+/* In the mobile menu the picker is an inline strip, not a popover */
+[data-theme-toggle-mobile] { flex-wrap: wrap; }
+.pal-wrap.compact { flex: 1 1 auto; min-width: 0; }
+.pal-wrap.compact .palette-toggle, .pal-wrap.compact .pal-head { display: none; }
+.pal-wrap.compact .pal-menu { position: static; display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; padding: 0; border: 0; background: transparent; box-shadow: none; animation: none; }
+.pal-wrap.compact .pal-row { width: auto; padding: 5px; gap: 0; border-color: rgba(var(--scrim), 0.10); }
+.pal-wrap.compact .pal-label { display: none; }
+.pal-wrap.compact .pal-chips i { width: 12px; height: 12px; }
+.pal-wrap.compact .pal-row[aria-checked="true"] { border-color: var(--violet); }
+.pal-wrap.compact .pal-label::after { display: none; }
+/* The header picker is desktop-only; the mobile menu carries the inline strip */
+@media (max-width: 767px) { header nav .pal-wrap:not(.compact) { display: none; } }

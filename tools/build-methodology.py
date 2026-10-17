@@ -123,7 +123,7 @@ team_js = r"""
     function draw(now) {
       var r = sec.getBoundingClientRect(), travel = r.height - window.innerHeight, target = travel > 0 ? fit(-r.top / travel, 0.02, 0.78) : 1;
       prog += (target - prog) * (reduced ? 1 : 0.1);
-      var time = (now - tStart) / 1000, night = root.getAttribute('data-phase') === 'night', ink = night ? '#f6efe3' : '#7d1426', gold = night ? '#d9b26a' : '#b8903f';
+      var time = (now - tStart) / 1000, night = root.getAttribute('data-phase') === 'night', cs = getComputedStyle(root), ink = cs.getPropertyValue(night ? '--taupe-99' : '--sindoor-39').trim() || '#7d1426', gold = cs.getPropertyValue(night ? '--brass-78' : '--brass-68').trim() || '#b8903f';
       x.setTransform(dpr, 0, 0, dpr, 0, 0); x.clearRect(0, 0, W, H);
       if (geo && prog > 0.002) for (var i = 0; i < pts.length; i++) {
         var p = pts[i], st = fit((prog - p.s * 0.45) / 0.55, 0, 1); if (st <= 0) continue; var e = st * st * (3 - 2 * st);
@@ -272,7 +272,7 @@ head = re.sub(r'(<meta name="description"\s+content=")[^"]*(")', r'\1Our build m
 head = re.sub(r'(<meta property="og:title" content=")[^"]*(")', r'\1How We Build — Fixed Price, Twelve Weeks to Production · Wisetrack\2', head)
 head = re.sub(r'(<meta property="og:description" content=")[^"]*(")', r'\1Discovery, the core, the first journey, a fixed price, two-week sprints, a release checklist and a handover in your name. Twelve weeks from brief to production.\2', head)
 head = re.sub(r'<link href="assets/styles.css\?v=[^"]*" rel="stylesheet" />',
-              '<link href="assets/styles.css?v=20261017" rel="stylesheet" />\n  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">\n  <style id="method-styles">' + ns.replace('\\', '\\\\') + '</style>', head)
+              '<link href="assets/styles.css?v=20261018" rel="stylesheet" />\n  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">\n  <style id="method-styles">' + ns.replace('\\', '\\\\') + '</style>', head)
 assert 'method-styles' in head
 libs = '\n'.join(re.findall(r'<script src="https://cdn.jsdelivr.net/npm/three@0\.128\.0/[^"]+"></script>', scene))
 tail = '\n'.join(lines[foot_i:]).replace('</body>', libs + '\n<script>' + js + '</script>\n</body>')

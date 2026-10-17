@@ -1,0 +1,657 @@
+{
+ "0e0306": {
+  "family": "taupe",
+  "name": "taupe-12",
+  "rgb": false
+ },
+ "1d0508": {
+  "family": "taupe",
+  "name": "taupe-16",
+  "rgb": false
+ },
+ "1e341a": {
+  "family": "leaf",
+  "name": "leaf-30",
+  "rgb": true
+ },
+ "233b1d": {
+  "family": "leaf",
+  "name": "leaf-32",
+  "rgb": true
+ },
+ "244220": {
+  "family": "leaf",
+  "name": "leaf-35",
+  "rgb": true
+ },
+ "2a0810": {
+  "family": "taupe",
+  "name": "taupe-20",
+  "rgb": true
+ },
+ "2d4a24": {
+  "family": "leaf",
+  "name": "leaf-38",
+  "rgb": true
+ },
+ "2e5027": {
+  "family": "leaf",
+  "name": "leaf-39",
+  "rgb": true
+ },
+ "33050c": {
+  "family": "taupe",
+  "name": "taupe-21",
+  "rgb": false
+ },
+ "37161d": {
+  "family": "taupe",
+  "name": "taupe-25",
+  "rgb": true
+ },
+ "38592b": {
+  "family": "leaf",
+  "name": "leaf-43",
+  "rgb": true
+ },
+ "3a0d16": {
+  "family": "taupe",
+  "name": "taupe-24",
+  "rgb": false
+ },
+ "3b0d14": {
+  "family": "taupe",
+  "name": "taupe-24b",
+  "rgb": true
+ },
+ "3d612d": {
+  "family": "leaf",
+  "name": "leaf-45",
+  "rgb": false
+ },
+ "3f6b34": {
+  "family": "leaf",
+  "name": "leaf-48",
+  "rgb": true
+ },
+ "426832": {
+  "family": "leaf",
+  "name": "leaf-47",
+  "rgb": true
+ },
+ "44101c": {
+  "family": "taupe",
+  "name": "taupe-27",
+  "rgb": false
+ },
+ "46080c": {
+  "family": "taupe",
+  "name": "taupe-26",
+  "rgb": true
+ },
+ "4a2a2e": {
+  "family": "taupe",
+  "name": "taupe-33b",
+  "rgb": false
+ },
+ "4a3710": {
+  "family": "brass",
+  "name": "brass-35",
+  "rgb": true
+ },
+ "4c7638": {
+  "family": "leaf",
+  "name": "leaf-52",
+  "rgb": true
+ },
+ "4f1522": {
+  "family": "taupe",
+  "name": "taupe-30",
+  "rgb": false
+ },
+ "4f7a3a": {
+  "family": "leaf",
+  "name": "leaf-53",
+  "rgb": true
+ },
+ "523236": {
+  "family": "taupe",
+  "name": "taupe-36",
+  "rgb": true
+ },
+ "550b0e": {
+  "family": "taupe",
+  "name": "taupe-29",
+  "rgb": true
+ },
+ "55202a": {
+  "family": "taupe",
+  "name": "taupe-33",
+  "rgb": false
+ },
+ "564015": {
+  "family": "brass",
+  "name": "brass-39",
+  "rgb": true
+ },
+ "5a2a30": {
+  "family": "taupe",
+  "name": "taupe-35",
+  "rgb": false
+ },
+ "5a4214": {
+  "family": "brass",
+  "name": "brass-40",
+  "rgb": true
+ },
+ "5a4416": {
+  "family": "brass",
+  "name": "brass-40b",
+  "rgb": false
+ },
+ "5e0f1c": {
+  "family": "taupe",
+  "name": "taupe-32",
+  "rgb": false
+ },
+ "678d55": {
+  "family": "leaf",
+  "name": "leaf-60",
+  "rgb": true
+ },
+ "6b2c37": {
+  "family": "taupe",
+  "name": "taupe-38",
+  "rgb": false
+ },
+ "6b5220": {
+  "family": "brass",
+  "name": "brass-45",
+  "rgb": false
+ },
+ "6d4d4f": {
+  "family": "taupe",
+  "name": "taupe-46",
+  "rgb": true
+ },
+ "6d531f": {
+  "family": "brass",
+  "name": "brass-46",
+  "rgb": true
+ },
+ "6e0d12": {
+  "family": "sindoor",
+  "name": "sindoor-35",
+  "rgb": true
+ },
+ "6e1e23": {
+  "family": "taupe",
+  "name": "taupe-37",
+  "rgb": true
+ },
+ "741111": {
+  "family": "sindoor",
+  "name": "sindoor-36",
+  "rgb": true
+ },
+ "79e4ff": {
+  "family": "taupe",
+  "name": "taupe-86d",
+  "rgb": false
+ },
+ "7a4b4f": {
+  "family": "taupe",
+  "name": "taupe-47",
+  "rgb": true
+ },
+ "7d1426": {
+  "family": "sindoor",
+  "name": "sindoor-39",
+  "rgb": true
+ },
+ "7d5f1e": {
+  "family": "brass",
+  "name": "brass-50",
+  "rgb": false
+ },
+ "7fc08a": {
+  "family": "leaf",
+  "name": "leaf-75",
+  "rgb": true
+ },
+ "846629": {
+  "family": "brass",
+  "name": "brass-53",
+  "rgb": true
+ },
+ "87a678": {
+  "family": "leaf",
+  "name": "leaf-69",
+  "rgb": true
+ },
+ "886968": {
+  "family": "taupe",
+  "name": "taupe-55",
+  "rgb": true
+ },
+ "8a1a19": {
+  "family": "sindoor",
+  "name": "sindoor-41",
+  "rgb": false
+ },
+ "8a6a26": {
+  "family": "brass",
+  "name": "brass-54",
+  "rgb": false
+ },
+ "8f6a6c": {
+  "family": "taupe",
+  "name": "taupe-56",
+  "rgb": false
+ },
+ "931814": {
+  "family": "sindoor",
+  "name": "sindoor-43",
+  "rgb": true
+ },
+ "9b7933": {
+  "family": "brass",
+  "name": "brass-60",
+  "rgb": true
+ },
+ "9e130c": {
+  "family": "sindoor",
+  "name": "sindoor-45",
+  "rgb": false
+ },
+ "9fd3a6": {
+  "family": "leaf",
+  "name": "leaf-82",
+  "rgb": true
+ },
+ "a38581": {
+  "family": "taupe",
+  "name": "taupe-64",
+  "rgb": true
+ },
+ "a8bf9b": {
+  "family": "leaf",
+  "name": "leaf-78",
+  "rgb": true
+ },
+ "b21e18": {
+  "family": "sindoor",
+  "name": "sindoor-49b",
+  "rgb": true
+ },
+ "b28b3d": {
+  "family": "brass",
+  "name": "brass-66",
+  "rgb": true
+ },
+ "b3170f": {
+  "family": "sindoor",
+  "name": "sindoor-49",
+  "rgb": false
+ },
+ "b59a95": {
+  "family": "taupe",
+  "name": "taupe-71",
+  "rgb": true
+ },
+ "b79d98": {
+  "family": "taupe",
+  "name": "taupe-72",
+  "rgb": true
+ },
+ "b81d16": {
+  "family": "sindoor",
+  "name": "sindoor-50",
+  "rgb": false
+ },
+ "b8903f": {
+  "family": "brass",
+  "name": "brass-68",
+  "rgb": true
+ },
+ "c29f58": {
+  "family": "brass",
+  "name": "brass-72",
+  "rgb": true
+ },
+ "c4b0a2": {
+  "family": "brass",
+  "name": "brass-77",
+  "rgb": false
+ },
+ "c7b3ae": {
+  "family": "taupe",
+  "name": "taupe-78",
+  "rgb": true
+ },
+ "c7d2fe": {
+  "family": "taupe",
+  "name": "taupe-87",
+  "rgb": false
+ },
+ "c8d9bf": {
+  "family": "leaf",
+  "name": "leaf-87",
+  "rgb": true
+ },
+ "c9301f": {
+  "family": "sindoor",
+  "name": "sindoor-55",
+  "rgb": true
+ },
+ "c9a55a": {
+  "family": "brass",
+  "name": "brass-74",
+  "rgb": true
+ },
+ "c9a9a9": {
+  "family": "taupe",
+  "name": "taupe-76",
+  "rgb": true
+ },
+ "d0241b": {
+  "family": "sindoor",
+  "name": "sindoor-55b",
+  "rgb": true
+ },
+ "d0b47a": {
+  "family": "brass",
+  "name": "brass-78b",
+  "rgb": true
+ },
+ "d7eedb": {
+  "family": "leaf",
+  "name": "leaf-93c",
+  "rgb": false
+ },
+ "d8261c": {
+  "family": "sindoor",
+  "name": "sindoor-57",
+  "rgb": true
+ },
+ "d8c9c4": {
+  "family": "taupe",
+  "name": "taupe-85",
+  "rgb": true
+ },
+ "d8e5d0": {
+  "family": "leaf",
+  "name": "leaf-91",
+  "rgb": true
+ },
+ "d9b26a": {
+  "family": "brass",
+  "name": "brass-78",
+  "rgb": true
+ },
+ "d9c1b9": {
+  "family": "taupe",
+  "name": "taupe-83b",
+  "rgb": false
+ },
+ "dccdbd": {
+  "family": "taupe",
+  "name": "taupe-86",
+  "rgb": false
+ },
+ "dcefd4": {
+  "family": "leaf",
+  "name": "leaf-93b",
+  "rgb": false
+ },
+ "de453c": {
+  "family": "sindoor",
+  "name": "sindoor-61b",
+  "rgb": true
+ },
+ "dec99b": {
+  "family": "brass",
+  "name": "brass-84",
+  "rgb": true
+ },
+ "def2e0": {
+  "family": "leaf",
+  "name": "leaf-94b",
+  "rgb": false
+ },
+ "dfeee0": {
+  "family": "leaf",
+  "name": "leaf-93",
+  "rgb": true
+ },
+ "e0402e": {
+  "family": "sindoor",
+  "name": "sindoor-61",
+  "rgb": false
+ },
+ "e3f3dc": {
+  "family": "leaf",
+  "name": "leaf-95",
+  "rgb": false
+ },
+ "e4f0de": {
+  "family": "leaf",
+  "name": "leaf-94",
+  "rgb": true
+ },
+ "e66f67": {
+  "family": "sindoor",
+  "name": "sindoor-68",
+  "rgb": true
+ },
+ "e6cbc8": {
+  "family": "taupe",
+  "name": "taupe-86c",
+  "rgb": false
+ },
+ "e8c987": {
+  "family": "brass",
+  "name": "brass-85",
+  "rgb": true
+ },
+ "e9d9d3": {
+  "family": "taupe",
+  "name": "taupe-90b",
+  "rgb": false
+ },
+ "e9e0da": {
+  "family": "taupe",
+  "name": "taupe-91c",
+  "rgb": true
+ },
+ "eaa9b0": {
+  "family": "taupe",
+  "name": "taupe-80",
+  "rgb": false
+ },
+ "ead6cf": {
+  "family": "taupe",
+  "name": "taupe-89",
+  "rgb": false
+ },
+ "ebe1d3": {
+  "family": "taupe",
+  "name": "taupe-91",
+  "rgb": false
+ },
+ "ecddbd": {
+  "family": "brass",
+  "name": "brass-90b",
+  "rgb": true
+ },
+ "ed9992": {
+  "family": "taupe",
+  "name": "taupe-77",
+  "rgb": true
+ },
+ "eedaa6": {
+  "family": "brass",
+  "name": "brass-89b",
+  "rgb": false
+ },
+ "efe4d6": {
+  "family": "taupe",
+  "name": "taupe-92",
+  "rgb": false
+ },
+ "f0d9a2": {
+  "family": "brass",
+  "name": "brass-89",
+  "rgb": false
+ },
+ "f0dca8": {
+  "family": "brass",
+  "name": "brass-90",
+  "rgb": false
+ },
+ "f1e8dc": {
+  "family": "taupe",
+  "name": "taupe-93",
+  "rgb": false
+ },
+ "f2ebe5": {
+  "family": "taupe",
+  "name": "taupe-94d",
+  "rgb": true
+ },
+ "f3e3c0": {
+  "family": "brass",
+  "name": "brass-92",
+  "rgb": false
+ },
+ "f3e8cd": {
+  "family": "brass",
+  "name": "brass-93b",
+  "rgb": true
+ },
+ "f4ece0": {
+  "family": "taupe",
+  "name": "taupe-95",
+  "rgb": false
+ },
+ "f5c2bd": {
+  "family": "taupe",
+  "name": "taupe-86b",
+  "rgb": true
+ },
+ "f6e8c8": {
+  "family": "brass",
+  "name": "brass-93",
+  "rgb": false
+ },
+ "f6e8dc": {
+  "family": "taupe",
+  "name": "taupe-94b",
+  "rgb": false
+ },
+ "f6ecdc": {
+  "family": "taupe",
+  "name": "taupe-95c",
+  "rgb": true
+ },
+ "f6efe3": {
+  "family": "taupe",
+  "name": "taupe-95d",
+  "rgb": false
+ },
+ "f7eed6": {
+  "family": "brass",
+  "name": "brass-95",
+  "rgb": true
+ },
+ "f8e9e1": {
+  "family": "taupe",
+  "name": "taupe-94c",
+  "rgb": false
+ },
+ "f8f3ec": {
+  "family": "taupe",
+  "name": "taupe-97",
+  "rgb": true
+ },
+ "f9d7d3": {
+  "family": "taupe",
+  "name": "taupe-91d",
+  "rgb": true
+ },
+ "f9f0d6": {
+  "family": "brass",
+  "name": "brass-96",
+  "rgb": true
+ },
+ "fde4de": {
+  "family": "taupe",
+  "name": "taupe-94",
+  "rgb": true
+ },
+ "fde8e4": {
+  "family": "taupe",
+  "name": "taupe-95b",
+  "rgb": true
+ },
+ "ff6a45": {
+  "family": "sindoor",
+  "name": "sindoor-70",
+  "rgb": true
+ },
+ "ff8a66": {
+  "family": "sindoor",
+  "name": "sindoor-75",
+  "rgb": false
+ },
+ "ff8ab0": {
+  "family": "sindoor",
+  "name": "sindoor-77",
+  "rgb": false
+ },
+ "ffb49b": {
+  "family": "taupe",
+  "name": "taupe-83",
+  "rgb": false
+ },
+ "ffc890": {
+  "family": "brass",
+  "name": "brass-87",
+  "rgb": false
+ },
+ "ffd0c4": {
+  "family": "taupe",
+  "name": "taupe-90",
+  "rgb": false
+ },
+ "ffd5c9": {
+  "family": "taupe",
+  "name": "taupe-91b",
+  "rgb": false
+ },
+ "ffe1d6": {
+  "family": "taupe",
+  "name": "taupe-93b",
+  "rgb": false
+ },
+ "ffe6c2": {
+  "family": "brass",
+  "name": "brass-94",
+  "rgb": false
+ },
+ "ffe6dc": {
+  "family": "taupe",
+  "name": "taupe-94e",
+  "rgb": true
+ },
+ "fffcf6": {
+  "family": "taupe",
+  "name": "taupe-99b",
+  "rgb": true
+ },
+ "fffdf9": {
+  "family": "taupe",
+  "name": "taupe-99",
+  "rgb": true
+ }
+}

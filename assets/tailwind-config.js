@@ -23,40 +23,40 @@ tailwind.config = {
         muted: "var(--muted)",
         dim: "var(--dim)",
         // Curd & sindoor scales for Tailwind default colour names used across pages
-        slate: {50: "#f2ebe5", 100: "#e9e0da", 200: "#d8c9c4", 300: "#c7b3ae", 400: "#b79d98", 500: "#a38581", 600: "#886968", 700: "#6d4d4f", 800: "#523236", 900: "#37161d", 950: "#2a0810"},
-        gray: {50: "#f2ebe5", 100: "#e9e0da", 200: "#d8c9c4", 300: "#c7b3ae", 400: "#b79d98", 500: "#a38581", 600: "#886968", 700: "#6d4d4f", 800: "#523236", 900: "#37161d", 950: "#2a0810"},
-        zinc: {50: "#f2ebe5", 100: "#e9e0da", 200: "#d8c9c4", 300: "#c7b3ae", 400: "#b79d98", 500: "#a38581", 600: "#886968", 700: "#6d4d4f", 800: "#523236", 900: "#37161d", 950: "#2a0810"},
-        neutral: {50: "#f2ebe5", 100: "#e9e0da", 200: "#d8c9c4", 300: "#c7b3ae", 400: "#b79d98", 500: "#a38581", 600: "#886968", 700: "#6d4d4f", 800: "#523236", 900: "#37161d", 950: "#2a0810"},
-        stone: {50: "#f2ebe5", 100: "#e9e0da", 200: "#d8c9c4", 300: "#c7b3ae", 400: "#b79d98", 500: "#a38581", 600: "#886968", 700: "#6d4d4f", 800: "#523236", 900: "#37161d", 950: "#2a0810"},
-        indigo: {50: "#f9d7d3", 100: "#f5c2bd", 200: "#ed9992", 300: "#e66f67", 400: "#de453c", 500: "#d0241b", 600: "#b21e18", 700: "#931814", 800: "#741111", 900: "#550b0e", 950: "#46080c"},
-        violet: {50: "#f9d7d3", 100: "#f5c2bd", 200: "#ed9992", 300: "#e66f67", 400: "#de453c", 500: "#d0241b", 600: "#b21e18", 700: "#931814", 800: "#741111", 900: "#550b0e", 950: "#46080c"},
-        purple: {50: "#f9d7d3", 100: "#f5c2bd", 200: "#ed9992", 300: "#e66f67", 400: "#de453c", 500: "#d0241b", 600: "#b21e18", 700: "#931814", 800: "#741111", 900: "#550b0e", 950: "#46080c"},
-        blue: {50: "#f9d7d3", 100: "#f5c2bd", 200: "#ed9992", 300: "#e66f67", 400: "#de453c", 500: "#d0241b", 600: "#b21e18", 700: "#931814", 800: "#741111", 900: "#550b0e", 950: "#46080c"},
-        red: {50: "#f9d7d3", 100: "#f5c2bd", 200: "#ed9992", 300: "#e66f67", 400: "#de453c", 500: "#d0241b", 600: "#b21e18", 700: "#931814", 800: "#741111", 900: "#550b0e", 950: "#46080c"},
-        rose: {50: "#f9d7d3", 100: "#f5c2bd", 200: "#ed9992", 300: "#e66f67", 400: "#de453c", 500: "#d0241b", 600: "#b21e18", 700: "#931814", 800: "#741111", 900: "#550b0e", 950: "#46080c"},
-        pink: {50: "#f9d7d3", 100: "#f5c2bd", 200: "#ed9992", 300: "#e66f67", 400: "#de453c", 500: "#d0241b", 600: "#b21e18", 700: "#931814", 800: "#741111", 900: "#550b0e", 950: "#46080c"},
-        fuchsia: {50: "#f9d7d3", 100: "#f5c2bd", 200: "#ed9992", 300: "#e66f67", 400: "#de453c", 500: "#d0241b", 600: "#b21e18", 700: "#931814", 800: "#741111", 900: "#550b0e", 950: "#46080c"},
-        sky: {50: "#f3e8cd", 100: "#ecddbd", 200: "#dec99b", 300: "#d0b47a", 400: "#c29f58", 500: "#b28b3d", 600: "#9b7933", 700: "#846629", 800: "#6d531f", 900: "#564015", 950: "#4a3710"},
-        cyan: {50: "#f3e8cd", 100: "#ecddbd", 200: "#dec99b", 300: "#d0b47a", 400: "#c29f58", 500: "#b28b3d", 600: "#9b7933", 700: "#846629", 800: "#6d531f", 900: "#564015", 950: "#4a3710"},
-        emerald: {50: "#d8e5d0", 100: "#c8d9bf", 200: "#a8bf9b", 300: "#87a678", 400: "#678d55", 500: "#4c7638", 600: "#426832", 700: "#38592b", 800: "#2d4a24", 900: "#233b1d", 950: "#1e341a"},
-        green: {50: "#d8e5d0", 100: "#c8d9bf", 200: "#a8bf9b", 300: "#87a678", 400: "#678d55", 500: "#4c7638", 600: "#426832", 700: "#38592b", 800: "#2d4a24", 900: "#233b1d", 950: "#1e341a"},
-        teal: {50: "#d8e5d0", 100: "#c8d9bf", 200: "#a8bf9b", 300: "#87a678", 400: "#678d55", 500: "#4c7638", 600: "#426832", 700: "#38592b", 800: "#2d4a24", 900: "#233b1d", 950: "#1e341a"},
-        amber: {50: "#f3e8cd", 100: "#ecddbd", 200: "#dec99b", 300: "#d0b47a", 400: "#c29f58", 500: "#b28b3d", 600: "#9b7933", 700: "#846629", 800: "#6d531f", 900: "#564015", 950: "#4a3710"},
-        yellow: {50: "#f3e8cd", 100: "#ecddbd", 200: "#dec99b", 300: "#d0b47a", 400: "#c29f58", 500: "#b28b3d", 600: "#9b7933", 700: "#846629", 800: "#6d531f", 900: "#564015", 950: "#4a3710"},
-        orange: {50: "#f3e8cd", 100: "#ecddbd", 200: "#dec99b", 300: "#d0b47a", 400: "#c29f58", 500: "#b28b3d", 600: "#9b7933", 700: "#846629", 800: "#6d531f", 900: "#564015", 950: "#4a3710"},
+        slate: {50: "rgb(var(--taupe-94d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-91c-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-85-rgb) / <alpha-value>)", 300: "rgb(var(--taupe-78-rgb) / <alpha-value>)", 400: "rgb(var(--taupe-72-rgb) / <alpha-value>)", 500: "rgb(var(--taupe-64-rgb) / <alpha-value>)", 600: "rgb(var(--taupe-55-rgb) / <alpha-value>)", 700: "rgb(var(--taupe-46-rgb) / <alpha-value>)", 800: "rgb(var(--taupe-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-25-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-20-rgb) / <alpha-value>)"},
+        gray: {50: "rgb(var(--taupe-94d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-91c-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-85-rgb) / <alpha-value>)", 300: "rgb(var(--taupe-78-rgb) / <alpha-value>)", 400: "rgb(var(--taupe-72-rgb) / <alpha-value>)", 500: "rgb(var(--taupe-64-rgb) / <alpha-value>)", 600: "rgb(var(--taupe-55-rgb) / <alpha-value>)", 700: "rgb(var(--taupe-46-rgb) / <alpha-value>)", 800: "rgb(var(--taupe-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-25-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-20-rgb) / <alpha-value>)"},
+        zinc: {50: "rgb(var(--taupe-94d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-91c-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-85-rgb) / <alpha-value>)", 300: "rgb(var(--taupe-78-rgb) / <alpha-value>)", 400: "rgb(var(--taupe-72-rgb) / <alpha-value>)", 500: "rgb(var(--taupe-64-rgb) / <alpha-value>)", 600: "rgb(var(--taupe-55-rgb) / <alpha-value>)", 700: "rgb(var(--taupe-46-rgb) / <alpha-value>)", 800: "rgb(var(--taupe-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-25-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-20-rgb) / <alpha-value>)"},
+        neutral: {50: "rgb(var(--taupe-94d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-91c-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-85-rgb) / <alpha-value>)", 300: "rgb(var(--taupe-78-rgb) / <alpha-value>)", 400: "rgb(var(--taupe-72-rgb) / <alpha-value>)", 500: "rgb(var(--taupe-64-rgb) / <alpha-value>)", 600: "rgb(var(--taupe-55-rgb) / <alpha-value>)", 700: "rgb(var(--taupe-46-rgb) / <alpha-value>)", 800: "rgb(var(--taupe-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-25-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-20-rgb) / <alpha-value>)"},
+        stone: {50: "rgb(var(--taupe-94d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-91c-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-85-rgb) / <alpha-value>)", 300: "rgb(var(--taupe-78-rgb) / <alpha-value>)", 400: "rgb(var(--taupe-72-rgb) / <alpha-value>)", 500: "rgb(var(--taupe-64-rgb) / <alpha-value>)", 600: "rgb(var(--taupe-55-rgb) / <alpha-value>)", 700: "rgb(var(--taupe-46-rgb) / <alpha-value>)", 800: "rgb(var(--taupe-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-25-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-20-rgb) / <alpha-value>)"},
+        indigo: {50: "rgb(var(--taupe-91d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-86b-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-77-rgb) / <alpha-value>)", 300: "rgb(var(--sindoor-68-rgb) / <alpha-value>)", 400: "rgb(var(--sindoor-61b-rgb) / <alpha-value>)", 500: "rgb(var(--sindoor-55b-rgb) / <alpha-value>)", 600: "rgb(var(--sindoor-49b-rgb) / <alpha-value>)", 700: "rgb(var(--sindoor-43-rgb) / <alpha-value>)", 800: "rgb(var(--sindoor-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-29-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-26-rgb) / <alpha-value>)"},
+        violet: {50: "rgb(var(--taupe-91d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-86b-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-77-rgb) / <alpha-value>)", 300: "rgb(var(--sindoor-68-rgb) / <alpha-value>)", 400: "rgb(var(--sindoor-61b-rgb) / <alpha-value>)", 500: "rgb(var(--sindoor-55b-rgb) / <alpha-value>)", 600: "rgb(var(--sindoor-49b-rgb) / <alpha-value>)", 700: "rgb(var(--sindoor-43-rgb) / <alpha-value>)", 800: "rgb(var(--sindoor-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-29-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-26-rgb) / <alpha-value>)"},
+        purple: {50: "rgb(var(--taupe-91d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-86b-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-77-rgb) / <alpha-value>)", 300: "rgb(var(--sindoor-68-rgb) / <alpha-value>)", 400: "rgb(var(--sindoor-61b-rgb) / <alpha-value>)", 500: "rgb(var(--sindoor-55b-rgb) / <alpha-value>)", 600: "rgb(var(--sindoor-49b-rgb) / <alpha-value>)", 700: "rgb(var(--sindoor-43-rgb) / <alpha-value>)", 800: "rgb(var(--sindoor-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-29-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-26-rgb) / <alpha-value>)"},
+        blue: {50: "rgb(var(--taupe-91d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-86b-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-77-rgb) / <alpha-value>)", 300: "rgb(var(--sindoor-68-rgb) / <alpha-value>)", 400: "rgb(var(--sindoor-61b-rgb) / <alpha-value>)", 500: "rgb(var(--sindoor-55b-rgb) / <alpha-value>)", 600: "rgb(var(--sindoor-49b-rgb) / <alpha-value>)", 700: "rgb(var(--sindoor-43-rgb) / <alpha-value>)", 800: "rgb(var(--sindoor-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-29-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-26-rgb) / <alpha-value>)"},
+        red: {50: "rgb(var(--taupe-91d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-86b-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-77-rgb) / <alpha-value>)", 300: "rgb(var(--sindoor-68-rgb) / <alpha-value>)", 400: "rgb(var(--sindoor-61b-rgb) / <alpha-value>)", 500: "rgb(var(--sindoor-55b-rgb) / <alpha-value>)", 600: "rgb(var(--sindoor-49b-rgb) / <alpha-value>)", 700: "rgb(var(--sindoor-43-rgb) / <alpha-value>)", 800: "rgb(var(--sindoor-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-29-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-26-rgb) / <alpha-value>)"},
+        rose: {50: "rgb(var(--taupe-91d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-86b-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-77-rgb) / <alpha-value>)", 300: "rgb(var(--sindoor-68-rgb) / <alpha-value>)", 400: "rgb(var(--sindoor-61b-rgb) / <alpha-value>)", 500: "rgb(var(--sindoor-55b-rgb) / <alpha-value>)", 600: "rgb(var(--sindoor-49b-rgb) / <alpha-value>)", 700: "rgb(var(--sindoor-43-rgb) / <alpha-value>)", 800: "rgb(var(--sindoor-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-29-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-26-rgb) / <alpha-value>)"},
+        pink: {50: "rgb(var(--taupe-91d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-86b-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-77-rgb) / <alpha-value>)", 300: "rgb(var(--sindoor-68-rgb) / <alpha-value>)", 400: "rgb(var(--sindoor-61b-rgb) / <alpha-value>)", 500: "rgb(var(--sindoor-55b-rgb) / <alpha-value>)", 600: "rgb(var(--sindoor-49b-rgb) / <alpha-value>)", 700: "rgb(var(--sindoor-43-rgb) / <alpha-value>)", 800: "rgb(var(--sindoor-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-29-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-26-rgb) / <alpha-value>)"},
+        fuchsia: {50: "rgb(var(--taupe-91d-rgb) / <alpha-value>)", 100: "rgb(var(--taupe-86b-rgb) / <alpha-value>)", 200: "rgb(var(--taupe-77-rgb) / <alpha-value>)", 300: "rgb(var(--sindoor-68-rgb) / <alpha-value>)", 400: "rgb(var(--sindoor-61b-rgb) / <alpha-value>)", 500: "rgb(var(--sindoor-55b-rgb) / <alpha-value>)", 600: "rgb(var(--sindoor-49b-rgb) / <alpha-value>)", 700: "rgb(var(--sindoor-43-rgb) / <alpha-value>)", 800: "rgb(var(--sindoor-36-rgb) / <alpha-value>)", 900: "rgb(var(--taupe-29-rgb) / <alpha-value>)", 950: "rgb(var(--taupe-26-rgb) / <alpha-value>)"},
+        sky: {50: "rgb(var(--brass-93b-rgb) / <alpha-value>)", 100: "rgb(var(--brass-90b-rgb) / <alpha-value>)", 200: "rgb(var(--brass-84-rgb) / <alpha-value>)", 300: "rgb(var(--brass-78b-rgb) / <alpha-value>)", 400: "rgb(var(--brass-72-rgb) / <alpha-value>)", 500: "rgb(var(--brass-66-rgb) / <alpha-value>)", 600: "rgb(var(--brass-60-rgb) / <alpha-value>)", 700: "rgb(var(--brass-53-rgb) / <alpha-value>)", 800: "rgb(var(--brass-46-rgb) / <alpha-value>)", 900: "rgb(var(--brass-39-rgb) / <alpha-value>)", 950: "rgb(var(--brass-35-rgb) / <alpha-value>)"},
+        cyan: {50: "rgb(var(--brass-93b-rgb) / <alpha-value>)", 100: "rgb(var(--brass-90b-rgb) / <alpha-value>)", 200: "rgb(var(--brass-84-rgb) / <alpha-value>)", 300: "rgb(var(--brass-78b-rgb) / <alpha-value>)", 400: "rgb(var(--brass-72-rgb) / <alpha-value>)", 500: "rgb(var(--brass-66-rgb) / <alpha-value>)", 600: "rgb(var(--brass-60-rgb) / <alpha-value>)", 700: "rgb(var(--brass-53-rgb) / <alpha-value>)", 800: "rgb(var(--brass-46-rgb) / <alpha-value>)", 900: "rgb(var(--brass-39-rgb) / <alpha-value>)", 950: "rgb(var(--brass-35-rgb) / <alpha-value>)"},
+        emerald: {50: "rgb(var(--leaf-91-rgb) / <alpha-value>)", 100: "rgb(var(--leaf-87-rgb) / <alpha-value>)", 200: "rgb(var(--leaf-78-rgb) / <alpha-value>)", 300: "rgb(var(--leaf-69-rgb) / <alpha-value>)", 400: "rgb(var(--leaf-60-rgb) / <alpha-value>)", 500: "rgb(var(--leaf-52-rgb) / <alpha-value>)", 600: "rgb(var(--leaf-47-rgb) / <alpha-value>)", 700: "rgb(var(--leaf-43-rgb) / <alpha-value>)", 800: "rgb(var(--leaf-38-rgb) / <alpha-value>)", 900: "rgb(var(--leaf-32-rgb) / <alpha-value>)", 950: "rgb(var(--leaf-30-rgb) / <alpha-value>)"},
+        green: {50: "rgb(var(--leaf-91-rgb) / <alpha-value>)", 100: "rgb(var(--leaf-87-rgb) / <alpha-value>)", 200: "rgb(var(--leaf-78-rgb) / <alpha-value>)", 300: "rgb(var(--leaf-69-rgb) / <alpha-value>)", 400: "rgb(var(--leaf-60-rgb) / <alpha-value>)", 500: "rgb(var(--leaf-52-rgb) / <alpha-value>)", 600: "rgb(var(--leaf-47-rgb) / <alpha-value>)", 700: "rgb(var(--leaf-43-rgb) / <alpha-value>)", 800: "rgb(var(--leaf-38-rgb) / <alpha-value>)", 900: "rgb(var(--leaf-32-rgb) / <alpha-value>)", 950: "rgb(var(--leaf-30-rgb) / <alpha-value>)"},
+        teal: {50: "rgb(var(--leaf-91-rgb) / <alpha-value>)", 100: "rgb(var(--leaf-87-rgb) / <alpha-value>)", 200: "rgb(var(--leaf-78-rgb) / <alpha-value>)", 300: "rgb(var(--leaf-69-rgb) / <alpha-value>)", 400: "rgb(var(--leaf-60-rgb) / <alpha-value>)", 500: "rgb(var(--leaf-52-rgb) / <alpha-value>)", 600: "rgb(var(--leaf-47-rgb) / <alpha-value>)", 700: "rgb(var(--leaf-43-rgb) / <alpha-value>)", 800: "rgb(var(--leaf-38-rgb) / <alpha-value>)", 900: "rgb(var(--leaf-32-rgb) / <alpha-value>)", 950: "rgb(var(--leaf-30-rgb) / <alpha-value>)"},
+        amber: {50: "rgb(var(--brass-93b-rgb) / <alpha-value>)", 100: "rgb(var(--brass-90b-rgb) / <alpha-value>)", 200: "rgb(var(--brass-84-rgb) / <alpha-value>)", 300: "rgb(var(--brass-78b-rgb) / <alpha-value>)", 400: "rgb(var(--brass-72-rgb) / <alpha-value>)", 500: "rgb(var(--brass-66-rgb) / <alpha-value>)", 600: "rgb(var(--brass-60-rgb) / <alpha-value>)", 700: "rgb(var(--brass-53-rgb) / <alpha-value>)", 800: "rgb(var(--brass-46-rgb) / <alpha-value>)", 900: "rgb(var(--brass-39-rgb) / <alpha-value>)", 950: "rgb(var(--brass-35-rgb) / <alpha-value>)"},
+        yellow: {50: "rgb(var(--brass-93b-rgb) / <alpha-value>)", 100: "rgb(var(--brass-90b-rgb) / <alpha-value>)", 200: "rgb(var(--brass-84-rgb) / <alpha-value>)", 300: "rgb(var(--brass-78b-rgb) / <alpha-value>)", 400: "rgb(var(--brass-72-rgb) / <alpha-value>)", 500: "rgb(var(--brass-66-rgb) / <alpha-value>)", 600: "rgb(var(--brass-60-rgb) / <alpha-value>)", 700: "rgb(var(--brass-53-rgb) / <alpha-value>)", 800: "rgb(var(--brass-46-rgb) / <alpha-value>)", 900: "rgb(var(--brass-39-rgb) / <alpha-value>)", 950: "rgb(var(--brass-35-rgb) / <alpha-value>)"},
+        orange: {50: "rgb(var(--brass-93b-rgb) / <alpha-value>)", 100: "rgb(var(--brass-90b-rgb) / <alpha-value>)", 200: "rgb(var(--brass-84-rgb) / <alpha-value>)", 300: "rgb(var(--brass-78b-rgb) / <alpha-value>)", 400: "rgb(var(--brass-72-rgb) / <alpha-value>)", 500: "rgb(var(--brass-66-rgb) / <alpha-value>)", 600: "rgb(var(--brass-60-rgb) / <alpha-value>)", 700: "rgb(var(--brass-53-rgb) / <alpha-value>)", 800: "rgb(var(--brass-46-rgb) / <alpha-value>)", 900: "rgb(var(--brass-39-rgb) / <alpha-value>)", 950: "rgb(var(--brass-35-rgb) / <alpha-value>)"},
         // Primary accent system
-        violet: "#d8261c",
-        "violet-2": "#ff6a45",
-        indigo: "#c9301f",
-        sky: "#c9a55a",
-        cyan: "#d9b26a",
-        lime: "#9fd3a6",
-        mint: "#7fc08a",
-        steel: "#b59a95",
+        violet: "rgb(var(--sindoor-57-rgb) / <alpha-value>)",
+        "violet-2": "rgb(var(--sindoor-70-rgb) / <alpha-value>)",
+        indigo: "rgb(var(--sindoor-55-rgb) / <alpha-value>)",
+        sky: "rgb(var(--brass-74-rgb) / <alpha-value>)",
+        cyan: "rgb(var(--brass-78-rgb) / <alpha-value>)",
+        lime: "rgb(var(--leaf-82-rgb) / <alpha-value>)",
+        mint: "rgb(var(--leaf-75-rgb) / <alpha-value>)",
+        steel: "rgb(var(--taupe-71-rgb) / <alpha-value>)",
         // legacy aliases (kept so previously-used utility classes still resolve)
-        fuchsia: "#c9301f",
-        pink: "#c9a55a",
-        ember: "#b59a95"
+        fuchsia: "rgb(var(--sindoor-55-rgb) / <alpha-value>)",
+        pink: "rgb(var(--brass-74-rgb) / <alpha-value>)",
+        ember: "rgb(var(--taupe-71-rgb) / <alpha-value>)"
       },
       fontFamily: {
         display: ['"Fraunces"', "ui-serif", "Georgia", "serif"],
@@ -74,8 +74,8 @@ tailwind.config = {
         gutter: "clamp(1rem, 2vw, 1.75rem)"
       },
       boxShadow: {
-        glow: "0 0 60px -10px rgba(216,38,28,0.45), 0 0 100px -20px rgba(184,144,63,0.25)",
-        "glow-sm": "0 0 24px -4px rgba(216,38,28,0.4)",
+        glow: "0 0 60px -10px rgb(var(--sindoor-57-rgb) / 0.45), 0 0 100px -20px rgb(var(--brass-68-rgb) / 0.25)",
+        "glow-sm": "0 0 24px -4px rgb(var(--sindoor-57-rgb) / 0.4)",
         card: "0 1px 0 0 rgba(255,255,255,0.04), 0 24px 60px -30px rgba(0,0,0,0.6)",
         inset: "inset 0 1px 0 0 rgba(255,255,255,0.06)"
       },
@@ -83,7 +83,7 @@ tailwind.config = {
         "grid-dots":
           "radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)",
         aurora:
-          "conic-gradient(from 180deg at 50% 50%, #d8261c 0deg, #c9301f 90deg, #d9b26a 200deg, #c9a55a 300deg, #d8261c 360deg)"
+          "conic-gradient(from 180deg at 50% 50%, var(--sindoor-57) 0deg, var(--sindoor-55) 90deg, var(--brass-78) 200deg, var(--brass-74) 300deg, var(--sindoor-57) 360deg)"
       },
       keyframes: {
         rise: {

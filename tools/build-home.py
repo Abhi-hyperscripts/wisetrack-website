@@ -60,8 +60,8 @@ for must in ('assets/home/portrait.png', 'assets/home/screen_home_light.png', 's
 main_i = next(i for i, l in enumerate(site) if l.strip().startswith('<main class="relative pt-[120px]">'))
 foot_i = next(i for i, l in enumerate(site) if l.strip().startswith('<footer class="py-16'))
 head = '\n'.join(site[:main_i])
-head = re.sub(r'<link href="assets/styles.css\?v=[^"]*" rel="stylesheet" />', '<link href="assets/styles.css?v=20261017" rel="stylesheet" />\n  <style id="home-styles">' + ns.replace('\\', '\\\\') + '</style>', head)
-head = re.sub(r'assets/tailwind-config.js\?v=[^"]*', 'assets/tailwind-config.js?v=20261017', head)
+head = re.sub(r'<link href="assets/styles.css\?v=[^"]*" rel="stylesheet" />', '<link href="assets/styles.css?v=20261018" rel="stylesheet" />\n  <style id="home-styles">' + ns.replace('\\', '\\\\') + '</style>', head)
+head = re.sub(r'assets/tailwind-config.js\?v=[^"]*', 'assets/tailwind-config.js?v=20261018', head)
 tail = '\n'.join(site[foot_i:]).replace('</body>', '<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>\n<script>' + js + '</script>\n</body>')
 page = head + '\n  <main class="relative pt-[120px]">\n' + markup + '  </main>\n' + tail
 open(f'{ROOT}/index.html', 'w', encoding='utf-8').write(page)

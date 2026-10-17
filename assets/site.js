@@ -29,7 +29,7 @@
       position: "fixed", pointerEvents: "none",
       width: "26px", height: "26px", left: "0", top: "0",
       transform: "translate(-50%, -50%) scale(1)", borderRadius: "9999px",
-      border: "1px solid rgba(216, 38, 28, 0.55)",
+      border: "1px solid rgb(var(--sindoor-57-rgb) / 0.55)",
       zIndex: "60",
       transition: "transform 200ms ease, opacity 300ms ease, background 200ms ease, border-color 200ms ease",
       opacity: "0"
@@ -58,13 +58,13 @@
     document.querySelectorAll(sel).forEach((el) => {
       el.addEventListener("mouseenter", () => {
         ring.style.transform = "translate(-50%, -50%) scale(1.7)";
-        ring.style.background = "rgba(216,38,28,0.12)";
-        ring.style.borderColor = "rgba(216,38,28,0.85)";
+        ring.style.background = "rgb(var(--sindoor-57-rgb) / 0.12)";
+        ring.style.borderColor = "rgb(var(--sindoor-57-rgb) / 0.85)";
       });
       el.addEventListener("mouseleave", () => {
         ring.style.transform = "translate(-50%, -50%) scale(1)";
         ring.style.background = "transparent";
-        ring.style.borderColor = "rgba(216, 38, 28, 0.55)";
+        ring.style.borderColor = "rgb(var(--sindoor-57-rgb) / 0.55)";
       });
     });
   }
@@ -412,9 +412,9 @@
         maxWidth: "320px",
         padding: "12px 14px",
         borderRadius: "12px",
-        background: "rgba(8, 9, 18, 0.94)",
-        border: "1px solid rgba(190, 242, 100, 0.45)",
-        color: "#EAEAF5",
+        background: "rgb(var(--taupe-20-rgb) / 0.94)",
+        border: "1px solid rgb(var(--leaf-82-rgb) / 0.45)",
+        color: "var(--taupe-99)",
         fontSize: "13.5px",
         lineHeight: "1.4",
         boxShadow: "0 16px 40px -10px rgba(0,0,0,0.55)",
@@ -428,7 +428,7 @@
     }
     t.textContent = message;
     t.style.borderColor =
-      kind === "error" ? "rgba(244, 114, 182, 0.6)" : "rgba(190, 242, 100, 0.45)";
+      kind === "error" ? "rgb(var(--sindoor-70-rgb) / 0.6)" : "rgb(var(--leaf-82-rgb) / 0.45)";
     t.style.opacity = "1";
     t.style.transform = "translateY(0)";
     clearTimeout(t._timer);
@@ -561,8 +561,62 @@
     }
   }
 
+  /* Palette picker — one button beside the theme toggle; the list, names and swatch
+     colours come from assets/palettes.css (--palette-list and the .pal-sw blocks), so
+     adding a palette in tools/palette_lib.py needs no change here. */
+  function initPaletteToggle() {
+    const rootEl = document.documentElement;
+    const raw = getComputedStyle(rootEl).getPropertyValue("--palette-list").replace(/["']/g, "").trim();
+    const ids = raw ? raw.split(",").map(x => x.trim()).filter(Boolean) : [];
+    if (ids.length < 2) return;
+    const current = () => rootEl.getAttribute("data-palette") || ids[0];
+    function apply(id) {
+      rootEl.setAttribute("data-palette", id);
+      try { localStorage.setItem("palette", id); } catch (e) { /* private mode */ }
+      document.querySelectorAll(".pal-row").forEach(r => r.setAttribute("aria-checked", r.dataset.p === id ? "true" : "false"));
+    }
+    function row(id) {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "pal-row pal-sw"; b.dataset.p = id; b.setAttribute("role", "menuitemradio");
+      b.setAttribute("aria-checked", id === current() ? "true" : "false");
+      b.innerHTML = '<span class="pal-chips"><i style="background:var(--pal-paper)"></i><i style="background:var(--pal-accent)"></i><i style="background:var(--pal-second)"></i><i style="background:var(--pal-ink)"></i></span><span class="pal-label"></span>';
+      b.querySelector(".pal-label").textContent = id;
+      b.addEventListener("click", () => { apply(id); closeAll(); });
+      return b;
+    }
+    function closeAll() { document.querySelectorAll(".pal-menu.open").forEach(m => { m.classList.remove("open"); m.previousElementSibling.setAttribute("aria-expanded", "false"); }); }
+    function makePicker(compact) {
+      const wrap = document.createElement("span"); wrap.className = "pal-wrap" + (compact ? " compact" : "");
+      const btn = document.createElement("button");
+      btn.type = "button"; btn.className = "theme-toggle palette-toggle"; btn.setAttribute("data-palette-toggle", "");
+      btn.setAttribute("aria-label", "Choose colour palette"); btn.setAttribute("aria-haspopup", "menu"); btn.setAttribute("aria-expanded", "false");
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18h1.2a2.2 2.2 0 0 0 1.6-3.7 2.2 2.2 0 0 1 1.6-3.7H18a3 3 0 0 0 3-3A7.6 7.6 0 0 0 12 3z"/><circle cx="7.5" cy="11.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="10.5" cy="7.5" r="1.2" fill="var(--violet)" stroke="none"/><circle cx="15.5" cy="7.5" r="1.2" fill="var(--cyan)" stroke="none"/></svg>';
+      const menu = document.createElement("div"); menu.className = "pal-menu"; menu.setAttribute("role", "menu");
+      const head = document.createElement("div"); head.className = "pal-head"; head.textContent = "Colour palette"; menu.appendChild(head);
+      ids.forEach(id => menu.appendChild(row(id)));
+      btn.addEventListener("click", e => { e.stopPropagation(); const open = menu.classList.contains("open"); closeAll(); if (!open) { menu.classList.add("open"); btn.setAttribute("aria-expanded", "true"); } });
+      menu.addEventListener("click", e => e.stopPropagation());
+      wrap.appendChild(btn); wrap.appendChild(menu);
+      return wrap;
+    }
+    // names come from CSS, which a detached element cannot see: label the rows once they are in the document
+    function fillNames(wrap) {
+      wrap.querySelectorAll(".pal-row").forEach(b => {
+        const name = getComputedStyle(b).getPropertyValue("--pal-name").replace(/["']/g, "").trim();
+        if (name) { b.querySelector(".pal-label").textContent = name; b.title = name; b.setAttribute("aria-label", name); }
+      });
+    }
+    document.addEventListener("click", closeAll);
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeAll(); });
+    const toggle = document.querySelector("header nav [data-theme-toggle]");
+    if (toggle && !document.querySelector("header nav [data-palette-toggle]")) { const w = makePicker(false); toggle.parentNode.insertBefore(w, toggle); fillNames(w); }
+    const mobileRow = document.querySelector("[data-theme-toggle-mobile]");
+    if (mobileRow && !mobileRow.querySelector("[data-palette-toggle]")) { const w = makePicker(true); mobileRow.appendChild(w); fillNames(w); }
+  }
+
   function init() {
     initThemeToggle();
+    initPaletteToggle();
     initCursor();
     initReveal();
     initCounters();
