@@ -49,8 +49,195 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,30..100,0..1;1,9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
-  <script src="assets/tailwind-config.js?v=20260620h"></script>
-  <link href="assets/styles.css?v=20260620h" rel="stylesheet" />
+  <script src="assets/tailwind-config.js?v=20261017"></script>
+  <link href="assets/styles.css?v=20261017" rel="stylesheet" />
+  <style id="home-styles">
+
+:root {
+  --curd: #f8f3ec;
+  --paper: #fffdf9;
+  --paper-2: #f1e8dc;
+  --ink: #3b0d14;
+  --ink-2: #7a4b4f;
+  --sindoor: #d8261c;
+  --sindoor-soft: #c9301f;
+  --sindoor-bright: #ff6a45;
+  --sindoor-deep: #6e0d12;
+  --brass: #b8903f;
+  --dusk: #2a0810;
+  --line: rgba(110, 30, 35, 0.16);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter Tight", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+#home :focus-visible { outline: 2px solid var(--sindoor); outline-offset: 3px; }
+
+#home #stage { position: fixed; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; }
+#home .shade { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 0.8s;
+  background: linear-gradient(90deg, rgba(248, 243, 236, 0.94) 0%, rgba(248, 243, 236, 0.66) 32%, rgba(248, 243, 236, 0) 54%); }
+#home .shade.on { opacity: 1; }
+#home.dusk .shade { background: linear-gradient(90deg, rgba(42, 8, 16, 0.9) 0%, rgba(42, 8, 16, 0.55) 34%, rgba(42, 8, 16, 0) 56%); }
+#home .bars::before, #home .bars::after { content: ""; position: fixed; left: 0; right: 0; height: 8vh; background: #1d0508; z-index: 30; transition: transform 1.6s cubic-bezier(0.7, 0, 0.2, 1) 1.5s; }
+#home .bars::before { top: 0; }
+#home .bars::after { bottom: 0; }
+#home .bars.open::before { transform: translateY(-100%); }
+#home .bars.open::after { transform: translateY(100%); }
+
+#home .nav { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 20; display: flex; align-items: center; gap: 40px; padding: 22px clamp(16px, 4.5vw, 64px);
+  color: var(--ink); opacity: 0; transform: translateY(-8px); transition: opacity 1.2s 2.3s, transform 1.2s 2.3s, color 0.6s; }
+#home.ready .nav { opacity: 1; transform: none; }
+#home.dusk .nav { color: var(--paper); }
+#home .brand { text-decoration: none; display: flex; align-items: center; gap: 12px; color: inherit; }
+#home .brand .mk { height: 30px; width: auto; color: var(--sindoor); }
+#home.dusk .brand .mk { color: var(--sindoor-bright); }
+#home .brand .wm { height: 15px; width: auto; }
+#home .nav nav { display: flex; gap: 32px; margin-left: auto; }
+#home .nav nav a { text-decoration: none; font-size: 14px; opacity: 0.72; transition: opacity 0.3s; }
+#home .nav nav a:hover { opacity: 1; }
+#home .btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 24px; font: 500 15px/1 var(--sans); text-decoration: none; cursor: pointer; border-radius: 999px;
+  border: 1px solid rgba(59, 13, 20, 0.22); color: var(--ink); background: rgba(255, 253, 249, 0.6); transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.3s, color 0.25s; }
+#home .btn:hover { background: var(--paper); border-color: rgba(59, 13, 20, 0.4); }
+#home .btn.solid { color: var(--paper); background: var(--sindoor); border-color: var(--sindoor); box-shadow: 0 10px 24px -10px rgba(216, 38, 28, 0.6); }
+#home .btn.solid:hover { background: #b81d16; border-color: #b81d16; transform: translateY(-1px); }
+#home.dusk .nav .btn { color: var(--paper); border-color: rgba(255, 253, 249, 0.35); background: rgba(255, 253, 249, 0.06); }
+#home .btn.small { padding: 10px 18px; font-size: 14px; }
+#home .btn .ar { width: 18px; height: 1px; background: currentColor; position: relative; }
+#home .btn .ar::after { content: ""; position: absolute; right: 0; top: -3px; width: 6px; height: 6px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); }
+
+#home .story { position: relative; z-index: 2; }
+#home .ch { position: relative; min-height: 100vh; display: flex; align-items: center; padding-block: 120px 90px; padding-inline: clamp(16px, 7vw, 120px); }
+#home .ch.hero { justify-content: center; text-align: center; align-items: flex-start; padding-top: max(15vh, 110px); }
+#home .copy { max-width: min(500px, 40vw); }
+#home .hero .copy { max-width: 980px; }
+#home .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sindoor); font-weight: 500; margin: 0 0 24px; display: flex; align-items: center; gap: 16px; }
+#home .hero .label { justify-content: center; }
+#home .label::before { content: ""; width: 34px; height: 1px; background: currentColor; }
+#home .hero .label::after { content: ""; width: 34px; height: 1px; background: currentColor; }
+#home h1, #home h2, #home h3 { font-family: var(--serif); font-weight: 380; font-variation-settings: "SOFT" 60; line-height: 1.02; letter-spacing: -0.02em; margin: 0; text-wrap: balance; color: var(--ink); }
+#home h1 { font-size: clamp(48px, 7.4vw, 120px); }
+#home h2 { font-size: clamp(38px, 4.3vw, 66px); }
+#home h3 { font-size: clamp(32px, 3.4vw, 52px); }
+#home em { font-style: italic; color: var(--sindoor); }
+#home .gild { color: var(--sindoor); }
+#home .lede { font-size: 19px; color: var(--ink-2); max-width: 32em; margin: 28px auto 36px; }
+#home .copy p { color: var(--ink-2); }
+#home .ch h2 + p { margin-top: 24px; }
+#home .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+#home .hero .ctas { justify-content: center; }
+#home .hero h1 .w { display: inline-block; opacity: 0; transform: translateY(0.35em); filter: blur(8px); transition: opacity 1.3s, transform 1.3s cubic-bezier(0.2, 0.7, 0.1, 1), filter 1.3s; }
+#home.ready .hero h1 .w { opacity: 1; transform: none; filter: none; }
+#home .hero .fade { opacity: 0; transition: opacity 1.5s 2.1s; }
+#home.ready .hero .fade { opacity: 1; }
+#home .cue { position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; color: var(--ink-2); text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+#home .cue::after { content: ""; width: 1px; height: 46px; background: linear-gradient(var(--sindoor), transparent); animation: cue 2.4s ease-in-out infinite; transform-origin: top; }@keyframes cue { 0%, 100% { transform: scaleY(0.25); } 50% { transform: scaleY(1); } }
+
+#home .spec { margin-top: 30px; display: grid; grid-template-columns: auto 1fr; gap: 10px 22px; font-size: 14px; border-top: 1px solid var(--line); padding-top: 20px; max-width: 440px; }
+#home .spec dt { font-family: var(--mono); color: var(--sindoor); letter-spacing: 0.18em; text-transform: uppercase; font-size: 10px; padding-top: 4px; font-weight: 500; }
+#home .spec dd { margin: 0; color: var(--ink); }
+#home .ch.night h2, #home .ch.night p { color: var(--paper); }
+#home .ch.night .copy p { color: #ead6cf; }
+#home .ch.night em { color: var(--sindoor-bright); }
+#home .ch.night .label { color: var(--sindoor-bright); }
+
+#home .rail { position: fixed; right: clamp(16px, 3vw, 44px); top: 50%; transform: translateY(-50%); z-index: 15; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; transition: opacity 0.6s; }
+#home .rail li { font-family: var(--serif); font-size: 14px; color: rgba(59, 13, 20, 0.3); text-align: right; transition: color 0.4s, transform 0.4s; }
+#home .rail li.on { color: var(--sindoor); transform: translateX(-6px); }
+#home.dusk .rail li { color: rgba(255, 253, 249, 0.35); }
+#home.dusk .rail li.on { color: var(--sindoor-bright); }
+#home .rail.off { opacity: 0; }
+
+#home .close { position: relative; z-index: 3; background: var(--paper-2); border-top: 1px solid var(--line); }
+#home .wrap { max-width: 1180px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 48px); padding-block: clamp(90px, 11vw, 150px); }
+#home .invite { text-align: center; }
+#home .invite p { color: var(--ink-2); max-width: 36em; margin: 26px auto 40px; }
+#home .invite .ctas { justify-content: center; }
+#home .grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(36px, 6vw, 90px); align-items: end; }
+#home .grid p { color: var(--ink-2); }
+#home .figs { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+#home .figs div { padding: 26px 0 0; }
+#home .figs div + div { padding-left: 26px; border-left: 1px solid var(--line); }
+#home .figs b { display: block; font-family: var(--serif); font-weight: 380; font-size: clamp(56px, 6vw, 84px); line-height: 1; color: var(--ink); }
+#home .figs b.gild { color: var(--sindoor); }
+#home .figs span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
+#home .kinds { margin-top: clamp(60px, 8vw, 100px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+#home .kinds div { padding: 28px 28px 30px 0; border-bottom: 1px solid var(--line); }
+#home .kinds div:not(:nth-child(3n+1)) { padding-left: 28px; border-left: 1px solid var(--line); }
+#home .kinds strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 24px; margin-bottom: 6px; }
+#home .kinds span { font-size: 15px; color: var(--ink-2); }
+#home footer { position: relative; z-index: 3; background: var(--dusk); color: #d9c1b9; }
+#home footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; gap: 12px 30px; justify-content: space-between; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }@media (max-width: 860px) {
+  #home .nav nav { display: none; }
+  #home .nav .btn { margin-left: auto; }
+  #home .shade { background: linear-gradient(0deg, rgba(248, 243, 236, 0.97) 0%, rgba(248, 243, 236, 0.82) 40%, rgba(248, 243, 236, 0) 64%); }
+  #home.dusk .shade { background: linear-gradient(0deg, rgba(42, 8, 16, 0.96) 0%, rgba(42, 8, 16, 0.75) 40%, rgba(42, 8, 16, 0) 64%); }
+  #home .ch { align-items: flex-end; padding-block: 100px 60px; }
+  #home .ch.hero { align-items: flex-start; padding-top: 110px; }
+  #home .copy { max-width: none; }
+  #home .lede { font-size: 17px; margin: 20px auto 26px; }
+  #home .rail, #home .cue { display: none; }
+  #home .grid { grid-template-columns: minmax(0, 1fr); }
+  #home .kinds { grid-template-columns: minmax(0, 1fr); }
+  #home .kinds div, #home .kinds div:not(:nth-child(3n+1)) { padding: 22px 0; border-left: 0; }}
+@media (max-width: 560px) { #home .brand .wm { display: none; }}
+@media (prefers-reduced-motion: reduce) {
+  #home .bars::before, #home .bars::after { display: none; }
+  #home .nav, #home .hero h1 .w, #home .hero .fade { transition: none !important; }
+  #home .cue::after { animation: none; }}
+
+
+
+#home #stage { background: var(--curd); }
+#home .loading { position: fixed; left: 50%; bottom: 40px; transform: translateX(-50%); z-index: 25; font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-2); display: flex; flex-direction: column; align-items: center; gap: 10px; transition: opacity 0.6s; }
+#home .loading i { display: block; width: 120px; height: 1px; background: rgba(59, 13, 20, 0.15); position: relative; overflow: hidden; }
+#home .loading i::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: var(--p, 0%); background: var(--sindoor); transition: width 0.2s; }
+#home.ready .loading { opacity: 0; pointer-events: none; }
+#home .chip { display: inline-flex; align-items: center; gap: 10px; margin-top: 26px; padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(216, 38, 28, 0.3); background: rgba(216, 38, 28, 0.06); font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sindoor); }
+#home .chip i { width: 6px; height: 6px; border-radius: 50%; background: var(--sindoor); }
+
+
+#home .section-head { max-width: 760px; margin-bottom: 40px; }
+#home .section-head p:last-child { color: var(--ink-2); margin: 16px 0 0; }
+#home .brands { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+#home .brandcard { display: block; text-decoration: none; padding: 34px 32px 30px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); transition: transform 0.25s, box-shadow 0.3s, border-color 0.25s; }
+#home .brandcard:hover { transform: translateY(-2px); box-shadow: 0 24px 50px -30px rgba(59, 13, 20, 0.35); border-color: rgba(216, 38, 28, 0.35); }
+#home .brandcard small { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sindoor); }
+#home .brandcard strong { display: block; font-family: var(--serif); font-weight: 380; font-size: clamp(26px, 2.4vw, 34px); line-height: 1.1; margin: 10px 0 14px; color: var(--ink); }
+#home .brandcard p { color: var(--ink-2); margin: 0 0 18px; }
+#home .brandcard ul { margin: 0 0 22px; padding: 0; list-style: none; display: grid; gap: 8px; }
+#home .brandcard li { position: relative; padding-left: 18px; font-size: 15px; color: var(--ink); }
+#home .brandcard li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--sindoor); }
+#home .brandcard.rz li::before { background: var(--brass); }
+#home .brandcard .more { display: inline-flex; align-items: center; gap: 10px; font-weight: 500; color: var(--sindoor); font-size: 15px; }
+#home .brandcard .more .ar { display: inline-block; width: 18px; height: 1px; background: currentColor; position: relative; }
+#home .brandcard .more .ar::after { content: ""; position: absolute; right: 0; top: -3px; width: 6px; height: 6px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); }
+#home .kinds a { display: block; text-decoration: none; color: inherit; }
+#home .kinds a:hover strong { color: var(--sindoor); }
+#home .mods { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+#home .mods a { display: block; text-decoration: none; color: inherit; background: var(--paper); padding: 22px 22px 24px; transition: background 0.25s; }
+#home .mods a:hover { background: var(--paper-2); }
+#home .mods b { display: block; font-family: var(--serif); font-weight: 400; font-size: 20px; margin-bottom: 6px; }
+#home .mods span { font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+#home .figs.four { grid-template-columns: 1fr 1fr; gap: 26px 0; }
+#home .figs.four div:nth-child(3), #home .figs.four div:nth-child(4) { border-top: 1px solid var(--line); padding-top: 22px; }
+#home .figs.four div:nth-child(3) { border-left: 0; padding-left: 0; }
+#home .stats { margin-top: clamp(56px, 7vw, 90px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+#home .stats div { padding: 26px 0; text-align: center; }
+#home .stats div + div { border-left: 1px solid var(--line); }
+#home .stats b { display: block; font-family: var(--serif); font-weight: 380; font-size: clamp(40px, 4.4vw, 60px); line-height: 1; color: var(--sindoor); }
+#home .stats span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
+#home .invite .mail { margin-top: 26px; font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; color: var(--ink); }@media (max-width: 860px) {
+  #home .brands { grid-template-columns: minmax(0, 1fr); }
+  #home .mods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #home .stats { grid-template-columns: 1fr 1fr; }
+  #home .stats div:nth-child(3) { border-left: 0; }
+  #home .stats div:nth-child(n+3) { border-top: 1px solid var(--line); }}
+@media (max-width: 520px) { #home .mods { grid-template-columns: minmax(0, 1fr); }}
+
+#home { position: relative; }
+#home .ch { min-height: 100svh; }
+#home h1, #home h2, #home h3 { font-variation-settings: "SOFT" 60, "WONK" 0; }
+html.light body { background: #f8f3ec; }
+</style>
   <script>document.documentElement.classList.add("js")</script>
   <script src="assets/site.js?v=20260620h" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
@@ -486,596 +673,183 @@
   </header>
 
   <main class="relative pt-[120px]">
+<div id="home">
+<div hidden aria-hidden="true"><a class="brand" href="#top" aria-label="Wisetrack Technologies"><svg class="mk" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 151"> <g transform="translate(0,151) scale(0.1,-0.1)" fill="currentColor" stroke="none"> <path d="M90 1416 c-11 -14 -10 -19 1 -34 8 -9 20 -28 27 -41 18 -31 137 -237 246 -425 47 -82 86 -151 86 -152 0 -2 25 -44 55 -94 30 -50 55 -93 55 -95 0 -11 92 -155 100 -155 10 0 23 16 52 70 14 25 39 70 57 102 l32 56 -22 39 c-12 21 -38 67 -59 103 -21 36 -65 112 -97 170 -54 94 -239 411 -262 450 -15 23 -252 28 -271 6z"/> <path d="M643 1415 c-3 -9 2 -24 11 -34 9 -10 16 -21 16 -24 0 -4 18 -36 40 -72 22 -36 40 -67 40 -70 0 -10 92 -155 98 -155 4 0 32 43 61 95 30 53 62 100 72 105 10 6 71 10 137 10 98 0 121 -3 126 -15 3 -9 -18 -54 -49 -105 -30 -50 -55 -93 -55 -95 0 -2 -25 -45 -55 -95 -30 -50 -55 -93 -55 -95 0 -2 -25 -45 -55 -95 -30 -50 -55 -93 -55 -95 0 -2 -25 -45 -55 -95 -30 -50 -55 -93 -55 -95 0 -2 -20 -38 -45 -78 -48 -79 -53 -101 -31 -132 7 -11 27 -45 44 -75 57 -103 67 -120 74 -120 9 0 40 49 85 130 39 72 211 369 285 493 32 54 58 100 58 102 0 2 25 45 55 95 30 50 55 93 55 95 0 4 51 91 90 155 5 8 19 33 30 55 12 22 29 46 38 53 12 9 87 12 294 12 l278 0 22 38 c13 21 29 47 36 57 23 37 25 47 11 56 -8 5 -353 9 -777 9 -677 0 -763 -2 -769 -15z"/> <path d="M1719 1050 c-14 -8 -45 -58 -137 -220 -105 -185 -135 -236 -143 -244 -12 -14 -41 16 -68 69 -14 29 -29 45 -38 43 -12 -3 -57 -68 -80 -118 -3 -8 -17 -32 -30 -52 -29 -47 -29 -59 2 -108 14 -22 25 -41 25 -43 0 -11 167 -291 175 -294 8 -2 73 102 170 276 17 31 95 165 132 226 7 11 15 27 19 35 4 8 25 43 46 78 21 34 38 64 38 66 0 4 81 146 100 176 5 8 21 36 35 62 21 40 22 47 9 52 -25 10 -237 6 -255 -4z"/> </g> </svg><svg class="wm" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15649.63 702.00"> <g transform="translate(-40.00,701.00)"> <g transform="translate(0.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M460 71 505 198 549 71C584 -25 714 -25 749 71L969 700H810L666 288C661 273 639 269 632 288L488 700H329L425 426L377 288C372 273 350 269 343 288L199 700H40L260 71C295 -25 425 -25 460 71Z"/></g> <g transform="translate(1049.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M40 0H190V700H40Z"/></g> <g transform="translate(1319.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M259 275H485C571 275 570 150 485 150H61V0H485C776 0 777 425 485 425H259C174 425 173 550 259 550H637V700H259C-33 700 -32 275 259 275Z"/></g> <g transform="translate(2103.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M215 701C98 701 40 635 40 501V1H680V151H190V476C190 526 211 551 253 551H681V701ZM315 276H620V426H315Z"/></g> <g transform="translate(2865.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M40 550H285V0H435V550H680V700H40Z"/></g> <g transform="translate(3625.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M40 0H190V200C190 250 215 275 265 275H375C425 275 434 247 450 200L520 0H680L600 225C591 252 582 276 573 298C753 386 719 700 468 700H40V550H468C554 550 553 425 468 425H240C106 425 40 359 40 225Z"/></g> <g transform="translate(4392.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M460 629C425 725 295 725 260 629L40 0H199L343 412C350 431 372 427 377 412L521 0H680Z"/></g> <g transform="translate(5152.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M240 700C106 700 40 634 40 500V200C40 66 106 0 240 0H680V150H265C215 150 190 175 190 225V475C190 525 215 550 265 550H530V470H680V700Z"/></g> <g transform="translate(5912.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M40 0H190V275H386C436 275 445 247 461 200L531 0H681L601 225C583 276 569 318 550 350C569 382 583 424 601 475L681 700H531L461 500C445 453 436 425 386 425H190V700H40Z"/></g> <g transform="translate(7173.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M40 550H285V0H435V550H680V700H40Z"/></g> <g transform="translate(7933.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M215 701C98 701 40 635 40 501V1H680V151H190V476C190 526 211 551 253 551H681V701ZM315 276H620V426H315Z"/></g> <g transform="translate(8695.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M240 700C106 700 40 634 40 500V200C40 66 106 0 240 0H680V150H265C215 150 190 175 190 225V475C190 525 215 550 265 550H530V470H680V700Z"/></g> <g transform="translate(9455.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M40 0H190V275H530V0H680V700H530V425H190V700H40Z"/></g> <g transform="translate(10215.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M530 315C530 286 509 287 497 302L228 650C154 745 40 693 40 595V0H190V385C190 414 211 413 223 398L492 50C566 -45 680 7 680 105V700H530Z"/></g> <g transform="translate(10975.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M240 700C106 700 40 634 40 500V200C40 66 106 0 240 0H480C614 0 680 66 680 200V500C680 634 614 700 480 700ZM190 225V475C190 525 215 550 265 550H455C505 550 530 525 530 475V225C530 175 505 150 455 150H265C215 150 190 175 190 225Z"/></g> <g transform="translate(11735.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M240 0H610V150H265C215 150 190 175 190 225V700C190 700 40 700 40 700V200C40 66 106 0 240 0Z"/></g> <g transform="translate(12425.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M240 700C106 700 40 634 40 500V200C40 66 106 0 240 0H480C614 0 680 66 680 200V500C680 634 614 700 480 700ZM190 225V475C190 525 215 550 265 550H455C505 550 530 525 530 475V225C530 175 505 150 455 150H265C215 150 190 175 190 225Z"/></g> <g transform="translate(13185.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M480 0C757 0 758 425 480 425H315V275H455C550 275 550 150 455 150H265C215 150 190 175 190 225V475C190 525 215 550 265 550H620V700H240C106 700 40 634 40 500V200C40 66 106 0 240 0Z"/></g> <g transform="translate(13954.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M40 0H190V700H40Z"/></g> <g transform="translate(14224.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M215 701C98 701 40 635 40 501V1H680V151H190V476C190 526 211 551 253 551H681V701ZM315 276H620V426H315Z"/></g> <g transform="translate(14986.00,0) scale(1.000000,-1.000000)" fill="currentColor"><path d="M259 275H485C571 275 570 150 485 150H61V0H485C776 0 777 425 485 425H259C174 425 173 550 259 550H637V700H259C-33 700 -32 275 259 275Z"/></g> </g> </svg></a></div>
+<canvas id="stage" aria-hidden="true"></canvas>
+<div class="shade" id="shade"></div>
 
-    <!-- ─────────── SECTION 01: HERO ─────────── -->
-    <section id="hero" class="relative overflow-hidden py-16 md:py-24 animate-rise">
-      <div class="absolute inset-0 -z-10 pointer-events-none">
-        <!-- Aurora blobs for glowing colors -->
-        <div class="aurora animate-drift animate-delay-0" style="top:-30%; left:-10%; opacity:.45"></div>
-        <div class="aurora animate-drift" style="top:20%; right:-20%; opacity:.30; animation-delay:-12s"></div>
 
-        <!-- Blueprint Grid -->
-        <div class="absolute inset-0 bp-grid"></div>
+<ol class="rail off" id="rail" aria-hidden="true">
+  <li data-i="1">I</li><li data-i="2">II</li><li data-i="3">III</li><li data-i="4">IV</li><li data-i="5">V</li><li data-i="6">VI</li>
+</ol>
 
-        <!-- Dot Grid -->
-        <div class="absolute inset-0 dotgrid opacity-[0.4]"></div>
-
-        <!-- Bottom gradient fade -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-bg/20 to-bg"></div>
-
-        <!-- Grain overlay -->
-        <div class="absolute inset-0 grain"></div>
+<main class="story" id="top">
+  <section class="ch hero" data-i="0">
+    <div class="copy">
+      <p class="label fade">Wisetrack Technologies · Noida</p>
+      <h1><span class="w">Software</span> <span class="w">that</span> <span class="w"><em class="gild">fits</em></span> <span class="w">your</span> <span class="w">business.</span></h1>
+      <p class="lede fade">Wisetrack builds custom software as HyperScripts and makes Ragenaizer, a Business OS for Indian companies. Web, mobile, AI and the systems that run your operations, engineered in Noida.</p>
+      <div class="ctas fade">
+        <a class="btn solid" href="#start">Start a project <span class="ar"></span></a>
+        <a class="btn" href="#brands">See what we build</a>
       </div>
+    </div>
+    <div class="cue fade">Scroll</div>
+  </section>
 
-      <div class="relative max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center">
-        <!-- Left: Heading and description -->
-        <div class="col-span-12 lg:col-span-7 flex flex-col items-start">
-          <div
-            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mint/5 border border-mint/20 text-xs font-semibold text-text mb-6">
-            <span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span>
-            <span class="text-[11px] tracking-wide text-text-2">LIVE: Optimizing Business Workflows</span>
-          </div>
-          <h1
-            class="font-display font-light text-[clamp(2.4rem,5.5vw,4.8rem)] leading-[1.08] tracking-[-0.03em] text-text">
-            Technology <br>that grows <span
-              class="font-display italic bg-gradient-to-r from-violet via-indigo to-cyan bg-clip-text text-transparent">businesses.</span>
-          </h1>
-          <p class="mt-6 text-base md:text-lg text-text-2/85 leading-relaxed max-w-xl">
-            We design, build and scale custom software, AI automation and business systems that help companies operate
-            smarter, move faster and grow stronger.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href="contact.html"
-              class="py-3 px-6 rounded-lg bg-indigo text-white font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center gap-2">
-              Start Your Project &rarr;
-            </a>
-            <a href="#solutions"
-              class="py-3 px-6 rounded-lg border border-line hover:bg-white/5 text-text font-semibold text-sm transition-all">
-              Explore Ragenaizer &rarr;
-            </a>
-          </div>
-        </div>
+  <section class="ch" data-i="1" id="method">
+    <div class="copy">
+      <p class="label">I · Custom engineering · HyperScripts</p>
+      <h2>Built for how your company <em>actually runs.</em></h2>
+      <p>Web portals, operational software and databases built around your workflow in C#, .NET and PostgreSQL. Multi-tenant B2B portals, financial bridges and high-volume transaction systems that grow with you.</p>
+      <span class="chip"><i></i>Web apps · databases · APIs</span>
+    </div>
+  </section>
 
-        <!-- Right: Flowchart diagram -->
-        <div class="col-span-12 lg:col-span-5 flex justify-center relative select-none">
-          <!-- Lottie Animation Background Container (Larger behind flowchart) -->
-          <div id="lottie-bg"
-            class="absolute w-[460px] h-[460px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none opacity-60 mix-blend-multiply dark:mix-blend-screen scale-110">
-          </div>
+  <section class="ch" data-i="2">
+    <div class="copy">
+      <p class="label">II · Mobile · HyperScripts</p>
+      <h2>Native apps for the team <em>on the road.</em></h2>
+      <p>iOS and Android apps tied to your central systems: field work, warehouse scanning, executive dashboards and customer accounts, with offline storage and real-time updates. Head office, branches and the field all see the same live data.</p>
+      <span class="chip"><i></i>iOS · Android · Flutter</span>
+    </div>
+  </section>
 
-          <div
-            class="relative flex flex-col items-center w-full max-w-[340px] p-6 bg-white/[0.015] border border-white/8 rounded-2xl shadow-sm">
-            <!-- Central connecting line -->
-            <div class="absolute top-10 bottom-10 left-1/2 w-[1px] bg-indigo/15 -translate-x-1/2 -z-10"></div>
+  <section class="ch" data-i="3">
+    <div class="copy">
+      <p class="label">III · AI and dashboards · HyperScripts</p>
+      <h2>Agents that do the work, dashboards <em>that show it.</em></h2>
+      <p>Agent loops wired to your real systems that triage tickets, draft replies, reconcile data and close the books, with audit trails and rate limits. Live dashboards for every branch and every number, updated as they happen.</p>
+      <span class="chip"><i></i>Agentic AI · RAG · live dashboards</span>
+    </div>
+  </section>
 
-            <!-- SVG connector splits -->
-            <svg class="absolute top-[180px] left-0 w-full h-[150px] -z-10 opacity-40 pointer-events-none text-indigo"
-              viewBox="0 0 340 150" fill="none">
-              <path d="M170 0 C 170 40, 50 20, 50 60 L50 90 C 50 130, 170 110, 170 150" stroke="currentColor"
-                stroke-width="1.2" />
-              <path d="M170 0 C 170 40, 290 20, 290 60 L290 90 C 290 130, 170 110, 170 150" stroke="currentColor"
-                stroke-width="1.2" />
-            </svg>
+  <section class="ch" data-i="4">
+    <div class="copy">
+      <p class="label">IV · Ragenaizer · Business OS</p>
+      <h2>One platform. <em>Every department.</em></h2>
+      <p>Our own product. CRM, HRMS and payroll, double-entry accounts, projects, training, chat, video and drive on one database and one login. Built for Indian companies, with GST, EPF, ESI and TDS handled out of the box.</p>
+      <span class="chip"><i></i>Replaces seven software bills</span>
+    </div>
+  </section>
 
-            <!-- Floating Popover (Sales Automation Tooltip) -->
-            <div
-              class="absolute left-[calc(100%-20px)] top-[95px] w-[170px] p-3.5 bg-bg/95 backdrop-blur-md border border-white/10 rounded-xl shadow-lg z-20 text-left">
-              <!-- Connection Line -->
-              <div class="absolute right-full top-1/2 -translate-y-1/2 w-5 border-t border-dashed border-indigo/40">
-              </div>
+  <section class="ch" data-i="5">
+    <div class="copy">
+      <p class="label">V · Ragenaizer · in your hand</p>
+      <h2>Your whole business, <em>in your pocket.</em></h2>
+      <p>The Ragenaizer app on Android and iPhone: attendance, leads, approvals, chat and calls, with the same records your office sees. For custom builds, the source code, servers and data are yours from day one.</p>
+      <span class="chip"><i></i>Android · iPhone · Web</span>
+    </div>
+  </section>
 
-              <div class="text-[9px] tracking-wider text-muted font-mono uppercase">Project Sourcing</div>
-              <div class="text-[12px] font-bold text-text mt-0.5">78% Automatable</div>
-              <a href="ai.html"
-                class="inline-flex items-center gap-0.5 text-[10px] font-semibold text-indigo hover:underline mt-2">
-                Explore Ragenaizer AI &rarr;
-              </a>
-            </div>
+  <section class="ch" data-i="6">
+    <div class="copy">
+      <p class="label">VI · Founder-led · Noida</p>
+      <h2>Built by people you can <em>call.</em></h2>
+      <p>Wisetrack is founder-led. The engineer who scopes your project is the one who builds it: a fixed price within a day of the brief, working software every week, and after launch it is kept running on one plan.</p>
+      <div class="ctas" style="margin-top:30px"><a class="btn solid" href="#start">Start a project <span class="ar"></span></a></div>
+    </div>
+  </section>
+</main>
 
-            <!-- Flow Cards -->
-            <div class="flex items-center gap-2.5 w-36 bg-surface border border-line rounded-lg px-3 py-2 shadow-sm">
-              <svg class="w-3.5 h-3.5 text-indigo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg> <span class="text-[11px] font-semibold text-text">Lead</span>
-            </div>
-            <div class="h-6"></div>
-            <div class="flex items-center gap-2.5 w-36 bg-surface border border-line rounded-lg px-3 py-2 shadow-sm">
-              <svg class="w-3.5 h-3.5 text-indigo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-              </svg> <span class="text-[11px] font-semibold text-text">Sales</span>
-            </div>
-            <div class="h-6"></div>
-            <div class="flex items-center gap-2.5 w-36 bg-surface border border-line rounded-lg px-3 py-2 shadow-sm">
-              <svg class="w-3.5 h-3.5 text-indigo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-              </svg> <span class="text-[11px] font-semibold text-text">Quotation</span>
-            </div>
-            <div class="h-6"></div>
-            <div class="flex items-center gap-2.5 w-36 bg-surface border border-line rounded-lg px-3 py-2 shadow-sm">
-              <svg class="w-3.5 h-3.5 text-indigo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path
-                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-                </path>
-              </svg> <span class="text-[11px] font-semibold text-text">Project</span>
-            </div>
+<section class="close" id="brands">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="label">Two brands · one company</p>
+      <h3>Custom-built, or <em>ready to run.</em></h3>
+      <p>Wisetrack operates two divisions. Choose the path that matches what your business needs.</p>
+    </div>
+    <div class="brands">
+      <a class="brandcard" href="custom-services.html">
+        <small>HyperScripts</small>
+        <strong>Custom software engineering</strong>
+        <p>Bespoke web apps and database backends, native iOS and Android applications, and production agentic AI, built exactly around your company's workflows.</p>
+        <ul><li>Web portals and business software in C#, .NET and PostgreSQL</li><li>Native mobile apps for field, warehouse and customers</li><li>Agent loops, RAG and dashboards on Anthropic Claude</li></ul>
+        <span class="more">Explore custom services <i class="ar"></i></span>
+      </a>
+      <a class="brandcard rz" href="products.html">
+        <small>Ragenaizer</small>
+        <strong>The Business OS product</strong>
+        <p>One suite for the whole company: CRM, HRMS and payroll, double-entry accounts, projects, training, chat, video and drive, on a single secure database.</p>
+        <ul><li>One login and one set of records for every department</li><li>Indian statutory payroll, GST filing and local compliance built in</li><li>Replaces seven separate software subscriptions</li></ul>
+        <span class="more">Explore Ragenaizer <i class="ar"></i></span>
+      </a>
+    </div>
+  </div>
 
-            <!-- Split Inventory / Employee Row -->
-            <div class="flex justify-between w-full py-5">
-              <div
-                class="flex items-center gap-2 bg-surface border border-line rounded-lg px-2.5 py-1.5 shadow-sm w-[100px]">
-                <svg class="w-3 h-3 text-indigo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
-                  <polygon points="12 22.08 12 12 3 6.92 3 17.08 12 22.08"></polygon>
-                  <polygon points="12 22.08 12 12 21 6.92 21 17.08 12 22.08"></polygon>
-                  <polygon points="12 12 3 6.92 12 1.84 21 6.92 12 12"></polygon>
-                </svg> <span class="text-[9px] font-semibold text-text">Inventory</span>
-              </div>
-              <div
-                class="flex items-center gap-2 bg-surface border border-line rounded-lg px-2.5 py-1.5 shadow-sm w-[100px]">
-                <svg class="w-3 h-3 text-indigo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg> <span class="text-[9px] font-semibold text-text">Employee</span>
-              </div>
-            </div>
+  <div class="wrap" id="services" style="padding-top:0">
+    <div class="section-head">
+      <p class="label">What we build · HyperScripts</p>
+      <h3>Custom products, <em>engineered selectively.</em></h3>
+      <p>We take on fewer projects and build them properly: real engineering, no placeholders.</p>
+    </div>
+    <div class="kinds">
+      <a href="custom-web-os-software.html"><strong>Custom web and OS software</strong><span>Enterprise systems, multi-tenant portals and high-volume transaction databases on ASP.NET Core and PostgreSQL.</span></a>
+      <a href="mobile-app.html"><strong>Mobile applications</strong><span>Native Swift and Kotlin apps, or Flutter, with offline storage, geofencing and real-time sync to your central systems.</span></a>
+      <a href="ai.html"><strong>Agentic AI solutions</strong><span>Agents with tool use against your real APIs, RAG over your data, safety gates and full cost observability.</span></a>
+      <a href="custom-services.html"><strong>Interactive dashboards</strong><span>Consolidated metrics for every branch and department, showing operational status as it changes.</span></a>
+      <a href="custom-services.html"><strong>Integrations and APIs</strong><span>Payment gateways, logistics, banking and finance bridges, wired into the systems you already run.</span></a>
+      <a href="custom-services.html"><strong>Cloud and operations</strong><span>Docker and Linux deployments, backups, monitoring and the monthly plan that keeps it all running.</span></a>
+    </div>
+  </div>
 
-            <div class="flex items-center gap-2.5 w-36 bg-surface border border-line rounded-lg px-3 py-2 shadow-sm">
-              <svg class="w-3.5 h-3.5 text-indigo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"></path>
-                <path d="M16 8H8m8 4H8m6 4H8"></path>
-              </svg> <span class="text-[11px] font-semibold text-text">Invoice</span>
-            </div>
-            <div class="h-6"></div>
-            <div class="flex items-center gap-2.5 w-36 bg-surface border border-line rounded-lg px-3 py-2 shadow-sm">
-              <svg class="w-3.5 h-3.5 text-indigo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-              </svg> <span class="text-[11px] font-semibold text-text">Reports</span>
-            </div>
-            <div class="h-6"></div>
-            <div
-              class="flex items-center gap-2.5 w-36 bg-indigo text-white border border-indigo rounded-lg px-3 py-2 shadow-md">
-              <svg class="w-3.5 h-3.5 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                <polyline points="17 6 23 6 23 12"></polyline>
-              </svg> <span class="text-[11px] font-semibold">Growth</span>
-            </div>
+  <div class="wrap" id="ragenaizer" style="padding-top:0">
+    <div class="section-head">
+      <p class="label">Ragenaizer · modules</p>
+      <h3>Twelve modules that behave <em>like one.</em></h3>
+      <p>Every module reads and writes the same records, so HR, sales, accounts and operations never go out of sync.</p>
+    </div>
+    <div class="mods">
+      <a href="hrms-payroll.html"><b>HRMS and Payroll</b><span>Onboarding to exit, statutory EPF, ESI and TDS, geofenced attendance, bank payout files.</span></a>
+      <a href="crm-sales.html"><b>CRM and Sales</b><span>Leads from web forms, Facebook and WhatsApp; pipeline to invoice in one click.</span></a>
+      <a href="build-accounts.html"><b>Accounts</b><span>Double-entry ledgers, GST invoicing, e-invoicing, expenses and cashflow.</span></a>
+      <a href="build-pms.html"><b>Projects</b><span>Milestones, timesheets, bug tickets with SLAs, client portal.</span></a>
+      <a href="build-lms.html"><b>Learning</b><span>Courses, compliance videos, assessments and digital certificates.</span></a>
+      <a href="build-chat.html"><b>Chat and Video</b><span>Audit-logged team chat, channels and video meetings with live captions.</span></a>
+      <a href="build-drive.html"><b>Drive</b><span>Company file storage with sharing, audit trail and your own bucket.</span></a>
+      <a href="build-email.html"><b>Mail</b><span>A unified inbox for every account, with the CRM a click away.</span></a>
+      <a href="build-research.html"><b>Research</b><span>Market research and surveys with analysis on your own data.</span></a>
+      <a href="products.html"><b>Copilot</b><span>Ninety-plus tools across the modules, answering and acting on Claude.</span></a>
+      <a href="products.html"><b>Mobile app</b><span>Android and iPhone: attendance, leads, approvals, chat and calls.</span></a>
+      <a href="products.html"><b>Storefront</b><span>Your own online shop, with stock, GST billing and payments on the same ledger.</span></a>
+    </div>
+    <div class="ctas" style="margin-top:36px"><a class="btn solid" href="products.html">Explore Ragenaizer <span class="ar"></span></a><a class="btn" href="https://ragenaizer.com" target="_blank" rel="noopener">Open ragenaizer.com</a></div>
+  </div>
 
-            <!-- Total Control Info -->
-            <div
-              class="mt-6 flex items-center justify-between w-full p-2.5 rounded-lg border border-line bg-surface/50 text-[10px] text-muted">
-              <span>One Platform. Every Department.</span>
-              <img src="assets/logo/wt-mark.svg" class="h-3 w-auto opacity-75" alt="" />
-            </div>
-          </div>
-        </div>
+  <div class="wrap" id="work" style="padding-top:0">
+    <div class="grid">
+      <div>
+        <p class="label">Case study · Custom CRM</p>
+        <h3>A recruitment firm won back <em>thirty-five hours</em> a week.</h3>
+        <p style="margin-top:24px">A growing recruitment and staffing company ran on scattered leads, manual follow-ups, Excel sheets and late sales reports. We built a custom CRM with WhatsApp integration, automatic lead assignment, pipeline tracking and real-time dashboards.</p>
+        <div class="ctas" style="margin-top:28px"><a class="btn" href="crm-case-study.html">Read the case study <span class="ar"></span></a></div>
       </div>
-    </section>
-
-    <!-- ─────────── SECTION 02: TRUST ─────────── -->
-    <section class="divider-marquee">
-      <div class="marquee">
-        <div class="marquee-track">
-          <span class="flex items-center gap-10 pr-10 serif italic text-2xl md:text-3xl text-text-2/90">
-            <span>Restaurant Brands International</span><span class="text-dim">✦</span>
-            <span>Burger King</span><span class="text-dim">✦</span>
-            <span>Popeyes</span><span class="text-dim">✦</span>
-            <span>Vivo Mobile</span><span class="text-dim">✦</span>
-            <span>Hindustan Times</span><span class="text-dim">✦</span>
-            <span>ABP News</span><span class="text-dim">✦</span>
-            <span>Times Internet</span><span class="text-dim">✦</span>
-            <span>Google</span><span class="text-dim">✦</span>
-            <span>PValue Analytics</span><span class="text-dim">✦</span>
-            <span>VBF Studios</span><span class="text-dim">✦</span>
-            <span>HNG Bharat</span><span class="text-dim">✦</span>
-            <span>Shahi International</span><span class="text-dim">✦</span>
-          </span>
-          <span class="flex items-center gap-10 pr-10 serif italic text-2xl md:text-3xl text-text-2/90"
-            aria-hidden="true">
-            <span>Restaurant Brands International</span><span class="text-dim">✦</span>
-            <span>Burger King</span><span class="text-dim">✦</span>
-            <span>Popeyes</span><span class="text-dim">✦</span>
-            <span>Vivo Mobile</span><span class="text-dim">✦</span>
-            <span>Hindustan Times</span><span class="text-dim">✦</span>
-            <span>ABP News</span><span class="text-dim">✦</span>
-            <span>Times Internet</span><span class="text-dim">✦</span>
-            <span>Google</span><span class="text-dim">✦</span>
-            <span>PValue Analytics</span><span class="text-dim">✦</span>
-            <span>VBF Studios</span><span class="text-dim">✦</span>
-            <span>HNG Bharat</span><span class="text-dim">✦</span>
-            <span>Shahi International</span><span class="text-dim">✦</span>
-          </span>
-        </div>
+      <div class="figs four">
+        <div><b class="gild">35+</b><span>Hours saved weekly</span></div>
+        <div><b>90%</b><span>Faster lead response</span></div>
+        <div><b>70%</b><span>Less manual work</span></div>
+        <div><b>3×</b><span>Sales productivity</span></div>
       </div>
-    </section>
+    </div>
+    <div class="stats">
+      <div><b>17</b><span>Years of experience</span></div>
+      <div><b>500+</b><span>Projects delivered</span></div>
+      <div><b>150+</b><span>Businesses served</span></div>
+      <div><b>30+</b><span>Industries</span></div>
+    </div>
+  </div>
 
-    <!-- ─────────── SECTION 02.5: WHAT WE DO (OUR BRANDS) ─────────── -->
-    <section class="py-16 md:py-24 relative overflow-hidden bg-bg-2 border-y border-white/5">
-      <div class="absolute inset-0 opacity-[0.02] bg-grid-dots"></div>
-      <div class="max-w-page mx-auto px-edge">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <span class="mono text-xs text-indigo tracking-widest uppercase">02 / CORE OFFERINGS</span>
-          <h2 class="font-display font-light text-3xl md:text-4xl text-text mt-3">
-            Two Brands. <span class="font-display italic text-indigo">One Goal:</span> Seamless Business Scaling.
-          </h2>
-          <p class="mt-4 text-sm md:text-base text-text-2/80">
-            Wisetrack operates two specialized divisions. Choose the path that matches your operational needs.
-          </p>
-        </div>
+  <div class="wrap invite" id="start" style="padding-top:0">
+    <p class="label" style="justify-content:center">Contact</p>
+    <h2>Let's build <em>something great.</em></h2>
+    <p>Tell us about your idea, your challenge or the system you need. The engineer who would build it calls you back, and you receive a fixed price within one working day of that call.</p>
+    <div class="ctas"><a class="btn solid" href="contact.html">Book a strategy call <span class="ar"></span></a><a class="btn" href="contact.html">Chat on WhatsApp</a></div>
+    <p class="mail">hello@wisetrack.in</p>
+  </div>
+</section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <!-- Card 1: HyperScripts -->
-          <div
-            class="relative group p-8 bg-surface border border-white/5 hover:border-indigo/30 rounded-2xl transition-all duration-300 flex flex-col justify-between shadow-sm">
-            <div
-              class="absolute top-0 right-0 w-24 h-24 bg-indigo/5 rounded-bl-full -z-10 group-hover:bg-indigo/10 transition-all duration-300">
-            </div>
-            <div>
-              <div class="flex items-center gap-3.5 mb-6">
-                <div
-                  class="w-12 h-12 rounded-xl flex items-center justify-center bg-indigo/10 text-indigo text-2xl font-bold">
-                  <!-- <svg class="" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> -->
-                  <img class="w-10 h-10 text-indigo logo-light-theme" src="assets/logo/dark-hy.webp"
-                    alt="HyperScripts Light Logo" />
-                  <img class="w-10 h-10 text-indigo logo-dark-theme" src="assets/logo/white-hy.png"
-                    alt="HyperScripts Dark Logo" />
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-text">HyperScripts</h3>
-                  <p class="text-[10px] tracking-wider text-muted font-mono uppercase mt-0.5">Custom Software
-                    Engineering</p>
-                </div>
-              </div>
-              <p class="text-sm text-text-2/80 leading-relaxed mb-6">
-                We design and build bespoke software, native mobile apps, custom database portals, and production-ready
-                agentic AI systems tailored strictly to your specific company workflows.
-              </p>
-              <ul class="space-y-2.5 text-xs text-text-2/70 mb-8">
-                <li class="flex items-center gap-2">
-                  <span class="text-indigo">✦</span> Bespoke web apps & database backends
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-indigo">✦</span> Native iOS & Android applications
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-indigo">✦</span> Agentic AI integration (Claude 3.5 Sonnet)
-                </li>
-              </ul>
-            </div>
-            <a href="custom-services.html"
-              class="py-3 px-6 text-center rounded-lg bg-indigo/10 hover:bg-indigo/20 text-indigo font-semibold text-xs transition-all uppercase tracking-wider font-mono">
-              Explore Custom Services &rarr;
-            </a>
-          </div>
-
-          <!-- Card 2: Ragenaizer -->
-          <div
-            class="relative group p-8 bg-surface border border-white/5 hover:border-mint/30 rounded-2xl transition-all duration-300 flex flex-col justify-between shadow-sm">
-            <div
-              class="absolute top-0 right-0 w-24 h-24 bg-mint/5 rounded-bl-full -z-10 group-hover:bg-mint/10 transition-all duration-300">
-            </div>
-            <div>
-              <div class="flex items-center gap-3.5 mb-6">
-                <div
-                  class="w-12 h-12 rounded-xl flex items-center justify-center bg-indigo/10 text-indigo text-2xl font-bold">
-                  <!-- <svg class="" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> -->
-                  <img class="w-10 h-10 text-indigo logo-light-theme" src="assets/logo/rag-black.png"
-                    alt="Ragenaizer Light Logo" />
-                  <img class="w-10 h-10 text-indigo logo-dark-theme" src="assets/logo/rag-white.png"
-                    alt="Ragenaizer Dark Logo" />
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-text">Ragenaizer</h3>
-                  <p class="text-[10px] tracking-wider text-muted font-mono uppercase mt-0.5">The Business OS Product
-                  </p>
-                </div>
-              </div>
-              <p class="text-sm text-text-2/80 leading-relaxed mb-6">
-                A single unified software suite to manage your entire business operations. Includes CRM, HRMS, LMS,
-                project tracking, accounting, chat, and cloud drive in one secure system.
-              </p>
-              <ul class="space-y-2.5 text-xs text-text-2/70 mb-8">
-                <li class="flex items-center gap-2">
-                  <span class="text-mint">✦</span> CRM, HRMS, and double-entry accounts
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-mint">✦</span> Team chat, video conferencing, & Drive
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-mint">✦</span> Replaces 7 separate software bills
-                </li>
-              </ul>
-            </div>
-            <a href="products.html"
-              class="py-3 px-6 text-center rounded-lg bg-mint/10 hover:bg-mint/20 text-mint font-semibold text-xs transition-all uppercase tracking-wider font-mono">
-              Explore Business OS &rarr;
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────── SECTION 03: PROBLEM VS SOLUTION ─────────── -->
-
-    <section class="text-text py-20 md:py-28 relative overflow-hidden">
-      <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] bg-grid-dots"></div>
-
-      <div class="relative max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center">
-        <!-- Left: Image mockup -->
-        <div class="col-span-12 lg:col-span-7 relative flex justify-center items-center">
-          <div
-            class="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-white/[0.015] hover:border-indigo/20 transition-all duration-300">
-            <img src="hyperscripts.png" alt="Ragenaizer Core Modules"
-              class="w-full h-auto object-cover block rounded-2xl" />
-          </div>
-        </div>
-
-        <!-- Right: Content -->
-        <div class="col-span-12 lg:col-span-5 flex flex-col items-start">
-          <div class="mono text-xs text-indigo mb-6 tracking-widest uppercase">03 / Hyperscripts.io</div>
-          <h2 class="font-display font-light text-3xl md:text-4xl leading-tight text-text">
-            Hyperscripts <br><span class="font-display italic text-indigo">Custom Software Development</span> AI
-            Solutions
-          </h2>
-          <p class="mt-6 text-sm md:text-base text-text-2/80 leading-relaxed max-w-md">
-            Build powerful custom software, web applications, mobile apps, AI-powered solutions, CRM systems, and
-            enterprise software that automate operations, improve productivity, and accelerate business growth.
-            Hyperscripts delivers secure, scalable, and future-ready digital solutions tailored to your business.
-          </p>
-          <a href="https://hyperscripts.io" target="_blank" rel="noopener"
-            class="mt-8 py-3 px-6 rounded-lg bg-indigo text-white font-semibold text-sm hover:opacity-90 transition-all flex items-center gap-2">
-            Explore Hyperscripts &rarr;
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ─────────── SECTION 04: RAGENAIZER PRODUCT ─────────── -->
-    <section id="solutions"
-      class="bg-surface/50 dark:bg-[#07080F] text-text py-20 md:py-28 relative overflow-hidden border-y border-black/5 dark:border-white/5">
-      <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] bg-grid-dots"></div>
-
-      <div class="relative max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center">
-        <!-- Left content -->
-        <div class="col-span-12 lg:col-span-5 flex flex-col items-start">
-          <div class="mono text-xs text-indigo mb-6 tracking-widest uppercase">04 / RAGENAIZER</div>
-          <h2 class="font-display font-light text-3xl md:text-4xl leading-tight text-text">
-            Ragenaizer <br><span class="font-display italic text-indigo">The Business OS</span> for Growing Companies.
-          </h2>
-          <p class="mt-6 text-sm md:text-base text-text-2/80 leading-relaxed max-w-md">
-            One platform to manage your entire business. CRM, HR, payroll, accounts, storage, and video calling under
-            one secure, unified database login.
-          </p>
-          <a href="https://ragenaizer.com" target="_blank" rel="noopener"
-            class="mt-8 py-3 px-6 rounded-lg bg-indigo text-white font-semibold text-sm hover:opacity-90 transition-all">
-            Explore Ragenaizer &rarr;
-          </a>
-        </div>
-
-        <!-- Right: Image mockup -->
-        <div class="col-span-12 lg:col-span-7 relative flex justify-center items-center">
-          <div
-            class="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-white/[0.015] hover:border-indigo/20 transition-all duration-300">
-            <img src="raginzer.png" alt="Ragenaizer Core Modules"
-              class="w-full h-auto object-cover block rounded-2xl" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────── SECTION 05: WHAT WE BUILD ─────────── -->
-    <section id="builds" class="py-16 md:py-24 animate-rise">
-      <div class="max-w-page mx-auto px-edge flex flex-col gap-4 lg:gap-12">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div>
-            <span class="mono text-xs text-indigo tracking-widest uppercase">06 / WHAT WE BUILD</span>
-            <h2 class="font-display font-light text-3xl text-text mt-3">Custom products, engineered selectively.</h2>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <div
-            class="group border border-line bg-surface/10 rounded-xl p-8 flex flex-col justify-between hover:border-indigo/40 hover:bg-surface/20 transition-all duration-300">
-            <div>
-              <div
-                class="w-10 h-10 rounded bg-indigo/5 border border-indigo/10 flex items-center justify-center text-indigo mb-6">
-                <svg class="w-5 h-5 text-violet group-hover/card:scale-110 transition-transform duration-200"
-                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  viewBox="0 0 24 24">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
-              </div>
-              <h3 class="font-display text-xl text-text font-light mb-3">Custom Software</h3>
-              <p class="text-sm text-text-2/80 leading-relaxed">Built around your workflow. Designed for impact.
-                High-performance databases, API integrations, and customized workflows.</p>
-            </div>
-            <a href="solutions.html"
-              class="mt-8 text-xs font-semibold text-indigo group-hover:translate-x-1 inline-flex items-center gap-1 transition-transform">
-              Learn More &rarr;
-            </a>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="group border border-line bg-surface/10 rounded-xl p-8 flex flex-col justify-between hover:border-indigo/40 hover:bg-surface/20 transition-all duration-300">
-            <div>
-              <div
-                class="w-10 h-10 rounded bg-indigo/5 border border-indigo/10 flex items-center justify-center text-indigo mb-6">
-                <svg class="w-5 h-5 text-mint group-hover/card:scale-110 transition-transform duration-200" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  viewBox="0 0 24 24">
-                  <rect x="3" y="11" width="18" height="10" rx="2"></rect>
-                  <circle cx="12" cy="5" r="2"></circle>
-                  <path d="M12 7v4m-4 5h8M8 12V9a4 4 0 0 1 8 0v3"></path>
-                </svg>
-              </div>
-              <h3 class="font-display text-xl text-text font-light mb-3">AI Automation</h3>
-              <p class="text-sm text-text-2/80 leading-relaxed">Automate repetitive tasks. Save time. Increase
-                productivity. Integrate LLMs, RAG, and automated agents into your pipeline.</p>
-            </div>
-            <a href="solutions.html"
-              class="mt-8 text-xs font-semibold text-indigo group-hover:translate-x-1 inline-flex items-center gap-1 transition-transform">
-              Learn More &rarr;
-            </a>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            class="group border border-line bg-surface/10 rounded-xl p-8 flex flex-col justify-between hover:border-indigo/40 hover:bg-surface/20 transition-all duration-300">
-            <div>
-              <div
-                class="w-10 h-10 rounded bg-indigo/5 border border-indigo/10 flex items-center justify-center text-indigo mb-6">
-                <svg class="w-5 h-5 text-lime group-hover/card:scale-110 transition-transform duration-200" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  viewBox="0 0 24 24">
-                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                </svg>
-              </div>
-              <h3 class="font-display text-xl text-text font-light mb-3">Digital Products</h3>
-              <p class="text-sm text-text-2/80 leading-relaxed">Websites, mobile apps and business portals your users
-                love. Intuitive interfaces matched with robust engineering foundations.</p>
-            </div>
-            <a href="solutions.html"
-              class="mt-8 text-xs font-semibold text-indigo group-hover:translate-x-1 inline-flex items-center gap-1 transition-transform">
-              Learn More &rarr;
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────── SECTION 06: CASE STUDY ─────────── -->
-    <section id="case-study" class="py-16 md:py-24 border-t border-line bg-surface/10">
-      <div class="max-w-page mx-auto px-edge flex flex-col gap-4 lg:gap-12">
-        <div class="mono text-xs text-indigo tracking-widest uppercase">05 / CASE STUDY</div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center">
-          <!-- Left: Image -->
-          <div class="col-span-12 lg:col-span-6 rounded-2xl overflow-hidden border border-line aspect-[16/10]">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-              alt="Manufacturing Warehouse Automation"
-              class="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
-          </div>
-
-          <!-- Right: Details -->
-          <div class="col-span-12 lg:col-span-6 flex flex-col items-start">
-            <span class="text-xs text-indigo font-bold tracking-wider uppercase mb-3">CUSTOM CRM DEVELOPMENT</span>
-            <h2 class="font-display font-light text-2xl md:text-3xl leading-tight text-text">
-              Saved 35+ Hours Every Week <br> with a Custom CRM
-
-            </h2>
-            <p class="mt-4 text-sm md:text-base text-text-2/85 leading-relaxed">
-              A growing recruitment and staffing company was struggling with scattered leads, manual follow-ups, Excel
-              sheets, and delayed sales reporting. Wisetrack Technologies developed a custom CRM solution with WhatsApp
-              integration, automated lead assignment, pipeline tracking, and real-time dashboards—helping the business
-              streamline operations and close more deals.
-            </p>
-
-            <div class="grid grid-cols-3 gap-6 mt-8 w-full border-t border-line pt-6">
-              <div>
-                <div class="font-display text-2xl md:text-3xl text-indigo font-light">90%</div>
-                <div class="text-[10px] text-muted mt-1 uppercase tracking-wider">Faster Lead Response
 </div>
-              </div>
-              <div>
-                <div class="font-display text-2xl md:text-3xl text-indigo font-light">70%</div>
-                <div class="text-[10px] text-muted mt-1 uppercase tracking-wider">Less Manual Work</div>
-              </div>
-              <div>
-                <div class="font-display text-2xl md:text-3xl text-indigo font-light">3x</div>
-                <div class="text-[10px] text-muted mt-1 uppercase tracking-wider">Sales Productivity</div>
-              </div>
-            </div>
-
-            <a href="crm-case-study.html"
-              class="mt-8 py-2.5 px-5 border border-line hover:bg-white/5 text-text font-semibold text-xs rounded-lg transition-all">
-              View Full Case Study &rarr;
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────── SECTION 07: STATS STRIP ─────────── -->
-    <section id="stats" class="bg-[#07080F] text-white py-16 border-t border-b border-white/5">
-      <div class="max-w-page mx-auto px-edge flex flex-col gap-8">
-        <span class="mono text-xs text-indigo tracking-widest uppercase">07 / STATS RECORD</span>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
-          <div class="flex flex-col gap-1 border-l border-white/10 pl-4">
-            <span class="font-display text-3xl md:text-4xl text-indigo font-light">17</span>
-            <span class="mono text-[9px] text-white tracking-widest uppercase mt-1" style="color: white;">Years of Experience</span>
-          </div>
-          <div class="flex flex-col gap-1 border-l border-white/10 pl-4">
-            <span class="font-display text-3xl md:text-4xl text-indigo font-light">500+</span>
-            <span class="mono text-[9px] text-white tracking-widest uppercase mt-1" style="color: white;">Projects Delivered</span>
-          </div>
-          <div class="flex flex-col gap-1 border-l border-white/10 pl-4">
-            <span class="font-display text-3xl md:text-4xl text-indigo font-light">150+</span>
-            <span class="mono text-[9px] text-white tracking-widest uppercase mt-1" style="color: white;">Businesses Trust Us</span>
-          </div>
-          <div class="flex flex-col gap-1 border-l border-white/10 pl-4">
-            <span class="font-display text-3xl md:text-4xl text-indigo font-light">30+</span>
-            <span class="mono text-[9px] text-white tracking-widest uppercase mt-1" style="color: white;">Industries Served</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────── SECTION 08: LET'S BUILD SOMETHING GREAT ─────────── -->
-    <section id="contact-banner" class="py-20 md:py-28 relative overflow-hidden bg-surface/5">
-      <div class="max-w-page mx-auto px-edge grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="col-span-12 lg:col-span-6">
-          <span class="mono text-xs text-indigo tracking-widest uppercase">08 / CONTACT</span>
-          <h2 class="font-display font-light text-3xl md:text-5xl mt-3 leading-tight text-text">
-            Let's Build <br><span class="font-display italic text-indigo">Something Great.</span>
-          </h2>
-        </div>
-
-        <div class="col-span-12 lg:col-span-6 flex flex-col items-start gap-6">
-          <p class="text-sm md:text-base text-text-2/85 leading-relaxed">
-            Tell us about your idea, challenge or operational system requirements and we'll help you turn it into a
-            powerful digital solution.
-          </p>
-
-          <div class="flex flex-wrap items-center gap-4 w-full">
-            <a href="contact.html"
-              class="py-3 px-6 rounded-lg bg-indigo text-white font-semibold text-sm hover:opacity-90 transition-all flex items-center gap-2">
-              Book a Strategy Call <span class="text-xs">&rarr;</span>
-            </a>
-            <span class="text-sm text-text-2 font-mono ml-0 md:ml-4">
-              hello@wisetrack.in
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
-
-  <!-- ─────────── FOOTER ─────────── -->
   <footer class="py-16 border-t border-line bg-surface/10">
     <div class="max-w-page mx-auto px-edge">
       <div class="grid grid-cols-12 gap-y-12 gap-x-8">
@@ -1230,6 +1004,340 @@
       }
     });
   </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var root = document.getElementById('home'), bars = { classList: { add: function () {} } };
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  [].forEach.call(document.querySelectorAll('.hero h1 .w'), function (w, i) { w.style.transitionDelay = (0.8 + i * 0.15) + 's'; });
+  function start() { root.classList.add('ready'); bars.classList.add('open'); }
+  if (!window.THREE) { start(); return; }
+
+  function fit(x, a, b) { return Math.min(1, Math.max(0, (x - a) / (b - a))); }
+  function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function lin(hex) { return new THREE.Color(hex).convertSRGBToLinear(); }
+
+  var canvas = document.getElementById('stage');
+  var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, powerPreference: 'high-performance' });
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || Math.min(innerWidth, innerHeight) < 600;
+  var lowEnd = isMobile || (navigator.hardwareConcurrency || 4) <= 4;
+  renderer.outputEncoding = THREE.sRGBEncoding; renderer.physicallyCorrectLights = true; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = lowEnd ? THREE.PCFShadowMap : THREE.PCFSoftShadowMap;
+  var scene = new THREE.Scene(); scene.background = lin('#f8f3ec');
+  var camera = new THREE.PerspectiveCamera(30, 1, 0.5, 400);
+
+  // ---------- shape generators: each returns N*3 floats ----------
+  var N = lowEnd ? 36000 : 90000, R = rng(7);
+  function gauss() { var u = 1 - R(), v = R(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+  function alloc() { return new Float32Array(N * 3); }
+  function fill(out, start, count, fn) { for (var i = start; i < start + count && i < N; i++) { var p = fn(i); out[i * 3] = p[0]; out[i * 3 + 1] = p[1]; out[i * 3 + 2] = p[2]; } return start + count; }
+  // sample dark pixels of a canvas as points in the xy plane (w wide), extruded by depth
+  function sampleCanvas(c, w, depth, count, out, start) {
+    var x = c.getContext('2d'), d = x.getImageData(0, 0, c.width, c.height).data, pts = [];
+    for (var py = 0; py < c.height; py += 1) for (var px = 0; px < c.width; px += 1) { var a = d[(py * c.width + px) * 4 + 3]; if (a > 40) pts.push(px, py, a); }
+    var s = w / c.width, h = c.height * s;
+    return fill(out, start, count, function () {
+      var k = (R() * (pts.length / 3)) | 0; return [(pts[k * 3] + R()) * s - w / 2, h / 2 - (pts[k * 3 + 1] + R()) * s, (R() - 0.5) * depth * (pts[k * 3 + 2] / 255)];
+    });
+  }
+  function markCanvas(size) {
+    var c = document.createElement('canvas'); c.width = size; c.height = Math.round(size * 151 / 228); var x = c.getContext('2d');
+    var svg = document.querySelector('.brand .mk').outerHTML.replace('currentColor', '#000').replace('class="mk"', 'width="' + c.width + '" height="' + c.height + '"');
+    var im = new Image(); im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    return { c: c, x: x, im: im };
+  }
+  var mk = markCanvas(420);
+  var portraitImg = new Image(); portraitImg.src = 'assets/home/portrait.png';
+  // sample a grey image as a stipple: the brighter the pixel in the darkness map, the more powder lands there
+  function sampleStipple(img, w, depth, count, out, start) {
+    var c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight; var x = c.getContext('2d'); x.drawImage(img, 0, 0);
+    var d = x.getImageData(0, 0, c.width, c.height).data, s = w / c.width, h = c.height * s;
+    return fill(out, start, count, function () {
+      var px, py, v; do { px = (R() * c.width) | 0; py = (R() * c.height) | 0; v = d[(py * c.width + px) * 4]; } while (R() * 255 > v);
+      return [(px + R()) * s - w / 2, h - (py + R()) * s + 0.5, (R() - 0.5) * depth + (v / 255) * depth * 0.8];
+    });
+  }
+  var shapes = {};
+  function buildShapes() {
+    // 0 · the WT mark, extruded
+    var m = alloc(); mk.x.clearRect(0, 0, mk.c.width, mk.c.height); mk.x.drawImage(mk.im, 0, 0);
+    sampleCanvas(mk.c, 26, 3.2, N, m, 0); shapes.mark = m;
+    // 1 · processor: plate, traces, core, pins
+    var p = alloc(), i = 0;
+    i = fill(p, i, Math.floor(N * 0.34), function () { return [(R() - 0.5) * 20, (R() - 0.5) * 0.25, (R() - 0.5) * 20]; });
+    i = fill(p, i, Math.floor(N * 0.36), function () {
+      var side = (R() * 4) | 0, t = (R() - 0.5) * 17, k = R(), e = lerp(9.6, 3.2, k), a = lerp(t, t * 0.3, fit(k, 0.3, 1)), z = (R() - 0.5) * 0.16;
+      var q = side === 0 ? [a, e] : side === 1 ? [e, -a] : side === 2 ? [-a, -e] : [-e, a]; return [q[0], 0.22 + z, q[1]];
+    });
+    i = fill(p, i, Math.floor(N * 0.18), function () { var f = (R() * 5) | 0, u = (R() - 0.5) * 5.4, v = (R() - 0.5) * 5.4; return f === 0 ? [u, 1.25, v] : f === 1 ? [u, 0.2 + R() * 1.05, 2.7] : f === 2 ? [u, 0.2 + R() * 1.05, -2.7] : f === 3 ? [2.7, 0.2 + R() * 1.05, v] : [-2.7, 0.2 + R() * 1.05, v]; });
+    i = fill(p, i, N - i, function () { var side = (R() * 4) | 0, a = (R() - 0.5) * 18, e = 10.4 + R() * 0.8, q = side === 0 ? [a, e] : side === 1 ? [e, -a] : side === 2 ? [-a, -e] : [-e, a]; return [q[0], (R() - 0.5) * 0.3, q[1]]; });
+    shapes.chip = p;
+    // 2 · network globe: node clusters and arcs between them
+    var g = alloc(), nodes = []; for (var n = 0; n < 26; n++) { var u = R() * 2 - 1, ph = R() * 6.283, s = Math.sqrt(1 - u * u); nodes.push([s * Math.cos(ph), u, s * Math.sin(ph)]); }
+    var RG = 8.5; i = 0;
+    i = fill(g, i, Math.floor(N * 0.28), function () { var nd = nodes[(R() * nodes.length) | 0], r = RG + gauss() * 0.12; var v = [nd[0] + gauss() * 0.045, nd[1] + gauss() * 0.045, nd[2] + gauss() * 0.045], l = Math.hypot(v[0], v[1], v[2]); return [v[0] / l * r, v[1] / l * r, v[2] / l * r]; });
+    var pairs = []; for (n = 0; n < 60; n++) pairs.push([nodes[(R() * nodes.length) | 0], nodes[(R() * nodes.length) | 0]]);
+    i = fill(g, i, Math.floor(N * 0.5), function () {
+      var pr = pairs[(R() * pairs.length) | 0], a = pr[0], b = pr[1], t = R(), om = Math.acos(Math.max(-1, Math.min(1, a[0] * b[0] + a[1] * b[1] + a[2] * b[2]))) || 0.001;
+      var wa = Math.sin((1 - t) * om) / Math.sin(om), wb = Math.sin(t * om) / Math.sin(om), lift = 1 + Math.sin(t * Math.PI) * 0.1 * (om / Math.PI + 0.3);
+      return [(a[0] * wa + b[0] * wb) * RG * lift, (a[1] * wa + b[1] * wb) * RG * lift, (a[2] * wa + b[2] * wb) * RG * lift];
+    });
+    i = fill(g, i, N - i, function () { var u = R() * 2 - 1, ph = R() * 6.283, s = Math.sqrt(1 - u * u), r = RG * (0.995 + R() * 0.01); return [s * Math.cos(ph) * r, u * r, s * Math.sin(ph) * r]; });
+    shapes.globe = g;
+    // 3 · dashboard: twelve bars, a floor grid, a rising line
+    var d = alloc(), H = [3, 4.2, 3.8, 5.5, 5, 6.6, 6.1, 7.4, 7, 8.6, 8.2, 9.3]; i = 0;
+    i = fill(d, i, Math.floor(N * 0.62), function () { var b = (R() * 12) | 0, h = H[b], f = (R() * 5) | 0, bx = -11 + b * 2, u = (R() - 0.5) * 1.2, v = (R() - 0.5) * 1.2; return f === 0 ? [bx + u, h, v] : f === 1 ? [bx + u, R() * h, 0.6] : f === 2 ? [bx + u, R() * h, -0.6] : f === 3 ? [bx + 0.6, R() * h, v] : [bx - 0.6, R() * h, v]; });
+    i = fill(d, i, Math.floor(N * 0.14), function () { var k = R() < 0.5; return k ? [(R() - 0.5) * 26, 0, Math.round((R() - 0.5) * 6) * 1.5] : [Math.round((R() - 0.5) * 18) * 1.5, 0, (R() - 0.5) * 9]; });
+    i = fill(d, i, N - i, function () { var t = R() * 11, b = Math.floor(t), f = t - b, y = lerp(H[b], H[Math.min(11, b + 1)], f) + 1.6; return [-11 + t * 2 + gauss() * 0.06, y + gauss() * 0.06, -3.5 + gauss() * 0.06]; });
+    shapes.chart = d;
+    // 4 · screens: a laptop, a tablet and a phone as outlined panels with content rows
+    var sc = alloc(); i = 0;
+    function panel(out, i0, count, w, h, cx, cy, cz, ry) {
+      var cr = Math.cos(ry), sr = Math.sin(ry);
+      return fill(out, i0, count, function () {
+        var edge = R() < 0.55, x, y;
+        if (edge) { var s2 = (R() * 4) | 0; x = s2 < 2 ? (R() - 0.5) * w : (s2 === 2 ? -w / 2 : w / 2); y = s2 < 2 ? (s2 === 0 ? h / 2 : -h / 2) : (R() - 0.5) * h; }
+        else { var row = (R() * 6) | 0; x = (R() - 0.5) * w * 0.8 * (row === 0 ? 1 : lerp(0.5, 0.95, ((row * 37) % 10) / 10)) - w * 0.08; y = h * 0.34 - row * h * 0.13 + (R() - 0.5) * 0.12; }
+        return [cx + x * cr, cy + y, cz + x * sr];
+      });
+    }
+    i = panel(sc, i, Math.floor(N * 0.5), 15, 9.4, -3.5, 5, 0, -0.25);
+    i = panel(sc, i, Math.floor(N * 0.28), 7.2, 9.6, 7.5, 5.2, 2.5, 0.35);
+    i = panel(sc, i, N - i, 3.4, 7, 13.5, 3.8, 6, 0.6);
+    shapes.screens = sc;
+    // 5 · the phone's shell: the powder gathers into its silhouette before the real phone appears
+    var PS = 2.0, pw = 7.1 * PS, pd = 14.7 * PS, ph2 = 0.84 * PS, prad = 0.92 * PS, cr = Math.cos(-0.42), sr = Math.sin(-0.42);
+    var pho = alloc(); i = 0;
+    i = fill(pho, i, N, function () {
+      var x, z, y, f = R();
+      do { x = (R() - 0.5) * pw; z = (R() - 0.5) * pd; } while (Math.abs(x) > pw / 2 - prad && Math.abs(z) > pd / 2 - prad && Math.hypot(Math.abs(x) - (pw / 2 - prad), Math.abs(z) - (pd / 2 - prad)) > prad);
+      if (f < 0.62) { y = ph2 + R() * 0.12; }                                   // the glass face
+      else if (f < 0.8) { y = R() * ph2; var e = R() < 0.5 ? -1 : 1; if (R() < 0.5) x = e * (pw / 2 - 0.01); else z = e * (pd / 2 - 0.01); }   // the frame
+      else { y = R() * 0.1; }                                                   // the back edge
+      var rx = x * cr - z * sr, rz = x * sr + z * cr; return [rx, y, rz];
+    });
+    shapes.phone = pho;
+    // 6 · a shield with a keyhole, drawn and sampled
+    var c = document.createElement('canvas'); c.width = 400; c.height = 460; var x = c.getContext('2d');
+    x.fillStyle = '#000'; x.beginPath(); x.moveTo(200, 20); x.lineTo(370, 80); x.bezierCurveTo(372, 260, 320, 380, 200, 440); x.bezierCurveTo(80, 380, 28, 260, 30, 80); x.closePath(); x.fill();
+    x.globalCompositeOperation = 'destination-out'; x.beginPath(); x.moveTo(200, 60); x.lineTo(335, 108); x.bezierCurveTo(336, 255, 292, 350, 200, 400); x.bezierCurveTo(108, 350, 64, 255, 65, 108); x.closePath(); x.fill();
+    x.globalCompositeOperation = 'source-over'; x.beginPath(); x.arc(200, 195, 42, 0, 7); x.fill(); x.fillRect(182, 215, 36, 80);
+    var sh = alloc(); sampleCanvas(c, 17, 2.4, N, sh, 0); shapes.shield = sh;
+    // 6 · the mark again with an orbit ring
+    var o = alloc(); i = 0; mk.x.clearRect(0, 0, mk.c.width, mk.c.height); mk.x.drawImage(mk.im, 0, 0);
+    i = sampleCanvas(mk.c, 20, 2.4, Math.floor(N * 0.7), o, 0);
+    i = fill(o, i, N - i, function () { var a = R() * 6.283, r = 14.5 + gauss() * 0.14; return [Math.cos(a) * r, Math.sin(a) * r * 0.78 + 0.5, (R() - 0.5) * 0.6 + Math.sin(a * 3) * 0.6]; });
+    shapes.ring = o;
+    // 7 · the founder, in powder, inside the ring
+    var pt = alloc(); i = 0;
+    if (portraitImg.naturalWidth) i = sampleStipple(portraitImg, 30, 2.0, Math.floor(N * 0.88), pt, 0); else i = sampleCanvas(mk.c, 20, 2.4, Math.floor(N * 0.88), pt, 0);
+    i = fill(pt, i, N - i, function () { var a = R() * 6.283, r = 18.5 + gauss() * 0.14; return [Math.cos(a) * r, Math.sin(a) * r * 0.9 + 14, (R() - 0.5) * 0.6]; });
+    shapes.portrait = pt;
+  }
+
+  // ---------- the particle system ----------
+  var ORDER = ['mark', 'chip', 'globe', 'chart', 'phone', 'phone', 'portrait'];
+  var geo = new THREE.BufferGeometry();
+  var seeds = new Float32Array(N * 3); for (var si = 0; si < N * 3; si++) seeds[si] = R();
+  var posA = new THREE.BufferAttribute(alloc(), 3), posB = new THREE.BufferAttribute(alloc(), 3);
+  geo.setAttribute('position', posA); geo.setAttribute('target', posB); geo.setAttribute('seed', new THREE.BufferAttribute(seeds, 3));
+  var mat = new THREE.ShaderMaterial({
+    uniforms: { uFade: { value: 1 }, uT: { value: 0 }, uTime: { value: 0 }, uMouse: { value: new THREE.Vector2(9, 9) }, uAspect: { value: 1 }, uSize: { value: lowEnd ? 1.6 : 1.3 }, uFocus: { value: 60 }, uPR: { value: 1 },
+      uC1: { value: lin('#d8261c') }, uC2: { value: lin('#6e0d12') }, uC3: { value: lin('#3b0d14') } },
+    transparent: true, depthWrite: false, depthTest: true,
+    vertexShader: [
+      'attribute vec3 target; attribute vec3 seed; uniform float uT, uTime, uSize, uFocus, uPR, uAspect, uFade; uniform vec2 uMouse; varying float vA; varying vec3 vC; uniform vec3 uC1, uC2, uC3;',
+      'float h(float n){ return fract(sin(n) * 43758.5453); }',
+      'void main(){',
+      '  float t = uT; float s = t * t * (3.0 - 2.0 * t);',
+      '  float lag = seed.x * 0.35; float st = clamp((t - lag) / (1.0 - 0.35), 0.0, 1.0); st = st * st * (3.0 - 2.0 * st);',
+      '  vec3 p = mix(position, target, st);',
+      '  float storm = sin(st * 3.14159);',   // the powder lifts and swirls between forms
+      '  vec3 sw = vec3(sin(uTime * 0.9 + seed.y * 40.0), cos(uTime * 0.7 + seed.z * 40.0) * 0.6 + 0.4, sin(uTime * 1.1 + seed.x * 40.0));',
+      '  p += sw * storm * (2.0 + seed.z * 6.0);',
+      '  p += vec3(sin(uTime * 0.6 + seed.x * 30.0), sin(uTime * 0.5 + seed.y * 30.0), cos(uTime * 0.55 + seed.z * 30.0)) * 0.05;',   // idle breath
+      '  vec4 mv = modelViewMatrix * vec4(p, 1.0); vec4 cp = projectionMatrix * mv;',
+      '  vec2 ndc = cp.xy / cp.w; vec2 d = (ndc - uMouse) * vec2(uAspect, 1.0); float dl = length(d);',   // the cursor pushes the powder aside
+      '  if (dl < 0.11) { ndc += normalize(d) / vec2(uAspect, 1.0) * (0.11 - dl) * 0.55 * (0.4 + seed.y); cp.xy = ndc * cp.w; }',
+      '  gl_Position = cp;',
+      '  float dist = -mv.z; float blur = clamp(abs(dist - uFocus) / 60.0, 0.0, 1.0);',
+      '  gl_PointSize = uSize * uPR * (120.0 / dist) * (1.0 + blur * 2.2) * (0.7 + seed.x * 0.6);',
+      '  vA = (1.0 - blur * 0.75) * (0.55 + 0.45 * seed.y) * (1.0 - storm * 0.35) * clamp(uFade * (0.6 + seed.x) , 0.0, 1.0);',
+      '  vC = seed.z < 0.12 ? uC3 : mix(uC1, uC2, seed.x * seed.x);',
+      '}'].join('\n'),
+    fragmentShader: [
+      'varying float vA; varying vec3 vC;',
+      'void main(){ vec2 q = gl_PointCoord - 0.5; float r = length(q); if (r > 0.5) discard; float a = smoothstep(0.5, 0.18, r) * vA;',
+      '  vec3 c = pow(vC, vec3(1.0 / 2.2)); gl_FragColor = vec4(c, a); }'].join('\n')
+  });
+  var cloud = new THREE.Points(geo, mat); cloud.frustumCulled = false; scene.add(cloud);
+  var curSeg = -1;
+  function setSegment(i) {
+    var a = shapes[ORDER[Math.min(i, ORDER.length - 1)]], b = shapes[ORDER[Math.min(i + 1, ORDER.length - 1)]];
+    posA.array.set(a); posB.array.set(b); posA.needsUpdate = true; posB.needsUpdate = true; curSeg = i;
+  }
+
+  // ---------- the real phone, which materialises inside the powder ----------
+  function rr(w, h, r) {
+    var s = new THREE.Shape(), x = -w / 2, y = -h / 2;
+    s.moveTo(x + r, y); s.lineTo(x + w - r, y); s.absarc(x + w - r, y + r, r, -Math.PI / 2, 0, false); s.lineTo(x + w, y + h - r); s.absarc(x + w - r, y + h - r, r, 0, Math.PI / 2, false);
+    s.lineTo(x + r, y + h); s.absarc(x + r, y + h - r, r, Math.PI / 2, Math.PI, false); s.lineTo(x, y + r); s.absarc(x + r, y + r, r, Math.PI, Math.PI * 1.5, false); return s;
+  }
+  function slab(w, d, h, r, m2, bevel) {
+    bevel = bevel || 0; var g = new THREE.ExtrudeGeometry(rr(w, d, r), { depth: Math.max(0.001, h - 2 * bevel), bevelEnabled: bevel > 0, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 3, curveSegments: 18 });
+    g.rotateX(-Math.PI / 2); g.translate(0, bevel, 0); var m = new THREE.Mesh(g, m2); m.castShadow = true; m.receiveShadow = true; return m;
+  }
+  function ringM(w, d, r, t, h, m2, bevel) {
+    var s = rr(w, d, r); s.holes.push(rr(w - 2 * t, d - 2 * t, Math.max(0.05, r - t))); bevel = bevel || 0;
+    var g = new THREE.ExtrudeGeometry(s, { depth: Math.max(0.001, h - 2 * bevel), bevelEnabled: bevel > 0, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 3, curveSegments: 18 });
+    g.rotateX(-Math.PI / 2); g.translate(0, bevel, 0); var m = new THREE.Mesh(g, m2); m.castShadow = true; m.receiveShadow = true; return m;
+  }
+  function box(w, h, d, m2) { var m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m2); m.castShadow = true; m.position.y = h / 2; return m; }
+  (function () {
+    var env = new THREE.Scene();
+    env.add(new THREE.Mesh(new THREE.SphereGeometry(400, 32, 16), new THREE.ShaderMaterial({ side: THREE.BackSide,
+      uniforms: { uTop: { value: lin('#fff8ee') }, uMid: { value: lin('#e6d9c6') }, uBot: { value: lin('#5a2a2e') } },
+      vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+      fragmentShader: 'uniform vec3 uTop,uMid,uBot; varying vec3 vP; void main(){ float h = clamp(vP.y,-1.0,1.0); vec3 c = mix(mix(uMid,uBot,pow(max(-h,0.0),0.8)), uTop, pow(max(h,0.0),0.6)); gl_FragColor=vec4(c,1.0); }' })));
+    function sb(x, y, z, w, h, i2) { var m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(i2, i2 * 0.97, i2 * 0.92), side: THREE.DoubleSide })); m.position.set(x, y, z); m.lookAt(0, 0, 0); env.add(m); }
+    sb(-120, 110, 80, 140, 90, 4); sb(140, 60, -90, 120, 50, 2.2); sb(10, 160, -30, 80, 30, 3);
+    var rt = new THREE.WebGLCubeRenderTarget(256, { generateMipmaps: true, minFilter: THREE.LinearMipmapLinearFilter, magFilter: THREE.LinearFilter });
+    new THREE.CubeCamera(1, 900, rt).update(renderer, env); scene.environment = rt.texture;
+  })();
+  scene.add(new THREE.HemisphereLight(lin('#fff6e8'), lin('#7d1426'), 0.9));
+  var key = new THREE.DirectionalLight(lin('#fff3e0'), 3.2); key.position.set(-70, 95, 50); key.castShadow = true;
+  key.shadow.mapSize.set(lowEnd ? 1024 : 2048, lowEnd ? 1024 : 2048); key.shadow.camera.near = 20; key.shadow.camera.far = 300;
+  key.shadow.camera.left = key.shadow.camera.bottom = -40; key.shadow.camera.right = key.shadow.camera.top = 40; key.shadow.bias = -0.0005; key.shadow.normalBias = 0.05; key.shadow.radius = 6;
+  scene.add(key); scene.add(key.target);
+  var fillL = new THREE.DirectionalLight(lin('#eef0ff'), 0.6); fillL.position.set(90, 40, -60); scene.add(fillL);
+  var rimL = new THREE.DirectionalLight(lin('#fff8ee'), 1.2); rimL.position.set(40, 30, -90); scene.add(rimL);
+  var ground = new THREE.Mesh(new THREE.PlaneGeometry(600, 600), new THREE.ShadowMaterial({ color: lin('#3b0d14'), opacity: 0 }));
+  ground.rotation.x = -Math.PI / 2; ground.position.y = -0.02; ground.receiveShadow = true; ground.material.depthWrite = false; ground.renderOrder = -1; scene.add(ground);
+  var PM = [];
+  function pm(m2) { m2.transparent = true; m2.opacity = 0; PM.push(m2); return m2; }
+  var ink = pm(new THREE.MeshPhysicalMaterial({ color: lin('#24090f'), metalness: 0.7, roughness: 0.4, clearcoat: 0.25, clearcoatRoughness: 0.3, envMapIntensity: 1.0 }));
+  var inkMatte = pm(new THREE.MeshStandardMaterial({ color: lin('#1b0a0d'), metalness: 0.1, roughness: 0.7 }));
+  var steel = pm(new THREE.MeshStandardMaterial({ color: lin('#c6c3bc'), metalness: 1.0, roughness: 0.32, envMapIntensity: 1.2 }));
+  var sindoorM = pm(new THREE.MeshPhysicalMaterial({ color: lin('#bb1007'), metalness: 0, roughness: 0.22, clearcoat: 1, clearcoatRoughness: 0.06, envMapIntensity: 1.1 }));
+  var glass = pm(new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0, roughness: 0.03, transmission: 1, thickness: 0.06, ior: 1.5, clearcoat: 1, clearcoatRoughness: 0.02, envMapIntensity: 1.4 }));
+  var screenMat = pm(new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.6, metalness: 0, emissive: 0xffffff, emissiveIntensity: 0 }));
+  new THREE.TextureLoader().load('assets/home/screen_home_light.png', function (t) { t.encoding = THREE.sRGBEncoding; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); screenMat.map = t; screenMat.emissiveMap = t; screenMat.needsUpdate = true; });
+  var phone = new THREE.Group(); phone.scale.setScalar(2.0); phone.rotation.y = -0.42; phone.visible = false; scene.add(phone);
+  var PW = 7.1, PD = 14.7, PR2 = 0.92, pparts = [];
+  function seatP(obj, off, rotDeg, a, b) { phone.add(obj); pparts.push({ o: obj, home: obj.position.clone(), hr: obj.rotation.clone(), off: new THREE.Vector3(off[0], off[1], off[2]), rot: rotDeg.map(function (d) { return d * Math.PI / 180; }), a: a, b: b }); return obj; }
+  var boardM = pm(new THREE.MeshPhysicalMaterial({ color: lin('#0f2a1f'), metalness: 0, roughness: 0.5, clearcoat: 0.6, clearcoatRoughness: 0.25 }));
+  // back cover with the camera island
+  var backc = new THREE.Group(); backc.add(slab(PW, PD, 0.12, PR2, sindoorM, 0.03));
+  var isl = slab(3.0, 1.2, 0.14, 0.4, ink, 0.02); isl.position.set(-1.6, -0.14, -5.5); backc.add(isl);
+  for (var li = 0; li < 2; li++) { var lr = ringM(0.82, 0.82, 0.41, 0.05, 0.08, steel); lr.position.set(-2.2 + li * 1.2, -0.22, -5.5); backc.add(lr); }
+  seatP(backc, [0, 0.6, 1.4], [0, -5, 0], 4.02, 4.3);
+  // mid frame with buttons
+  var midFrame = new THREE.Group(); midFrame.add(ringM(PW, PD, PR2, 0.13, 0.66, ink, 0.03));
+  var btn = box(0.12, 0.24, 1.3, steel); btn.position.set(PW / 2 + 0.04, 0.33, -3.0); midFrame.add(btn);
+  var vol = box(0.12, 0.24, 2.4, steel); vol.position.set(-PW / 2 - 0.04, 0.33, -2.5); midFrame.add(vol);
+  midFrame.position.y = 0.12; seatP(midFrame, [0, 2.6, 0], [0, 6, 0], 4.14, 4.44);
+  // board with chips and the WT mark
+  var bd = new THREE.Group(); bd.add(slab(6.2, 6.2, 0.08, 0.3, boardM));
+  [[-1.8, 1.2, 1.2, 1.2], [0.6, 1.4, 1.8, 0.9], [2.0, -1.0, 0.9, 0.9], [-1.2, -1.4, 2.2, 0.6], [0.4, -2.0, 0.6, 0.6]].forEach(function (c, i2) { var ch = box(c[2], 0.09, c[3], i2 % 2 ? inkMatte : steel); ch.position.set(c[0], 0.08 + 0.045, -c[1]); bd.add(ch); });
+  var markTex = new THREE.CanvasTexture((function () { var c = document.createElement('canvas'); c.width = 256; c.height = 170; var x = c.getContext('2d'); var svg = document.querySelector('.brand .mk').outerHTML.replace('currentColor', '#c6c3bc').replace('class="mk"', 'width="256" height="170"'); var im = new Image(); im.onload = function () { x.drawImage(im, 0, 0); markTex.needsUpdate = true; }; im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); return c; })());
+  markTex.encoding = THREE.sRGBEncoding;
+  var markM = pm(new THREE.MeshStandardMaterial({ map: markTex, metalness: 1, roughness: 0.35, color: 0xffffff }));
+  var mark = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1.06), markM); mark.rotation.x = -Math.PI / 2; mark.position.set(1.4, 0.085, -4.5); bd.add(mark);
+  bd.position.set(0, 0.14, -3.8); seatP(bd, [0, 4.4, 0], [0, 14, 0], 4.28, 4.6);
+  // battery
+  var batt = new THREE.Group(); batt.add(slab(6.0, 6.0, 0.36, 0.3, inkMatte, 0.03)); batt.position.set(0, 0.14, 3.0);
+  seatP(batt, [0, 5.6, 0], [0, -10, 0], 4.4, 4.72);
+  // display and glass
+  var disp = new THREE.Group(); disp.add(slab(PW - 0.32, PD - 0.32, 0.12, PR2 - 0.16, inkMatte));
+  var scr = new THREE.Mesh(new THREE.PlaneGeometry(PW - 0.46, PD - 0.46), screenMat); scr.rotation.x = -Math.PI / 2; scr.position.y = 0.125; disp.add(scr);
+  disp.position.y = 0.64; seatP(disp, [0, 7.6, 0], [0, -8, 0], 4.54, 4.86);
+  var cg = slab(PW - 0.18, PD - 0.18, 0.06, PR2 - 0.09, glass, 0.015); cg.position.y = 0.77; seatP(cg, [0, 9.8, 0], [0, 8, 0], 4.7, 5.02);
+
+  // a soft shadow pool under the forms, so they sit on the page
+  var pool = new THREE.Mesh(new THREE.CircleGeometry(16, 64), new THREE.ShaderMaterial({
+    uniforms: { uA: { value: 0.07 } }, transparent: true, depthWrite: false,
+    vertexShader: 'varying vec2 vP; void main(){ vP = position.xy; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+    fragmentShader: 'uniform float uA; varying vec2 vP; void main(){ float d = length(vP)/16.0; gl_FragColor = vec4(0.23,0.05,0.08, smoothstep(1.0,0.1,d)*uA); }'
+  })); pool.rotation.x = -Math.PI / 2; pool.position.y = -0.5; scene.add(pool);
+
+  // ---------- camera keys per chapter ----------
+  var KP = [[0, 8, 74], [3, 50, 7], [28, -3, 34], [-22, 9, 30], [42, 44, 42], [44, 19, 18], [0, 14, 68]];
+  var KL = [[0, 2, 0], [0, 0, 0], [0, 2, 0], [0, 4, 0], [0, 6, 0], [0, 0.5, 0], [0, 13, 0]];
+  var PAN = [0, 7, 9, 8, 7, 7, 7];
+  var POOLY = [-10, -0.6, -9.5, -0.3, -0.5, -0.5, -0.4];
+  function v3(a) { return new THREE.Vector3(a[0], a[1], a[2]); }
+  var posC = new THREE.CatmullRomCurve3(KP.map(v3), false, 'centripetal'), lookC = new THREE.CatmullRomCurve3(KL.map(v3), false, 'centripetal'), LAST = KP.length - 1;
+
+  var smT = 0, smS = 0, mx = 0, my = 0, emx = 0, emy = 0, t0 = 0, last = 0;
+  var cp = new THREE.Vector3(), cl = new THREE.Vector3(), right = new THREE.Vector3(), up = new THREE.Vector3(0, 1, 0);
+  var rail = document.getElementById('rail'), railLis = [].slice.call(rail.children), shade = document.getElementById('shade'), activeI = -1;
+  var rawS = 0, storyEl = document.querySelector('#home .story'); function onScroll() { var top = storyEl.getBoundingClientRect().top + window.scrollY; rawS = (window.scrollY - top) / window.innerHeight; smT = Math.min(LAST, Math.max(0, rawS)); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('pointermove', function (e) { mx = e.clientX / innerWidth * 2 - 1; my = -(e.clientY / innerHeight * 2 - 1); mat.uniforms.uMouse.value.set(mx, my); }, { passive: true });
+  window.addEventListener('pointerleave', function () { mat.uniforms.uMouse.value.set(9, 9); });
+  function resize() {
+    var w = innerWidth, h = innerHeight, pr = Math.min(window.devicePixelRatio || 1, lowEnd ? 1.5 : 2);
+    renderer.setPixelRatio(pr); renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+    mat.uniforms.uAspect.value = w / h; mat.uniforms.uPR.value = pr;
+  }
+  window.addEventListener('resize', resize);
+
+  function frame(now) {
+    var dt = Math.min(0.05, (now - last) / 1000); last = now;
+    var it = (now - t0) / 1000, time = reduced ? 0 : it;
+    smS += (smT - smS) * (reduced ? 1 : 1 - Math.exp(-3.2 * dt));
+    var sm = Math.min(LAST, Math.max(0, smS));
+    var seg = Math.min(LAST - 1, Math.floor(sm)), k = sm - seg;
+    // pacing: each form holds for the first third of its chapter, changes through the middle, and settles before the next
+    var kp = fit(k, 0.3, 0.9), ps = seg + kp;
+    if (seg !== curSeg) setSegment(seg);
+    mat.uniforms.uT.value = seg === curSeg ? kp : 0;
+    mat.uniforms.uTime.value = time;
+    var intro = reduced ? 1 : fit(it, 0.2, 2.6);
+    var ROT = [0, 0.35, 0.8, 0.2, 1.6, 1.6, 0], hold = fit(sm, 3.8, 4.2) * (1 - fit(sm, 5.5, 5.9));
+    cloud.rotation.y = lerp(ROT[seg], ROT[seg + 1], ease(kp)) + Math.sin(time * 0.25) * 0.1 * (1 - hold);
+    cloud.scale.setScalar(0.2 + 0.8 * (1 - Math.pow(1 - intro, 3)));
+    pool.position.y = lerp(POOLY[seg], POOLY[seg + 1], ease(kp));
+    // the powder settles into the phone (IV), the real phone takes over (V), the powder lifts off again (VI)
+    var solid = fit(sm, 4.0, 4.15) * (1 - fit(sm, 5.3, 5.75));
+    var powder = 1 - fit(sm, 4.05, 4.75) * (1 - fit(sm, 5.25, 5.6));
+    mat.uniforms.uFade.value = powder;
+    phone.visible = solid > 0.002; for (var pi2 = 0; pi2 < PM.length; pi2++) PM[pi2].opacity = solid;
+    for (var pp = 0; pp < pparts.length; pp++) {
+      var P = pparts[pp], kk = 1 - Math.pow(1 - fit(sm, P.a, P.b), 3), rest = 1 - kk;
+      P.o.position.set(P.home.x + P.off.x * rest, P.home.y + P.off.y * rest + (reduced ? 0 : Math.sin(time * 0.7 + pp) * 0.08 * rest), P.home.z + P.off.z * rest);
+      P.o.rotation.set(P.hr.x + P.rot[0] * rest, P.hr.y + P.rot[1] * rest, P.hr.z + P.rot[2] * rest);
+    }
+    ground.material.opacity = 0.22 * solid; screenMat.emissiveIntensity = fit(sm, 4.95, 5.25) * 0.9;
+    phone.rotation.y = -0.42 + cloud.rotation.y;
+    pool.material.uniforms.uA.value = 0.07 * intro * (1 - solid);
+
+    var ct = Math.min(1, Math.max(0, ps / LAST));
+    posC.getPoint(ct, cp); lookC.getPoint(ct, cl);
+    var pan = lerp(PAN[seg], PAN[seg + 1], ease(kp));
+    if (camera.aspect < 0.9) { var z = Math.min(2.2, 1.3 / camera.aspect); cp.sub(cl).multiplyScalar(z).add(cl); cl.y += (z - 1) * (ps < 0.5 ? 30 * (1 - ps * 2) : -8 * Math.min(1, (ps - 0.5) * 2)); }
+    else { right.subVectors(cl, cp).cross(up).normalize().multiplyScalar(-pan * Math.min(1.25, camera.aspect / 1.6) * fit(ps, 0, 0.5)); cp.add(right); cl.add(right); if (ps < 0.5) cl.y += 19 * (1 - ps * 2); }
+    emx += (mx - emx) * (1 - Math.exp(-2.5 * dt)); emy += (my - emy) * (1 - Math.exp(-2.5 * dt));
+    if (!reduced) { cp.x += emx * 2.2; cp.y += emy * 1.2 + Math.sin(time * 0.3) * 0.3; }
+    cp.z += (1 - intro) * 30;
+    camera.position.copy(cp); camera.lookAt(cl);
+    mat.uniforms.uFocus.value = cp.distanceTo(cl);
+
+    var ai = Math.round(sm);
+    if (ai !== activeI) { activeI = ai; railLis.forEach(function (li) { li.classList.toggle('on', +li.dataset.i === ai); }); rail.classList.toggle('off', ai < 1 || rawS > 6.5); shade.classList.toggle('on', ai >= 1); }
+    if (rawS > 6.5 && !rail.classList.contains('off')) rail.classList.add('off');
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  function go() { buildShapes(); setSegment(0); resize(); onScroll(); smS = smT; t0 = performance.now(); last = t0; start(); requestAnimationFrame(frame); }
+  var pending = 2; function one() { if (--pending === 0) go(); }
+  if (mk.im.complete) one(); else { mk.im.onload = one; mk.im.onerror = one; }
+  if (portraitImg.complete && portraitImg.naturalWidth) one(); else { portraitImg.onload = one; portraitImg.onerror = one; }
+})();
+</script>
 </body>
 
 </html>
