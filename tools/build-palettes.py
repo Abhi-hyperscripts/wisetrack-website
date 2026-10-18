@@ -26,6 +26,26 @@ for i, pal in enumerate(PALETTES):
     out.append('}')
     out.append('')
 
+# ink twins of accent tokens, per theme (see palette_lib.ink)
+inks = [(h, v) for h, v in order if v['family'] in INK_FAMILIES]
+for i, pal in enumerate(PALETTES):
+    for theme, cond in (('light', '.light'), ('dark', ':not(.light)')):
+        # an island keeps the other theme's colours inside it: a white app mock-up on a dark page
+        # (.bg-white, .light-island) reads like the light theme; a hard-dark band on a light page
+        # (.bg-[#2a0810], .dark-island) reads like the dark theme
+        isl = ('.light-island', '.bg-white') if theme == 'light' else ('.dark-island', '.bg-\\[\\#2a0810\\]')
+        def S(P): return ['html%s%s' % (cond, P)] + ['html%s %s' % (P, x) for x in isl]
+        parts = S('[data-palette="%s"]' % pal['id']) + (S(':not([data-palette])') if i == 0 else [])
+        sel = ', '.join(parts)
+        out.append('%s {' % sel)
+        for h, v in inks:
+            c = ink(h, theme, pal)
+            line = '  --ink-%s: %s;' % (v['name'], c)
+            if v['rgb']: line += ' --ink-%s-rgb: %s;' % (v['name'], hex_to_rgb_triplet(c))
+            out.append(line)
+        out.append('}')
+        out.append('')
+
 # swatches for the picker: paper, accent, secondary (light theme values) and the dark paper
 def tok(h, pal): return '#' + h if pal is PALETTES[0] else retint(h, family_of(h), pal)
 out.append(':root { --palette-list: "%s"; }' % ','.join(p['id'] for p in PALETTES))

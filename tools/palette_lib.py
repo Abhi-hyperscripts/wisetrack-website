@@ -132,3 +132,38 @@ def register(reg, h, need_rgb=False):
         reg[h] = {'name': name, 'family': fam, 'rgb': False}
     if need_rgb: reg[h]['rgb'] = True
     return reg[h]['name']
+
+# ---------------------------------------------------------------- ink: text-safe variants
+# A token is both a fill (buttons, chips) and a text colour. As text it must read against the
+# page, so each accent token also gets an "ink" twin per theme: same hue and chroma, lightness
+# moved (darker on light pages, lighter on dark ones) until it reaches INK_MIN against every
+# surface of that theme. Fills keep the brand colour; only text uses ink.
+INK_MIN = 4.6
+INK_FAMILIES = ('sindoor', 'brass', 'leaf', 'taupe')
+SURFACES = {
+    'light': ('f8f3ec', 'f1e8dc', 'fffdf9', 'f4ece0', 'ebe1d3'),
+    'dark': ('2a0810', '33050c', '3a0d16', '44101c', '4f1522'),
+}
+
+def _rel_lum(h):
+    return 0.2126 * _lin(int(h[1:3], 16)) + 0.7152 * _lin(int(h[3:5], 16)) + 0.0722 * _lin(int(h[5:7], 16))
+
+def contrast(a, b):
+    x, y = _rel_lum(a), _rel_lum(b)
+    return (max(x, y) + 0.05) / (min(x, y) + 0.05)
+
+def tok_color(h, pal):
+    """The palette's colour for source hex h (no '#')."""
+    return '#' + h if pal is PALETTES[0] else retint(h, family_of(h), pal)
+
+def ink(h, theme, pal):
+    c = tok_color(h, pal)
+    bgs = [tok_color(s, pal) for s in SURFACES[theme]]
+    if min(contrast(c, b) for b in bgs) >= INK_MIN: return c
+    L, C, H = hex_to_oklch(c[1:])
+    step = -0.01 if theme == 'light' else 0.01
+    for _ in range(100):
+        L = max(0.0, min(1.0, L + step))
+        c = oklch_to_hex(L, C, H)
+        if min(contrast(c, b) for b in bgs) >= INK_MIN: return c
+    return c

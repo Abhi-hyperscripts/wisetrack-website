@@ -21,3 +21,4 @@ node_modules/
 
 # Redundant download — the extracted logo files sit beside it
 assets/logo/Archive.zip
+tools/contrast-report.json
