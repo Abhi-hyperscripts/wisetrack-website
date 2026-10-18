@@ -263,7 +263,7 @@
   }
 
   function secTop() { return sec.getBoundingClientRect().top + window.scrollY; }
-  var seekTo = null; sec.__seek = function (v) { seekTo = v; sCur = v; }; };
+  var seekTo = null; sec.__seek = function (v) { seekTo = v; sCur = v; };
   function target() { return seekTo !== null ? seekTo : clamp((window.scrollY - secTop()) / vh, 0, END); }
   var sCur = 0, last = performance.now(), t0 = last, visible = true;
   new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { rootMargin: '200px 0px' }).observe(sec);
