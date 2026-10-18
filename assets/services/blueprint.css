@@ -1,4 +1,4 @@
-/* Services — "Blueprint" (animation style 04).
+/* Services — "Blueprint" (animation style 04). Scene: hologram.js (WebGL); this file styles the stage, copy and code panel.
    A drawing sheet: thin lines draw themselves as you scroll, then fill in with colour and real
    components while the code that drives them types itself alongside. One chapter per service.
    SVG + CSS only (no WebGL), the lightest of the four styles. Colours are site tokens. */
@@ -8,6 +8,8 @@
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; background: var(--bg);
   transition: background-color .9s ease;
 }
+#blueprint canvas.bp-gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#blueprint.gl .bp-paper { display: none; }
 #blueprint .bp-paper {
   position: absolute; inset: 0;
   background-image:
