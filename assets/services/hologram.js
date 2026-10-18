@@ -263,7 +263,7 @@
   }
 
   function secTop() { return sec.getBoundingClientRect().top + window.scrollY; }
-  var seekTo = null; sec.__seek = function (v) { seekTo = v; sCur = v; };
+  var seekTo = null; sec.__seek = function (v) { seekTo = v; sCur = v; }; };
   function target() { return seekTo !== null ? seekTo : clamp((window.scrollY - secTop()) / vh, 0, END); }
   var sCur = 0, last = performance.now(), t0 = last, visible = true;
   new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { rootMargin: '200px 0px' }).observe(sec);
@@ -278,8 +278,9 @@
 
     ORDER.forEach(function (name, idx) {
       var o = OBJ[name], r = RANGES[name], t = fit(s, r[0], r[1]), first = idx === 0, lastCh = idx === ORDER.length - 1;
-      var build = first ? ease(fit(s, 0, 0.6)) : ease(fit(t, 0.02, 0.4));
-      var solid = first ? ease(fit(s, 0.15, 0.75)) : ease(fit(t, 0.14, 0.55));
+      var intro = reduced ? 1 : ease(fit(time, 0.4, 3.0)), introS = reduced ? 1 : ease(fit(time, 1.2, 3.8));
+      var build = first ? Math.max(intro, ease(fit(s, 0, 0.6))) : ease(fit(t, 0.02, 0.4));
+      var solid = first ? Math.max(introS, ease(fit(s, 0.15, 0.75))) : ease(fit(t, 0.14, 0.55));
       var gone = lastCh ? 0 : ease(fit(t, 0.86, 1.0));
       if (!first && s < r[0]) { build = 0; solid = 0; }
       var span = o.maxY - o.minY + 0.3;
