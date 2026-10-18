@@ -37,6 +37,7 @@
   <script src="assets/tailwind-config.js?v=20261019"></script>
   <link href="assets/palettes.css?v=20261019" rel="stylesheet" />
   <link href="assets/styles.css?v=20261019" rel="stylesheet" />
+  <link href="assets/services/blueprint.css?v=20261019" rel="stylesheet" />
   <script>document.documentElement.classList.add("js")</script>
   <script src="assets/site.js?v=20261019" defer></script>
   
@@ -270,36 +271,60 @@
   </header>
 
   <main class="relative pt-[130px]">
-    <!-- HERO SECTION -->
-    <section class="relative overflow-hidden py-16 md:py-24 animate-rise">
-      <div class="absolute inset-0 -z-10 pointer-events-none">
-        <div class="aurora animate-drift" style="top:-20%; left:-10%; opacity:.4"></div>
-        <div class="absolute inset-0 bp-grid"></div>
-        <div class="absolute inset-0 dotgrid opacity-[0.3]"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
-        <div class="absolute inset-0 grain"></div>
-      </div>
+    <!-- BLUEPRINT — animation style 04 (assets/services/blueprint.css + .js) -->
+    <section id="blueprint" data-anim-style="04 · Blueprint" aria-label="How a HyperScripts build takes shape">
+      <div class="bp-stage">
+        <div class="bp-paper" aria-hidden="true"></div>
+        <svg class="bp-sheet" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+        <div class="bp-scrim"></div>
+        <div class="bp-code" aria-hidden="true"><header><i></i><i></i><i></i><span>Code</span></header><pre></pre></div>
 
-      <div class="max-w-page mx-auto px-edge text-center flex flex-col items-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo/5 border border-indigo/20 text-xs text-text mb-6">
-          <span class="h-1.5 w-1.5 rounded-full bg-indigo animate-pulse"></span>
-          <span class="text-[10px] tracking-wide text-text-2 uppercase font-mono">Custom Engineering division</span>
+        <div class="bp-copy" data-range="0,0.9">
+          <div class="bp-eyebrow">HyperScripts · custom engineering</div>
+          <h1>Bespoke engineering. <em>No placeholders.</em></h1>
+          <p>Custom software, mobile apps, databases and AI agents, drawn around how your company actually works and then built, tested and kept running by the people who drew it.</p>
+          <div class="bp-ctas"><a href="contact.html" class="btn-primary">Start your project <span class="arr">→</span></a><a href="portfolio.html" class="bp-ghost">See our work →</a></div>
         </div>
-        
-        <h1 class="font-display font-light text-[clamp(2.4rem,5.5vw,4.8rem)] leading-[1.08] tracking-[-0.03em] text-text max-w-4xl">
-          Bespoke Engineering. <span class="font-display italic bg-gradient-to-r from-violet via-indigo to-cyan bg-clip-text text-transparent">No Placeholders.</span>
-        </h1>
-        <p class="mt-6 text-base md:text-lg text-text-2/85 leading-relaxed max-w-2xl">
-          HyperScripts by Wisetrack provides custom software development, mobile application design, database engineering, and advanced agentic AI pipelines built exactly around your company's specifications.
-        </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="contact.html" class="py-3 px-6 rounded-lg bg-indigo text-white font-semibold text-sm hover:opacity-90 transition-all flex items-center gap-2">
-            Start Your Custom Project &rarr;
-          </a>
-          <a href="portfolio.html" class="py-3 px-6 rounded-lg border border-line hover:bg-white/5 text-text font-semibold text-sm transition-all">
-            See Our Selected Work
-          </a>
+
+        <div class="bp-copy" data-range="1.25,2.5">
+          <div class="bp-eyebrow">01 · Web portals and business software</div>
+          <h2>Your workflow, <em>on one screen.</em></h2>
+          <p>Multi-tenant portals, finance bridges and high-volume transaction systems on C#, .NET and Postgres, built to grow with your volume.</p>
+          <ul><li>Clean ASP.NET Core API architecture</li><li>Postgres and Redis tuned for your load</li><li>Payment, logistics and finance integrations</li></ul>
+          <a class="bp-more" href="custom-web-os-software.html">Web and OS software →</a>
         </div>
+
+        <div class="bp-copy" data-range="2.9,4.15">
+          <div class="bp-eyebrow">02 · Mobile apps</div>
+          <h2>In the field, <em>even offline.</em></h2>
+          <p>iOS and Android apps tied to your central systems, for field teams, warehouse scanning, executive dashboards and customer accounts.</p>
+          <ul><li>Native performance on both platforms</li><li>Encrypted offline storage that syncs later</li><li>Real-time updates and geofencing</li></ul>
+          <a class="bp-more" href="mobile-app.html">Mobile apps →</a>
+        </div>
+
+        <div class="bp-copy" data-range="4.55,5.8">
+          <div class="bp-eyebrow">03 · AI agents</div>
+          <h2>Agents that <em>do the work.</em></h2>
+          <p>Agent loops on Claude that plan, call your real systems, check their own output and act, with guardrails and a cost log on every step.</p>
+          <ul><li>Multi-step tasks with self-correction</li><li>Search over thousands of your own documents</li><li>Token use and cost tracked per call</li></ul>
+          <a class="bp-more" href="ai.html">AI and automation →</a>
+        </div>
+
+        <div class="bp-copy" data-range="6.2,7.45">
+          <div class="bp-eyebrow">04 · Dashboards</div>
+          <h2>Live numbers, <em>no spreadsheets.</em></h2>
+          <p>Control panels that stay light at scale: operational widgets, maps and metrics that update as the business moves.</p>
+          <ul><li>Real-time charts over WebSockets</li><li>Sub-second updates from the database</li><li>Secure client portals for auditors and partners</li></ul>
+          <a class="bp-more" href="dashboard.html">See a live dashboard →</a>
+        </div>
+
+        <div class="bp-copy" data-range="7.85,9.2">
+          <div class="bp-eyebrow">How it gets built</div>
+          <h2>A working demo <em>every two weeks.</em></h2>
+          <p>No 200-page specification. You click a functioning build each fortnight, at a price agreed before the first week starts.</p>
+          <div class="bp-ctas"><a href="contact.html" class="btn-primary">Start your project <span class="arr">→</span></a><a href="methodology.html" class="bp-ghost">How we build →</a></div>
+        </div>
+        <div class="bp-hint" aria-hidden="true">Scroll</div>
       </div>
     </section>
 
@@ -527,5 +552,6 @@
     </span>
     <span class="wa-label">Chat with us</span>
   </a>
+  <script src="assets/services/blueprint.js?v=20261019" defer></script>
 </body>
 </html>

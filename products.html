@@ -268,22 +268,14 @@
 
   <main class="relative pt-[130px]">
     <!-- ASSEMBLY — animation style 03 (assets/products/assembly.css + .js) -->
-    <section id="assembly" data-anim-style="03 · Assembly" aria-label="Ragenaizer: one platform for every department">
+    <section id="assembly" data-anim-style="03 · Monoliths" aria-label="Ragenaizer: one platform for every department">
       <div class="as-stage">
         <div class="as-grid" aria-hidden="true"></div>
-        <div class="as-world" aria-hidden="true">
-          <div class="as-rig">
-            <div class="as-frame">
-              <div class="as-side"><div class="logo"><i></i>Ragenaizer</div><ol></ol></div>
-              <div class="as-top"><div class="srch">Search customers, invoices, people…</div><div class="db">ONE DATABASE</div></div>
-              <svg class="as-flow"><path class="trail"/><path class="live"/><circle class="halo" r="10"/><circle class="dot" r="5"/></svg>
-              <div class="as-tag">Lead #2041 won</div>
-            </div>
-          </div>
-        </div>
+        <canvas class="as-gl" aria-hidden="true"></canvas>
+        <div class="as-tag" aria-hidden="true">Lead #2041 won</div>
         <div class="as-scrim"></div>
 
-        <div class="as-copy" data-range="0,1.05">
+        <div class="as-copy" data-range="0,0.95">
           <div class="as-eyebrow">Ragenaizer · Business OS</div>
           <h1>One platform. <em>Every department.</em></h1>
           <p>Most companies run seven apps that never agree on a customer. Ragenaizer puts sales, people, money, projects and stock on one database, with one login.</p>
@@ -291,7 +283,7 @@
           <div class="as-meta"><span><b>12</b> modules</span><span><b>1</b> database</span><span><b>90+</b> AI tools</span></div>
         </div>
 
-        <div class="as-copy" data-range="1.55,5.6">
+        <div class="as-copy" data-range="1.6,5.35">
           <div class="as-eyebrow">The modules</div>
           <h2 data-mod-name>CRM and Sales</h2>
           <p data-mod-desc>Leads from web forms, Facebook and WhatsApp land in one pipeline; a won deal becomes an invoice in one click.</p>
@@ -299,7 +291,7 @@
           <div class="as-count">MODULE <b data-mod-num>01</b> OF 12</div>
         </div>
 
-        <div class="as-copy" data-range="6.15,6.6">
+        <div class="as-copy" data-range="6.05,6.4">
           <div class="as-eyebrow">Docked</div>
           <h2>Twelve modules. <em>One login.</em></h2>
           <p>Every screen reads and writes the same records. Nothing is exported, imported or synced overnight.</p>
@@ -546,6 +538,16 @@
     </span>
     <span class="wa-label">Chat with us</span>
   </a>
-  <script src="assets/products/assembly.js?v=20261019" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/BokehShader.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/BokehPass.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/objects/Reflector.js" defer></script>
+  <script src="assets/products/monolith.js?v=20261019" defer></script>
 </body>
 </html>

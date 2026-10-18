@@ -1,4 +1,5 @@
-/* Products — "Assembly" (animation style 03).
+/* Products — "Monoliths" (animation style 03). Scene: assembly.js was the DOM prototype; the scene is now monolith.js (WebGL).
+   Originally: "Assembly".
    Twelve module windows scattered in 3D depth line up into a carousel, one module at a time,
    then dock into a single Ragenaizer screen; the screen tilts flat and one record travels across
    the modules. Real DOM in CSS 3D (no WebGL): crisp text, and every colour is a site token, so
@@ -14,6 +15,10 @@
     var(--bg);
   transition: background-color .9s ease;
 }
+#assembly canvas.as-gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#assembly .as-tag { position: absolute; left: 0; top: 0; z-index: 5; padding: 6px 10px; border-radius: 8px; white-space: nowrap; pointer-events: none;
+  font: 600 11px/1 "JetBrains Mono", ui-monospace, monospace; color: #fff; background: var(--violet); box-shadow: 0 10px 24px -10px rgb(var(--sindoor-57-rgb) / 0.8); opacity: 0; transition: opacity .3s ease; }
+#assembly.gl .as-grid { display: none; }
 #assembly .as-grid {
   position: absolute; inset: -10%;
   background-image:
@@ -25,116 +30,6 @@
 }
 #assembly .as-world { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; }
 #assembly .as-rig { position: absolute; left: 0; top: 0; transform-style: preserve-3d; will-change: transform; }
-
-/* ---------- a module window ---------- */
-#assembly .as-win {
-  position: absolute; left: -160px; top: -105px; width: 320px; height: 210px;
-  border-radius: 12px; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden;
-  background: var(--surface); border: 1px solid var(--line); color: var(--text);
-  box-shadow: 0 40px 70px -36px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(var(--scrim), 0.05) inset;
-  font: 500 10px/1.3 "Inter Tight", ui-sans-serif, system-ui, sans-serif;
-  will-change: transform, opacity; transform-origin: 50% 50%;
-  transition: border-color .4s ease, box-shadow .4s ease, background-color .9s ease;
-}
-#assembly .as-win.tall { left: -78px; top: -140px; width: 156px; height: 280px; border-radius: 22px; }
-#assembly .as-win.lit {
-  border-color: var(--violet);
-  box-shadow: 0 0 0 1px var(--violet), 0 30px 60px -20px rgb(var(--sindoor-57-rgb) / 0.55);
-}
-#assembly .as-bar { display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
-#assembly .as-bar i { width: 6px; height: 6px; border-radius: 50%; background: rgba(var(--scrim), 0.16); }
-#assembly .as-bar b { margin-left: 6px; font-weight: 600; font-size: 10px; letter-spacing: .01em; color: var(--text); }
-#assembly .as-bar em { margin-left: auto; font: 500 8px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .12em; color: var(--muted); font-style: normal; text-transform: uppercase; }
-#assembly .as-body { position: absolute; inset: 26px 0 0 0; padding: 10px; }
-#assembly .tall .as-body { inset: 22px 0 0 0; padding: 10px 9px; }
-#assembly .tall .as-bar { height: 22px; justify-content: center; }
-#assembly .tall .as-bar i { display: none; }
-#assembly .tall .as-bar b { margin: 0; }
-#assembly .tall .as-bar em { display: none; }
-
-/* building blocks used by the mini UIs */
-#assembly .b { display: block; height: 5px; border-radius: 3px; background: rgba(var(--scrim), 0.12); }
-#assembly .b.s { height: 4px; background: rgba(var(--scrim), 0.07); margin-top: 4px; }
-#assembly .b.a { background: var(--violet); }
-#assembly .b.c { background: var(--cyan); }
-#assembly .b.m { background: var(--mint); }
-#assembly .row { display: flex; align-items: center; gap: 7px; padding: 5px 0; border-bottom: 1px solid var(--line); }
-#assembly .row:last-child { border-bottom: 0; }
-#assembly .av { flex: none; width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; font-size: 6.5px; font-weight: 700; color: #fff; background: var(--violet); }
-#assembly .av.c { background: var(--cyan); } #assembly .av.m { background: var(--mint); }
-#assembly .nm { flex: 1; min-width: 0; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-#assembly .amt { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9px; color: var(--text); }
-#assembly .pill { font-size: 7px; font-weight: 700; letter-spacing: .04em; padding: 2px 5px; border-radius: 9px; color: var(--ink-mint); background: rgb(var(--leaf-75-rgb) / 0.16); }
-#assembly .pill.w { color: var(--ink-cyan); background: rgb(var(--brass-78-rgb) / 0.16); }
-#assembly .kv { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7px; }
-#assembly .kv span { color: var(--muted); font-size: 8.5px; }
-#assembly .kv strong { font: 600 13px/1 "JetBrains Mono", ui-monospace, monospace; color: var(--text); }
-#assembly .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; height: 100%; }
-#assembly .col { background: rgba(var(--scrim), 0.035); border-radius: 6px; padding: 5px; }
-#assembly .col > span { display: block; font-size: 7.5px; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .08em; }
-#assembly .card { background: var(--surface); border: 1px solid var(--line); border-radius: 5px; padding: 5px; margin-bottom: 5px; }
-#assembly .card em { display: block; margin-top: 4px; font: 600 8px/1 "JetBrains Mono", ui-monospace, monospace; color: var(--ink-violet); font-style: normal; }
-#assembly .gantt .row { border: 0; padding: 3px 0; }
-#assembly .gantt .lbl { width: 62px; flex: none; color: var(--text-2); font-size: 8.5px; }
-#assembly .gantt .trk { flex: 1; position: relative; height: 8px; background: rgba(var(--scrim), 0.05); border-radius: 4px; }
-#assembly .gantt .trk i { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: var(--violet); }
-#assembly .prog { flex: 1; height: 5px; border-radius: 3px; background: rgba(var(--scrim), 0.08); position: relative; overflow: hidden; }
-#assembly .prog i { position: absolute; inset: 0 auto 0 0; background: var(--mint); border-radius: 3px; }
-#assembly .bub { max-width: 72%; padding: 5px 7px; border-radius: 8px; margin-bottom: 6px; background: rgba(var(--scrim), 0.06); color: var(--text-2); }
-#assembly .bub.me { margin-left: auto; background: var(--violet); color: #fff; }
-#assembly .files { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
-#assembly .file { border: 1px solid var(--line); border-radius: 6px; padding: 6px 4px 5px; text-align: center; color: var(--text-2); font-size: 7.5px; }
-#assembly .file i { display: block; width: 18px; height: 22px; margin: 0 auto 4px; border-radius: 3px; background: rgb(var(--sindoor-57-rgb) / 0.18); border-top: 4px solid var(--violet); }
-#assembly .file.c i { background: rgb(var(--brass-78-rgb) / 0.2); border-top-color: var(--cyan); }
-#assembly .file.m i { background: rgb(var(--leaf-75-rgb) / 0.2); border-top-color: var(--mint); }
-#assembly .dot { flex: none; width: 5px; height: 5px; border-radius: 50%; background: var(--violet); }
-#assembly .dot.o { background: transparent; }
-#assembly .bars { display: flex; align-items: flex-end; gap: 6px; height: 112px; padding: 0 2px; border-bottom: 1px solid var(--line); }
-#assembly .bars i { flex: 1; border-radius: 3px 3px 0 0; background: var(--violet); }
-#assembly .bars i:nth-child(3n+2) { background: var(--cyan); }
-#assembly .bars i:nth-child(3n) { background: var(--mint); }
-#assembly .ask { padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); margin-bottom: 6px; }
-#assembly .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
-#assembly .chips span { font: 500 7px/1 "JetBrains Mono", ui-monospace, monospace; padding: 3px 5px; border-radius: 4px; color: var(--ink-cyan); background: rgb(var(--brass-78-rgb) / 0.14); }
-#assembly .shop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
-#assembly .prod { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-#assembly .prod i { display: block; height: 42px; background: linear-gradient(135deg, rgb(var(--sindoor-57-rgb) / 0.22), rgb(var(--brass-78-rgb) / 0.22)); }
-#assembly .prod:nth-child(2n) i { background: linear-gradient(135deg, rgb(var(--brass-78-rgb) / 0.25), rgb(var(--leaf-75-rgb) / 0.22)); }
-#assembly .prod span { display: block; padding: 4px 5px; font: 600 8px/1 "JetBrains Mono", ui-monospace, monospace; color: var(--text); }
-#assembly .phone-top { display: flex; justify-content: space-between; font: 600 7px/1 "JetBrains Mono", ui-monospace, monospace; color: var(--muted); margin-bottom: 8px; }
-#assembly .tile-big { border-radius: 10px; padding: 8px; margin-bottom: 7px; background: var(--violet); color: #fff; }
-#assembly .tile-big strong { display: block; font: 600 14px/1.1 "JetBrains Mono", ui-monospace, monospace; margin-top: 3px; }
-
-/* ---------- the docked Ragenaizer screen ---------- */
-#assembly .as-frame {
-  position: absolute; left: 0; top: 0; border-radius: 16px; overflow: hidden;
-  background: var(--bg-2); border: 1px solid var(--line-2);
-  box-shadow: 0 60px 120px -50px rgba(0, 0, 0, 0.55);
-  transform-style: preserve-3d; will-change: transform, opacity; opacity: 0;
-  transition: background-color .9s ease;
-}
-#assembly .as-side { position: absolute; left: 0; top: 0; bottom: 0; border-right: 1px solid var(--line); background: var(--surface); padding: 14px 12px; }
-#assembly .as-side .logo { display: flex; align-items: center; gap: 8px; font: 700 13px/1 "Inter Tight", sans-serif; color: var(--text); margin-bottom: 14px; }
-#assembly .as-side .logo i { width: 18px; height: 18px; border-radius: 5px; background: var(--violet); }
-#assembly .as-side ol { list-style: none; margin: 0; padding: 0; }
-#assembly .as-side li { display: flex; align-items: center; gap: 7px; padding: 4px 6px; border-radius: 6px; font-size: 10.5px; color: var(--text-2); transition: background-color .3s, color .3s; }
-#assembly .as-side li i { width: 6px; height: 6px; border-radius: 2px; background: rgba(var(--scrim), 0.18); }
-#assembly .as-side li.on { background: rgb(var(--sindoor-57-rgb) / 0.12); color: var(--text); }
-#assembly .as-side li.on i { background: var(--violet); }
-#assembly .as-top { position: absolute; top: 0; right: 0; border-bottom: 1px solid var(--line); background: var(--surface); display: flex; align-items: center; gap: 10px; padding: 0 14px; }
-#assembly .as-top .srch { flex: 1; max-width: 46%; height: 20px; border-radius: 6px; background: rgba(var(--scrim), 0.05); border: 1px solid var(--line); font-size: 9px; color: var(--muted); display: flex; align-items: center; padding: 0 8px; }
-#assembly .as-top .db { margin-left: auto; font: 600 8px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .12em; color: var(--ink-mint); display: flex; align-items: center; gap: 6px; }
-#assembly .as-top .db::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 3px rgb(var(--leaf-75-rgb) / 0.2); }
-#assembly .as-flow { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; transform: translateZ(30px); }
-#assembly .as-flow path { fill: none; stroke: var(--violet); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 6 7; }
-#assembly .as-flow .trail { stroke-dasharray: none; opacity: .28; }
-#assembly .as-flow circle { fill: var(--violet); }
-#assembly .as-flow .halo { fill: rgb(var(--sindoor-57-rgb) / 0.22); }
-#assembly .as-tag {
-  position: absolute; left: 0; top: 0; padding: 5px 9px; border-radius: 8px; white-space: nowrap;
-  font: 600 10px/1 "JetBrains Mono", ui-monospace, monospace; color: #fff; background: var(--violet);
-  box-shadow: 0 10px 24px -10px rgb(var(--sindoor-57-rgb) / 0.8); transform: translate(-50%, -150%) translateZ(60px); opacity: 0;
-}
 
 /* ---------- copy ---------- */
 #assembly .as-scrim { position: absolute; inset: 0; z-index: 4; pointer-events: none; }

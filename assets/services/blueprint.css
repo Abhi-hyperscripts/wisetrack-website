@@ -1,0 +1,104 @@
+/* Services — "Blueprint" (animation style 04).
+   A drawing sheet: thin lines draw themselves as you scroll, then fill in with colour and real
+   components while the code that drives them types itself alongside. One chapter per service.
+   SVG + CSS only (no WebGL), the lightest of the four styles. Colours are site tokens. */
+
+#blueprint { position: relative; height: 1020vh; margin-top: -130px; }
+#blueprint .bp-stage {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; background: var(--bg);
+  transition: background-color .9s ease;
+}
+#blueprint .bp-paper {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(var(--scrim), 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--scrim), 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(var(--scrim), 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--scrim), 0.03) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  background-position: -1px -1px;
+}
+#blueprint .bp-paper::after { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 70% at 62% 50%, transparent 40%, var(--bg) 100%); }
+
+#blueprint svg.bp-sheet { position: absolute; left: 34vw; right: 2vw; top: 108px; bottom: 26px; width: auto; height: auto; overflow: visible; }
+#blueprint svg.bp-sheet { width: 64vw; height: calc(100% - 134px); }
+#blueprint .w, #blueprint .d, #blueprint .lead { fill: none; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+#blueprint .w { stroke: var(--text); stroke-width: 1.3; stroke-opacity: .62; }
+#blueprint .w.a { stroke: var(--ink-violet); stroke-opacity: .95; stroke-width: 1.6; }
+#blueprint .w.c { stroke: var(--ink-cyan); stroke-opacity: .95; }
+#blueprint .w.m { stroke: var(--ink-mint); stroke-opacity: .95; }
+#blueprint .w.thin { stroke-width: 1; stroke-opacity: .4; }
+#blueprint .d { stroke: var(--muted); stroke-width: 1; stroke-opacity: .7; }
+#blueprint .lead { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 4; }
+#blueprint .f { stroke: none; }
+#blueprint .f.s { fill: var(--surface); }
+#blueprint .f.s2 { fill: var(--surface-2); }
+#blueprint .f.a { fill: var(--violet); }
+#blueprint .f.c { fill: var(--cyan); }
+#blueprint .f.m { fill: var(--mint); }
+#blueprint .f.at { fill: rgb(var(--sindoor-57-rgb) / 0.14); }
+#blueprint .f.ct { fill: rgb(var(--brass-78-rgb) / 0.18); }
+#blueprint .f.mt { fill: rgb(var(--leaf-75-rgb) / 0.18); }
+#blueprint .f.ln { fill: rgba(var(--scrim), 0.10); }
+#blueprint text { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; fill: var(--muted); }
+#blueprint text.lbl { fill: var(--text-2); font-size: 12px; letter-spacing: .06em; }
+#blueprint text.big { font-family: "Fraunces", ui-serif, Georgia, serif; font-size: 22px; letter-spacing: -.01em; fill: var(--text); }
+#blueprint text.ui { font-family: "Inter Tight", ui-sans-serif, sans-serif; font-size: 11px; letter-spacing: 0; fill: var(--text-2); }
+#blueprint text.uib { font-family: "Inter Tight", ui-sans-serif, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0; fill: var(--text); }
+#blueprint text.on { fill: #fff; }
+#blueprint text.acc { fill: var(--ink-violet); }
+#blueprint .tb text { font-size: 10px; }
+#blueprint .tb text.v { fill: var(--text); font-weight: 600; }
+#blueprint .pulse { fill: var(--violet); }
+#blueprint .pulse-h { fill: rgb(var(--sindoor-57-rgb) / 0.22); }
+
+/* code that types itself */
+#blueprint .bp-code {
+  position: absolute; right: 3vw; bottom: 46px; width: min(30rem, 34vw); z-index: 3;
+  border: 1px solid var(--line-2); border-radius: 12px; background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 30px 60px -32px rgba(0, 0, 0, 0.45); opacity: 0; transform: translateY(12px);
+}
+#blueprint .bp-code header { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-bottom: 1px solid var(--line); font: 500 10px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+#blueprint .bp-code header i { width: 7px; height: 7px; border-radius: 50%; background: rgba(var(--scrim), 0.15); }
+#blueprint .bp-code header span { margin-left: 8px; }
+#blueprint .bp-code pre { margin: 0; padding: 12px 14px 14px; min-height: 7.5em; font: 400 12px/1.6 "JetBrains Mono", ui-monospace, monospace; color: var(--text); white-space: pre-wrap; }
+#blueprint .bp-code pre .k { color: var(--ink-violet); }
+#blueprint .bp-code pre .s { color: var(--ink-mint); }
+#blueprint .bp-code pre .n { color: var(--ink-cyan); }
+#blueprint .bp-code pre .caret { display: inline-block; width: 7px; height: 1.1em; vertical-align: -2px; background: var(--violet); animation: bp-blink 1s steps(1) infinite; }
+@keyframes bp-blink { 50% { opacity: 0; } }
+
+/* copy */
+#blueprint .bp-scrim { position: absolute; inset: 0; pointer-events: none; z-index: 2;
+  background: linear-gradient(90deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 84%, transparent) 28%, transparent 44%); }
+#blueprint .bp-copy { position: absolute; z-index: 4; left: clamp(16px, 5vw, 88px); top: 50%; width: min(29rem, 30vw); opacity: 0; transform: translateY(-46%); pointer-events: none; }
+#blueprint .bp-copy.on { pointer-events: auto; }
+#blueprint .bp-eyebrow { display: flex; align-items: center; gap: 12px; font: 500 10.5px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-violet); }
+#blueprint .bp-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+#blueprint .bp-copy h1, #blueprint .bp-copy h2 { font-family: "Fraunces", ui-serif, Georgia, serif; font-weight: 300; letter-spacing: -0.03em; line-height: 1.04; color: var(--text); margin: 18px 0 16px; }
+#blueprint .bp-copy h1 { font-size: clamp(2.5rem, 4.8vw, 4.6rem); }
+#blueprint .bp-copy h2 { font-size: clamp(1.9rem, 3.2vw, 3.1rem); }
+#blueprint .bp-copy h1 em, #blueprint .bp-copy h2 em { font-style: italic; color: var(--ink-violet); }
+#blueprint .bp-copy p { font-size: 1rem; line-height: 1.6; color: var(--text-2); }
+#blueprint .bp-copy ul { list-style: none; padding: 0; margin: 18px 0 0; }
+#blueprint .bp-copy li { position: relative; padding: 7px 0 7px 22px; border-top: 1px solid var(--line); font-size: .92rem; color: var(--text-2); }
+#blueprint .bp-copy li::before { content: "✦"; position: absolute; left: 0; top: 7px; font-size: .8rem; color: var(--ink-violet); }
+#blueprint .bp-more { display: inline-flex; margin-top: 16px; font: 600 11px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-violet); }
+#blueprint .bp-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+#blueprint .bp-ghost { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.3rem; border-radius: 12px; border: 1px solid var(--line-2); color: var(--text); font-weight: 500; }
+#blueprint .bp-ghost:hover { background: rgba(var(--scrim), 0.05); }
+#blueprint .bp-hint { position: absolute; z-index: 4; left: 50%; bottom: 22px; transform: translateX(-50%); font: 500 9.5px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+
+@media (max-width: 760px) {
+  #blueprint { margin-top: -110px; }
+  #blueprint svg.bp-sheet { left: 2vw; width: 96vw; top: 104px; height: 46vh; }
+  #blueprint .bp-scrim { background: linear-gradient(0deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 90%, transparent) 38%, transparent 56%); }
+  #blueprint .bp-copy { left: 16px; right: 16px; width: auto; top: auto; bottom: 20px; transform: none; }
+  #blueprint .bp-copy h1 { font-size: 2.2rem; margin: 12px 0 10px; }
+  #blueprint .bp-copy h2 { font-size: 1.75rem; margin: 12px 0 10px; }
+  #blueprint .bp-copy p { font-size: .92rem; }
+  #blueprint .bp-copy ul { display: none; }
+  #blueprint .bp-code, #blueprint .bp-hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { #blueprint .bp-code pre .caret { animation: none; } }
