@@ -50,6 +50,8 @@ for m in re.finditer(r'@(media|keyframes)[^{]*\{', css):
 ns += namespace(css[pos:])
 ns += '''
 #method { position: relative; font-family: var(--body); font-size: 16px; line-height: 1.55; color: var(--fg); }
+#method #gl { pointer-events: none; }
+body > footer { position: relative; z-index: 4; background: var(--bg); }
 #method .sound-fab { position: fixed; left: 22px; bottom: 22px; z-index: 20; background: var(--card); backdrop-filter: blur(10px); opacity: 0; transition: opacity 1s ease 3.2s, border-color .3s, color .3s; }
 #method.go .sound-fab { opacity: 1; }
 #method .preloader-mark { width: 92px; height: 61px; fill: #7d1426; opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards; }

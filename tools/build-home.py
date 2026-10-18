@@ -45,6 +45,9 @@ for m in re.finditer(r'@(media|keyframes)[^{]*\{', css):
     pos = i
 ns += namespace(css[pos:])
 ns += '''
+/* the scene canvas is decorative and fixed: it must never take clicks, and the site footer stacks above it */
+#home #stage { pointer-events: none; }
+body > footer { position: relative; z-index: 4; background: var(--bg); }
 #home { position: relative; }
 #home .ch { min-height: 100svh; }
 #home h1, #home h2, #home h3 { font-variation-settings: "SOFT" 60, "WONK" 0; }
