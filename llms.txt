@@ -52,7 +52,7 @@
 ## Contact
 - Email: support@wisetrack.in
 - WhatsApp (sales & support): https://wa.me/919220474451
-- Office: Unit 314, Tower A, ATS Bouquet, Sector 132, Noida, Uttar Pradesh, India
+- Office: India
 
 ## Stack we work in
 - Languages: C#, .NET / ASP.NET Core, Blazor / Razor

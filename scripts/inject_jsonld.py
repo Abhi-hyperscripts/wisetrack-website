@@ -29,10 +29,6 @@ ORG = {
     "telephone": "+91-120-4848000",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Sector 62",
-        "addressLocality": "Noida",
-        "addressRegion": "Uttar Pradesh",
-        "postalCode": "201309",
         "addressCountry": "IN",
     },
     "contactPoint": {

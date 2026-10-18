@@ -351,7 +351,7 @@ def write_llms():
     lines.append("## Contact")
     lines.append(f"- Email: support@wisetrack.in")
     lines.append(f"- WhatsApp (sales & support): https://wa.me/919220474451")
-    lines.append(f"- Office: Unit 314, Tower A, ATS Bouquet, Sector 132, Noida, Uttar Pradesh, India")
+    lines.append(f"- Office: India")
     lines.append("")
     lines.append("## Stack we work in")
     lines.append("- Languages: C#, .NET / ASP.NET Core, Blazor / Razor")
@@ -369,7 +369,7 @@ def write_llms_full():
 ## Identity
 - Legal name: WiseTrack Technologies
 - Founded: 2020
-- Office: Unit 314, Tower A, ATS Bouquet, Sector 132, Noida, Uttar Pradesh, India
+- Office: India
 - Email: support@wisetrack.in
 - WhatsApp: https://wa.me/919220474451
 - Site: https://wisetrack.in/
