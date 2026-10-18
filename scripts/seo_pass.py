@@ -317,7 +317,7 @@ def write_llms():
     lines = [
         "# WiseTrack Technologies",
         "",
-        "> WiseTrack Technologies is a software company in Noida, India, founded 2020.",
+        "> WiseTrack Technologies is a software company in India, founded 2020.",
         "> We build custom applications, ship production-grade agentic AI, and",
         "> license Ragenaizer — our Business OS. Working stack: C# / .NET /",
         "> ASP.NET Core, Postgres, ClickHouse (for vectors), Docker on Linux,",

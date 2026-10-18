@@ -89,7 +89,7 @@ R("map: spriteTex('253°')", "map: spriteTex('DAY 1')")
 R("page === 1 ? 'Vastu Chakra · Aira Hennur shop' : 'Zone balance · 16 zones'", "page === 1 ? 'Scope sheet · Northline Traders' : 'Effort balance · 16 workstreams'")
 R("page === 1 ? 'DOOR READING 253°  ·  PLAN TOP FACES WSW  ·  16 OCT 2026' : 'SQ FT  ·  OUTSIDE FACE OF WALLS  ·  AVG 22.2'",
   "page === 1 ? 'KICKOFF 16 OCT 2026  ·  12 WEEKS  ·  FIXED PRICE' : 'HOURS PER FORTNIGHT  ·  SIXTEEN WORKSTREAMS  ·  AVG 22.2'")
-R("x.fillText('N  253°', 36, 760); x.fillText('Acharya Pankit Goyal', 36, 790);", "x.fillText('SPRINT 1  ·  WEEK 1 OF 12', 36, 760); x.fillText('Wisetrack Technologies · Noida', 36, 790);")
+R("x.fillText('N  253°', 36, 760); x.fillText('Acharya Pankit Goyal', 36, 790);", "x.fillText('SPRINT 1  ·  WEEK 1 OF 12', 36, 760); x.fillText('Wisetrack Technologies · India', 36, 790);")
 R("x.fillText('16 zones · 32 entrances · indicative', 36, 816);", "x.fillText('16 workstreams · 32 milestones · indicative', 36, 816);")
 R("AREAS[row].toFixed(1) + ' sq ft'", "AREAS[row].toFixed(1) + ' hrs'")
 R("AREAS[row + 8].toFixed(1) + ' sq ft'", "AREAS[row + 8].toFixed(1) + ' hrs'")
@@ -282,7 +282,7 @@ markup = f'''<div id="method">
       <h2 data-split>Ready to start <em>your</em> build?</h2>
       <p class="lede">Tell us what your team runs on today. The engineer who would build it calls you back, and you receive a fixed price within one working day of that call.</p>
       <div class="actions"><a class="pill primary" href="contact.html">Start a project</a><a class="pill" href="portfolio.html">See our work</a></div>
-      <div class="meta"><span>Noida · remote across India</span><span>English · Hindi</span></div>
+      <div class="meta"><span>India · remote-first</span><span>English · Hindi</span></div>
     </div>
   </section>
 
@@ -291,7 +291,7 @@ markup = f'''<div id="method">
       <canvas id="teamc" aria-label="The Wisetrack team, drawn in particles"></canvas>
       <div class="team-copy wrap">
         <div class="eyebrow">The team</div>
-        <h2>Built in Noida, by people <em>you can call.</em></h2>
+        <h2>Built in India, by people <em>you can call.</em></h2>
         <p class="lede">Engineers, designers and the people who answer the phone. The person who demos your software is the person who wrote it.</p>
       </div>
     </div>

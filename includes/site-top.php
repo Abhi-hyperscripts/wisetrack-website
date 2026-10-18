@@ -19,7 +19,7 @@ if (!defined('WISETRACK')) { http_response_code(403); exit; }
         <span class="sm:hidden"><?= e($topbarMobile ?? 'OPEN · Q1–Q2 2026') ?></span>
       </div>
       <div class="flex items-center gap-5">
-        <span class="hidden md:inline">Noida, IN</span>
+        <span class="hidden md:inline">India</span>
         <span data-clock>--:--:-- IST</span>
       </div>
     </div>

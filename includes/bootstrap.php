@@ -171,7 +171,7 @@ function blog_seed(PDO $pdo): void
             'file' => $root . '/post-two-week-demos.html',
         ],
         [
-            'title' => 'Custom Software in Noida: The Digital Shift.',
+            'title' => 'Custom Software in India: The Digital Shift.',
             'slug' => 'custom-software-in-noida-the-digital-shift',
             'excerpt' => 'Indian SMBs are moving from isolated spreadsheets to integrated, audit-logged enterprise operating databases. What this means for your workflow.',
             'category' => 'Engineering',

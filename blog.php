@@ -48,7 +48,7 @@ require __DIR__ . '/includes/site-top.php';
           Observations on <span class="font-display italic bg-gradient-to-r from-violet via-indigo to-cyan bg-clip-text text-transparent">building software.</span>
         </h1>
         <p class="mt-6 text-base md:text-lg text-text-2/85 leading-relaxed max-w-2xl">
-          B2B SaaS engineering, custom database scaling, and product management lessons learned on Noida-based production servers.
+          B2B SaaS engineering, custom database scaling, and product management lessons learned on India-based production servers.
         </p>
       </div>
     </section>
