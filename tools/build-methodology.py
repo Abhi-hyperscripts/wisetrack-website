@@ -310,7 +310,7 @@ head = re.sub(r'(<meta name="description"\s+content=")[^"]*(")', r'\1Our build m
 head = re.sub(r'(<meta property="og:title" content=")[^"]*(")', r'\1How We Build — Fixed Price, Twelve Weeks to Production · Wisetrack\2', head)
 head = re.sub(r'(<meta property="og:description" content=")[^"]*(")', r'\1Discovery, the core, the first journey, a fixed price, two-week sprints, a release checklist and a handover in your name. Twelve weeks from brief to production.\2', head)
 head = re.sub(r'<link href="assets/styles.css\?v=[^"]*" rel="stylesheet" />',
-              '<link href="assets/styles.css?v=20261020" rel="stylesheet" />\n  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">\n  <style id="method-styles">' + ns.replace('\\', '\\\\') + '</style>', head)
+              '<link href="assets/styles.css?v=20261025" rel="stylesheet" />\n  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">\n  <style id="method-styles">' + ns.replace('\\', '\\\\') + '</style>', head)
 assert 'method-styles' in head
 libs = '\n'.join(re.findall(r'<script src="https://cdn.jsdelivr.net/npm/three@0\.128\.0/[^"]+"></script>', scene))
 tail = '\n'.join(lines[foot_i:]).replace('</body>', libs + '\n<script>' + js + '</script>\n</body>')

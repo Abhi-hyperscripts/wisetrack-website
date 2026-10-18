@@ -614,25 +614,8 @@
     if (mobileRow && !mobileRow.querySelector("[data-palette-toggle]")) { const w = makePicker(true); mobileRow.appendChild(w); fillNames(w); }
   }
 
-  /* Animation style label — the site doubles as a catalogue of animation styles for clients.
-     Any element with data-anim-style="03 · Assembly" gets a small fixed label linking to the
-     styles page. */
-  function initAnimStyle() {
-    const host = document.querySelector("[data-anim-style]");
-    if (!host || document.querySelector(".anim-style")) return;
-    const a = document.createElement("a");
-    a.className = "anim-style";
-    a.href = "styles.html";
-    a.innerHTML = '<span class="k">Animation style</span><span class="v"></span>';
-    a.querySelector(".v").textContent = host.getAttribute("data-anim-style");
-    a.title = "See all animation styles";
-    document.body.appendChild(a);
-    if (document.getElementById("sound")) a.classList.add("above-sound");
-  }
-
   function init() {
     initThemeToggle();
-    initAnimStyle();
     initPaletteToggle();
     initCursor();
     initReveal();
