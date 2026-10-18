@@ -1,4 +1,4 @@
-/* Services — "Blueprint" (animation style 04). Scene: hologram.js (WebGL); this file styles the stage, copy and code panel.
+/* Services — "Blueprint" (animation style 04). Scene: draftsman.js (WebGL pantograph); this file styles the stage, copy and code panel.
    A drawing sheet: thin lines draw themselves as you scroll, then fill in with colour and real
    components while the code that drives them types itself alongside. One chapter per service.
    SVG + CSS only (no WebGL), the lightest of the four styles. Colours are site tokens. */
