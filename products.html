@@ -37,6 +37,7 @@
   <script src="assets/tailwind-config.js?v=20261019"></script>
   <link href="assets/palettes.css?v=20261019" rel="stylesheet" />
   <link href="assets/styles.css?v=20261019" rel="stylesheet" />
+  <link href="assets/products/assembly.css?v=20261019" rel="stylesheet" />
   <script>document.documentElement.classList.add("js")</script>
   <script src="assets/site.js?v=20261019" defer></script>
   
@@ -266,36 +267,64 @@
   </header>
 
   <main class="relative pt-[130px]">
-    <!-- HERO SECTION -->
-    <section class="relative overflow-hidden py-16 md:py-24 animate-rise">
-      <div class="absolute inset-0 -z-10 pointer-events-none">
-        <div class="aurora animate-drift" style="top:-20%; left:-10%; opacity:.4"></div>
-        <div class="absolute inset-0 bp-grid"></div>
-        <div class="absolute inset-0 dotgrid opacity-[0.3]"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
-        <div class="absolute inset-0 grain"></div>
-      </div>
+    <!-- ASSEMBLY — animation style 03 (assets/products/assembly.css + .js) -->
+    <section id="assembly" data-anim-style="03 · Assembly" aria-label="Ragenaizer: one platform for every department">
+      <div class="as-stage">
+        <div class="as-grid" aria-hidden="true"></div>
+        <div class="as-world" aria-hidden="true">
+          <div class="as-rig">
+            <div class="as-frame">
+              <div class="as-side"><div class="logo"><i></i>Ragenaizer</div><ol></ol></div>
+              <div class="as-top"><div class="srch">Search customers, invoices, people…</div><div class="db">ONE DATABASE</div></div>
+              <svg class="as-flow"><path class="trail"/><path class="live"/><circle class="halo" r="10"/><circle class="dot" r="5"/></svg>
+              <div class="as-tag">Lead #2041 won</div>
+            </div>
+          </div>
+        </div>
+        <div class="as-scrim"></div>
 
-      <div class="max-w-page mx-auto px-edge text-center flex flex-col items-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mint/5 border border-mint/20 text-xs text-text mb-6">
-          <span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span>
-          <span class="text-[10px] tracking-wide text-text-2 uppercase font-mono">Flagship Product OS</span>
+        <div class="as-copy" data-range="0,1.05">
+          <div class="as-eyebrow">Ragenaizer · Business OS</div>
+          <h1>One platform. <em>Every department.</em></h1>
+          <p>Most companies run seven apps that never agree on a customer. Ragenaizer puts sales, people, money, projects and stock on one database, with one login.</p>
+          <div class="as-ctas"><a href="contact.html" class="btn-primary">Get licensed access <span class="arr">→</span></a><a href="dashboard.html" class="as-ghost">View live demo →</a></div>
+          <div class="as-meta"><span><b>12</b> modules</span><span><b>1</b> database</span><span><b>90+</b> AI tools</span></div>
         </div>
-        
-        <h1 class="font-display font-light text-[clamp(2.4rem,5.5vw,4.8rem)] leading-[1.08] tracking-[-0.03em] text-text max-w-4xl">
-          One Platform. <span class="font-display italic bg-gradient-to-r from-violet via-indigo to-cyan bg-clip-text text-transparent">Every Department.</span>
-        </h1>
-        <p class="mt-6 text-base md:text-lg text-text-2/85 leading-relaxed max-w-2xl">
-          Ragenaizer is a high-performance Business Operating System that integrates all critical business workflows into a single secure database. Say goodbye to 7 separate B2B SaaS logins and messy data syncs.
-        </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="contact.html" class="py-3 px-6 rounded-lg bg-indigo text-white font-semibold text-sm hover:opacity-90 transition-all">
-            Get Licensed Access
-          </a>
-          <a href="dashboard.html" class="py-3 px-6 rounded-lg border border-line hover:bg-white/5 text-text font-semibold text-sm transition-all">
-            View Live Demo Dashboard &rarr;
-          </a>
+
+        <div class="as-copy" data-range="1.55,5.6">
+          <div class="as-eyebrow">The modules</div>
+          <h2 data-mod-name>CRM and Sales</h2>
+          <p data-mod-desc>Leads from web forms, Facebook and WhatsApp land in one pipeline; a won deal becomes an invoice in one click.</p>
+          <a class="as-more" data-mod-link href="crm-sales.html">Explore the module →</a>
+          <div class="as-count">MODULE <b data-mod-num>01</b> OF 12</div>
         </div>
+
+        <div class="as-copy" data-range="6.15,6.6">
+          <div class="as-eyebrow">Docked</div>
+          <h2>Twelve modules. <em>One login.</em></h2>
+          <p>Every screen reads and writes the same records. Nothing is exported, imported or synced overnight.</p>
+        </div>
+
+        <div class="as-copy" data-range="6.95,8.1">
+          <div class="as-eyebrow">One record, every department</div>
+          <h2>Entered once. <em>Used everywhere.</em></h2>
+          <ol class="as-steps">
+            <li>A lead is won in CRM</li>
+            <li>Accounts raises the GST invoice</li>
+            <li>The storefront’s stock goes down</li>
+            <li>Payroll adds the sales incentive</li>
+            <li>Copilot has it in today’s report</li>
+          </ol>
+        </div>
+
+        <div class="as-copy" data-range="8.6,9.2">
+          <div class="as-eyebrow">Your data, your server</div>
+          <h2>See it run on <em>your business.</em></h2>
+          <p>We set up a working demo with your own customers, items and staff, so you judge it on your numbers rather than ours.</p>
+          <div class="as-ctas"><a href="contact.html" class="btn-primary">Book a walkthrough <span class="arr">→</span></a><a href="#modules" class="as-ghost">All modules ↓</a></div>
+        </div>
+
+        <div class="as-hint" aria-hidden="true">Scroll<i></i></div>
       </div>
     </section>
 
@@ -323,7 +352,7 @@
     </section>
 
     <!-- THE MODULES GRID -->
-    <section class="py-20 md:py-28 relative">
+    <section id="modules" class="py-20 md:py-28 relative">
       <div class="max-w-page mx-auto px-edge">
         <div class="max-w-xl mb-16">
           <span class="mono text-xs text-indigo tracking-widest uppercase">PRODUCT MODULES</span>
@@ -517,5 +546,6 @@
     </span>
     <span class="wa-label">Chat with us</span>
   </a>
+  <script src="assets/products/assembly.js?v=20261019" defer></script>
 </body>
 </html>

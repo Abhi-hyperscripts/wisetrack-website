@@ -315,6 +315,7 @@ assert 'method-styles' in head
 libs = '\n'.join(re.findall(r'<script src="https://cdn.jsdelivr.net/npm/three@0\.128\.0/[^"]+"></script>', scene))
 tail = '\n'.join(lines[foot_i:]).replace('</body>', libs + '\n<script>' + js + '</script>\n</body>')
 page = head + '\n<main class="relative pt-[120px]">\n' + markup + '</main>\n' + tail
+page = page.replace('<div id="method"', '<div id="method" data-anim-style="02 · Cinematic instrument"', 1)
 # legend swatches in the graph markup follow the palette too
 page = page.replace('background:#7d1426', 'background:var(--%s)' % register(_reg, '7d1426')).replace('background:#e6cbc8', 'background:var(--%s)' % register(_reg, 'e6cbc8'))
 save_registry(_reg)

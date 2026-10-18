@@ -64,5 +64,6 @@ head = re.sub(r'<link href="assets/styles.css\?v=[^"]*" rel="stylesheet" />', '<
 head = re.sub(r'assets/tailwind-config.js\?v=[^"]*', 'assets/tailwind-config.js?v=20261019', head)
 tail = '\n'.join(site[foot_i:]).replace('</body>', '<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>\n<script>' + js + '</script>\n</body>')
 page = head + '\n  <main class="relative pt-[120px]">\n' + markup + '  </main>\n' + tail
+page = page.replace('<div id="home"', '<div id="home" data-anim-style="01 · Particle morph"', 1)
 open(f'{ROOT}/index.html', 'w', encoding='utf-8').write(page)
 print('index.html written:', len(page), 'bytes;', ns.count('#home'), 'namespaced selectors')
