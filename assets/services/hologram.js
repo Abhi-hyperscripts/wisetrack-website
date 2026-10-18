@@ -11,16 +11,11 @@
   var stage = sec.querySelector('.bp-stage'), canvas = sec.querySelector('canvas.bp-gl');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!window.THREE || !canvas) { sec.classList.add('no-gl'); return; }
-  var renderer;
-  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, alpha: false, powerPreference: 'high-performance' }); } catch (e) { renderer = null; }
+  if (!window.SceneKit) { sec.classList.add('no-gl'); return; }
+  var dev = SceneKit.device(), isMobile = dev.isMobile, lowEnd = dev.lowEnd, DPR = dev.dpr;
+  var renderer = SceneKit.renderer(canvas, dev);
   if (!renderer) { sec.classList.add('no-gl'); return; }
-  var isMobile = Math.min(window.innerWidth, window.innerHeight) < 760;
-  var cores = navigator.hardwareConcurrency || 4, mem = navigator.deviceMemory || 8;
-  var lowEnd = isMobile || cores <= 4 || mem <= 4;
-  var DPR = lowEnd ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
-  renderer.setPixelRatio(DPR);
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.shadowMap.enabled = true; renderer.shadowMap.type = lowEnd ? THREE.PCFShadowMap : THREE.PCFSoftShadowMap;
+  var ANISO = SceneKit.maxAniso(renderer), SS = lowEnd ? 1 : 1.6;
   renderer.localClippingEnabled = true;
 
   // ---------- palette ----------
@@ -36,7 +31,7 @@
   var FONT = '"Inter Tight", ui-sans-serif, system-ui, sans-serif', MONO = '"JetBrains Mono", ui-monospace, monospace';
   function rr(x, c, X, Y, W, H, R) { x.beginPath(); x.moveTo(X + R, Y); x.arcTo(X + W, Y, X + W, Y + H, R); x.arcTo(X + W, Y + H, X, Y + H, R); x.arcTo(X, Y + H, X, Y, R); x.arcTo(X, Y, X + W, Y, R); x.closePath(); x.fillStyle = c; x.fill(); }
   function paintWeb(cv) {
-    cv.width = 1280; cv.height = 800; var x = cv.getContext('2d'), A = hexOf(C.a), S = hexOf(C.surface), S2 = hexOf(C.surface2), T = hexOf(C.text), T2 = hexOf(C.text2), MU = hexOf(C.muted), L = hexOf(C.line), M = hexOf(C.m);
+    cv.width = 1280 * SS; cv.height = 800 * SS; var x = cv.getContext('2d'); x.setTransform(SS, 0, 0, SS, 0, 0); var A = hexOf(C.a), S = hexOf(C.surface), S2 = hexOf(C.surface2), T = hexOf(C.text), T2 = hexOf(C.text2), MU = hexOf(C.muted), L = hexOf(C.line), M = hexOf(C.m);
     x.fillStyle = S; x.fillRect(0, 0, 1280, 800);
     x.fillStyle = S2; x.fillRect(0, 0, 250, 800); x.fillStyle = L; x.fillRect(250, 0, 2, 800);
     x.fillStyle = T; x.font = '700 30px ' + FONT; x.fillText('Northline', 36, 62);
@@ -49,7 +44,7 @@
     });
   }
   function paintPhone(cv) {
-    cv.width = 540; cv.height = 1100; var x = cv.getContext('2d'), A = hexOf(C.a), S = hexOf(C.surface), T = hexOf(C.text), T2 = hexOf(C.text2), MU = hexOf(C.muted), L = hexOf(C.line), Cc = hexOf(C.c), M = hexOf(C.m);
+    cv.width = 540 * SS; cv.height = 1100 * SS; var x = cv.getContext('2d'); x.setTransform(SS, 0, 0, SS, 0, 0); var A = hexOf(C.a), S = hexOf(C.surface), T = hexOf(C.text), T2 = hexOf(C.text2), MU = hexOf(C.muted), L = hexOf(C.line), Cc = hexOf(C.c), M = hexOf(C.m);
     x.fillStyle = S; x.fillRect(0, 0, 540, 1100);
     x.fillStyle = MU; x.font = '600 24px ' + MONO; x.fillText('9:41', 50, 80);
     rr(x, alpha(Cc, 0.18), 40, 120, 460, 330, 30);
@@ -61,21 +56,22 @@
 
   // ---------- scene ----------
   var scene = new THREE.Scene(), bgCol = lin(C.bg);
+  scene.environment = SceneKit.studioEnv(renderer);
   scene.background = bgCol; scene.fog = new THREE.FogExp2(bgCol.getHex(), 0.035);
   var camera = new THREE.PerspectiveCamera(36, 1, 0.1, 200);
   var hemi = new THREE.HemisphereLight(0xffffff, 0x444444, 0.5); scene.add(hemi);
   var key = new THREE.DirectionalLight(0xffffff, 1.3); key.position.set(5, 10, 6); key.castShadow = true;
-  key.shadow.mapSize.set(lowEnd ? 1024 : 2048, lowEnd ? 1024 : 2048); var kc = key.shadow.camera; kc.left = -8; kc.right = 8; kc.top = 8; kc.bottom = -8; kc.far = 30; key.shadow.bias = -0.0004; key.shadow.radius = 4;
+  key.shadow.mapSize.set(lowEnd ? 2048 : 4096, lowEnd ? 2048 : 4096); key.shadow.normalBias = 0.02; var kc = key.shadow.camera; kc.left = -8; kc.right = 8; kc.top = 8; kc.bottom = -8; kc.far = 30; key.shadow.bias = -0.0004; key.shadow.radius = 4;
   scene.add(key);
   var rim = new THREE.PointLight(0xffffff, 1.6, 20, 2); rim.position.set(-5, 4, -4); scene.add(rim);
   var rim2 = new THREE.PointLight(0xffffff, 1.0, 20, 2); rim2.position.set(5, 2.5, -5); scene.add(rim2);
 
   var mirror = null;
-  if (!lowEnd && THREE.Reflector) { mirror = new THREE.Reflector(new THREE.PlaneGeometry(80, 80), { textureWidth: Math.round(window.innerWidth * DPR * 0.5), textureHeight: Math.round(window.innerHeight * DPR * 0.5), color: 0x8a8a8a }); mirror.rotation.x = -Math.PI / 2; mirror.position.y = -0.002; scene.add(mirror); }
+  if (!lowEnd && THREE.Reflector) { mirror = new THREE.Reflector(new THREE.PlaneGeometry(80, 80), { textureWidth: Math.round(window.innerWidth * DPR * 0.8), textureHeight: Math.round(window.innerHeight * DPR * 0.8), color: 0x8a8a8a }); mirror.rotation.x = -Math.PI / 2; mirror.position.y = -0.002; scene.add(mirror); }
   var glaze = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), new THREE.MeshStandardMaterial({ color: bgCol.clone(), roughness: 0.6, transparent: !!mirror, opacity: mirror ? 0.84 : 1 }));
   glaze.rotation.x = -Math.PI / 2; glaze.receiveShadow = true; scene.add(glaze);
   // the drafting disc: a turntable with a blueprint grid
-  var disc = new THREE.Mesh(new THREE.CylinderGeometry(3.6, 3.75, 0.16, 96), new THREE.MeshPhysicalMaterial({ color: 0x111111, roughness: 0.35, metalness: 0.5, clearcoat: 1 }));
+  var disc = new THREE.Mesh(new THREE.CylinderGeometry(3.6, 3.75, 0.16, 160), new THREE.MeshPhysicalMaterial({ color: 0x111111, roughness: 0.42, metalness: 0.7, clearcoat: 0.6, clearcoatRoughness: 0.25, envMapIntensity: 0.9 }));
   disc.position.y = 0.08; disc.receiveShadow = true; disc.castShadow = true; scene.add(disc);
   var discRing = new THREE.Mesh(new THREE.TorusGeometry(3.62, 0.018, 8, 160), new THREE.MeshBasicMaterial({ color: 0xffffff })); discRing.rotation.x = Math.PI / 2; discRing.position.y = 0.165; scene.add(discRing);
   var discGrid = new THREE.PolarGridHelper(3.5, 24, 8, 96, 0xffffff, 0xffffff); discGrid.position.y = 0.168; discGrid.material.transparent = true; discGrid.material.opacity = 0.18; scene.add(discGrid);
@@ -84,7 +80,7 @@
 
   // ---------- builder: every object is solids + their edge wireframes, both clipped ----------
   var wireMat = function () { return new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.95, clippingPlanes: [], depthWrite: false }); };
-  function solidMat(o) { var m = new THREE.MeshPhysicalMaterial(Object.assign({ color: 0x1a1a1a, roughness: 0.35, metalness: 0.3, clearcoat: 0.6, clippingPlanes: [], clipShadows: true }, o || {})); return m; }
+  function solidMat(o) { var m = new THREE.MeshPhysicalMaterial(Object.assign({ color: 0x1a1a1a, roughness: 0.3, metalness: 0.5, clearcoat: 1, clearcoatRoughness: 0.08, envMapIntensity: 1.2, clippingPlanes: [], clipShadows: true }, o || {})); return m; }
   var OBJ = {};
   function make(name) {
     var o = { name: name, g: new THREE.Group(), solids: [], wires: [], wireP: new THREE.Plane(new THREE.Vector3(0, -1, 0), 0), solidP: new THREE.Plane(new THREE.Vector3(0, -1, 0), 0), minY: 0, maxY: 2, extra: null, textures: [] };
@@ -95,12 +91,14 @@
     mat.clippingPlanes = [o.solidP];
     var mesh = new THREE.Mesh(geo, mat); if (pos) mesh.position.copy(pos); if (rot) mesh.rotation.set(rot.x || 0, rot.y || 0, rot.z || 0);
     mesh.castShadow = !opts.noShadow; mesh.receiveShadow = true; (opts.parent || o.g).add(mesh); o.solids.push(mesh);
-    if (!opts.noWire) { var w = new THREE.LineSegments(new THREE.EdgesGeometry(geo, opts.edgeAngle || 20), wireMat()); w.material.clippingPlanes = [o.wireP]; mesh.add(w); o.wires.push(w); }
+    // rounded (extruded) shapes have no hard edges to detect: draw their wireframe as the bounding box
+    if (!opts.noWire && !opts.wireGeo && geo.type === 'ExtrudeGeometry') { geo.computeBoundingBox(); var bb = geo.boundingBox, sz = new THREE.Vector3(), cc = new THREE.Vector3(); bb.getSize(sz); bb.getCenter(cc); opts.wireGeo = new THREE.BoxGeometry(sz.x, sz.y, sz.z).translate(cc.x, cc.y, cc.z); opts.edgeAngle = 1; }
+    if (!opts.noWire) { var w = new THREE.LineSegments(new THREE.EdgesGeometry(opts.wireGeo || geo, opts.edgeAngle || 35), wireMat()); w.material.clippingPlanes = [o.wireP]; mesh.add(w); o.wires.push(w); }
     return mesh;
   }
   function screen(o, cv, painter, w, h, pos, rot, parent) {
-    painter(cv); var t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; o.textures.push([t, cv, painter]);
-    var m = new THREE.MeshStandardMaterial({ map: t, emissive: 0xffffff, emissiveMap: t, emissiveIntensity: 0.45, roughness: 0.3 });
+    painter(cv); var t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding; t.anisotropy = ANISO; o.textures.push([t, cv, painter]);
+    var m = new THREE.MeshPhysicalMaterial({ map: t, emissive: 0xffffff, emissiveMap: t, emissiveIntensity: 0.45, roughness: 0.5, clearcoat: 1, clearcoatRoughness: 0.04, envMapIntensity: 0.35 });
     return add(o, new THREE.PlaneGeometry(w, h), m, pos, rot, { noWire: true, noShadow: true, parent: parent });
   }
   var V = function (x, y, z) { return new THREE.Vector3(x, y, z); };
@@ -108,18 +106,18 @@
   // 0 · the brief: three rough blocks on the disc, joined by struts
   (function () {
     var o = make('sheet'), mat = solidMat({ color: 0x222222, metalness: 0.1, roughness: 0.5 });
-    add(o, new THREE.BoxGeometry(1.1, 0.8, 1.1), mat, V(-1.3, 0.4, 0.4)); add(o, new THREE.BoxGeometry(1.5, 1.5, 1.2), mat.clone(), V(0.6, 0.75, -0.4)); add(o, new THREE.BoxGeometry(0.9, 2.2, 0.9), mat.clone(), V(1.9, 1.1, 1.0));
-    add(o, new THREE.CylinderGeometry(0.035, 0.035, 2.0, 8), mat.clone(), V(-0.35, 0.95, 0), { x: 0, y: 0.3, z: 1.2 });
-    add(o, new THREE.TorusGeometry(0.55, 0.035, 8, 48), mat.clone(), V(0.6, 2.05, -0.4), { x: Math.PI / 2 });
+    add(o, SceneKit.rbox(1.1, 0.8, 1.1, 0.12), mat, V(-1.3, 0.4, 0.4)); add(o, SceneKit.rbox(1.5, 1.5, 1.2, 0.14), mat.clone(), V(0.6, 0.75, -0.4)); add(o, SceneKit.rbox(0.9, 2.2, 0.9, 0.12), mat.clone(), V(1.9, 1.1, 1.0));
+    add(o, new THREE.CylinderGeometry(0.035, 0.035, 2.0, 24), mat.clone(), V(-0.35, 0.95, 0), { x: 0, y: 0.3, z: 1.2 });
+    add(o, new THREE.TorusGeometry(0.55, 0.035, 16, 96), mat.clone(), V(0.6, 2.05, -0.4), { x: Math.PI / 2 });
     o.minY = 0; o.maxY = 2.4; o.accent = o.solids[1];
   })();
   // 1 · web: a laptop with the portal on screen
   (function () {
-    var o = make('web'), alu = solidMat({ color: 0x9a9da3, metalness: 0.85, roughness: 0.28, clearcoat: 0.3 });
-    add(o, new THREE.BoxGeometry(3.6, 0.12, 2.4), alu, V(0, 0.06, 0.4));
+    var o = make('web'), alu = solidMat({ color: 0x9a9da3, metalness: 0.95, roughness: 0.32, clearcoat: 0.2, envMapIntensity: 1.5 });
+    add(o, SceneKit.rbox(3.6, 2.4, 0.12, 0.16), alu, V(0, 0.06, 0.4), { x: Math.PI / 2 });
     add(o, new THREE.BoxGeometry(3.0, 0.02, 1.0), solidMat({ color: 0x1b1d22 }), V(0, 0.125, 0.15), null, { noShadow: true });
     var lid = new THREE.Group(); lid.position.set(0, 0.12, -0.8); lid.rotation.x = -0.28; o.g.add(lid);
-    add(o, new THREE.BoxGeometry(3.6, 2.3, 0.08), alu.clone(), V(0, 1.15, 0), null, { parent: lid });
+    add(o, SceneKit.rbox(3.6, 2.3, 0.08, 0.14), alu.clone(), V(0, 1.15, 0), null, { parent: lid });
     add(o, new THREE.BoxGeometry(3.42, 2.12, 0.01), solidMat({ color: 0x050505, roughness: 0.2 }), V(0, 1.16, 0.045), null, { parent: lid, noShadow: true });
     screen(o, document.createElement('canvas'), paintWeb, 3.3, 2.06, V(0, 1.16, 0.052), null, lid);
     o.minY = 0; o.maxY = 2.5;
@@ -139,14 +137,14 @@
   (function () {
     var o = make('ai'), pts = [V(-2.0, 0.9, 0.6), V(-0.8, 1.9, -0.2), V(0.5, 1.0, 0.5), V(1.6, 2.1, -0.4), V(2.2, 0.8, 0.7)];
     var nodeMat = solidMat({ color: 0x202226, metalness: 0.2, roughness: 0.3, clearcoat: 1 });
-    o.nodes = pts.map(function (p, i) { return add(o, new THREE.IcosahedronGeometry(i === 2 ? 0.42 : 0.32, 1), nodeMat.clone(), p, null, { edgeAngle: 1 }); });
+    o.nodes = pts.map(function (p, i) { var rr = i === 2 ? 0.42 : 0.32; return add(o, new THREE.SphereGeometry(rr, 64, 48), nodeMat.clone(), p, null, { wireGeo: new THREE.IcosahedronGeometry(rr * 1.02, 1), edgeAngle: 1 }); });
     var tools = [V(-0.3, 0.3, 1.4), V(0.5, 0.3, 1.6), V(1.3, 0.3, 1.4)];
-    tools.forEach(function (p) { add(o, new THREE.BoxGeometry(0.55, 0.22, 0.32), nodeMat.clone(), p); add(o, new THREE.CylinderGeometry(0.02, 0.02, p.distanceTo(pts[2]), 6), nodeMat.clone(), p.clone().add(pts[2]).multiplyScalar(0.5), null, { noWire: true }).lookAt(pts[2]); });
+    tools.forEach(function (p) { add(o, SceneKit.rbox(0.55, 0.22, 0.32, 0.06), nodeMat.clone(), p); add(o, new THREE.CylinderGeometry(0.02, 0.02, p.distanceTo(pts[2]), 16), nodeMat.clone(), p.clone().add(pts[2]).multiplyScalar(0.5), null, { noWire: true }).lookAt(pts[2]); });
     o.g.children.slice(-6).forEach(function (m, i) { if (i % 2) { m.rotateX(Math.PI / 2); } });
     var path = new THREE.CatmullRomCurve3(pts.concat([V(1.0, 2.9, -0.6), V(-0.8, 1.9, -0.2)]), false, 'centripetal');
-    add(o, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, false, 'centripetal'), 120, 0.025, 6, false), nodeMat.clone(), null, null, { noWire: true });
-    add(o, new THREE.TubeGeometry(new THREE.CatmullRomCurve3([pts[3], V(0.5, 3.0, -0.8), pts[1]], false, 'centripetal'), 60, 0.018, 6, false), nodeMat.clone(), null, null, { noWire: true });
-    o.pulses = [0, 1, 2].map(function () { var p = new THREE.Mesh(new THREE.SphereGeometry(0.07, 16, 12), new THREE.MeshBasicMaterial({ color: 0xffffff })); o.g.add(p); return p; });
+    add(o, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, false, 'centripetal'), 240, 0.025, 12, false), nodeMat.clone(), null, null, { noWire: true });
+    add(o, new THREE.TubeGeometry(new THREE.CatmullRomCurve3([pts[3], V(0.5, 3.0, -0.8), pts[1]], false, 'centripetal'), 120, 0.018, 12, false), nodeMat.clone(), null, null, { noWire: true });
+    o.pulses = [0, 1, 2].map(function () { var p = new THREE.Mesh(new THREE.SphereGeometry(0.07, 32, 24), new THREE.MeshBasicMaterial({ color: 0xffffff })); o.g.add(p); return p; });
     o.curve = new THREE.CatmullRomCurve3(pts, false, 'centripetal');
     o.minY = 0; o.maxY = 3.1;
     o.extra = function (vis, time) { o.pulses.forEach(function (p, k) { var u = (time * 0.18 + k / 3) % 1; p.position.copy(o.curve.getPointAt(u)); p.visible = vis > 0.6; }); };
@@ -154,14 +152,14 @@
   // 4 · dashboards: a city of bars and a revenue ribbon
   (function () {
     var o = make('dash'), base = solidMat({ color: 0x1c1d21 });
-    add(o, new THREE.BoxGeometry(4.6, 0.08, 3.0), base, V(0, 0.04, 0));
+    add(o, SceneKit.rbox(4.6, 3.0, 0.1, 0.18), base, V(0, 0.05, 0), { x: Math.PI / 2 });
     o.bars = [];
     for (var cx = 0; cx < 7; cx++) for (var cz = 0; cz < 4; cz++) {
       var h = 0.35 + Math.abs(Math.sin(cx * 1.7 + cz * 2.3)) * 1.9 + (cx / 7) * 0.6, m = solidMat({ color: 0x2a2c31, metalness: 0.2 });
-      o.bars.push([add(o, new THREE.BoxGeometry(0.42, h, 0.42), m, V(-1.85 + cx * 0.62, 0.08 + h / 2, -1.05 + cz * 0.7)), (cx + cz) % 3]);
+      o.bars.push([add(o, SceneKit.rbox(0.42, h, 0.42, 0.05), m, V(-1.85 + cx * 0.62, 0.08 + h / 2, -1.05 + cz * 0.7)), (cx + cz) % 3]);
     }
     var curve = new THREE.CatmullRomCurve3([V(-2.4, 1.0, 1.5), V(-1.2, 1.5, 1.5), V(0, 1.2, 1.5), V(1.1, 2.2, 1.5), V(2.4, 2.9, 1.5)], false, 'centripetal');
-    o.ribbon = add(o, new THREE.TubeGeometry(curve, 100, 0.045, 8, false), solidMat({ color: 0x333333 }), null, null, { noWire: true });
+    o.ribbon = add(o, new THREE.TubeGeometry(curve, 240, 0.045, 16, false), solidMat({ color: 0x333333 }), null, null, { noWire: true });
     o.minY = 0; o.maxY = 3.1;
   })();
   // 5 · delivery: six sprint steps rising to launch
@@ -170,7 +168,7 @@
     o.steps = [];
     for (var k = 0; k < 6; k++) {
       var a = -2.2 + k * 0.62, R = 2.3, h = 0.25 + k * 0.42, x = Math.cos(a) * R, z = Math.sin(a) * R * 0.6;
-      o.steps.push(add(o, new THREE.CylinderGeometry(0.42, 0.46, h, 32), m.clone(), V(x, h / 2, z)));
+      o.steps.push(add(o, new THREE.CylinderGeometry(0.42, 0.46, h, 64), m.clone(), V(x, h / 2, z)));
       add(o, new THREE.CylinderGeometry(0.012, 0.012, 0.7, 6), m.clone(), V(x, h + 0.35, z), null, { noWire: true });
       o.flag = add(o, new THREE.PlaneGeometry(0.42, 0.26), new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide, emissive: 0xffffff, emissiveIntensity: 0.2 }), V(x + 0.22, h + 0.57, z), null, { noWire: true, noShadow: true });
       o.steps[k].flag = o.flag;
@@ -187,20 +185,10 @@
   var DN = lowEnd ? 500 : 1300, dg = new THREE.BufferGeometry(), dp = new Float32Array(DN * 3);
   for (var i = 0; i < DN; i++) { dp[i * 3] = (Math.random() - 0.5) * 22; dp[i * 3 + 1] = Math.random() * 8; dp[i * 3 + 2] = (Math.random() - 0.5) * 22; }
   dg.setAttribute('position', new THREE.BufferAttribute(dp, 3));
-  var dust = new THREE.Points(dg, new THREE.PointsMaterial({ size: 0.03, transparent: true, opacity: 0.4, depthWrite: false })); scene.add(dust);
+  var dust = new THREE.Points(dg, new THREE.PointsMaterial({ size: 0.07, map: SceneKit.softDot(), transparent: true, opacity: 0.4, depthWrite: false, blending: THREE.AdditiveBlending })); scene.add(dust);
 
   // ---------- post ----------
-  var composer = new THREE.EffectComposer(renderer);
-  composer.addPass(new THREE.RenderPass(scene, camera));
-  var bokeh = null;
-  if (!lowEnd && THREE.BokehPass) { bokeh = new THREE.BokehPass(scene, camera, { focus: 9, aperture: 0.0022, maxblur: 0.006, width: 1, height: 1 }); composer.addPass(bokeh); }
-  var bloom = new THREE.UnrealBloomPass(new THREE.Vector2(1, 1), 0.6, 0.5, 0.8); composer.addPass(bloom);
-  var finalPass = new THREE.ShaderPass({
-    uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uVig: { value: new THREE.Color(0.8, 0.8, 0.8) } },
-    vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
-    fragmentShader: 'uniform sampler2D tDiffuse; uniform float uTime; uniform vec3 uVig; varying vec2 vUv; void main(){ vec4 c=texture2D(tDiffuse,vUv); vec3 col=pow(max(c.rgb,0.0),vec3(1.0/2.2)); vec2 q=vUv-0.5; float v=smoothstep(1.0,0.32,length(q*vec2(1.0,0.85))*1.3); col=mix(col*uVig,col,v); float g=fract(sin(dot(gl_FragCoord.xy+mod(uTime*61.0,97.0),vec2(12.9898,78.233)))*43758.5453); col+=(g-0.5)*0.035; gl_FragColor=vec4(col,1.0); }'
-  });
-  composer.addPass(finalPass);
+  var P = SceneKit.post(renderer, scene, camera, dev), composer = P.composer, bloom = P.bloom, finalPass = P.finalPass;
 
   var ACC = new THREE.Color(), SEC = new THREE.Color(), MIN = new THREE.Color();
   function applyPalette() {
@@ -234,8 +222,17 @@
   var ORDER = ['sheet', 'web', 'mobile', 'ai', 'dash', 'process'];
   var RANGES = { sheet: [0, 1.0], web: [1.0, 2.65], mobile: [2.65, 4.3], ai: [4.3, 5.95], dash: [5.95, 7.6], process: [7.6, 9.2] };
   var END = 9.2;
-  // camera orbit per chapter: [yaw, height, distance]
-  var SHOT = { sheet: [0.55, 4.2, 11.5], web: [-0.35, 3.0, 9.0], mobile: [0.45, 2.6, 9.4], ai: [-0.2, 3.4, 10.0], dash: [0.75, 5.2, 10.5], process: [-0.6, 4.6, 11.5] };
+  // camera: each chapter is a moving shot, [yaw, height, distance, look height] at its start
+  // and at its end, so the camera pushes in, cranes or orbits while the object is built
+  var SHOTS = {
+    sheet:   [[0.55, 3.8, 12.0, 1.1], [0.62, 3.6, 11.4, 1.1]],
+    web:     [[-0.62, 1.05, 6.6, 1.35], [-0.18, 1.55, 5.6, 1.45]],     // low macro, pushing in on the screen
+    mobile:  [[0.55, 0.32, 6.2, 1.85], [0.22, 0.6, 5.4, 1.7]],         // worm's eye, looking up at the phone
+    ai:      [[-1.05, 3.6, 9.2, 1.5], [0.7, 2.4, 8.6, 1.6]],           // orbiting sweep round the network
+    dash:    [[0.35, 12.5, 2.6, 0.6], [0.95, 4.8, 9.6, 1.1]],          // overhead, tilting down to three-quarter
+    process: [[-0.95, 0.85, 9.6, 1.4], [-0.35, 6.8, 11.2, 1.2]]        // crane up the sprint steps
+  };
+  var CRANE0 = [0.2, 15.5, 4.5, 0.6];                                  // the opening: straight down on the turntable
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
   function fit(v, a, b) { return clamp((v - a) / (b - a), 0, 1); }
   function ease(t) { return t * t * (3 - 2 * t); }
@@ -253,19 +250,21 @@
   var copies = [].slice.call(sec.querySelectorAll('.bp-copy')), lastCode = null, lastN = -1;
 
   var vw = 1, vh = 1, mobile = isMobile;
-  function resize() { vw = stage.clientWidth; vh = stage.clientHeight; mobile = vw < 760; renderer.setSize(vw, vh, false); composer.setSize(vw, vh); camera.aspect = vw / vh; camera.fov = mobile ? 52 : 36; camera.updateProjectionMatrix(); if (bokeh) bokeh.uniforms.aspect.value = vw / vh; }
-  function shotFor(name) {
-    var s = SHOT[name], d = s[2] * (mobile ? 1.25 : 1);
-    var pos = V(Math.sin(s[0]) * d, s[1], Math.cos(s[0]) * d);
-    var fwd = V(0, 1.2, 0).sub(pos).normalize(), right = new THREE.Vector3().crossVectors(fwd, V(0, 1, 0)).normalize();
-    var tgt = V(0, mobile ? 2.2 : 1.25, 0).addScaledVector(right, mobile ? 0 : -2.4);
-    return { pos: pos, tgt: tgt, focus: d };
+  function resize() { vw = stage.clientWidth; vh = stage.clientHeight; mobile = vw < 760; renderer.setSize(vw, vh, false); P.setSize(vw, vh); camera.aspect = vw / vh; camera.fov = mobile ? 52 : 34; camera.updateProjectionMatrix(); }
+  function mixP(a, b, t) { return a.map(function (v, i) { return v + (b[i] - v) * t; }); }
+  function paramsAt(name, t) { var sh = SHOTS[name]; return mixP(sh[0], sh[1], easeIO(t)); }
+  function shotFrom(p) { // [yaw, height, distance, look height] -> camera position + look-at, object framed right of the copy
+    var d = p[2] * (mobile ? 1.3 : 1);
+    var pos = V(Math.sin(p[0]) * d, p[1], Math.cos(p[0]) * d);
+    var look = V(0, p[3] + (mobile ? 0.9 : 0), 0);
+    var fwd = look.clone().sub(pos).normalize(), right = new THREE.Vector3().crossVectors(fwd, V(0, 1, 0)).normalize();
+    return { pos: pos, tgt: look.addScaledVector(right, mobile ? 0 : -0.26 * Math.max(d, 4.5)) };
   }
 
   function secTop() { return sec.getBoundingClientRect().top + window.scrollY; }
   var seekTo = null; sec.__seek = function (v) { seekTo = v; sCur = v; };
   function target() { return seekTo !== null ? seekTo : clamp((window.scrollY - secTop()) / vh, 0, END); }
-  var sCur = 0, last = performance.now(), t0 = last, visible = true;
+  var sCur = 0, last = performance.now(), t0 = last, visible = true, camS = { pos: new THREE.Vector3(), tgt: new THREE.Vector3(), init: false };
   new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { rootMargin: '200px 0px' }).observe(sec);
 
   function frame(now) {
@@ -287,7 +286,7 @@
       var wireCut = o.minY - 0.05 + span * build * (1 - gone), solidCut = o.minY - 0.05 + span * solid * (1 - gone);
       o.wireP.constant = wireCut + turn.position.y; o.solidP.constant = solidCut + turn.position.y;
       o.g.visible = wireCut > o.minY - 0.04;
-      o.wires.forEach(function (w) { w.material.opacity = (0.95 - 0.7 * solid) * (1 - gone * 0.3); });
+      var wo = 0.95 * (1 - ease(fit(solid, 0.55, 1))) + 0.8 * Math.sin(gone * Math.PI); o.wires.forEach(function (w) { w.material.opacity = wo; w.visible = wo > 0.01; });
       if (o.extra) o.extra(solid * (1 - gone), time);
       if (build > 0 && build < 1 && !gone) { scanY = wireCut; scanVis = Math.sin(build * Math.PI); }
       if (gone > 0 && gone < 1) { scanY = wireCut; scanVis = Math.max(scanVis, Math.sin(gone * Math.PI) * 0.6); }
@@ -297,16 +296,17 @@
     scan.material.opacity = (C.dark ? 0.16 : 0.07) * scanVis; scanEdge.material.opacity = (C.dark ? 0.9 : 0.55) * scanVis; scan.visible = scanEdge.visible = scanVis > 0.01;
     turn.rotation.y = reduced ? 0 : time * 0.06;
 
-    // camera: glide between chapter shots
-    var idxF = 0; ORDER.forEach(function (n, k) { if (s >= RANGES[n][0]) idxF = k + (k < ORDER.length - 1 ? ease(fit(s, RANGES[n][1] - 0.35, RANGES[n][1] + 0.1)) : 0); });
-    var i0 = Math.floor(idxF), i1 = Math.min(ORDER.length - 1, i0 + 1), f = easeIO(idxF - i0);
-    var A = shotFor(ORDER[i0]), B = shotFor(ORDER[i1]);
-    // interpolate the orbit angle rather than the straight line, so the camera swings round
-    var sa = SHOT[ORDER[i0]], sb = SHOT[ORDER[i1]], yaw = sa[0] + (sb[0] - sa[0]) * f, hgt = sa[1] + (sb[1] - sa[1]) * f, dist = (sa[2] + (sb[2] - sa[2]) * f) * (mobile ? 1.25 : 1);
-    if (s < 0.9) { dist += (1 - ease(fit(s, 0, 0.9))) * 2.5; hgt += (1 - ease(fit(s, 0, 0.9))) * 1.2; }
-    camera.position.set(Math.sin(yaw) * dist, hgt, Math.cos(yaw) * dist);
-    camera.lookAt(A.tgt.clone().lerp(B.tgt, f));
-    if (bokeh) bokeh.uniforms.focus.value = dist;
+    // camera: the current chapter's moving shot, blended into the next one across the boundary
+    var cur = 0; ORDER.forEach(function (n, k) { if (s >= RANGES[n][0]) cur = k; });
+    var nm = ORDER[cur], rng = RANGES[nm], tt = fit(s, rng[0], rng[1]);
+    var pNow = paramsAt(nm, tt);
+    if (cur < ORDER.length - 1) { var bl = ease(fit(s, rng[1] - 0.3, rng[1] + 0.12)); if (bl > 0) pNow = mixP(paramsAt(nm, 1), paramsAt(ORDER[cur + 1], 0), bl); }
+    if (cur > 0 && s < rng[0] + 0.12) pNow = mixP(paramsAt(ORDER[cur - 1], 1), paramsAt(nm, 0), ease(fit(s, rng[0] - 0.3, rng[0] + 0.12)));
+    if (nm === 'sheet' && !reduced) pNow = mixP(CRANE0, pNow, easeIO(clamp((time - 0.2) / 4.5, 0, 1)));   // crane down on load
+    var shot = shotFrom(pNow);
+    if (!camS.init) { camS.pos.copy(shot.pos); camS.tgt.copy(shot.tgt); camS.init = true; }
+    var kk = reduced ? 1 : 1 - Math.exp(-dt * 7); camS.pos.lerp(shot.pos, kk); camS.tgt.lerp(shot.tgt, kk);
+    camera.position.copy(camS.pos); camera.lookAt(camS.tgt);
 
     // code panel
     var cd = CODE[activeName], co = cd ? ease(fit(activeT, 0.2, 0.32)) * (1 - ease(fit(activeT, 0.84, 0.96))) : 0;

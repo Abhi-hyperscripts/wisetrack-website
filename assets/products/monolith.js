@@ -11,17 +11,11 @@
   var stage = sec.querySelector('.as-stage'), canvas = sec.querySelector('canvas.as-gl');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!window.THREE || !canvas) { sec.classList.add('no-gl'); return; }
-  var renderer;
-  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, alpha: false, powerPreference: 'high-performance' }); } catch (e) { renderer = null; }
+  if (!window.SceneKit) { sec.classList.add('no-gl'); return; }
+  var dev = SceneKit.device(), isMobile = dev.isMobile, lowEnd = dev.lowEnd, DPR = dev.dpr;
+  var renderer = SceneKit.renderer(canvas, dev);
   if (!renderer) { sec.classList.add('no-gl'); return; }
-
-  var isMobile = Math.min(window.innerWidth, window.innerHeight) < 760;
-  var cores = navigator.hardwareConcurrency || 4, mem = navigator.deviceMemory || 8;
-  var lowEnd = isMobile || cores <= 4 || mem <= 4;
-  var DPR = lowEnd ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
-  renderer.setPixelRatio(DPR);
-  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
-  renderer.shadowMap.enabled = true; renderer.shadowMap.type = lowEnd ? THREE.PCFShadowMap : THREE.PCFSoftShadowMap;
+  var ANISO = SceneKit.maxAniso(renderer), SS = lowEnd ? 1 : 1.6; // screen textures are painted at SS x
 
   // ---------- palette ----------
   var root = document.documentElement;
@@ -65,8 +59,8 @@
   var FONT = '"Inter Tight", ui-sans-serif, system-ui, sans-serif', MONO = '"JetBrains Mono", ui-monospace, monospace';
   function paint(m, cv) {
     var tall = m.ui === 'phone', W = tall ? 420 : TW, H = tall ? 840 : TH;
-    cv.width = W; cv.height = H;
-    var x = cv.getContext('2d'), A = hexOf(C.a), Cc = hexOf(C.c), M = hexOf(C.m), T = hexOf(C.text), T2 = hexOf(C.text2), MU = hexOf(C.muted), S = hexOf(C.surface), S2 = hexOf(C.surface2), L = hexOf(C.line);
+    cv.width = W * SS; cv.height = H * SS;
+    var x = cv.getContext('2d'); x.setTransform(SS, 0, 0, SS, 0, 0); var A = hexOf(C.a), Cc = hexOf(C.c), M = hexOf(C.m), T = hexOf(C.text), T2 = hexOf(C.text2), MU = hexOf(C.muted), S = hexOf(C.surface), S2 = hexOf(C.surface2), L = hexOf(C.line);
     x.fillStyle = S; x.fillRect(0, 0, W, H);
     // title bar
     x.fillStyle = S2; x.fillRect(0, 0, W, tall ? 64 : 76); x.fillStyle = L; x.fillRect(0, tall ? 63 : 75, W, 2);
@@ -174,10 +168,11 @@
   // ---------- scene ----------
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(isMobile ? 52 : 38, 1, 0.1, 200);
+  scene.environment = SceneKit.studioEnv(renderer);
   var bgCol = lin(C.bg); scene.background = bgCol; scene.fog = new THREE.FogExp2(bgCol.getHex(), 0.028);
   var hemi = new THREE.HemisphereLight(0xffffff, 0x444444, 0.55); scene.add(hemi);
   var key = new THREE.DirectionalLight(0xffffff, 1.15); key.position.set(6, 12, 8); key.castShadow = true;
-  key.shadow.mapSize.set(lowEnd ? 1024 : 2048, lowEnd ? 1024 : 2048);
+  key.shadow.mapSize.set(lowEnd ? 2048 : 4096, lowEnd ? 2048 : 4096); key.shadow.normalBias = 0.02;
   var sc = key.shadow.camera; sc.left = -18; sc.right = 18; sc.top = 18; sc.bottom = -18; sc.near = 1; sc.far = 50; key.shadow.bias = -0.0004;
   scene.add(key); key.target.position.set(0, 0, -8); scene.add(key.target);
   var rimA = new THREE.PointLight(0xffffff, 1.4, 26, 2); rimA.position.set(-7, 4, -6); scene.add(rimA);
@@ -186,7 +181,7 @@
   // floor: a real mirror under a tinted glaze, so the reflection reads as polished stone
   var floorY = 0, mirror = null;
   if (!lowEnd && THREE.Reflector) {
-    mirror = new THREE.Reflector(new THREE.PlaneGeometry(120, 120), { textureWidth: Math.round(window.innerWidth * DPR * 0.5), textureHeight: Math.round(window.innerHeight * DPR * 0.5), color: 0x8a8a8a });
+    mirror = new THREE.Reflector(new THREE.PlaneGeometry(120, 120), { textureWidth: Math.round(window.innerWidth * DPR * 0.8), textureHeight: Math.round(window.innerHeight * DPR * 0.8), color: 0x8a8a8a });
     mirror.rotation.x = -Math.PI / 2; mirror.position.y = floorY - 0.002; scene.add(mirror);
   }
   var glaze = new THREE.Mesh(new THREE.PlaneGeometry(120, 120), new THREE.MeshStandardMaterial({ color: bgCol.clone(), roughness: 0.55, metalness: 0.0, transparent: !!mirror, opacity: mirror ? 0.82 : 1 }));
@@ -196,26 +191,29 @@
 
   // the monoliths
   var SW = 3.0, SH = 1.875, D = 0.09;
-  var bodyMat = new THREE.MeshPhysicalMaterial({ color: 0x111111, roughness: 0.25, metalness: 0.6, clearcoat: 1, clearcoatRoughness: 0.12 });
+  var bodyMat = new THREE.MeshPhysicalMaterial({ color: 0x111111, roughness: 0.32, metalness: 0.85, clearcoat: 1, clearcoatRoughness: 0.08, envMapIntensity: 1.25 });
+  var footMat = new THREE.MeshPhysicalMaterial({ color: 0x2a2a2a, roughness: 0.22, metalness: 0.95, envMapIntensity: 1.4 });
   var rimMat = new THREE.MeshStandardMaterial({ color: lin(C.a), emissive: lin(C.a), emissiveIntensity: 0.6, roughness: 0.4 });
   var slabs = MODS.map(function (m, i) {
     var tall = m.ui === 'phone', w = tall ? 0.95 : SW, h = tall ? 1.9 : SH;
     var g = new THREE.Group();
-    var body = new THREE.Mesh(new THREE.BoxGeometry(w + 0.08, h + 0.08, D), bodyMat); body.castShadow = true; body.receiveShadow = true; g.add(body);
+    var body = new THREE.Mesh(SceneKit.rbox(w + 0.12, h + 0.12, D + 0.02, 0.09, 0.025), bodyMat); body.castShadow = true; body.receiveShadow = true; g.add(body);
+    var foot = new THREE.Mesh(SceneKit.rbox(tall ? 0.5 : 0.9, 0.22, 0.42, 0.06, 0.02), footMat); foot.rotation.x = Math.PI / 2; foot.position.set(0, -(h / 2 + 0.06 + 0.17), 0); foot.castShadow = true; g.add(foot);
+    var neck = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.2, 16), footMat); neck.position.y = -(h / 2 + 0.12); g.add(neck);
     var cv = document.createElement('canvas'); paint(m, cv);
-    var tex = new THREE.CanvasTexture(cv); tex.encoding = THREE.sRGBEncoding; tex.anisotropy = 4;
-    var scr = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshStandardMaterial({ map: tex, emissive: 0xffffff, emissiveMap: tex, emissiveIntensity: 0.55, roughness: 0.32, metalness: 0 }));
-    scr.position.z = D / 2 + 0.002; g.add(scr);
-    var rim = new THREE.Mesh(new THREE.BoxGeometry(w + 0.1, 0.018, D + 0.01), rimMat); rim.position.y = -(h / 2 + 0.05); g.add(rim);
+    var tex = new THREE.CanvasTexture(cv); tex.encoding = THREE.sRGBEncoding; tex.anisotropy = ANISO;
+    var scr = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshPhysicalMaterial({ map: tex, emissive: 0xffffff, emissiveMap: tex, emissiveIntensity: 0.55, roughness: 0.5, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.04, envMapIntensity: 0.35 }));
+    scr.position.z = D / 2 + 0.014; g.add(scr);
+    var rim = new THREE.Mesh(new THREE.BoxGeometry(w * 0.6, 0.012, 0.012), rimMat); rim.position.set(0, -(h / 2 + 0.03), D / 2 + 0.012); g.add(rim);
     scene.add(g);
-    return { g: g, m: m, cv: cv, tex: tex, scr: scr, w: w, h: h, glow: 0 };
+    return { g: g, m: m, cv: cv, tex: tex, scr: scr, w: w, h: h, glow: 0, stand: [foot, neck] };
   });
   function repaint() { slabs.forEach(function (s) { paint(s.m, s.cv); s.tex.needsUpdate = true; }); }
 
   // avenue: pairs facing the aisle, receding into the fog
   var AV = slabs.map(function (s, i) {
     var side = i % 2 ? 1 : -1;
-    var pos = new THREE.Vector3(side * 2.1, s.h / 2 + 0.32, -i * 2.6 - 1.5);
+    var pos = new THREE.Vector3(side * 2.1, s.h / 2 + 0.47, -i * 2.6 - 1.5);
     var q = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, -side * 0.5, 0));
     return { pos: pos, q: q, side: side };
   });
@@ -225,11 +223,11 @@
     var c = i % 4, r = Math.floor(i / 4);
     return { pos: new THREE.Vector3(WALL_C.x + (c - 1.5) * (SW + GAP), WALL_C.y + (1 - r) * (SH + GAP), WALL_C.z), q: new THREE.Quaternion() };
   });
-  var bezel = new THREE.Mesh(new THREE.BoxGeometry(4 * SW + 3 * GAP + 0.5, 3 * SH + 2 * GAP + 0.5, 0.06), new THREE.MeshPhysicalMaterial({ color: 0x0b0b0b, roughness: 0.35, metalness: 0.5, clearcoat: 1 }));
+  var bezel = new THREE.Mesh(SceneKit.rbox(4 * SW + 3 * GAP + 0.6, 3 * SH + 2 * GAP + 0.6, 0.12, 0.18, 0.04), new THREE.MeshPhysicalMaterial({ color: 0x0b0b0b, roughness: 0.3, metalness: 0.85, clearcoat: 1, envMapIntensity: 1.2 }));
   bezel.position.copy(WALL_C).add(new THREE.Vector3(0, 0, -0.09)); bezel.scale.set(0.001, 0.001, 1); bezel.castShadow = true; scene.add(bezel);
 
   // the record that travels across the wall
-  var pulse = new THREE.Mesh(new THREE.SphereGeometry(0.09, 20, 16), new THREE.MeshBasicMaterial({ color: 0xffffff }));
+  var pulse = new THREE.Mesh(new THREE.SphereGeometry(0.09, 32, 24), new THREE.MeshBasicMaterial({ color: 0xffffff }));
   var pulseLight = new THREE.PointLight(0xffffff, 0, 6, 2); pulse.add(pulseLight); scene.add(pulse);
   var trailN = 40, trailGeo = new THREE.BufferGeometry(), trailPos = new Float32Array(trailN * 3);
   trailGeo.setAttribute('position', new THREE.BufferAttribute(trailPos, 3));
@@ -241,20 +239,10 @@
   var DUSTN = lowEnd ? 600 : 1600, dg = new THREE.BufferGeometry(), dp = new Float32Array(DUSTN * 3);
   for (var i = 0; i < DUSTN; i++) { dp[i * 3] = (Math.random() - 0.5) * 26; dp[i * 3 + 1] = Math.random() * 9; dp[i * 3 + 2] = -Math.random() * 30 + 6; }
   dg.setAttribute('position', new THREE.BufferAttribute(dp, 3));
-  var dust = new THREE.Points(dg, new THREE.PointsMaterial({ size: 0.035, transparent: true, opacity: 0.5, depthWrite: false })); scene.add(dust);
+  var dust = new THREE.Points(dg, new THREE.PointsMaterial({ size: 0.07, map: SceneKit.softDot(), transparent: true, opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending })); scene.add(dust);
 
-  // ---------- post: depth of field, bloom, grain + vignette ----------
-  var composer = new THREE.EffectComposer(renderer);
-  composer.addPass(new THREE.RenderPass(scene, camera));
-  var bokeh = null;
-  if (!lowEnd && THREE.BokehPass) { bokeh = new THREE.BokehPass(scene, camera, { focus: 6, aperture: 0.0026, maxblur: 0.0065, width: 1, height: 1 }); composer.addPass(bokeh); }
-  var bloom = new THREE.UnrealBloomPass(new THREE.Vector2(1, 1), 0.5, 0.55, 0.82); composer.addPass(bloom);
-  var finalPass = new THREE.ShaderPass({
-    uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uVig: { value: new THREE.Color(0.86, 0.86, 0.86) } },
-    vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
-    fragmentShader: 'uniform sampler2D tDiffuse; uniform float uTime; uniform vec3 uVig; varying vec2 vUv; void main(){ vec4 c=texture2D(tDiffuse,vUv); vec3 col=pow(max(c.rgb,0.0),vec3(1.0/2.2)); vec2 q=vUv-0.5; float v=smoothstep(1.0,0.32,length(q*vec2(1.0,0.85))*1.3); col=mix(col*uVig,col,v); float g=fract(sin(dot(gl_FragCoord.xy+mod(uTime*61.0,97.0),vec2(12.9898,78.233)))*43758.5453); col+=(g-0.5)*0.035; gl_FragColor=vec4(col,1.0); }'
-  });
-  composer.addPass(finalPass);
+  // ---------- post: MSAA, bloom, gamma + vignette + grain (no depth of field: in r128 it smears) ----------
+  var P = SceneKit.post(renderer, scene, camera, dev), composer = P.composer, bloom = P.bloom, finalPass = P.finalPass;
 
   function applyPalette() {
     readPalette();
@@ -288,26 +276,40 @@
   var vw = 1, vh = 1, mobile = isMobile;
   function resize() {
     vw = stage.clientWidth; vh = stage.clientHeight; mobile = vw < 760;
-    renderer.setSize(vw, vh, false); composer.setSize(vw, vh); camera.aspect = vw / vh; camera.fov = mobile ? 58 : 38; camera.updateProjectionMatrix();
-    if (bokeh) { bokeh.uniforms.aspect.value = vw / vh; }
+    renderer.setSize(vw, vh, false); P.setSize(vw, vh); camera.aspect = vw / vh; camera.fov = mobile ? 58 : 36; camera.updateProjectionMatrix();
   }
 
-  // camera shots
-  var tmpQ = new THREE.Quaternion(), tmpV = new THREE.Vector3(), up = new THREE.Vector3(0, 1, 0);
-  function slabShot(i) { // close on module i, framed to the right of the copy
-    var a = AV[i], n = new THREE.Vector3(0, 0, 1).applyQuaternion(a.q), r = new THREE.Vector3(1, 0, 0).applyQuaternion(a.q);
-    var dist = mobile ? 6.0 : 5.6, pos = a.pos.clone().addScaledVector(n, dist).add(new THREE.Vector3(0, 0.25, 0));
-    var tgt = a.pos.clone().addScaledVector(r, mobile ? 0 : -1.0).add(new THREE.Vector3(0, mobile ? -0.55 : 0, 0));
-    return { pos: pos, tgt: tgt, focus: dist };
+  // ---------- camera language ----------
+  // A shot is a camera position and a look-at point. Module close-ups cycle through four
+  // set-ups so the walk never repeats itself: eye-level three-quarter, low angle off the floor
+  // (the mirror doubles the screen), high angle looking down, and a gliding profile.
+  var UP = new THREE.Vector3(0, 1, 0);
+  function around(center, q, yaw, dist, lift, shiftLeft, tilt) {
+    var n = new THREE.Vector3(0, 0, 1).applyQuaternion(q).applyAxisAngle(UP, yaw);
+    var pos = center.clone().addScaledVector(n, dist); pos.y += lift;
+    var fwd = center.clone().sub(pos).normalize(), right = new THREE.Vector3().crossVectors(fwd, UP).normalize();
+    var tgt = center.clone().addScaledVector(right, mobile ? 0 : -shiftLeft); tgt.y += (tilt || 0) + (mobile ? -0.6 : 0);
+    return { pos: pos, tgt: tgt };
   }
-  var HERO = { pos: new THREE.Vector3(-0.6, 0.75, 6.4), tgt: new THREE.Vector3(1.9, 1.5, -22), focus: 10 };
-  function wallShot() { return { pos: new THREE.Vector3(mobile ? 0 : -2.2, WALL_C.y + 0.6, WALL_C.z + (mobile ? 21 : 19)), tgt: new THREE.Vector3(mobile ? 0 : -5.6, WALL_C.y - (mobile ? 1.6 : 0.1), WALL_C.z), focus: 15 }; }
-  function tiltShot(t) { // the camera swings low and to the side, the wall towering above
-    var a = -0.55 + 0.35 * t;
-    return { pos: new THREE.Vector3(WALL_C.x + Math.sin(a) * 13, 1.4 + 0.6 * t, WALL_C.z + Math.cos(a) * 13), tgt: new THREE.Vector3(mobile ? 0 : -3.4, WALL_C.y + 0.2, WALL_C.z), focus: 13 };
+  function slabShot(i) {
+    var a = AV[i], v = i % 4, d = mobile ? 1.15 : 1;
+    if (v === 0) return around(a.pos, a.q, 0.0, 5.4 * d, 0.25, 1.05);
+    if (v === 1) return around(a.pos, a.q, -0.32 * a.side, 5.0 * d, -a.pos.y + 0.28, 1.0, 0.15);   // low, off the floor
+    if (v === 2) return around(a.pos, a.q, 0.3 * a.side, 5.2 * d, 2.9, 1.0, -0.35);                // high, looking down
+    return around(a.pos, a.q, 0.72 * a.side, 4.7 * d, 0.45, 0.85);                                 // profile glide
   }
-  function endShot() { return { pos: new THREE.Vector3(mobile ? 0 : 5.5, 9.5, WALL_C.z + 17), tgt: new THREE.Vector3(mobile ? 0 : -3.4, WALL_C.y - 1.2, WALL_C.z), focus: 19 }; }
-  function lerpShot(a, b, t) { return { pos: a.pos.clone().lerp(b.pos, t), tgt: a.tgt.clone().lerp(b.tgt, t), focus: a.focus + (b.focus - a.focus) * t }; }
+  var CRANE = { pos: new THREE.Vector3(0.4, 17, 3.5), tgt: new THREE.Vector3(0, 0, -12) };            // straight down the avenue from above
+  var HERO = { pos: new THREE.Vector3(-0.6, 0.6, 6.4), tgt: new THREE.Vector3(1.9, 1.6, -22) };        // low, at the mouth of the avenue
+  var OVER = { pos: new THREE.Vector3(2.5, 11.5, 9.5), tgt: new THREE.Vector3(mobile ? 0 : -2.2, 3.4, -11) };   // high, from the front, while the monoliths fly up
+  function wallShot() { return { pos: new THREE.Vector3(mobile ? 0 : -2.2, WALL_C.y + 0.6, WALL_C.z + (mobile ? 21 : 19)), tgt: new THREE.Vector3(mobile ? 0 : -5.6, WALL_C.y - (mobile ? 1.6 : 0.1), WALL_C.z) }; }
+  var chase = { pos: new THREE.Vector3(), tgt: new THREE.Vector3(), init: false };
+  function chaseShot(pt, ahead) { // over the shoulder of the travelling record, close to the wall
+    var p = pt.clone().add(new THREE.Vector3(-2.4, -0.9, 6.2));
+    var t = ahead.clone().add(new THREE.Vector3(mobile ? 0 : -2.0, 0.1, 0));
+    return { pos: p, tgt: t };
+  }
+  function endShot() { return { pos: new THREE.Vector3(mobile ? 0 : 6.5, 11, WALL_C.z + 16), tgt: new THREE.Vector3(mobile ? 0 : -3.4, WALL_C.y - 1.4, WALL_C.z) }; }
+  function lerpShot(a, b, t) { return { pos: a.pos.clone().lerp(b.pos, t), tgt: a.tgt.clone().lerp(b.tgt, t) }; }
 
   // ---------- copy ----------
   var copies = [].slice.call(sec.querySelectorAll('.as-copy'));
@@ -339,6 +341,8 @@
       var p = AV[i].pos.clone().lerp(WL[i].pos, t); p.y += Math.sin(t * Math.PI) * 3.4; p.z -= Math.sin(t * Math.PI) * 2.5;
       var bob = (1 - t) * Math.sin(time * 0.7 + i) * 0.03; p.y += bob;
       sl.g.position.copy(p); sl.g.quaternion.copy(AV[i].q).slerp(WL[i].q, t);
+      // the stand folds away as the monolith lifts off, so the wall is screens only
+      var st = 1 - easeIO(clamp(t / 0.35, 0, 1)); sl.stand.forEach(function (m) { m.visible = st > 0.01; m.scale.setScalar(Math.max(0.001, st)); });
       // the module on stage glows; on the wall the flow lights its stops
       var on = eDock < 0.02 && s > T.carIn[0] && i === ai ? 1 : 0;
       var lit = flow > 0 && FLOW.indexOf(i) >= 0 && FLOW.indexOf(i) <= Math.floor(flow * FLOW.length - 0.001) ? 1 : 0;
@@ -347,18 +351,25 @@
     });
     var bz = easeIO(fit(s, [T.dock[0] + 0.55, T.dock[1] + 0.1])); bezel.scale.set(Math.max(0.001, bz), Math.max(0.001, bz), 1);
 
-    // camera: hero -> through the avenue -> back for the wall -> low and to the side -> high
+    // camera: crane down on load -> low hero -> four set-ups per module -> overhead while the
+    // monoliths fly -> the wall -> chase the record -> rise for the close
+    var fl0 = clamp(flow * 1.04, 0, 1), pNow = flowCurve.getPointAt(fl0), pAhead = flowCurve.getPointAt(clamp(fl0 + 0.08, 0, 1));
+    var heroNow = reduced ? HERO : lerpShot(CRANE, HERO, easeIO(clamp((time - 0.3) / 4.2, 0, 1)));
     var shot;
-    if (s < T.carIn[0]) shot = HERO;
-    else if (s < T.car[0]) shot = lerpShot(HERO, slabShot(0), eIn);
-    else if (s < T.pull[0]) { var i0 = Math.floor(a), i1 = Math.min(11, i0 + 1), f = easeIO(a - i0); shot = lerpShot(slabShot(i0), slabShot(i1), f); }
-    else if (s < T.dock[1] + 0.3) shot = lerpShot(slabShot(11), wallShot(), easeIO(fit(s, [T.pull[0], T.pull[1]])));
-    else if (s < T.flow[0]) shot = lerpShot(wallShot(), tiltShot(0), easeIO(fit(s, [T.dock[1] + 0.3, T.flow[0]])));
-    else if (s < T.flow[1] + 0.3) shot = tiltShot(fit(s, [T.flow[0], T.flow[1] + 0.3]));
-    else shot = lerpShot(tiltShot(1), endShot(), easeIO(fit(s, [T.flow[1] + 0.3, T.end - 0.2])));
-    camera.position.copy(shot.pos); camera.lookAt(shot.tgt);
-    if (!reduced) { camera.position.x += Math.sin(time * 0.21) * 0.06; camera.position.y += Math.sin(time * 0.17) * 0.04; }
-    if (bokeh) { bokeh.uniforms.focus.value = shot.focus; }
+    if (s < T.carIn[0]) shot = heroNow;
+    else if (s < T.car[0]) shot = lerpShot(heroNow, slabShot(0), eIn);
+    else if (s < T.pull[0]) { var i0 = Math.floor(a), i1 = Math.min(11, i0 + 1), f = easeIO(clamp((a - i0 - 0.15) / 0.7, 0, 1)); shot = lerpShot(slabShot(i0), slabShot(i1), f); }
+    else if (s < T.dock[0] + 0.1) shot = lerpShot(slabShot(11), OVER, easeIO(fit(s, [T.pull[0], T.dock[0] + 0.1])));
+    else if (s < T.dock[1]) shot = OVER;
+    else if (s < T.flow[0]) shot = lerpShot(OVER, wallShot(), easeIO(fit(s, [T.dock[1], T.flow[0]])));
+    else if (s < T.flow[1]) shot = lerpShot(wallShot(), chaseShot(pNow, pAhead), easeIO(fit(s, [T.flow[0], T.flow[0] + 0.25])));
+    else shot = lerpShot(chaseShot(pNow, pAhead), endShot(), easeIO(fit(s, [T.flow[1], T.end - 0.2])));
+    // the chase is smoothed so the camera trails the pulse instead of jerking with it
+    if (!chase.init) { chase.pos.copy(shot.pos); chase.tgt.copy(shot.tgt); chase.init = true; }
+    var k = reduced ? 1 : 1 - Math.exp(-dt * 9);
+    chase.pos.lerp(shot.pos, k); chase.tgt.lerp(shot.tgt, k);
+    camera.position.copy(chase.pos); camera.lookAt(chase.tgt);
+    if (!reduced) { camera.position.x += Math.sin(time * 0.21) * 0.05; camera.position.y += Math.sin(time * 0.17) * 0.03; }
 
     // pulse along the flow
     var fl = clamp(flow * 1.04, 0, 1), showP = flow > 0.01 && flow < 0.999 ? 1 : 0;
