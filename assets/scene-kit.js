@@ -1,7 +1,7 @@
 /* SceneKit — what the WebGL animation styles share so they render like product shots, not like
    a game: an anti-aliased renderer, an MSAA post chain (bloom, then gamma + vignette + grain),
    a studio light environment for reflections, and rounded, bevelled boxes instead of hard ones.
-   three r128 (UMD). Used by assets/products/monolith.js and assets/services/hologram.js. */
+   three r128 (UMD). Used by assets/products/monolith.js and assets/services/draftsman.js. */
 (function () {
   if (!window.THREE) return;
   var T = window.THREE;
