@@ -13,11 +13,7 @@ if (!defined('WISETRACK')) { http_response_code(403); exit; }
   <!-- Top Announcement Bar -->
   <div class="fixed top-0 left-0 right-0 z-[70] bg-bg/85 backdrop-blur-xl border-b border-white/5">
     <div class="max-w-page mx-auto px-edge h-9 flex items-center justify-between text-[11px] mono tracking-wider text-muted">
-      <div class="flex items-center gap-3">
-        <span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span>
-        <span class="hidden sm:inline"><?= e($topbarDesktop ?? 'OPEN · accepting new engagements / Q1–Q2 2026') ?></span>
-        <span class="sm:hidden"><?= e($topbarMobile ?? 'OPEN · Q1–Q2 2026') ?></span>
-      </div>
+      <div></div>
       <div class="flex items-center gap-5">
         <span class="hidden md:inline">India</span>
         <span data-clock>--:--:-- IST</span>

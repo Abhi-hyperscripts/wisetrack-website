@@ -13,10 +13,6 @@ if (!defined('WISETRACK')) { http_response_code(403); exit; }
           <p class="mt-6 text-sm text-text-2/80 leading-relaxed max-w-sm">
             Software company with two brands. <span class="text-text">HyperScripts</span> builds custom software. <span class="text-text">Ragenaizer</span> is our Business OS product.
           </p>
-          <div class="mt-6 flex items-center gap-3 text-muted text-xs">
-            <span class="h-1.5 w-1.5 rounded-full bg-mint"></span>
-            <span>Open for Q1-Q2 2026 engagements</span>
-          </div>
           <div class="mt-4 flex items-center gap-2.5">
             <!-- Instagram -->
             <a href="https://www.instagram.com/wisetrack_technologies/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-lg flex items-center justify-center border border-[#E1306C]/20 bg-[#E1306C]/5 hover:bg-[#E1306C]/10 hover:border-[#E1306C]/40 text-[#E1306C] transition-all active:scale-95">
